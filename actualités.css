@@ -1,0 +1,224 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2e3440;
+    --secondary-color: #f2cd86;
+    --background-color: aliceblue;
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    font-family: var(--font-family);
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 0 2rem;
+    height: 5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* LOGO */
+.logo {
+    width: 6rem;
+    height: auto;
+}
+
+/* TITRE */
+.titre {
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* MENU NAVIGATION */
+.support {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* BOUTONS MENU */
+.support a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.support a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.titrealaune,
+.titre-derniere-actu {
+    text-align: center;
+    font-size: 2rem;
+    margin: 5rem 0 2rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+/* Les liens ne modifient pas le style des images */
+.image-link {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Aligner les images horizontalement et ajouter de l'espace entre elles */
+.article {
+    display: flex;
+    justify-content: flex-start;  /* Alignement à gauche */
+    gap: 1rem;
+    padding: 2rem 0;
+    background-color: rgb(202, 198, 198);
+    flex-wrap: nowrap;  /* Empêche le retour à la ligne */
+    margin-top: 3rem;
+}
+
+/* A LA UNE */
+.image-positionnee {
+    margin-left: 7rem;
+    width: 60%;
+    height: 30em;
+    border-radius: 1rem;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-positionnee:hover {
+    transform: scale(1.1); /* Agrandissement de l'image */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour un effet plus dynamique */
+}
+
+/* ACTUS */
+.dernieres-actus {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+    gap: 2rem;
+}
+
+.dernieres-actus article {
+    width: 30%;
+    text-align: center;
+    background-color: rgb(202, 198, 198);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.dernieres-actus img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.dernieres-actus h2 {
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+
+.dernieres-actus p {
+    color: #333;
+}
+
+p {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+/* PIED DE PAGE */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.footer-links a:hover {
+    color: #ffd27f;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .titre {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+
+    .support {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .support a {
+        margin: 0.5rem 0;
+    }
+
+    .article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-positionnee {
+        width: 80%;
+        height: auto;
+        margin: 1rem 0;
+    }
+
+    .dernieres-actus {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dernieres-actus article {
+        width: 80%;
+        margin: 1rem 0;
+    }
+}
