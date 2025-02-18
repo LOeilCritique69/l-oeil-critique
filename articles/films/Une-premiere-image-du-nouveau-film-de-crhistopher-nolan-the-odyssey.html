@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Une première image du nouveau film de Christopher Nolan, The Odyssey !</title>
+    <link rel="stylesheet" href="../../css/createblog.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="Tools/logo_chef_doeuvre_processed.jpg" alt="logo du site" class="logo">
+            <a href="../../index.html" class="titre">L'Œil Critique</a>
+            <div class="support">
+                <a href="../../films.html" class="cote">Films</a>
+                <a href="../../series.html" class="cote">Séries</a>
+                <a href="../../reviews.html" class="cote">Reviews</a>
+                <a href="../../A_propos.html" class="cote">À Propos</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <h2>Une première image du nouveau film de <strong>Christopher Nolan</strong>, <em>The Odyssey</em> !</h2>
+            <p class="article-meta">Publié le 18 Février 2025 par <strong>Yanis</strong></p>
+
+            <div class="article-image">
+                <img src="Tools/matt-damon.png" alt="Matt damon logo">
+            </div>
+
+
+            <h2>Une épopée légendaire revisitée</h2>
+            <p>Parmi les récits les plus emblématiques de la mythologie grecque, <em>L’Odyssée</em> d’Homère est une œuvre qui traverse les âges. Elle raconte le périple d'<strong>Ulysse</strong>, héros de la guerre de Troie, tentant désespérément de rentrer chez lui, à <strong>Ithaque</strong>, après dix années de conflits. Son voyage est semé d’embûches : dieux capricieux, monstres redoutables et épreuves périlleuses, le tout s’étalant sur une décennie supplémentaire avant qu’il ne retrouve enfin son épouse, <strong>Pénélope</strong>.</p>
+            
+            <h2>Qui est <strong>Christopher Nolan</strong> ?</h2>
+            <p>Considéré comme l’un des cinéastes les plus influents de sa génération, <strong>Christopher Nolan</strong> s’est fait connaître grâce à des films aussi marquants que <em>Inception</em>, <em>Interstellar</em>, ou encore <em>The Dark Knight</em>. Maître du récit complexe et des effets pratiques spectaculaires, il a récemment frappé fort avec <em>Oppenheimer</em>, retraçant la création de la bombe atomique. Avec <em>The Odyssey</em>, il se lance dans un tout nouveau défi : un péplum mythologique à grand spectacle.</p>
+            
+            <h2>Un projet titanesque pour Nolan</h2>
+            <p>Après <em>Oppenheimer</em>, où il retraçait la vie du père de la bombe atomique dans un biopic de trois heures, <strong>Christopher Nolan</strong> voit encore plus grand. Cette fois, il s'attaque à l'adaptation de <em>L’Odyssée</em> d’Homère, un défi ambitieux avec un budget estimé à <strong>250 millions de dollars</strong>. Fidèle à son approche, le cinéaste misera sur un maximum d’effets pratiques et du tournage en IMAX.</p>
+            <img src="Tools/chirstopher-noaln.webp" alt="Christopher Nolan" class="image2">
+
+
+            <h2>Un casting légendaire</h2>
+            <p>Pour incarner les figures mythologiques de cette épopée, Nolan s’est entouré d’un casting impressionnant :</p>
+            <ul>
+                <li><span class="highlight"><strong>Matt Damon</strong></span> dans le rôle d'<strong>Ulysse</strong>, héros grec tentant de rentrer chez lui après la guerre de Troie.</li>
+                <li><span class="highlight"><strong>Tom Holland</strong>, <strong>Anne Hathaway</strong>, <strong>Jon Bernthal</strong>, <strong>Robert Pattinson</strong>, <strong>Charlize Theron</strong>, <strong>Zendaya</strong>, <strong>Mia Goth</strong>, <strong>Elliot Page</strong>, <strong>Lupita Nyong’o</strong>, <strong>John Leguizamo</strong> et <strong>Benny Safdie</strong></span> font également partie de l’aventure, bien que leurs rôles n’aient pas encore été dévoilés.</li>
+            </ul>
+            
+            <h2>Un premier aperçu intrigant</h2>
+            <p>Universal, désormais la maison de Nolan après sa séparation avec Warner Bros., a révélé une première image du film. On y découvre <strong>Matt Damon</strong> dans une tenue qui rappelle celle des centurions romains, un choix surprenant pour une histoire ancrée dans la mythologie grecque antique.</p>
+            <p>Ce premier visuel confirme que <em>The Odyssey</em> ne sera pas une relecture moderne ou futuriste du mythe, mais bien un péplum se déroulant dans l’Antiquité. Un changement notable pour Nolan, dont les films ont majoritairement exploré le 20ᵉ et 21ᵉ siècle, à l'exception de <em>Le Prestige</em>, qui plongeait dans la fin du 19ᵉ siècle.</p>
+            <img src="Tools/matt-damon-ulysse.jpg" alt="Matt Damon en Ulysse" class="image2">
+            <p class="titre-sous-image">@UniversalPictures Sur X</p>
+
+
+            <h2>Rendez-vous en 2026</h2>
+            <p>L'attente sera longue, mais l’épopée de Nolan a déjà tout pour marquer les esprits. <span class="highlight"><em>The Odyssey</em></span> sortira en France le <strong>15 juillet 2026</strong>.</p>
+        </div>
+        
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="titre-tendances">Les tendances</h3>
+                <ul id="tendances-list">
+                    <!-- Les tendances seront chargées ici -->
+                </ul>
+            </div>
+        </aside>  
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+    
+    <script>
+        fetch('tendances.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.sidebar .widget ul').innerHTML = data;
+            })
+            .catch(error => console.error('Erreur de chargement des tendances:', error));
+    </script>
+</body>
+</html>

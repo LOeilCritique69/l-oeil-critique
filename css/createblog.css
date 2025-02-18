@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     background-color: aliceblue;
     background-size: cover;
@@ -12,6 +13,7 @@ body {
     background-position: center;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px; /* Taille de texte de base */
 }
 
 /* HEADER */
@@ -95,6 +97,13 @@ body {
 }
 
 /* TITRES & TEXTES */
+
+.article-meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
 .article-title {
     font-size: 30px;
     margin-bottom: 10px;
@@ -116,7 +125,7 @@ body {
 .article-image img,
 .image2 {
     display: block;
-    width: 60%;
+    width: 100%; /* Adaptation de l'image à 100% de la largeur du conteneur */
     height: auto;
     margin: 0 auto 20px;
 }
@@ -227,4 +236,15 @@ footer {
 
 .footer-links a:hover {
     color: #ffd27f;
+}
+
+/* AMÉLIORATIONS GLOBALES */
+body {
+    font-size: 16px; /* Uniformise la taille du texte pour toutes les pages */
+}
+
+/* LINK TO CSS VERSION FORCING CACHE RELOAD */
+link[rel="stylesheet"] {
+    /* Change the version here to force cache refresh if the styles are updated */
+    href: "createblog.css?v=1.1"; 
 }
