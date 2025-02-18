@@ -1,0 +1,243 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2e3440;
+    padding: 0 2rem;
+    height: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* LOGO */
+.logo {
+    width: 6rem;
+    height: auto;
+}
+
+/* TITRE */
+.titre {
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #f2cd86;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* MENU NAVIGATION */
+.support {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* BOUTONS MENU */
+.support a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid #f2cd86;
+    color: #f2cd86;
+    text-decoration: none;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.support a:hover {
+    background-color: #f2cd86;
+    color: #2e3440;
+}
+
+/* CONTENU PRINCIPAL */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.main-content {
+    flex: 3;
+    background: #fff;
+    padding: 30px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    margin-right: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* TITRES & TEXTES */
+.article-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.titre-sous-image {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0rem;
+    margin: 0;
+    text-align: center;
+}
+
+.article-image img,
+.image2 {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+.article-content p,
+.film p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.titre-tendances,
+.titre-actu {
+    text-align: center;
+    border: 10px solid #f2cd86;
+    padding: 10px;
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    border-left: 5px solid #f2cd86;
+    padding-left: 15px;
+    font-size: 2rem;
+    margin: 5rem 0 2rem;
+}
+
+blockquote {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+li {
+    margin: 1rem 0 2rem 2rem;
+}
+
+/* SIDEBAR */
+.sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.sidebar .widget {
+    margin-bottom: 20px;
+}
+
+.sidebar .widget img {
+    margin-top: 4rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.sidebar a {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FILMS */
+.film {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.film h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #f2cd86;
+}
+
+.intro {
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+.note-importante {
+    font-weight: bold;
+    color: red;
+    margin-bottom: 1em;
+}
+
+
+.spoiler-warning {
+    background-color: #ffdddd;
+    color: #a94442;
+    padding: 10px;
+    border: 1px solid #a94442;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* PIED DE PAGE */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #2e3440;
+    color: #f2cd86;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #f2cd86;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.footer-links a:hover {
+    color: #ffd27f;
+}

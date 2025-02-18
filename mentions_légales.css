@@ -1,0 +1,131 @@
+/* Réinitialisation des marges et des paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2e3440;
+    padding: 0 2rem;
+    height: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LOGO */
+.logo {
+    width: 6rem;
+    height: auto;
+}
+
+/* TITRE */
+.titre {
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #f2cd86;
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* MENU NAVIGATION */
+.support {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cote {
+    color: #f2cd86;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.cote:hover {
+    color: #ffd27f;
+}
+
+/* MENTIONS LÉGALES */
+.mentions-legales {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.mentions-legales h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2e3440;
+    margin-bottom: 20px;
+}
+
+.mentions-legales h2 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #2e3440;
+    border-bottom: 2px solid #2e3440;
+    padding-bottom: 5px;
+}
+
+.mentions-legales p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.mentions-legales a {
+    color: #2e3440;
+    text-decoration: underline;
+}
+
+.mentions-legales a:hover {
+    color: #f2cd86;
+}
+
+/* FOOTER */
+p {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 4.2rem;
+    margin-top: 5.9rem;
+    height: 2.6rem;
+    background-color: #2e3440;
+    color: #f2cd86;
+    font-size: 0.75rem;
+}
+
+.footer-links {
+    font-size: 0.8rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #f2cd86;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.footer-links a:hover {
+    color: #ffd27f;
+}
+

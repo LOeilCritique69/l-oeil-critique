@@ -1,0 +1,207 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2e3440;
+    --secondary-color: #f2cd86;
+    --background-color: aliceblue;
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    font-family: var(--font-family);
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 0 2rem;
+    height: 5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* LOGO */
+.logo {
+    width: 6rem;
+    height: auto;
+}
+
+/* TITRE */
+.titre {
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* MENU NAVIGATION */
+.support {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* BOUTONS MENU */
+.support a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.support a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* SECTION TITLES */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 5rem 0 2rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    border-radius: 10px;
+}
+
+/* REVIEWS SECTION */
+.reviews-section {
+    padding: 2rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background-color: rgb(202, 198, 198);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.review-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.review-content {
+    padding: 1rem;
+}
+
+.review-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.review-author, .review-date {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.review-summary {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.read-more:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.footer-links a:hover {
+    color: #ffd27f;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .titre {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+
+    .support {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .support a {
+        margin: 0.5rem 0;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunderbolts : la bande-annonce dévoile un ennemi inattendu</title>
+    <link rel="stylesheet" href="createblog.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="Tools/logo_chef_doeuvre_processed.jpg" alt="logo du site" class="logo">
+            <a href="../../index.html" class="titre">L'Œil Critique</a>
+            <div class="support">
+                <a href="../../films.html" class="cote">Films</a>
+                <a href="../../series.html" class="cote">Séries</a>
+                <a href="../../reviews.html" class="cote">Reviews</a>
+                <a href="../../A_propos.html" class="cote">À Propos</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h2 class="article-title">Thunderbolts : la bande-annonce dévoile un ennemi inattendu</h2>
+            <p class="article-meta">Publié le 10 février 2025 par <strong>Yanis</strong></p>
+
+            <div class="article-image">
+                <img src="Tools/thunderbolts-une-bande-annonce-sur-le-ton-de-lhumour-pour-le-suicide-squad-de-marvel.jpg.webp" alt="Image de Thunderbolts">
+            </div>
+
+            <h2>Introduction</h2>
+            <p>Le Marvel Cinematic Universe (MCU) continue d’évoluer, et cette fois-ci, c’est avec une équipe d'anti-héros que Marvel entend surprendre. Le film <strong>Thunderbolts</strong> s’annonce comme un tournant majeur, en présentant une tonalité plus sombre et une menace inattendue. Voici ce qu’il faut savoir sur cette bande-annonce qui a fait sensation lors du Super Bowl 2025.</p>
+
+            <h2>Un trailer dévoilé au Super Bowl</h2>
+            <p>Cette nuit, à l’occasion du <strong>Super Bowl</strong>, Marvel a dévoilé la toute première bande-annonce de <strong>Thunderbolts</strong>. Un film très attendu qui promet une approche plus sombre et violente du MCU.</p>
+
+            <h2>Contexte du MCU et situation des Thunderbolts</h2>
+            <p>Le <strong>Marvel Cinematic Universe</strong> est en pleine transition après la fin de la saga de l'Infini. Avec l’apparition des multivers et une gestion plus stricte des super-héros par le gouvernement, une nouvelle équipe d’anti-héros, les <strong>Thunderbolts</strong>, est mise en place.</p>
+
+            <h2>Un casting impressionnant</h2>
+            <p>Le film réunit plusieurs visages familiers du MCU : <strong>Yelena Belova</strong> (Florence Pugh), <strong>Bucky Barnes</strong> (Sebastian Stan), <strong>Red Guardian</strong> (David Harbour), <strong>John Walker / US Agent</strong> (Wyatt Russell), et bien d’autres.</p>
+            <img src="Tools/thunderbolts-contre-sentry.jpg" alt="Thunderbolts contre Sentry" class="image2">
+            <p class="titre-sous-image">Le groupe de choc</p>
+
+            <h2>Les révélations du trailer</h2>
+            <p>Le trailer a révélé des éléments clés comme la présence de la <strong>tour des Avengers</strong> et du <strong>Raft</strong>, des lieux emblématiques du MCU. Mais la plus grande surprise reste l’introduction de <strong>Sentry</strong>, un personnage au pouvoir destructeur.</p>
+            <img src="Tools/raft-et-la-tour-des-avengers-thunderbolts.png" alt="Raft et tour des avengers" class="image2">
+
+
+            <h2>Qui est Sentry ?</h2>
+            <p><strong>Sentry</strong>, alias Robert Reynolds, est souvent comparé à Superman. Cependant, il est hanté par une double personnalité maléfique : <strong>The Void</strong>. Dans le trailer, on aperçoit une première vision de son immense pouvoir et de sa menace pour le MCU.</p>
+            <img src="Tools/le-void-de-sentry-thunderbolts.jpg" alt="Sentry VOID" class="image2">
+
+
+            <h2>Un Marvel plus sombre</h2>
+            <p>Avec <em>Thunderbolts</em>, Marvel semble prendre un virage plus mature et sombre, abandonnant les blagues légères pour un ton plus sérieux et brutal.</p>
+
+            <h2>Conséquences et attentes</h2>
+            <p>Ce film pourrait marquer un tournant pour le MCU en mettant en avant des héros plus ambigus. Le rôle de <strong>Sentry</strong> et les implications de son pouvoir restent des questions ouvertes.</p>
+
+            <h2>Date de sortie et lien du trailer</h2>
+            <p>Le film est prévu pour <strong>juillet 2025</strong>. Découvrez la bande-annonce ici : <a href="https://youtu.be/hUUszE29jS0">Voir le trailer</a>.</p>
+
+            <h2>Conclusion</h2>
+            <p>Avec la promesse d’un ton plus sombre et la révélation de personnages aussi puissants que Sentry, <strong>Thunderbolts</strong> semble être un film qui redéfinira les codes du MCU. Alors que le film approche de sa sortie en juillet 2025, l’attente ne cesse de grandir. Les fans du MCU ont désormais un nouvel horizon à explorer, où les héros sont plus complexes, et les menaces, plus graves.</p>
+        </div>
+        <aside class="sidebar">
+            <div class="widget">
+                <h2 class="titre-tendances">Les tendances</h2>
+                <ul id="tendances-list">
+                    <!-- Les tendances seront chargées ici -->
+                </ul>
+            </div>
+        </aside>        
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+</body>
+<script>
+    fetch('tendances.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.sidebar .widget ul').innerHTML = data;
+        })
+        .catch(error => console.error('Erreur de chargement des tendances:', error));
+</script>
+</html>
