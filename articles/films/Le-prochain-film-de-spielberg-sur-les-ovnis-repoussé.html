@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le prochain film de Spielberg sur les OVNIs repoussé</title>
+    <link rel="stylesheet" href="../../css/createblog.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="Tools/logo_chef_doeuvre_processed.jpg" alt="logo du site" class="logo">
+            <a href="../../index.html" class="titre">L'Œil Critique</a>
+            <div class="support">
+                <a href="../../films.html" class="cote">Films</a>
+                <a href="../../series.html" class="cote">Séries</a>
+                <a href="../../reviews.html" class="cote">Reviews</a>
+                <a href="../../A_propos.html" class="cote">À Propos</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h2 class="article-title">Le prochain film de Spielberg sur les OVNIs repoussé</h2>
+            <p class="article-meta">Publié le 19 février 2025 par Yanis</p>
+
+            <div class="article-image">
+                <img src="Tools/spielberg-son-film-dovnis-est-repousse-avec-une-nouvelle-date-de-sortie-annoncee--1260x708.jpg.webp" alt="Steven Spielberg et son film d'OVNIs">
+            </div>
+
+            <div class="article-content">
+                <p><strong>Steven Spielberg</strong> et la science-fiction, c’est une histoire d’amour qui dure depuis des décennies. De <strong>Rencontres du troisième type</strong> à <strong>La Guerre des mondes</strong>, en passant par <strong>E.T.</strong> et <strong>Minority Report</strong>, le réalisateur a marqué le genre de son empreinte.</p>
+                
+                <p>Après les échecs commerciaux de <strong>West Side Story</strong> (2021) et <strong>The Fabelmans</strong> (2022), il revient avec un nouveau projet encore mystérieux, mais qui serait <strong>une histoire d’OVNIs</strong>. Le film, toujours sans titre officiel, possède déjà un casting impressionnant : <strong>Emily Blunt, Colman Domingo, Josh O’Connor, Colin Firth</strong> et <strong>Eve Hewson</strong>. De plus, le scénariste <strong>David Koepp</strong> (Jurassic Park, La Guerre des mondes) est de la partie.</p>
+
+                <h2 class="titre-actu">Une date de sortie repoussée</h2>
+                <p>Initialement prévu pour le <strong>15 mai 2026</strong>, le film de Spielberg a été repoussé au <strong>12 juin 2026</strong>. Cette modification s'explique par le report d’un autre projet très attendu : le nouveau film des <strong>Daniels</strong> (<em>Everything Everywhere All At Once</em>), qui a besoin de plus de temps de post-production. Universal a donc décidé de réajuster son planning.</p>
+
+                <h2>Un projet entouré de mystère</h2>
+                <p>Annoncé en <strong>mai 2024</strong>, ce projet est basé sur <strong>une idée originale de Steven Spielberg</strong>. Il marque également le retour du cinéaste en tant que co-scénariste, une rareté dans sa carrière. Selon les rumeurs, le film pourrait s’intituler <strong>Disclosure</strong> (« Révélation ») ou <strong>The Dish</strong> (« La parabole »).</p>
+                
+                <h2>Colman Domingo en dit plus</h2>
+                <p>Lors d’une interview en février 2025, <strong>Colman Domingo</strong> a évoqué le projet en déclarant :</p>
+                <blockquote>
+                    <p>« Je pense que c’est quelque chose de <strong>nouveau et différent</strong>. Mais je vais vous dire une chose : il y a tellement de <strong>cœur</strong> dans cette histoire… J’ai l’impression que c’est <strong>une déclaration d’amour à notre humanité</strong>. Il l’a co-écrit, donc j’ai l’impression que c’est <strong>très Steven Spielberg</strong>. »</p>
+                </blockquote>
+                
+                <h2>Une attente grandissante</h2>
+                <p>Avec un Spielberg en grande forme, un casting impressionnant et une histoire qui intrigue déjà les fans de SF, ce film est sans aucun doute l’un des plus attendus de <strong>2026</strong>. Reste à voir si le maître du genre saura encore une fois nous émerveiller.</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="titre-tendances">Les tendances</h3>
+                <ul id="tendances-list">
+                    <!-- Les tendances seront chargées ici -->
+                </ul>
+            </div>
+        </aside>              
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+</body>
+<script>
+    fetch('tendances.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.sidebar .widget ul').innerHTML = data;
+        })
+        .catch(error => console.error('Erreur de chargement des tendances:', error));
+</script>
+</html>

@@ -10,6 +10,7 @@
     --secondary-color: #f2cd86;
     --background-color: aliceblue;
     --font-family: 'Roboto', sans-serif;
+    --base-font-size: 16px; /* Taille de base */
 }
 
 body {
@@ -19,6 +20,8 @@ body {
     background-position: center;
     height: 100vh;
     font-family: var(--font-family);
+    font-size: 1rem; /* Taille de base de la police */
+    line-height: 1.5;
 }
 
 /* HEADER */
@@ -44,7 +47,7 @@ body {
 /* TITRE */
 .titre {
     font-weight: bold;
-    font-size: 2.2rem;
+    font-size: 2.2rem; /* En rem, cela devient plus scalable */
     color: var(--secondary-color);
     text-decoration: none;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -67,7 +70,7 @@ body {
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Ajusté pour le zoom */
     white-space: nowrap;
     transition: all 0.3s ease-in-out;
 }
@@ -80,7 +83,7 @@ body {
 .titrealaune,
 .titre-derniere-actu {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2rem; /* En rem */
     margin: 5rem 0 2rem;
     color: var(--secondary-color);
     background-color: var(--primary-color);
@@ -96,48 +99,55 @@ body {
 /* Aligner les images horizontalement et ajouter de l'espace entre elles */
 .article {
     display: flex;
-    justify-content: flex-start;  /* Alignement à gauche */
+    justify-content: flex-start;
     gap: 1rem;
     padding: 2rem 0;
     background-color: rgb(202, 198, 198);
-    flex-wrap: nowrap;  /* Empêche le retour à la ligne */
+    flex-wrap: nowrap;
     margin-top: 3rem;
 }
 
 /* A LA UNE */
 .image-positionnee {
-    margin-left: 7rem;
-    width: 60%;
-    height: 30em;
+    margin-left: 0.5rem;
+    width: 100%;  /* Ajuste la largeur à 100% du conteneur */
+    max-width: 600px;  /* Limite la taille maximale */
+    height: auto;  /* Garde les proportions de l'image */
     border-radius: 1rem;
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-positionnee:hover {
-    transform: scale(1.1); /* Agrandissement de l'image */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour un effet plus dynamique */
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 /* ACTUS */
 .dernieres-actus {
     display: flex;
-    justify-content: space-around;
-    margin: 2rem;
+    flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
 }
 
 .dernieres-actus article {
-    width: 30%;
+    width: calc(50% - 1rem); /* Deux articles par ligne */
+    max-width: 400px; /* Limite la taille des articles */
     text-align: center;
     background-color: rgb(202, 198, 198);
     padding: 1rem;
     border-radius: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dernieres-actus article:hover {
+    transform: translateY(-5px);
 }
 
 .dernieres-actus img {
-    width: 100%;
-    height: auto;
+    width: 100%;  /* L'image occupe tout l'espace disponible sans déborder */
+    height: auto;  /* Conserve les proportions de l'image */
     border-radius: 1rem;
 }
 
@@ -148,6 +158,13 @@ body {
 
 .dernieres-actus p {
     color: #333;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .dernieres-actus article {
+        width: 100%; /* Un seul article par ligne sur mobile */
+    }
 }
 
 p {
@@ -161,7 +178,7 @@ footer {
     padding: 2rem 0;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Adapté pour zoom */
 }
 
 .footer-links {
@@ -177,48 +194,4 @@ footer {
 
 .footer-links a:hover {
     color: #ffd27f;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem;
-    }
-
-    .titre {
-        font-size: 1.8rem;
-        margin: 1rem 0;
-    }
-
-    .support {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .support a {
-        margin: 0.5rem 0;
-    }
-
-    .article {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-positionnee {
-        width: 80%;
-        height: auto;
-        margin: 1rem 0;
-    }
-
-    .dernieres-actus {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dernieres-actus article {
-        width: 80%;
-        margin: 1rem 0;
-    }
 }
