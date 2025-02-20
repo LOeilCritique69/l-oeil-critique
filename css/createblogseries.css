@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     background-color: aliceblue;
     background-size: cover;
@@ -12,6 +13,7 @@ body {
     background-position: center;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px; /* Taille de texte de base */
 }
 
 /* HEADER */
@@ -22,10 +24,10 @@ body {
     background-color: #2e3440;
     padding: 0 2rem;
     height: 5rem;
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
+    width: 100%;
 }
 
 /* LOGO */
@@ -70,6 +72,7 @@ body {
     color: #2e3440;
 }
 
+/* CONTENU PRINCIPAL */
 .container {
     display: flex;
     max-width: 1200px;
@@ -93,6 +96,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* TITRES & TEXTES */
+
+.article-meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
 .article-title {
     font-size: 30px;
     margin-bottom: 10px;
@@ -104,27 +115,59 @@ body {
     margin-bottom: 20px;
 }
 
-.article-image img {
-    width: 60%;
-    height: 60%;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
+.titre-sous-image {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0rem;
+    margin: 0;
+    text-align: center;
 }
 
-.article-content p {
+.article-image img,
+.image2 {
+    display: block;
+    width: 100%; /* Adaptation de l'image à 100% de la largeur du conteneur */
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+.article-content p,
+.film p {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 1.1rem;
+    line-height: 1.5;
     margin-bottom: 30px;
-    margin-right: 2rem;
 }
 
-.titre-tendances {
+.titre-tendances,
+.titre-actu {
     text-align: center;
     border: 10px solid #f2cd86;
     padding: 10px;
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
+h2 {
+    border-left: 5px solid #f2cd86;
+    padding-left: 15px;
+    font-size: 2rem;
+    margin: 5rem 0 2rem;
+}
+
+blockquote {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+li {
+    margin: 1rem 0 2rem 2rem;
+}
+
+/* SIDEBAR */
 .sidebar h3 {
     margin-bottom: 15px;
 }
@@ -141,84 +184,12 @@ body {
 
 .sidebar a {
     font-size: 20px;
-    border: #ffd27f;
+    color: #000;
+    text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    color:#000000;
-    text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
-}
-
-.titre-actu {
-    font-size: 1.8rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-}
-
-blockquote {
-    font-style: italic;
-    color: #555;
-    border-left: 5px solid #0077cc;
-    padding: 10px 20px;
-    margin: 20px 0;
-    background: #f9f9f9;
-    border-radius: 5px;
-    position: relative;
-}
-
-blockquote::before {
-    content: "“";
-    font-size: 50px;
-    color: #0077cc;
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    font-family: serif;
-}
-
-blockquote p {
-    margin: 0;
-    padding-left: 30px;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-
-li {
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-}
-
-h2 {
-    border-left: 5px solid #f2cd86;
-    margin-bottom: 2rem;
-    margin-top: 5rem;
-    padding-left: 15px;
-    font-size: 2rem;
-}
-
-.titre-sous-image {
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
-}
-
-.image2 {
-    display: block;
-    width: 60%;
-    height: 60%;
-    margin-bottom: 0px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.texte-sous-image {
-    margin: 0;
-    text-align: center;
-}
-
+/* FILMS */
 .film {
     border: 1px solid #ccc;
     padding: 1em;
@@ -232,13 +203,6 @@ h2 {
     color: #f2cd86;
 }
 
-.film p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    margin-bottom: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 .intro {
     font-style: italic;
     margin-bottom: 1em;
@@ -248,13 +212,6 @@ h2 {
     font-weight: bold;
     color: red;
     margin-bottom: 1em;
-}
-
-
-
-p {
-    margin-top: 2rem;
-    font-size: 1.1rem;
 }
 
 /* PIED DE PAGE */
@@ -279,4 +236,15 @@ footer {
 
 .footer-links a:hover {
     color: #ffd27f;
+}
+
+/* AMÉLIORATIONS GLOBALES */
+body {
+    font-size: 16px; /* Uniformise la taille du texte pour toutes les pages */
+}
+
+/* LINK TO CSS VERSION FORCING CACHE RELOAD */
+link[rel="stylesheet"] {
+    /* Change the version here to force cache refresh if the styles are updated */
+    href: "createblog.css?v=1.1"; 
 }
