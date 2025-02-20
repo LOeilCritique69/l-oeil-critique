@@ -5,13 +5,23 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #2e3440;
+    --secondary-color: #f2cd86;
+    --background-color: aliceblue;
+    --font-family: 'Roboto', sans-serif;
+    --text-color: #555;
+    --highlight-color: #f2cd86;
+}
+
+/* BODY */
 body {
-    background-color: aliceblue;
+    background-color: var(--background-color);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
 }
 
 /* HEADER */
@@ -19,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #2e3440;
+    background-color: var(--primary-color);
     padding: 0 2rem;
     height: 5rem;
     max-width: 1200px;
@@ -38,7 +48,7 @@ body {
 .titre {
     font-weight: bold;
     font-size: 2.2rem;
-    color: #f2cd86;
+    color: var(--secondary-color);
     text-decoration: none;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     white-space: nowrap;
@@ -57,8 +67,8 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     background-color: transparent;
-    border: 2px solid #f2cd86;
-    color: #f2cd86;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     font-size: 1.2rem;
     white-space: nowrap;
@@ -66,8 +76,8 @@ body {
 }
 
 .support a:hover {
-    background-color: #f2cd86;
-    color: #2e3440;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /* CONTENU PRINCIPAL */
@@ -132,7 +142,7 @@ body {
 .titre-tendances,
 .titre-actu {
     text-align: center;
-    border: 10px solid #f2cd86;
+    border: 10px solid var(--secondary-color);
     padding: 10px;
     font-size: 1.8rem;
     margin-top: 3rem;
@@ -140,7 +150,7 @@ body {
 }
 
 h2 {
-    border-left: 5px solid #f2cd86;
+    border-left: 5px solid var(--secondary-color);
     padding-left: 15px;
     font-size: 2rem;
     margin: 5rem 0 2rem;
@@ -150,7 +160,7 @@ blockquote {
     font-family: 'Georgia', serif;
     font-size: 1.2em;
     font-style: italic;
-    color: #555;
+    color: var(--text-color);
     margin-bottom: 2rem;
 }
 
@@ -191,7 +201,7 @@ li {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 0.5em;
-    color: #f2cd86;
+    color: var(--secondary-color);
 }
 
 .intro {
@@ -205,7 +215,6 @@ li {
     margin-bottom: 1em;
 }
 
-
 .spoiler-warning {
     background-color: #ffdddd;
     color: #a94442;
@@ -217,13 +226,12 @@ li {
     margin-bottom: 20px;
 }
 
-
 /* PIED DE PAGE */
 footer {
     text-align: center;
     padding: 2rem 0;
-    background-color: #2e3440;
-    color: #f2cd86;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 0.9rem;
 }
 
@@ -233,7 +241,7 @@ footer {
 }
 
 .footer-links a {
-    color: #f2cd86;
+    color: var(--secondary-color);
     text-decoration: none;
     margin: 0 1rem;
 }

@@ -258,6 +258,7 @@ body {
     .header {
         flex-direction: column;
         padding: 1rem;
+        height: auto; /* Ajuste la hauteur du header sur mobile */
     }
 
     .support {
@@ -279,10 +280,21 @@ body {
         font-size: 1.5rem;
         margin: 2rem 0;
     }
-}
-.titre-sous-image {
-    font-family: 'Courier New', Courier, monospace;
-    padding: 0rem;
-    margin: 0;
-    text-align: center;
+
+    /* Ajustement des tailles des titres et des blocs */
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    .titre-sous-image {
+        font-size: 1.4rem;
+    }
+
+    .footer-links {
+        font-size: 1rem;
+    }
+
+    .film h3 {
+        font-size: 1.2em;
+    }
 }

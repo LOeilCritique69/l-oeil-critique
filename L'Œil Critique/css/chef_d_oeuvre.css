@@ -9,6 +9,7 @@
     --primary-color: #2e3440;
     --secondary-color: #f2cd86;
     --background-color: aliceblue;
+    --accent-color: #ffd27f;
     --font-family: 'Roboto', sans-serif;
 }
 
@@ -171,7 +172,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #ffd27f;
+    color: var(--accent-color);
 }
 
 /* RESPONSIVE DESIGN */

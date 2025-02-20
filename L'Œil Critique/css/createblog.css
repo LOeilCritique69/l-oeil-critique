@@ -269,6 +269,7 @@ body {
     .main-content, .sidebar {
         padding: 15px;
         margin-right: 0;
+        margin-left: 0;
     }
 
     .sidebar {
@@ -278,5 +279,29 @@ body {
     h2 {
         font-size: 1.5rem;
         margin: 2rem 0;
+    }
+
+    /* Mise en forme des articles */
+    .article-meta {
+        font-size: 12px;
+    }
+
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    /* Réduire les espaces dans la sidebar */
+    .sidebar h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Titre et texte dans les sections */
+    .titre-tendances,
+    .titre-actu {
+        font-size: 1.5rem;
+    }
+
+    .titre-sous-image {
+        font-size: 1.2rem;
     }
 }
