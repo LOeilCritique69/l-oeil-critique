@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toutes les informations sur le potentiel John Wick: Chapter 5.">
+    <meta name="keywords" content="John Wick 5, Keanu Reeves, cinéma, films, action, actualités">
+    <title>John Wick 5 : Tout ce que l’on sait sur la suite</title>
+    <link rel="stylesheet" href="../../css/createblog.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="Tools/logo_chef_doeuvre_processed.jpg" alt="logo du site" class="logo">
+            <a href="../../../index.html" class="titre">L'Œil Critique</a>
+            <div class="support">
+                <a href="../../films.html" class="cote">Films</a>
+                <a href="../../series.html" class="cote">Séries</a>
+                <a href="../../reviews.html" class="cote">Reviews</a>
+                <a href="../../A_propos.html" class="cote">À Propos</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h2 class="article-title">John Wick 5 : Ce que l’on sait sur la suite tant attendue</h2>
+            <p class="article-meta">Publié le 21 février 2025 par <strong>Yanis</strong></p>
+            <div class="article-image">
+                <img src="Tools/john-wick-chapitre-4-photo-keanu-reeves-une-1483019-630x296.jpg" alt="John Wick 5">
+            </div>
+            <div class="article-content">
+                <h2>Y aura-t-il une suite à John Wick 4 ?</h2>
+                <p>Peut-être. Chad Stahelski, réalisateur de la saga, a exprimé son souhait de voir l’histoire continuer. En mai 2023, Lionsgate a confirmé qu’un cinquième film était en préparation, accompagné d’autres projets comme le spin-off *Ballerina* et la série *The Continental*.</p>
+                <blockquote>« Nous construisons un univers qui, quand le cinquième film arrivera, sera organique. » — Joe Drake (Lionsgate)</blockquote>
+                <h2>Quelle est la date de sortie possible de John Wick 5 ?</h2>
+                <p>Aucune date officielle n’a été annoncée. Si l’on se base sur les précédents films, il est peu probable de voir *John Wick 5* avant 2026. Le spin-off *Ballerina*, prévu pour le 4 juin 2025, pourrait influencer la production du cinquième opus.</p>
+                <h2>De quoi parlera John Wick 5 ?</h2>
+                <p>Il ne s’agirait pas d’une suite directe au Chapitre 4. Le réalisateur affirme vouloir explorer de nouvelles idées et évoque un possible prequel sur la jeunesse de John Wick avant sa rencontre avec Helen.</p>
+                <img src="Tools/john-wick-1-630x354.jpg.webp" alt="John wick et son chien" class="image2">
+                <blockquote>« On ne peut pas dépasser *John Wick 4*. C’est la fin. Il faudra donc une intrigue totalement différente. » — Chad Stahelski</blockquote>
+                <h2>Que sait-on sur le casting ?</h2>
+                <p>Keanu Reeves n’a pas confirmé son retour et a exprimé des doutes sur sa capacité physique à continuer la saga :</p>
+                <blockquote>« Il ne faut jamais dire jamais. Mon cœur peut, mais je ne sais pas si c’est le cas de mes genoux. » — Keanu Reeves</blockquote>
+                <p>Si un prequel est envisagé, un nouvel acteur pourrait incarner un John Wick plus jeune, ou bien un rajeunissement numérique serait envisagé.</p>
+                <h2>Le spin-off Ballerina</h2>
+                <p>*Ballerina* sera le premier spin-off de l’univers John Wick et suivra l’histoire d’une jeune tueuse en quête de vengeance contre ceux qui ont assassiné sa famille. Le film, réalisé par Len Wiseman, mettra en vedette Ana de Armas dans le rôle principal et devrait sortir le 4 juin 2025.</p>
+                <h2>La série The Continental</h2>
+                <img src="Tools/ana-de-armas-ballerina-092624-1-f3dd1103e9dc487d904789faa4fd0d3e-630x420.jpg.webp" alt="Ana de Armas Ballerina" class="image2">
+                <p>*The Continental* est une mini-série qui explore les origines de l’hôtel emblématique pour assassins. Sortie en septembre 2023, la série suit un jeune Winston Scott (interprété par Colin Woodell) alors qu’il prend le contrôle de l’établissement. On y retrouve également Mel Gibson dans un rôle clé.</p>
+                <h2>Conclusion</h2>
+                <p>Bien que *John Wick 5* soit confirmé, de nombreuses questions restent en suspens. Le spin-off *Ballerina* et la série *The Continental* aideront à patienter en attendant plus d’informations sur l’avenir de la franchise.</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="titre-tendances">Les tendances</h3>
+                <ul id="tendances-list">
+                    <!-- Les tendances seront chargées ici -->
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+</body>
+<script>
+    fetch('tendances.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.sidebar .widget ul').innerHTML = data;
+        })
+        .catch(error => console.error('Erreur de chargement des tendances:', error));
+</script>
+</html>
+z
