@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
+    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
+    <title>Ravage : Le prochain film de Tom Hardy arrive sur Netflix</title>
+    <link rel="stylesheet" href="../../css/createblog.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="Tools/logo_chef_doeuvre_processed.jpg" alt="logo du site" class="logo">
+            <a href="../../../index.html" class="titre">L'Œil Critique</a>
+            <div class="support">
+                <a href="../../films.html" class="cote">Films</a>
+                <a href="../../series.html" class="cote">Séries</a>
+                <a href="../../reviews.html" class="cote">Reviews</a>
+                <a href="../../A_propos.html" class="cote">À Propos</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h2 class="article-title">Ravage : Le prochain film de Tom Hardy arrive sur Netflix</h2>
+            <p class="article-meta">Publié le 27 février 2025 par L'Œil Critique</p>
+
+            <div class="article-image">
+                <img src="Tools/ravage-enfin-une-date-de-sortie-et-un-teaser-qui-tabasse-pour-le-film-netflix-avec-tom-hardy.jpg.webp" alt="Tom Hardy dans Ravage">
+            </div>
+            
+            <div class="article-content">
+                <h2>Un thriller sombre et explosif</h2>
+                <p><strong>Ravage</strong> (titre original : <em>Havoc</em>) est un thriller d'action réalisé par <strong>Gareth Evans</strong>, connu pour ses films nerveux comme <em>The Raid</em> et la série <em>Gangs of London</em>. Le film sortira exclusivement sur Netflix le <strong>25 avril 2025</strong>.</p>
+                
+                <h2>Pourquoi ce film est-il attendu ?</h2>
+                <p>Les fans de films d'action connaissent <strong>Gareth Evans</strong> pour son style brutal et efficace. Avec <strong>Tom Hardy</strong> en tête d'affiche, <em>Ravage</em> promet des scènes d'action intenses et un scénario haletant.</p>
+                
+                <h2>Synopsis</h2>
+                <p>Après une affaire de trafic de stupéfiants qui tourne mal, Walker, un détective interprété par <strong>Tom Hardy</strong>, se lance dans une course contre la montre pour sauver le fils d’un politicien influent. Dans sa mission, il se retrouve plongé au cœur d’un réseau criminel où corruption et trahisons règnent.</p>
+                
+                <h2>Un casting impressionnant</h2>
+                <ul>
+                    <li><strong>Tom Hardy</strong> : Walker</li>
+                    <li><strong>Forest Whitaker</strong> : Inspecteur Gates</li>
+                    <li><strong>Timothy Olyphant</strong> : Agent Marshall</li>
+                    <li><strong>Jessie Mei Li</strong> : Ellie</li>
+                    <li><strong>Justin Cornwell</strong> : Officier Ryan</li>
+                    <li><strong>Yeo Yann Yann</strong> : Dr. Tan</li>
+                    <li><strong>Luis Guzmán</strong> : Chef du cartel</li>
+                    <li><strong>Sunny Pang</strong> : Tueur à gages</li>
+                    <li><strong>Michelle Waterson</strong> : Agent infiltré</li>
+                    <li><strong>Quelin Sepulveda</strong> : Hacker</li>
+                    <li><strong>Xelia Mendes-Jones</strong> : Johnny</li>
+                    <img src="Tools/4of64uqf7ytzocezxavavll4pwg-1260x708.jpg.webp" alt="Tom Hardy en agent" class="image2">
+                </ul>
+                
+                <h2>Un développement chaotique</h2>
+                <p>Le film a été tourné entre juillet et octobre 2021, mais il a connu une longue période de silence. Après des retours mitigés, Netflix a décidé de commander des reshoots qui se sont achevés en juillet 2024. La post-production prolongée a repoussé sa sortie jusqu'en avril 2025.</p>
+                
+                <h2>Une ambiance sombre et percutante</h2>
+                <p>Le teaser dévoilé promet un film intense, avec des scènes de combat rapproché, des fusillades et des courses-poursuites haletantes. La photographie est signée <strong>Matt Flannery</strong>, collaborateur régulier de <strong>Gareth Evans</strong>, ce qui garantit un style visuel brutal et immersif.</p>
+                
+                <h2>Découvrez la bande-annonce</h2>
+                <p>Découvrez la bande-annonce en cliquant juste <a href="https://twitter.com/i/status/1894779516997747013" target="_blank">ICI</a></p>
+                
+                <h2>Rendez-vous en avril !</h2>
+                <p>Les amateurs d'action et les fans de <strong>Tom Hardy</strong> pourront découvrir <strong>Ravage</strong> sur Netflix à partir du 25 avril 2025.</p>
+        
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="widget">
+                <h2 class="titre-tendances">Les tendances</h2>
+                <ul id="tendances-list">
+                    <!-- Les tendances seront chargées ici -->
+                </ul>
+            </div>
+        </aside>        
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+</body>
+<script>
+    fetch('tendances.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.sidebar .widget ul').innerHTML = data;
+        })
+        .catch(error => console.error('Erreur de chargement des tendances:', error));
+</script>
+</html>
