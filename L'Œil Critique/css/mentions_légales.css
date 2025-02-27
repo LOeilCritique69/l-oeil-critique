@@ -1,24 +1,25 @@
-/* Réinitialisation des marges et des paddings */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Variables */
 :root {
     --primary-color: #2e3440;
-    --accent-color: #f2cd86;
-    --highlight-color: #ffd27f;
+    --secondary-color: #f2cd86;
     --background-color: aliceblue;
-    --text-color: #333;
+    --accent-color: #ffd27f;
+    --font-family: 'Roboto', sans-serif;
 }
 
-/* BODY */
 body {
     background-color: var(--background-color);
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    font-family: var(--font-family);
 }
 
 /* HEADER */
@@ -29,38 +30,52 @@ body {
     background-color: var(--primary-color);
     padding: 0 2rem;
     height: 5rem;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
+/* LOGO */
 .logo {
     width: 6rem;
     height: auto;
 }
 
+/* TITRE */
 .titre {
     font-weight: bold;
     font-size: 2.2rem;
-    color: var(--accent-color);
+    color: var(--secondary-color);
     text-decoration: none;
-    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
     flex-grow: 1;
+    text-align: center;
 }
 
+/* MENU NAVIGATION */
 .support {
     display: flex;
     gap: 1.5rem;
 }
 
-.cote {
-    color: var(--accent-color);
+/* BOUTONS MENU */
+.support a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     font-size: 1.2rem;
-    transition: color 0.3s;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
 }
 
-.cote:hover {
-    color: var(--highlight-color);
+.support a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /* MENTIONS LÉGALES */

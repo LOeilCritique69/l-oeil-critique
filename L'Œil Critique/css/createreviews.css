@@ -9,12 +9,10 @@
     --primary-color: #2e3440;
     --secondary-color: #f2cd86;
     --background-color: aliceblue;
+    --accent-color: #ffd27f;
     --font-family: 'Roboto', sans-serif;
-    --text-color: #555;
-    --highlight-color: #f2cd86;
 }
 
-/* BODY */
 body {
     background-color: var(--background-color);
     background-size: cover;
@@ -32,10 +30,10 @@ body {
     background-color: var(--primary-color);
     padding: 0 2rem;
     height: 5rem;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
-    width: 100%;
 }
 
 /* LOGO */

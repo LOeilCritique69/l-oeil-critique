@@ -9,15 +9,17 @@
     --primary-color: #2e3440;
     --secondary-color: #f2cd86;
     --background-color: aliceblue;
+    --accent-color: #ffd27f;
     --font-family: 'Roboto', sans-serif;
-    --base-font-size: 16px;
 }
 
 body {
     background-color: var(--background-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
     font-family: var(--font-family);
-    font-size: 1rem;
-    line-height: 1.5;
 }
 
 /* HEADER */
@@ -58,6 +60,7 @@ body {
     gap: 1.5rem;
 }
 
+/* BOUTONS MENU */
 .support a {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -66,6 +69,7 @@ body {
     color: var(--secondary-color);
     text-decoration: none;
     font-size: 1.2rem;
+    white-space: nowrap;
     transition: all 0.3s ease-in-out;
 }
 

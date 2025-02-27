@@ -5,13 +5,21 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #2e3440;
+    --secondary-color: #f2cd86;
+    --background-color: aliceblue;
+    --accent-color: #ffd27f;
+    --font-family: 'Roboto', sans-serif;
+}
+
 body {
-    background-color: aliceblue;
+    background-color: var(--background-color);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
 }
 
 /* HEADER */
@@ -19,7 +27,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #2e3440;
+    background-color: var(--primary-color);
     padding: 0 2rem;
     height: 5rem;
     width: 100%;
@@ -38,7 +46,7 @@ body {
 .titre {
     font-weight: bold;
     font-size: 2.2rem;
-    color: #f2cd86;
+    color: var(--secondary-color);
     text-decoration: none;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     white-space: nowrap;
@@ -57,8 +65,8 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     background-color: transparent;
-    border: 2px solid #f2cd86;
-    color: #f2cd86;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     font-size: 1.2rem;
     white-space: nowrap;
@@ -66,8 +74,8 @@ body {
 }
 
 .support a:hover {
-    background-color: #f2cd86;
-    color: #2e3440;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .a-propos { 

@@ -9,15 +9,17 @@
     --primary-color: #2e3440;
     --secondary-color: #f2cd86;
     --background-color: aliceblue;
+    --accent-color: #ffd27f;
     --font-family: 'Roboto', sans-serif;
-    --base-font-size: 16px;
 }
 
 body {
     background-color: var(--background-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
     font-family: var(--font-family);
-    font-size: 1rem;
-    line-height: 1.5;
 }
 
 /* HEADER */
