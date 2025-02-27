@@ -95,7 +95,7 @@ body {
 /* SECTION ACTUALITÉS */
 .news-container {
     width: 80%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     background-color: white;
@@ -131,6 +131,13 @@ body {
 
 .news-item p {
     color: #333;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .read-more {
@@ -191,34 +198,35 @@ footer {
 .footer-links a:hover {
     color: #ffd27f;
 }
+
 .coming-soon {
-    background-color: #f8f8f8; /* Couleur de fond douce */
-    border: 2px solid #ff6f61; /* Bordure subtile pour attirer l'attention */
-    border-radius: 8px; /* Coins arrondis */
-    padding: 20px; /* Espace interne */
-    margin: 40px auto; /* Centrer la section et ajouter de l'espace autour */
-    max-width: 800px; /* Largeur maximale de la section */
-    text-align: center; /* Centrer le texte */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre subtile pour l'effet de profondeur */
-    transition: transform 0.3s ease-in-out; /* Transition douce pour l'effet au survol */
+    background-color: #f8f8f8;
+    border: 2px solid #ff6f61;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .coming-soon h2 {
-    font-size: 2rem; /* Taille de la police pour le titre */
-    color: #ff6f61; /* Couleur du titre */
-    margin-bottom: 10px; /* Espace sous le titre */
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-bottom: 10px;
 }
 
 .coming-soon p {
-    font-size: 1.2rem; /* Taille de la police pour le texte */
-    color: #333; /* Couleur du texte */
-    line-height: 1.6; /* Espacement entre les lignes pour une lecture facile */
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Effet de survol */
 .coming-soon:hover {
-    transform: scale(1.05); /* Agrandir légèrement la section au survol */
+    transform: scale(1.05);
 }
+
 .actudernieres {
     text-align: center;
     margin-bottom: 2rem;

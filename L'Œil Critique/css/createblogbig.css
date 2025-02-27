@@ -332,4 +332,7 @@ body {
 .introduction a:hover {
     text-decoration: underline;
 }
-
+.subtitle1 {
+    text-align: left;
+    border-width: 15rem;
+}
