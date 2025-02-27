@@ -1,0 +1,225 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2e3440;
+    --secondary-color: #f2cd86;
+    --background-color: aliceblue;
+    --font-family: 'Roboto', sans-serif;
+    --base-font-size: 16px;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 0 2rem;
+    height: 5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* LOGO */
+.logo {
+    width: 6rem;
+    height: auto;
+}
+
+/* TITRE */
+.titre {
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* MENU NAVIGATION */
+.support {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.support a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.support a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* CONTENU PRINCIPAL */
+.welcome {
+    text-align: center;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.welcome h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.welcome p {
+    color: #333;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* SECTION ACTUALITÉS */
+.news-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.news-item {
+    background-color: rgb(202, 198, 198);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease-in-out;
+    width: calc(33.333% - 1rem);
+    text-align: center;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+.news-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.news-item p {
+    color: #333;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.read-more:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .support {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .support a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .news-item {
+        width: 100%;
+    }
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.footer-links a:hover {
+    color: #ffd27f;
+}
+.coming-soon {
+    background-color: #f8f8f8; /* Couleur de fond douce */
+    border: 2px solid #ff6f61; /* Bordure subtile pour attirer l'attention */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px; /* Espace interne */
+    margin: 40px auto; /* Centrer la section et ajouter de l'espace autour */
+    max-width: 800px; /* Largeur maximale de la section */
+    text-align: center; /* Centrer le texte */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre subtile pour l'effet de profondeur */
+    transition: transform 0.3s ease-in-out; /* Transition douce pour l'effet au survol */
+}
+
+.coming-soon h2 {
+    font-size: 2rem; /* Taille de la police pour le titre */
+    color: #ff6f61; /* Couleur du titre */
+    margin-bottom: 10px; /* Espace sous le titre */
+}
+
+.coming-soon p {
+    font-size: 1.2rem; /* Taille de la police pour le texte */
+    color: #333; /* Couleur du texte */
+    line-height: 1.6; /* Espacement entre les lignes pour une lecture facile */
+}
+
+/* Effet de survol */
+.coming-soon:hover {
+    transform: scale(1.05); /* Agrandir légèrement la section au survol */
+}
+.actudernieres {
+    text-align: center;
+    margin-bottom: 2rem;
+}
