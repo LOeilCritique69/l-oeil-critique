@@ -336,3 +336,28 @@ body {
     text-align: left;
     border-width: 15rem;
 }
+
+/* Styles pour les gagnants */
+.gagnant {
+    font-weight: bold;
+    color: #e5a00d;
+    background-color: #1c1c1c; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gagnant:hover {
+    color: #fff;
+    background-color: #e5a00d;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* Ajout d'icônes pour les gagnants */
+.gagnant::before {
+    content: "🏆"; /* Icône du trophée */
+    margin-right: 5px;
+    font-size: 1.2em;
+}
