@@ -91,6 +91,18 @@ body {
 }
 
 /* CONTENU PRINCIPAL */
+
+.spoiler-warning {
+    background-color: #ffdddd;
+    color: #a94442;
+    padding: 10px;
+    border: 1px solid #a94442;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .container {
     display: flex;
     max-width: 1200px;
