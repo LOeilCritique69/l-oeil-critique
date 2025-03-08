@@ -34,9 +34,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
-}
-
-/* LOGO */
+}/* LOGO */
 .logo {
     width: 6rem;
     height: auto;
@@ -76,9 +74,7 @@ body {
 .support a:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-}
-
-/* MENTIONS LÉGALES */
+}/* MENTIONS LÉGALES */
 .mentions-legales {
     max-width: 900px;
     margin: 80px auto;
@@ -117,9 +113,7 @@ body {
 
 .mentions-legales a:hover {
     color: var(--accent-color);
-}
-
-/* FOOTER */
+}/* FOOTER */
 p {
     margin-top: 2rem;
     font-size: 1.1rem;

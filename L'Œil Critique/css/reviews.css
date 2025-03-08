@@ -34,9 +34,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
-}
-
-/* LOGO */
+}/* LOGO */
 .logo {
     width: 6rem;
     height: auto;
@@ -79,12 +77,12 @@ body {
 }
 
 .welcome-message {
-    background-color: #f8f8f8; /* Fond sobre et élégant */
-    border: 2px solid #f39c12; /* Bordure subtile en orange */
+    background-color: #f8f8f8;
+    border: 2px solid #f39c12;
     border-radius: 10px;
     padding: 1rem;
     font-size: 1.1rem;
-    color: #333; /* Texte lisible et professionnel */
+    color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,9 +98,7 @@ body {
 
 .welcome-message a:hover {
     text-decoration: underline;
-}
-
-/* SECTION TITLES */
+}/* SECTION TITLES */
 .section-title {
     text-align: center;
     font-size: 2rem;
@@ -178,9 +174,7 @@ body {
 .read-more:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-}
-
-/* FOOTER */
+}/* FOOTER */
 footer {
     text-align: center;
     padding: 2rem 0;

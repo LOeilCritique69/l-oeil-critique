@@ -1,10 +1,4 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* --- RESET ET VARIABLES --- */
 :root {
     --primary-color: #2e3440;
     --secondary-color: #f2cd86;
@@ -13,39 +7,42 @@
     --font-family: 'Roboto', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--background-color);
+    font-family: var(--font-family);
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
-    font-family: var(--font-family);
 }
 
-/* HEADER */
+/* --- HEADER --- */
 .header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-color);
     padding: 0 2rem;
     height: 5rem;
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
 }
 
-/* LOGO */
 .logo {
     width: 6rem;
     height: auto;
 }
 
-/* TITRE */
 .titre {
-    font-weight: bold;
     font-size: 2.2rem;
+    font-weight: bold;
     color: var(--secondary-color);
     text-decoration: none;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -54,17 +51,15 @@ body {
     text-align: center;
 }
 
-/* MENU NAVIGATION */
+/* --- NAVIGATION --- */
 .support {
     display: flex;
     gap: 1.5rem;
 }
 
-/* BOUTONS MENU */
 .support a {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: transparent;
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
     text-decoration: none;
@@ -78,7 +73,7 @@ body {
     color: var(--primary-color);
 }
 
-/* BIENVENUE */
+/* --- SECTION BIENVENUE --- */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -89,8 +84,7 @@ body {
         transform: translateY(0);
     }
 }
-
-/* CONTENU PRINCIPAL */
+/* --- CONTENU PRINCIPAL --- */
 .container {
     display: flex;
     max-width: 1200px;
@@ -114,7 +108,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* TITRES & TEXTES */
+/* --- TITRES ET TEXTES --- */
 .article-meta {
     color: #777;
     font-size: 14px;
@@ -177,8 +171,7 @@ blockquote {
 li {
     margin: 1rem 0 2rem 2rem;
 }
-
-/* SIDEBAR */
+/* --- SIDEBAR --- */
 .sidebar h3 {
     margin-bottom: 15px;
 }
@@ -200,7 +193,7 @@ li {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* FILMS */
+/* --- FILMS --- */
 .film {
     border: 1px solid #ccc;
     padding: 1em;
@@ -225,7 +218,7 @@ li {
     margin-bottom: 1em;
 }
 
-/* PIED DE PAGE */
+/* --- PIED DE PAGE --- */
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -240,62 +233,96 @@ footer {
 }
 
 .footer-links a {
-    color: #f2cd86;
+    color: var(--secondary-color);
     text-decoration: none;
     margin: 0 1rem;
 }
 
 .footer-links a:hover {
-    color: #ffd27f;
+    color: var(--accent-color);
 }
 
-/* AMÉLIORATIONS GLOBALES */
+/* --- AMÉLIORATIONS GLOBALES --- */
 body {
     font-size: 16px;
 }
+h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+}
 
-/* Responsive */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 1rem;
-        height: auto; /* Ajuste la hauteur du header sur mobile */
-    }
+.article-title {
+    font-size: 1.8rem;
+}
 
-    .support {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
+.titre-sous-image {
+    font-size: 1.4rem;
+}
 
-    .main-content, .sidebar {
-        padding: 15px;
-        margin-right: 0;
-    }
+.footer-links {
+    font-size: 1rem;
+}
 
-    .sidebar {
-        margin-top: 20px;
-    }
+.film h3 {
+    font-size: 1.2em;
+}
 
-    h2 {
-        font-size: 1.5rem;
-        margin: 2rem 0;
-    }
 
-    /* Ajustement des tailles des titres et des blocs */
-    .article-title {
-        font-size: 1.8rem;
-    }
+/* --- SECTION INTRODUCTION --- */
+.introduction {
+margin-bottom: 20px;
+}
 
-    .titre-sous-image {
-        font-size: 1.4rem;
-    }
+.introduction h2 {
+font-size: 1.8em;
+margin-bottom: 10px;
+border-left: 5px solid #f2cd86;
+padding-left: 10px;
+}
 
-    .footer-links {
-        font-size: 1rem;
-    }
+.introduction p {
+font-size: 1.1rem;
+line-height: 1.6;
+margin-bottom: 15px;
+text-align: justify;
+}
 
-    .film h3 {
-        font-size: 1.2em;
-    }
+.introduction a {
+color: #f2cd86;
+text-decoration: none;
+}
+
+.introduction a:hover {
+text-decoration: underline;
+}
+
+/* --- SOUS-TITRE --- */
+.subtitle1 {
+text-align: left;
+border-width: 15rem;
+}
+
+/* --- STYLES POUR LES GAGNANTS --- */
+.gagnant {
+font-weight: bold;
+color: #e5a00d;
+background-color: #1c1c1c;
+padding: 5px 10px;
+border-radius: 5px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease;
+}
+
+.gagnant:hover {
+color: #fff;
+background-color: #e5a00d;
+cursor: pointer;
+transform: scale(1.05);
+}
+
+/* --- ICÔNES POUR LES GAGNANTS --- */
+.gagnant::before {
+content: ""; /* Icône du trophée */
+margin-right: 5px;
+font-size: 1.2em;
 }

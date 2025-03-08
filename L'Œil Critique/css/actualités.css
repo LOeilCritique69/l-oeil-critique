@@ -1,10 +1,4 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* --- RESET ET VARIABLES --- */
 :root {
     --primary-color: #2e3440;
     --secondary-color: #f2cd86;
@@ -13,39 +7,42 @@
     --font-family: 'Roboto', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--background-color);
+    font-family: var(--font-family);
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
-    font-family: var(--font-family);
 }
 
-/* HEADER */
+/* --- HEADER --- */
 .header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-color);
     padding: 0 2rem;
     height: 5rem;
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
 }
 
-/* LOGO */
 .logo {
     width: 6rem;
     height: auto;
 }
 
-/* TITRE */
 .titre {
-    font-weight: bold;
     font-size: 2.2rem;
+    font-weight: bold;
     color: var(--secondary-color);
     text-decoration: none;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -54,17 +51,15 @@ body {
     text-align: center;
 }
 
-/* MENU NAVIGATION */
+/* --- NAVIGATION --- */
 .support {
     display: flex;
     gap: 1.5rem;
 }
 
-/* BOUTONS MENU */
 .support a {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: transparent;
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
     text-decoration: none;
@@ -78,6 +73,7 @@ body {
     color: var(--primary-color);
 }
 
+/* --- TITRES DE SECTIONS --- */
 .titrealaune,
 .titre-derniere-actu {
     text-align: center;
@@ -87,7 +83,7 @@ body {
     background-color: var(--primary-color);
 }
 
-/* IMAGE & ARTICLE */
+/* --- ARTICLES PRINCIPAUX --- */
 .image-link {
     display: inline-block;
     text-decoration: none;
@@ -104,7 +100,6 @@ body {
     margin-top: 3rem;
 }
 
-/* Modification des tailles des images */
 .image-positionnee {
     margin-left: 0.5rem;
     width: 100%;
@@ -120,7 +115,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-/* ACTUALITÉS */
+/* --- DERNIÈRES ACTUALITÉS --- */
 .dernieres-actus {
     display: flex;
     flex-wrap: wrap;
@@ -157,64 +152,13 @@ body {
     color: #333;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    /* Barre de navigation */
-    .header {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 1rem;
-    }
-
-    .support {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .support a {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Ajustements des articles */
-    .article {
-        flex-direction: column;
-        gap: 2rem;
-        width: 100%;
-    }
-
-    .image-positionnee {
-        max-width: 100%;
-    }
-
-    .dernieres-actus {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dernieres-actus article {
-        width: 90%;
-    }
-
-    .titrealaune,
-    .titre-derniere-actu {
-        font-size: 1.5rem;
-        margin: 3rem 0;
-    }
-
-    /* Réduction des tailles de texte pour mobile */
-    .titre {
-        font-size: 1.8rem;
-    }
-}
-
+/* --- PARAGRAPHES GÉNÉRAUX --- */
 p {
     margin-top: 2rem;
     font-size: 1.1rem;
 }
 
-/* FOOTER */
+/* --- FOOTER --- */
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -236,4 +180,57 @@ footer {
 
 .footer-links a:hover {
     color: #ffd27f;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    /* Header responsive */
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    /* Navigation responsive */
+    .support {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .support a {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Articles principaux responsive */
+    .article {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .image-positionnee {
+        max-width: 100%;
+    }
+
+    /* Dernières actualités responsive */
+    .dernieres-actus {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dernieres-actus article {
+        width: 90%;
+    }
+
+    /* Titres responsive */
+    .titrealaune,
+    .titre-derniere-actu {
+        font-size: 1.5rem;
+        margin: 3rem 0;
+    }
+
+    .titre {
+        font-size: 1.8rem;
+    }
 }
