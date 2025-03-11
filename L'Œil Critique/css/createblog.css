@@ -102,6 +102,7 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 15px;
+    width: 100%; /* Ajouté pour s'assurer que le conteneur prend toute la largeur */
 }
 
 .main-content {
@@ -110,6 +111,7 @@ body {
     padding: 30px;
     margin-right: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ajouté pour assurer que le contenu principal occupe toute la largeur sur mobile */
 }
 
 .sidebar {
@@ -118,6 +120,28 @@ body {
     padding: 20px;
     margin-right: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ajouté pour rendre la sidebar responsive */
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.sidebar .widget {
+    margin-bottom: 20px;
+}
+
+.sidebar .widget img {
+    margin-top: 4rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.sidebar a {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* --- TITRES ET TEXTES --- */
@@ -184,28 +208,6 @@ li {
     margin: 1rem 0 2rem 2rem;
 }
 
-/* --- SIDEBAR --- */
-.sidebar h3 {
-    margin-bottom: 15px;
-}
-
-.sidebar .widget {
-    margin-bottom: 20px;
-}
-
-.sidebar .widget img {
-    margin-top: 4rem;
-    max-width: 100%;
-    height: auto;
-}
-
-.sidebar a {
-    font-size: 20px;
-    color: #000;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 /* --- FILMS --- */
 .film {
     border: 1px solid #ccc;
@@ -257,20 +259,18 @@ body {
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    /* Header responsive */
     .header {
         flex-direction: column;
         padding: 1rem;
+        height: auto;
     }
 
-    /* Navigation responsive */
     .support {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
     }
 
-    /* Contenu principal responsive */
     .container {
         flex-direction: column;
     }
@@ -279,40 +279,30 @@ body {
     .sidebar {
         padding: 15px;
         margin-right: 0;
-        margin-left: 0;
     }
 
     .sidebar {
         margin-top: 20px;
     }
 
-    /* Titres responsive */
     h2 {
         font-size: 1.5rem;
         margin: 2rem 0;
-    }
-
-    /* Mise en forme des articles responsive */
-    .article-meta {
-        font-size: 12px;
     }
 
     .article-title {
         font-size: 1.8rem;
     }
 
-    /* Réduire les espaces dans la sidebar responsive */
-    .sidebar h3 {
-        font-size: 1.3rem;
-    }
-
-    /* Titre et texte dans les sections responsive */
-    .titre-tendances,
-    .titre-actu {
-        font-size: 1.5rem;
-    }
-
     .titre-sous-image {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .footer-links {
+        font-size: 1rem;
+    }
+
+    .film h3 {
+        font-size: 1.2em;
     }
 }

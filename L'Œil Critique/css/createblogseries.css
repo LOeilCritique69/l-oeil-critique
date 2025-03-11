@@ -326,3 +326,53 @@ content: ""; /* Icône du trophée */
 margin-right: 5px;
 font-size: 1.2em;
 }
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .support {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content,
+    .sidebar {
+        padding: 15px;
+        margin-right: 0;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    .titre-sous-image {
+        font-size: 1.4rem;
+    }
+
+    .footer-links {
+        font-size: 1rem;
+    }
+
+    .film h3 {
+        font-size: 1.2em;
+    }
+}

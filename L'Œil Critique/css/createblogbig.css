@@ -253,20 +253,18 @@ body {
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    /* Header responsive */
     .header {
         flex-direction: column;
         padding: 1rem;
+        height: auto;
     }
 
-    /* Navigation responsive */
     .support {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
     }
 
-    /* Contenu principal responsive */
     .container {
         flex-direction: column;
     }
@@ -275,41 +273,31 @@ body {
     .sidebar {
         padding: 15px;
         margin-right: 0;
-        margin-left: 0;
     }
 
     .sidebar {
         margin-top: 20px;
     }
 
-    /* Titres responsive */
-    h2, .introduction h2 {
+    h2 {
         font-size: 1.5rem;
         margin: 2rem 0;
-    }
-
-    /* Mise en forme des articles responsive */
-    .article-meta {
-        font-size: 12px;
     }
 
     .article-title {
         font-size: 1.8rem;
     }
 
-    /* Réduire les espaces dans la sidebar responsive */
-    .sidebar h3 {
-        font-size: 1.3rem;
-    }
-
-    /* Titre et texte dans les sections responsive */
-    .titre-tendances,
-    .titre-actu {
-        font-size: 1.5rem;
-    }
-
     .titre-sous-image {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .footer-links {
+        font-size: 1rem;
+    }
+
+    .film h3 {
+        font-size: 1.2em;
     }
 }
 
