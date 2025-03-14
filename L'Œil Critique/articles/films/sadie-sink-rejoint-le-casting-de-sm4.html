@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
+    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
+    <title>Sadie Sink rejoint Spider-Man 4</title>
+    <link rel="stylesheet" href="../../css/createblogseries.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="Tools/logo_chef_doeuvre_processed.jpg" alt="logo du site" class="logo">
+            <a href="../../../index.html" class="titre">L'Œil Critique</a>
+            <div class="support">
+                <a href="../../films.html" class="cote">Films</a>
+                <a href="../../series.html" class="cote">Séries</a>
+                <a href="../../actualités.html" class="cote">Actualités</a>
+                <a href="../../reviews.html" class="cote">Reviews</a>
+                <a href="../../A_propos.html" class="cote">À Propos</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h2 class="article-title">Une actrice de Stranger Things rejoint le casting du prochain film Spider-Man en 2027 !</h2>
+            <p class="article-meta">Publié le 14 Mars 2025 par Yanis</p>
+
+            <div class="article-image">
+                <img src="Tools/spider-man-4-sadie-sinks-mystery-role-opposite-tom-holland-reportedly-revealed---spoilers-ab216813.jpg" alt="Logo de l'article">
+            </div>
+            <div class="article-content">
+                <p>Le prochain film <em>Spider-Man 4</em>, prévu pour 2027, continue d’alimenter les rumeurs et les attentes des fans. Après le succès de <em>No Way Home</em>, de nombreuses théories circulent sur l’orientation que prendra ce nouvel opus. Il est fortement suggéré que le film adoptera une approche multiverselle, dans la lignée des récents projets du MCU. De plus, on sait déjà que Zendaya et Jacob Batalon reprendront leurs rôles respectifs de MJ et Ned Leeds, mais avec une présence réduite. L’histoire suivra un Peter Parker désormais étudiant à l’université, évoluant dans un monde post-<em>No Way Home</em> et s'inscrivant chronologiquement entre les événements des films <em>Avengers: The Kang Dynasty</em> et <em>Avengers: Secret Wars</em>.</p>
+                
+                <p>Un élément clé de ce <em>Spider-Man 4</em> sera l’introduction potentielle d’un nouvel intérêt amoureux pour Peter Parker. Parmi les candidates les plus probables, on retrouve Felicia Hardy, alias Black Cat, et Gwen Stacy, des personnages emblématiques de l’univers du Tisseur.</p>
+                
+                <h2>Sadie Sink rejoint le casting !</h2>
+                
+                <p>C’est désormais officiel : Sadie Sink, l’actrice révélée par <em>Stranger Things</em>, <em>The Whale</em> et la trilogie <em>Fear Street</em>, rejoint le casting de <em>Spider-Man 4</em>. Si son rôle n’a pas encore été confirmé, plusieurs spéculations émergent déjà. Elle pourrait incarner une Mary Jane Watson provenant d’un autre univers, une nouvelle Gwen Stacy ou, plus surprenant encore, une introduction de Jean Grey dans le MCU. L’actrice, qui a su briller dans des rôles dramatiques et intenses, pourrait ainsi offrir une nouvelle dynamique à l’univers de Spider-Man.</p>
+                <img src="Tools/sadie-tomholland.jpg" alt="Sadie Sink" class="image2">
+
+                <p>En parallèle, Sadie Sink sera également à l’affiche de la très attendue saison 5 de <em>Stranger Things</em>, qui sortira cette année. De quoi bien occuper son agenda avant de rejoindre officiellement l’univers Marvel !</p>
+                
+                <h2>Un tournage imminent et une annonce à la Comic-Con 2025 ?</h2>
+                
+                <p>Actuellement, le script de <em>Spider-Man 4</em> est en phase de finalisation, et le tournage débutera une fois que Tom Holland aura terminé celui de <em>The Odyssey</em>, le prochain film de Christopher Nolan. Si tout se déroule comme prévu, la production devrait commencer dès le début de l’été 2025.</p>
+                
+                <p>Par ailleurs, une annonce officielle du casting complet pourrait avoir lieu lors de la Comic-Con 2025, un événement que les fans attendent avec impatience. Marvel Studios pourrait en profiter pour dévoiler de nouvelles informations sur l’intrigue et confirmer les rôles des nouvelles recrues.</p>
+                
+                <h2>Une attente insoutenable pour les fans !</h2>
+                
+                <p>Avec toutes ces informations et rumeurs, <em>Spider-Man 4</em> s’annonce comme un film crucial pour l’avenir du MCU. L’arrivée de Sadie Sink dans le casting est une excellente nouvelle qui ne fait qu’accroître l’enthousiasme des fans. En attendant d’en savoir plus, une chose est sûre : j’ai hâte de découvrir ce film en salles !</p>
+                
+                <p>➡️ <strong>À lire aussi :</strong> <a href="Marvel-Studios-victime-d-une-grosse-fuite.html">Marvel victime d'une fuite massive : Avengers Secret Wars, Doomsday, et bien plus encore !</a></p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="titre-tendances">Les tendances</h3>
+                <ul id="tendances-list">
+                    <!-- Les tendances seront chargées ici -->
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+</body>
+<script>
+    fetch('tendances.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.sidebar .widget ul').innerHTML = data;
+        })
+        .catch(error => console.error('Erreur de chargement des tendances:', error));
+</script>
+</html>
