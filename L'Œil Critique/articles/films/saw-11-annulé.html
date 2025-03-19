@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
+    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
+    <title>Annulation de Saw 11</title>
+    <link rel="stylesheet" href="../../css/createblog.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="Tools/logo_chef_doeuvre_processed.jpg" alt="logo du site" class="logo">
+            <a href="../../../index.html" class="titre">L'Œil Critique</a>
+            <div class="support">
+                <a href="../../films.html" class="cote">Films</a>
+                <a href="../../series.html" class="cote">Séries</a>
+                <a href="../../actualités.html" class="cote">Actualités</a>
+                <a href="../../reviews.html" class="cote">Reviews</a>
+                <a href="../../A_propos.html" class="cote">À Propos</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h2 class="article-title">Saw 11 annulé : la saga à l'arrêt ?</h2>
+            <p class="article-meta">Publié le 19 mars 2025 par Yanis</p>
+
+            <div class="article-image">
+                <img src="Tools/saw-11-annule-et-la-saga-en-peril-que-se-passe-t-il-avec-la-franchise-culte-dhorreur-.png.webp" alt="Saw 11 annulé">
+            </div>
+
+            <div class="article-content">
+                <p>Prévu pour octobre 2025, <strong>Saw 11</strong> a été officiellement annulé suite à de graves conflits en coulisses. Une décision qui pourrait bien mettre en péril l’avenir de la saga horrifique.</p>
+                
+                <h2>Une saga en difficulté</h2>
+                <p>Depuis 2004, la franchise <strong>Saw</strong> s’est imposée comme un phénomène du cinéma d’horreur avec des suites toujours plus tordues. Malgré l’échec de <em>Spirale : L’Héritage de Saw</em> (2021), qui a peiné à rentabiliser son budget, le succès de <em>Saw X</em> en 2023 (125 millions de dollars au box-office) avait relancé l’enthousiasme des fans.</p>
+                
+                <h2>Des tensions internes explosives</h2>
+                <p>Selon <em>Bloody Disgusting</em>, un conflit interne entre producteurs aurait causé l’arrêt du projet. Une source anonyme affirme :<br>
+                <blockquote>« C’est complètement mort. C’est 100% terminé. Ça fait presque un an maintenant. »</blockquote>
+                </p>
+                <p>Les scénaristes Patrick Melton et Marcus Dunstan avaient soumis un script au printemps 2024, mais depuis, plus aucun retour de la part des producteurs. Melton explique :</p>
+                <blockquote>
+                    <p>« Il y a des tensions au sein de Lionsgate. Ce n’est pas une question créative, mais un conflit de gestion. Ils n’arrivent pas à se mettre d’accord. »</p>
+                </blockquote>
+                <img src="Tools/chefdesaw11.webp" alt="Le chef de Saw 11" class="image2">
+                
+                <h2>Quel avenir pour la franchise Saw ?</h2>
+                <p>Si cette annulation marque un coup d’arrêt, il est difficile d’imaginer que Lionsgate abandonne définitivement la franchise. Avec plus d’un milliard de dollars générés en vingt ans, <strong>Saw</strong> reste une mine d’or.</p>
+                <p>Patrick Melton laisse d’ailleurs entendre qu’une autre version de <em>Saw 11</em> pourrait voir le jour :
+                <blockquote>
+                    <p>« Nous avions une histoire forte et actuelle, qui mériterait d’exister. Elle rappelle <em>Saw VI</em>, avec un message puissant sur la colère et l’injustice. »</p>
+                </blockquote>
+                </p>
+                <p>Faut-il donc s’attendre à un reboot ou à un changement d’équipe ? Une chose est sûre, John Kramer n’a peut-être pas dit son dernier mot.</p>
+                <p>➡️ <strong>À lire aussi :</strong> <a href="Marvel-Studios-victime-d-une-grosse-fuite.html">Marvel victime d'une fuite massive : Avengers Secret Wars, Doomsday, et bien plus encore !</a></p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="titre-tendances">Les tendances</h3>
+                <ul id="tendances-list">
+                    <!-- Les tendances seront chargées ici -->
+                </ul>
+            </div>
+        </aside>              
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+</body>
+<script>
+    fetch('tendances.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.sidebar .widget ul').innerHTML = data;
+        })
+        .catch(error => console.error('Erreur de chargement des tendances:', error));
+</script>
+</html>
