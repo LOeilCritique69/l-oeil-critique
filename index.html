@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
     <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
-    <link rel="shortcut icon" href="L'Œil Critique/logo_chef_doeuvre_processed copy.jpg" type="image/x-icon" class="logo">
+    <link rel="shortcut icon" href="L'Œil Critique/logo_chef_doeuvre_processed copy.jpg" type="image/x-icon">
     <title>L'Œil Critique</title>
     <link rel="stylesheet" href="L'Œil Critique/css/chef_d_oeuvre.css">
 </head>
 <body>
     <header>
         <div class="header">
-            <img src="L'Œil Critique/logo_chef_doeuvre_processed copy.jpg" alt="Logo du site L'Œil Critique" class="logo">
-            <a href="index.html" class="titre">L'Œil Critique</a>
+            <img src="L'Œil Critique/logo_chef_doeuvre_processed copy.jpg" alt="Logo" class="logo">
+            <a href="L'Œil Critique/index.html" class="titre">L'Œil Critique</a>
             <nav class="support">
                 <a href="L'Œil Critique/films.html">Films</a>
                 <a href="L'Œil Critique/series.html">Séries</a>
@@ -25,12 +25,38 @@
     </header>
 
     <main>
-        <div class="welcome">
+        
+        <section class="welcome">
             <h1>Bienvenue sur L'Œil Critique ! 🎥</h1>
-            <h2>Votre source incontournable pour suivre toutes les actualités du cinéma !</h2>
-            <h3>Restez à jour avec les dernières sorties, événements et nouveautés du grand écran.</h3>
-        </div>
+            <p>Suivez les dernières sorties, événements et nouveautés du grand écran.</p>
+        </section>
 
+       
+        <section class="slider">
+            <h1 class="actualites">À LA UNE</h1>
+            <div class="slider-container">
+                <div class="slider-item">
+                    <img src="L'Œil Critique/articles/films/Tools/saw-11-annule-et-la-saga-en-peril-que-se-passe-t-il-avec-la-franchise-culte-dhorreur-.png.webp" alt="Film à la une">
+                    <h3>Saw 11 annulé et la saga en péril !</h3>
+                    <p>Prévu pour octobre 2025, Saw 11 a été officiellement annulé suite à de graves conflits en coulisses. Une décision qui pourrait bien mettre en péril l’avenir de la saga horrifique.</p>
+                    <a href="L'Œil Critique/articles/films/saw-11-annulé.html" class="btn">Lire l'article</a>
+                </div>
+                <div class="slider-item">
+                    <img src="L'Œil Critique/articles/reviews/tools/flow-critique-630x280.jpg.webp" alt="Critique">
+                    <h3>La Critique de Flow</h3>
+                    <p>*Flow* est une fable poétique et sensorielle qui, en l'absence totale de dialogues, parvient à captiver par la puissance de son animation et de sa mise en scène. Une œuvre contemplative qui évoque aussi bien la survie que la résilience face à un monde en mutation.</p>
+                    <a href="L'Œil Critique/articles/reviews/films/critique-flow.html" class="btn">Voir la série</a>
+                </div>
+                <div class="slider-item">
+                    <img src="L'Œil Critique/articles/bigactualités/tools/oscars-2025-860x484.jpg" alt="Oscar 2025">
+                    <h3>Les gagnants des Oscars 2025</h3>
+                    <p>Les films en lice pour les prix les plus prestigieux du cinéma mondial.</p>
+                    <a href="L'Œil Critique/articles/bigactualités/oscar-2025-gagnants..html" class="btn">Voir les gagnants</a>
+                </div>
+            </div>
+        </section>
+
+        
         <section class="actualites-section">
             <h1 class="actualites">ACTUALITÉS</h1>
             <div class="news">
@@ -40,6 +66,7 @@
             </div>
         </section>
 
+        
         <section class="critique-section">
             <h1 class="actualites">LE COIN CRITIQUE</h1>
             <div class="news">
@@ -57,5 +84,25 @@
         </div>
         <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
     </footer>
+
+    <!-- Script pour le slider -->
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.slider-item');
+        const totalItems = items.length;
+
+        function showSlide(index) {
+            items.forEach(item => item.style.display = 'none');
+            items[index].style.display = 'block';
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 5000);
+        showSlide(currentIndex);
+    </script>
 </body>
 </html>
