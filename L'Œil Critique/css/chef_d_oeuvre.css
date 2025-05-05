@@ -121,6 +121,7 @@ body {
     gap: 2rem;
     flex-wrap: wrap;
     margin: 2rem;
+    align-items: flex-end;
 }
 
 .actu {
@@ -136,6 +137,7 @@ body {
     border-radius: 0.5rem;
     border: 2px solid var(--secondary-color);
     transition: all 0.3s ease-in-out;
+    text-align: center;
 }
 
 .actu:hover {
@@ -144,6 +146,30 @@ body {
     transform: scale(1.05);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* --- ÉTIQUETTE NOUVEAU --- */
+.nouveau-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -0.5rem;
+}
+
+.nouveau {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    background-color: crimson;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: clignote 1.2s infinite;
+    box-shadow: 0 0 5px crimson;
+    position: relative;
+    top: -0.5rem;
+}
+
 
 /* --- PIED DE PAGE --- */
 footer {
@@ -171,20 +197,17 @@ footer {
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    /* Header responsive */
     .header {
         flex-direction: column;
         height: auto;
         padding: 1rem;
     }
 
-    /* Titre responsive */
     .titre {
         font-size: 1.8rem;
         margin: 1rem 0;
     }
 
-    /* Navigation responsive */
     .support {
         flex-direction: column;
         align-items: center;
@@ -194,13 +217,11 @@ footer {
         margin: 0.5rem 0;
     }
 
-    /* Bienvenue responsive */
     .welcome {
         margin: 1rem;
         padding: 1rem;
     }
 
-    /* Actualités responsive */
     .news {
         flex-direction: column;
         align-items: center;
@@ -210,6 +231,10 @@ footer {
         height: 10rem;
         width: 10rem;
         margin: 1rem 0;
+    }
+
+    .nouveau-bloc {
+        margin-top: 0;
     }
 }
 
@@ -272,3 +297,39 @@ footer {
 .slider-item:first-child {
     display: block;
 }
+
+.nouveau-bloc {
+    position: relative;
+    display: inline-block;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.nouveau-label {
+    position: absolute;
+    top: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: crimson;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: clignote 1.2s infinite;
+    z-index: 10;
+}
+
+@keyframes clignote {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+

@@ -1,10 +1,4 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* --- RESET ET VARIABLES --- */
 :root {
     --primary-color: #2e3440;
     --secondary-color: #f2cd86;
@@ -13,37 +7,44 @@
     --font-family: 'Roboto', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--background-color);
+    font-family: var(--font-family);
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
-    font-family: var(--font-family);
 }
 
-/* HEADER */
+/* --- HEADER --- */
 .header {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-color);
-    padding: 0 2rem;
-    height: 5rem;
-    width: 100%;
-    max-width: 1200px;
+    padding: 1rem 2rem;
     margin: 0 auto;
     border-radius: 10px;
-}/* LOGO */
+    width: 100%;
+    max-width: 1200px;
+    gap: 1rem;
+}
+
 .logo {
     width: 6rem;
     height: auto;
 }
 
-/* TITRE */
 .titre {
-    font-weight: bold;
     font-size: 2.2rem;
+    font-weight: bold;
     color: var(--secondary-color);
     text-decoration: none;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -52,17 +53,15 @@ body {
     text-align: center;
 }
 
-/* MENU NAVIGATION */
+/* --- NAVIGATION --- */
 .support {
     display: flex;
     gap: 1.5rem;
 }
 
-/* BOUTONS MENU */
 .support a {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background-color: transparent;
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
     text-decoration: none;
@@ -74,7 +73,7 @@ body {
 .support a:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-}/* MENTIONS LÉGALES */
+}
 .mentions-legales {
     max-width: 900px;
     margin: 80px auto;
