@@ -73,15 +73,70 @@ body {
     color: var(--primary-color);
 }
 
-/* --- TITRES DE SECTIONS --- */
-.titrealaune,
-.titre-derniere-actu {
+/* --- À LA UNE --- */
+.featured-news {
+    margin-top: 1rem;
+    padding: 3rem;
     text-align: center;
+}
+
+.titre-a-la-une {
+    margin-top: 0.1rem;
     font-size: 2rem;
-    margin: 5rem 0 2rem;
+    margin-bottom: 0.1rem;
     color: var(--secondary-color);
     background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
+
+.a-la-une {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.featured-item {
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    width: 30%;
+    padding: 1rem;
+    text-align: left;
+}
+
+.featured-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.featured-item h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.featured-item a {
+    font-size: 1.4rem;
+    text-decoration: dashed;
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.featured-item a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- RÉPONSE MOBILE --- */
+@media (max-width: 768px) {
+    .featured-item {
+        width: 100%;
+    }
+}
+
 
 /* --- ARTICLES PRINCIPAUX --- */
 .image-link {
@@ -233,4 +288,8 @@ footer {
     .titre {
         font-size: 1.8rem;
     }
+}
+
+p {
+    color: white;
 }
