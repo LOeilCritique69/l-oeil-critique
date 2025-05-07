@@ -3,7 +3,7 @@
 **L'Œil Critique** is a personal web project focused on delivering honest, sharp, and insightful reviews and news about movies and TV series. Designed and coded from scratch as part of my final project in the "Bac Pro Systèmes Numériques", this site reflects both my passion for cinema and my technical skills in web development.
 
 ## 🌐 Website
-You can visit the live version here: [https://your-github-username.github.io](https://your-github-username.github.io)
+You can visit the live version here: [(https://your-github-username.github.io)](https://loeilcritique69.github.io/l-oeil-critique/)
 
 ## 📌 Features
 - HTML5 & CSS3 only (no frameworks)
