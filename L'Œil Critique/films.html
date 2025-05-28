@@ -3,192 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
-    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
-    <link rel="shortcut icon" href="logo_chef_doeuvre_processed copy.jpg" type="image/x-icon" class="logo">
-    <title>L'Œil Critique | Films</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/actualités.css">
-</head>
+    <meta name="description" content="Découvrez les dernières actualités cinématographiques, les films à l'affiche et les nouveautés du grand écran sur L'Œil Critique.">
+    <meta name="keywords" content="actualités films, cinéma, nouveautés cinéma, films à l'affiche, critiques de films, actualités hollywood">
+    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+    <title>Films - L'Œil Critique : Actualités Cinéma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
+    </head>
 <body>
-    <!-- HEADER -->
     <header>
-        <div class="header">
-            <img src="logo_chef_doeuvre_processed copy.jpg" alt="Logo du site L'Œil Critique" class="logo">
-            <a href="../index.html" class="titre">L'Œil Critique</a>
-            <nav class="support">
-                <a href="films.html">Films</a>
+        <div class="header-content">
+            <a href="../index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+                <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+            </a>
+            <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
+            <nav class="main-nav" aria-label="Navigation principale du site">
+                <a href="films.html" class="active">Films</a>
                 <a href="series.html">Séries</a>
                 <a href="actualités.html">Actualités</a>
                 <a href="reviews.html">Reviews</a>
+                <a href="bande-annonces.html" class="new-item">
+                    <span class="new-label">NOUVEAU</span>
+                    Bandes-Annonces
+                </a>
                 <a href="A_propos.html">À Propos</a>
             </nav>
+            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main>
-        <!-- SECTION À LA UNE -->
-        <section class="featured-news">
-            <h1 class="titre-a-la-une">À La Une</h1>
-            <div class="a-la-une">
-                <article class="featured-item">
-                    <img src="articles/films/Tools/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Hunger Games 6">
-                    <h3>Hunger Games 6 : Sunrise on the Reaping - Un préquel centré sur Haymitch Abernathy</h3>
-                    <p>Le prochain film <em>Hunger Games 6 : Sunrise on the Reaping</em>, prévu pour le 20 novembre 2026, se concentre sur la jeunesse de <strong>Haymitch Abernathy</strong>.</p>
-                    <a href="articles/films/hunger-games-6-prequel-casting.html" target="_blank">Lire plus</a>
+        <section class="page-intro-section">
+            <h2 class="page-title">Actualités Films</h2>
+            <p class="page-description">Toutes les dernières informations, annonces et rumeurs du monde du cinéma. Restez connecté aux films qui font l'actualité !</p>
+        </section>
+
+        <section class="main-news-section">
+            <h2 class="section-title">À LA UNE</h2>
+            <div class="news-grid main-news-grid">
+                <article class="news-item main-news-item">
+                    <img src="assets/img/films/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Hunger Games 6" />
+                    <h3>Hunger Games 6 : <em>Sunrise on the Reaping</em> - Un préquel centré sur Haymitch Abernathy!</h3>
+                    <p>Le prochain film Hunger Games 6 : <em>Sunrise on the Reaping</em>, prévu pour le 20 novembre 2026, se concentre sur la jeunesse de Haymitch Abernathy, le mentor emblématique de Katniss Everdeen.</p>
+                    <a href="articles/films/hunger-games-6-prequel-casting.html" class="btn" target="_blank">Lire l'article</a>
                 </article>
-                <article class="featured-item">
-                    <img src="articles/films/Tools/Avengers-Doomsday-poster.webp" alt="Mission Impossible 8">
-                    <h3>Avengers : Doomsday - Marvel frappe fort avec un casting monumental</h3>
+
+                <article class="news-item main-news-item">
+                    <img src="assets/img/films/Vingadores-Doomsday.jpg.webp" alt="Avengers Doomsday" />
+                    <h3>Avengers : <em>Doomsday</em> - Marvel frappe fort avec un casting monumental</h3>
                     <p>Après plusieurs mois de spéculations, le studio a levé le voile sur un casting aussi impressionnant qu’ambitieux, confirmant le retour de figures emblématiques du MCU tout en introduisant de nouveaux personnages majeurs.</p>
-                    <a href="articles/films/Avengers-Doomsday-une-annonce-de-casting.html" target="_blank">Lire plus</a>
+                    <a href="articles/films/Avengers-Doomsday-une-annonce-de-casting.html" class="btn" target="_blank">Lire l'article</a>
                 </article>
-                <article class="featured-item">
-                    <img src="articles/films/Tools/Sony-CinemaCon-schedule-Spider-Man.webp" alt="Sony CinemaCon">
+
+                <article class="news-item main-news-item">
+                    <img src="assets/img/films/Sony-CinemaCon-schedule-Spider-Man.webp" alt="Sony cinemacon" />
                     <h3>Les plus grosses annonces de Sony lors du CinemaCon !</h3>
-                    <p>Le CinemaCon 2025 promet des révélations époustouflantes, avec des annonces majeures pour des films comme <em>Spider-Man</em>, <em>Jumanji</em>, et <em>Karaté Kid</em>.</p>
-                    <a href="articles/films/sony-panel-cinemacon.html" target="_blank"><strong>Lire Plus</strong></a>
+                    <p>Le CinemaCon 2025 promet des révélations pour des films très attendus comme Spider-Man, Jumanji, et Karaté Kid, entre autres surprises.</p>
+                    <a href="articles/films/sony-panel-cinemacon.html" class="btn" target="_blank">Lire l'article</a>
                 </article>
             </div>
         </section>
-        
 
-        <!-- SECTION DERNIÈRES ACTUALITÉS -->
-        <section>
-            <article>
-                <section class="featured-news">
-                    <h1 class="titre-a-la-une">Dernières Actualités</h1>
-                </section>
-                <div class="dernieres-actus">
-                    <article>
-                        <img src="articles/films/Tools/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Hunger Games 6" />
-                        <h3>Hunger Games 6 : Sunrise on the Reaping - Un préquel centré sur Haymitch Abernathy</h3>
-                        <p>Le prochain film <em>Hunger Games 6 : Sunrise on the Reaping</em>, prévu pour le 20 novembre 2026, se concentre sur la jeunesse de <strong>Haymitch Abernathy</strong>, le mentor emblématique de Katniss Everdeen. Ce film préquel nous plonge dans les événements des 50ᵉ Hunger Games, aussi connus sous le nom de <strong>Second Quarter Quell</strong>, qui se déroulent 24 ans avant l'histoire de Katniss.</p>
-                        <a href="articles/films/hunger-games-6-prequel-casting.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/mission impossible 8.webp" alt="Mission Impossible 8" />
-                        <h3>Mission: Impossible 8 : Le film le plus long de la saga avec Tom Cruise</h3>
-                        <p><strong>Mission: Impossible – The Final Reckoning</strong>, prévu pour le 21 mai 2025 en France, s'annonce comme le film le plus long de la saga. Avec une durée estimée à 2 heures et 51 minutes, il surpasserait ainsi <em>Mission: Impossible – Dead Reckoning</em> (2h43) et <em>Mission: Impossible – Fallout</em> (2h28) .</p>
-                        <a href="articles/films/mission-impossible-8-le-plus-long-de-la-sage.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/Sony-CinemaCon-schedule-Spider-Man.webp" alt="Sony cinemacon" />
-                        <h3>Les plus grosses annonces de Sony lors du CinemaCon ! Avec du Jumanji, Karaté Kid, Spider-man et bien plus encore !</h3>
-                        <p>Le CinemaCon 2025 est enfin là, et cet événement promet d'être l'un des plus riches en actualités, surpassant les éditions précédentes. Les grands studios comme Disney, Warner Bros., Paramount, Lionsgate et Universal sont toujours présents, mais cette année, Sony Pictures revient et Amazon MGM fait son apparition.</p>
-                        <a href="articles/films/sony-panel-cinemacon.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/Vingadores-Doomsday.jpg.webp" alt="Avengers Doomsday" />
-                        <h3>Avengers : Doomsday - Marvel frappe fort avec un casting monumental</h3>
-                        <p>Après plusieurs mois de spéculations, le studio a levé le voile sur un casting aussi impressionnant qu’ambitieux, confirmant le retour de figures emblématiques du MCU tout en introduisant de nouveaux personnages majeurs.</p>
-                        <a href="articles/films/Avengers-Doomsday-une-annonce-de-casting.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/mortal-kombat-031525-20afdacfaae24c0ba5c5cc6a685d4662.webp" alt="Mortal Combat 2" />
-                        <h3>Mortal Kombat 2 : Johnny Cage rejoint l’arène !</h3>
-                        <p>La suite tant attendue du film Mortal Kombat débarque en octobre 2025, et avec elle un personnage iconique : Johnny Cage, incarné par Karl Urban. Après un premier volet riche en action, ce second film nous plonge encore plus dans l’univers chaotique du tournoi Mortal Kombat et de ses champions.</p>
-                        <a href="articles/films/mortal-combat-2.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/saw-11-annule-et-la-saga-en-peril-que-se-passe-t-il-avec-la-franchise-culte-dhorreur-.png.webp" alt="Saw 11" />
-                        <h3>Saw 11 annulé : la saga à l'arrêt ?</h3>
-                        <p>Prévu pour octobre 2025, Saw 11 a été officiellement annulé suite à de graves conflits en coulisses. Une décision qui pourrait bien mettre en péril l’avenir de la saga horrifique..</p>
-                        <a href="articles/films/saw-11-annulé.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/spider-man-4-sadie-sinks-mystery-role-opposite-tom-holland-reportedly-revealed---spoilers-ab216813.jpg" alt="Spider-man 4 Sadie Sink" />
-                        <h3>Une actrice de Stranger Things rejoint le casting du prochain film Spider-Man en 2027 !</h3>
-                        <p>Le prochain film Spider-Man 4, prévu pour 2027, continue d’alimenter les rumeurs et les attentes des fans. Après le succès de No Way Home, de nombreuses théories circulent sur l’orientation que prendra ce nouvel opus.</p>
-                        <a href="articles/films/sadie-sink-rejoint-le-casting-de-sm4.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/doom-avengers.webp" alt="Secret Wars" />
-                        <h3>Marvel victime d'une fuite massive : Avengers Secret Wars, Doomsday, et bien plus encore !</h3>
-                        <p>Marvel vient de subir l'une des plus grandes fuites de son histoire, révélant des informations clés sur la Phase 6 du MCU, incluant Avengers: Doomsday, Secret Wars, World War Hulk.</p>
-                        <a href="articles/films/Marvel-Studios-victime-d-une-grosse-fuite.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/shrek.webp" alt="Ravage" />
-                        <h3>Shrek 5 : un teaser déçevant et visuellement moche.</h3>
-                        <p>DreamWorks a enfin dévoilé un premier aperçu de Shrek 5, prévu pour le 23 décembre 2026. Mais ce teaser a laissé une impression mitigée...</p>
-                        <a href="articles/films/shrek-5-le-trailer-est-décevant.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/ravage-enfin-une-date-de-sortie-et-un-teaser-qui-tabasse-pour-le-film-netflix-avec-tom-hardy.jpg.webp" alt="Ravage" />
-                        <h3>Ravage</h3>
-                        <p>Le prochain film de Tom Hardy arrive sur Netflix !</p>
-                        <a href="articles/films/ravage-netflix.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/john-wick-chapitre-4-photo-keanu-reeves-une-1483019-630x296.jpg" alt="John Wick" />
-                        <h3>John Wick 5</h3>
-                        <p>Un nouveau acteur de John Wick pour l'une des plus grandes franchises du cinéma ?</p>
-                        <a href="articles/films/John-wick-5-ce-qu-on-sait-sur-la-suite.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/spielberg-son-film-dovnis-est-repousse-avec-une-nouvelle-date-de-sortie-annoncee--1260x708.jpg.webp" alt="Spielberg" />
-                        <h3>Spielberg : son film d’OVNIs est repoussé</h3>
-                        <p>Le prochain film de Spielberg sur les OVNIs a une nouvelle date de sortie.</p>
-                        <a href="articles/films/Le-prochain-film-de-spielberg-sur-les-ovnis-repoussé.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/matt-damon.png" alt="The Odyssey" />
-                        <h3>The Odyssey</h3>
-                        <p>Une première image dévoile Ulysse, et on ne s'attendais pas à cet acteur !</p>
-                        <a href="articles/films/Une-premiere-image-du-nouveau-film-de-crhistopher-nolan-the-odyssey.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/avatar-3-logowebp.webp" alt="Avatar 3" />
-                        <h3>Avatar 3 : Fire And Ash</h3>
-                        <p>Nouvelles images de la « bataille du siècle » qui nous attend.</p>
-                        <a href="articles/films/Avatar-3-la-bataille-du-siecle.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/4-fantastiques-logo.png" alt="Les 4 Fantastiques" />
-                        <h3>Les 4 Fantastiques : First Steps</h3>
-                        <p>Le premier teaser des 4 Fantastiques enfin dévoilé !</p>
-                        <a href="articles/films/Les-4-Fantastiques-se-devoilent-sur-un-teaser.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/Jurassic-World-Renaissance.webp" alt="Jurassic World Renaissance" />
-                        <h3>Jurassic World Renaissance</h3>
-                        <p>Un renouveau prometteur pour la saga Jurassic World.</p>
-                        <a href="articles/films/Jurassic-World-Renaissance-Toutes-les-Infos.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/peaky-blidners-630x354.jpg.webp" alt="Peaky Blinders" />
-                        <h3>Peaky Blinders : Le Film</h3>
-                        <p>Cillian Murphy revient en Thomas Shelby dans un film Netflix.</p>
-                        <a href="articles/films/Des-nouvelles-infos-sur-le-film-Peaky-Blinders.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/thunderbolts-une-bande-annonce-sur-le-ton-de-lhumour-pour-le-suicide-squad-de-marvel.jpg.webp" alt="Thunderbolts*" />
-                        <h3>Thunderbolts*</h3>
-                        <p>La bande-annonce dévoile un ennemi inattendu !</p>
-                        <a href="articles/films/Thunderbolts-la-bande-annonce-dévoile-un-ennemi-inattendu.html" target="_blank">Lire plus</a>
-                    </article>
-                    <article>
-                        <img src="articles/films/Tools/captain-america-brave-new-world-poster-closeup.webp" alt="Captain America 4" />
-                        <h3>Tout ce qu'il faut savoir sur Captain America Brave New World</h3>
-                        <p><strong>"Captain America: Brave New World"</strong> est l'un des films les plus attendus de la <strong>phase cinq</strong> du <strong>Marvel Cinematic Universe (MCU)</strong>.Cet article présente une analyse approfondie des informations disponibles sur le film, y compris les <strong>bandes-annonces</strong>, le <strong>casting</strong>, le <strong>synopsis</strong> et les implications pour le <strong>MCU</strong>.</p>
-                        <a href="articles/films/captain-america-4-brave-new-world-infos-sur-le-film.html" target="_blank">Lire plus</a>
-                    </article>
-                     
-                </div>
-            </article>
+        <section class="latest-news-section">
+            <h2 class="section-title">DERNIÈRES ACTUALITÉS</h2>
+            <div class="news-grid latest-news-grid">
+                <article class="news-item">
+                    <img src="assets/img/films/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Hunger Games 6" />
+                    <h3>Hunger Games 6 : Sunrise on the Reaping - Un préquel centré sur Haymitch Abernathy</h3>
+                    <p>Le prochain film <em>Hunger Games 6 : Sunrise on the Reaping</em>, prévu pour le 20 novembre 2026, se concentre sur la jeunesse de <strong>Haymitch Abernathy</strong>, le mentor emblématique de Katniss Everdeen. Ce film préquel nous plonge dans les événements des 50ᵉ Hunger Games, aussi connus sous le nom de <strong>Second Quarter Quell</strong>, qui se déroulent 24 ans avant l'histoire de Katniss.</p>
+                    <a href="articles/films/hunger-games-6-prequel-casting.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/mission-impossible-dead-reckoning-partie-1-photo-une-comparaisons-uncharted-1483915-630x295.png" alt="Mission Impossible 8" />
+                    <h3>Mission: Impossible 8 : Le film le plus long de la saga avec Tom Cruise</h3>
+                    <p><strong>Mission: Impossible – The Final Reckoning</strong>, prévu pour le 21 mai 2025 en France, s'annonce comme le film le plus long de la saga. Avec une durée estimée à 2 heures et 51 minutes, il surpasserait ainsi <em>Mission: Impossible – Dead Reckoning</em> (2h43) et <em>Mission: Impossible – Fallout</em> (2h28).</p>
+                    <a href="articles/films/mission-impossible-8-le-plus-long-de-la-sage.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/Sony-CinemaCon-schedule-Spider-Man.webp" alt="Sony cinemacon" />
+                    <h3>Les plus grosses annonces de Sony lors du CinemaCon ! Avec du Jumanji, Karaté Kid, Spider-man et bien plus encore !</h3>
+                    <p>Le CinemaCon 2025 est enfin là, et cet événement promet d'être l'un des plus riches en actualités, surpassant les éditions précédentes. Les grands studios comme Disney, Warner Bros., Paramount, Lionsgate et Universal sont toujours présents, mais cette année, Sony Pictures revient et Amazon MGM fait son apparition.</p>
+                    <a href="articles/films/sony-panel-cinemacon.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/Vingadores-Doomsday.jpg.webp" alt="Avengers Doomsday" />
+                    <h3>Avengers : Doomsday - Marvel frappe fort avec un casting monumental</h3>
+                    <p>Après plusieurs mois de spéculations, le studio a levé le voile sur un casting aussi impressionnant qu’ambitieux, confirmant le retour de figures emblématiques du MCU tout en introduisant de nouveaux personnages majeurs.</p>
+                    <a href="articles/films/Avengers-Doomsday-une-annonce-de-casting.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/mortal-kombat-031525-20afdacfaae24c0ba5c5cc6a685d4662.webp" alt="Mortal Combat 2" />
+                    <h3>Mortal Kombat 2 : Johnny Cage rejoint l’arène !</h3>
+                    <p>La suite tant attendue du film Mortal Kombat débarque en octobre 2025, et avec elle un personnage iconique : Johnny Cage, incarné par Karl Urban. Après un premier volet riche en action, ce second film nous plonge encore plus dans l’univers chaotique du tournoi Mortal Kombat et de ses champions.</p>
+                    <a href="articles/films/mortal-combat-2.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/saw-11-annule-et-la-saga-en-peril-que-se-passe-t-il-avec-la-franchise-culte-dhorreur-.png.webp" alt="Saw 11" />
+                    <h3>Saw 11 annulé : la saga à l'arrêt ?</h3>
+                    <p>Prévu pour octobre 2025, Saw 11 a été officiellement annulé suite à de graves conflits en coulisses. Une décision qui pourrait bien mettre en péril l’avenir de la saga horrifique..</p>
+                    <a href="articles/films/saw-11-annulé.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/spider-man-4-sadie-sinks-mystery-role-opposite-tom-holland-reportedly-revealed---spoilers-ab216813.jpg" alt="Spider-man 4 Sadie Sink" />
+                    <h3>Une actrice de Stranger Things rejoint le casting du prochain film Spider-Man en 2027 !</h3>
+                    <p>Le prochain film Spider-Man 4, prévu pour 2027, continue d’alimenter les rumeurs et les attentes des fans. Après le succès de No Way Home, de nombreuses théories circulent sur l’orientation que prendra ce nouvel opus.</p>
+                    <a href="articles/films/sadie-sink-rejoint-le-casting-de-sm4.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/doom-avengers.webp" alt="Secret Wars" />
+                    <h3>Marvel victime d'une fuite massive : Avengers Secret Wars, Doomsday, et bien plus encore !</h3>
+                    <p>Marvel vient de subir l'une des plus grandes fuites de son histoire, révélant des informations clés sur la Phase 6 du MCU, incluant Avengers: Doomsday, Secret Wars, World War Hulk.</p>
+                    <a href="articles/films/Marvel-Studios-victime-d-une-grosse-fuite.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/shrek.webp" alt="Shrek 5" />
+                    <h3>Shrek 5 : un teaser décevant et visuellement moche.</h3>
+                    <p>DreamWorks a enfin dévoilé un premier aperçu de Shrek 5, prévu pour le 23 décembre 2026. Mais ce teaser a laissé une impression mitigée...</p>
+                    <a href="articles/films/shrek-5-le-trailer-est-décevant.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/ravage-enfin-une-date-de-sortie-et-un-teaser-qui-tabasse-pour-le-film-netflix-avec-tom-hardy.jpg.webp" alt="Ravage" />
+                    <h3>Ravage</h3>
+                    <p>Le prochain film de Tom Hardy arrive sur Netflix !</p>
+                    <a href="articles/films/ravage-netflix.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/john-wick-chapitre-4-photo-keanu-reeves-une-1483019-630x296.jpg" alt="John Wick" />
+                    <h3>John Wick 5</h3>
+                    <p>Un nouveau acteur de John Wick pour l'une des plus grandes franchises du cinéma ?</p>
+                    <a href="articles/films/John-wick-5-ce-qu-on-sait-sur-la-suite.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/spielberg-son-film-dovnis-est-repousse-avec-une-nouvelle-date-de-sortie-annoncee--1260x708.jpg.webp" alt="Spielberg" />
+                    <h3>Spielberg : son film d’OVNIs est repoussé</h3>
+                    <p>Le prochain film de Spielberg sur les OVNIs a une nouvelle date de sortie.</p>
+                    <a href="articles/films/Le-prochain-film-de-spielberg-sur-les-ovnis-repoussé.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/matt-damon.png" alt="The Odyssey" />
+                    <h3>The Odyssey</h3>
+                    <p>Une première image dévoile Ulysse, et on ne s'attendais pas à cet acteur !</p>
+                    <a href="articles/films/Une-premiere-image-du-nouveau-film-de-crhistopher-nolan-the-odyssey.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/avatar-3-logowebp.webp" alt="Avatar 3" />
+                    <h3>Avatar 3 : Fire And Ash</h3>
+                    <p>Nouvelles images de la « bataille du siècle » qui nous attend.</p>
+                    <a href="articles/films/Avatar-3-la-bataille-du-siecle.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/4-fantastiques-logo.png" alt="Les 4 Fantastiques" />
+                    <h3>Les 4 Fantastiques : First Steps</h3>
+                    <p>Le premier teaser des 4 Fantastiques enfin dévoilé !</p>
+                    <a href="articles/films/Les-4-Fantastiques-se-devoilent-sur-un-teaser.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/Jurassic-World-Renaissance.webp" alt="Jurassic World Renaissance" />
+                    <h3>Jurassic World Renaissance</h3>
+                    <p>Un renouveau prometteur pour la saga Jurassic World.</p>
+                    <a href="articles/films/Jurassic-World-Renaissance-Toutes-les-Infos.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/peaky-blidners-630x354.jpg.webp" alt="Peaky Blinders" />
+                    <h3>Peaky Blinders : Le Film</h3>
+                    <p>Cillian Murphy revient en Thomas Shelby dans un film Netflix.</p>
+                    <a href="articles/films/Des-nouvelles-infos-sur-le-film-Peaky-Blinders.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/thunderbolts-une-bande-annonce-sur-le-ton-de-lhumour-pour-le-suicide-squad-de-marvel.jpg.webp" alt="Thunderbolts*" />
+                    <h3>Thunderbolts*</h3>
+                    <p>La bande-annonce dévoile un ennemi inattendu !</p>
+                    <a href="articles/films/Thunderbolts-la-bande-annonce-dévoile-un-ennemi-inattendu.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+                <article class="news-item">
+                    <img src="assets/img/films/captain-america-brave-new-world-poster-closeup.webp" alt="Captain America 4" />
+                    <h3>Tout ce qu'il faut savoir sur Captain America Brave New World</h3>
+                    <p><strong>"Captain America: Brave New World"</strong> est l'un des films les plus attendus de la <strong>phase cinq</strong> du <strong>Marvel Cinematic Universe (MCU)</strong>. Cet article présente une analyse approfondie des informations disponibles sur le film, y compris les <strong>bandes-annonces</strong>, le <strong>casting</strong>, le <strong>synopsis</strong> et les implications pour le <strong>MCU</strong>.</p>
+                    <a href="articles/films/captain-america-4-brave-new-world-infos-sur-le-film.html" class="btn" target="_blank">Lire plus</a>
+                </article>
+            </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="footer-links">
-            <a href="mentions_légales.html">Mentions légales</a>
-            <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
-            <a href="contact.html">Contact</a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mentions_légales.html">Mentions légales</a>
+                <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
         </div>
-        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
     </footer>
-</body>
+
+    <script src="assets/js/main.js"></script>
+    </body>
 </html>

@@ -3,120 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
-    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
-    <link rel="shortcut icon" href="L'Œil Critique/logo_chef_doeuvre_processed copy.jpg" type="image/x-icon">
-    <title>L'Œil Critique</title>
+    <meta name="description" content="L'Œil Critique : Votre source incontournable pour les actualités, critiques et nouveautés cinéma et séries.">
+    <meta name="keywords" content="cinéma, films, séries, critiques, actualités, bandes-annonces, reviews, avis, blockbusters, streaming">
+    <link rel="icon" href="L'Œil Critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+    <title>Accueil - L'Œil Critique : Actualités & Critiques Cinéma et Séries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="L'Œil Critique/css/chef_d_oeuvre.css">
 </head>
 <body>
     <header>
-        <div class="header">
-            <img src="L'Œil Critique/logo_chef_doeuvre_processed copy.jpg" alt="Logo" class="logo">
-            <a href="index.html" class="titre">L'Œil Critique</a>
-            <nav class="support">
+        <div class="header-content">
+            <a href="index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+                <img src="L'Œil Critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+            </a>
+            <h1 class="site-title"><a href="index.html" class="site-title-link">L'Œil Critique</a></h1>
+            <nav class="main-nav" aria-label="Navigation principale du site">
                 <a href="L'Œil Critique/films.html">Films</a>
                 <a href="L'Œil Critique/series.html">Séries</a>
                 <a href="L'Œil Critique/actualités.html">Actualités</a>
                 <a href="L'Œil Critique/reviews.html">Reviews</a>
-                <a href="L'Œil Critique/A_propos.html">À Propos</a>
+                <a href="L'Œil Critique/a_propos.html">À Propos</a>
             </nav>
+            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
     <main>
-        <section class="welcome">
-            <h1>Bienvenue sur L'Œil Critique ! </h1>
-            <p>Suivez les dernières sorties, événements et nouveautés du grand écran.</p>
+        <section class="welcome-section">
+            <h2 class="welcome-title">Bienvenue sur L'Œil Critique !</h2>
+            <p class="welcome-text">Suivez les dernières sorties, événements et nouveautés du grand écran.</p>
         </section>
 
-        <section class="slider">
-            <h1 class="actualites">À LA UNE</h1>
+        <section class="slider-section">
+            <h2 class="section-title">À LA UNE</h2>
             <div class="slider-container">
-
-
-                <div class="slider-item">
-                    <img src="L'Œil Critique/articles/films/Tools/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Film à la une">
-                    <h3>Hunger Games 6 : Sunrise on the Reaping - Un préquel centré sur Haymitch Abernathy!</h3>
-                    <p>Le prochain film Hunger Games 6 : Sunrise on the Reaping, prévu pour le 20 novembre 2026, se concentre sur la jeunesse de Haymitch Abernathy, le mentor emblématique de Katniss Everdeen.</p>
+                <article class="slider-item">
+                    <img src="L'Œil Critique/assets/img/films/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Affiche du film Hunger Games 6: Sunrise on the Reaping">
+                    <h3>Hunger Games 6 : <em>Sunrise on the Reaping</em> - Un préquel centré sur Haymitch Abernathy!</h3>
+                    <p>Le prochain film Hunger Games 6 : <em>Sunrise on the Reaping</em>, se concentre sur la jeunesse de Haymitch Abernathy.</p>
                     <a href="L'Œil Critique/articles/films/hunger-games-6-prequel-casting.html" class="btn">Lire l'article</a>
-                </div>
+                </article>
 
-
-                <div class="slider-item">
-                    <img src="L'Œil Critique/articles/reviews/tools/logosinners.jpg" alt="Critique">
-                    <h3>La Critique de Sinners</h3>
+                <article class="slider-item">
+                    <img src="L'Œil Critique/assets/img/reviews/logosinners.jpg" alt="Affiche du film Sinners">
+                    <h3>La Critique de <em>Sinners</em></h3>
                     <p><em>Sinners</em> vous plonge dans un univers où le passé rencontre l'invisible. Ce film vous tiendra en haleine jusqu'à la dernière seconde.</p>
                     <a href="L'Œil Critique/articles/reviews/films/sinners-critique.html" class="btn">Lire la critique</a>
-                </div>
+                </article>
 
-
-                <div class="slider-item">
-                    <img src="L'Œil Critique/articles/reviews/tools/thunderbolts logo.avif" alt="Critique">
-                    <h3>La Critique de Thunderbolts</h3>
-                    <p><em>Thunderbolts</em>, une équipe de personnages fascinants qui apporte une nouvelle dimension au MCU, entre lutte intérieure et quête de rédemption.</p>
+                <article class="slider-item">
+                    <img src="L'Œil Critique/assets/img/reviews/thunderbolts_logo.avif" alt="Logo du film Thunderbolts">
+                    <h3>La Critique de <em>Thunderbolts</em></h3>
+                    <p><em>Thunderbolts</em>, apporte une nouvelle dimension au MCU, entre lutte intérieure et qu'te de rédemption.</p>
                     <a href="L'Œil Critique/articles/reviews/films/Thunderbolts-critique.html" class="btn">Lire la critique</a>
-                </div>
+                </article>
 
-
-                <div class="slider-item">
-                    <img src="L'Œil Critique/articles/bigactualités/tools/trump-hollywood.webp" alt="donald-trump-contre-le-cinéma-etranger">
+                <article class="slider-item">
+                    <img src="L'Œil Critique/assets/img/bigactualités/trump-hollywood.webp" alt="Donald Trump en face d'une scène de film">
                     <h3>Trump contre le cinéma mondial : vers une guerre culturelle ?</h3>
-                    <p>Donald Trump relance sa campagne avec une annonce choc : une taxe de 100 % sur tous les films produits hors des États-Unis. Une décision qui pourrait bouleverser l’industrie du cinéma mondial.</p>
-                    <a href="L'Œil Critique/articles/bigactualités/donald-trump-contre-le-cinéma-etranger.html" class="btn">Lire l'article </a>
-                </div>
+                    <p>Donald Trump annonce une taxe de 100 % sur tous les films produits hors des États-Unis. Cela bouleverser l’industrie du cinéma mondial.</p>
+                    <a href="L'Œil Critique/articles/bigactualités/donald-trump-contre-le-cinéma-etranger.html" class="btn">Lire l'article</a>
+                </article>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-prev" aria-label="Article précédent">‹</button>
+                <div class="slider-dots"></div>
+                <button class="slider-next" aria-label="Article suivant">›</button>
             </div>
         </section>
 
-        <section class="actualites-section">
-            <h1 class="actualites">ACTUALITÉS</h1>
-            <div class="news">
-                <a href="L'Œil Critique/actualités.html" class="actu">Grandes Actualités</a>
-                <a href="L'Œil Critique/films.html" class="actu">Films</a>
-                <a href="L'Œil Critique/series.html" class="actu">Séries</a>
-                <div class="nouveau-bloc">
-                    <span class="nouveau-label">NOUVEAU</span>
-                    <a href="L'Œil Critique/bande-annonces.html" class="actu">Bandes-Annonces</a>
-                </div>
+        <section class="category-links-section">
+            <h2 class="section-title">Actualités par Catégorie</h2>
+            <div class="category-links-container">
+                <a href="L'Œil Critique/actualités.html" class="category-link">Grandes Actualités</a>
+                <a href="L'Œil Critique/films.html" class="category-link">Films</a>
+                <a href="L'Œil Critique/series.html" class="category-link">Séries</a>
+                <a href="L'Œil Critique/bande-annonces.html" class="category-link new-item">
+                    <span class="new-label">NOUVEAU</span>
+                    Bandes-Annonces
+                </a>
             </div>
         </section>
 
-        <section class="critique-section">
-            <h1 class="actualites">LE COIN CRITIQUE</h1>
-            <div class="news">
-                <a href="L'Œil Critique/reviews.html" class="actu">Reviews</a>
-                <a href="L'Œil Critique/A_propos.html" class="actu">À Propos</a>
+        <section class="review-links-section">
+            <h2 class="section-title">Le Coin Critique</h2>
+            <div class="category-links-container">
+                <a href="L'Œil Critique/reviews.html" class="category-link">Reviews</a>
+                <a href="L'Œil Critique/a_propos.html" class="category-link">À Propos</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="L'Œil Critique/mentions_légales.html">Mentions légales</a>
-            <a href="L'Œil Critique/politique-de-confidentialité.html">Politique de confidentialité</a>
-            <a href="L'Œil Critique/contact.html">Contact</a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="L'Œil Critique/mentions_légales.html">Mentions légales</a>
+                <a href="L'Œil Critique/politique-de-confidentialité.html">Politique de confidentialité</a>
+                <a href="L'Œil Critique/contact.html">Contact</a>
+            </div>
+            <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
         </div>
-        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
     </footer>
 
-    <!-- Script pour le slider -->
-    <script>
-        let currentIndex = 0;
-        const items = document.querySelectorAll('.slider-item');
-        const totalItems = items.length;
-
-        function showSlide(index) {
-            items.forEach(item => item.style.display = 'none');
-            items[index].style.display = 'block';
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalItems;
-            showSlide(currentIndex);
-        }
-
-        setInterval(nextSlide, 5000);
-        showSlide(currentIndex);
-    </script>
+    <script src="L'Œil Critique/assets/js/slider.js"></script>
+    <script src="L'Œil Critique/assets/js/main.js"></script>
 </body>
 </html>

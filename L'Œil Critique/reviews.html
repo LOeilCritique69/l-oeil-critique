@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
-    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
-    <link rel="shortcut icon" href="logo_chef_doeuvre_processed copy.jpg" type="image/x-icon" class="logo">
-
-        <title>L'Œil Critique | Reviews</title>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reviews.css">
-</head>
+    <meta name="description" content="Retrouvez toutes les actualités majeures du cinéma et des séries, y compris les événements comme les Oscars et les Golden Globes.">
+    <meta name="keywords" content="actualités cinéma, actualités séries, Oscars, Golden Globes, Marvel, festivals de cinéma, industrie du film">
+    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+    <title>Reviews - L'Œil Critique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
+    </head>
 <body>
     <header>
-        <div class="header">
-            <img src="logo_chef_doeuvre_processed copy.jpg" alt="Logo du site L'Œil Critique" class="logo">
-            <a href="../index.html" class="titre">L'Œil Critique</a>
-            <nav class="support">
+        <div class="header-content"> <a href="../index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+                <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+            </a>
+            <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
+            <nav class="main-nav" aria-label="Navigation principale du site">
                 <a href="films.html">Films</a>
                 <a href="series.html">Séries</a>
                 <a href="actualités.html">Actualités</a>
-                <a href="reviews.html">Reviews</a>
+                <a href="reviews.html" class="active">Reviews</a>
+                <a href="bande-annonces.html" class="new-item">
+                    <span class="new-label">NOUVEAU</span>
+                    Bandes-Annonces
+                </a>
                 <a href="A_propos.html">À Propos</a>
             </nav>
+            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
     <main>
-
-        <div class="welcome-message">
-            <p>Si une critique ne figure pas encore sur le site, elle est peut-être disponible sur mon <a href="https://letterboxd.com/Oni_le_chan/" target="_blank">compte Letterboxd</a>, où vous trouverez mes notes et évaluations sans critiques détaillées.  
-            Concernant les films récemment sortis, la rédaction des critiques demande du temps afin de proposer une analyse approfondie et de qualité. Certains films étant plus prioritaires que d'autres, leur publication peut varier, mais il peut s’écouler jusqu’à un mois avant leur mise en ligne. Merci pour votre patience !</p>
-        </div>
-                
-        
-        
-        <section class="reviews-section">
-            <h1 class="section-title">Nos Reviews</h1>
+        <section class="reviews-container">
+            <h1 class="reviews-title">LES DERNIÈRES CRITIQUES</h1>
             <div class="reviews-grid">
-
                 <article class="review-card">
-                    <img src="articles/reviews/tools/thunderbolts logo.avif" alt="thunderbolts" class="review-image">
+                    <img src="assets/img/reviews/thunderbolts_logo.avif" alt="thunderbolts" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Thunderbolts</h2>
                         <p class="review-author">Par Yanis</p>
@@ -51,7 +53,7 @@
                 </article>
 
                 <article class="review-card">
-                    <img src="articles/reviews/tools/logosinners.jpg" alt="Sinners" class="review-image">
+                    <img src="assets/img/reviews/logosinners.jpg" alt="Sinners" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Sinners</h2>
                         <p class="review-author">Par Yanis</p>
@@ -62,7 +64,7 @@
                 </article>
                 
                 <article class="review-card">
-                    <img src="articles/reviews/tools/robot sauvage logo.jpeg" alt="Robot Sauvage" class="review-image">
+                    <img src="assets/img/reviews/robot sauvage logo.jpeg" alt="Robot Sauvage" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Robot Sauvage</h2>
                         <p class="review-author">Par Yanis</p>
@@ -73,7 +75,7 @@
                 </article>
 
                 <article class="review-card">
-                    <img src="articles/reviews/tools/flow-critique-630x280.jpg.webp" alt="Flow" class="review-image">
+                    <img src="assets/img/reviews/flow-critique-630x280.jpg.webp" alt="Flow" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Flow</h2>
                         <p class="review-author">Par Yanis</p>
@@ -84,7 +86,7 @@
                 </article>
                 
                 <article class="review-card">
-                    <img src="articles/reviews/tools/daredevil-born-again-1741150309.avif" alt="Daredevil Born Again" class="review-image">
+                    <img src="assets/img/reviews/daredevil-born-again-1741150309.avif" alt="Daredevil Born Again" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Daredevil: Born Again – Épisodes 1 et 2</h2>
                         <p class="review-author">Par Yanis</p>
@@ -95,7 +97,7 @@
                 </article>
 
                 <article class="review-card">
-                    <img src="articles/reviews/tools/your-friendly-neighborhood-spider-man.avif" alt="Spider-man" class="review-image">
+                    <img src="assets/img/reviews/your-friendly-neighborhood-spider-man.avif" alt="Spider-man" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Friendly Neighborhood Spider-Man</h2>
                         <p class="review-author">Par Yanis</p>
@@ -106,7 +108,7 @@
                 </article>
 
                 <article class="review-card">
-                    <img src="articles/reviews/tools/captain-america-brave-new-world-uebernimmt-anthony-mackie-alias-sam-wilson-erstmals-rolle-neuer-captain-america-425806.webp" alt="Captain America" class="review-image">
+                    <img src="assets/img/reviews/captain-america-brave-new-world-uebernimmt-anthony-mackie-alias-sam-wilson-erstmals-rolle-neuer-captain-america-425806.webp" alt="Captain America" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Captain America: Brave New World, un bon film mais inutile pour l'univers de Marvel</h2>
                         <p class="review-author">Par Yanis</p>
@@ -118,7 +120,7 @@
 
 
                 <article class="review-card">
-                    <img src="articles/reviews/tools/sonic-3-movie-trailer-logo.avif" alt="Sonic 3 logo" class="review-image">
+                    <img src="assets/img/reviews/sonic-3-movie-trailer-logo.avif" alt="Sonic 3 logo" class="review-image">
                     <div class="review-content">
                         <h2 class="review-title">Sonic 3, le meilleur de sa trilogie !</h2>
                         <p class="review-author">Par Yanis</p>
@@ -127,7 +129,8 @@
                         <a href="articles/reviews/films/Sonic-3-le-meilleur-de-sa-trilogie.html" class="read-more">Lire plus</a>
                     </div>
                 </article>
-            </div>
+
+                </div>
         </section>
     </main>
 
@@ -139,5 +142,20 @@
         </div>
         <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
     </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (burgerMenu) {
+                burgerMenu.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    burgerMenu.setAttribute('aria-expanded', mainNav.classList.contains('active'));
+                });
+            }
+        });
+    </script>
 </body>
 </html>

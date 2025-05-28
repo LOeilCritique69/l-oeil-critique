@@ -1,83 +1,10 @@
-/* --- RESET ET VARIABLES --- */
-:root {
-    --primary-color: #2e3440;
-    --secondary-color: #f2cd86;
-    --background-color: aliceblue;
-    --accent-color: #ffd27f;
-    --font-family: 'Roboto', sans-serif;
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--background-color);
-    font-family: var(--font-family);
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* --- HEADER --- */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-    padding: 0 2rem;
-    height: 5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-.logo {
-    width: 6rem;
-    height: auto;
-}
-
-.titre {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    text-decoration: none;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    white-space: nowrap;
-    flex-grow: 1;
-    text-align: center;
-}
-
-/* --- NAVIGATION --- */
-.support {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.support a {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: 2px solid var(--secondary-color);
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 1.2rem;
-    white-space: nowrap;
-    transition: all 0.3s ease-in-out;
-}
-
-.support a:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
 
 /* --- ANIMATION BIENVENUE --- */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(20px); /* L'animation part du bas */
     }
     to {
         opacity: 1;
@@ -85,82 +12,114 @@ body {
     }
 }
 
-/* --- CONTENU PRINCIPAL --- */
+/* --- CONTENU PRINCIPAL DE L'ARTICLE ET SIDEBAR --- */
 .spoiler-warning {
-    background-color: #ffdddd;
-    color: #a94442;
-    padding: 10px;
-    border: 1px solid #a94442;
-    border-radius: 5px;
+    background-color: #ffe0b2; /* Orange très clair */
+    color: #e65100; /* Orange foncé */
+    padding: 15px;
+    border: 1px solid #e65100;
+    border-radius: var(--border-radius-base);
     text-align: center;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .container {
     display: flex;
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
-    width: 100%; /* Ajouté pour s'assurer que le conteneur prend toute la largeur */
+    margin: 20px auto; /* Centre le conteneur avec un espace au-dessus et en dessous */
+    padding: 0 20px; /* Ajoute un padding horizontal pour les petits écrans */
+    width: 100%;
+    gap: 30px; /* Espace entre le contenu principal et la sidebar */
+    flex-grow: 1; /* Permet au conteneur de prendre l'espace disponible */
 }
 
 .main-content {
-    flex: 3;
+    flex: 3; /* Le contenu principal prend 3 parts d'espace */
     background: #fff;
-    padding: 30px;
-    margin-right: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ajouté pour assurer que le contenu principal occupe toute la largeur sur mobile */
+    padding: 35px; /* Espacement interne confortable */
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Ombre plus prononcée pour la profondeur */
+    animation: fadeIn 0.8s ease-out; /* Animation d'apparition au chargement */
 }
 
 .sidebar {
-    flex: 1;
-    background: #fff;
-    padding: 20px;
-    margin-right: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ajouté pour rendre la sidebar responsive */
+    flex: 1; /* La sidebar prend 1 part d'espace */
+    background: #f8f9fa; /* Un fond légèrement gris clair pour la sidebar */
+    padding: 0; /* Le padding sera géré par .widget à l'intérieur */
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Ombre légère */
 }
 
-.sidebar h3 {
-    margin-bottom: 15px;
-}
-
+/* Style des widgets dans la sidebar */
 .sidebar .widget {
-    margin-bottom: 20px;
+    background-color: #fff; /* Fond blanc pour les widgets */
+    padding: 25px;
+    border-radius: var(--border-radius-base);
+    margin-bottom: 30px; /* Espace entre les widgets */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0; /* Bordure subtile */
+    overflow: hidden; /* Empêche le contenu de déborder */
+}
+
+.sidebar .widget:last-child {
+    margin-bottom: 0; /* Pas de marge sous le dernier widget */
 }
 
 .sidebar .widget img {
-    margin-top: 4rem;
+    margin-top: 2rem; /* Ajusté */
     max-width: 100%;
     height: auto;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar a {
-    font-size: 20px;
-    color: #000;
+    font-size: 1.1rem; /* Taille de police légèrement augmentée */
+    color: var(--primary-color);
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
+    transition: color var(--transition-speed) ease;
 }
 
-/* --- TITRES ET TEXTES --- */
+.sidebar a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* --- TITRES ET TEXTES DE L'ARTICLE --- */
+.article-title {
+    font-size: 3.2rem; /* Grand titre principal pour l'impact */
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
 .article-meta {
     color: #777;
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: 0.95rem; /* Légèrement plus petit */
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #eee; /* Ligne de séparation douce */
+    padding-bottom: 15px;
 }
 
-.article-title {
-    font-size: 30px;
-    margin-bottom: 10px;
+.article-meta span {
+    margin: 0 10px; /* Espace entre les éléments de meta */
 }
 
 .titre-sous-image {
-    font-family: 'Courier New', Courier, monospace;
-    padding: 0rem;
-    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Utilise la police principale */
+    font-size: 0.9rem;
+    color: #666;
     text-align: center;
+    margin-top: -15px; /* Rapproche du bloc image */
+    margin-bottom: 25px;
+    font-style: italic;
 }
 
 .article-image img,
@@ -168,154 +127,160 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    margin: 0 auto 20px;
+    max-height: 480px; /* Limite la hauteur des images */
+    object-fit: cover; /* S'assure que l'image couvre l'espace sans déformation */
+    border-radius: var(--border-radius-base);
+    margin: 0 auto 30px; /* Centre et ajoute de l'espace en bas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
 }
 
 .article-content p,
 .film p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
     font-size: 1.1rem;
-    line-height: 1.5;
-    margin-bottom: 30px;
+    line-height: 1.8; /* Interlignage généreux pour la lisibilité */
+    margin-bottom: 1.5rem; /* Espacement constant entre les paragraphes */
+    text-align: justify; /* Justifie le texte pour un aspect professionnel */
+    color: var(--text-color-dark);
 }
 
 .titre-tendances,
 .titre-actu {
-    text-align: center;
-    border: 10px solid #f2cd86;
-    padding: 10px;
-    font-size: 1.8rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+    background-color: var(--secondary-color); /* Couleur dorée pour le fond */
+    color: var(--primary-color); /* Texte sombre sur fond doré */
+    padding: 15px 20px;
+    font-size: 1.6rem; /* Taille de police ajustée pour la sidebar */
+    margin-top: 0; /* Réinitialise le margin-top si utilisé globalement */
+    margin-bottom: 15px;
+    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0; /* Coins arrondis en haut */
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
+/* Styles pour la liste des tendances */
+#tendances-list {
+    list-style: none;
+    padding: 0 20px 20px; /* Padding interne pour la liste */
+    margin: 0;
+}
+
+#tendances-list li {
+    margin-bottom: 0;
+    border-bottom: 1px dashed #e0e0e0; /* Ligne pointillée de séparation */
+    padding: 12px 0;
+    transition: background-color var(--transition-speed) ease;
+}
+
+#tendances-list li:last-child {
+    border-bottom: none; /* Pas de ligne sous le dernier élément */
+}
+
+#tendances-list li:hover {
+    background-color: #f5f5f5; /* Changement de fond au survol */
+    cursor: pointer;
+}
+
+#tendances-list li a {
+    color: var(--text-color-dark);
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease, padding-left var(--transition-speed) ease;
+    display: block;
+    padding: 0;
+    font-weight: 500;
+}
+
+#tendances-list li a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    padding-left: 8px; /* Décalage au survol */
+}
+
+
 h2 {
-    border-left: 5px solid #f2cd86;
-    padding-left: 15px;
-    font-size: 2rem;
-    margin: 5rem 0 2rem;
+    border-left: 6px solid var(--secondary-color); /* Bordure latérale plus prononcée */
+    padding-left: 20px; /* Plus d'espace après la bordure */
+    font-size: 2.2rem; /* Taille de police légèrement augmentée */
+    margin: 4rem 0 2rem; /* Espacement autour des titres de section */
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 blockquote {
     font-family: 'Georgia', serif;
-    font-size: 1.2em;
+    font-size: 1.3em; /* Taille de police légèrement augmentée */
     font-style: italic;
     color: #555;
-    margin-bottom: 2rem;
+    margin: 2.5rem 0; /* Plus d'espace autour des citations */
+    padding: 1.5rem 2.5rem;
+    border-left: 5px solid var(--accent-color); /* Bordure d'accentuation */
+    background-color: #f9f9f9; /* Fond léger */
+    border-radius: var(--border-radius-base);
 }
 
 li {
-    margin: 1rem 0 2rem 2rem;
+    margin: 0.8rem 0 0.8rem 2rem; /* Espacement plus équilibré pour les listes */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color-dark);
 }
 
-/* --- FILMS --- */
+li strong {
+    color: var(--primary-color); /* Met en valeur les noms dans la liste de casting */
+}
+
+
+/* --- FILMS (si ces classes sont utilisées dans le contenu de l'article) --- */
 .film {
-    border: 1px solid #ccc;
-    padding: 1em;
-    margin-bottom: 1em;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-base);
+    background-color: #fcfcfc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .film h3 {
-    font-size: 1.5em;
+    font-size: 1.8em; /* Taille plus grande pour les titres de film */
     font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #f2cd86;
+    margin-bottom: 0.8em;
+    color: var(--primary-color); /* Utilise la couleur principale */
 }
 
 .intro {
     font-style: italic;
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
+    color: #555;
 }
 
 .note-importante {
     font-weight: bold;
-    color: red;
-    margin-bottom: 1em;
-}
-
-/* --- PIED DE PAGE --- */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #2e3440;
-    color: #f2cd86;
-    font-size: 0.9rem;
-}
-
-.footer-links a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin: 0 1rem;
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
+    color: #d32f2f; /* Rouge plus doux */
+    margin-bottom: 1.5em;
+    background-color: #ffcdd2; /* Fond rouge très clair */
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #d32f2f;
 }
 
 /* --- AMÉLIORATIONS GLOBALES --- */
 body {
-    font-size: 16px;
+    font-size: 16px; /* Taille de base pour tous les textes */
 }
 
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 1rem;
-        height: auto;
-    }
-
-    .support {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-    .main-content,
-    .sidebar {
-        padding: 15px;
-        margin-right: 0;
-    }
-
-    .sidebar {
-        margin-top: 20px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        margin: 2rem 0;
-    }
-
-    .article-title {
-        font-size: 1.8rem;
-    }
-
-    .titre-sous-image {
-        font-size: 1.4rem;
-    }
-
-    .footer-links {
-        font-size: 1rem;
-    }
-
-    .film h3 {
-        font-size: 1.2em;
-    }
-}
-
-
+/* Conteneur vidéo */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; 
+    padding-bottom: 56.25%; /* Ratio 16:9 */
     height: 0;
     overflow: hidden;
     max-width: 100%;
     background: #000;
-    margin-bottom: 20px; 
+    margin: 2.5rem 0; /* Espacement supérieur et inférieur */
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .video-container iframe {
@@ -324,11 +289,152 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none; /* Supprime la bordure par défaut de l'iframe */
+}
+
+/* Styles pour les tweets intégrés (si utilisés) */
+.twitter-tweet {
+    position: relative;
+    padding-bottom: 2rem;
+    margin: 2rem auto; /* Centre les tweets et ajoute de l'espace */
+    display: block; /* S'assure que le bloc prend toute la largeur disponible */
+    max-width: 550px; /* Limite la largeur pour une meilleure lisibilité */
 }
 
 
-.twitter-tweet{
-    position: relative;
-    padding-bottom: 2rem;
-    left: 7rem;
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px; /* Réduit l'espace entre le contenu et la sidebar */
+    }
+
+    .sidebar {
+        order: 2; /* Met la sidebar après le contenu principal sur mobile */
+        margin-top: 20px;
+    }
+
+    .main-content {
+        padding: 25px;
+        order: 1;
+        margin-right: 0; /* Supprime la marge droite */
+    }
+
+    .article-title {
+        font-size: 2.5rem; /* Ajuste la taille du titre */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin: 3rem 0 1.5rem;
+    }
+
+    .titre-tendances {
+        font-size: 1.4rem;
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        margin: 15px auto;
+        gap: 15px;
+    }
+
+    .main-content,
+    .sidebar {
+        padding: 20px;
+    }
+
+    .article-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .article-meta {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        margin: 2.5rem 0 1.2rem;
+        padding-left: 15px;
+    }
+
+    p, ul, blockquote {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.7;
+    }
+
+    blockquote {
+        padding: 1rem 1.5rem;
+        margin: 2rem 0;
+        font-size: 1.1em;
+    }
+
+    .article-image img,
+    .image2 {
+        max-height: 350px;
+        margin-bottom: 20px;
+    }
+
+    .titre-sous-image {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    .sidebar .widget {
+        padding: 20px;
+    }
+
+    .titre-tendances {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+
+    #tendances-list li a {
+        font-size: 0.95rem;
+    }
+
+    .video-container {
+        margin: 2rem 0;
+    }
+
+    .twitter-tweet {
+        left: 0; /* Réinitialise le décalage sur mobile */
+        max-width: 100%;
+    }
+
+    .note-importante {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        padding-left: 10px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
+
+    .titre-tendances {
+        font-size: 1.1rem;
+        padding: 8px 10px;
+    }
 }

@@ -3,161 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
-    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
-    <link rel="shortcut icon" href="logo_chef_doeuvre_processed copy.jpg" type="image/x-icon" class="logo">
-    <title>L'Œil Critique | Bandes-Annonces</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bande-annonces.css">
-</head>
+    <meta name="description" content="Retrouvez toutes les actualités majeures du cinéma et des séries, y compris les événements comme les Oscars et les Golden Globes.">
+    <meta name="keywords" content="actualités cinéma, actualités séries, Oscars, Golden Globes, Marvel, festivals de cinéma, industrie du film">
+    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+    <title>Bandes-Annonces - L'Œil Critique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
+    </head>
 <body>
-    <!-- HEADER -->
     <header>
-        <div class="header">
-            <img src="logo_chef_doeuvre_processed copy.jpg" alt="Logo du site L'Œil Critique" class="logo">
-            <a href="../index.html" class="titre">L'Œil Critique</a>
-            <nav class="support">
+        <div class="header-content">
+            <a href="../index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+                <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+            </a>
+            <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
+            <nav class="main-nav" aria-label="Navigation principale du site">
                 <a href="films.html">Films</a>
                 <a href="series.html">Séries</a>
                 <a href="actualités.html">Actualités</a>
                 <a href="reviews.html">Reviews</a>
+                <a href="bande-annonces.html" class="new-item active">
+                    <span class="new-label">NOUVEAU</span>
+                    Bandes-Annonces
+                </a>
                 <a href="A_propos.html">À Propos</a>
             </nav>
+            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
-    <!-- Section Bande Annonces -->
-    <section class="bande-annonce-container">
-        <h1 class="titre-bande-annonce">Dernières Bandes Annonces</h1>
-        <p class="maj-annonces">Dernière mise à jour : 7 Mai 2025</p>
-        <div class="grille-bandes">
+    <main>
+        <section class="bande-annonce-container">
+            <h1 class="titre-bande-annonce">LES BANDES-ANNONCES</h1>
+            <p class="maj-annonces">Dernière mise à jour : 7 Mai 2025</p>
+            <div class="grille-bandes">
+                <article class="card-bande">
+                    <span class="badge-nouveau">NOUVEAU</span>
+                    <h2>Conjuring : L'Heure du Jugement</h2>
+                    <p class="date-sortie">Sortie prévue : 10 Septembre 2025</p>
+                    <p class="ajout-site">Ajouté le : 8 Mai 2025</p>
+                    <p class="synopsis">Vera Farmiga et Patrick Wilson endossent une nouvelle fois les rôles d’Ed et Lorraine Warren, couple d’enquêteurs paranormaux, pour une toute dernière affaire.</p>
+                    <div class="video-responsive">
+                         <iframe width="1920" height="750" src="https://www.youtube.com/embed/FSAz556s0fM" title="The Conjuring: Last Rites | Official Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
 
+                <article class="card-bande">
+                    <span class="badge-nouveau">NOUVEAU</span>
+                    <h2>MARCHE OU CRÈVE</h2>
+                    <p class="date-sortie">Sortie prévue : 1 Octobre 2025</p>
+                    <p class="ajout-site">Ajouté le : 7 Mai 2025</p>
+                    <p class="synopsis">Adapté du tout premier roman de Stephen King et réalisé par Francis Lawrence (Hunger Games), The Long Walk est un thriller intense et glaçant qui pousse à une question troublante : jusqu’où seriez-vous prêt à aller ?</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/i_I1p-f2ZzU" title="MARCHE OU CRÈVE Bande Annonce VF (2025) Stephen King" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
 
-            <div class="card-bande">
-                <span class="badge-nouveau">NOUVEAU</span>
-                <h2>Conjuring : L'Heure du Jugement</h2>
-                <p class="date-sortie">Sortie prévue : 10 Septembre 2025</p>
-                <p class="ajout-site">Ajouté le : 8 Mai 2025</p>
-                <p class="synopsis">Vera Farmiga et Patrick Wilson endossent une nouvelle fois les rôles d’Ed et Lorraine Warren, couple d’enquêteurs paranormaux, pour une toute dernière affaire.</p>
-                <iframe width="1920" height="750" src="https://www.youtube.com/embed/NDHT2OfitHw" title="Conjuring : L&#39;Heure du Jugement | Teaser officiel (VF) | Patrick Wilson, Vera Farmiga" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            
+                <article class="card-bande">
+                    <span class="badge-nouveau">NOUVEAU</span>
+                    <h2>Foundation — Season 3</h2>
+                    <p class="date-sortie">Sortie prévue : 11 Juillet 2025</p>
+                    <p class="ajout-site">Ajouté le : 7 Mai 2025</p>
+                    <p class="synopsis">152 ans après la saison 2, la Fondation prospère tandis que l’Empire décline. Une menace surgit : Le Mulet, prêt à dominer la galaxie par la force et l’esprit. Une guerre se prépare, et nul n’est à l’abri.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/5Hk30iV_0bM" title="Foundation — Season 3 Official Teaser | Apple TV+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande">
+                    <span class="badge-nouveau">NOUVEAU</span>
+                    <h2>The Conjuring: Last Rites | Premier Aperçu.</h2>
+                    <p class="date-sortie">Sortie prévue : 5 Septembre 2025</p>
+                    <p class="ajout-site">Ajouté le : 7 Mai 2025</p>
+                    <p class="synopsis">Le dernier acte pour Ed et Lorraine Warren. Une bande-annonce arrive Jeudi !</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/hB56hK54m34" title="The Conjuring: Last Rites | “The Warren’s Darkest Chapter” Featurette" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande">
+                    <h2>How To Train Your Dragon | IMAX Trailer</h2>
+                    <p class="date-sortie">Sortie prévue : 23 Juin 2025</p>
+                    <p class="ajout-site">Ajouté le : 6 Mai 2025</p>
+                    <p class="synopsis">Sur l'île de Berk, Hiccup (Mason Thames), fils de Stoick, défie les traditions vikings en se liant d'amitié avec Toothless, un dragon craint, remettant en cause les croyances sur les dragons.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/tM6L3g8mCio" title="How To Train Your Dragon | IMAX Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande">
+                    <h2>TOGETHER</h2>
+                    <p class="date-sortie">Sortie prévue : 30 Juillet 2025</p>
+                    <p class="ajout-site">Ajouté le : 6 Mai 2025</p>
+                    <p class="synopsis">Tim et Millie, en couple depuis des années, s’installent à la campagne. Leur relation fragile bascule lorsqu’une force mystérieuse menace leur vie, leur amour… et leur corps.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/J_tD3j5_W6U" title="TOGETHER - Official Trailer - In Theaters July 30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+                
+                <article class="card-bande hidden-card">
+                    <h2>Squid Game Saison 3</h2>
+                    <p class="date-sortie">Sortie prévue : 27 Juin 2025</p>
+                    <p class="ajout-site">Ajouté le : 6 Mai 2025</p>
+                    <p class="synopsis">La saison 3 de *Squid Game* reprend après le chaos : Gi-hun, brisé, doit affronter des jeux encore plus mortels. Le Front Man revient, les VIPs sont là, et un traître rôde.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/Ym8WfC_m2fU" title="Squid Game S3" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande hidden-card">
+                    <h2>Highest 2 Lowest</h2>
+                    <p class="date-sortie">Sortie prévue : Prochainement en 2025</p>
+                    <p class="ajout-site">Ajouté le : 5 Mai 2025</p>
+                    <p class="synopsis">New York. Lorsqu'un magnat de la musique est la cible d'une rançon, après l'enlèvement de l'un des membres de sa famille. La vie de cette famille riche, et celle de son chauffeur, vont être bouleversées.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/oKxJ-D-YgA4" title="Highest 2 Lowest" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande hidden-card">
+                    <h2>The Smashing Machine</h2>
+                    <p class="date-sortie">Sortie prévue : 3 Octobre 2025</p>
+                    <p class="ajout-site">Ajouté le : 1 Mai 2025</p>
+                    <p class="synopsis">Dwayne Johnson est Mark Kerr, légende du MMA des années 90, surnommé « The Smashing Machine » tandis qu’Emily Blunt incarne son épouse, Dawn Staples.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/n3W-yE6-20Q" title="The Smashing Machine" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande hidden-card">
+                    <h2>Now You See Me: Now You Don’t</h2>
+                    <p class="date-sortie">Sortie prévue : Prochainement en 2025</p>
+                    <p class="ajout-site">Ajouté le : 29 Avril 2025</p>
+                    <p class="synopsis">Les Quatre Cavaliers sont de retour : Jesse Eisenberg, Woody Harrelson, Dave Franco et Isla Fisher reprennent leurs rôles, aux côtés de Mark Ruffalo et Morgan Freeman.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/x1W4hFv4kX8" title="Now You See Me 3" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande hidden-card">
+                    <h2>28 YEARS LATER</h2>
+                    <p class="date-sortie">Sortie prévue : 20 Juin 2025</p>
+                    <p class="ajout-site">Ajouté le : 18 Avril 2025</p>
+                    <p class="synopsis">28 ans après la propagation du virus de la fureur, le Royaume-Uni reste en ruines. Un jeune garçon part en quête d’un médecin pour sauver sa mère, dans un monde toujours ravagé par l’épidémie.</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/sF5_0a8qG7I" title="28 Years Later" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande hidden-card">
+                    <h2>DESTINATION FINALE 6 : BLOODLINES</h2>
+                    <p class="date-sortie">Sortie prévue : 14 Mai 2025</p>
+                    <p class="ajout-site">Ajouté le : 15 Avril 2025</p>
+                    <p class="synopsis">Hantée par un cauchemar terrifiant, Stefanie, étudiante à l’université, rentre chez elle pour briser le cycle infernal qui menace ses proches…</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/C0A74FhW01U" title="Destination Finale 6" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="card-bande hidden-card">
+                    <h2>SOUVIENS-TOI L'ÉTÉ DERNIER</h2>
+                    <p class="date-sortie">Sortie prévue : 16 Juillet 2025</p>
+                    <p class="ajout-site">Ajouté le : 12 Avril 2025</p>
+                    <p class="synopsis">Après avoir causé un accident mortel, cinq amis font un pacte pour garder le secret. Un an plus tard, un tueur les traque un par un. Pour survivre, ils doivent faire face à leur passé…</p>
+                    <div class="video-responsive">
+                         <iframe src="https://www.youtube.com/embed/s9bZ0P9t52c" title="Souviens-toi l'été dernier" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </article>
             </div>
 
-            <div class="card-bande">
-                <span class="badge-nouveau">NOUVEAU</span>
-                <h2>MARCHE OU CRÈVE</h2>
-                <p class="date-sortie">Sortie prévue : 1 Octobre 2025</p>
-                <p class="ajout-site">Ajouté le : 7 Mai 2025</p>
-                <p class="synopsis">Adapté du tout premier roman de Stephen King et réalisé par Francis Lawrence (Hunger Games), The Long Walk est un thriller intense et glaçant qui pousse à une question troublante : jusqu’où seriez-vous prêt à aller ?</p>
-                <iframe width="1861" height="757" src="https://www.youtube.com/embed/qnz0Yuvg8Xg" title="MARCHE OU CRÈVE  Bande Annonce VF (2025) Stephen King" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>           
-            </div>
-
-            <div class="card-bande">
-                <span class="badge-nouveau">NOUVEAU</span>
-                <h2>Foundation — Season 3</h2>
-                <p class="date-sortie">Sortie prévue : 11 Juillet 2025</p>
-                <p class="ajout-site">Ajouté le : 7 Mai 2025</p>
-                <p class="synopsis">152 ans après la saison 2, la Fondation prospère tandis que l’Empire décline. Une menace surgit : Le Mulet, prêt à dominer la galaxie par la force et l’esprit. Une guerre se prépare, et nul n’est à l’abri.</p>
-                <iframe width="1861" height="757" src="https://www.youtube.com/embed/5bMCpnEi4k0" title="Foundation — Season 3 Official Teaser | Apple TV+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            
-            </div>
-
-
-            <div class="card-bande">
-                <span class="badge-nouveau">NOUVEAU</span>
-                <h2>The Conjuring: Last Rites | Premier Aperçu.</h2>
-                <p class="date-sortie">Sortie prévue : 5 Septembre 2025</p>
-                <p class="ajout-site">Ajouté le : 7 Mai 2025</p>
-                <p class="synopsis">Le dernier acte pour Ed et Lorraine Warren. Une bande-annonce arrive Jeudi !</p>
-                <iframe width="1861" height="757" src="https://www.youtube.com/embed/WI7GOmpOBkk" title="The Conjuring: Last Rites | “The Warren’s Darkest Chapter” Featurette" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-            <div class="card-bande">
-                <h2>How To Train Your Dragon | IMAX Trailer</h2>
-                <p class="date-sortie">Sortie prévue : 23 Juin 2025</p>
-                <p class="ajout-site">Ajouté le : 6 Mai 2025</p>
-                <p class="synopsis">Sur l'île de Berk, Hiccup (Mason Thames), fils de Stoick, défie les traditions vikings en se liant d'amitié avec Toothless, un dragon craint, remettant en cause les croyances sur les dragons.</p>
-                <iframe width="1861" height="757" src="https://www.youtube.com/embed/OWEq2Pf8qpk" title="How To Train Your Dragon | IMAX Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-            <div class="card-bande">
-                <h2>TOGETHER</h2>
-                <p class="date-sortie">Sortie prévue : 30 Juillet 2025</p>
-                <p class="ajout-site">Ajouté le : 6 Mai 2025</p>
-                <p class="synopsis">Tim et Millie, en couple depuis des années, s’installent à la campagne. Leur relation fragile bascule lorsqu’une force mystérieuse menace leur vie, leur amour… et leur corps.</p>
-                <iframe width="1861" height="757" src="https://www.youtube.com/embed/v4Xu-jxRG5c" title="TOGETHER - Official Trailer - In Theaters July 30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-           
-
-
-
-            <!-- COTE CACHER -------------------------------------------->
-
-
-            <div class="card-bande hidden">
-                <h2>Squid Game Saison 3</h2>
-                <p class="date-sortie">Sortie prévue : 27 Juin 2025</p>
-                <p class="ajout-site">Ajouté le : 6 Mai 2025</p>
-                <p class="synopsis">La saison 3 de *Squid Game* reprend après le chaos : Gi-hun, brisé, doit affronter des jeux encore plus mortels. Le Front Man revient, les VIPs sont là, et un traître rôde.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZF0HRMmnAuI" title="Squid Game S3" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="card-bande hidden">
-                <h2>Highest 2 Lowest</h2>
-                <p class="date-sortie">Sortie prévue : Prochainement en 2025</p>
-                <p class="ajout-site">Ajouté le : 5 Mai 2025</p>
-                <p class="synopsis">New York. Lorsqu'un magnat de la musique est la cible d'une rançon, après l'enlèvement de l'un des membres de sa famille. La vie de cette famille riche, et celle de son chauffeur, vont être bouleversées.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/MZ2V8znYMSk" title="Highest 2 Lowest" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-
-            <div class="card-bande hidden">
-                <h2>The Smashing Machine</h2>
-                <p class="date-sortie">Sortie prévue : 3 Octobre 2025</p>
-                <p class="ajout-site">Ajouté le : 1 Mai 2025</p>
-                <p class="synopsis">Dwayne Johnson est Mark Kerr, légende du MMA des années 90, surnommé « The Smashing Machine » tandis qu’Emily Blunt incarne son épouse, Dawn Staples.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/aRpnP3LZ99g" title="The Smashing Machine" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-
-            <div class="card-bande hidden">
-                <h2>Now You See Me: Now You Don’t</h2>
-                <p class="date-sortie">Sortie prévue : Prochainement en 2025</p>
-                <p class="ajout-site">Ajouté le : 29 Avril 2025</p>
-                <p class="synopsis">Les Quatre Cavaliers sont de retour : Jesse Eisenberg, Woody Harrelson, Dave Franco et Isla Fisher reprennent leurs rôles, aux côtés de Mark Ruffalo et Morgan Freeman.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-E3lMRx7HRQ" title="Now You See Me 3" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <!-- 6 -->
-            <div class="card-bande hidden">
-                <h2>28 YEARS LATER</h2>
-                <p class="date-sortie">Sortie prévue : 20 Juin 2025</p>
-                <p class="ajout-site">Ajouté le : 18 Avril 2025</p>
-                <p class="synopsis">28 ans après la propagation du virus de la fureur, le Royaume-Uni reste en ruines. Un jeune garçon part en quête d’un médecin pour sauver sa mère, dans un monde toujours ravagé par l’épidémie.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/IYGG55qwQZQ" title="28 Years Later" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <!-- 7 -->
-            <div class="card-bande hidden">
-                <h2>DESTINATION FINALE 6 : BLOODLINES</h2>
-                <p class="date-sortie">Sortie prévue : 14 Mai 2025</p>
-                <p class="ajout-site">Ajouté le : 15 Avril 2025</p>
-                <p class="synopsis">Hantée par un cauchemar terrifiant, Stefanie, étudiante à l’université, rentre chez elle pour briser le cycle infernal qui menace ses proches…</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/2Dk_tQvEe3o" title="Destination Finale 6" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <!-- 8 -->
-            <div class="card-bande hidden">
-                <h2>SOUVIENS-TOI L'ÉTÉ DERNIER</h2>
-                <p class="date-sortie">Sortie prévue : 16 Juillet 2025</p>
-                <p class="ajout-site">Ajouté le : 12 Avril 2025</p>
-                <p class="synopsis">Après avoir causé un accident mortel, cinq amis font un pacte pour garder le secret. Un an plus tard, un tueur les traque un par un. Pour survivre, ils doivent faire face à leur passé…</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Tk1Sv5xhUuc" title="Souviens-toi l'été dernier" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <!-- BOUTON "VOIR PLUS" -->
-        <button id="voir-plus-btn">Voir plus</button>
-    </section>
+            <button id="voir-plus-btn">Voir plus</button>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-links">
@@ -168,11 +191,34 @@
         <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
     </footer>
 
+    <script src="assets/js/main.js"></script>
     <script>
-        document.getElementById("voir-plus-btn").addEventListener("click", function () {
-            const hiddenCards = document.querySelectorAll(".card-bande.hidden");
-            hiddenCards.forEach(card => card.classList.remove("hidden"));
-            this.style.display = "none";
+        document.addEventListener('DOMContentLoaded', function() {
+            const voirPlusBtn = document.getElementById('voir-plus-btn');
+            const allCards = document.querySelectorAll('.card-bande'); // Sélectionne toutes les cartes
+            const initialVisibleCardsCount = 6; // Nombre de cartes visibles par défaut
+
+            // Cache les cartes au-delà du nombre initial si elles ne sont pas déjà cachées
+            allCards.forEach((card, index) => {
+                if (index >= initialVisibleCardsCount) {
+                    card.classList.add('hidden-card');
+                }
+            });
+
+            // Gère l'affichage du bouton "Voir plus"
+            const hiddenCards = document.querySelectorAll('.card-bande.hidden-card'); // Resélectionne après le masquage initial
+            if (hiddenCards.length > 0) {
+                voirPlusBtn.style.display = 'block'; // Affiche le bouton si des cartes sont cachées
+            } else {
+                voirPlusBtn.style.display = 'none'; // Cache le bouton s'il n'y a pas de cartes à montrer
+            }
+
+            voirPlusBtn.addEventListener('click', function() {
+                hiddenCards.forEach(card => {
+                    card.classList.remove('hidden-card'); // Supprime la classe pour afficher toutes les cartes cachées
+                });
+                this.style.display = 'none'; // Cache le bouton après avoir tout affiché
+            });
         });
     </script>
 </body>

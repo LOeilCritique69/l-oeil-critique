@@ -3,115 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Votre source incontournable pour suivre toutes les actualités du cinéma !">
-    <meta name="keywords" content="cinéma, films, séries, critiques, actualités">
-    <link rel="shortcut icon" href="logo_chef_doeuvre_processed copy.jpg" type="image/x-icon" class="logo">
-    <title>L'Œil Critique | Séries</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/actualités.css">
+    <meta name="description" content="Découvrez les dernières actualités des séries télévisées, les nouveautés et les annonces à ne pas manquer sur L'Œil Critique.">
+    <meta name="keywords" content="actualités séries, séries télévisées, nouveautés séries, critiques de séries, séries Netflix, séries Amazon Prime">
+    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+    <title>Séries - L'Œil Critique : Actualités Séries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
 </head>
 <body>
     <header>
-        <div class="header">
-            <img src="logo_chef_doeuvre_processed copy.jpg" alt="Logo du site L'Œil Critique" class="logo">
-            <a href="../index.html" class="titre">L'Œil Critique</a>
-            <nav class="support">
+        <div class="header-content">
+            <a href="../index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+                <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+            </a>
+            <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
+            <nav class="main-nav" aria-label="Navigation principale du site">
                 <a href="films.html">Films</a>
-                <a href="series.html">Séries</a>
+                <a href="series.html" class="active">Séries</a>
                 <a href="actualités.html">Actualités</a>
                 <a href="reviews.html">Reviews</a>
+                <a href="bande-annonces.html" class="new-item">
+                    <span class="new-label">NOUVEAU</span>
+                    Bandes-Annonces
+                </a>
                 <a href="A_propos.html">À Propos</a>
             </nav>
+            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
     <main>
-        <section class="featured-news">
-            <h1 class="titre-a-la-une">À La Une</h1>
-            <div class="a-la-une">
-                <article class="featured-item">
-                    <img src="articles/series/Tools/Stranger-Things-5.webp" alt="Stranger Things Saison 5">
+        <section class="page-intro-section">
+            <h2 class="page-title">Actualités Séries</h2>
+            <p class="page-description">Toutes les dernières informations, annonces et rumeurs du monde des séries télévisées. Ne manquez rien de vos shows préférés !</p>
+        </section>
+
+        <section class="main-news-section">
+            <h2 class="section-title">À LA UNE</h2>
+            <div class="news-grid main-news-grid">
+                <article class="news-item main-news-item">
+                    <img src="assets/img/series/Stranger-Things-5.webp" alt="Stranger Things Saison 5">
                     <h3>Stranger Things Saison 5 : La fin d'une époque</h3>
                     <p>La dernière saison s'annonce comme un événement mondial. Que nous réservent Eleven et ses amis pour cette conclusion attendue ?</p>
-                    <a href="articles/series/stranger-things-saison-5-infos-sur-la-derniere-saison.html">Lire plus</a>
+                    <a href="articles/series/stranger-things-saison-5-infos-sur-la-derniere-saison.html" class="btn">Lire plus</a>
                 </article>
         
-                <article class="featured-item">
-                    <img src="articles/series/Tools/god-of-war-amazon-commande-deux-saisons-de-la-serie-1260x708.jpg.webp" alt="God Of War série Amazon">
+                <article class="news-item main-news-item">
+                    <img src="assets/img/series/god-of-war-amazon-commande-deux-saisons-de-la-serie-1260x708.jpg.webp" alt="God Of War série Amazon">
                     <h3>God of War : Une série ambitieuse sur Amazon</h3>
                     <p>Amazon Prime Video lance officiellement deux saisons pour l’adaptation épique du célèbre jeu vidéo. Premiers détails à découvrir.</p>
-                    <a href="articles/series/god-of-war-saison.html">Lire plus</a>
+                    <a href="articles/series/god-of-war-saison.html" class="btn">Lire plus</a>
                 </article>
         
-                <article class="featured-item">
-                    <img src="articles/series/Tools/mercredi-une-bande-annonce-pleine-de-surprises-pour-le-retour-de-la-serie-netflix-1260x708.jpg.webp" alt="God Of War" />
+                <article class="news-item main-news-item">
+                    <img src="assets/img/series/mercredi-une-bande-annonce-pleine-de-surprises-pour-le-retour-de-la-serie-netflix-1260x708.jpg.webp" alt="Mercredi Saison 2" />
                     <h3>Mercredi Saison 2 : Mystères et cadavres à Nevermore</h3>
-                    <p>La série phénomène *Mercredi* sur Netflix revient avec une nouvelle bande-annonce pour sa saison 2, qui promet de nombreux mystères et peut-être même quelques cadavres, toujours dans l'esprit de l'humour noir qui a fait le succès de la première saison.</p>
-                    <a href="articles/series/mercredi-saison-deux.html">Lire plus</a>
-            </article>
+                    <p>La série phénomène *Mercredi* sur Netflix revient avec une nouvelle bande-annonce pour sa saison 2, qui promet de nombreux mystères et peut-être même quelques cadavres.</p>
+                    <a href="articles/series/mercredi-saison-deux.html" class="btn">Lire plus</a>
+                </article>
             </div>
         </section>
         
+        <section class="latest-news-section">
+            <h2 class="section-title">DERNIÈRES ACTUALITÉS</h2>
+            <div class="news-grid latest-news-grid">
+                <article class="news-item">
+                    <img src="assets/img/series/mercredi-une-bande-annonce-pleine-de-surprises-pour-le-retour-de-la-serie-netflix-1260x708.jpg.webp" alt="Mercredi Saison 2" />
+                    <h3>Mercredi Saison 2 : Mystères et cadavres à Nevermore</h3>
+                    <p>La série phénomène *Mercredi* sur Netflix revient avec une nouvelle bande-annonce pour sa saison 2, qui promet de nombreux mystères et peut-être même quelques cadavres.</p>
+                    <a href="articles/series/mercredi-saison-deux.html" class="btn">Lire plus</a>
+                </article>
 
-        <section>
-            <article>
-                <section class="featured-news">
-                    <h1 class="titre-a-la-une">Dernières Actualités</h1>
-                </section>
-                <div class="dernieres-actus">
-                    <article>
-                        <img src="articles/series/Tools/mercredi-une-bande-annonce-pleine-de-surprises-pour-le-retour-de-la-serie-netflix-1260x708.jpg.webp" alt="God Of War" />
-                        <h3>Mercredi Saison 2 : Mystères et cadavres à Nevermore</h3>
-                        <p>La série phénomène *Mercredi* sur Netflix revient avec une nouvelle bande-annonce pour sa saison 2, qui promet de nombreux mystères et peut-être même quelques cadavres, toujours dans l'esprit de l'humour noir qui a fait le succès de la première saison.</p>
-                        <a href="articles/series/mercredi-saison-deux.html">Lire plus</a>
-                    </article>
+                <article class="news-item">
+                    <img src="assets/img/series/le-retour-de-malcolm-premiere-photo-pour-la-suite-de-la-serie-culte-sur-disney.jpg.webp" alt="Malcolm" />
+                    <h3>Le retour de 'Malcolm' sur Disney+</h3>
+                    <p>La série culte <em>Malcolm</em> fait son grand retour sur Disney+ avec une mini-saison de quatre épisodes.</p>
+                    <a href="articles/series/malcolm-le-retour.html" class="btn">Lire plus</a>
+                </article>
 
-                    <article>
-                        <img src="articles/series/Tools/le-retour-de-malcolm-premiere-photo-pour-la-suite-de-la-serie-culte-sur-disney.jpg.webp" alt="Malcolm" />
-                        <h3>Le retour de 'Malcolm' sur Disney+</h3>
-                        <p>La série culte <em>Malcolm</em> fait son grand retour sur Disney+ avec une mini-saison de quatre épisodes. Après 18 ans d'absence, les fans retrouveront Malcolm, désormais adulte, aux côtés de sa fille, plongés dans le chaos familial lors du 40<sup>e</sup> anniversaire de mariage de Hal et Lois.</p>
-                        <a href="articles/series/malcolm-le-retour.html">Lire plus</a>
-                    </article>
+                <article class="news-item">
+                    <img src="assets/img/series/god-of-war-amazon-commande-deux-saisons-de-la-serie-1260x708.jpg.webp" alt="God Of War" />
+                    <h3>God of War : Amazon relance la série après un développement difficile</h3>
+                    <p>Après avoir été entièrement rebootée, la série God Of War pilotée par Ronald D. Moore pour Amazon Prime Video s’est vue validée pour deux saisons.</p>
+                    <a href="articles/series/god-of-war-saison.html" class="btn">Lire plus</a>
+                </article>
+                
+                <article class="news-item">
+                    <img src="assets/img/series/daredevil-born-again-netflix-daredevil.avif" alt="Daredevil" />
+                    <h3>Daredevil Born Again</h3>
+                    <p>Daredevil: Born Again - Casting, Synopsis et Rumeurs !</p>
+                    <a href="articles/series/daredevil-born-again.html" class="btn">Lire plus</a>
+                </article>
 
-                    <article>
-                        <img src="articles/series/Tools/god-of-war-amazon-commande-deux-saisons-de-la-serie-1260x708.jpg.webp" alt="God Of War" />
-                        <h3>God of War : Amazon relance la série après un développement difficile</h3>
-                        <p>Après avoir été entièrement rebootée, la série God Of War pilotée par Ronald D. Moore pour Amazon Prime Video s’est vue validée pour deux saisons.</p>
-                        <a href="articles/series/god-of-war-saison.html">Lire plus</a>
-                    </article>
-                    
-                    <article>
-                        <img src="articles/series/Tools/daredevil-born-again-netflix-daredevil.avif" alt="Daredevil" />
-                        <h3>Daredevil Born Again</h3>
-                        <p>Daredevil: Born Again - Casting, Synopsis et Rumeurs !</p>
-                        <a href="articles/series/daredevil-born-again.html">Lire plus</a>
-                    </article>
+                <article class="news-item">
+                    <img src="assets/img/series/bref-2.avif" alt="bref-2" />
+                    <h3>Bref.2</h3>
+                    <p>Bref. est de retour 13 ans après, une bonne nouvelle ?</p>
+                    <a href="articles/series/Bref-2-de-retour-treize-ans-apres.html" class="btn">Lire plus</a>
+                </article>
 
-                    <article>
-                        <img src="articles/series/Tools/bref-2.avif" alt="bref-2" />
-                        <h3>Bref.2</h3>
-                        <p>Bref. est de retour 13 ans après, une bonne nouvelle ?</p>
-                        <a href="articles/series/Bref-2-de-retour-treize-ans-apres.html">Lire plus</a>
-                    </article>
-
-                    <article>
-                        <img src="articles/series/Tools/rings-of-power-saison-3-sa-1260x708.webp" alt="Anneaux De Pouvoir" />
-                        <h3>Les Anneaux de Pouvoir Saison 3</h3>
-                        <p>Sauron de retour dans Les Anneaux de Pouvoir Saison 3 ?</p>
-                        <a href="articles/series/sauron-de-retour-dans-la-saison-3.html">Lire plus</a>
-                    </article>
-                </div>
-            </article>
+                <article class="news-item">
+                    <img src="assets/img/series/rings-of-power-saison-3-sa-1260x708.webp" alt="Anneaux De Pouvoir" />
+                    <h3>Les Anneaux de Pouvoir Saison 3</h3>
+                    <p>Sauron de retour dans Les Anneaux de Pouvoir Saison 3 ?</p>
+                    <a href="articles/series/sauron-de-retour-dans-la-saison-3.html" class="btn">Lire plus</a>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="mentions_légales.html">Mentions légales</a>
-            <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
-            <a href="contact.html">Contact</a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mentions_légales.html">Mentions légales</a>
+                <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
         </div>
-        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
     </footer>
-</body>
+
+    <script src="assets/js/main.js"></script>
+    </body>
 </html>
