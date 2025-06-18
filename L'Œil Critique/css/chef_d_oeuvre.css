@@ -3090,7 +3090,7 @@ footer {
 .badge-nouveau {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 50px; /* au lieu de 10px, tu le déplaces plus vers la droite */
     background-color: var(--accent-color);
     color: var(--primary-color);
     padding: 0.4rem 0.8rem;
