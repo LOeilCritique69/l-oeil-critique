@@ -141,39 +141,109 @@ def fetch_article_details(url, source_name):
         return None
 
 
-def generate_article_html(article, category):
-    slug = slugify_filename(article['title'])
-    folder = os.path.join(ARTICLES_DIR, f"{category}s")
-    os.makedirs(folder, exist_ok=True)
-    path = os.path.join(folder, f"{slug}.html")
+def generate_article_html(article_details, category):
+    slug = slugify_filename(article_details['title'])
+    folder_path = os.path.join(ARTICLES_DIR, f"{category}s")
+    os.makedirs(folder_path, exist_ok=True)
+    article_path = os.path.join(folder_path, f"{slug}.html")
 
-    img_path = download_image(article.get('image_url'), category)
+    relative_image_path = download_image(article_details.get('image_url'), category)
 
-    html = f"""<!DOCTYPE html>
+    # Protection si image pas dispo
+    image_html = f"""<div class="article-image">
+        <img src="{relative_image_path}" alt="{article_details['title']}">
+    </div>""" if relative_image_path else ""
+
+    article_template = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>{article['title']} - L'Œil Critique</title>
-    <link rel="stylesheet" href="../../chef_d_oeuvre.css" />
-    <link rel="stylesheet" href="../../createblog.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{article_details['title']} - Article publié sur L'Œil Critique">
+    <meta name="keywords" content="actualités films, cinéma, nouveautés, critiques de films, séries, L'Œil Critique">
+    <link rel="icon" href="../../assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+    <title>{article_details['title']} - L'Œil Critique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/chef_d_oeuvre.css">
+    <link rel="stylesheet" href="../../css/createblog.css">
 </head>
 <body>
-    <header><h1>{article['title']}</h1></header>
-    <main class="container">
-        <div class="main-content">
-            {'<img src="'+img_path+'" alt="Image">' if img_path else ''}
-            {article['content_html']}
+    <header>
+        <div class="header-content">
+            <a href="../../index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+                <img src="../../assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+            </a>
+            <h1 class="site-title"><a href="../../../index.html" class="site-title-link">L'Œil Critique</a></h1>
+            <nav class="main-nav" aria-label="Navigation principale du site">
+                <a href="../../films.html">Films</a>
+                <a href="../../series.html">Séries</a>
+                <a href="../../actualités.html">Actualités</a>
+                <a href="../../reviews.html">Reviews</a>
+                <a href="../../bande-annonces.html" class="new-item">
+                    <span class="new-label">NOUVEAU</span> Bandes-Annonces
+                </a>
+                <a href="../../A_propos.html">À Propos</a>
+            </nav>
+            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
-        <aside class="sidebar"><p>Un article généré automatiquement.</p></aside>
-    </main>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <h2 class="article-title">{article_details['title']}</h2>
+            <p class="article-meta">Publié le {article_details.get('date', 'Date inconnue')} par Yanis</p>
+            {image_html}
+            <div class="article-content">
+                {article_details['content_html']}
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="titre-tendances">Tendances</h3>
+                <ul id="tendances-list"></ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../../mentions_légales.html">Mentions légales</a>
+            <a href="../../politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="../../contact.html">Contact</a>
+        </div>
+        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        fetch('tendances.html')
+            .then(response => {{
+                if (!response.ok) {{
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }}
+                return response.text();
+            }})
+            .then(data => {{
+                document.querySelector('.sidebar .widget ul').innerHTML = data;
+            }})
+            .catch(error => console.error('Erreur lors du chargement des tendances :', error));
+    </script>
 </body>
 </html>"""
 
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(html)
+    with open(article_path, 'w', encoding='utf-8') as f:
+        f.write(article_template)
 
-    print(f"Article généré : {path}")
-    return path, slug, img_path
+    print(f"✅ Article généré : {article_path}")
+    return article_path, slug, relative_image_path or ""
+
 
 def update_category_page(category, slug, title, desc, img_path):
     html_path = {
