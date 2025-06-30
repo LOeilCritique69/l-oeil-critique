@@ -41,7 +41,7 @@
     <main>
         <section class="bande-annonce-container">
             <h1 class="titre-bande-annonce">LES BANDES-ANNONCES</h1>
-            <p class="maj-annonces">Dernière mise à jour : 18 Juin 2025</p>
+            <p class="maj-annonces">Dernière mise à jour : 30 Juin 2025</p>
             <div class="grille-bandes" id="grille-bandes">
                   <!-- Bandes-annonces chargées dynamiquement -->
             </div>
@@ -89,6 +89,13 @@
                 this.style.display = 'none'; // Cache le bouton après avoir tout affiché
             });
         });
+        fetch('/scripts/bande_annonces_blocs.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('bande-annonce-container').innerHTML = html;
+            })
+            .catch(err => console.error('Erreur chargement bandes annonces:', err));
+
     </script>
     <script src="assets/js/loadTrailers.js"></script>
 </body>

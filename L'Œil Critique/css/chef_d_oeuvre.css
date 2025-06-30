@@ -9,6 +9,7 @@
     --border-radius-base: 8px; /* Rayon de bordure par défaut */
     --transition-speed: 0.3s; /* Vitesse de transition générale */
     --font-family: 'Roboto', sans-serif;
+    --font-family-title: 'Bebas Neue', cursive; /* Nouvelle variable pour les titres distinctifs */
 }
 
 /* Reset amélioré */
@@ -31,248 +32,12 @@ body {
 /* Assure que le main prend l'espace restant et le footer reste en bas */
 main {
     flex-grow: 1;
+    padding: 2rem 0; /* Ajout d'un padding par défaut pour le contenu principal */
 }
 
-/* --- HEADER --- */
-header {
-    background-color: var(--primary-color);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    position: sticky; /* Reste en haut lors du scroll */
-    top: 0;
-    z-index: 1000; /* Assure qu'il est au-dessus des autres éléments */
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo-link {
-    display: flex; /* Pour aligner le logo et le titre si on les met côte à côte */
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo {
-    width: 4rem; /* Taille du logo ajustée */
-    height: auto;
-    border-radius: var(--border-radius-base); /* Coins arrondis */
-    margin-right: 1rem; /* Espace entre logo et titre */
-}
-
-.site-title {
-    font-size: 1.8rem; /* Taille ajustée pour le titre du site */
-    font-weight: bold;
-    color: var(--secondary-color);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    white-space: nowrap;
-}
-
-.site-title-link {
-    color: inherit; /* Hérite la couleur du parent */
-    text-decoration: none;
-    transition: color var(--transition-speed) ease;
-}
-
-.site-title-link:hover {
-    color: var(--accent-color);
-}
-
-/* --- NAVIGATION PRINCIPALE --- */
-.main-nav {
-    display: flex;
-    gap: 1rem; /* Espace réduit entre les liens */
-}
-
-.main-nav a {
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius-base);
-    border: 1px solid var(--secondary-color); /* Bordure plus fine */
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 1rem; /* Taille de police ajustée */
-    white-space: nowrap;
-    transition: all var(--transition-speed) ease-in-out;
-    position: relative; /* Pour le badge 'Nouveau' */
-}
-
-.main-nav a:hover,
-.main-nav a.active { /* Ajout d'un état actif pour la page courante */
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    transform: translateY(-2px); /* Léger effet 3D */
-}
-
-/* --- ÉTIQUETTE NOUVEAU dans le header --- */
-.main-nav a.new-item {
-    /* Style spécifique si nécessaire, mais le padding et le positionnement gèrent déjà bien */
-}
-
-.main-nav .new-label {
-    position: absolute;
-    top: -0.8rem; /* Ajuster la position verticale */
-    right: -0.8rem; /* Ajuster la position horizontale */
-    background-color: crimson;
-    color: white;
-    font-size: 0.65rem;
-    font-weight: bold;
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    animation: pulse 1.5s infinite;
-    z-index: 10;
-    white-space: nowrap; /* Empêche le texte de se casser */
-    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.5);
-}
-
-
-/* --- BOUTON BURGER (MOBILE) --- */
-.burger-menu {
-    display: none; /* Caché par défaut, visible sur mobile */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001; /* Au-dessus de la nav */
-}
-
-.burger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--secondary-color);
-    margin: 5px 0;
-    transition: all var(--transition-speed) ease-in-out;
-}
-
-/* Styles pour l'état ouvert du menu burger (géré par JS) */
-.burger-menu.open .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.burger-menu.open .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-menu.open .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-
-/* --- SECTION BIENVENUE (accueil uniquement) --- */
-.welcome-section {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 2.5rem 2rem; /* Plus d'espace interne */
-    background: linear-gradient(135deg, var(--primary-color) 0%, #3e4450 100%); /* Dégradé plus moderne */
-    color: var(--text-color-light); /* Texte clair sur fond sombre */
-    border-radius: var(--border-radius-base);
-    max-width: 900px; /* Limite la largeur pour une meilleure lisibilité */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
-    animation: fadeIn 1.5s ease-out; /* Animation légèrement ajustée */
-}
-
-.welcome-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-    letter-spacing: 1px;
-}
-
-.welcome-text {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto; /* Centrer le paragraphe */
-}
-
-/* --- TITRES DE SECTIONS GÉNÉRAUX --- */
-.section-title {
-    text-align: center;
-    font-size: 2rem; /* Taille de police ajustée */
-    margin: 4rem auto 2rem auto;
-    letter-spacing: 1.5px;
-    color: var(--primary-color); /* Couleur plus foncée pour les titres */
-    position: relative;
-    padding-bottom: 0.5rem; /* Espace pour la ligne du dessous */
-}
-
-.section-title::after {
-    content: "";
-    width: 60px; /* Ligne un peu plus longue */
-    height: 4px; /* Ligne un peu plus épaisse */
-    background-color: var(--accent-color); /* Couleur d'accentuation */
-    display: block;
-    margin: 10px auto 0 auto; /* Marge pour la ligne */
-    border-radius: 5px;
-}
-
-/* --- SLIDER (accueil uniquement) --- */
-.slider-section {
-    margin: 3rem 0;
-    padding: 0 1rem; /* Petit padding pour éviter que le slider touche les bords sur mobile */
-}
-
-.slider-container {
-    display: flex; /* Flexbox pour gérer les items du slider */
-    justify-content: center;
-    align-items: stretch; /* Les items ont la même hauteur */
-    max-width: 900px; /* Taille maximale pour le slider */
-    margin: 0 auto;
-    perspective: 1000px; /* Pour des effets 3D futurs si besoin */
-    position: relative;
-    overflow: hidden; /* Cache les éléments qui débordent */
-    min-height: 450px; /* Hauteur minimale pour éviter les sauts lors du changement de slide */
-    background-color: #fff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.slider-item {
-    display: none; /* TRÈS IMPORTANT : Caché par défaut, visible via JS */
-    min-width: 100%; /* S'assure que l'item prend 100% de la largeur du conteneur */
-    flex-shrink: 0; /* Ne pas rétrécir */
-    padding-bottom: 1.5rem; /* Padding pour le bouton */
-    text-align: center;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    background-color: #fff;
-    border-radius: var(--border-radius-base);
-    display: flex; /* Utilise flexbox pour organiser le contenu verticalement */
-    flex-direction: column;
-    justify-content: space-between; /* Pousse le bouton en bas */
-}
-
-.slider-item.active { /* Classe ajoutée par JS pour l'élément visible */
-    display: flex; /* Affiche l'élément en tant que flex container */
-}
-
-.slider-item img {
-    width: 100%;
-    height: 250px; /* Hauteur fixe pour les images du slider */
-    object-fit: cover; /* Recadre l'image pour couvrir la zone */
-    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-    margin-bottom: 1rem;
-}
-
-.slider-item h3 {
-    font-size: 1.4rem;
-    margin: 0 1.5rem 0.5rem 1.5rem; /* Marge latérale pour éviter que le texte ne touche les bords */
-    color: var(--primary-color);
-}
-
-.slider-item p {
-    font-size: 0.95rem;
-    margin: 0 1.5rem 1.5rem 1.5rem;
-    color: var(--text-color-dark);
-    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant */
-}
-
-/* Bouton générique */
+/* --- GLOBAL UTILITIES & BUTTONS --- */
 .btn {
-    display: inline-block; /* Permet d'appliquer des marges et paddings */
+    display: inline-block;
     padding: 0.7rem 1.4rem;
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -290,7 +55,248 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Contrôles du slider (flèches et points) */
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 4rem auto 2rem auto;
+    letter-spacing: 1.5px;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    display: block;
+    margin: 10px auto 0 auto;
+    border-radius: 5px;
+}
+
+/* Label "Nouveau" */
+.new-label {
+    position: absolute;
+    background-color: crimson;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulse 1.5s infinite;
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.5);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    width: 4rem;
+    height: auto;
+    border-radius: var(--border-radius-base);
+    margin-right: 1rem;
+}
+
+.site-title {
+    font-family: var(--font-family-title);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.site-title-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.site-title-link:hover {
+    color: var(--accent-color);
+}
+
+/* --- MAIN NAVIGATION --- */
+.main-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-base);
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: all var(--transition-speed) ease-in-out;
+    position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.main-nav .new-label {
+    top: -0.8rem;
+    right: -0.8rem;
+}
+
+/* --- BURGER MENU (MOBILE) --- */
+.burger-menu {
+    display: none; /* Hidden by default, visible on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.burger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 5px 0;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.burger-menu.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger-menu.open .bar:nth-child(2) { opacity: 0; }
+.burger-menu.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* --- HOME PAGE SECTIONS --- */
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3e4450 100%);
+    color: var(--text-color-light);
+    border-radius: var(--border-radius-base);
+    max-width: 900px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.welcome-text {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slider Section */
+.slider-section {
+    margin: 3rem 0;
+    padding: 0 1rem;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 900px;
+    margin: 0 auto;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+    min-height: 450px;
+    background-color: #fff;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.slider-item {
+    display: none;
+    min-width: 100%;
+    flex-shrink: 0;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    background-color: #fff;
+    border-radius: var(--border-radius-base);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slider-item.active {
+    display: flex;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+    margin-bottom: 1rem;
+}
+
+.slider-item h3 {
+    font-size: 1.4rem;
+    margin: 0 1.5rem 0.5rem 1.5rem;
+    color: var(--primary-color);
+}
+
+.slider-item p {
+    font-size: 0.95rem;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--text-color-dark);
+    flex-grow: 1;
+}
+
 .slider-controls {
     display: flex;
     justify-content: center;
@@ -340,41 +346,40 @@ header {
     transform: scale(1.2);
 }
 
-
-/* --- SECTIONS DE LIENS (Catégories et Reviews) (accueil uniquement) --- */
+/* Category Links Section */
 .category-links-section, .review-links-section {
     padding: 0 1rem;
-    margin-bottom: 4rem; /* Plus d'espace en bas de la section */
+    margin-bottom: 4rem;
 }
 
 .category-links-container {
     display: flex;
     justify-content: center;
-    gap: 1.5rem; /* Espacement ajusté */
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    gap: 1.5rem;
+    flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.category-link { /* Unifié pour la cohérence */
-    flex: 1 1 calc(25% - 1.5rem); /* 4 éléments par ligne sur desktop */
-    min-width: 180px; /* Taille minimale pour les blocs */
-    height: 12rem; /* Hauteur ajustée */
+.category-link {
+    flex: 1 1 calc(25% - 1.5rem);
+    min-width: 180px;
+    height: 12rem;
     display: flex;
-    flex-direction: column; /* Pour le label "Nouveau" */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    background-color: #fff; /* Fond blanc pour les blocs */
-    color: var(--primary-color); /* Texte sombre */
+    background-color: #fff;
+    color: var(--primary-color);
     border-radius: var(--border-radius-base);
-    border: 1px solid #ddd; /* Bordure plus douce */
+    border: 1px solid #ddd;
     transition: all var(--transition-speed) ease-in-out;
     text-align: center;
     font-size: 1.15rem;
     font-weight: bold;
-    position: relative; /* Pour le positionnement du label "Nouveau" */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Ombre légère */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .category-link:hover {
@@ -384,75 +389,20 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* --- ÉTIQUETTE NOUVEAU (appliquée directement sur .category-link.new-item) --- */
 .category-link.new-item {
-    padding-top: 5rem; /* Augmente le padding-top pour faire de la place au label sans le chevaucher */
-    justify-content: flex-start; /* Aligne le contenu en haut pour que le label soit visible */
+    padding-top: 5rem;
+    justify-content: flex-start;
 }
 
 .category-links-container .new-label {
-    position: absolute;
-    top: 0.5rem; /* Positionnement par rapport au haut du bloc */
+    top: 0.5rem;
     left: 50%;
-    transform: translateX(-50%) rotate(-5deg); /* Légère rotation pour un effet "badge" */
-    background-color: crimson;
-    color: white;
+    transform: translateX(-50%) rotate(-5deg);
     font-size: 0.7rem;
-    font-weight: bold;
     padding: 0.3rem 0.7rem;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    animation: pulse 1.5s infinite; /* Animation plus douce */
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.5); /* Ombre rouge */
-    white-space: nowrap; /* Empêche le texte de se casser */
 }
 
-@keyframes pulse {
-    0% { transform: translateX(-50%) rotate(-5deg) scale(1); opacity: 1; }
-    50% { transform: translateX(-50%) rotate(-5deg) scale(1.05); opacity: 0.9; }
-    100% { transform: translateX(-50%) rotate(-5deg) scale(1); opacity: 1; }
-}
-
-
-/* --- PIED DE PAGE --- */
-footer {
-    text-align: center;
-    padding: 2rem 1rem; /* Padding ajusté */
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-top: auto; /* Pousse le footer en bas de page */
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-links {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Pour les petits écrans */
-    gap: 1rem;
-}
-
-.footer-links a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color var(--transition-speed) ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
-}
-
-
-/* --- Styles spécifiques aux pages d'actualités (films.html, series.html, actualités.html) --- */
-
-/* Section d'introduction de la page */
+/* --- GENERAL PAGE STRUCTURE & INTRO --- */
 .page-intro-section {
     text-align: center;
     margin: 2rem auto;
@@ -477,385 +427,7 @@ footer {
     margin: 0 auto;
 }
 
-/* Grille d'articles */
-.news-grid {
-    display: grid;
-    gap: 2rem; /* Espacement entre les articles */
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem; /* Petit padding pour éviter que la grille ne touche les bords sur mobile */
-}
-
-/* Articles principaux (À LA UNE) - 3 colonnes sur desktop */
-.main-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* Articles des dernières actualités - 3 ou 4 colonnes sur desktop, plus compact */
-.latest-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.news-item {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* Assure que le border-radius s'applique à l'image */
-    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
-    display: flex; /* Utilise flexbox pour le contenu de l'article */
-    flex-direction: column; /* Empile l'image, titre, texte, bouton */
-}
-
-.news-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.news-item img {
-    width: 100%;
-    height: 200px; /* Hauteur fixe pour toutes les images d'article */
-    object-fit: cover; /* Recadre l'image pour couvrir la zone */
-    border-bottom: 1px solid #eee;
-}
-
-.news-item h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin: 1rem 1.5rem 0.5rem 1.5rem;
-    min-height: 3.5rem; /* Assure une hauteur minimale pour les titres, ajustez si besoin */
-    display: -webkit-box; /* Pour tronquer le texte sur plusieurs lignes */
-    -webkit-line-clamp: 2; /* Limite à 2 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item p {
-    font-size: 0.95rem;
-    color: var(--text-color-dark);
-    margin: 0 1.5rem 1rem 1.5rem;
-    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant, poussant le bouton vers le bas */
-    display: -webkit-box; /* Pour tronquer le texte sur plusieurs lignes */
-    -webkit-line-clamp: 3; /* Limite à 3 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item .btn {
-    align-self: center; /* Centre le bouton horizontalement */
-    margin-bottom: 1.5rem; /* Marge en bas pour le bouton */
-    margin-top: auto; /* Pousse le bouton vers le bas si le texte est court */
-}
-
-/* --- RESPONSIVE DESIGN (Media Queries) --- */
-
-/* Pour les tablettes (768px à 1024px) */
-@media (max-width: 1024px) {
-    .header-content {
-        padding: 0 1.5rem;
-    }
-
-    .main-nav {
-        gap: 0.8rem;
-    }
-
-    .main-nav a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
-
-    .site-title {
-        font-size: 1.6rem;
-    }
-
-    .welcome-title {
-        font-size: 2rem;
-    }
-
-    .welcome-text {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .slider-item img {
-        height: 200px;
-    }
-
-    .slider-item h3 {
-        font-size: 1.3rem;
-    }
-
-    .slider-item p {
-        font-size: 0.9rem;
-    }
-
-    .category-link {
-        flex: 1 1 calc(33% - 1.5rem); /* 3 éléments par ligne sur tablettes */
-    }
-
-    /* Styles spécifiques aux pages d'actualités - tablette */
-    .page-title {
-        font-size: 2rem;
-    }
-    .page-description {
-        font-size: 1rem;
-    }
-    .main-news-grid,
-    .latest-news-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Plus dense sur tablette */
-        gap: 1.5rem;
-    }
-    .news-item h3 {
-        font-size: 1.2rem;
-        min-height: 3rem; /* Ajusté */
-    }
-    .news-item p {
-        font-size: 0.9rem;
-    }
-}
-
-
-/* Pour les mobiles (max-width 768px) */
-@media (max-width: 768px) {
-    .header-content {
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
-        justify-content: center;
-        text-align: center;
-    }
-
-    .logo-link {
-        margin-bottom: 1rem;
-    }
-
-    .site-title {
-        flex-basis: 100%; /* Prend toute la largeur */
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .main-nav {
-        display: none; /* Caché par défaut sur mobile, géré par JS pour le menu burger */
-        flex-direction: column;
-        width: 100%;
-        gap: 0.5rem;
-        margin-top: 1rem;
-        text-align: center;
-    }
-
-    .main-nav.open { /* Classe ajoutée par JS */
-        display: flex;
-    }
-
-    .main-nav a {
-        width: 80%; /* Pour une meilleure apparence des liens */
-        margin: 0 auto;
-        font-size: 1.1rem;
-    }
-
-    .burger-menu {
-        display: block; /* Affiche le bouton burger */
-        position: absolute; /* Positionne le burger pour ne pas décaler les autres éléments */
-        right: 1rem;
-        top: 1.5rem;
-    }
-
-    .welcome-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-
-    .welcome-title {
-        font-size: 1.8rem;
-    }
-
-    .welcome-text {
-        font-size: 0.95rem;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-        margin: 3rem auto 1.5rem auto;
-    }
-
-    .slider-item img {
-        height: 180px;
-    }
-
-    .slider-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .slider-item p {
-        font-size: 0.85rem;
-    }
-
-    .slider-controls {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-
-    .category-links-container {
-        gap: 1rem;
-    }
-
-    .category-link {
-        flex: 1 1 calc(50% - 1rem); /* 2 éléments par ligne sur mobile */
-        height: 10rem; /* Hauteur réduite */
-        font-size: 1rem;
-    }
-
-    .category-links-container .new-label {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.5rem;
-    }
-
-    footer {
-        padding: 1.5rem 0.5rem;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    /* Styles spécifiques aux pages d'actualités - mobile */
-    .page-intro-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    .page-title {
-        font-size: 1.8rem;
-    }
-    .page-description {
-        font-size: 0.95rem;
-    }
-    .news-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1rem;
-        margin: 2rem auto;
-    }
-    .news-item img {
-        height: 160px;
-    }
-    .news-item h3 {
-        font-size: 1.1rem;
-        min-height: auto; /* Laisse le titre s'adapter */
-        margin: 1rem 1rem 0.5rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile si le design le permet */
-    }
-    .news-item p {
-        font-size: 0.85rem;
-        margin: 0 1rem 1rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile */
-    }
-    .news-item .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-/* --- Styles spécifiques aux pages d'actualités (films.html, series.html, actualités.html) --- */
-
-/* Section d'introduction de la page */
-.page-intro-section {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 900px;
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.page-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-}
-
-.page-description {
-    font-size: 1.1rem;
-    color: var(--text-color-dark);
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Grille d'articles */
-.news-grid {
-    display: grid;
-    gap: 2rem; /* Espacement entre les articles */
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem; /* Petit padding pour éviter que la grille ne touche les bords sur mobile */
-}
-
-/* Articles principaux (À LA UNE) - 3 colonnes sur desktop */
-.main-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* Articles des dernières actualités - 3 ou 4 colonnes sur desktop, plus compact */
-.latest-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.news-item {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* Assure que le border-radius s'applique à l'image */
-    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
-    display: flex; /* Utilise flexbox pour le contenu de l'article */
-    flex-direction: column; /* Empile l'image, titre, texte, bouton */
-}
-
-.news-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.news-item img {
-    width: 100%;
-    height: 200px; /* Hauteur fixe pour toutes les images d'article */
-    object-fit: cover; /* Recadre l'image pour couvrir la zone */
-    border-bottom: 1px solid #eee;
-}
-
-.news-item h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin: 1rem 1.5rem 0.5rem 1.5rem;
-    min-height: 3.5rem; /* Assure une hauteur minimale pour les titres, ajustez si besoin */
-    display: -webkit-box; /* Pour tronquer le texte sur plusieurs lignes */
-    -webkit-line-clamp: 2; /* Limite à 2 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item p {
-    font-size: 0.95rem;
-    color: var(--text-color-dark);
-    margin: 0 1.5rem 1rem 1.5rem;
-    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant, poussant le bouton vers le bas */
-    display: -webkit-box; /* For truncating text over multiple lines */
-    -webkit-line-clamp: 3; /* Limite à 3 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item .btn {
-    align-self: center; /* Centre le bouton horizontalement */
-    margin-bottom: 1.5rem; /* Marge en bas pour le bouton */
-    margin-top: auto; /* Pousse le bouton vers le bas si le texte est court */
-}
-
-/* Style pour la section "À venir..." si vous la gardez simple */
+/* Coming Soon Section */
 .coming-soon {
     text-align: center;
     margin: 4rem auto;
@@ -877,613 +449,68 @@ footer {
     font-size: 1rem;
 }
 
-
-/* --- RESPONSIVE DESIGN (Media Queries) --- */
-
-@media (max-width: 1024px) {
-    .page-title {
-        font-size: 2rem;
-    }
-    .page-description {
-        font-size: 1rem;
-    }
-    .main-news-grid,
-    .latest-news-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Plus dense sur tablette */
-        gap: 1.5rem;
-    }
-    .news-item h3 {
-        font-size: 1.2rem;
-        min-height: 3rem; /* Ajusté */
-    }
-    .news-item p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .page-intro-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    .page-title {
-        font-size: 1.8rem;
-    }
-    .page-description {
-        font-size: 0.95rem;
-    }
-    .news-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1rem;
-        margin: 2rem auto;
-    }
-    .news-item img {
-        height: 160px;
-    }
-    .news-item h3 {
-        font-size: 1.1rem;
-        min-height: auto; /* Laisse le titre s'adapter */
-        margin: 1rem 1rem 0.5rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile si le design le permet */
-    }
-    .news-item p {
-        font-size: 0.85rem;
-        margin: 0 1rem 1rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile */
-    }
-    .news-item .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-    .coming-soon {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-    }
-    .coming-soon h2 {
-        font-size: 1.5rem;
-    }
-    .coming-soon p {
-        font-size: 0.9rem;
-    }
-}
-/* Styles spécifiques à la page Bande-Annonces */
-.bande-annonce-container {
-    padding: 3rem;
-    text-align: center;
-}
-
-.titre-bande-annonce {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: var(--secondary-color);
-    background: linear-gradient(135deg, #1c1f26, #2e3440);
-    padding: 1.5rem 2rem;
-    border-radius: 2rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
-    font-family: 'Bebas Neue', cursive;
-    border: 2px solid var(--secondary-color);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.maj-annonces {
-    text-align: center;
-    margin: 4rem auto 2rem auto;
-    letter-spacing: 2px;
-    position: relative;
-    font-size: 1rem;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
-}
-
-/* Nouvelle approche pour la grille des bandes-annonces */
-.grille-bandes {
-    display: grid;
-    /* Utilise auto-fill pour créer autant de colonnes que possible
-       minmax(340px, 1fr) pour des cartes un peu plus grandes */
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 2.5rem; /* Augmente légèrement l'espace entre les cartes */
-    padding: 0 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.card-bande {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    position: relative; /* Nécessaire pour le badge */
-    padding: 1.5rem; /* Padding interne */
-    display: flex;
-    flex-direction: column; /* Organise le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-    text-align: center; /* Centre le texte */
-    min-height: 480px; /* Augmente la hauteur minimale des cartes pour plus d'espace */
-}
-
-.card-bande:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.badge-nouveau {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.4rem 0.8rem;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    z-index: 5;
-}
-
-.card-bande h2 {
-    font-size: 1.8rem;
-    margin: 1rem 0 0.8rem;
-    color: var(--primary-color);
-}
-
-.date-sortie, .ajout-site, .synopsis {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0.3rem 0;
-}
-
-.synopsis {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    flex-grow: 1; /* Permet au synopsis de prendre l'espace restant */
-}
-
-/* Conteneur responsif pour la vidéo */
-.video-responsive {
-    position: relative;
-    width: 100%;
-    /* Ratio 16:9 pour les vidéos. Hauteur basée sur la largeur. */
-    padding-bottom: 56.25%; /* (9 / 16) * 100% */
-    height: 0; /* Important pour que padding-bottom fonctionne comme prévu */
-    overflow: hidden; /* Cache tout ce qui dépasse si l'iframe est mal dimensionné */
-    border-radius: var(--border-radius-base);
-    margin-top: auto; /* Pousse la vidéo vers le bas si le synopsis est court */
-}
-
-.video-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Styles pour les éléments cachés au départ */
-.card-bande.hidden-card {
-    display: none;
-}
-
-/* Bouton "Voir plus" */
-#voir-plus-btn {
-    display: block;
-    margin: 3rem auto;
-    padding: 1rem 2.5rem; /* Plus grand */
-    font-size: 1.15rem; /* Plus grand */
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    border: none;
-    border-radius: var(--border-radius-base);
-    cursor: pointer;
-    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#voir-plus-btn:hover {
-    background-color: #444;
-    transform: translateY(-3px);
-}
-
-
-/* RESPONSIVE DESIGN pour les bandes-annonces */
-@media (max-width: 992px) { /* Pour les tablettes et plus petits */
-    .grille-bandes {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Légèrement plus petit sur tablette */
-        gap: 2rem;
-    }
-    .card-bande {
-        min-height: 450px; /* Ajuste la hauteur minimale sur tablette */
-    }
-    .card-bande h2 {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .bande-annonce-container {
-        padding: 1.5rem 0.5rem; /* Plus petit padding */
-    }
-
-    .titre-bande-annonce {
-        font-size: 2rem;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .maj-annonces {
-        font-size: 0.85rem;
-        margin: 1.5rem auto 1rem auto;
-    }
-
-    .grille-bandes {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1.5rem; /* Augmente un peu l'espace sur mobile */
-        padding: 0 0.5rem;
-    }
-
-    .card-bande {
-        padding: 1rem;
-        min-height: 400px; /* Hauteur minimale ajustée pour mobile */
-    }
-
-    .card-bande h2 {
-        font-size: 1.4rem;
-        margin: 0.5rem 0;
-    }
-
-    .date-sortie, .ajout-site, .synopsis {
-        font-size: 0.9rem;
-    }
-
-    /* Le .video-responsive gérera la taille de l'iframe automatiquement */
-
-    #voir-plus-btn {
-        padding: 0.8rem 1.8rem;
-        font-size: 1rem;
-        margin: 2rem auto;
-    }
-}
-/* --- RESET ET VARIABLES --- */
-:root {
-    --primary-color: #2e3440; /* Couleur principale sombre */
-    --secondary-color: #f2cd86; /* Couleur secondaire dorée */
-    --background-color: #f0f2f5; /* Fond clair, plus doux que aliceblue */
-    --accent-color: #ffd27f; /* Accentuation dorée/orange */
-    --text-color-dark: #333; /* Texte plus sombre pour les fonds clairs */
-    --text-color-light: #f9f9f9; /* Texte clair pour les fonds sombres */
-    --border-radius-base: 8px; /* Rayon de bordure par défaut */
-    --transition-speed: 0.3s; /* Vitesse de transition générale */
-    --font-family: 'Roboto', sans-serif;
-}
-
-/* Reset amélioré */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--background-color);
-    font-family: var(--font-family);
-    color: var(--text-color-dark); /* Couleur de texte par défaut */
-    line-height: 1.6; /* Améliore la lisibilité */
-    min-height: 100vh; /* Permet au contenu de s'étendre au-delà de la hauteur de l'écran */
-    display: flex; /* Permet de positionner le footer en bas */
-    flex-direction: column; /* Organise le contenu en colonne */
-}
-
-/* --- HEADER --- */
-header {
-    background-color: var(--primary-color);
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo {
-    width: 3.5rem; /* Taille plus petite pour le logo dans le header */
-    height: auto;
-    border-radius: 50%;
-    margin-right: 0.8rem;
-}
-
-.site-title {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.2rem;
-    color: var(--secondary-color);
-    letter-spacing: 1px;
-}
-
-.site-title-link {
-    color: inherit;
-    text-decoration: none;
-}
-
-.main-nav a {
-    color: var(--text-color-light);
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 1.5rem;
-    font-size: 1.1rem;
-    padding: 0.5rem 0.8rem;
-    border-radius: var(--border-radius-base);
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-/* Burger menu (à gérer avec JS) */
-.burger-menu {
-    display: none; /* Masqué par défaut sur desktop */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-}
-
-.burger-menu .bar {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: var(--text-color-light);
-    border-radius: 5px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
-}
-
-/* --- MAIN CONTENT (GLOBAL) --- */
-main {
-    flex: 1; /* Permet au main de prendre l'espace disponible */
-    padding: 3rem 0;
-}
-
-/* --- BANDE-ANNONCE SECTION --- */
-.bande-annonce-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-.titre-bande-annonce {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: var(--secondary-color);
-    background: linear-gradient(135deg, #1c1f26, #2e3440);
-    padding: 1.5rem 2rem;
-    border-radius: 2rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
-    border: 2px solid var(--secondary-color);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.maj-annonces {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 2rem auto 2.5rem auto;
-    text-align: center;
-    max-width: 800px; /* Aligne avec le titre */
-}
-
-.grille-bandes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
-    justify-content: center;
-}
-
-.card-bande {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    text-align: left;
-    padding: 1.5rem;
-    position: relative; /* Pour le badge */
-    min-height: 500px; /* Hauteur minimale pour l'uniformité */
-    display: flex;
-    flex-direction: column;
-}
-
-.card-bande:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.card-bande h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
-    font-weight: bold;
-}
-
-.card-bande .date-sortie,
-.card-bande .ajout-site {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 0.3rem;
-}
-
-.card-bande .synopsis {
-    font-size: 1.05rem;
-    color: var(--text-color-dark);
-    line-height: 1.6;
-    margin: 1rem 0 1.5rem;
-    flex-grow: 1; /* Permet au synopsis de prendre l'espace */
-}
-
-.video-responsive {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    margin-top: auto; /* Pousse la vidéo vers le bas de la carte */
-}
-
-.video-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--border-radius-base);
-}
-
-.badge-nouveau {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #e74c3c; /* Rouge attrayant */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    z-index: 2;
-    animation: pulse 1.5s infinite; /* Animation de pulsation */
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-#voir-plus-btn {
-    display: block; /* Sera modifié par JS si nécessaire */
-    margin: 3rem auto 0 auto;
-    padding: 1rem 2.5rem;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: var(--border-radius-base);
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#voir-plus-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    transform: translateY(-3px);
-}
-
-.hidden-card {
-    display: none; /* Cache les cartes par défaut */
-}
-
-/* --- ACTUALITES SECTION --- */
-.page-intro-section {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    text-align: center;
-}
-
-.page-title {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.8rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-}
-
-.page-description {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.news-section {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
-
+/* --- NEWS GRID (FILMS, SERIES, ACTUALITÉS) --- */
 .news-grid {
     display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.main-news-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 2rem;
+}
+
+.latest-news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .news-item {
     background-color: #ffffff;
     border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    min-height: 480px; /* Pour l'uniformité des cartes */
 }
 
 .news-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.news-image {
+.news-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-bottom: 1px solid #eee;
     border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
 }
 
 .news-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
-    margin: 1.2rem 1.5rem 0.5rem;
-    line-height: 1.3;
-    font-weight: bold;
-    min-height: 3.5rem; /* Pour uniformiser la hauteur des titres */
+    margin: 1rem 1.5rem 0.5rem 1.5rem;
+    min-height: 3.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-item p {
+    font-size: 0.95rem;
+    color: var(--text-color-dark);
+    margin: 0 1.5rem 1rem 1.5rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .news-item .publication-date {
@@ -1492,17 +519,10 @@ main {
     margin: 0 1.5rem 0.8rem;
 }
 
-.news-item p {
-    font-size: 1rem;
-    color: var(--text-color-dark);
-    line-height: 1.6;
-    margin: 0 1.5rem 1.5rem;
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limite le texte à 4 lignes */
-    -webkit-box-orient: vertical;
+.news-item .btn {
+    align-self: center;
+    margin-bottom: 1.5rem;
+    margin-top: auto;
 }
 
 .news-item .read-more {
@@ -1524,1612 +544,139 @@ main {
     color: var(--secondary-color);
 }
 
-.coming-soon {
-    max-width: 800px;
-    margin: 4rem auto 0 auto;
-    padding: 2.5rem;
-    background-color: #e0e0e0;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.coming-soon h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.coming-soon p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* --- REVIEWS SECTION --- */
-.reviews-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-.reviews-title {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: var(--secondary-color);
-    background: linear-gradient(135deg, #1c1f26, #2e3440);
-    padding: 1.5rem 2rem;
-    border-radius: 2rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
-    border: 2px solid var(--secondary-color);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Grille pour les cartes de critique */
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* 3 colonnes flexibles, min 350px */
-    gap: 2.5rem; /* Espacement entre les cartes */
-    margin-top: 3rem;
-    justify-content: center; /* Centre les éléments dans la grille si moins de 3 */
-}
-
-.review-card {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* Texte aligné à gauche dans la carte */
-    min-height: 520px; /* Hauteur minimale pour des cartes homogènes */
-}
-
-.review-card:hover {
-    transform: translateY(-10px); /* Légère élévation au survol */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.review-image {
-    width: 100%;
-    height: 220px; /* Hauteur fixe pour les images */
-    object-fit: cover; /* Recadre l'image pour couvrir l'espace */
-    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-}
-
-.review-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Permet au contenu de prendre l'espace restant */
-}
-
-.review-title {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
-    font-weight: bold;
-    flex-grow: 0; /* Ne s'étire pas */
-}
-
-.review-author, .review-date {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 0.3rem;
-}
-
-.review-summary {
-    font-size: 1.05rem;
-    color: var(--text-color-dark);
-    line-height: 1.6;
-    margin: 1rem 0 1.5rem;
-    flex-grow: 1; /* Le résumé prend l'espace disponible */
-    overflow: hidden; /* Cache le texte qui dépasse */
-    text-overflow: ellipsis; /* Ajoute des points de suspension */
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limite à 4 lignes */
-    -webkit-box-orient: vertical;
-}
-
-.read-more {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: var(--border-radius-base);
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-    align-self: flex-start; /* Aligne le bouton à gauche */
-    margin-top: auto; /* Pousse le bouton vers le bas de la carte */
-}
-
-.read-more:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-
-/* --- FOOTER --- */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    font-size: 0.9rem;
-    margin-top: 3rem; /* Espace au-dessus du footer */
-}
-
-.footer-links {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.footer-links a {
-    color: var(--text-color-light);
-    text-decoration: none;
-    margin: 0 1rem;
-    transition: color var(--transition-speed) ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
-}
-
-/* --- RESPONSIVE DESIGN (GLOBAL & Specific Sections) --- */
-@media (max-width: 992px) { /* Pour les tablettes et plus petits */
-    .header-content {
-        padding: 0 1.5rem;
-    }
-    .main-nav a {
-        margin-left: 1rem;
-        font-size: 1rem;
-    }
-    main {
-        padding: 2rem 0;
-    }
-
-    /* Bandes-annonces */
-    .bande-annonce-container {
-        padding: 2rem 1.5rem;
-    }
-    .titre-bande-annonce {
-        font-size: 2.5rem;
-        padding: 1.2rem 1.5rem;
-    }
-    .maj-annonces {
-        font-size: 0.85rem;
-    }
-    .grille-bandes {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-    .card-bande {
-        min-height: 450px;
-    }
-    .card-bande h2 {
-        font-size: 1.6rem;
-    }
-    #voir-plus-btn {
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
-    }
-
-    /* Actualités */
-    .page-intro-section {
-        margin: 1.5rem;
-        padding: 1.8rem;
-    }
-    .page-title {
-        font-size: 2.3rem;
-    }
-    .page-description {
-        font-size: 1rem;
-    }
-    .news-section {
-        padding: 0 1.5rem;
-    }
-    .news-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-    }
-    .news-item {
-        min-height: 450px;
-    }
-    .news-item h3 {
-        font-size: 1.3rem;
-        min-height: 3rem;
-    }
-    .news-item p {
-        font-size: 0.95rem;
-    }
-    .news-item .read-more {
-        padding: 0.7rem 1.6rem;
-        font-size: 0.95rem;
-    }
-    .coming-soon {
-        padding: 2rem;
-    }
-    .coming-soon h2 {
-        font-size: 2rem;
-    }
-    .coming-soon p {
-        font-size: 1rem;
-    }
-
-    /* Reviews */
-    .reviews-container {
-        padding: 0 1.5rem;
-    }
-    .reviews-title {
-        font-size: 2.5rem;
-        padding: 1.2rem 1.5rem;
-    }
-    .reviews-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Légèrement plus petit */
-        gap: 2rem;
-    }
-    .review-card {
-        min-height: 480px;
-    }
-    .review-image {
-        height: 200px;
-    }
-    .review-title {
-        font-size: 1.6rem;
-    }
-    .review-summary {
-        font-size: 0.95rem;
-        -webkit-line-clamp: 5; /* Peut-être plus de lignes sur tablette */
-    }
-    .read-more {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) { /* Mobiles */
-    .header-content {
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
-        justify-content: center;
-        text-align: center;
-        padding: 1rem 1rem;
-    }
-    .logo-link {
-        margin-bottom: 0.5rem;
-    }
-    .site-title {
-        font-size: 1.8rem;
-    }
-    .main-nav {
-        display: none; /* Masquer la navigation par défaut sur mobile */
-        width: 100%;
-        flex-direction: column;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 5rem; /* Sous le header */
-        left: 0;
-        padding: 1rem 0;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        z-index: 9; /* Pour être au-dessus du contenu */
-    }
-    .main-nav.active { /* Classe ajoutée par JS pour afficher le menu */
-        display: flex;
-    }
-    .main-nav a {
-        margin: 0.5rem 0;
-        padding: 0.8rem;
-        text-align: center;
-    }
-    .burger-menu {
-        display: flex; /* Afficher le burger menu sur mobile */
-        position: absolute;
-        right: 1rem;
-        top: 1rem; /* Ajuster la position si le header flex-wrap */
-    }
-    main {
-        padding: 1.5rem 0;
-    }
-
-    /* Bandes-annonces */
-    .bande-annonce-container {
-        padding: 1.5rem 0.5rem;
-    }
-    .titre-bande-annonce {
-        font-size: 2rem;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    .maj-annonces {
-        font-size: 0.8rem;
-        margin: 1.5rem auto 1rem auto;
-    }
-    .grille-bandes {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .card-bande {
-        min-height: auto;
-        padding-bottom: 1rem;
-    }
-    #voir-plus-btn {
-        padding: 0.9rem 2rem;
-        font-size: 1rem;
-    }
-
-    /* Actualités */
-    .page-intro-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    .page-title {
-        font-size: 1.8rem;
-    }
-    .page-description {
-        font-size: 0.95rem;
-    }
-    .news-section {
-        padding: 0 1rem;
-    }
-    .news-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .news-item {
-        min-height: auto;
-        padding-bottom: 1rem;
-    }
-    .news-item h3 {
-        font-size: 1.2rem;
-        min-height: auto;
-        margin: 1rem 1rem 0.5rem;
-    }
-    .news-item p {
-        font-size: 0.9rem;
-        margin: 0 1rem 1rem;
-    }
-    .news-item .read-more {
-        margin: auto 1rem 1rem;
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-    .coming-soon {
-        padding: 1.5rem;
-        margin-top: 3rem;
-    }
-    .coming-soon h2 {
-        font-size: 1.8rem;
-    }
-    .coming-soon p {
-        font-size: 0.9rem;
-    }
-
-    /* Reviews */
-    .reviews-container {
-        padding: 0 1rem;
-    }
-    .reviews-title {
-        font-size: 2rem;
-        padding: 1rem 1.2rem;
-        border-radius: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    .reviews-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1.5rem;
-    }
-    .review-card {
-        min-height: auto; /* Laisser la hauteur s'adapter au contenu sur mobile */
-        padding-bottom: 1rem; /* Ajouter du padding en bas si besoin */
-    }
-    .review-image {
-        height: 180px;
-    }
-    .review-content {
-        padding: 1rem;
-    }
-    .review-title {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-    }
-    .review-author, .review-date {
-        font-size: 0.85rem;
-    }
-    .review-summary {
-        font-size: 0.9rem;
-        margin: 0.8rem 0 1rem;
-        -webkit-line-clamp: 6; /* Peut-être plus de lignes sur mobile */
-    }
-    .read-more {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-    footer {
-        margin-top: 2rem;
-    }
-}
-/* --- Styles spécifiques à la page Reviews --- */
-
-/* Conteneur principal des critiques */
-.reviews-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem; /* Augmente le padding global pour la section */
-    text-align: center; /* Pour centrer le titre */
-    flex: 1; /* Permet à cette section de prendre l'espace disponible */
-    display: flex; /* Utilise flex pour le centrage du titre */
-    flex-direction: column; /* Organise le contenu verticalement */
-}
-
-/* Titre de la page Reviews */
-.reviews-title {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    color: var(--secondary-color);
-    background: linear-gradient(135deg, #1c1f26, #2e3440);
-    padding: 1.5rem 2rem;
-    border-radius: 2rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
-    border: 2px solid var(--secondary-color);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Grille pour les cartes de critique */
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* 3 colonnes flexibles, min 350px */
-    gap: 2.5rem; /* Espacement entre les cartes */
-    margin-top: 3rem;
-    justify-content: center; /* Centre les éléments dans la grille si moins de 3 */
-}
-
-/* Style de chaque carte de critique */
-.review-card {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* Texte aligné à gauche dans la carte */
-    min-height: 520px; /* Hauteur minimale pour des cartes homogènes */
-}
-
-.review-card:hover {
-    transform: translateY(-10px); /* Légère élévation au survol */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Image de la critique */
-.review-image {
-    width: 100%;
-    height: 220px; /* Hauteur fixe pour les images */
-    object-fit: cover; /* Recadre l'image pour couvrir l'espace */
-    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-}
-
-/* Contenu textuel de la critique */
-.review-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Permet au contenu de prendre l'espace restant */
-}
-
-/* Titre de la critique */
-.review-title {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
-    font-weight: bold;
-    flex-grow: 0; /* Ne s'étire pas */
-}
-
-/* Auteur et date de la critique */
-.review-author, .review-date {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 0.3rem;
-}
-
-/* Résumé de la critique */
-.review-summary {
-    font-size: 1.05rem;
-    color: var(--text-color-dark);
-    line-height: 1.6;
-    margin: 1rem 0 1.5rem;
-    flex-grow: 1; /* Le résumé prend l'espace disponible */
-    overflow: hidden; /* Cache le texte qui dépasse */
-    text-overflow: ellipsis; /* Ajoute des points de suspension */
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limite à 4 lignes */
-    -webkit-box-orient: vertical;
-}
-
-/* Bouton "Lire plus" */
-.read-more {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: var(--border-radius-base);
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-    align-self: flex-start; /* Aligne le bouton à gauche */
-    margin-top: auto; /* Pousse le bouton vers le bas de la carte */
-}
-
-.read-more:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-
-/* RESPONSIVE DESIGN pour les Reviews */
-@media (max-width: 992px) { /* Tablettes */
-    .reviews-container {
-        padding: 2rem 1.5rem;
-    }
-    .reviews-title {
-        font-size: 2.5rem;
-        padding: 1.2rem 1.5rem;
-    }
-    .reviews-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Légèrement plus petit */
-        gap: 2rem;
-    }
-    .review-card {
-        min-height: 480px;
-    }
-    .review-image {
-        height: 200px;
-    }
-    .review-title {
-        font-size: 1.6rem;
-    }
-    .review-summary {
-        font-size: 0.95rem;
-        -webkit-line-clamp: 5; /* Peut-être plus de lignes sur tablette */
-    }
-    .read-more {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) { /* Mobiles */
-    .reviews-container {
-        padding: 1.5rem 1rem;
-    }
-    .reviews-title {
-        font-size: 2rem;
-        padding: 1rem 1.2rem;
-        border-radius: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    .reviews-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1.5rem;
-    }
-    .review-card {
-        min-height: auto; /* Laisser la hauteur s'adapter au contenu sur mobile */
-        padding-bottom: 1rem; /* Ajouter du padding en bas si besoin */
-    }
-    .review-image {
-        height: 180px;
-    }
-    .review-content {
-        padding: 1rem;
-    }
-    .review-title {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-    }
-    .review-author, .review-date {
-        font-size: 0.85rem;
-    }
-    .review-summary {
-        font-size: 0.9rem;
-        margin: 0.8rem 0 1rem;
-        -webkit-line-clamp: 6; /* Peut-être plus de lignes sur mobile */
-    }
-    .read-more {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* --- NAVIGATION PRINCIPALE --- */
-.main-nav {
-    display: flex;
-    gap: 1rem; /* Espace réduit entre les liens */
-}
-
-.main-nav a {
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius-base);
-    border: 1px solid var(--secondary-color); /* Bordure plus fine */
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 1rem; /* Taille de police ajustée */
-    white-space: nowrap;
-    transition: all var(--transition-speed) ease-in-out;
-    position: relative; /* Pour le badge 'Nouveau' */
-}
-
-.main-nav a:hover,
-.main-nav a.active { /* Ajout d'un état actif pour la page courante */
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    transform: translateY(-2px); /* Léger effet 3D */
-}
-
-/* --- ÉTIQUETTE NOUVEAU dans le header --- */
-.main-nav a.new-item {
-    /* Style spécifique si nécessaire, mais le padding et le positionnement gèrent déjà bien */
-}
-
-.main-nav .new-label {
-    position: absolute;
-    top: -0.8rem; /* Ajuster la position verticale */
-    right: -0.8rem; /* Ajuster la position horizontale */
-    background-color: crimson;
-    color: white;
-    font-size: 0.65rem;
-    font-weight: bold;
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    animation: pulse 1.5s infinite;
-    z-index: 10;
-    white-space: nowrap; /* Empêche le texte de se casser */
-    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.5);
-}
-
-
-/* --- BOUTON BURGER (MOBILE) --- */
-.burger-menu {
-    display: none; /* Caché par défaut, visible sur mobile */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001; /* Au-dessus de la nav */
-}
-
-.burger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--secondary-color);
-    margin: 5px 0;
-    transition: all var(--transition-speed) ease-in-out;
-}
-
-/* Styles pour l'état ouvert du menu burger (géré par JS) */
-.burger-menu.open .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.burger-menu.open .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-menu.open .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-
-/* --- SECTION BIENVENUE (accueil uniquement) --- */
-.welcome-section {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 2.5rem 2rem; /* Plus d'espace interne */
-    background: linear-gradient(135deg, var(--primary-color) 0%, #3e4450 100%); /* Dégradé plus moderne */
-    color: var(--text-color-light); /* Texte clair sur fond sombre */
-    border-radius: var(--border-radius-base);
-    max-width: 900px; /* Limite la largeur pour une meilleure lisibilité */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
-    animation: fadeIn 1.5s ease-out; /* Animation légèrement ajustée */
-}
-
-.welcome-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-    letter-spacing: 1px;
-}
-
-.welcome-text {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto; /* Centrer le paragraphe */
-}
-
-/* --- TITRES DE SECTIONS GÉNÉRAUX --- */
-.section-title {
-    text-align: center;
-    font-size: 2rem; /* Taille de police ajustée */
-    margin: 4rem auto 2rem auto;
-    letter-spacing: 1.5px;
-    color: var(--primary-color); /* Couleur plus foncée pour les titres */
-    position: relative;
-    padding-bottom: 0.5rem; /* Espace pour la ligne du dessous */
-}
-
-.section-title::after {
-    content: "";
-    width: 60px; /* Ligne un peu plus longue */
-    height: 4px; /* Ligne un peu plus épaisse */
-    background-color: var(--accent-color); /* Couleur d'accentuation */
-    display: block;
-    margin: 10px auto 0 auto; /* Marge pour la ligne */
-    border-radius: 5px;
-}
-
-/* --- SLIDER (accueil uniquement) --- */
-.slider-section {
-    margin: 3rem 0;
-    padding: 0 1rem; /* Petit padding pour éviter que le slider touche les bords sur mobile */
-}
-
-.slider-container {
-    display: flex; /* Flexbox pour gérer les items du slider */
-    justify-content: center;
-    align-items: stretch; /* Les items ont la même hauteur */
-    max-width: 900px; /* Taille maximale pour le slider */
-    margin: 0 auto;
-    perspective: 1000px; /* Pour des effets 3D futurs si besoin */
-    position: relative;
-    overflow: hidden; /* Cache les éléments qui débordent */
-    min-height: 450px; /* Hauteur minimale pour éviter les sauts lors du changement de slide */
-    background-color: #fff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.slider-item {
-    display: none; /* TRÈS IMPORTANT : Caché par défaut, visible via JS */
-    min-width: 100%; /* S'assure que l'item prend 100% de la largeur du conteneur */
-    flex-shrink: 0; /* Ne pas rétrécir */
-    padding-bottom: 1.5rem; /* Padding pour le bouton */
-    text-align: center;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    background-color: #fff;
-    border-radius: var(--border-radius-base);
-    display: flex; /* Utilise flexbox pour organiser le contenu verticalement */
-    flex-direction: column;
-    justify-content: space-between; /* Pousse le bouton en bas */
-}
-
-.slider-item.active { /* Classe ajoutée par JS pour l'élément visible */
-    display: flex; /* Affiche l'élément en tant que flex container */
-}
-
-.slider-item img {
-    width: 100%;
-    height: 250px; /* Hauteur fixe pour les images du slider */
-    object-fit: cover; /* Recadre l'image pour couvrir la zone */
-    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-    margin-bottom: 1rem;
-}
-
-.slider-item h3 {
-    font-size: 1.4rem;
-    margin: 0 1.5rem 0.5rem 1.5rem; /* Marge latérale pour éviter que le texte ne touche les bords */
-    color: var(--primary-color);
-}
-
-.slider-item p {
-    font-size: 0.95rem;
-    margin: 0 1.5rem 1.5rem 1.5rem;
-    color: var(--text-color-dark);
-    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant */
-}
-
-/* Bouton générique */
-.btn {
-    display: inline-block; /* Permet d'appliquer des marges et paddings */
-    padding: 0.7rem 1.4rem;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.btn:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Contrôles du slider (flèches et points) */
-.slider-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    gap: 1rem;
-}
-
-.slider-prev, .slider-next {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.slider-prev:hover, .slider-next:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-.slider-dots {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-}
-
-.dot.active {
-    background-color: var(--secondary-color);
-    transform: scale(1.2);
-}
-
-
-/* --- SECTIONS DE LIENS (Catégories et Reviews) (accueil uniquement) --- */
-.category-links-section, .review-links-section {
-    padding: 0 1rem;
-    margin-bottom: 4rem; /* Plus d'espace en bas de la section */
-}
-
-.category-links-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem; /* Espacement ajusté */
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.category-link { /* Unifié pour la cohérence */
-    flex: 1 1 calc(25% - 1.5rem); /* 4 éléments par ligne sur desktop */
-    min-width: 180px; /* Taille minimale pour les blocs */
-    height: 12rem; /* Hauteur ajustée */
-    display: flex;
-    flex-direction: column; /* Pour le label "Nouveau" */
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: #fff; /* Fond blanc pour les blocs */
-    color: var(--primary-color); /* Texte sombre */
-    border-radius: var(--border-radius-base);
-    border: 1px solid #ddd; /* Bordure plus douce */
-    transition: all var(--transition-speed) ease-in-out;
-    text-align: center;
-    font-size: 1.15rem;
-    font-weight: bold;
-    position: relative; /* Pour le positionnement du label "Nouveau" */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Ombre légère */
-}
-
-.category-link:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* --- ÉTIQUETTE NOUVEAU (appliquée directement sur .category-link.new-item) --- */
-.category-link.new-item {
-    padding-top: 5rem; /* Augmente le padding-top pour faire de la place au label sans le chevaucher */
-    justify-content: flex-start; /* Aligne le contenu en haut pour que le label soit visible */
-}
-
-.category-links-container .new-label {
-    position: absolute;
-    top: 0.5rem; /* Positionnement par rapport au haut du bloc */
-    left: 50%;
-    transform: translateX(-50%) rotate(-5deg); /* Légère rotation pour un effet "badge" */
-    background-color: crimson;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: bold;
-    padding: 0.3rem 0.7rem;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    animation: pulse 1.5s infinite; /* Animation plus douce */
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.5); /* Ombre rouge */
-    white-space: nowrap; /* Empêche le texte de se casser */
-}
-
-@keyframes pulse {
-    0% { transform: translateX(-50%) rotate(-5deg) scale(1); opacity: 1; }
-    50% { transform: translateX(-50%) rotate(-5deg) scale(1.05); opacity: 0.9; }
-    100% { transform: translateX(-50%) rotate(-5deg) scale(1); opacity: 1; }
-}
-
-
-/* --- PIED DE PAGE --- */
-footer {
-    text-align: center;
-    padding: 2rem 1rem; /* Padding ajusté */
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-top: auto; /* Pousse le footer en bas de page */
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-links {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Pour les petits écrans */
-    gap: 1rem;
-}
-
-.footer-links a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color var(--transition-speed) ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
-}
-
-
-/* --- Styles spécifiques aux pages d'actualités (films.html, series.html, actualités.html) --- */
-
-/* Section d'introduction de la page */
-.page-intro-section {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 900px;
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.page-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-}
-
-.page-description {
-    font-size: 1.1rem;
-    color: var(--text-color-dark);
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Grille d'articles */
-.news-grid {
-    display: grid;
-    gap: 2rem; /* Espacement entre les articles */
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem; /* Petit padding pour éviter que la grille ne touche les bords sur mobile */
-}
-
-/* Articles principaux (À LA UNE) - 3 colonnes sur desktop */
-.main-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* Articles des dernières actualités - 3 ou 4 colonnes sur desktop, plus compact */
-.latest-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.news-item {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* Assure que le border-radius s'applique à l'image */
-    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
-    display: flex; /* Utilise flexbox pour le contenu de l'article */
-    flex-direction: column; /* Empile l'image, titre, texte, bouton */
-}
-
-.news-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.news-item img {
-    width: 100%;
-    height: 200px; /* Hauteur fixe pour toutes les images d'article */
-    object-fit: cover; /* Recadre l'image pour couvrir la zone */
-    border-bottom: 1px solid #eee;
-}
-
-.news-item h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin: 1rem 1.5rem 0.5rem 1.5rem;
-    min-height: 3.5rem; /* Assure une hauteur minimale pour les titres, ajustez si besoin */
-    display: -webkit-box; /* Pour tronquer le texte sur plusieurs lignes */
-    -webkit-line-clamp: 2; /* Limite à 2 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item p {
-    font-size: 0.95rem;
-    color: var(--text-color-dark);
-    margin: 0 1.5rem 1rem 1.5rem;
-    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant, poussant le bouton vers le bas */
-    display: -webkit-box; /* Pour tronquer le texte sur plusieurs lignes */
-    -webkit-line-clamp: 3; /* Limite à 3 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item .btn {
-    align-self: center; /* Centre le bouton horizontalement */
-    margin-bottom: 1.5rem; /* Marge en bas pour le bouton */
-    margin-top: auto; /* Pousse le bouton vers le bas si le texte est court */
-}
-
-/* --- RESPONSIVE DESIGN (Media Queries) --- */
-
-/* Pour les tablettes (768px à 1024px) */
-@media (max-width: 1024px) {
-    .header-content {
-        padding: 0 1.5rem;
-    }
-
-    .main-nav {
-        gap: 0.8rem;
-    }
-
-    .main-nav a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
 
-    .site-title {
-        font-size: 1.6rem;
-    }
-
-    .welcome-title {
-        font-size: 2rem;
-    }
-
-    .welcome-text {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .slider-item img {
-        height: 200px;
-    }
-
-    .slider-item h3 {
-        font-size: 1.3rem;
-    }
-
-    .slider-item p {
-        font-size: 0.9rem;
-    }
-
-    .category-link {
-        flex: 1 1 calc(33% - 1.5rem); /* 3 éléments par ligne sur tablettes */
-    }
-
-    /* Styles spécifiques aux pages d'actualités - tablette */
-    .page-title {
-        font-size: 2rem;
-    }
-    .page-description {
-        font-size: 1rem;
-    }
-    .main-news-grid,
-    .latest-news-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Plus dense sur tablette */
-        gap: 1.5rem;
-    }
-    .news-item h3 {
-        font-size: 1.2rem;
-        min-height: 3rem; /* Ajusté */
-    }
-    .news-item p {
-        font-size: 0.9rem;
-    }
-}
-
-
-/* Pour les mobiles (max-width 768px) */
-@media (max-width: 768px) {
-    .header-content {
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
-        justify-content: center;
-        text-align: center;
-    }
-
-    .logo-link {
-        margin-bottom: 1rem;
-    }
-
-    .site-title {
-        flex-basis: 100%; /* Prend toute la largeur */
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .main-nav {
-        display: none; /* Caché par défaut sur mobile, géré par JS pour le menu burger */
-        flex-direction: column;
-        width: 100%;
-        gap: 0.5rem;
-        margin-top: 1rem;
-        text-align: center;
-    }
-
-    .main-nav.open { /* Classe ajoutée par JS */
-        display: flex;
-    }
-
-    .main-nav a {
-        width: 80%; /* Pour une meilleure apparence des liens */
-        margin: 0 auto;
-        font-size: 1.1rem;
-    }
-
-    .burger-menu {
-        display: block; /* Affiche le bouton burger */
-        position: absolute; /* Positionne le burger pour ne pas décaler les autres éléments */
-        right: 1rem;
-        top: 1.5rem;
-    }
-
-    .welcome-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-
-    .welcome-title {
-        font-size: 1.8rem;
-    }
-
-    .welcome-text {
-        font-size: 0.95rem;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-        margin: 3rem auto 1.5rem auto;
-    }
-
-    .slider-item img {
-        height: 180px;
-    }
-
-    .slider-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .slider-item p {
-        font-size: 0.85rem;
-    }
-
-    .slider-controls {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-
-    .category-links-container {
-        gap: 1rem;
-    }
-
-    .category-link {
-        flex: 1 1 calc(50% - 1rem); /* 2 éléments par ligne sur mobile */
-        height: 10rem; /* Hauteur réduite */
-        font-size: 1rem;
-    }
-
-    .category-links-container .new-label {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.5rem;
-    }
-
-    footer {
-        padding: 1.5rem 0.5rem;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    /* Styles spécifiques aux pages d'actualités - mobile */
-    .page-intro-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    .page-title {
-        font-size: 1.8rem;
-    }
-    .page-description {
-        font-size: 0.95rem;
-    }
-    .news-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1rem;
-        margin: 2rem auto;
-    }
-    .news-item img {
-        height: 160px;
-    }
-    .news-item h3 {
-        font-size: 1.1rem;
-        min-height: auto; /* Laisse le titre s'adapter */
-        margin: 1rem 1rem 0.5rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile si le design le permet */
-    }
-    .news-item p {
-        font-size: 0.85rem;
-        margin: 0 1rem 1rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile */
-    }
-    .news-item .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-/* --- Styles spécifiques aux pages d'actualités (films.html, series.html, actualités.html) --- */
-
-/* Section d'introduction de la page */
-.page-intro-section {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 900px;
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+/* --- BANDE-ANNONCE SECTION AMÉLIORÉE --- */
+.bande-annonce-section {
+    padding: 4rem 1rem; /* Plus de padding pour aérer */
+    background: linear-gradient(180deg, var(--background-color) 0%, #e0e6ed 100%); /* Fond dégradé subtil */
 }
 
-.page-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.8rem;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-}
-
-.page-description {
-    font-size: 1.1rem;
-    color: var(--text-color-dark);
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Grille d'articles */
-.news-grid {
-    display: grid;
-    gap: 2rem; /* Espacement entre les articles */
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem; /* Petit padding pour éviter que la grille ne touche les bords sur mobile */
-}
-
-/* Articles principaux (À LA UNE) - 3 colonnes sur desktop */
-.main-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* Articles des dernières actualités - 3 ou 4 colonnes sur desktop, plus compact */
-.latest-news-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.news-item {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* Assure que le border-radius s'applique à l'image */
-    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
-    display: flex; /* Utilise flexbox pour le contenu de l'article */
-    flex-direction: column; /* Empile l'image, titre, texte, bouton */
-}
-
-.news-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.news-item img {
-    width: 100%;
-    height: 200px; /* Hauteur fixe pour toutes les images d'article */
-    object-fit: cover; /* Recadre l'image pour couvrir la zone */
-    border-bottom: 1px solid #eee;
-}
-
-.news-item h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin: 1rem 1.5rem 0.5rem 1.5rem;
-    min-height: 3.5rem; /* Assure une hauteur minimale pour les titres, ajustez si besoin */
-    display: -webkit-box; /* Pour tronquer le texte sur plusieurs lignes */
-    -webkit-line-clamp: 2; /* Limite à 2 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item p {
-    font-size: 0.95rem;
-    color: var(--text-color-dark);
-    margin: 0 1.5rem 1rem 1.5rem;
-    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant, poussant le bouton vers le bas */
-    display: -webkit-box; /* For truncating text over multiple lines */
-    -webkit-line-clamp: 3; /* Limite à 3 lignes */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.news-item .btn {
-    align-self: center; /* Centre le bouton horizontalement */
-    margin-bottom: 1.5rem; /* Marge en bas pour le bouton */
-    margin-top: auto; /* Pousse le bouton vers le bas si le texte est court */
-}
-
-/* Style pour la section "À venir..." si vous la gardez simple */
-.coming-soon {
-    text-align: center;
-    margin: 4rem auto;
-    padding: 2rem;
-    max-width: 700px;
-    background-color: #f7f7f7;
-    border: 1px dashed #ccc;
-    border-radius: var(--border-radius-base);
-    color: var(--text-color-dark);
-}
-
-.coming-soon h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.coming-soon p {
-    font-size: 1rem;
-}
-
-
-/* --- RESPONSIVE DESIGN (Media Queries) --- */
-
-@media (max-width: 1024px) {
-    .page-title {
-        font-size: 2rem;
-    }
-    .page-description {
-        font-size: 1rem;
-    }
-    .main-news-grid,
-    .latest-news-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Plus dense sur tablette */
-        gap: 1.5rem;
-    }
-    .news-item h3 {
-        font-size: 1.2rem;
-        min-height: 3rem; /* Ajusté */
-    }
-    .news-item p {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .page-intro-section {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    .page-title {
-        font-size: 1.8rem;
-    }
-    .page-description {
-        font-size: 0.95rem;
-    }
-    .news-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1rem;
-        margin: 2rem auto;
-    }
-    .news-item img {
-        height: 160px;
-    }
-    .news-item h3 {
-        font-size: 1.1rem;
-        min-height: auto; /* Laisse le titre s'adapter */
-        margin: 1rem 1rem 0.5rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile si le design le permet */
-    }
-    .news-item p {
-        font-size: 0.85rem;
-        margin: 0 1rem 1rem 1rem;
-        -webkit-line-clamp: unset; /* Désactive la limitation de lignes sur mobile */
-    }
-    .news-item .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
-    .coming-soon {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-    }
-    .coming-soon h2 {
-        font-size: 1.5rem;
-    }
-    .coming-soon p {
-        font-size: 0.9rem;
-    }
-}
-/* Styles spécifiques à la page Bande-Annonces */
 .bande-annonce-container {
-    padding: 3rem;
+    max-width: 1300px; /* Élargi légèrement pour plus de contenu */
+    margin: 0 auto;
     text-align: center;
 }
 
 .titre-bande-annonce {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
+    font-family: var(--font-family-title);
+    font-size: 3.8rem; /* Taille augmentée pour l'impact */
+    margin-bottom: 4rem; /* Plus d'espace sous le titre */
     color: var(--secondary-color);
-    background: linear-gradient(135deg, #1c1f26, #2e3440);
-    padding: 1.5rem 2rem;
-    border-radius: 2rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
-    font-family: 'Bebas Neue', cursive;
-    border: 2px solid var(--secondary-color);
-    max-width: 800px;
+    background: linear-gradient(135deg, #1f252f 0%, var(--primary-color) 100%); /* Dégradé plus prononcé */
+    padding: 1.8rem 2.5rem; /* Padding accru */
+    border-radius: 15px; /* Bordures légèrement moins arrondies */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Ombre plus intense */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre plus forte pour la profondeur */
+    letter-spacing: 2px; /* Espacement des lettres augmenté */
+    border: 3px solid var(--accent-color); /* Bordure accentuée */
+    max-width: 900px; /* Largeur maximale augmentée */
     margin-left: auto;
     margin-right: auto;
+    transform: perspective(1px) translateZ(0); /* Force le rendu 3D pour la performance */
+    transition: all 0.4s ease-in-out;
+}
+
+.titre-bande-annonce:hover {
+    transform: scale(1.02) perspective(1px) translateZ(0); /* Léger zoom au survol */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--secondary-color); /* Changement de couleur de bordure au survol */
 }
 
 .maj-annonces {
     text-align: center;
-    margin: 4rem auto 2rem auto;
-    letter-spacing: 2px;
-    position: relative;
-    font-size: 1rem;
+    margin: 3rem auto 2rem auto;
+    letter-spacing: 1.8px;
+    font-size: 1.1rem; /* Légèrement plus grand */
     color: var(--primary-color);
-    margin-bottom: 3rem;
+    font-weight: 500;
+    opacity: 0.9;
 }
 
-/* Nouvelle approche pour la grille des bandes-annonces */
 .grille-bandes {
     display: grid;
-    /* Utilise auto-fill pour créer autant de colonnes que possible
-       minmax(340px, 1fr) pour des cartes un peu plus grandes */
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 2.5rem; /* Augmente légèrement l'espace entre les cartes */
-    padding: 0 1rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Adapté pour 3 colonnes sur grand écran, minimum 320px */
+    gap: 3rem; /* Espacement augmenté entre les cartes */
+    padding: 0 1.5rem; /* Padding latéral pour les petits écrans */
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 .card-bande {
     background-color: #ffffff;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    position: relative; /* Nécessaire pour le badge */
-    padding: 1.5rem; /* Padding interne */
+    border-radius: 12px; /* Bordures plus douces */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Ombre plus définie */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    position: relative;
+    padding: 2rem; /* Plus de padding interne */
     display: flex;
-    flex-direction: column; /* Organise le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-    text-align: center; /* Centre le texte */
-    min-height: 480px; /* Augmente la hauteur minimale des cartes pour plus d'espace */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 520px; /* Hauteur minimale augmentée pour uniformité */
+    border: 1px solid #e0e0e0; /* Bordure subtile */
 }
 
 .card-bande:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.01); /* Effet plus prononcé au survol */
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25); /* Ombre au survol plus large et profonde */
+    border-color: var(--secondary-color); /* Bordure accentuée au survol */
 }
 
 .badge-nouveau {
     position: absolute;
-    top: 10px;
-    left: 50px; /* au lieu de 10px, tu le déplaces plus vers la droite */
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.4rem 0.8rem;
-    border-radius: 5px;
+    top: 15px; /* Légèrement décalé */
+    right: 15px; /* Positionné à droite pour varier */
+    background-color: crimson; /* Utilise la couleur du label 'new' déjà défini */
+    color: white;
+    padding: 0.5rem 1rem; /* Plus grand */
+    border-radius: 50px; /* Forme de pilule */
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    z-index: 5;
+    z-index: 10; /* Assure qu'il est au-dessus */
+    animation: pulse 1.5s infinite; /* Réutilise l'animation existante */
+    box-shadow: 0 2px 10px rgba(220, 20, 60, 0.6); /* Ombre pour le badge */
 }
 
 .card-bande h2 {
-    font-size: 1.8rem;
-    margin: 1rem 0 0.8rem;
+    font-size: 2rem; /* Taille de titre plus grande */
+    margin: 1.2rem 0 1rem;
     color: var(--primary-color);
+    line-height: 1.2;
+    min-height: 3rem; /* Assure une hauteur minimale */
 }
 
-.date-sortie, .ajout-site, .synopsis {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0.3rem 0;
+.card-bande .date-sortie,
+.card-bande .ajout-site {
+    font-size: 0.9rem; /* Légèrement plus petit */
+    color: #888; /* Couleur plus douce */
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
-.synopsis {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    flex-grow: 1; /* Permet au synopsis de prendre l'espace restant */
+.card-bande .synopsis {
+    font-size: 0.98rem; /* Ajusté */
+    line-height: 1.6;
+    margin: 1rem 0 1.8rem;
+    flex-grow: 1;
+    color: #555; /* Couleur de texte plus douce */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limite à 4 lignes pour le synopsis */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Conteneur responsif pour la vidéo */
 .video-responsive {
     position: relative;
     width: 100%;
-    /* Ratio 16:9 pour les vidéos. Hauteur basée sur la largeur. */
-    padding-bottom: 56.25%; /* (9 / 16) * 100% */
-    height: 0; /* Important pour que padding-bottom fonctionne comme prévu */
-    overflow: hidden; /* Cache tout ce qui dépasse si l'iframe est mal dimensionné */
-    border-radius: var(--border-radius-base);
-    margin-top: auto; /* Pousse la vidéo vers le bas si le synopsis est court */
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px; /* Bordures plus douces pour la vidéo */
+    margin-top: auto; /* Pousse la vidéo vers le bas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre sur la vidéo */
+    background-color: #000; /* Fond noir pour un chargement propre */
 }
 
 .video-responsive iframe {
@@ -3141,174 +688,544 @@ footer {
     border: none;
 }
 
-/* Styles pour les éléments cachés au départ */
-.card-bande.hidden-card {
+.hidden-card {
     display: none;
 }
 
-/* Bouton "Voir plus" */
 #voir-plus-btn {
     display: block;
-    margin: 3rem auto;
-    padding: 1rem 2.5rem; /* Plus grand */
-    font-size: 1.15rem; /* Plus grand */
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
+    margin: 4rem auto 0 auto; /* Marge supérieure augmentée */
+    padding: 1.2rem 3rem; /* Plus grand et plus visible */
+    font-size: 1.25rem; /* Texte plus grand */
+    background-color: var(--accent-color); /* Utilise la couleur d'accentuation */
+    color: var(--primary-color); /* Texte sombre sur bouton clair */
     border: none;
-    border-radius: var(--border-radius-base);
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Ombre plus prononcée */
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 #voir-plus-btn:hover {
-    background-color: #444;
-    transform: translateY(-3px);
+    background-color: var(--primary-color); /* Inverse les couleurs au survol */
+    color: var(--accent-color);
+    transform: translateY(-5px) scale(1.02); /* Effet plus dynamique */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
-
-/* RESPONSIVE DESIGN pour les bandes-annonces */
-@media (max-width: 992px) { /* Pour les tablettes et plus petits */
-    .grille-bandes {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Légèrement plus petit sur tablette */
-        gap: 2rem;
-    }
-    .card-bande {
-        min-height: 450px; /* Ajuste la hauteur minimale sur tablette */
-    }
-    .card-bande h2 {
-        font-size: 1.6rem;
-    }
+/* --- REVIEWS SECTION --- */
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-@media (max-width: 768px) {
-    .bande-annonce-container {
-        padding: 1.5rem 0.5rem; /* Plus petit padding */
-    }
-
-    .titre-bande-annonce {
-        font-size: 2rem;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .maj-annonces {
-        font-size: 0.85rem;
-        margin: 1.5rem auto 1rem auto;
-    }
-
-    .grille-bandes {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 1.5rem; /* Augmente un peu l'espace sur mobile */
-        padding: 0 0.5rem;
-    }
-
-    .card-bande {
-        padding: 1rem;
-        min-height: 400px; /* Hauteur minimale ajustée pour mobile */
-    }
-
-    .card-bande h2 {
-        font-size: 1.4rem;
-        margin: 0.5rem 0;
-    }
-
-    .date-sortie, .ajout-site, .synopsis {
-        font-size: 0.9rem;
-    }
-
-    /* Le .video-responsive gérera la taille de l'iframe automatiquement */
-
-    #voir-plus-btn {
-        padding: 0.8rem 1.8rem;
-        font-size: 1rem;
-        margin: 2rem auto;
-    }
-}
-.mentions-legales {
+.reviews-title {
+    font-family: var(--font-family-title);
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+    background: linear-gradient(135deg, #1c1f26, #2e3440);
+    padding: 1.5rem 2rem;
+    border-radius: 2rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    border: 2px solid var(--secondary-color);
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    color: #333;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.review-card {
+    background-color: #ffffff;
+    border-radius: var(--border-radius-base);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    min-height: 520px;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.review-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+}
+
+.review-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.review-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+    font-weight: bold;
+    flex-grow: 0;
+}
+
+.review-author, .review-date {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.review-summary {
+    font-size: 1.05rem;
+    color: var(--text-color-dark);
     line-height: 1.6;
+    margin: 1rem 0 1.5rem;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
-.mentions-legales h1,
-.mentions-legales h2,
-.mentions-legales h3 {
-    color: #222;
-    margin-top: 1.5rem;
-}
-
-.mentions-legales p {
-    margin-bottom: 1rem;
-}
-
-.mentions-legales a {
-    color: #0077cc;
-    text-decoration: underline;
-}
-
-.mentions-legales a:hover {
+.review-card .read-more {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- MENTION LEGALES ECT.. --- */
+.a-propos,
+.mentions-legales {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2.5rem 2rem;
+    background-color: var(--background-color);
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    line-height: 1.8;
+    color: var(--primary-color);
+    font-size: 1.05rem;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.a-propos h1,
+.mentions-legales h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.a-propos h2,
+.mentions-legales h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 0.8rem;
+}
+
+.a-propos p,
+.mentions-legales p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.a-propos p strong,
+.mentions-legales p strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.a-propos .welcome-message {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.a-propos a,
+.mentions-legales a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.a-propos a:hover,
+.mentions-legales a:hover {
+    color: #000000;
 }
 
 .contact {
     max-width: 700px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    color: #333;
+    margin: 4rem auto;
+    padding: 2.5rem 2rem;
+    background-color: var(--background-color);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    color: var(--primary-color);
 }
 
-.contact h1,
-.contact h2 {
-    margin-bottom: 1.5rem;
-    color: #222;
+.contact h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
 }
 
 .contact form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .contact label {
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
 }
 
 .contact input,
 .contact textarea {
-    padding: 0.8rem;
+    width: 100%;
+    padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
-    width: 100%;
+    font-family: inherit;
+    background-color: #fff;
+    color: #000;
+    transition: border-color 0.3s ease;
 }
 
-.contact textarea {
-    resize: vertical;
-    min-height: 120px;
+.contact input:focus,
+.contact textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(166, 124, 0, 0.2);
 }
 
-.contact button {
-    padding: 0.8rem 1.5rem;
-    background-color: #0077cc;
-    color: white;
+.contact button[type="submit"] {
+    background-color: var(--accent-color);
+    color: #fff;
     border: none;
     border-radius: 6px;
+    padding: 0.75rem;
     font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 150px;
+    align-self: center;
 }
 
-.contact button:hover {
-    background-color: #005fa3;
+.contact button[type="submit"]:hover {
+    background-color: #000;
+    color: var(--accent-color);
+}
+
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+
+/* For Tablets (max-width 1024px) */
+@media (max-width: 1024px) {
+    .header-content {
+        padding: 0 1.5rem;
+    }
+
+    .main-nav {
+        gap: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .page-title, .reviews-title { /* Removed .titre-bande-annonce as it's now handled by its own media query block */
+        font-size: 2rem;
+    }
+
+    .main-news-grid,
+    .latest-news-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Updated .grille-bandes for tablets */
+    .grille-bandes {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted minmax for better tablet flow */
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    /* Updated .card-bande for tablets */
+    .card-bande {
+        min-height: 480px;
+        padding: 1.5rem;
+    }
+
+    /* Updated .card-bande h2 for tablets */
+    .card-bande h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Updated .card-bande .synopsis for tablets */
+    .card-bande .synopsis {
+        font-size: 0.95rem;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    /* Updated #voir-plus-btn for tablets */
+    #voir-plus-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.15rem;
+    }
+
+    /* Specific tablet adjustments for bande-annonce title */
+    .titre-bande-annonce {
+        font-size: 3rem; /* Adjusted for tablets */
+        margin-bottom: 3rem;
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* For Mobile (max-width 768px) */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main-nav {
+        display: none; /* Hidden by default on mobile, shown with JS */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color); /* Same as header */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        padding: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1.5rem;
+    }
+
+    .welcome-section, .page-intro-section, .coming-soon {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .slider-controls {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    footer {
+        padding: 1.5rem 0.5rem;
+    }
+
+    /* Mise à jour demandée ici */
+    .news-grid, .reviews-grid { /* Removed .grille-bandes as it's now handled by its own media query block */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .reviews-title { /* Removed .titre-bande-annonce as it's now handled by its own media query block */
+        font-size: 2rem;
+        padding: 1rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Updated #voir-plus-btn for mobile */
+    #voir-plus-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        margin: 2.5rem auto 0 auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* --- Specific Mobile adjustments for Bande-Annonce section --- */
+    .bande-annonce-section {
+        padding: 2.5rem 0.5rem;
+    }
+
+    .titre-bande-annonce {
+        font-size: 2.2rem; /* Taille réduite pour mobile */
+        margin-bottom: 2.5rem;
+        padding: 1rem 1.5rem;
+        border-radius: 10px; /* Bordures encore plus douces */
+        border: 2px solid var(--accent-color); /* Bordure légèrement plus fine */
+    }
+
+    .maj-annonces {
+        font-size: 1rem;
+        margin: 2.5rem auto 1.5rem auto;
+    }
+
+    .grille-bandes {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        gap: 1.8rem;
+        padding: 0 0.8rem;
+    }
+
+    .card-bande {
+        min-height: auto; /* Laisse le contenu définir la hauteur */
+        padding: 1.2rem;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-bande:hover {
+        transform: translateY(-5px) scale(1.005);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .badge-nouveau {
+        top: 10px;
+        right: 10px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .card-bande h2 {
+        font-size: 1.4rem;
+        margin: 0.8rem 0 0.6rem;
+    }
+
+    .card-bande .date-sortie,
+    .card-bande .ajout-site {
+        font-size: 0.85rem;
+    }
+
+    .card-bande .synopsis {
+        font-size: 0.9rem;
+        margin: 0.8rem 0 1.2rem;
+        -webkit-line-clamp: 3; /* Limite à 3 lignes pour le synopsis sur mobile */
+    }
+
+    .video-responsive {
+        border-radius: 8px;
+    }
+}
+
+/* For very small screens (max-width 480px) */
+@media (max-width: 480px) {
+    .titre-bande-annonce {
+        font-size: 1.8rem;
+        padding: 0.8rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .card-bande {
+        padding: 1rem;
+    }
+
+    .card-bande h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-bande .synopsis {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 2; /* Limit to 2 lines on very small screens */
+    }
+
+    #voir-plus-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
