@@ -1,0 +1,76 @@
+# Nom du workflow qui apparaîtra dans l'onglet "Actions" de votre dépôt GitHub
+name: Exécuter le Scraper de Bandes-Annonces
+
+# Quand ce workflow doit s'exécuter
+on:
+  # Permet de déclencher le workflow manuellement depuis l'interface GitHub
+  workflow_dispatch:
+
+  # Déclenche le workflow automatiquement à une heure spécifique
+  # Ici, il s'exécutera tous les jours à 03:00 du matin (UTC)
+  # Vous pouvez ajuster cette fréquence. Pour plus d'informations sur les expressions cron: https://crontab.guru/
+  schedule:
+    - cron: '0 3 * * *' # min(0-59) hour(0-23) day_of_month(1-31) month(1-12) day_of_week(0-6)
+
+  # (Optionnel) Déclenche le workflow à chaque push sur la branche 'main'
+  # Utile pour tester rapidement votre workflow après des modifications.
+  # Vous pouvez commenter cette section si vous ne voulez que le déclenchement programmé.
+  push:
+    branches: [ main ]
+
+jobs:
+  run_scraper:
+    # Le runner est l'environnement virtuel où votre script sera exécuté.
+    # ubuntu-latest est un bon choix pour les scripts Python.
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout du code
+      # Cette action est essentielle. Elle télécharge le contenu de votre dépôt
+      # sur le runner, ce qui permet à votre workflow d'accéder à votre script.
+      uses: actions/checkout@v4
+      with:
+        # Important : Ce token permet au workflow de committer et pousser des changements
+        # si votre script modifie des fichiers (comme sauvegarder les données scrapées).
+        # C'est un secret fourni automatiquement par GitHub.
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Configuration de Python
+      # Configure l'environnement Python sur le runner.
+      # Remplacez '3.x' par la version de Python que votre script utilise.
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9' # Par exemple, '3.10', '3.11', '3.12'
+
+    - name: Installation des dépendances Python
+      # Si votre script Python utilise des bibliothèques externes (comme requests, BeautifulSoup, Selenium, etc.),
+      # vous devez les installer ici.
+      # Assurez-vous d'avoir un fichier `requirements.txt` à la racine de votre projet
+      # listant toutes ces dépendances.
+      run: |
+        python -m pip install --upgrade pip
+        # Installe les dépendances listées dans requirements.txt
+        # Si vous n'avez pas ce fichier, commentez la ligne suivante.
+        pip install -r requirements.txt
+
+    - name: Exécution du script de scraping
+      # C'est la commande qui lance votre script Python.
+      # Assurez-vous que le chemin est correct.
+      # Si votre script est à la racine :
+      run: python scrape_bandes_annonces.py
+      # Si votre script est dans un dossier 'scripts' :
+      # run: python scripts/scrape_bandes_annonces.py
+
+    - name: Commit automatique des changements (si le scraper génère des fichiers)
+      # Cette action est utile si votre scraper sauvegarde les données (par exemple, dans un fichier JSON).
+      # Elle détecte les nouveaux fichiers ou les modifications, les committe et les pousse.
+      #
+      # Remplacez 'data/*.json' par le chemin des fichiers que votre scraper crée ou met à jour.
+      # Par exemple, si votre scraper met à jour 'output.json' à la racine, utilisez 'output.json'.
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "🤖 Données de bandes-annonces mises à jour automatiquement [skip ci]"
+        files: "data/*.json" # Exemple : surveille tous les JSON dans un dossier 'data'
+        commit_author: "GitHub Actions <actions@github.com>"
+        commit_user_email: "actions@github.com"
+        skip_dirty_check: false # Force la vérification des changements même si le dernier commit est récent
