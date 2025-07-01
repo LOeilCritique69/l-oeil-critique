@@ -33,8 +33,9 @@ jobs:
 
       - name: 🔁 Commit et push des changements
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
+          GH_PAT: ${{ secrets.GH_TOKEN_2 }}
         run: |
+          git remote set-url origin https://$GH_PAT@github.com/LOeilCritique69/l-oeil-critique.git
           git add .
           git commit -m "MAJ automatique des bandes-annonces" || echo "Aucun changement à committer"
           git push origin main
