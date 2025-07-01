@@ -2,8 +2,8 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 7 * * *'  # Tous les jours à 07:15 UTC (09:15 France)
-  workflow_dispatch:
+    - cron: '15 7 * * *'  # Tous les jours à 09h15 heure française (UTC+2)
+  workflow_dispatch:      # Permet un lancement manuel
 
 jobs:
   run-script:
@@ -33,4 +33,4 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add .
           git commit -m "MAJ auto des bandes-annonces" || echo "Pas de changement à commit"
-          git push
+          git push https://x-access-token:${{ secrets.GH_TOKEN_2 }}@github.com/${{ github.repository }}.git HEAD:main
