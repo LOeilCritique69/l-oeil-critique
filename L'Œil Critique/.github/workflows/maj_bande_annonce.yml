@@ -1,43 +1,37 @@
-name: Exécution automatique du scraper de bandes-annonces
+name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '0 8,18 * * *'  # Tous les jours à 10h et 20h heure française (UTC+2)
-  workflow_dispatch:
-  push:
-    branches: [ main ]
+    - cron: '15 7 * * *'  # UTC -> 09h15 France (UTC+2)
+  workflow_dispatch:      # Permet aussi de lancer manuellement via GitHub
 
 jobs:
-  run_scraper:
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout du dépôt
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: ⬇️ Cloner le dépôt
+        uses: actions/checkout@v3
 
-      - name: Configuration de Python
-        uses: actions/setup-python@v5
+      - name: 🐍 Installer Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Installation des dépendances Python
+      - name: 📦 Installer les dépendances
         run: |
           python -m pip install --upgrade pip
-          pip install playwright beautifulsoup4
-          playwright install chromium
+          pip install -r requirements.txt
+          python -m playwright install
 
-      - name: Exécution du script de scraping
-        run: python scraper_bandes_annonces.py
+      - name: ▶️ Lancer le script
+        run: |
+          python maj_bandes_annonces.py
 
-      - name: Commit automatique des fichiers mis à jour
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "🎬 Mise à jour automatique des bandes-annonces"
-          files: |
-            bande_annonces_blocs.html
-            bande_annonces_maj.html
-            scripts/bande_annonces_log.json
-          commit_author: "GitHub Actions <actions@github.com>"
-          commit_user_email: "actions@github.com"
+      - name: 🔁 Commit des fichiers modifiés (si besoin)
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "MAJ auto des bandes-annonces" || echo "Aucun changement"
+          git push

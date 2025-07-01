@@ -1,9 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-import json, os, re
+import json, os, re, subprocess
 from datetime import datetime
-
 from playwright.sync_api import sync_playwright
 
 # CONSTANTES ET FICHIERS
@@ -22,10 +21,8 @@ MAX_BANDES_TMDB = 3
 MAX_ARTICLES_VISIBLE = 9
 MAX_SYNOPSIS_LEN = 500
 
-
 def clean_text(text):
     return ' '.join(text.strip().split())
-
 
 def load_log():
     if os.path.exists(LOG_FILE):
@@ -33,32 +30,12 @@ def load_log():
             return json.load(f)
     return []
 
-
 def save_log(log):
     with open(LOG_FILE, 'w', encoding='utf-8') as f:
         json.dump(log, f, ensure_ascii=False, indent=2)
 
-
 def summarize_synopsis(synopsis):
     return synopsis if len(synopsis) <= MAX_SYNOPSIS_LEN else synopsis[:MAX_SYNOPSIS_LEN].rstrip() + '...'
-
-
-def masquer_ancienne_premiere(contenu):
-    """
-    Cache le premier article marqué NOUVEAU en le passant en hidden-card
-    (pour ne pas garder trop d'anciens articles visibles)
-    """
-    pattern = r'(<article class="card-bande"(?!.*hidden-card)[^>]*>.*?<span class="badge-nouveau">NOUVEAU</span>.*?)</article>'
-    def repl(m):
-        article_html = m.group(1)
-        if 'hidden-card' not in article_html:
-            article_html_mod = article_html.replace('class="card-bande"', 'class="card-bande hidden-card"', 1)
-            # Supprime le badge NOUVEAU quand caché
-            article_html_mod = article_html_mod.replace('<span class="badge-nouveau">NOUVEAU</span>', '')
-            return article_html_mod + '</article>'
-        return m.group(0)
-    return re.sub(pattern, repl, contenu, count=1, flags=re.DOTALL)
-
 
 def extract_youtube_id(src):
     if not src:
@@ -66,7 +43,6 @@ def extract_youtube_id(src):
     if 'youtube.com/embed/' in src:
         return src.split('youtube.com/embed/')[-1].split('?')[0]
     return None
-
 
 def scrape_cinehorizons():
     nouveaux_articles, nouveaux_ids = [], []
@@ -98,8 +74,6 @@ def scrape_cinehorizons():
 
             date_tag = detail_soup.select_one('.movie-release')
             date_sortie_raw = clean_text(date_tag.text.split(':')[-1]) if date_tag else "Date inconnue"
-
-            # Nettoyage date sortie : retirer parenthèses, garder que date brute
             date_sortie = re.sub(r'\s*\(.*?\)', '', date_sortie_raw).strip()
 
             iframe_html, video_id = '<!-- iframe non trouvé -->', None
@@ -130,7 +104,6 @@ def scrape_cinehorizons():
                 print(f"[WARN Cinehorizons] {titre} — {e}")
 
             synopsis = summarize_synopsis(synopsis)
-            # Suppression du badge NOUVEAU ici
             article = f'''<article class="card-bande"><h2>{titre}</h2><p class="date-sortie">Sortie prévue : {date_sortie}</p><p class="ajout-site">Ajouté le : {date_ajout}</p><p class="synopsis">{synopsis}</p><div class="video-responsive">{iframe_html}</div></article>'''.strip()
             nouveaux_articles.append(article)
             nouveaux_ids.append(identifiant)
@@ -139,7 +112,6 @@ def scrape_cinehorizons():
         browser.close()
 
     return nouveaux_articles, nouveaux_ids
-
 
 def scrape_tmdb():
     nouveaux_articles, nouveaux_ids = [], []
@@ -167,13 +139,11 @@ def scrape_tmdb():
         movie_id = movie["id"]
         titre = movie.get("title") or movie.get("original_title") or "Titre inconnu"
         date_sortie = movie.get("release_date", "Date inconnue")
-        # Garder uniquement la date (AAAA-MM-JJ) et reformater en français
         try:
             date_sortie = datetime.strptime(date_sortie, '%Y-%m-%d').strftime('%d %B %Y')
         except Exception:
             pass
 
-        # Récupérer vidéos TMDb (trailer uniquement)
         videos_url = f"https://api.themoviedb.org/3/movie/{movie_id}/videos"
         try:
             res = requests.get(videos_url, params={"api_key": TMDB_API_KEY, "language": "fr-FR"})
@@ -182,12 +152,7 @@ def scrape_tmdb():
             print(f"[Erreur TMDb] Requête vidéos pour {titre} : {e}")
             continue
 
-        trailer_youtube = None
-        for v in videos:
-            if v["site"] == "YouTube" and v["type"] == "Trailer":
-                trailer_youtube = v
-                break
-
+        trailer_youtube = next((v for v in videos if v["site"] == "YouTube" and v["type"] == "Trailer"), None)
         if not trailer_youtube:
             continue
 
@@ -199,11 +164,9 @@ def scrape_tmdb():
             print(f"[DOUBLON TMDb] {titre}")
             continue
 
-        synopsis = movie.get("overview", "Pas de synopsis")
-        synopsis = summarize_synopsis(synopsis)
-
+        synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
         iframe_html = f'''<iframe width="1920" height="750" src="{iframe_src}" title="{titre} (Trailer TMDb)" frameborder="0" allowfullscreen></iframe>'''.strip()
-        # Suppression du badge NOUVEAU ici
+
         article = f'''<article class="card-bande"><h2>{titre}</h2><p class="date-sortie">Sortie prévue : {date_sortie}</p><p class="ajout-site">Ajouté le : {date_ajout}</p><p class="synopsis">{synopsis}</p><div class="video-responsive">{iframe_html}</div></article>'''.strip()
 
         nouveaux_articles.append(article)
@@ -212,77 +175,49 @@ def scrape_tmdb():
 
     return nouveaux_articles, nouveaux_ids
 
-
 def limiter_articles(articles_html):
-    """
-    Limite à MAX_ARTICLES_VISIBLE articles visibles (sans hidden-card).
-    Les autres sont cachés (classe hidden-card) et on enlève badge NOUVEAU.
-    """
     if len(articles_html) <= MAX_ARTICLES_VISIBLE:
         return articles_html
 
     visibles = articles_html[:MAX_ARTICLES_VISIBLE]
-    caches = articles_html[MAX_ARTICLES_VISIBLE:]
-
-    # Modifier les caches
-    caches_mod = []
-    for art in caches:
+    caches = []
+    for art in articles_html[MAX_ARTICLES_VISIBLE:]:
         art_mod = art.replace('class="card-bande"', 'class="card-bande hidden-card"')
         art_mod = art_mod.replace('<span class="badge-nouveau">NOUVEAU</span>', '')
-        caches_mod.append(art_mod)
+        caches.append(art_mod)
+    return visibles + caches
 
-    return visibles + caches_mod
-
+def ajouter_badge_nouveau(articles, n=6):
+    articles_mod = []
+    for i, art in enumerate(articles):
+        art = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', art)
+        if i < n:
+            art = art.replace('<article class="card-bande">', '<article class="card-bande"><span class="badge-nouveau">NOUVEAU</span>', 1)
+        articles_mod.append(art)
+    return articles_mod
 
 def main():
     log = load_log()
     cine_articles, cine_ids = scrape_cinehorizons()
     tmdb_articles, tmdb_ids = scrape_tmdb()
 
-    # Récupérer ancien contenu (HTML complet)
     ancien = ''
     if os.path.exists(OUTPUT_FILE):
         with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
             ancien = f.read()
 
-    # Nettoyage total des badges "NOUVEAU" dans ancien contenu
-    ancien_sans_nouveau = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', ancien)
+    ancien = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', ancien)
+    ancien = re.sub(r'class="card-bande hidden-card"', 'class="card-bande"', ancien)
 
-    # Nettoyage des hidden-card dans ancien pour que les articles anciens ne restent pas cachés
-    ancien_sans_cache = re.sub(r'class="card-bande hidden-card"', 'class="card-bande"', ancien_sans_nouveau)
-
-    # Extraction des anciens articles (si tu veux les garder)
-    anciens_articles = re.findall(r'(<article class="card-bande"[^>]*>.*?</article>)', ancien_sans_cache, flags=re.DOTALL)
-
-    # Combine anciens + nouveaux articles
-    all_articles = anciens_articles + cine_articles + tmdb_articles
-
-    # Fonction pour ajouter le badge NOUVEAU aux n premiers articles
-    def ajouter_badge_nouveau(articles, n=6):
-        articles_mod = []
-        for i, art in enumerate(articles):
-            # Nettoyer tout badge existant
-            art = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', art)
-            if i < n:
-                art = art.replace('<article class="card-bande">', '<article class="card-bande"><span class="badge-nouveau">NOUVEAU</span>', 1)
-            articles_mod.append(art)
-        return articles_mod
-
+    anciens_articles = re.findall(r'(<article class="card-bande"[^>]*>.*?</article>)', ancien, flags=re.DOTALL)
+    all_articles = cine_articles + tmdb_articles + anciens_articles
     all_articles = ajouter_badge_nouveau(all_articles, n=6)
-
-    # Mise à jour du log avec nouveaux identifiants (éviter doublons)
     log.extend(cine_ids + tmdb_ids)
-
-    # Limiter le nombre d'articles visibles à 9, masquer les autres et supprimer badge NOUVEAU des cachés
     all_articles = limiter_articles(all_articles)
 
-    # Ne pas masquer d'anciens articles ici, on a déjà nettoyé les anciens badges
-    ancien_modifie = ''
-
-    contenu_final = '\n\n'.join(all_articles) + '\n\n' + ancien_modifie
-
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.write(contenu_final)
+        f.write('\n\n'.join(all_articles))
+
     save_log(log)
 
     date_maj = datetime.now().strftime('%d %B %Y')
@@ -292,7 +227,15 @@ def main():
     print(f"\n✅ {len(cine_articles)} bande(s) Cinehorizons, {len(tmdb_articles)} bandes TMDb")
     print("✅ Mise à jour réussie.")
 
-
+def push_to_github():
+    try:
+        subprocess.run(["git", "add", OUTPUT_FILE, DATE_FILE, LOG_FILE], check=True)
+        subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
+        subprocess.run(["git", "push", "origin", "main"], check=True)
+        print("✅ Push GitHub réussi.")
+    except subprocess.CalledProcessError as e:
+        print("❌ Erreur lors du push GitHub :", e)
 
 if __name__ == "__main__":
     main()
+    push_to_github()
