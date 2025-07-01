@@ -2,8 +2,8 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 7 * * *'  # Tous les jours à 09h15 heure française (UTC+2)
-  workflow_dispatch:
+    - cron: '15 7 * * *'  # tous les jours à 09h15 heure française (UTC+2)
+  workflow_dispatch:       # permet de lancer manuellement
 
 jobs:
   update-bandes-annonces:
@@ -32,13 +32,6 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@users.noreply.github.com"
 
-      - name: 🔍 Vérifier le token (masqué)
-        run: echo "Token starts with:" ${{ secrets.GH_TOKEN_2 }} | cut -c1-4
-
-      - name: 🔍 Tester l’accès Git avec le PAT
-        run: |
-          git ls-remote https://x-access-token:${{ secrets.GH_TOKEN_2 }}@github.com/LOeilCritique69/l-oeil-critique.git
-          
       - name: 🔁 Commit et push automatique des changements
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
