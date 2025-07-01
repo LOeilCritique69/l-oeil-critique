@@ -2,39 +2,42 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 7 * * *'  # Tous les jours à 09h15 UTC+2 (heure française)
-  workflow_dispatch:      # Permet lancement manuel
+    - cron: '15 07 * * *'  # Tous les jours à 09h15 heure française (UTC+2)
+  workflow_dispatch:      # Lancement manuel possible dans l’onglet Actions
 
 jobs:
-  run-script:
+  update-bandes-annonces:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⬇️ Cloner le dépôt
+      - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🐍 Installer Python
+      - name: 🐍 Setup Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: 📦 Installer les dépendances Python
+      - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python -m playwright install
 
-      - name: ▶️ Exécuter le script Python
+      - name: ▶️ Run bande annonces script
         run: python l_oeil_critique/scripts/scraper_bandes_annonces.py
 
-      - name: Configurer git avec token
+      - name: 🔧 Configure Git remote with PAT token
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN_2 }}@github.com/LOeilCritique69/l-oeil-critique.git
 
-      - name: 🔁 Commit et push des fichiers modifiés
+      - name: 🛠 Configure Git user
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: 🔄 Commit & push changes
+        run: |
           git add .
-          git commit -m "MAJ auto des bandes-annonces" || echo "Pas de changement à commit"
+          git commit -m "MAJ auto des bandes-annonces" || echo "Aucun changement à commit"
           git push origin main
