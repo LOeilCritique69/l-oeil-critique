@@ -2,8 +2,8 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 7 * * *'  # Tous les jours à 07:15 UTC (09:15 heure France en été)
-  workflow_dispatch:      # Permet un lancement manuel via GitHub Actions
+    - cron: '15 7 * * *'  # Tous les jours à 07:15 UTC (09:15 heure France)
+  workflow_dispatch:      # Permet un lancement manuel
 
 jobs:
   run-script:
@@ -21,11 +21,11 @@ jobs:
       - name: 📦 Installer les dépendances Python
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r "L'Œil Critique/requirements.txt"
           python -m playwright install
 
       - name: ▶️ Exécuter le script Python
-        run: python L'Œil\ Critique/maj_bandes_annonces.py
+        run: python "L'Œil Critique/maj_bandes_annonces.py"
 
       - name: 🔁 Commit et push des fichiers modifiés
         run: |
