@@ -2,7 +2,7 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 7 * * *'  # Tous les jours à 07:15 UTC (09:15 heure France)
+    - cron: '15 7 * * *'  # Tous les jours à 07:15 UTC (09:15 France)
   workflow_dispatch:
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
           python -m playwright install
 
       - name: ▶️ Exécuter le script Python
-        run: python l_oeil_critique/scraper_bandes_annonces.py
+        run: python l_oeil_critique/scripts/scraper_bandes_annonces.py
 
       - name: 🔁 Commit et push des fichiers modifiés
         run: |
