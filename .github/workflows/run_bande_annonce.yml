@@ -3,7 +3,7 @@ name: MAJ Bandes Annonces Automatique
 on:
   schedule:
     - cron: '15 7 * * *'  # Tous les jours à 09h15 heure française (UTC+2)
-  workflow_dispatch:      # Permet un lancement manuel dans l’onglet Actions
+  workflow_dispatch:      # Permet un lancement manuel
 
 jobs:
   update-bandes-annonces:
@@ -24,17 +24,19 @@ jobs:
           pip install -r requirements.txt
           python -m playwright install
 
-      - name: ▶️ Exécuter le script
+      - name: ▶️ Exécuter le script Python
         run: python l_oeil_critique/scripts/scraper_bandes_annonces.py
 
-      - name: 🔁 Commit et push des changements
+      - name: 🔁 Commit et push automatique des changements
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "MAJ automatique des bandes-annonces"
+          commit_user_name: github-actions
+          commit_user_email: github-actions@users.noreply.github.com
+          branch: main
+          file_pattern: |
+            l_oeil_critique/scripts/bande_annonces_log.json
+            bande_annonces_blocs.html
+            bande_annonces_maj.html
         env:
-          GH_PAT: ${{ secrets.GH_TOKEN_2 }}
-        run: |
-          git config --global credential.helper ""
-          git config --global user.email "github-actions@users.noreply.github.com"
-          git config --global user.name "github-actions"
-          git remote set-url origin https://$GH_PAT@github.com/LOeilCritique69/l-oeil-critique.git
-          git add .
-          git commit -m "MAJ automatique des bandes-annonces" || echo "Aucun changement à committer"
-          git push origin main
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
