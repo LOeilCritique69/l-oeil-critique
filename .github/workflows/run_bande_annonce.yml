@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: ⬇️ Cloner le dépôt
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_TOKEN_2 }}    # <- IMPORTANT
 
       - name: 🐍 Installer Python
         uses: actions/setup-python@v4
