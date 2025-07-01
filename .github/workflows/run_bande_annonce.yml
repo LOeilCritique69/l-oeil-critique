@@ -2,8 +2,8 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 07 * * *'  # Tous les jours à 09h15 heure française (UTC+2)
-  workflow_dispatch:       # Permet un lancement manuel dans l’onglet Actions
+    - cron: '15 7 * * *'  # Tous les jours à 09h15 UTC+2 (heure française)
+  workflow_dispatch:      # Permet lancement manuel
 
 jobs:
   run-script:
@@ -27,12 +27,14 @@ jobs:
       - name: ▶️ Exécuter le script Python
         run: python l_oeil_critique/scripts/scraper_bandes_annonces.py
 
+      - name: Configurer git avec token
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN_2 }}@github.com/LOeilCritique69/l-oeil-critique.git
+
       - name: 🔁 Commit et push des fichiers modifiés
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add .
           git commit -m "MAJ auto des bandes-annonces" || echo "Pas de changement à commit"
-          git push https://${GITHUB_TOKEN}@github.com/LOeilCritique69/l-oeil-critique.git HEAD:main
+          git push origin main
