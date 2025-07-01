@@ -1,4 +1,5 @@
 import requests
+import os
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import json, os, re, subprocess
@@ -12,9 +13,10 @@ LIST_CINE_URL = BASE_CINE_URL + '/bandes-annonces-prochains-films'
 TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa"
 TMDB_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming"
 
-LOG_FILE = 'scripts/bande_annonces_log.json'
-OUTPUT_FILE = 'bande_annonces_blocs.html'
-DATE_FILE = 'bande_annonces_maj.html'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_FILE = os.path.join(SCRIPT_DIR, 'bande_annonces_log.json')
+OUTPUT_FILE = os.path.join(SCRIPT_DIR, '..', 'bande_annonces_blocs.html')
+DATE_FILE = os.path.join(SCRIPT_DIR, '..', 'bande_annonces_maj.html')
 
 MAX_BANDES_CINE = 3
 MAX_BANDES_TMDB = 3
