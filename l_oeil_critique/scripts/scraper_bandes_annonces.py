@@ -238,11 +238,19 @@ def push_to_github():
         subprocess.run(["git", "add", "l_oeil_critique/bande_annonces_blocs.html", 
                         "l_oeil_critique/bande_annonces_maj.html", 
                         "l_oeil_critique/scripts/bande_annonces_log.json"], check=True)
-        subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
-        subprocess.run(["git", "push", "origin", "main"], check=True)
-        print("✅ Push GitHub réussi.")
+
+        # Vérifier s’il y a quelque chose à committer
+        status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+
+        if status_result.stdout.strip():
+            subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
+            subprocess.run(["git", "push", "origin", "main"], check=True)
+            print("✅ Push GitHub réussi.")
+        else:
+            print("ℹ️ Aucun changement détecté, rien à push.")
     except subprocess.CalledProcessError as e:
         print("❌ Erreur lors du push GitHub :", e)
+
 
 if __name__ == "__main__":
     main()
