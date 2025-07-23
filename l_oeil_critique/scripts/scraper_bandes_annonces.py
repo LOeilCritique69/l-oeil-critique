@@ -231,9 +231,6 @@ def main():
 
 def push_to_github():
     try:
-<<<<<<< HEAD
-        subprocess.run(["git", "add", OUTPUT_FILE, DATE_FILE, LOG_FILE], check=True)
-=======
         # Aller à la racine du dépôt git (qui est le parent du dossier scripts)
         repo_root = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
         os.chdir(repo_root)
@@ -241,7 +238,6 @@ def push_to_github():
         subprocess.run(["git", "add", "l_oeil_critique/bande_annonces_blocs.html", 
                         "l_oeil_critique/bande_annonces_maj.html", 
                         "l_oeil_critique/scripts/bande_annonces_log.json"], check=True)
->>>>>>> f3ffb00 (Initial commit)
         subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
         print("✅ Push GitHub réussi.")
