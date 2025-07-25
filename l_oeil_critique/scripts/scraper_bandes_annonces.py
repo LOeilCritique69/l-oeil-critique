@@ -231,16 +231,28 @@ def main():
 
 def push_to_github():
     try:
-        # Aller à la racine du dépôt git (qui est le parent du dossier scripts)
+        # Aller à la racine du dépôt git (parent de scripts)
         repo_root = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
         os.chdir(repo_root)
 
-        subprocess.run(["git", "add", "l_oeil_critique/bande_annonces_blocs.html", 
-                        "l_oeil_critique/bande_annonces_maj.html", 
-                        "l_oeil_critique/scripts/bande_annonces_log.json"], check=True)
+        # Configurer le nom et l'email Git pour ce dépôt (ou globalement)
+        subprocess.run(["git", "config", "user.name", "LOeilCritique69"], check=True)
+        subprocess.run(["git", "config", "user.email", "yanisfoa69@gmail.com"], check=True)
 
-        # Vérifier s’il y a quelque chose à committer
-        status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        # Ajouter les fichiers modifiés
+        subprocess.run([
+            "git", "add",
+            "l_oeil_critique/bande_annonces_blocs.html",
+            "l_oeil_critique/bande_annonces_maj.html",
+            "l_oeil_critique/scripts/bande_annonces_log.json"
+        ], check=True)
+
+        # Vérifier s’il y a des modifications à committer
+        status_result = subprocess.run(
+            ["git", "status", "--porcelain"],
+            capture_output=True,
+            text=True
+        )
 
         if status_result.stdout.strip():
             subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
@@ -248,8 +260,10 @@ def push_to_github():
             print("✅ Push GitHub réussi.")
         else:
             print("ℹ️ Aucun changement détecté, rien à push.")
+
     except subprocess.CalledProcessError as e:
         print("❌ Erreur lors du push GitHub :", e)
+
 
 
 if __name__ == "__main__":
