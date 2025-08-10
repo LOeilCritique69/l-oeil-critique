@@ -99,16 +99,28 @@ def scrape_cinehorizons():
             iframe_html, video_id = '<!-- iframe non trouvé -->', None
             iframe = detail_soup.select_one('.player iframe')
             if iframe and iframe.has_attr('src'):
-                src = 'https:' + iframe['src'] if iframe['src'].startswith('//') else iframe['src']
+                src = iframe['src']
+                if src.startswith('//'):
+                    src = 'https:' + src
                 video_id = extract_youtube_id(src)
-                iframe_html = f'<iframe width="1920" height="750" src="{src}" title="{titre} (Trailer)" frameborder="0" allowfullscreen></iframe>'
+                if video_id:
+                    # Placeholder <video> pour lazy load
+                    iframe_html = (
+                        f'<video class="youtube-placeholder" '
+                        f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
+                        f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
+                        f'role="button" aria-label="Lire la bande annonce {titre}">'
+                        f'<button class="play-button" aria-hidden="true"></button>'
+                        f'</video>'
+                    )
+                else:
+                    iframe_html = '<!-- iframe non trouvé -->'
 
             identifiant = f"cinehorizons::{titre}::{video_id or detail_url}"
             if identifiant in log:
                 print(f"[DOUBLON Cinehorizons] {titre}")
                 continue
 
-            # Récupération synopsis
             synopsis = "Pas de synopsis"
             try:
                 menu_links = detail_soup.select('.menu a[href*="/film/"]')
@@ -141,6 +153,7 @@ def scrape_cinehorizons():
         browser.close()
 
     return articles, ids
+
 
 # ------------------------------
 # SCRAPER TMDB
@@ -182,7 +195,16 @@ def scrape_tmdb():
             print(f"[DOUBLON TMDb] {titre}")
             continue
 
-        iframe_html = f'<iframe width="1920" height="750" src="https://www.youtube.com/embed/{trailer["key"]}" title="{titre} (Trailer TMDb)" frameborder="0" allowfullscreen></iframe>'
+        video_id = trailer['key']
+        iframe_html = (
+            f'<video class="youtube-placeholder" '
+            f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
+            f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
+            f'role="button" aria-label="Lire la bande annonce {titre}">'
+            f'<button class="play-button" aria-hidden="true"></button>'
+            f'</video>'
+        )
+
         synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
 
         article_html = (
@@ -200,6 +222,7 @@ def scrape_tmdb():
         print(f"[OK TMDb] Ajouté : {titre}")
 
     return articles, ids
+
 # ------------------------------
 # LIMITATION ET BADGES
 # ------------------------------
