@@ -559,7 +559,7 @@ header {
 
 .titre-bande-annonce {
     font-family: var(--font-family-title);
-    font-size: 3.8rem; /* Taille augmentée pour l'impact */
+    font-size: 3.7rem; /* Taille augmentée pour l'impact */
     margin-bottom: 4rem; /* Plus d'espace sous le titre */
     color: var(--secondary-color);
     background: linear-gradient(135deg, #1f252f 0%, var(--primary-color) 100%); /* Dégradé plus prononcé */
