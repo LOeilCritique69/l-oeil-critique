@@ -103,13 +103,14 @@ main {
 header {
     background-color: var(--primary-color);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+/* --- HEADER CONTENT --- */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -118,6 +119,7 @@ header {
     margin: 0 auto;
 }
 
+/* --- LOGO --- */
 .logo-link {
     display: flex;
     align-items: center;
@@ -127,10 +129,16 @@ header {
 .logo {
     width: 4rem;
     height: auto;
-    border-radius: var(--border-radius-base);
-    margin-right: 0.5rem;
+    border-radius: var(--border-radius-base, 8px);
+    margin-right: 0.75rem;
+    transition: transform 0.3s ease;
 }
 
+.logo-link:hover .logo {
+    transform: scale(1.05);
+}
+
+/* --- SITE TITLE --- */
 .site-title {
     font-family: var(--font-family-title);
     font-size: 2rem;
@@ -141,13 +149,12 @@ header {
     text-decoration: none;
     transition: color 0.3s ease;
     display: inline-block;
-    position: relative;
 }
 
 .site-title-link {
     color: inherit;
     text-decoration: none;
-    transition: color var(--transition-speed) ease;
+    transition: color var(--transition-speed, 0.3s) ease;
 }
 
 .site-title-link:hover {
@@ -158,17 +165,18 @@ header {
 .main-nav {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .main-nav a {
     padding: 0.5rem 1rem;
-    border-radius: var(--border-radius-base);
+    border-radius: var(--border-radius-base, 8px);
     border: 1px solid var(--secondary-color);
     color: var(--secondary-color);
     text-decoration: none;
     font-size: 1rem;
     white-space: nowrap;
-    transition: all var(--transition-speed) ease-in-out;
+    transition: all var(--transition-speed, 0.3s) ease-in-out;
     position: relative;
 }
 
@@ -177,11 +185,16 @@ header {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .main-nav .new-label {
-    top: -0.8rem;
-    right: -0.8rem;
+    position: absolute;
+    top: -0.6rem;
+    right: -0.6rem;
+    font-size: 0.7rem;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 /* --- BURGER MENU (MOBILE) --- */
@@ -192,6 +205,9 @@ header {
     cursor: pointer;
     padding: 0.5rem;
     z-index: 1001;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .burger-menu .bar {
@@ -199,13 +215,23 @@ header {
     width: 25px;
     height: 3px;
     background-color: var(--secondary-color);
-    margin: 5px 0;
-    transition: all var(--transition-speed) ease-in-out;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all var(--transition-speed, 0.3s) ease-in-out;
 }
 
-.burger-menu.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.burger-menu.open .bar:nth-child(2) { opacity: 0; }
-.burger-menu.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.burger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 
 /* --- HOME PAGE SECTIONS --- */
 
@@ -407,7 +433,7 @@ header {
 .page-intro-section {
     text-align: center;
     margin: 2rem auto;
-    padding: 2rem;
+    padding: 3rem;
     max-width: 900px;
     background-color: #ffffff;
     border-radius: var(--border-radius-base);
@@ -548,136 +574,151 @@ header {
 
 /* --- BANDE-ANNONCE SECTION AMÉLIORÉE --- */
 .bande-annonce-section {
-    padding: 4rem 1rem; /* Plus de padding pour aérer */
-    background: linear-gradient(180deg, var(--background-color) 0%, #e0e6ed 100%); /* Fond dégradé subtil */
+    padding: 4rem 1rem;
+    background: linear-gradient(180deg, var(--background-color) 0%, #dfe6f0 100%);
+    transition: background 0.5s ease;
 }
 
 .bande-annonce-container {
-    max-width: 1300px; /* Élargi légèrement pour plus de contenu */
+    max-width: 1400px;
     margin: 0 auto;
     text-align: center;
 }
 
+/* --- TITRE BANDE-ANNONCE ÉPURÉ --- */
 .titre-bande-annonce {
     font-family: var(--font-family-title);
-    font-size: 3.7rem; /* Taille augmentée pour l'impact */
-    margin-bottom: 4rem; /* Plus d'espace sous le titre */
+    font-size: 2.5rem; /* plus léger que 4rem */
     color: var(--secondary-color);
-    background: linear-gradient(135deg, #1f252f 0%, var(--primary-color) 100%); /* Dégradé plus prononcé */
-    padding: 1.8rem 2.5rem; /* Padding accru */
-    border-radius: 15px; /* Bordures légèrement moins arrondies */
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Ombre plus intense */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre plus forte pour la profondeur */
-    letter-spacing: 2px; /* Espacement des lettres augmenté */
-    border: 3px solid var(--accent-color); /* Bordure accentuée */
-    max-width: 900px; /* Largeur maximale augmentée */
-    margin-left: auto;
-    margin-right: auto;
-    transform: perspective(1px) translateZ(0); /* Force le rendu 3D pour la performance */
-    transition: all 0.4s ease-in-out;
+    letter-spacing: 1px;
+    margin: 0 auto 1rem; /* centré et espacement bas */
+    text-align: center;
+
+    /* Fond léger et relief subtil */
+    background: linear-gradient(135deg, #1f252f 0%, var(--primary-color) 100%);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+    /* Transition douce au hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .titre-bande-annonce:hover {
-    transform: scale(1.02) perspective(1px) translateZ(0); /* Léger zoom au survol */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    border-color: var(--secondary-color); /* Changement de couleur de bordure au survol */
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .maj-annonces {
     text-align: center;
     margin: 3rem auto 2rem auto;
-    letter-spacing: 1.8px;
-    font-size: 1.1rem; /* Légèrement plus grand */
+    letter-spacing: 2px;
+    font-size: 1.2rem;
     color: var(--primary-color);
-    font-weight: 500;
-    opacity: 0.9;
+    font-weight: 600;
+    opacity: 0.95;
 }
 
 .grille-bandes {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Adapté pour 3 colonnes sur grand écran, minimum 320px */
-    gap: 3rem; /* Espacement augmenté entre les cartes */
-    padding: 0 1.5rem; /* Padding latéral pour les petits écrans */
-    max-width: 1300px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+    padding: 0 1.5rem;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .card-bande {
     background-color: #ffffff;
-    border-radius: 12px; /* Bordures plus douces */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Ombre plus définie */
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.4s ease;
     position: relative;
-    padding: 2rem; /* Plus de padding interne */
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-height: 520px; /* Hauteur minimale augmentée pour uniformité */
-    border: 1px solid #e0e0e0; /* Bordure subtile */
+    min-height: 540px;
+    border: 1px solid #d0d0d0;
+    overflow: hidden;
 }
 
 .card-bande:hover {
-    transform: translateY(-10px) scale(1.01); /* Effet plus prononcé au survol */
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25); /* Ombre au survol plus large et profonde */
-    border-color: var(--secondary-color); /* Bordure accentuée au survol */
+    transform: translateY(-14px) scale(1.04) rotateZ(-0.5deg);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    border-color: var(--secondary-color);
 }
 
 .badge-nouveau {
     position: absolute;
-    top: 15px; /* Légèrement décalé */
-    right: 15px; /* Positionné à droite pour varier */
-    background-color: crimson; /* Utilise la couleur du label 'new' déjà défini */
+    top: 12px;
+    right: 12px;
+    background-color: crimson;
     color: white;
-    padding: 0.5rem 1rem; /* Plus grand */
-    border-radius: 50px; /* Forme de pilule */
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    z-index: 10; /* Assure qu'il est au-dessus */
-    animation: pulse 1.5s infinite; /* Réutilise l'animation existante */
-    box-shadow: 0 2px 10px rgba(220, 20, 60, 0.6); /* Ombre pour le badge */
+    z-index: 10;
+    animation: pulse 1.2s infinite ease-in-out;
+    box-shadow: 0 3px 14px rgba(220, 20, 60, 0.8);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.75; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .card-bande h2 {
-    font-size: 2rem; /* Taille de titre plus grande */
+    font-size: 2.2rem;
     margin: 1.2rem 0 1rem;
     color: var(--primary-color);
     line-height: 1.2;
-    min-height: 3rem; /* Assure une hauteur minimale */
+    min-height: 3.5rem;
+    transition: color 0.3s ease;
 }
 
 .card-bande .date-sortie,
 .card-bande .ajout-site {
-    font-size: 0.9rem; /* Légèrement plus petit */
-    color: #888; /* Couleur plus douce */
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 0.6rem;
     font-weight: 500;
 }
 
 .card-bande .synopsis {
-    font-size: 0.98rem; /* Ajusté */
-    line-height: 1.6;
-    margin: 1rem 0 1.8rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 1rem 0 2rem;
     flex-grow: 1;
-    color: #555; /* Couleur de texte plus douce */
+    color: #555;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limite à 4 lignes pour le synopsis */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.card-bande:hover .synopsis {
+    color: #222;
+    transform: translateY(-2px);
 }
 
 .video-responsive {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* Ratio 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 10px; /* Bordures plus douces pour la vidéo */
-    margin-top: auto; /* Pousse la vidéo vers le bas */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre sur la vidéo */
-    background-color: #000; /* Fond noir pour un chargement propre */
+    border-radius: 14px;
+    margin-top: auto;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+    background-color: #000;
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
 
 .video-responsive iframe {
@@ -695,28 +736,74 @@ header {
 
 #voir-plus-btn {
     display: block;
-    margin: 4rem auto 0 auto; /* Marge supérieure augmentée */
-    padding: 1.2rem 3rem; /* Plus grand et plus visible */
-    font-size: 1.25rem; /* Texte plus grand */
-    background-color: var(--accent-color); /* Utilise la couleur d'accentuation */
-    color: var(--primary-color); /* Texte sombre sur bouton clair */
+    margin: 4rem auto 0 auto;
+    padding: 1.4rem 3.2rem;
+    font-size: 1.35rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Ombre plus prononcée */
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.35s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 #voir-plus-btn:hover {
-    background-color: var(--primary-color); /* Inverse les couleurs au survol */
+    background-color: var(--primary-color);
     color: var(--accent-color);
-    transform: translateY(-5px) scale(1.02); /* Effet plus dynamique */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transform: translateY(-7px) scale(1.05);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.45);
 }
 
+
 /* --- REVIEWS SECTION --- */
+/* --- CONTAINER Lien Reviews Letterboxd --- */
+.lien-reviews-letterboxd {
+    background-color: #f8f8f8; /* fond léger pour le bloc */
+    border-left: 4px solid var(--secondary-color); /* accent visuel à gauche */
+    padding: 1rem 0.7rem;
+    margin: 0.1rem 2;
+    border-radius: 12px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.lien-reviews-letterboxd p {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.lien-reviews-letterboxd strong {
+    color: var(--secondary-color);
+}
+
+/* --- BOUTON LETTERBOXD --- */
+.button-letterboxd {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.button-letterboxd:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* --- CONTAINER PRINCIPAL --- */
 .reviews-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -724,12 +811,13 @@ header {
     text-align: center;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 
+/* --- TITRE --- */
 .reviews-title {
     font-family: var(--font-family-title);
     font-size: 3rem;
-    margin-bottom: 3rem;
     color: var(--secondary-color);
     background: linear-gradient(135deg, #1c1f26, #2e3440);
     padding: 1.5rem 2rem;
@@ -739,24 +827,30 @@ header {
     letter-spacing: 1px;
     border: 2px solid var(--secondary-color);
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 3rem; /* centrage et marge bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.reviews-title:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* --- GRILLE --- */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2.5rem;
     margin-top: 3rem;
-    justify-content: center;
 }
 
+/* --- CARTE REVIEW --- */
 .review-card {
     background-color: #ffffff;
-    border-radius: var(--border-radius-base);
+    border-radius: var(--border-radius-base, 12px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -764,17 +858,20 @@ header {
 }
 
 .review-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* --- IMAGE --- */
 .review-image {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+    border-top-left-radius: var(--border-radius-base, 12px);
+    border-top-right-radius: var(--border-radius-base, 12px);
 }
 
+/* --- CONTENU --- */
 .review-content {
     padding: 1.5rem;
     display: flex;
@@ -782,24 +879,27 @@ header {
     flex-grow: 1;
 }
 
+/* --- TITRE REVIEW --- */
 .review-title {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 0.8rem;
     line-height: 1.3;
     font-weight: bold;
-    flex-grow: 0;
 }
 
-.review-author, .review-date {
+/* --- INFO --- */
+.review-author,
+.review-date {
     font-size: 0.95rem;
     color: #666;
     margin-bottom: 0.3rem;
 }
 
+/* --- TEXTE --- */
 .review-summary {
     font-size: 1.05rem;
-    color: var(--text-color-dark);
+    color: var(--text-color-dark, #333);
     line-height: 1.6;
     margin: 1rem 0 1.5rem;
     flex-grow: 1;
@@ -810,18 +910,25 @@ header {
     -webkit-box-orient: vertical;
 }
 
+/* --- BOUTON READ MORE --- */
 .review-card .read-more {
     display: inline-block;
     padding: 0.7rem 1.4rem;
     background-color: var(--secondary-color);
     color: var(--primary-color);
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    align-self: flex-start;
 }
 
+.review-card .read-more:hover {
+    background-color: var(--accent-color, #ffd27f);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
 /* --- MENTION LEGALES ECT.. --- */
 .a-propos,
