@@ -104,14 +104,13 @@ def scrape_cinehorizons():
                     src = 'https:' + src
                 video_id = extract_youtube_id(src)
                 if video_id:
-                    # Placeholder <video> pour lazy load
                     iframe_html = (
-                        f'<video class="youtube-placeholder" '
+                        '            <video class="youtube-placeholder" '
                         f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
                         f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                        f'role="button" aria-label="Lire la bande annonce {titre}">'
-                        f'<button class="play-button" aria-hidden="true"></button>'
-                        f'</video>'
+                        f'role="button" aria-label="Lire la bande annonce {titre}">\n'
+                        '                <button class="play-button" aria-hidden="true"></button>\n'
+                        '            </video>'
                     )
                 else:
                     iframe_html = '<!-- iframe non trouvé -->'
@@ -137,13 +136,16 @@ def scrape_cinehorizons():
                 print(f"[WARN Cinehorizons] {titre} — {e}")
 
             article_html = (
-                f'<article class="card-bande">'
-                f'<h2>{titre}</h2>'
-                f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
-                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
-                f'<p class="synopsis">{summarize_synopsis(synopsis)}</p>'
-                f'<div class="video-responsive">{iframe_html}</div>'
-                f'</article>'
+                '    <article class="card-bande">\n'
+                '        <span class="badge-nouveau">NOUVEAU</span>\n'
+                f'        <h2>{titre}</h2>\n'
+                f'        <p class="date-sortie">Sortie prévue : {date_sortie}</p>\n'
+                f'        <p class="ajout-site">Ajouté le : {date_ajout}</p>\n'
+                f'        <p class="synopsis">{summarize_synopsis(synopsis)}</p>\n'
+                '        <div class="video-responsive">\n'
+                f'{iframe_html}\n'
+                '        </div>\n'
+                '    </article>'
             )
 
             articles.append(article_html)
@@ -153,7 +155,6 @@ def scrape_cinehorizons():
         browser.close()
 
     return articles, ids
-
 
 # ------------------------------
 # SCRAPER TMDB
@@ -197,24 +198,27 @@ def scrape_tmdb():
 
         video_id = trailer['key']
         iframe_html = (
-            f'<video class="youtube-placeholder" '
+            '            <video class="youtube-placeholder" '
             f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
             f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-            f'role="button" aria-label="Lire la bande annonce {titre}">'
-            f'<button class="play-button" aria-hidden="true"></button>'
-            f'</video>'
+            f'role="button" aria-label="Lire la bande annonce {titre}">\n'
+            '                <button class="play-button" aria-hidden="true"></button>\n'
+            '            </video>'
         )
 
         synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
 
         article_html = (
-            f'<article class="card-bande">'
-            f'<h2>{titre}</h2>'
-            f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
-            f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
-            f'<p class="synopsis">{synopsis}</p>'
-            f'<div class="video-responsive">{iframe_html}</div>'
-            f'</article>'
+            '    <article class="card-bande">\n'
+            '        <span class="badge-nouveau">NOUVEAU</span>\n'
+            f'        <h2>{titre}</h2>\n'
+            f'        <p class="date-sortie">Sortie prévue : {date_sortie}</p>\n'
+            f'        <p class="ajout-site">Ajouté le : {date_ajout}</p>\n'
+            f'        <p class="synopsis">{synopsis}</p>\n'
+            '        <div class="video-responsive">\n'
+            f'{iframe_html}\n'
+            '        </div>\n'
+            '    </article>'
         )
 
         articles.append(article_html)
@@ -227,7 +231,6 @@ def scrape_tmdb():
 # LIMITATION ET BADGES
 # ------------------------------
 def limiter_articles(articles_html):
-    """Limite le nombre d’articles visibles, cache le reste."""
     if len(articles_html) <= MAX_ARTICLES_VISIBLE:
         return articles_html
 
@@ -240,7 +243,6 @@ def limiter_articles(articles_html):
     return visibles + caches
 
 def ajouter_badge_nouveau(articles, n=6):
-    """Ajoute le badge NOUVEAU sur les n premiers articles."""
     articles_mod = []
     for i, art in enumerate(articles):
         art = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', art)
@@ -259,33 +261,27 @@ def main():
     cine_articles, cine_ids = scrape_cinehorizons()
     tmdb_articles, tmdb_ids = scrape_tmdb()
 
-    # Chargement ancien contenu si présent
     ancien_contenu = ''
     if os.path.exists(OUTPUT_FILE):
         with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
             ancien_contenu = f.read()
 
-    # Nettoyage anciens badges et cartes cachées
     ancien_contenu = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', ancien_contenu)
     ancien_contenu = re.sub(r'class="card-bande hidden-card"', 'class="card-bande"', ancien_contenu)
 
     anciens_articles = re.findall(r'(<article class="card-bande"[^>]*>.*?</article>)',
                                   ancien_contenu, flags=re.DOTALL)
 
-    # Fusion nouveaux + anciens
     all_articles = cine_articles + tmdb_articles + anciens_articles
     all_articles = ajouter_badge_nouveau(all_articles, n=6)
     log.extend(cine_ids + tmdb_ids)
     all_articles = limiter_articles(all_articles)
 
-    # Écriture HTML
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write('\n\n'.join(all_articles))
 
-    # Sauvegarde log
     save_log(log)
 
-    # Mise à jour date
     date_maj = datetime.now().strftime('%d %B %Y')
     with open(DATE_FILE, 'w', encoding='utf-8') as f:
         f.write(f'<p class="maj-annonces">Dernière mise à jour : {date_maj}</p>')
@@ -318,7 +314,7 @@ def push_to_github():
 
         if status_result.stdout.strip():
             subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
-            subprocess.run(["git", "push", "origin", "main"], check=True)
+            subprocess.run(["git", "push", "-f", "origin", "main"], check=True)
             print("✅ Push GitHub réussi.")
         else:
             print("ℹ️ Aucun changement détecté, rien à push.")
@@ -334,3 +330,4 @@ def push_to_github():
 if __name__ == "__main__":
     main()
     push_to_github()
+# ------------------------------
