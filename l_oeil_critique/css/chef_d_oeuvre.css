@@ -109,6 +109,33 @@ header {
     z-index: 1000;
 }
 
+/* Effet scroll pour header */
+header.scrolled .logo {
+    transform: translateX(200px); /* déplace le logo vers la droite */
+    transition: transform 3.7s ease;
+    width: 64px;
+}
+
+header.scrolled .site-title {
+    opacity: 0; /* fait disparaître le titre */
+    transition: opacity 1.4s ease;
+}
+
+/* Effet scroll pour le menu : décalage vers la gauche */
+header.scrolled .main-nav {
+    transform: translateX(-150px); /* déplace le menu vers la gauche */
+    transition: transform 3.72s ease, opacity 1.2s ease;
+}
+
+/* Réduction de la taille du texte pour gagner de l’espace */
+header.scrolled .main-nav a {
+    font-size: 1rem;
+    transition: font-size 1.2s ease;
+}
+
+
+
+
 .header-content {
     display: flex;
     justify-content: space-between;

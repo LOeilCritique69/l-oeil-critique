@@ -106,12 +106,12 @@ def scrape_cinehorizons():
                 video_id = extract_youtube_id(src)
                 if video_id:
                     iframe_html = (
-                        f'<video class="youtube-placeholder" '
+                        '            <video class="youtube-placeholder" '
                         f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
                         f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                        f'role="button" aria-label="Lire la bande annonce {titre}">'
-                        f'<button class="play-button"></button>'
-                        f'</video>'
+                        f'role="button" aria-label="Lire la bande annonce {titre}">\n'
+                        '                <button class="play-button" aria-hidden="true"></button>\n'
+                        '            </video>'
                     )
 
             identifiant = f"cinehorizons::{titre}::{video_id or detail_url}"
@@ -124,88 +124,16 @@ def scrape_cinehorizons():
                 synopsis = clean_text(syn_tag.text)
 
             article_html = (
-                f'<article class="card-bande">'
-                f'<h2>{titre}</h2>'
-                f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
-                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
-                f'<p class="synopsis">{summarize_synopsis(synopsis)}</p>'
-                f'<div class="video-responsive">{iframe_html}</div>'
-                f'</article>'
-            )
-
-            articles.append(article_html)
-            ids.append(identifiant)
-
-        browser.close()
-    return articles, ids
-
-# ------------------------------
-# SCRAPER ALLOCINÉ (3 dernières)
-# ------------------------------
-def scrape_allocine():
-    articles, ids = [], []
-    log = load_log()
-    date_ajout = datetime.now().strftime('%d %B %Y')
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        try:
-            page.goto(ALLOCINE_URL, timeout=20000)
-            page.wait_for_selector('main#content-layout', timeout=10000)
-        except Exception as e:
-            print(f"[ERREUR AlloCiné] {e}")
-            browser.close()
-            return articles, ids
-
-        soup = BeautifulSoup(page.content(), 'html.parser')
-        thumbs = soup.select('main#content-layout .thumbnail-container.thumbnail-link')[:MAX_BANDES_ALLO]
-
-        for thumb in thumbs:
-            link_tag = thumb.select_one('a[href]')
-            if not link_tag:
-                continue
-            detail_url = urljoin("https://www.allocine.fr", link_tag['href'])
-
-            try:
-                page.goto(detail_url, timeout=15000)
-                page.wait_for_selector('figure.player.js-player', timeout=8000)
-            except:
-                continue
-
-            detail_soup = BeautifulSoup(page.content(), 'html.parser')
-            titre_tag = detail_soup.select_one('a.titlebar-link')
-            titre = clean_text(titre_tag.text) if titre_tag else "Titre inconnu"
-
-            iframe_html, video_id = '<!-- iframe non trouvé -->', None
-            figure = detail_soup.select_one('figure.player.js-player')
-            if figure and figure.has_attr('data-model'):
-                try:
-                    data_model = json.loads(figure['data-model'].replace('&quot;', '"'))
-                    video_info = data_model['videos'][0]
-                    video_id = video_info.get('idDailymotion')
-                    thumb_img = video_info.get('image')
-                    iframe_html = (
-                        f'<video class="dailymotion-placeholder" '
-                        f'data-src="https://geo.dailymotion.com/player/{video_id}.html?video={video_id}" '
-                        f'style="background-image:url(\'https://fr.web.img2.acsta.net{thumb_img}\');" '
-                        f'role="button" aria-label="Lire la bande annonce {titre}">'
-                        f'<button class="play-button" aria-hidden="true"></button>'
-                        f'</video>'
-                    )
-                except Exception as e:
-                    print(f"[WARN AlloCiné] JSON figure pour {titre} : {e}")
-
-            identifiant = f"allocine::{titre}::{video_id or detail_url}"
-            if identifiant in log:
-                continue
-
-            article_html = (
-                f'<article class="card-bande">'
-                f'<h2>{titre}</h2>'
-                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
-                f'<div class="video-responsive">{iframe_html}</div>'
-                f'</article>'
+                '    <article class="card-bande">\n'
+                '        <span class="badge-nouveau">NOUVEAU</span>\n'
+                f'        <h2>{titre}</h2>\n'
+                f'        <p class="date-sortie">Sortie prévue : {date_sortie}</p>\n'
+                f'        <p class="ajout-site">Ajouté le : {date_ajout}</p>\n'
+                f'        <p class="synopsis">{summarize_synopsis(synopsis)}</p>\n'
+                '        <div class="video-responsive">\n'
+                f'{iframe_html}\n'
+                '        </div>\n'
+                '    </article>'
             )
 
             articles.append(article_html)
@@ -244,23 +172,32 @@ def scrape_tmdb():
             except:
                 continue
 
-            trailer = next((v for v in videos if v["site"] == "YouTube" and v["type"] == "Trailer"), None)
-            if not trailer:
-                continue
+        video_id = trailer['key']
+        iframe_html = (
+            '            <video class="youtube-placeholder" '
+            f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
+            f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
+            f'role="button" aria-label="Lire la bande annonce {titre}">\n'
+            '                <button class="play-button" aria-hidden="true"></button>\n'
+            '            </video>'
+        )
 
             identifiant = f"tmdb::{titre}::{trailer['key']}"
             if identifiant in log:
                 continue
 
-            video_id = trailer['key']
-            iframe_html = (
-                f'<video class="youtube-placeholder" '
-                f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
-                f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                f'role="button" aria-label="Lire la bande annonce {titre}">'
-                f'<button class="play-button"></button>'
-                f'</video>'
-            )
+        article_html = (
+            '    <article class="card-bande">\n'
+            '        <span class="badge-nouveau">NOUVEAU</span>\n'
+            f'        <h2>{titre}</h2>\n'
+            f'        <p class="date-sortie">Sortie prévue : {date_sortie}</p>\n'
+            f'        <p class="ajout-site">Ajouté le : {date_ajout}</p>\n'
+            f'        <p class="synopsis">{synopsis}</p>\n'
+            '        <div class="video-responsive">\n'
+            f'{iframe_html}\n'
+            '        </div>\n'
+            '    </article>'
+        )
 
             synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
             article_html = (
@@ -320,7 +257,7 @@ def main():
     anciens_articles = re.findall(r'(<article class="card-bande"[^>]*>.*?</article>)',
                                   ancien_contenu, flags=re.DOTALL)
 
-    all_articles = cine_articles + allo_articles + tmdb_articles + anciens_articles
+    all_articles = cine_articles + tmdb_articles + anciens_articles
     all_articles = ajouter_badge_nouveau(all_articles, n=6)
     log.extend(cine_ids + allo_ids + tmdb_ids)
     all_articles = limiter_articles(all_articles)
@@ -353,7 +290,7 @@ def push_to_github():
         status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
         if status_result.stdout.strip():
             subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
-            subprocess.run(["git", "push", "origin", "main"], check=True)
+            subprocess.run(["git", "push", "-f", "origin", "main"], check=True)
             print("✅ Push GitHub réussi.")
         else:
             print("ℹ️ Aucun changement détecté.")
@@ -363,4 +300,4 @@ def push_to_github():
 if __name__ == "__main__":
     main()
     push_to_github()
-    
+# ------------------------------
