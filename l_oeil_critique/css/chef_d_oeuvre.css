@@ -109,32 +109,6 @@ header {
     z-index: 1000;
 }
 
-/* Effet scroll pour header */
-header.scrolled .logo {
-    transform: translateX(200px); /* déplace le logo vers la droite */
-    transition: transform 3.7s ease;
-    width: 64px;
-}
-
-header.scrolled .site-title {
-    opacity: 0; /* fait disparaître le titre */
-    transition: opacity 1.4s ease;
-}
-
-/* Effet scroll pour le menu : décalage vers la gauche */
-header.scrolled .main-nav {
-    transform: translateX(-150px); /* déplace le menu vers la gauche */
-    transition: transform 3.72s ease, opacity 1.2s ease;
-}
-
-/* Réduction de la taille du texte pour gagner de l’espace */
-header.scrolled .main-nav a {
-    font-size: 1rem;
-    transition: font-size 1.2s ease;
-}
-
-
-
 
 .header-content {
     display: flex;
@@ -154,7 +128,7 @@ header.scrolled .main-nav a {
     width: 4rem;
     height: auto;
     border-radius: var(--border-radius-base);
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 .site-title {
@@ -275,7 +249,7 @@ header.scrolled .main-nav a {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     perspective: 1000px;
     position: relative;
@@ -305,7 +279,7 @@ header.scrolled .main-nav a {
 
 .slider-item img {
     width: 100%;
-    height: 250px;
+    height: 400px;
     object-fit: cover;
     border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
     margin-bottom: 1rem;
@@ -1114,7 +1088,7 @@ footer {
         width: 100%;
         background-color: var(--primary-color); /* Same as header */
         position: absolute;
-        top: 60px; /* Adjust based on header height */
+        top: 70px; /* Adjust based on header height */
         left: 0;
         padding: 1rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);

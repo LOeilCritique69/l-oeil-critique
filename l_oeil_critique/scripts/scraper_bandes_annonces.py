@@ -182,9 +182,9 @@ def scrape_tmdb():
             '            </video>'
         )
 
-            identifiant = f"tmdb::{titre}::{trailer['key']}"
-            if identifiant in log:
-                continue
+        identifiant = f"tmdb::{titre}::{trailer['key']}"
+        if identifiant in log:
+            continue
 
         article_html = (
             '    <article class="card-bande">\n'
@@ -199,19 +199,19 @@ def scrape_tmdb():
             '    </article>'
         )
 
-            synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
-            article_html = (
-                f'<article class="card-bande">'
-                f'<h2>{titre}</h2>'
-                f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
-                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
-                f'<p class="synopsis">{synopsis}</p>'
-                f'<div class="video-responsive">{iframe_html}</div>'
-                f'</article>'
-            )
+        synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
+        article_html = (
+            f'<article class="card-bande">'
+            f'<h2>{titre}</h2>'
+            f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
+            f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
+            f'<p class="synopsis">{synopsis}</p>'
+            f'<div class="video-responsive">{iframe_html}</div>'
+            f'</article>'
+        )
 
-            articles.append(article_html)
-            ids.append(identifiant)
+        articles.append(article_html)
+        ids.append(identifiant)
     return articles, ids
 
 # ------------------------------
