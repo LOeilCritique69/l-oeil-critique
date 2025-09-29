@@ -88,14 +88,13 @@
         visibleCards.forEach(card => container.appendChild(card));
 
         if (hiddenCards.length > 0) {
-            voirPlusBtn.style.display = 'block';
+            voirPlusBtn.classList.add('active'); // Affiche le bouton
             voirPlusBtn.addEventListener('click', () => {
                 hiddenCards.forEach(card => container.appendChild(card));
-                voirPlusBtn.style.display = 'none';
+                voirPlusBtn.classList.remove('active'); // Cache après clic
             });
-        } else {
-            voirPlusBtn.style.display = 'none';
         }
+
 
         // Chargement et injection de la date de mise à jour
         if (dateMajContainer) {

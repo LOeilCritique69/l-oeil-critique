@@ -735,7 +735,7 @@ header {
 }
 
 #voir-plus-btn {
-    display: block;
+    display: none; /* caché par défaut */
     margin: 4rem auto 0 auto;
     padding: 1.4rem 3.2rem;
     font-size: 1.35rem;
@@ -751,12 +751,10 @@ header {
     text-transform: uppercase;
 }
 
-#voir-plus-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    transform: translateY(-7px) scale(1.05);
-    box-shadow: 0 14px 35px rgba(0,0,0,0.45);
+#voir-plus-btn.active {
+    display: block;
 }
+
 
 
 /* --- REVIEWS SECTION --- */
