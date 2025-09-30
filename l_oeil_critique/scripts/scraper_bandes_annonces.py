@@ -13,6 +13,7 @@ from playwright.sync_api import sync_playwright
 # ------------------------------
 BASE_CINE_URL = 'https://www.cinehorizons.net'
 LIST_CINE_URL = f"{BASE_CINE_URL}/bandes-annonces-prochains-films"
+ALLOCINE_URL = "https://www.allocine.fr/video/bandes-annonces/plus-recentes/"
 
 TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa"
 TMDB_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming"
@@ -64,78 +65,154 @@ def scrape_cinehorizons():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
-
         try:
             page.goto(LIST_CINE_URL, timeout=8000)
             page.wait_for_selector('.inside2', timeout=5000)
-            soup_list = BeautifulSoup(page.content(), 'html.parser')
-            blocs = soup_list.select('.inside2')[:MAX_BANDES_CINE]
-
-            for bloc in blocs:
-                titre_tag = bloc.select_one('[itemprop="name"]')
-                titre = clean_text(titre_tag.text) if titre_tag else "Titre inconnu"
-
-                link_tag = bloc.select_one('.field-content a[href]')
-                if not link_tag:
-                    continue
-                detail_url = urljoin(BASE_CINE_URL, link_tag['href'])
-
-                try:
-                    page.goto(detail_url, timeout=8000)
-                    page.wait_for_selector('.movie-release, .player', timeout=5000)
-                    detail_soup = BeautifulSoup(page.content(), 'html.parser')
-                except:
-                    continue
-
-                date_tag = detail_soup.select_one('.movie-release')
-                date_sortie_raw = clean_text(date_tag.text.split(':')[-1]) if date_tag else "Date inconnue"
-                date_sortie = re.sub(r'\s*\(.*?\)', '', date_sortie_raw).strip()
-
-                iframe_html, video_id = '<!-- iframe non trouvé -->', None
-                iframe = detail_soup.select_one('.player iframe')
-                if iframe and iframe.has_attr('src'):
-                    src = iframe['src']
-                    if src.startswith('//'):
-                        src = 'https:' + src
-                    video_id = extract_youtube_id(src)
-                    if video_id:
-                        iframe_html = (
-                            '            <video class="youtube-placeholder" '
-                            f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
-                            f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                            f'role="button" aria-label="Lire la bande annonce {titre}">\n'
-                            '                <button class="play-button" aria-hidden="true"></button>\n'
-                            '            </video>'
-                        )
-
-                identifiant = f"cinehorizons::{titre}::{video_id or detail_url}"
-                if identifiant in log:
-                    continue
-
-                synopsis = "Pas de synopsis"
-                syn_tag = detail_soup.select_one('.block-synopsis .field-item.even p')
-                if syn_tag:
-                    synopsis = clean_text(syn_tag.text)
-
-                article_html = (
-                    '    <article class="card-bande">\n'
-                    '        <span class="badge-nouveau">NOUVEAU</span>\n'
-                    f'        <h2>{titre}</h2>\n'
-                    f'        <p class="date-sortie">Sortie prévue : {date_sortie}</p>\n'
-                    f'        <p class="ajout-site">Ajouté le : {date_ajout}</p>\n'
-                    f'        <p class="synopsis">{summarize_synopsis(synopsis)}</p>\n'
-                    '        <div class="video-responsive">\n'
-                    f'{iframe_html}\n'
-                    '        </div>\n'
-                    '    </article>'
-                )
-
-                articles.append(article_html)
-                ids.append(identifiant)
-
-        finally:
+        except Exception as e:
+            print(f"[ERREUR Cinehorizons] {e}")
             browser.close()
+            return articles, ids
 
+        soup_list = BeautifulSoup(page.content(), 'html.parser')
+        blocs = soup_list.select('.inside2')[:MAX_BANDES_CINE]
+
+        for bloc in blocs:
+            titre_tag = bloc.select_one('[itemprop="name"]')
+            titre = clean_text(titre_tag.text) if titre_tag else "Titre inconnu"
+
+            link_tag = bloc.select_one('.field-content a[href]')
+            if not link_tag:
+                continue
+            detail_url = urljoin(BASE_CINE_URL, link_tag['href'])
+
+            try:
+                page.goto(detail_url, timeout=8000)
+                page.wait_for_selector('.movie-release, .player', timeout=5000)
+            except:
+                continue
+
+            detail_soup = BeautifulSoup(page.content(), 'html.parser')
+            date_tag = detail_soup.select_one('.movie-release')
+            date_sortie_raw = clean_text(date_tag.text.split(':')[-1]) if date_tag else "Date inconnue"
+            date_sortie = re.sub(r'\s*\(.*?\)', '', date_sortie_raw).strip()
+
+            iframe_html, video_id = '<!-- iframe non trouvé -->', None
+            iframe = detail_soup.select_one('.player iframe')
+            if iframe and iframe.has_attr('src'):
+                src = iframe['src']
+                if src.startswith('//'):
+                    src = 'https:' + src
+                video_id = extract_youtube_id(src)
+                if video_id:
+                    iframe_html = (
+                        f'<video class="youtube-placeholder" '
+                        f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
+                        f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
+                        f'role="button" aria-label="Lire la bande annonce {titre}">'
+                        f'<button class="play-button"></button>'
+                        f'</video>'
+                    )
+
+            identifiant = f"cinehorizons::{titre}::{video_id or detail_url}"
+            if identifiant in log:
+                continue
+
+            synopsis = "Pas de synopsis"
+            syn_tag = detail_soup.select_one('.block-synopsis .field-item.even p')
+            if syn_tag:
+                synopsis = clean_text(syn_tag.text)
+
+            article_html = (
+                '<article class="card-bande">'
+                '<span class="badge-nouveau">NOUVEAU</span>'
+                f'<h2>{titre}</h2>'
+                f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
+                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
+                f'<p class="synopsis">{summarize_synopsis(synopsis)}</p>'
+                f'<div class="video-responsive">{iframe_html}</div>'
+                '</article>'
+            )
+
+            articles.append(article_html)
+            ids.append(identifiant)
+
+        browser.close()
+    return articles, ids
+
+# ------------------------------
+# SCRAPER ALLOCINE (Playwright)
+# ------------------------------
+def scrape_allocine():
+    articles, ids = [], []
+    log = load_log()
+    date_ajout = datetime.now().strftime('%d %B %Y')
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        try:
+            page.goto(ALLOCINE_URL, timeout=20000)
+            page.wait_for_selector('main#content-layout', timeout=10000)
+        except Exception as e:
+            print(f"[ERREUR AlloCiné] {e}")
+            browser.close()
+            return articles, ids
+
+        soup = BeautifulSoup(page.content(), 'html.parser')
+        thumbs = soup.select('main#content-layout .thumbnail-container.thumbnail-link')[:MAX_BANDES_ALLO]
+
+        for thumb in thumbs:
+            link_tag = thumb.select_one('a[href]')
+            if not link_tag:
+                continue
+            detail_url = urljoin("https://www.allocine.fr", link_tag['href'])
+
+            try:
+                page.goto(detail_url, timeout=15000)
+                page.wait_for_selector('figure.player.js-player', timeout=8000)
+            except:
+                continue
+
+            detail_soup = BeautifulSoup(page.content(), 'html.parser')
+            titre_tag = detail_soup.select_one('a.titlebar-link')
+            titre = clean_text(titre_tag.text) if titre_tag else "Titre inconnu"
+
+            iframe_html, video_id = '<!-- iframe non trouvé -->', None
+            figure = detail_soup.select_one('figure.player.js-player')
+            if figure and figure.has_attr('data-model'):
+                try:
+                    data_model = json.loads(figure['data-model'].replace('&quot;', '"'))
+                    video_info = data_model['videos'][0]
+                    video_id = video_info.get('idDailymotion')
+                    thumb_img = video_info.get('image')
+                    iframe_html = (
+                        f'<video class="dailymotion-placeholder" '
+                        f'data-src="https://geo.dailymotion.com/player/{video_id}.html?video={video_id}" '
+                        f'style="background-image:url(\'https://fr.web.img2.acsta.net{thumb_img}\');" '
+                        f'role="button" aria-label="Lire la bande annonce {titre}">'
+                        f'<button class="play-button"></button>'
+                        f'</video>'
+                    )
+                except Exception as e:
+                    print(f"[WARN AlloCiné] JSON figure pour {titre} : {e}")
+
+            identifiant = f"allocine::{titre}::{video_id or detail_url}"
+            if identifiant in log:
+                continue
+
+            article_html = (
+                '<article class="card-bande">'
+                '<span class="badge-nouveau">NOUVEAU</span>'
+                f'<h2>{titre}</h2>'
+                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
+                f'<div class="video-responsive">{iframe_html}</div>'
+                '</article>'
+            )
+
+            articles.append(article_html)
+            ids.append(identifiant)
+
+        browser.close()
     return articles, ids
 
 # ------------------------------
@@ -173,12 +250,12 @@ def scrape_tmdb():
 
             video_id = trailer["key"]
             iframe_html = (
-                '            <video class="youtube-placeholder" '
+                f'<video class="youtube-placeholder" '
                 f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
                 f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                f'role="button" aria-label="Lire la bande annonce {titre}">\n'
-                '                <button class="play-button" aria-hidden="true"></button>\n'
-                '            </video>'
+                f'role="button" aria-label="Lire la bande annonce {titre}">'
+                f'<button class="play-button"></button>'
+                f'</video>'
             )
 
             synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
@@ -187,94 +264,18 @@ def scrape_tmdb():
                 continue
 
             article_html = (
-                '    <article class="card-bande">\n'
-                '        <span class="badge-nouveau">NOUVEAU</span>\n'
-                f'        <h2>{titre}</h2>\n'
-                f'        <p class="date-sortie">Sortie prévue : {date_sortie}</p>\n'
-                f'        <p class="ajout-site">Ajouté le : {date_ajout}</p>\n'
-                f'        <p class="synopsis">{synopsis}</p>\n'
-                '        <div class="video-responsive">\n'
-                f'{iframe_html}\n'
-                '        </div>\n'
-                '    </article>'
+                '<article class="card-bande">'
+                '<span class="badge-nouveau">NOUVEAU</span>'
+                f'<h2>{titre}</h2>'
+                f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
+                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
+                f'<p class="synopsis">{synopsis}</p>'
+                f'<div class="video-responsive">{iframe_html}</div>'
+                '</article>'
             )
 
             articles.append(article_html)
             ids.append(identifiant)
-
-    return articles, ids
-
-# ------------------------------
-# SCRAPER ALLOCINE
-# ------------------------------
-def scrape_allocine():
-    articles, ids = [], []
-    log = load_log()
-    date_ajout = datetime.now().strftime('%d %B %Y')
-
-    try:
-        response = requests.get("https://www.allocine.fr/video/bandes-annonces/plus-recentes/", timeout=10)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        blocs = soup.select('.card-entity.card-entity-entity.card-entity-list')[:MAX_BANDES_ALLO]
-
-        for bloc in blocs:
-            titre_tag = bloc.select_one('.meta-title-link')
-            titre = clean_text(titre_tag.text) if titre_tag else "Titre inconnu"
-
-            link_tag = bloc.select_one('a[href]')
-            if not link_tag:
-                continue
-            detail_url = urljoin("https://www.allocine.fr", link_tag['href'])
-
-            try:
-                detail_resp = requests.get(detail_url, timeout=8)
-                detail_soup = BeautifulSoup(detail_resp.text, 'html.parser')
-            except:
-                continue
-
-            date_tag = detail_soup.select_one('.release-date')
-            date_sortie = clean_text(date_tag.text) if date_tag else "Date inconnue"
-
-            syn_tag = detail_soup.select_one('.content-txt')
-            synopsis = clean_text(syn_tag.text) if syn_tag else "Pas de synopsis"
-
-            iframe_html, video_id = '<!-- iframe non trouvé -->', None
-            iframe = detail_soup.select_one('iframe')
-            if iframe and iframe.has_attr('src') and 'youtube.com/embed/' in iframe['src']:
-                src = iframe['src']
-                video_id = extract_youtube_id(src)
-                if video_id:
-                    iframe_html = (
-                        '            <video class="youtube-placeholder" '
-                        f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
-                        f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                        f'role="button" aria-label="Lire la bande annonce {titre}">\n'
-                        '                <button class="play-button" aria-hidden="true"></button>\n'
-                        '            </video>'
-                    )
-
-            identifiant = f"allocine::{titre}::{video_id or detail_url}"
-            if identifiant in log:
-                continue
-
-            article_html = (
-                '    <article class="card-bande">\n'
-                '        <span class="badge-nouveau">NOUVEAU</span>\n'
-                f'        <h2>{titre}</h2>\n'
-                f'        <p class="date-sortie">Sortie prévue : {date_sortie}</p>\n'
-                f'        <p class="ajout-site">Ajouté le : {date_ajout}</p>\n'
-                f'        <p class="synopsis">{summarize_synopsis(synopsis)}</p>\n'
-                '        <div class="video-responsive">\n'
-                f'{iframe_html}\n'
-                '        </div>\n'
-                '    </article>'
-            )
-
-            articles.append(article_html)
-            ids.append(identifiant)
-
-    except Exception as e:
-        print(f"[ERREUR AlloCiné] {e}")
 
     return articles, ids
 
@@ -307,7 +308,6 @@ def ajouter_badge_nouveau(articles, n=6):
 # ------------------------------
 def main():
     log = load_log()
-
     cine_articles, cine_ids = scrape_cinehorizons()
     allo_articles, allo_ids = scrape_allocine()
     tmdb_articles, tmdb_ids = scrape_tmdb()
