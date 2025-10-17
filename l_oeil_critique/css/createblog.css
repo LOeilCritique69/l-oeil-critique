@@ -301,6 +301,87 @@ body {
     max-width: 550px; /* Limite la largeur pour une meilleure lisibilité */
 }
 
+.conclusion {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-left: 4px solid #e50914;
+}
+
+.related-article {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+}
+
+
+/* QA Section globale */
+.qa {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+}
+
+/* Chaque Q&A comme un bloc distinct */
+.qa .qa-block {
+    background-color: #fafafa; /* fond clair pour le bloc complet */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 15px 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* Titre de chaque sous-section */
+.qa h3 {
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 6px;
+}
+
+/* Question */
+.qa-block .question {
+    background-color: #d0e5ff; /* bleu léger pour les questions */
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Réponse */
+.qa-block .answer {
+    background-color: #f5f5f5; /* gris très clair pour les réponses */
+    border-left: 4px solid #b0b0b0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+/* Italique pour les précisions */
+.qa-block em {
+    font-style: italic;
+    color: #555;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .qa h3 {
+        font-size: 1.25rem;
+    }
+
+    .qa-block {
+        padding: 12px 15px;
+    }
+
+    .qa-block .question,
+    .qa-block .answer {
+        padding: 6px 10px;
+    }
+}
+
+
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 992px) {
