@@ -2,8 +2,14 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 7 * * *'   # Tous les jours à 09h15 heure française (UTC+2)
-  workflow_dispatch:        # Permet un déclenchement manuel
+    # France = UTC+2 (été) ou UTC+1 (hiver)
+    # 9h FR → 7h UTC
+    # 15h FR → 13h UTC
+    # 21h FR → 19h UTC
+    - cron: '0 7 * * *'   # Tous les jours à 09h00 heure française
+    - cron: '0 13 * * *'  # Tous les jours à 15h00 heure française
+    - cron: '0 19 * * *'  # Tous les jours à 21h00 heure française
+  workflow_dispatch:       # Permet un déclenchement manuel
 
 jobs:
   update-bandes-annonces:
@@ -11,12 +17,12 @@ jobs:
 
     steps:
       - name: ⬇️ Cloner le dépôt
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN_2 }}    # <- IMPORTANT
+          token: ${{ secrets.GH_TOKEN_2 }}
 
       - name: 🐍 Installer Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -25,9 +31,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python -m playwright install
+          python -m playwright install-deps
 
-      - name: ▶️ Exécuter le script
-        run: python l_oeil_critique/scripts/scraper_bandes_annonces.py
+      - name: ▶️ Exécuter le script de scraping
+        run: |
+          echo "🚀 Lancement du script de scraping des bandes annonces..."
+          python l_oeil_critique/scripts/scraper_bandes_annonces.py
 
       - name: 🔧 Configurer Git
         run: |
@@ -43,7 +52,7 @@ jobs:
           branch: main
           file_pattern: |
             l_oeil_critique/scripts/bande_annonces_log.json
-            bande_annonces_blocs.html
-            bande_annonces_maj.html
+            l_oeil_critique/bande_annonces_blocs.html
+            l_oeil_critique/bande_annonces_maj.html
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}

@@ -619,76 +619,111 @@ header {
     opacity: 0.95;
 }
 
+/* === GRILLE PRINCIPALE === */
 .grille-bandes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 3rem;
-    padding: 0 1.5rem;
+    gap: 3.5rem;
+    padding: 2rem 1.5rem 5rem;
     max-width: 1400px;
     margin: 0 auto;
+    perspective: 1000px;
 }
 
+/* === CARTE BANDE === */
 .card-bande {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.4s ease;
+    background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), 
+                box-shadow 0.6s ease, 
+                border-color 0.4s ease;
     position: relative;
-    padding: 2rem;
+    padding: 2.2rem 2rem 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     min-height: 540px;
-    border: 1px solid #d0d0d0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    backdrop-filter: blur(8px);
+    transform-style: preserve-3d;
+}
+
+.card-bande::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-bande:hover::before {
+    opacity: 1;
 }
 
 .card-bande:hover {
-    transform: translateY(-14px) scale(1.04) rotateZ(-0.5deg);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    transform: translateY(-18px) scale(1.05) rotate3d(1, 1, 0, 2deg);
+    box-shadow: 0 28px 55px rgba(0, 0, 0, 0.35);
     border-color: var(--secondary-color);
 }
 
+/* === BADGE NOUVEAU === */
 .badge-nouveau {
     position: absolute;
     top: 12px;
     right: 12px;
-    background-color: crimson;
+    background: linear-gradient(45deg, crimson, #ff4d6d);
     color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    font-weight: bold;
+    padding: 0.6rem 1.3rem;
+    border-radius: 999px;
+    font-weight: 700;
     font-size: 0.9rem;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     z-index: 10;
-    animation: pulse 1.2s infinite ease-in-out;
-    box-shadow: 0 3px 14px rgba(220, 20, 60, 0.8);
+    animation: pulse 1.3s infinite ease-in-out;
+    box-shadow: 0 3px 14px rgba(220, 20, 60, 0.6);
 }
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.15); opacity: 0.75; }
+    50% { transform: scale(1.12); opacity: 0.8; }
     100% { transform: scale(1); opacity: 1; }
 }
 
+/* === TITRE === */
 .card-bande h2 {
-    font-size: 2.2rem;
-    margin: 1.2rem 0 1rem;
+    font-size: 2.1rem;
+    margin: 1.3rem 0 0.8rem;
     color: var(--primary-color);
-    line-height: 1.2;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: 0.3px;
     min-height: 3.5rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.card-bande:hover h2 {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* === INFOS DATES === */
 .card-bande .date-sortie,
 .card-bande .ajout-site {
     font-size: 0.95rem;
     color: #777;
     margin-bottom: 0.6rem;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
+/* === SYNOPSIS === */
 .card-bande .synopsis {
     font-size: 1rem;
     line-height: 1.65;
@@ -708,6 +743,7 @@ header {
     transform: translateY(-2px);
 }
 
+/* === VIDÉO === */
 .video-responsive {
     position: relative;
     width: 100%;
@@ -716,7 +752,7 @@ header {
     overflow: hidden;
     border-radius: 14px;
     margin-top: auto;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
     background-color: #000;
     transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
@@ -730,30 +766,43 @@ header {
     border: none;
 }
 
+.card-bande:hover .video-responsive {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* === CARTES CACHÉES === */
 .hidden-card {
     display: none;
 }
 
+/* === BOUTON "VOIR PLUS" === */
 #voir-plus-btn {
-    display: none; /* caché par défaut */
-    margin: 4rem auto 0 auto;
-    padding: 1.4rem 3.2rem;
-    font-size: 1.35rem;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+    display: none;
+    margin: 4rem auto 0;
+    padding: 1.4rem 3.5rem;
+    font-size: 1.3rem;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    color: #fff;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.35s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: all 0.35s ease;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
+#voir-plus-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+}
+
 #voir-plus-btn.active {
     display: block;
 }
+
 
 
 
