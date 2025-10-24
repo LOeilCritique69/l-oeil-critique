@@ -23,7 +23,7 @@ LOG_FILE = os.path.join(SCRIPT_DIR, 'bande_annonces_log.json')
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, '..', 'bande_annonces_blocs.html')
 DATE_FILE = os.path.join(SCRIPT_DIR, '..', 'bande_annonces_maj.html')
 
-DO_PUSH = False  # ✅ Sécurité : désactive le push Git pendant les tests
+DO_PUSH = True  # ✅ Sécurité : désactive le push Git pendant les tests
 
 MAX_BANDES_CINE = 3
 MAX_BANDES_ALLO = 3
