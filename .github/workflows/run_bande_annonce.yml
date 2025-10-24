@@ -2,7 +2,9 @@ name: MAJ Bandes Annonces Automatique
 
 on:
   schedule:
-    - cron: '15 7 * * *'   # Tous les jours à 09h15 heure française (UTC+2)
+    - cron: '0 7 * * *'   # Tous les jours à 09h00 heure française (UTC+2)
+    - cron: '0 13 * * *'  # Tous les jours à 15h00 heure française (UTC+2)
+    - cron: '0 19 * * *'  # Tous les jours à 21h00 heure française (UTC+2)
   workflow_dispatch:        # Permet un déclenchement manuel
 
 jobs:
