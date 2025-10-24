@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: ⬇️ Cloner le dépôt
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN_2 }}    # <- IMPORTANT
+          token: ${{ secrets.GH_TOKEN_2 }}
 
       - name: 🐍 Installer Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -24,10 +24,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python -m playwright install
+          python -m playwright install --with-deps chromium
 
-      - name: ▶️ Exécuter le script
-        run: python l_oeil_critique/scripts/scraper_bandes_annonces.py
+      - name: ▶️ Exécuter le script de scraping
+        run: |
+          echo "🚀 Lancement du script de scraping..."
+          cd l_oeil_critique/scripts
+          python scraper_bandes_annonces.py
 
       - name: 🔧 Configurer Git
         run: |
@@ -43,7 +46,7 @@ jobs:
           branch: main
           file_pattern: |
             l_oeil_critique/scripts/bande_annonces_log.json
-            bande_annonces_blocs.html
-            bande_annonces_maj.html
+            l_oeil_critique/bande_annonces_blocs.html
+            l_oeil_critique/bande_annonces_maj.html
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
