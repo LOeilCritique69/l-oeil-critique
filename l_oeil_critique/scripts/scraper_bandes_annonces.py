@@ -1,34 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os
 import re
 import json
-import subprocess
-import requests
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 from datetime import datetime
+from pathlib import Path
+from typing import List
+from urllib.parse import urljoin
+from bs4 import BeautifulSoup
+import requests
 from playwright.sync_api import sync_playwright
+import subprocess
 
 # ------------------------------
-# CONSTANTES
+# CONSTANTES / CONFIG
 # ------------------------------
-BASE_CINE_URL = 'https://www.cinehorizons.net'
-LIST_CINE_URL = f"{BASE_CINE_URL}/bandes-annonces-prochains-films"
-ALLOCINE_URL = "https://www.allocine.fr/video/bandes-annonces/plus-recentes/"
-
-TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa"
-TMDB_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming"
-
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-LOG_FILE = os.path.join(SCRIPT_DIR, 'bande_annonces_log.json')
-OUTPUT_FILE = os.path.join(SCRIPT_DIR, '..', 'bande_annonces_blocs.html')
-DATE_FILE = os.path.join(SCRIPT_DIR, '..', 'bande_annonces_maj.html')
+SCRIPT_DIR = Path(__file__).resolve().parent
+LOG_FILE = SCRIPT_DIR / 'bande_annonces_log.json'
+OUTPUT_FILE = SCRIPT_DIR.parent / 'bande_annonces_blocs.html'
 
 MAX_BANDES_CINE = 3
-MAX_BANDES_ALLO = 3
 MAX_BANDES_TMDB = 3
-TMDB_PAGES = 2
-MAX_ARTICLES_VISIBLE = 9
 MAX_SYNOPSIS_LEN = 500
+
+LIST_CINE_URL = "https://www.cinehorizons.net/bandes-annonces-prochains-films"
+TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa"
+TMDB_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming"
 
 # ------------------------------
 # OUTILS
@@ -36,230 +34,74 @@ MAX_SYNOPSIS_LEN = 500
 def clean_text(text: str) -> str:
     return ' '.join(text.strip().split())
 
-def load_log() -> list:
-    if os.path.exists(LOG_FILE):
-        with open(LOG_FILE, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return []
-
-def save_log(log: list) -> None:
-    with open(LOG_FILE, 'w', encoding='utf-8') as f:
-        json.dump(log, f, ensure_ascii=False, indent=2)
-
 def summarize_synopsis(synopsis: str) -> str:
     return synopsis if len(synopsis) <= MAX_SYNOPSIS_LEN else synopsis[:MAX_SYNOPSIS_LEN].rstrip() + '...'
 
-def extract_youtube_id(src: str) -> str | None:
-    if src and 'youtube.com/embed/' in src:
-        return src.split('youtube.com/embed/')[-1].split('?')[0]
-    return None
+def load_log() -> List[str]:
+    if LOG_FILE.exists():
+        with LOG_FILE.open('r', encoding='utf-8') as f:
+            return json.load(f)
+    return []
+
+def save_log(log: List[str]) -> None:
+    with LOG_FILE.open('w', encoding='utf-8') as f:
+        json.dump(log, f, ensure_ascii=False, indent=2)
 
 # ------------------------------
 # SCRAPER CINEHORIZONS
 # ------------------------------
-def scrape_cinehorizons():
+def scrape_cinehorizons(log: List[str]) -> (List[str], List[str]):
     articles, ids = [], []
-    log = load_log()
     date_ajout = datetime.now().strftime('%d %B %Y')
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         try:
-            page.goto(LIST_CINE_URL, timeout=8000)
-            page.wait_for_selector('.inside2', timeout=5000)
-        except Exception as e:
-            print(f"[ERREUR Cinehorizons] {e}")
+            page.goto(LIST_CINE_URL, timeout=15000)
+            page.wait_for_selector('.view-content .views-row', timeout=10000)
+        except:
             browser.close()
             return articles, ids
 
         soup_list = BeautifulSoup(page.content(), 'html.parser')
-        blocs = soup_list.select('.inside2')[:MAX_BANDES_CINE]
+        blocs = soup_list.select('.view-content .views-row')[:MAX_BANDES_CINE]
 
         for bloc in blocs:
-            titre_tag = bloc.select_one('[itemprop="name"]')
-            titre = clean_text(titre_tag.text) if titre_tag else "Titre inconnu"
-
-            link_tag = bloc.select_one('.field-content a[href]')
+            link_tag = bloc.select_one('h3[itemprop="name"] a[href]')
             if not link_tag:
                 continue
-            detail_url = urljoin(BASE_CINE_URL, link_tag['href'])
+            titre = clean_text(link_tag.text)
+            detail_url = urljoin(LIST_CINE_URL, link_tag['href'])
 
             try:
-                page.goto(detail_url, timeout=8000)
-                page.wait_for_selector('.movie-release, .player', timeout=5000)
+                page.goto(detail_url, timeout=10000)
+                page.wait_for_selector('.block-synopsis', timeout=8000)
             except:
                 continue
 
             detail_soup = BeautifulSoup(page.content(), 'html.parser')
-            date_tag = detail_soup.select_one('.movie-release')
-            date_sortie_raw = clean_text(date_tag.text.split(':')[-1]) if date_tag else "Date inconnue"
-            date_sortie = re.sub(r'\s*\(.*?\)', '', date_sortie_raw).strip()
 
-            iframe_html, video_id = '<!-- iframe non trouvé -->', None
-            iframe = detail_soup.select_one('.player iframe')
-            if iframe and iframe.has_attr('src'):
-                src = iframe['src']
+            # Date de sortie CineHorizons
+            date_sortie = "Date inconnue"
+            date_tag = detail_soup.select_one('.movie-release span')
+            if date_tag:
+                date_sortie = clean_text(date_tag.text)
+
+            # Synopsis
+            syn_tag = detail_soup.select_one('.block-synopsis .field-item.even p')
+            synopsis = summarize_synopsis(clean_text(syn_tag.text)) if syn_tag else "Pas de synopsis"
+
+            # Bande-annonce iframe
+            iframe_html = '<!-- iframe non trouvé -->'
+            iframe_tag = detail_soup.select_one('.ba .player iframe')
+            if iframe_tag and iframe_tag.has_attr('src'):
+                src = iframe_tag['src']
                 if src.startswith('//'):
                     src = 'https:' + src
-                video_id = extract_youtube_id(src)
-                if video_id:
-                    iframe_html = (
-                        f'<video class="youtube-placeholder" '
-                        f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
-                        f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                        f'role="button" aria-label="Lire la bande annonce {titre}">'
-                        f'<button class="play-button"></button>'
-                        f'</video>'
-                    )
+                iframe_html = f'<iframe width="560" height="315" src="{src}" frameborder="0" allowfullscreen></iframe>'
 
-            identifiant = f"cinehorizons::{titre}::{video_id or detail_url}"
-            if identifiant in log:
-                continue
-
-            synopsis = "Pas de synopsis"
-            syn_tag = detail_soup.select_one('.block-synopsis .field-item.even p')
-            if syn_tag:
-                synopsis = clean_text(syn_tag.text)
-
-            article_html = (
-                '<article class="card-bande">'
-                '<span class="badge-nouveau">NOUVEAU</span>'
-                f'<h2>{titre}</h2>'
-                f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
-                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
-                f'<p class="synopsis">{summarize_synopsis(synopsis)}</p>'
-                f'<div class="video-responsive">{iframe_html}</div>'
-                '</article>'
-            )
-
-            articles.append(article_html)
-            ids.append(identifiant)
-
-        browser.close()
-    return articles, ids
-
-# ------------------------------
-# SCRAPER ALLOCINE (Playwright)
-# ------------------------------
-def scrape_allocine():
-    articles, ids = [], []
-    log = load_log()
-    date_ajout = datetime.now().strftime('%d %B %Y')
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        try:
-            page.goto(ALLOCINE_URL, timeout=20000)
-            page.wait_for_selector('main#content-layout', timeout=10000)
-        except Exception as e:
-            print(f"[ERREUR AlloCiné] {e}")
-            browser.close()
-            return articles, ids
-
-        soup = BeautifulSoup(page.content(), 'html.parser')
-        thumbs = soup.select('main#content-layout .thumbnail-container.thumbnail-link')[:MAX_BANDES_ALLO]
-
-        for thumb in thumbs:
-            link_tag = thumb.select_one('a[href]')
-            if not link_tag:
-                continue
-            detail_url = urljoin("https://www.allocine.fr", link_tag['href'])
-
-            try:
-                page.goto(detail_url, timeout=15000)
-                page.wait_for_selector('figure.player.js-player', timeout=8000)
-            except:
-                continue
-
-            detail_soup = BeautifulSoup(page.content(), 'html.parser')
-            titre_tag = detail_soup.select_one('a.titlebar-link')
-            titre = clean_text(titre_tag.text) if titre_tag else "Titre inconnu"
-
-            iframe_html, video_id = '<!-- iframe non trouvé -->', None
-            figure = detail_soup.select_one('figure.player.js-player')
-            if figure and figure.has_attr('data-model'):
-                try:
-                    data_model = json.loads(figure['data-model'].replace('&quot;', '"'))
-                    video_info = data_model['videos'][0]
-                    video_id = video_info.get('idDailymotion')
-                    thumb_img = video_info.get('image')
-                    iframe_html = (
-                        f'<video class="dailymotion-placeholder" '
-                        f'data-src="https://geo.dailymotion.com/player/{video_id}.html?video={video_id}" '
-                        f'style="background-image:url(\'https://fr.web.img2.acsta.net{thumb_img}\');" '
-                        f'role="button" aria-label="Lire la bande annonce {titre}">'
-                        f'<button class="play-button"></button>'
-                        f'</video>'
-                    )
-                except Exception as e:
-                    print(f"[WARN AlloCiné] JSON figure pour {titre} : {e}")
-
-            identifiant = f"allocine::{titre}::{video_id or detail_url}"
-            if identifiant in log:
-                continue
-
-            article_html = (
-                '<article class="card-bande">'
-                '<span class="badge-nouveau">NOUVEAU</span>'
-                f'<h2>{titre}</h2>'
-                f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
-                f'<div class="video-responsive">{iframe_html}</div>'
-                '</article>'
-            )
-
-            articles.append(article_html)
-            ids.append(identifiant)
-
-        browser.close()
-    return articles, ids
-
-# ------------------------------
-# SCRAPER TMDB
-# ------------------------------
-def scrape_tmdb():
-    articles, ids = [], []
-    log = load_log()
-    date_ajout = datetime.now().strftime('%d %B %Y')
-
-    for page_num in range(1, TMDB_PAGES + 1):
-        params = {"api_key": TMDB_API_KEY, "language": "fr-FR", "region": "FR", "page": page_num}
-        try:
-            movies = requests.get(TMDB_UPCOMING_URL, params=params).json().get("results", [])
-        except Exception as e:
-            print(f"[ERREUR TMDb] {e}")
-            continue
-
-        for movie in movies[:MAX_BANDES_TMDB]:
-            titre = movie.get("title") or movie.get("original_title", "Titre inconnu")
-            date_sortie = movie.get("release_date", "Date inconnue")
-            try:
-                date_sortie = datetime.strptime(date_sortie, '%Y-%m-%d').strftime('%d %B %Y')
-            except:
-                pass
-
-            videos_url = f"https://api.themoviedb.org/3/movie/{movie['id']}/videos"
-            try:
-                videos = requests.get(videos_url, params={"api_key": TMDB_API_KEY, "language": "fr-FR"}).json().get("results", [])
-                trailer = next((v for v in videos if v["type"] == "Trailer" and v["site"] == "YouTube"), None)
-                if not trailer:
-                    continue
-            except:
-                continue
-
-            video_id = trailer["key"]
-            iframe_html = (
-                f'<video class="youtube-placeholder" '
-                f'data-src="https://www.youtube.com/embed/{video_id}?autoplay=1" '
-                f'style="background-image:url(\'https://img.youtube.com/vi/{video_id}/hqdefault.jpg\');" '
-                f'role="button" aria-label="Lire la bande annonce {titre}">'
-                f'<button class="play-button"></button>'
-                f'</video>'
-            )
-
-            synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
-            identifiant = f"tmdb::{titre}::{video_id}"
+            identifiant = f"cinehorizons::{titre}::{detail_url}"
             if identifiant in log:
                 continue
 
@@ -277,80 +119,93 @@ def scrape_tmdb():
             articles.append(article_html)
             ids.append(identifiant)
 
+        browser.close()
     return articles, ids
 
 # ------------------------------
-# LIMITATION ET BADGES
+# SCRAPER TMDB (3 dernières trailers)
 # ------------------------------
-def limiter_articles(articles_html):
-    if len(articles_html) <= MAX_ARTICLES_VISIBLE:
-        return articles_html
-    visibles = articles_html[:MAX_ARTICLES_VISIBLE]
-    caches = [
-        art.replace('class="card-bande"', 'class="card-bande hidden-card"')
-           .replace('<span class="badge-nouveau">NOUVEAU</span>', '')
-        for art in articles_html[MAX_ARTICLES_VISIBLE:]
-    ]
-    return visibles + caches
+def scrape_tmdb(log: List[str]) -> (List[str], List[str]):
+    articles, ids = [], []
+    date_ajout = datetime.now().strftime('%d %B %Y')
+    session = requests.Session()
+    try:
+        r = session.get(TMDB_UPCOMING_URL, params={"api_key": TMDB_API_KEY, "language": "fr-FR", "region": "FR"})
+        r.raise_for_status()
+        movies = r.json().get("results", [])[:MAX_BANDES_TMDB]
+    except:
+        return articles, ids
 
-def ajouter_badge_nouveau(articles, n=6):
-    articles_mod = []
-    for i, art in enumerate(articles):
-        art = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', art)
-        if i < n:
-            art = art.replace('<article class="card-bande">',
-                              '<article class="card-bande"><span class="badge-nouveau">NOUVEAU</span>', 1)
-        articles_mod.append(art)
-    return articles_mod
+    for movie in movies:
+        titre = movie.get("title") or movie.get("original_title") or "Titre inconnu"
+        date_sortie = movie.get("release_date") or "Date inconnue"
+        try:
+            date_sortie = datetime.strptime(date_sortie, '%Y-%m-%d').strftime('%d %B %Y')
+        except:
+            pass
 
-# ------------------------------
-# MAIN
-# ------------------------------
-def main():
-    log = load_log()
-    cine_articles, cine_ids = scrape_cinehorizons()
-    allo_articles, allo_ids = scrape_allocine()
-    tmdb_articles, tmdb_ids = scrape_tmdb()
+        movie_id = movie.get("id")
+        if not movie_id:
+            continue
 
-    ancien_contenu = ''
-    if os.path.exists(OUTPUT_FILE):
-        with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
-            ancien_contenu = f.read()
-    ancien_contenu = re.sub(r'<span class="badge-nouveau">NOUVEAU</span>', '', ancien_contenu)
-    ancien_contenu = re.sub(r'class="card-bande hidden-card"', 'class="card-bande"', ancien_contenu)
-    anciens_articles = re.findall(r'(<article class="card-bande"[^>]*>.*?</article>)',
-                                  ancien_contenu, flags=re.DOTALL)
+        try:
+            rv = session.get(f"https://api.themoviedb.org/3/movie/{movie_id}/videos",
+                             params={"api_key": TMDB_API_KEY, "language": "fr-FR"})
+            rv.raise_for_status()
+            videos = rv.json().get("results", [])
+        except:
+            continue
 
-    all_articles = cine_articles + allo_articles + tmdb_articles + anciens_articles
-    all_articles = ajouter_badge_nouveau(all_articles, n=6)
-    log.extend(cine_ids + allo_ids + tmdb_ids)
-    all_articles = limiter_articles(all_articles)
+        trailer = next((v for v in videos if v.get("type") == "Trailer" and v.get("site") == "YouTube"), None)
+        if not trailer:
+            continue
 
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        f.write('\n\n'.join(all_articles))
-    save_log(log)
+        video_id = trailer.get("key")
+        identifiant = f"tmdb::{titre}::{video_id}"
+        if identifiant in log:
+            continue
 
-    date_maj = datetime.now().strftime('%d %B %Y')
-    with open(DATE_FILE, 'w', encoding='utf-8') as f:
-        f.write(f'<p class="maj-annonces">Dernière mise à jour : {date_maj}</p>')
+        iframe_html = f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>'
+        synopsis = summarize_synopsis(movie.get("overview", "Pas de synopsis"))
 
-    print(f"\n✅ {len(cine_articles)} Cinehorizons, {len(allo_articles)} AlloCiné, {len(tmdb_articles)} TMDb")
+        article_html = (
+            '<article class="card-bande">'
+            '<span class="badge-nouveau">NOUVEAU</span>'
+            f'<h2>{titre}</h2>'
+            f'<p class="date-sortie">Sortie prévue : {date_sortie}</p>'
+            f'<p class="ajout-site">Ajouté le : {date_ajout}</p>'
+            f'<p class="synopsis">{synopsis}</p>'
+            f'<div class="video-responsive">{iframe_html}</div>'
+            '</article>'
+        )
+
+        articles.append(article_html)
+        ids.append(identifiant)
+
+    return articles, ids
 
 # ------------------------------
 # PUSH GITHUB
 # ------------------------------
 def push_to_github():
     try:
+        # Racine du dépôt (2 niveaux au-dessus du script)
         repo_root = os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..'))
         os.chdir(repo_root)
+
+        # Config utilisateur Git
         subprocess.run(["git", "config", "user.name", "LOeilCritique69"], check=True)
         subprocess.run(["git", "config", "user.email", "yanisfoa69@gmail.com"], check=True)
+
+        # Ajout des fichiers du scraper
         subprocess.run([
             "git", "add",
             "l_oeil_critique/bande_annonces_blocs.html",
             "l_oeil_critique/bande_annonces_maj.html",
             "l_oeil_critique/scripts/bande_annonces_log.json"
         ], check=True)
+
+        # Vérifier s’il y a des changements
         status_result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
         if status_result.stdout.strip():
             subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
@@ -361,6 +216,40 @@ def push_to_github():
     except Exception as e:
         print(f"❌ Erreur GitHub : {e}")
 
+
+# ------------------------------
+# MAIN
+# ------------------------------
+def main():
+    log = load_log()
+    cine_articles, cine_ids = scrape_cinehorizons(log)
+    tmdb_articles, tmdb_ids = scrape_tmdb(log)
+
+    nouveaux_articles = cine_articles + tmdb_articles
+    nouveaux_ids = cine_ids + tmdb_ids
+
+    if not nouveaux_articles:
+        print("[INFO] Aucune nouvelle bande-annonce trouvée.")
+        return
+
+    ancien_contenu = ''
+    if OUTPUT_FILE.exists():
+        with OUTPUT_FILE.open('r', encoding='utf-8') as f:
+            ancien_contenu = f.read()
+
+    anciens_articles = re.findall(r'(<article class="card-bande"[^>]*>.*?</article>)',
+                                  ancien_contenu, flags=re.DOTALL)
+
+    all_articles = nouveaux_articles + anciens_articles
+
+    with OUTPUT_FILE.open('w', encoding='utf-8') as f:
+        f.write('\n\n'.join(all_articles))
+
+    save_log(log + nouveaux_ids)
+    print(f"✅ {len(nouveaux_articles)} nouvelles bandes-annonces ajoutées")
+
+    # Push GitHub
+    push_to_github()
+
 if __name__ == "__main__":
     main()
-    push_to_github()
