@@ -968,7 +968,7 @@ header {
     max-width: 900px;
     margin: 4rem auto;
     padding: 2.5rem 2rem;
-    background-color: var(--background-color);
+    background-color: #e7e9ec;
     border-left: 4px solid var(--accent-color);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
