@@ -8,70 +8,10 @@
 <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/chef_d_oeuvre.css">
-<style>
-/* --- Game --- */
-.game-container {
-    background: #1c1c1c;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-    text-align: center;
-    max-width: 420px;
-    margin: 2rem auto;
-}
-#movie-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    filter: blur(6px);
-    margin-bottom: 1rem;
-    transition: filter 0.3s ease;
-}
-input[type="text"] {
-    width: 80%;
-    padding: 0.6rem;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-button {
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 8px;
-    background: #2d7d46;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-button:hover { background: #46a86f; }
-.message { color:white; margin-top: 1rem; font-weight: bold; min-height: 1.5rem; }
-.score, .timer {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #f1c40f;
-}
-.mode-select {
-    margin: 1rem auto;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-.mode-select button {
-    background: #444;
-    color: #fff;
-}
-.mode-select button.active { background: #2d7d46; }
-@media(max-width:500px){
-    #movie-image { height: 300px; }
-}
-</style>
 </head>
 <body>
+
+<!-- === HEADER ORIGINAL === -->
 <header>
     <div class="header-content">
         <a href="../index.html" class="logo-link">
@@ -89,28 +29,34 @@ button:hover { background: #46a86f; }
     </div>
 </header>
 
+<!-- === CONTENU DU JEU === -->
 <main>
     <section class="page-intro-section">
-        <h2 class="page-title">Devine le Film !</h2>
+        <h2 class="page-title">🎬 Devine le Film !</h2>
         <p class="page-description">
-            Testez vos connaissances ciné : retrouvez les films à partir de leur affiche floutée.  
-            Choisissez une difficulté, battez le chrono et prouvez que vous êtes un véritable cinéphile.
+            Trouvez le film à partir de son affiche floutée avant la fin du chrono.  
+            Plus la difficulté augmente, plus les affiches seront retorses.  
+            Bonne chance, cinéphile.
         </p>
     </section>
 
+    <!-- Sélection du mode -->
     <div class="mode-select">
         <button data-mode="easy" class="active">Facile</button>
         <button data-mode="medium">Moyen</button>
         <button data-mode="hard">Difficile</button>
         <button data-mode="cinephile">Cinéphile</button>
+        <button data-mode="marathon">Marathon</button>
     </div>
 
+    <!-- Zone de jeu -->
     <div class="game-container">
-        <img id="movie-image" src="" alt="Affiche floue du film">
-        <input type="text" id="guess-input" placeholder="Tape le nom du film">
+        <div class="timer-circle" id="timer">15</div>
+        <img id="movie-image" src="" alt="Affiche floutée du film">
+        <input type="text" id="guess-input" placeholder="Tapez le nom du film...">
         <button id="guess-btn">Valider</button>
         <div class="message" id="message"></div>
-        <div class="timer" id="timer"></div>
+        <div class="hint" id="hint"></div>
         <div class="score" id="score"></div>
     </div>
 
@@ -119,6 +65,7 @@ button:hover { background: #46a86f; }
     </p>
 </main>
 
+<!-- === FOOTER ORIGINAL === -->
 <footer>
     <div class="footer-content">
         <div class="footer-links">
@@ -130,109 +77,257 @@ button:hover { background: #46a86f; }
     </div>
 </footer>
 
+<!-- === STYLE DU JEU === -->
+<style>
+.game-container {
+  background: rgba(20, 20, 20, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+  text-align: center;
+  max-width: 480px;
+  margin: 2.5rem auto;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.game-container.correct { border: 2px solid #2ecc71; transform: scale(1.03); }
+.game-container.wrong { border: 2px solid #e74c3c; animation: shake 0.4s; }
+
+@keyframes shake {
+  0%,100%{transform:translateX(0);}
+  25%{transform:translateX(-8px);}
+  75%{transform:translateX(8px);}
+}
+
+#movie-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: blur(12px) brightness(0.9);
+  margin-bottom: 1.2rem;
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+.reveal { filter: blur(0px) brightness(1.05); transform: scale(1.02); }
+
+input[type="text"] {
+  width: 85%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+button {
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2d7d46, #46a86f);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+button:hover { transform: scale(1.05); }
+
+.message {
+  color: #fff;
+  margin-top: 1rem;
+  font-weight: bold;
+  min-height: 1.5rem;
+  transition: opacity 0.3s ease;
+}
+.score, .timer, .hint {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1c40f;
+}
+
+/* --- Timer circulaire --- */
+.timer-circle {
+  width: 80px;
+  height: 80px;
+  border: 5px solid #444;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #f1c40f;
+}
+
+/* --- Modes --- */
+.mode-select {
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.mode-select button {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+.mode-select button.active {
+  background: linear-gradient(135deg, #2d7d46, #46a86f);
+  border: none;
+}
+.hint {
+  color: #aaa;
+  font-style: italic;
+}
+
+@media(max-width:500px){
+  #movie-image { height: 320px; }
+}
+</style>
+
+<!-- === SCRIPT DU JEU === -->
 <script>
 const API_KEY = "c733ef0d6713d6a5b282beff57cd6343";
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
 let movies = [];
-let currentMovie, attempts, score = 0, timerInterval, timeLeft;
-let currentMode = "easy";
+let currentMovie, attempts, score = 0, combo = 0;
+let timerInterval, timeLeft, currentMode = "easy";
 
-// 🔎 Filtrage selon difficulté
+const imgEl = document.getElementById("movie-image");
+const msgEl = document.getElementById("message");
+const scoreEl = document.getElementById("score");
+const timerEl = document.getElementById("timer");
+const hintEl = document.getElementById("hint");
+const container = document.querySelector(".game-container");
+
+// 🔧 Modes
 function getModeQuery(mode) {
-    switch(mode) {
-        case "easy": return "sort_by=popularity.desc&vote_count.gte=2000";
-        case "medium": return "sort_by=popularity.desc&vote_count.gte=500&vote_count.lte=2000";
-        case "hard": return "sort_by=vote_average.desc&vote_count.gte=100&vote_count.lte=500";
-        case "cinephile": return "sort_by=vote_average.desc&vote_count.gte=200";
-        default: return "sort_by=popularity.desc&vote_count.gte=2000";
-    }
+  switch(mode) {
+    case "easy": return "sort_by=popularity.desc&vote_count.gte=2000";
+    case "medium": return "sort_by=popularity.desc&vote_count.gte=500&vote_count.lte=2000";
+    case "hard": return "sort_by=vote_average.desc&vote_count.gte=200";
+    case "cinephile": return "sort_by=vote_average.desc&vote_count.gte=50&vote_count.lte=200";
+    case "marathon": return "sort_by=popularity.desc";
+    default: return "sort_by=popularity.desc&vote_count.gte=2000";
+  }
 }
 
-// Sélection mode
-document.querySelectorAll(".mode-select button").forEach(btn => {
-    btn.addEventListener("click", () => {
-        currentMode = btn.dataset.mode;
-        document.querySelectorAll(".mode-select button").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        fetchMovies();
-    });
-});
-
-// Récupère films
+// 🧩 Récupération de films
 async function fetchMovies() {
-    const query = getModeQuery(currentMode);
-    const randomPage = Math.floor(Math.random() * 5) + 1; // pages 1-5
+  const query = getModeQuery(currentMode);
+  const randomPage = Math.floor(Math.random() * 5) + 1;
+  try {
     const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=fr-FR&page=${randomPage}&${query}`);
     const data = await res.json();
     movies = data.results.filter(m => m.poster_path && m.title);
     newMovie();
+  } catch {
+    msgEl.textContent = "Erreur de chargement. Réessaie.";
+  }
 }
 
+// 🧠 Nettoyage du titre
 function normalizeTitle(title) {
-    return title
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // supprime accents
-        .replace(/&/g, "et")
-        .replace(/le film|film/g, "")
-        .replace(/[^a-z0-9 ]/g, "")
-        .trim();
+  return title.toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9 ]/g, "")
+    .trim();
 }
 
+// 💡 Indices
+function revealHint(movie) {
+  const hints = [];
+  if (movie.release_date) hints.push(`📅 ${movie.release_date.split("-")[0]}`);
+  if (movie.original_language) hints.push(`🌍 ${movie.original_language.toUpperCase()}`);
+  if (movie.vote_average) hints.push(`⭐ ${movie.vote_average.toFixed(1)}/10`);
+  hintEl.textContent = hints.join(" • ");
+}
+
+// 🔄 Nouveau film
 function newMovie() {
-    clearInterval(timerInterval);
-    currentMovie = movies[Math.floor(Math.random()*movies.length)];
-    attempts = 5;
-    timeLeft = 15;
+  clearInterval(timerInterval);
+  if (!movies.length) return fetchMovies();
 
-    const imgEl = document.getElementById('movie-image');
-    imgEl.src = IMG_URL + currentMovie.poster_path;
-    imgEl.style.filter = 'blur(6px)';
+  currentMovie = movies[Math.floor(Math.random()*movies.length)];
+  attempts = 4;
+  timeLeft = 15;
+  imgEl.src = IMG_URL + currentMovie.poster_path;
+  imgEl.classList.remove("reveal");
+  msgEl.textContent = "🧩 Essaie de deviner !";
+  revealHint(currentMovie);
 
-    document.getElementById('guess-input').value = '';
-    document.getElementById('message').textContent = `Tu as ${attempts} essais.`;
-    document.getElementById('score').textContent = `Score : ${score}`;
-    document.getElementById('timer').textContent = `⏳ Temps : ${timeLeft}s`;
+  scoreEl.textContent = `Score : ${score} | Combo : ${combo}`;
+  timerEl.textContent = timeLeft;
 
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        document.getElementById('timer').textContent = `⏳ Temps : ${timeLeft}s`;
-        if(timeLeft <= 0) {
-            clearInterval(timerInterval);
-            document.getElementById('message').textContent = `⏰ Temps écoulé ! C'était ${currentMovie.title}`;
-            document.getElementById('movie-image').style.filter = 'blur(0px)';
-            setTimeout(newMovie, 2000);
-        }
-    }, 1000);
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      loseRound(`⏰ Temps écoulé ! C’était ${currentMovie.title}`);
+    }
+  }, 1000);
 }
 
-document.getElementById('guess-btn').addEventListener('click', () => {
-    const guess = normalizeTitle(document.getElementById('guess-input').value.trim());
-    if(!guess) return;
+// ✅ Vérification
+document.getElementById("guess-btn").addEventListener("click", () => {
+  const guess = normalizeTitle(document.getElementById("guess-input").value);
+  if (!guess) return;
+  const answer = normalizeTitle(currentMovie.title);
 
-    const answer = normalizeTitle(currentMovie.title);
+  if (answer.includes(guess) || guess.includes(answer)) winRound();
+  else wrongAnswer();
+});
 
-    if(answer.includes(guess) || guess.includes(answer)) {
-        score++;
-        document.getElementById('message').textContent = "✅ Bravo ! C'était bien " + currentMovie.title;
-        document.getElementById('movie-image').style.filter = 'blur(0px)';
-        clearInterval(timerInterval);
-        setTimeout(newMovie, 1500);
-    } else {
-        attempts--;
-        if(attempts > 0){
-            document.getElementById('message').textContent = `❌ Incorrect. Il te reste ${attempts} essais.`;
-        } else {
-            clearInterval(timerInterval);
-            document.getElementById('message').textContent = `💥 Perdu ! C'était ${currentMovie.title}`;
-            document.getElementById('movie-image').style.filter = 'blur(0px)';
-            setTimeout(newMovie, 2000);
-        }
-    }
+function winRound() {
+  clearInterval(timerInterval);
+  combo++;
+  score += 1 + (combo > 1 ? combo * 0.5 : 0);
+  msgEl.textContent = `✅ Bravo ! ${currentMovie.title}`;
+  container.classList.add("correct");
+  imgEl.classList.add("reveal");
+  setTimeout(() => {
+    container.classList.remove("correct");
+    newMovie();
+  }, 2000);
+}
+
+function wrongAnswer() {
+  attempts--;
+  container.classList.add("wrong");
+  setTimeout(() => container.classList.remove("wrong"), 400);
+  if (attempts > 0) msgEl.textContent = `❌ Faux. Il te reste ${attempts} essais.`;
+  else loseRound(`💥 Perdu ! C’était ${currentMovie.title}`);
+}
+
+function loseRound(text) {
+  clearInterval(timerInterval);
+  combo = 0;
+  msgEl.textContent = text;
+  imgEl.classList.add("reveal");
+  setTimeout(newMovie, 2500);
+}
+
+// 🎮 Sélection du mode
+document.querySelectorAll(".mode-select button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentMode = btn.dataset.mode;
+    document.querySelectorAll(".mode-select button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    score = 0; combo = 0;
+    fetchMovies();
+  });
 });
 
 window.onload = fetchMovies;
 </script>
+
 </body>
 </html>
