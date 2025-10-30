@@ -95,7 +95,30 @@
             </div>
         </section>
 
-        <!-- NOUVELLE SECTION - JEU CINÉMA -->
+        <!-- 🔥 SECTION TIKTOK INTÉGRÉE (avec vraies vidéos) -->
+        <section class="tiktok-section">
+            <div id="tiktok-dynamic" class="tiktok-container"></div>
+        </section>
+
+        <!-- Script de chargement dynamique TikTok -->
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("l_oeil_critique/tiktok.html")
+                .then(response => response.text())
+                .then(html => {
+                    const container = document.getElementById("tiktok-dynamic");
+                    container.innerHTML = html;
+
+                    // Recharge le script TikTok pour activer les vidéos intégrées
+                    const script = document.createElement("script");
+                    script.src = "https://www.tiktok.com/embed.js";
+                    script.async = true;
+                    document.body.appendChild(script);
+                })
+                .catch(err => console.error("Erreur lors du chargement de TikTok :", err));
+        });
+        </script>
+
         <section class="game-section">
             <h2 class="section-title">Devine le Film</h2>
             <div class="category-links-container">
