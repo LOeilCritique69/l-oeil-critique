@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Histoires, anecdotes et fun facts cinéma racontés par L’Œil Critique. Plongez dans les secrets et légendes du septième art. Les vidéos sont publiées de façon irrégulière, selon l’inspiration et les histoires à raconter." />
+  <meta name="keywords" content="cinéma, anecdotes, histoires, fun facts, mystères du cinéma, films, réalisateurs" />
+  <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
+  <title>Anecdotes & Histoires – L’Œil Critique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/chef_d_oeuvre.css" />
+  <style>
+    /* === SECTION ANECDOTES === */
+    .grille-anecdotes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      justify-items: center;
+    }
+
+    .card-anecdote {
+      background: linear-gradient(180deg, var(--panel) 0%, #14171c 100%);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .card-anecdote:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    /* --- Ajustement 9:16 --- */
+    .video-wrapper {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: #000;
+    }
+
+    /* --- Miniature overlay --- */
+    .video-thumbnail {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.4s ease;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-thumbnail::after {
+      content: "▶";
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .video-wrapper:hover .video-thumbnail::after {
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .video-thumbnail.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .anecdote-content {
+      padding: 1.3rem 1.2rem 1.6rem;
+    }
+
+    .anecdote-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent);
+      text-transform: capitalize;
+      letter-spacing: 0.4px;
+    }
+
+    .anecdote-content p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      transition: color 0.3s ease;
+    }
+
+    .card-anecdote:hover .anecdote-content p {
+      color: var(--text);
+    }
+
+    .page-description small {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .card-anecdote { max-width: 320px; }
+      .anecdote-content h3 { font-size: 1.1rem; }
+      .anecdote-content p { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="../index.html" class="logo-link">
+        <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo" />
+      </a>
+      <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
+      <nav class="main-nav">
+        <a href="films.html">Films</a>
+        <a href="series.html">Séries</a>
+        <a href="actualités.html">Actualités</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="bande-annonces.html">Bandes-Annonces</a>
+        <a href="A_propos.html">À Propos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="bande-annonce-container">
+      <section class="page-intro-section">
+        <h2 class="page-title">Anecdotes & Histoires</h2>
+        <p class="page-description">
+          Découvrez des récits fascinants, des secrets de tournage et des légendes du cinéma. 
+          <small>Les vidéos ne suivent pas une publication régulière : elles apparaissent à des moments aléatoires, selon l’anecdote ou l’histoire à raconter.</small>
+        </p>
+      </section>
+
+      <div class="grille-anecdotes">
+
+        <div class="card-anecdote">
+          <div class="video-wrapper">
+            <video preload="metadata" src="assets/videos/Le_Roi_Lion.mp4"></video>
+            <div class="video-thumbnail" style="background-image:url('assets/img/anecdotes/roi_lion.jpg');"></div>
+          </div>
+          <div class="anecdote-content">
+            <h3>Le Roi Lion n'aurait pu jamais sortir !</h3>
+            <p>Tu savais que <em>Le Roi Lion</em> a failli ne jamais voir le jour ?  
+              Mais grâce à un ordinateur, celui-ci a pu nous offrir une claque visuelle !</p>
+          </div>
+        </div>
+
+        <div class="card-anecdote">
+          <div class="video-wrapper">
+            <video preload="metadata" src="assets/videos/2_Whilem_Scream.mp4"></video>
+            <div class="video-thumbnail" style="background-image:url('assets/img/anecdotes/wilhelm.jpg');"></div>
+          </div>
+          <div class="anecdote-content">
+            <h3>Le son qui fait rire tout Hollywood !</h3>
+            <p>Appelé le <strong>“Wilhelm Scream”</strong>, ce cri mythique est réutilisé dans plus de <strong>400 films</strong>, de <em>Star Wars</em> à <em>Indiana Jones</em>. 
+              À l’origine, il provient d’un vieux western des années 50 — et depuis, il est devenu un clin d’œil que seuls les initiés repèrent.</p>
+          </div>
+        </div>
+
+        <div class="card-anecdote">
+          <div class="video-wrapper">
+            <video preload="metadata" src="assets/videos/_Le_cas_de__L_exorcist.mp4"></video>
+            <div class="video-thumbnail" style="background-image:url('assets/img/anecdotes/exorciste.jpg');"></div>
+          </div>
+          <div class="anecdote-content">
+            <h3>Le Cas de l'Exorciste !</h3>
+            <p>Durant le tournage de <strong>L’Exorciste</strong>, plusieurs accidents étranges ont eu lieu. 
+              Blessures, incendies, sons inexpliqués… même les acteurs parlaient de malédiction. 
+              Ce film d’horreur n’a pas seulement effrayé les spectateurs, il a terrifié son propre plateau.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mentions_légales.html">Mentions légales</a>
+      <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // Lecture / pause + miniature cliquable
+    const wrappers = document.querySelectorAll('.video-wrapper');
+    const videos = document.querySelectorAll('.video-wrapper video');
+
+    wrappers.forEach(wrapper => {
+      const video = wrapper.querySelector('video');
+      const thumb = wrapper.querySelector('.video-thumbnail');
+
+      // Lancement lecture
+      thumb.addEventListener('click', () => {
+        videos.forEach(v => { v.pause(); v.parentElement.querySelector('.video-thumbnail').classList.remove('hidden'); });
+        thumb.classList.add('hidden');
+        video.play();
+      });
+
+      // Pause au clic sur la vidéo
+      video.addEventListener('click', () => {
+        if (!video.paused) {
+          video.pause();
+          thumb.classList.remove('hidden');
+        }
+      });
+
+      // Si on met en pause autrement
+      video.addEventListener('pause', () => thumb.classList.remove('hidden'));
+    });
+  </script>
+</body>
+</html>
