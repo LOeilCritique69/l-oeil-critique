@@ -1,133 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Retrouvez toutes les actualités majeures du cinéma et des séries, y compris les événements comme les Oscars et les Golden Globes.">
-    <meta name="keywords" content="actualités cinéma, actualités séries, Oscars, Golden Globes, Marvel, festivals de cinéma, industrie du film">
-    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
-    <title>Actualités - L'Œil Critique</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
-    </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Toutes les grandes actualités du cinéma et des séries : Oscars, festivals, annonces, rumeurs et tendances de l’industrie sur L’Œil Critique." />
+  <meta name="keywords" content="actualités cinéma, actualités séries, Oscars, festivals, Golden Globes, Marvel, industrie du film, Trump Hollywood" />
+  <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
+  <title>Actualités – L’Œil Critique</title>
+
+  <!-- Fonts + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/chef_d_oeuvre.css" />
+</head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="../index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
-                <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
-            </a>
-            <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
-            <nav class="main-nav" aria-label="Navigation principale du site">
-                <a href="films.html">Films</a>
-                <a href="series.html">Séries</a>
-                <a href="actualités.html" class="active">Actualités</a>
-                <a href="reviews.html">Reviews</a>
-                <a href="bande-annonces.html">Bandes-Annonces</a>
-                <a href="A_propos.html">À Propos</a>
-            </nav>
-            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </header>
+  <header id="header"></header>
 
-    <main>
-        <section class="page-intro-section">
-            <h2 class="page-title">Toutes les Actualités Cinéma et Séries</h2>
-            <p class="page-description">Retrouvez ici les informations clés de l'industrie : annonces des festivals, nouveautés des studios, analyses des tendances et plus encore !</p>
-        </section>
+  <main>
+    <!-- ===========================
+         HERO TRUMP — ACTUALITÉS MAJEURE
+         =========================== -->
+    <section class="hero-section" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55), var(--primary-color)), url('assets/img/bigactualités/trump-hollywood.webp') center/cover no-repeat;">
+      <div class="hero-content">
+        <h1 class="hero-title">Trump contre le cinéma mondial</h1>
+        <p class="hero-subtitle">
+          Une taxe de 100 % sur les films étrangers : une décision historique qui pourrait bouleverser l’industrie.
+        </p>
+        <a href="articles/bigactualités/donald-trump-contre-le-cinéma-etranger.html" class="btn">Lire l’article complet</a>
+      </div>
+    </section>
 
-        <section class="latest-news-section">
-            <h2 class="section-title">LES DERNIERS ARTICLES</h2>
-            <div class="news-grid latest-news-grid">
-                <article class="news-item">  
-                    <img src="assets/img/bigactualités/marvel-studios-october-discord-qa-alex-perez.jpg" alt="Q.A ALEX.P" class="news-image">
-                    <h3>Q&A d’octobre. Alex Perez répond aux fans !</h3>
-                    <p class="publication-date">Publié le 6 Mai 2025</p> <!-- Date de publication -->
-                    <p>Il est temps pour un nouveau Q&A avec Alex Perez, avec des questions provenant des membres du Discord The Cosmic Circus ! Retrouvez ci-dessous ses réponses, organisées par thèmes.</p>
-                    <a href="articles/bigactualités/rumeurs_mcu_october.html" class="btn">Lire l'article</a>
-                </article>
+    <!-- ===========================
+         À LA UNE
+         =========================== -->
+    <section id="a-la-une" class="featured-section">
+      <h2 class="section-title gold">À LA UNE</h2>
+      <div class="featured-grid">
+        <article class="featured-card">
+          <img src="assets/img/bigactualités/marvel-studios-october-discord-qa-alex-perez.jpg" alt="Q&A d’octobre Alex Perez" />
+          <div class="featured-content">
+            <h3>Q&A d’octobre — Alex Perez répond aux fans du MCU</h3>
+            <p>Le célèbre insider revient sur les projets Marvel à venir lors d’une session exceptionnelle sur Discord.</p>
+            <a href="articles/bigactualités/rumeurs_mcu_october.html" class="btn" target="_blank">Lire l’article</a>
+          </div>
+        </article>
 
-                <article class="news-item">  
-                    <img src="assets/img/bigactualités/trump-hollywood.webp" alt="Donald trump contre le cinema etranger" class="news-image">
-                    <h3>Trump contre le cinéma mondial : vers une guerre culturelle ?</h3>
-                    <p class="publication-date">Publié le 6 Mai 2025</p> <!-- Date de publication -->
-                    <p>Donald Trump relance sa campagne avec une annonce choc : une taxe de 100 % sur tous les films produits hors des États-Unis. Une décision qui pourrait bouleverser l’industrie du cinéma mondial.</p>
-                    <a href="articles/bigactualités/donald-trump-contre-le-cinéma-etranger.html" class="btn">Lire l'article</a>
-                </article>
+        <article class="featured-card">
+          <img src="assets/img/bigactualités/oscars-2025-860x484.jpg" alt="Oscars 2025" />
+          <div class="featured-content">
+            <h3>Oscars 2025 — les nominations enfin révélées</h3>
+            <p>Entre surprises et confirmations, la liste complète des films en lice pour les statuettes d’or.</p>
+            <a href="articles/bigactualités/oscar-2025.html" class="btn" target="_blank">Lire l’article</a>
+          </div>
+        </article>
 
-                <article class="news-item">
-                    <img src="assets/img/bigactualités/cinemacon.jpg" alt="cinemacon" class="news-image">
-                    <h3>CinemaCon 2025 : Annonces, Planning et Révélations à Attendre</h3>
-                    <p class="publication-date">Publié le 25 Mars 2025</p> <!-- Date de publication -->
-                    <p>Le CinemaCon 2025 approche à grands pas, et cette année, la compétition s'annonce encore plus intense avec des annonces tant attendues de la part des plus grands studios. De nouvelles bandes-annonces, des révélations sur les projets à venir et des teasers exclusifs seront dévoilés. Voici un aperçu de ce que vous pouvez attendre de cet événement incontournable.</p>
-                    <a href="articles/bigactualités/CinemaCon-annonce.html" class="btn">Lire l'article</a>
-                </article>
-                
-                <article class="news-item">
-                    <img src="assets/img/bigactualités/50e_cérémonie_des_César_-_logo.png" alt="SAG Awards 2025" class="news-image">
-                    <h3>César 2025 : Les Gagnants révélés !</h3>
-                    <p class="publication-date">Publié le 01 Mars 2025</p> <!-- Date de publication -->
-                    <p>C'était une occasion de célébrer non seulement les grandes stars du cinéma français, mais aussi de découvrir de nouvelles voix et de nouvelles étoiles montantes.</p>
-                    <a href="articles/bigactualités/Cesars-2025-gagnant.html" class="btn">Lire l'article</a>
-                </article>
+        <article class="featured-card">
+          <img src="assets/img/bigactualités/marvel-studios.jpg" alt="Marvel Studios restructuration" />
+          <div class="featured-content">
+            <h3>Marvel Studios — Une restructuration historique</h3>
+            <p>Le studio repense toute sa stratégie après une décennie de domination mondiale.</p>
+            <a href="articles/bigactualités/marvel-restructuration.html" class="btn" target="_blank">Lire l’article</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-                <article class="news-item">
-                    <img src="assets/img/bigactualités/SAG-Awards-2025-Winners-List-1024x576.jpg.webp" alt="SAG Awards 2025" class="news-image">
-                    <h3>Les gagnants des SAG Awards 2025 !</h3>
-                    <p class="publication-date">Publié le 27 février 2025</p> <!-- Date de publication -->
-                    <p>La 31ᵉ édition, qui s'est tenue en 2025, a une fois de plus honoré les performances marquantes de l'année. Voici la liste complète des nominés et des gagnants de cette année.</p>
-                    <a href="articles/bigactualités/SAG-AWARDS-2025.html" class="btn">Lire l'article</a>
-                </article>
-                
-                <article class="news-item">
-                    <img src="assets/img/bigactualités/OIP.jpg" alt="Oscars 2025" class="news-image">
-                    <h3>Oscars 2025 : Les Gagnants sont surprenant !</h3>
-                    <p class="publication-date">Publié le 01 Mars 2025</p> <!-- Date de publication -->
-                    <p>Découvrez ci-dessous la liste des gagnants dans chaque catégorie des Oscars 2025 !</p>
-                    <a href="articles/bigactualités/oscar-2025-gagnants..html" class="btn">Lire l'article</a>
-                </article>
-                
-                <article class="news-item">
-                    <img src="assets/img/bigactualités/oscars-2025-860x484.jpg" alt="Oscars 2025" class="news-image">
-                    <h3>Oscars 2025 : Les nominés enfin révélés</h3>
-                    <p class="publication-date">Publié le 27 février 2025</p> <!-- Date de publication -->
-                    <p>Découvrez la liste complète des nominés pour la prochaine cérémonie des Oscars. Quels films sont favoris cette année ?</p>
-                    <a href="articles/bigactualités/oscar-2025.html" class="btn">Lire l'article</a>
-                </article>
-                
-                <article class="news-item">
-                    <img src="assets/img/bigactualités/marvel-studios.jpg" alt="Marvel Studios" class="news-image">
-                    <h3>Marvel Studios : Une nouvelle ère de changements radicaux</h3>
-                    <p class="publication-date">Publié le 27 février 2025</p> <!-- Date de publication -->
-                    <p>Après des années de succès, Marvel Studios ralentit la cadence et restructure son univers cinématographique. Découvrez tous les détails des changements à venir.</p>
-                    <a href="articles/bigactualités/marvel-restructuration.html" class="btn">Lire l'article</a>
-                </article>
-                
-            </div>
-        </section>
+    <!-- ===========================
+         DERNIÈRES ACTUALITÉS
+         =========================== -->
+    <section class="latest-news-section">
+      <h2 class="section-title gold">Les Derniers Articles</h2>
+      <div class="news-grid latest-news-grid">
+        <article class="news-item">  
+          <img src="assets/img/bigactualités/50e_cérémonie_des_César_-_logo.png" alt="César 2025" class="news-image">
+          <h3>César 2025 — Les gagnants révélés</h3>
+          <p class="publication-date">Publié le 1 Mars 2025</p>
+          <p>Une cérémonie riche en émotions qui a mis en lumière de nouvelles voix du cinéma français.</p>
+          <a href="articles/bigactualités/Cesars-2025-gagnant.html" class="btn">Lire l'article</a>
+        </article>
 
-        <section class="coming-soon">
-            <h2>🔜 À venir...</h2>
-            <p>Cette section sera bientôt enrichie avec encore plus d'actualités du cinéma et des séries ! Restez connectés.</p>
-        </section>
-    </main>
+        <article class="news-item">
+          <img src="assets/img/bigactualités/SAG-Awards-2025-Winners-List-1024x576.jpg.webp" alt="SAG Awards 2025" class="news-image">
+          <h3>SAG Awards 2025 — Les performances primées</h3>
+          <p class="publication-date">Publié le 27 Février 2025</p>
+          <p>Les acteurs de l’année récompensés par leurs pairs dans une cérémonie éclatante.</p>
+          <a href="articles/bigactualités/SAG-AWARDS-2025.html" class="btn">Lire l'article</a>
+        </article>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="mentions_légales.html">Mentions légales</a>
-                <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
-        </div>
-    </footer>
+        <article class="news-item">
+          <img src="assets/img/bigactualités/cinemacon.jpg" alt="CinemaCon 2025" class="news-image">
+          <h3>CinemaCon 2025 — révélations à Las Vegas</h3>
+          <p class="publication-date">Publié le 25 Mars 2025</p>
+          <p>Les grands studios lèvent le voile sur les projets les plus attendus de l’année.</p>
+          <a href="articles/bigactualités/CinemaCon-annonce.html" class="btn">Lire l'article</a>
+        </article>
+      </div>
+    </section>
 
-    <script src="assets/js/main.js"></script>
-    </body>
+    <!-- ===========================
+         SECTION À VENIR
+         =========================== -->
+    <section class="coming-soon">
+      <h2>🔜 À venir...</h2>
+      <p>De nouvelles actualités majeures du cinéma et des séries seront ajoutées prochainement. Restez connectés.</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="mentions_légales.html">Mentions légales</a>
+        <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p>&copy; 2025 L’Œil Critique. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/loadBigActualitesBlocks.js"></script>
+</body>
 </html>

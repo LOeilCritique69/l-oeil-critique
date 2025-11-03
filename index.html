@@ -1,121 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="L'Œil Critique : Votre source incontournable pour les actualités, critiques et nouveautés cinéma et séries.">
-    <meta name="keywords" content="cinéma, films, séries, critiques, actualités, bandes-annonces, reviews, avis, blockbusters, streaming">
-    <link rel="icon" href="l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
-    <title>Accueil - L'Œil Critique : Actualités & Critiques Cinéma et Séries</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="l_oeil_critique/css/chef_d_oeuvre.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'Œil Critique : votre source incontournable pour les actualités, critiques et nouveautés cinéma et séries.">
+  <meta name="keywords" content="cinéma, films, séries, critiques, actualités, bandes-annonces, reviews, avis, blockbusters, streaming">
+  <link rel="icon" href="l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+  <title>Accueil - L'Œil Critique : Actualités & Critiques Cinéma et Séries</title>
+
+  <!-- Fonts + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="l_oeil_critique/css/chef_d_oeuvre.css">
 </head>
+
 <body>
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
-                <img src="l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
-            </a>
-            <h1 class="site-title"><a href="index.html" class="site-title-link">L'Œil Critique</a></h1>
-            <nav class="main-nav" aria-label="Navigation principale du site">
-                <a href="l_oeil_critique/films.html">Films</a>
-                <a href="l_oeil_critique/series.html">Séries</a>
-                <a href="l_oeil_critique/actualités.html">Actualités</a>
-                <a href="l_oeil_critique/reviews.html">Reviews</a>
-                <a href="l_oeil_critique/bande-annonces.html">Bandes-Annonces</a>
-                <a href="l_oeil_critique/A_propos.html">À Propos</a>
-            </nav>
-            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+  
+
+  <!-- ===================== HERO CINÉMATIQUE ===================== -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Marvel Studios : Une nouvelle ère commence</h1>
+      <p>Découvrez les dessous du tournage d’<em>Avengers: Doomsday</em>, un tournant majeur pour l’univers du MCU.</p>
+      <a href="l_oeil_critique/articles/bigactualités/rumeurs_mcu_october.html" class="btn">Lire l’article</a>
+    </div>
+  </section>
+
+  <!-- ===================== À LA UNE ===================== -->
+  <section class="featured-section">
+    <h2 class="section-title gold">À la Une</h2>
+
+    <div class="featured-grid">
+        <article class="featured-card">
+        <img src="l_oeil_critique/assets/img/reviews/whiplash_title.jpg" alt="Critique">
+        <div class="featured-content">
+          <h3>Critique de <em>Whiplash</em>. L’obsession comme art du sacrifice</h3>
+          <p><strong>Un duel viscéral entre maître et élève</strong>, où la passion pour la perfection devient une guerre psychologique. Une œuvre haletante et brutale sur le prix du génie..</p>
+          <a href="l_oeil_critique/articles/reviews/films/Whiplash-critique.html" class="btn">Lire</a>
         </div>
-    </header>
+      </article>
 
-    <main>
-        <section class="welcome-section">
-            <h2 class="welcome-title">Bienvenue sur L'Œil Critique !</h2>
-            <p class="welcome-text">Suivez les dernières sorties, événements et nouveautés du grand écran.</p>
-        </section>
-
-        <section class="slider-section">
-            <h2 class="section-title">À LA UNE</h2>
-            <div class="slider-container">
-                <!-- Articles à la une -->
-                 <article class="slider-item">
-                    <img src="l_oeil_critique/assets/img/bigactualités/marvel-studios.jpg" alt="Q.A ALEX.P" class="news-image">
-                    <h3>Q&A d’octobre. Alex Perez répond aux fans !</h3>
-                    <p>Il est temps pour un nouveau Q&A avec Alex Perez, avec des questions provenant des membres du Discord The Cosmic Circus !</p>
-                    <a href="l_oeil_critique/articles/bigactualités/rumeurs_mcu_october.html" class="btn">Lire l'article</a>
-                </article>
-                <article class="slider-item">
-                    <img src="l_oeil_critique/assets/img/films/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Affiche du film Hunger Games 6: Sunrise on the Reaping">
-                    <h3>Hunger Games 6 : <em>Sunrise on the Reaping</em> - Un préquel centré sur Haymitch Abernathy!</h3>
-                    <p>Le prochain film Hunger Games 6 : <em>Sunrise on the Reaping</em>, se concentre sur la jeunesse de Haymitch Abernathy.</p>
-                    <a href="l_oeil_critique/articles/films/hunger-games-6-prequel-casting.html" class="btn">Lire l'article</a>
-                </article>
-                <article class="slider-item">
-                    <img src="l_oeil_critique/assets/img/reviews/logosinners.jpg" alt="Affiche du film Sinners">
-                    <h3>La Critique de <em>Sinners</em></h3>
-                    <p><em>Sinners</em> vous plonge dans un univers où le passé rencontre l'invisible. Ce film vous tiendra en haleine jusqu'à la dernière seconde.</p>
-                    <a href="l_oeil_critique/articles/reviews/films/sinners-critique.html" class="btn">Lire la critique</a>
-                </article>
-                <article class="slider-item">
-                    <img src="l_oeil_critique/assets/img/reviews/thunderbolts_logo.avif" alt="Logo du film Thunderbolts">
-                    <h3>La Critique de <em>Thunderbolts</em></h3>
-                    <p><em>Thunderbolts</em>, apporte une nouvelle dimension au MCU, entre lutte intérieure et quête de rédemption.</p>
-                    <a href="l_oeil_critique/articles/reviews/films/Thunderbolts-critique.html" class="btn">Lire la critique</a>
-                </article>
-            </div>
-            <div class="slider-controls">
-                <button class="slider-prev" aria-label="Article précédent">‹</button>
-                <div class="slider-dots"></div>
-                <button class="slider-next" aria-label="Article suivant">›</button>
-            </div>
-        </section>
-
-        <section class="category-links-section">
-            <h2 class="section-title">Actualités par Catégorie</h2>
-            <div class="category-links-container">
-                <a href="l_oeil_critique/films.html" class="category-link">Films</a>
-                <a href="l_oeil_critique/series.html" class="category-link">Séries</a>
-                <a href="l_oeil_critique/actualités.html" class="category-link">Grandes Actualités</a>
-                <a href="l_oeil_critique/bande-annonces.html" class="category-link">Bandes-Annonces</a>
-            </div>
-        </section>
-
-        <section class="review-links-section">
-            <h2 class="section-title">Le Coin Critique</h2>
-            <div class="category-links-container">
-                <a href="l_oeil_critique/reviews.html" class="category-link">Reviews</a>
-                <a href="l_oeil_critique/A_propos.html" class="category-link">À Propos</a>
-            </div>
-        </section>
-        
-        <section class="game-section">
-            <h2 class="section-title">Divers</h2>
-            <div class="category-links-container">
-                <a href="l_oeil_critique/devine-le-film.html" class="category-link">Devine Le Film !</a>
-                <a href="l_oeil_critique/anecdotes.html" class="category-link">Anecdotes & Histoires</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="l_oeil_critique/mentions_légales.html">Mentions légales</a>
-                <a href="l_oeil_critique/politique-de-confidentialité.html">Politique de confidentialité</a>
-                <a href="l_oeil_critique/contact.html">Contact</a>
-            </div>
-            <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
+      <article class="featured-card">
+        <img src="l_oeil_critique/assets/img/films/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Films">
+        <div class="featured-content">
+          <h3>Hunger Games 6 : le retour des jeux</h3>
+          <p>Un préquel centré sur la jeunesse de Haymitch Abernathy arrive en 2026. L’arène n’a jamais été aussi stratégique.</p>
+          <a href="l_oeil_critique/articles/films/hunger-games-6-prequel-casting.html" class="btn">Lire</a>
         </div>
-    </footer>
+      </article>
 
-    <script src="l_oeil_critique/assets/js/slider.js"></script>
-    <script src="l_oeil_critique/assets/js/main.js"></script>
+      <article class="featured-card">
+        <img src="l_oeil_critique/assets/img/series/god-of-war-amazon-commande-deux-saisons-de-la-serie-1260x708.jpg.webp" alt="Series">
+        <div class="featured-content">
+          <h3>God of War : Amazon relance la série après un développement difficile</h3>
+          <p>Après avoir été entièrement rebootée, la série <strong>God Of War</strong> pilotée par Ronald D. Moore pour Amazon Prime Video s’est vue validée pour deux saisons.</p>
+          <a href="l_oeil_critique/articles/series/god-of-war-saison.html" class="btn">Lire</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== CATÉGORIES ===================== -->
+  <section class="category-links-section">
+    <h2 class="section-title">Explorer</h2>
+    <div class="category-links-container">
+      <a href="l_oeil_critique/films.html" class="category-link">Films</a>
+      <a href="l_oeil_critique/series.html" class="category-link">Séries</a>
+      <a href="l_oeil_critique/actualités.html" class="category-link">Actualités</a>
+      <a href="l_oeil_critique/bande-annonces.html" class="category-link">Bandes-Annonces</a>
+      <a href="l_oeil_critique/reviews.html" class="category-link">Critiques</a>
+      <a href="l_oeil_critique/anecdotes.html" class="category-link">Anecdotes</a>
+      <a href="l_oeil_critique/devine-le-film.html" class="category-link">Devine Le Film</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="l_oeil_critique/mentions_légales.html">Mentions légales</a>
+        <a href="l_oeil_critique/politique-de-confidentialité.html">Politique de confidentialité</a>
+        <a href="l_oeil_critique/contact.html">Contact</a>
+      </div>
+      <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
+    </div>
+  </footer>
+  <script src="/l_oeil_critique/assets/js/header.js"></script>
 </body>
 </html>

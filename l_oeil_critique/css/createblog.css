@@ -1,521 +1,272 @@
 
-
-/* --- ANIMATION BIENVENUE --- */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* L'animation part du bas */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* --- Animation d’apparition douce --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* --- CONTENU PRINCIPAL DE L'ARTICLE ET SIDEBAR --- */
-.spoiler-warning {
-    background-color: #ffe0b2; /* Orange très clair */
-    color: #e65100; /* Orange foncé */
-    padding: 15px;
-    border: 1px solid #e65100;
-    border-radius: var(--border-radius-base);
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
+/* --- Conteneur principal --- */
 .container {
-    display: flex;
-    max-width: 1200px;
-    margin: 20px auto; /* Centre le conteneur avec un espace au-dessus et en dessous */
-    padding: 0 20px; /* Ajoute un padding horizontal pour les petits écrans */
-    width: 100%;
-    gap: 30px; /* Espace entre le contenu principal et la sidebar */
-    flex-grow: 1; /* Permet au conteneur de prendre l'espace disponible */
+  display: flex;
+  gap: var(--space-8);
+  max-width: 1200px;
+  margin: var(--space-8) auto;
+  padding: 0 var(--space-4);
+  flex-grow: 1;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .main-content {
-    flex: 3; /* Le contenu principal prend 3 parts d'espace */
-    background: #fff;
-    padding: 35px; /* Espacement interne confortable */
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Ombre plus prononcée pour la profondeur */
-    animation: fadeIn 0.8s ease-out; /* Animation d'apparition au chargement */
+  flex: 3;
+  background-color: #fff;
+  padding: var(--space-6);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-speed) ease;
+}
+.main-content:hover {
+  box-shadow: var(--shadow-lg);
 }
 
+/* --- Sidebar --- */
 .sidebar {
-    flex: 1; /* La sidebar prend 1 part d'espace */
-    background: #f8f9fa; /* Un fond légèrement gris clair pour la sidebar */
-    padding: 0; /* Le padding sera géré par .widget à l'intérieur */
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Ombre légère */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
 
-/* Style des widgets dans la sidebar */
 .sidebar .widget {
-    background-color: #fff; /* Fond blanc pour les widgets */
-    padding: 25px;
-    border-radius: var(--border-radius-base);
-    margin-bottom: 30px; /* Espace entre les widgets */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e0e0e0; /* Bordure subtile */
-    overflow: hidden; /* Empêche le contenu de déborder */
+  background: #fff;
+  padding: var(--space-5);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.sidebar .widget:last-child {
-    margin-bottom: 0; /* Pas de marge sous le dernier widget */
+.sidebar .widget:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
-
 .sidebar .widget img {
-    margin-top: 2rem; /* Ajusté */
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  border-radius: var(--border-radius-base);
+  margin-top: var(--space-4);
+  box-shadow: var(--shadow-xs);
 }
 
-.sidebar a {
-    font-size: 1.1rem; /* Taille de police légèrement augmentée */
-    color: var(--primary-color);
-    text-decoration: none;
-    font-family: var(--font-family);
-    transition: color var(--transition-speed) ease;
-}
-
-.sidebar a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-/* --- TITRES ET TEXTES DE L'ARTICLE --- */
+/* --- Titre principal --- */
 .article-title {
-    font-size: 3.2rem; /* Grand titre principal pour l'impact */
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-align: center;
-    font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  font-family: var(--font-family-title);
+  font-size: 2.8rem;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: var(--space-4);
+  letter-spacing: 1px;
 }
 
 .article-meta {
-    color: #777;
-    font-size: 0.95rem; /* Légèrement plus petit */
-    margin-bottom: 30px;
-    text-align: center;
-    border-bottom: 1px solid #eee; /* Ligne de séparation douce */
-    padding-bottom: 15px;
+  text-align: center;
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid #eee;
+  padding-bottom: var(--space-2);
 }
 
-.article-meta span {
-    margin: 0 10px; /* Espace entre les éléments de meta */
+/* --- Image & légende --- */
+.article-image img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: var(--border-radius-base);
+  margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-lg);
 }
-
 .titre-sous-image {
-    font-family: 'Roboto', sans-serif; /* Utilise la police principale */
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
-    margin-top: -15px; /* Rapproche du bloc image */
-    margin-bottom: 25px;
-    font-style: italic;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: var(--space-6);
 }
 
-.article-image img,
-.image2 {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 480px; /* Limite la hauteur des images */
-    object-fit: cover; /* S'assure que l'image couvre l'espace sans déformation */
-    border-radius: var(--border-radius-base);
-    margin: 0 auto 30px; /* Centre et ajoute de l'espace en bas */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
+/* --- Paragraphes & typographie --- */
+.article-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color-dark);
+  margin-bottom: var(--space-4);
+  text-align: justify;
 }
-
-.article-content p,
-.film p {
-    font-family: var(--font-family);
-    font-size: 1.1rem;
-    line-height: 1.8; /* Interlignage généreux pour la lisibilité */
-    margin-bottom: 1.5rem; /* Espacement constant entre les paragraphes */
-    text-align: justify; /* Justifie le texte pour un aspect professionnel */
-    color: var(--text-color-dark);
-}
-
-.titre-tendances,
-.titre-actu {
-    background-color: var(--secondary-color); /* Couleur dorée pour le fond */
-    color: var(--primary-color); /* Texte sombre sur fond doré */
-    padding: 15px 20px;
-    font-size: 1.6rem; /* Taille de police ajustée pour la sidebar */
-    margin-top: 0; /* Réinitialise le margin-top si utilisé globalement */
-    margin-bottom: 15px;
-    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0; /* Coins arrondis en haut */
-    text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
-
-/* Styles pour la liste des tendances */
-#tendances-list {
-    list-style: none;
-    padding: 0 20px 20px; /* Padding interne pour la liste */
-    margin: 0;
-}
-
-#tendances-list li {
-    margin-bottom: 0;
-    border-bottom: 1px dashed #e0e0e0; /* Ligne pointillée de séparation */
-    padding: 12px 0;
-    transition: background-color var(--transition-speed) ease;
-}
-
-#tendances-list li:last-child {
-    border-bottom: none; /* Pas de ligne sous le dernier élément */
-}
-
-#tendances-list li:hover {
-    background-color: #f5f5f5; /* Changement de fond au survol */
-    cursor: pointer;
-}
-
-#tendances-list li a {
-    color: var(--text-color-dark);
-    font-size: 1.05rem;
-    text-decoration: none;
-    transition: color var(--transition-speed) ease, padding-left var(--transition-speed) ease;
-    display: block;
-    padding: 0;
-    font-weight: 500;
-}
-
-#tendances-list li a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-    padding-left: 8px; /* Décalage au survol */
-}
-
 
 h2 {
-    border-left: 6px solid var(--secondary-color); /* Bordure latérale plus prononcée */
-    padding-left: 20px; /* Plus d'espace après la bordure */
-    font-size: 2.2rem; /* Taille de police légèrement augmentée */
-    margin: 4rem 0 2rem; /* Espacement autour des titres de section */
-    color: var(--primary-color);
-    font-weight: 700;
+  font-size: 2rem;
+  color: var(--primary-color);
+  border-left: 5px solid var(--secondary-color);
+  padding-left: var(--space-4);
+  margin: var(--space-8) 0 var(--space-4);
 }
 
+/* --- Citations --- */
 blockquote {
-    font-family: 'Georgia', serif;
-    font-size: 1.3em; /* Taille de police légèrement augmentée */
-    font-style: italic;
-    color: #555;
-    margin: 2.5rem 0; /* Plus d'espace autour des citations */
-    padding: 1.5rem 2.5rem;
-    border-left: 5px solid var(--accent-color); /* Bordure d'accentuation */
-    background-color: #f9f9f9; /* Fond léger */
-    border-radius: var(--border-radius-base);
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  background-color: #fafafa;
+  padding: var(--space-5);
+  border-left: 4px solid var(--accent-color);
+  border-radius: var(--border-radius-base);
+  margin: var(--space-6) 0;
+  color: #444;
 }
 
+/* --- Listes --- */
 li {
-    margin: 0.8rem 0 0.8rem 2rem; /* Espacement plus équilibré pour les listes */
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-color-dark);
+  margin: 0.6rem 0 0.6rem 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
-li strong {
-    color: var(--primary-color); /* Met en valeur les noms dans la liste de casting */
+/* --- Encarts spéciaux --- */
+.spoiler-warning {
+  background: #fff4e5;
+  border-left: 5px solid var(--accent-color);
+  color: #a55a00;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-base);
+  margin-bottom: var(--space-6);
+  font-weight: 700;
+  text-align: center;
+  box-shadow: var(--shadow-xs);
 }
-
-
-/* --- FILMS (si ces classes sont utilisées dans le contenu de l'article) --- */
-.film {
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: var(--border-radius-base);
-    background-color: #fcfcfc;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.film h3 {
-    font-size: 1.8em; /* Taille plus grande pour les titres de film */
-    font-weight: bold;
-    margin-bottom: 0.8em;
-    color: var(--primary-color); /* Utilise la couleur principale */
-}
-
-.intro {
-    font-style: italic;
-    margin-bottom: 1.2em;
-    color: #555;
-}
-
 .note-importante {
-    font-weight: bold;
-    color: #d32f2f; /* Rouge plus doux */
-    margin-bottom: 1.5em;
-    background-color: #ffcdd2; /* Fond rouge très clair */
-    padding: 10px;
-    border-radius: 5px;
-    border-left: 4px solid #d32f2f;
+  background: #ffeaea;
+  border-left: 5px solid #e74c3c;
+  color: #a60000;
+  padding: var(--space-4);
+  border-radius: var(--border-radius-base);
+  margin: var(--space-6) 0;
+  font-weight: 600;
 }
 
-/* --- AMÉLIORATIONS GLOBALES --- */
-body {
-    font-size: 16px; /* Taille de base pour tous les textes */
-}
-
-/* Conteneur vidéo */
+/* --- Vidéo responsive --- */
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Ratio 16:9 */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    margin: 2.5rem 0; /* Espacement supérieur et inférieur */
-    border-radius: var(--border-radius-base);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: var(--space-8) 0;
+  background-color: #000;
 }
-
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none; /* Supprime la bordure par défaut de l'iframe */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-/* Styles pour les tweets intégrés (si utilisés) */
-.twitter-tweet {
-    position: relative;
-    padding-bottom: 2rem;
-    margin: 2rem auto; /* Centre les tweets et ajoute de l'espace */
-    display: block; /* S'assure que le bloc prend toute la largeur disponible */
-    max-width: 550px; /* Limite la largeur pour une meilleure lisibilité */
-}
-
-.conclusion {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-left: 4px solid #e50914;
-}
-
-.related-article {
-    margin-top: 30px;
-    padding: 15px;
-    background-color: #fff8e1;
-    border-left: 4px solid #ffc107;
-}
-
-
-/* QA Section globale */
+/* --- Q&A Section --- */
 .qa {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
+  margin-top: var(--space-8);
+  font-family: var(--font-family);
+  line-height: 1.7;
 }
-
-/* Chaque Q&A comme un bloc distinct */
 .qa .qa-block {
-    background-color: #fafafa; /* fond clair pour le bloc complet */
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 15px 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  background-color: #fff;
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--secondary-color);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+.qa .question {
+  font-weight: 700;
+  background-color: rgba(242,205,134,0.15);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+.qa .answer {
+  background-color: #fafafa;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--accent-color);
+  border-radius: 6px;
+  color: #333;
 }
 
-/* Titre de chaque sous-section */
-.qa h3 {
-    font-size: 1.5rem;
-    color: #222;
-    margin-bottom: 12px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 6px;
+/* --- Sidebar: Titre & Liste tendances --- */
+.titre-tendances {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: var(--space-4);
+  border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Question */
-.qa-block .question {
-    background-color: #d0e5ff; /* bleu léger pour les questions */
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-weight: 700;
-    margin-bottom: 8px;
+#tendances-list {
+  list-style: none;
+  padding: 0 var(--space-4) var(--space-4);
+  margin: 0;
+}
+#tendances-list li {
+  border-bottom: 1px dashed #ddd;
+  padding: var(--space-3) 0;
+  transition: background-color var(--transition-speed) ease;
+}
+#tendances-list li:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+#tendances-list a {
+  text-decoration: none;
+  color: var(--text-color-dark);
+  font-weight: 500;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+#tendances-list a:hover {
+  color: var(--secondary-color);
+  padding-left: 5px;
 }
 
-/* Réponse */
-.qa-block .answer {
-    background-color: #f5f5f5; /* gris très clair pour les réponses */
-    border-left: 4px solid #b0b0b0;
-    padding: 8px 12px;
-    border-radius: 6px;
-    margin-bottom: 8px;
+/* --- Conclusion et article lié --- */
+.conclusion {
+  background-color: #f7f7f7;
+  padding: var(--space-5);
+  border-left: 4px solid var(--accent-color);
+  border-radius: var(--border-radius-base);
+  margin-top: var(--space-8);
+  font-weight: 500;
+}
+.related-article {
+  margin-top: var(--space-6);
+  background-color: #fff8e1;
+  border-left: 4px solid var(--secondary-color);
+  padding: var(--space-4);
+  border-radius: var(--border-radius-base);
+  font-weight: 500;
 }
 
-/* Italique pour les précisions */
-.qa-block em {
-    font-style: italic;
-    color: #555;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    .qa h3 {
-        font-size: 1.25rem;
-    }
-
-    .qa-block {
-        padding: 12px 15px;
-    }
-
-    .qa-block .question,
-    .qa-block .answer {
-        padding: 6px 10px;
-    }
-}
-
-
-
-/* --- RESPONSIVE DESIGN --- */
+/* --- Responsive --- */
 @media (max-width: 992px) {
-    .container {
-        flex-direction: column;
-        padding: 15px;
-        gap: 20px; /* Réduit l'espace entre le contenu et la sidebar */
-    }
-
-    .sidebar {
-        order: 2; /* Met la sidebar après le contenu principal sur mobile */
-        margin-top: 20px;
-    }
-
-    .main-content {
-        padding: 25px;
-        order: 1;
-        margin-right: 0; /* Supprime la marge droite */
-    }
-
-    .article-title {
-        font-size: 2.5rem; /* Ajuste la taille du titre */
-    }
-
-    h2 {
-        font-size: 1.8rem;
-        margin: 3rem 0 1.5rem;
-    }
-
-    .titre-tendances {
-        font-size: 1.4rem;
-        padding: 12px 15px;
-    }
+  .container { flex-direction: column; gap: var(--space-6); }
+  .main-content, .sidebar { padding: var(--space-5); }
+  .article-title { font-size: 2.2rem; }
 }
-
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-        margin: 15px auto;
-        gap: 15px;
-    }
-
-    .main-content,
-    .sidebar {
-        padding: 20px;
-    }
-
-    .article-title {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .article-meta {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-        margin: 2.5rem 0 1.2rem;
-        padding-left: 15px;
-    }
-
-    p, ul, blockquote {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        line-height: 1.7;
-    }
-
-    blockquote {
-        padding: 1rem 1.5rem;
-        margin: 2rem 0;
-        font-size: 1.1em;
-    }
-
-    .article-image img,
-    .image2 {
-        max-height: 350px;
-        margin-bottom: 20px;
-    }
-
-    .titre-sous-image {
-        font-size: 0.85rem;
-        margin-bottom: 20px;
-    }
-
-    .sidebar .widget {
-        padding: 20px;
-    }
-
-    .titre-tendances {
-        font-size: 1.2rem;
-        padding: 10px 15px;
-    }
-
-    #tendances-list li a {
-        font-size: 0.95rem;
-    }
-
-    .video-container {
-        margin: 2rem 0;
-    }
-
-    .twitter-tweet {
-        left: 0; /* Réinitialise le décalage sur mobile */
-        max-width: 100%;
-    }
-
-    .note-importante {
-        font-size: 0.95rem;
-    }
+  .container { padding: 0 var(--space-3); }
+  .article-title { font-size: 1.9rem; }
+  .titre-tendances { font-size: 1.1rem; text-align: center; }
+  .sidebar { order: 2; }
 }
-
 @media (max-width: 480px) {
-    .article-title {
-        font-size: 1.8rem;
-        line-height: 1.3;
-    }
-
-    h2 {
-        font-size: 1.4rem;
-        padding-left: 10px;
-    }
-
-    .main-content {
-        padding: 15px;
-    }
-
-    .sidebar {
-        padding: 15px;
-    }
-
-    .titre-tendances {
-        font-size: 1.1rem;
-        padding: 8px 10px;
-    }
+  .main-content { padding: var(--space-4); }
+  .article-title { font-size: 1.6rem; }
 }

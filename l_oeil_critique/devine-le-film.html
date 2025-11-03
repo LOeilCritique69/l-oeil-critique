@@ -5,153 +5,133 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Mini-jeu cinéma - Devine le film à partir de l'affiche, avec différents niveaux de difficulté.">
 <title>Devine le Film - L'Œil Critique</title>
-<link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Fonts + CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/chef_d_oeuvre.css">
-</head>
-<body>
-
-<!-- === HEADER ORIGINAL === -->
-<header>
-    <div class="header-content">
-        <a href="../index.html" class="logo-link">
-            <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
-        </a>
-        <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
-        <nav class="main-nav">
-            <a href="films.html">Films</a>
-            <a href="series.html">Séries</a>
-            <a href="actualités.html">Actualités</a>
-            <a href="reviews.html">Reviews</a>
-            <a href="bande-annonces.html">Bandes-Annonces</a>
-            <a href="A_propos.html">À Propos</a>
-        </nav>
-    </div>
-</header>
-
-<!-- === CONTENU DU JEU === -->
-<main>
-    <section class="page-intro-section">
-        <h2 class="page-title">🎬 Devine le Film !</h2>
-        <p class="page-description">
-            Trouvez le film à partir de son affiche floutée avant la fin du chrono.  
-            Plus la difficulté augmente, plus les affiches seront retorses.  
-            Bonne chance, cinéphile.
-        </p>
-    </section>
-
-    <!-- Sélection du mode -->
-    <div class="mode-select">
-        <button data-mode="easy" class="active">Facile</button>
-        <button data-mode="medium">Moyen</button>
-        <button data-mode="hard">Difficile</button>
-        <button data-mode="cinephile">Cinéphile</button>
-        <button data-mode="marathon">Marathon</button>
-    </div>
-
-    <!-- Zone de jeu -->
-    <div class="game-container">
-        <div class="timer-circle" id="timer">15</div>
-        <img id="movie-image" src="" alt="Affiche floutée du film">
-        <input type="text" id="guess-input" placeholder="Tapez le nom du film...">
-        <button id="guess-btn">Valider</button>
-        <div class="message" id="message"></div>
-        <div class="hint" id="hint"></div>
-        <div class="score" id="score"></div>
-    </div>
-
-    <p style="text-align:center; font-size:0.8rem; margin-top:1rem; opacity:0.7;">
-        ⚠️ Ce jeu utilise l’API de <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a> mais n’est pas affilié à TMDB.
-    </p>
-</main>
-
-<!-- === FOOTER ORIGINAL === -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-links">
-            <a href="mentions_légales.html">Mentions légales</a>
-            <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
-    </div>
-</footer>
-
-<!-- === STYLE DU JEU === -->
 <style>
-.game-container {
-  background: rgba(20, 20, 20, 0.95);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+/* ========================================================================
+   SECTION JEU — Devine le Film
+   ======================================================================== */
+
+.page-intro-section {
   text-align: center;
-  max-width: 480px;
-  margin: 2.5rem auto;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  padding: 4rem 1.5rem 2rem;
+  color: #f0f0f0;
 }
-.game-container.correct { border: 2px solid #2ecc71; transform: scale(1.03); }
-.game-container.wrong { border: 2px solid #e74c3c; animation: shake 0.4s; }
+
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+}
+
+.page-description {
+  max-width: 650px;
+  margin: 0.8rem auto 0;
+  font-size: 1.05rem;
+  color: #c7c7c7;
+  line-height: 1.6;
+}
+
+/* --- Sélecteur de mode --- */
+.mode-select {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 2rem auto 0;
+}
+.mode-select button {
+  background: #161616;
+  border: 1px solid #333;
+  color: #eee;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.mode-select button:hover {
+  background: #262626;
+  transform: translateY(-2px);
+}
+.mode-select button.active {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  border: none;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* --- Zone du jeu --- */
+.game-container {
+  background: #111;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+  max-width: 500px;
+  margin: 3rem auto;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.game-container.correct { border: 2px solid #2ecc71; box-shadow: 0 0 30px rgba(46,204,113,0.3); transform: scale(1.02); }
+.game-container.wrong { border: 2px solid #e74c3c; animation: shake 0.35s; }
 
 @keyframes shake {
   0%,100%{transform:translateX(0);}
-  25%{transform:translateX(-8px);}
-  75%{transform:translateX(8px);}
+  25%{transform:translateX(-6px);}
+  75%{transform:translateX(6px);}
 }
 
+/* --- Affiche --- */
 #movie-image {
   width: 100%;
   height: 420px;
+  border-radius: 14px;
   object-fit: cover;
-  border-radius: 12px;
-  filter: blur(12px) brightness(0.9);
-  margin-bottom: 1.2rem;
-  transition: filter 0.6s ease, transform 0.6s ease;
+  filter: blur(12px) brightness(0.85);
+  transition: filter 0.7s ease, transform 0.7s ease;
 }
 .reveal { filter: blur(0px) brightness(1.05); transform: scale(1.02); }
 
-input[type="text"] {
+/* --- Input et Boutons --- */
+#guess-input {
   width: 85%;
-  padding: 0.7rem;
+  padding: 0.9rem;
   border-radius: 8px;
   border: none;
-  margin-bottom: 1rem;
   font-size: 1rem;
   text-align: center;
+  background: #1e1e1e;
+  color: #fff;
+  outline: none;
+  box-shadow: inset 0 0 8px rgba(255,255,255,0.05);
+  margin-top: 1.5rem;
 }
-button {
-  padding: 0.7rem 1.3rem;
+#guess-btn {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  color: #fff;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #2d7d46, #46a86f);
-  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
   cursor: pointer;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-}
-button:hover { transform: scale(1.05); }
-
-.message {
-  color: #fff;
   margin-top: 1rem;
-  font-weight: bold;
-  min-height: 1.5rem;
-  transition: opacity 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
-.score, .timer, .hint {
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #f1c40f;
-}
+#guess-btn:hover { transform: translateY(-3px); }
 
 /* --- Timer circulaire --- */
 .timer-circle {
-  width: 80px;
-  height: 80px;
-  border: 5px solid #444;
+  --size: 80px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   position: absolute;
   top: 1rem;
@@ -159,38 +139,93 @@ button:hover { transform: scale(1.05); }
   display: flex;
   justify-content: center;
   align-items: center;
+  background: conic-gradient(var(--accent-color) 360deg, #222 0deg);
   font-weight: bold;
-  color: #f1c40f;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255,255,255,0.1);
+  transition: background 1s linear;
 }
-
-/* --- Modes --- */
-.mode-select {
-  margin: 1.5rem auto;
+.timer-inner {
+  background: #111;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
   display: flex;
   justify-content: center;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-.mode-select button {
-  background: #333;
-  color: #fff;
-  border: 1px solid #555;
-}
-.mode-select button.active {
-  background: linear-gradient(135deg, #2d7d46, #46a86f);
-  border: none;
-}
-.hint {
-  color: #aaa;
-  font-style: italic;
+  align-items: center;
 }
 
-@media(max-width:500px){
+/* --- Infos et score --- */
+.message {
+  color: #fff;
+  font-weight: bold;
+  margin-top: 1rem;
+  min-height: 1.5rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+.score, .hint {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+.score span { color: var(--accent-color); }
+
+/* --- Responsive --- */
+@media(max-width:550px){
   #movie-image { height: 320px; }
+  .page-title { font-size: 2.3rem; }
 }
 </style>
+</head>
+<body>
 
-<!-- === SCRIPT DU JEU === -->
+<main>
+  <section class="page-intro-section">
+    <h2 class="page-title">🎬 Devine le Film !</h2>
+    <p class="page-description">
+      Trouvez le film à partir de son affiche floutée avant la fin du chrono.<br>
+      Plus la difficulté monte, plus les affiches se compliquent.<br>
+      Bonne chance, cinéphile.
+    </p>
+  </section>
+
+  <div class="mode-select">
+    <button data-mode="easy" class="active">Facile</button>
+    <button data-mode="medium">Moyen</button>
+    <button data-mode="hard">Difficile</button>
+    <button data-mode="cinephile">Cinéphile</button>
+    <button data-mode="marathon">Marathon</button>
+  </div>
+
+  <div class="game-container">
+    <div class="timer-circle" id="timer">
+      <div class="timer-inner">15</div>
+    </div>
+    <img id="movie-image" src="" alt="Affiche floutée du film">
+    <input type="text" id="guess-input" placeholder="Tapez le nom du film...">
+    <button id="guess-btn">Valider</button>
+    <div class="message" id="message"></div>
+    <div class="hint" id="hint"></div>
+    <div class="score" id="score"></div>
+  </div>
+
+  <p style="text-align:center; font-size:0.8rem; margin-top:1rem; opacity:0.7;">
+    ⚠️ Ce jeu utilise l’API de <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a> mais n’est pas affilié à TMDB.
+  </p>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="mentions_légales.html">Mentions légales</a>
+      <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script src="assets/js/header.js"></script>
 <script>
 const API_KEY = "c733ef0d6713d6a5b282beff57cd6343";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -204,10 +239,10 @@ const imgEl = document.getElementById("movie-image");
 const msgEl = document.getElementById("message");
 const scoreEl = document.getElementById("score");
 const timerEl = document.getElementById("timer");
+const timerInner = document.querySelector(".timer-inner");
 const hintEl = document.getElementById("hint");
 const container = document.querySelector(".game-container");
 
-// 🔧 Modes
 function getModeQuery(mode) {
   switch(mode) {
     case "easy": return "sort_by=popularity.desc&vote_count.gte=2000";
@@ -219,7 +254,6 @@ function getModeQuery(mode) {
   }
 }
 
-// 🧩 Récupération de films
 async function fetchMovies() {
   const query = getModeQuery(currentMode);
   const randomPage = Math.floor(Math.random() * 5) + 1;
@@ -233,7 +267,6 @@ async function fetchMovies() {
   }
 }
 
-// 🧠 Nettoyage du titre
 function normalizeTitle(title) {
   return title.toLowerCase()
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -241,7 +274,6 @@ function normalizeTitle(title) {
     .trim();
 }
 
-// 💡 Indices
 function revealHint(movie) {
   const hints = [];
   if (movie.release_date) hints.push(`📅 ${movie.release_date.split("-")[0]}`);
@@ -250,7 +282,6 @@ function revealHint(movie) {
   hintEl.textContent = hints.join(" • ");
 }
 
-// 🔄 Nouveau film
 function newMovie() {
   clearInterval(timerInterval);
   if (!movies.length) return fetchMovies();
@@ -263,12 +294,14 @@ function newMovie() {
   msgEl.textContent = "🧩 Essaie de deviner !";
   revealHint(currentMovie);
 
-  scoreEl.textContent = `Score : ${score} | Combo : ${combo}`;
-  timerEl.textContent = timeLeft;
+  scoreEl.innerHTML = `Score : <span>${Math.floor(score)}</span> | Combo : ${combo}`;
+  timerInner.textContent = timeLeft;
+  updateTimerCircle();
 
   timerInterval = setInterval(() => {
     timeLeft--;
-    timerEl.textContent = timeLeft;
+    timerInner.textContent = timeLeft;
+    updateTimerCircle();
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
       loseRound(`⏰ Temps écoulé ! C’était ${currentMovie.title}`);
@@ -276,7 +309,11 @@ function newMovie() {
   }, 1000);
 }
 
-// ✅ Vérification
+function updateTimerCircle() {
+  const percent = (timeLeft / 15) * 360;
+  timerEl.style.background = `conic-gradient(var(--accent-color) ${percent}deg, #222 ${percent}deg)`;
+}
+
 document.getElementById("guess-btn").addEventListener("click", () => {
   const guess = normalizeTitle(document.getElementById("guess-input").value);
   if (!guess) return;
@@ -293,10 +330,7 @@ function winRound() {
   msgEl.textContent = `✅ Bravo ! ${currentMovie.title}`;
   container.classList.add("correct");
   imgEl.classList.add("reveal");
-  setTimeout(() => {
-    container.classList.remove("correct");
-    newMovie();
-  }, 2000);
+  setTimeout(() => { container.classList.remove("correct"); newMovie(); }, 2000);
 }
 
 function wrongAnswer() {
@@ -315,7 +349,6 @@ function loseRound(text) {
   setTimeout(newMovie, 2500);
 }
 
-// 🎮 Sélection du mode
 document.querySelectorAll(".mode-select button").forEach(btn => {
   btn.addEventListener("click", () => {
     currentMode = btn.dataset.mode;
@@ -328,6 +361,5 @@ document.querySelectorAll(".mode-select button").forEach(btn => {
 
 window.onload = fetchMovies;
 </script>
-
 </body>
 </html>

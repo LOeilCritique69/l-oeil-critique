@@ -1,92 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez les dernières actualités cinématographiques, les films à l'affiche et les nouveautés du grand écran sur L'Œil Critique.">
-    <meta name="keywords" content="actualités films, cinéma, nouveautés cinéma, films à l'affiche, critiques de films, actualités hollywood">
-    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
-    <title>Films - L'Œil Critique : Actualités Cinéma</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
-    </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Découvrez les dernières actualités cinématographiques, les films à l'affiche et les nouveautés du grand écran sur L'Œil Critique." />
+  <meta name="keywords" content="actualités films, cinéma, nouveautés cinéma, films à l'affiche, critiques de films, actualités hollywood" />
+  <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
+  <title>Films – L’Œil Critique</title>
+
+  <!-- Fonts + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/chef_d_oeuvre.css" />
+</head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="../index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
-                <img src="assets/img/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
-            </a>
-            <h1 class="site-title"><a href="../index.html" class="site-title-link">L'Œil Critique</a></h1>
-            <nav class="main-nav" aria-label="Navigation principale du site">
-                <a href="films.html" class="active">Films</a>
-                <a href="series.html">Séries</a>
-                <a href="actualités.html">Actualités</a>
-                <a href="reviews.html">Reviews</a>
-                <a href="bande-annonces.html">Bandes-Annonces</a>
-                <a href="A_propos.html">À Propos</a>
-            </nav>
-            <button class="burger-menu" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </header>
+  <header id="header"></header>
 
-    <main>
-        <section class="page-intro-section">
-            <h2 class="page-title">Actualités Films</h2>
-            <p class="page-description">Toutes les dernières informations, annonces et rumeurs du monde du cinéma. Restez connecté aux films qui font l'actualité !</p>
-        </section>
+  <main>
+    <!-- ===========================
+         HERO CINÉMA
+         =========================== -->
+    <section class="hero-section" style="background: linear-gradient(to bottom, rgba(0,0,0,0.45), var(--primary-color)), url('assets/img/films/1.jpg') center/cover no-repeat;">
+      <div class="hero-content">
+        <a href="#a-la-une" class="btn">Voir les dernières actus</a>
+      </div>
+    </section>
 
-        <section class="main-news-section">
-            <h2 class="section-title">À LA UNE</h2>
-            <div class="news-grid main-news-grid">
-                <article class="news-item main-news-item">
-                    <img src="assets/img/films/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Hunger Games 6" />
-                    <h3>Hunger Games 6 : <em>Sunrise on the Reaping</em> - Un préquel centré sur Haymitch Abernathy!</h3>
-                    <p>Le prochain film Hunger Games 6 : <em>Sunrise on the Reaping</em>, prévu pour le 20 novembre 2026, se concentre sur la jeunesse de Haymitch Abernathy, le mentor emblématique de Katniss Everdeen.</p>
-                    <a href="articles/films/hunger-games-6-prequel-casting.html" class="btn" target="_blank">Lire l'article</a>
-                </article>
+    <!-- ===========================
+         À LA UNE
+         =========================== -->
+    <section id="a-la-une" class="featured-section">
+      <h2 class="section-title gold">À LA UNE</h2>
+      <div class="featured-grid">
+        <article class="featured-card">
+          <img src="assets/img/films/hunger-games-6-le-film-sur-haymitch-abernathy-a-enfin-trouve-son-acteur-principal-1260x708.jpg.webp" alt="Hunger Games 6" />
+          <div class="featured-content">
+            <h3>Hunger Games 6 : <em>Sunrise on the Reaping</em></h3>
+            <p>Un préquel centré sur la jeunesse de Haymitch Abernathy, mentor emblématique de Katniss Everdeen.</p>
+            <a href="articles/films/hunger-games-6-prequel-casting.html" class="btn" target="_blank">Lire l’article</a>
+          </div>
+        </article>
 
-                <article class="news-item main-news-item">
-                    <img src="assets/img/films/Vingadores-Doomsday.jpg.webp" alt="Avengers Doomsday" />
-                    <h3>Avengers : <em>Doomsday</em> - Marvel frappe fort avec un casting monumental</h3>
-                    <p>Après plusieurs mois de spéculations, le studio a levé le voile sur un casting aussi impressionnant qu’ambitieux, confirmant le retour de figures emblématiques du MCU tout en introduisant de nouveaux personnages majeurs.</p>
-                    <a href="articles/films/Avengers-Doomsday-une-annonce-de-casting.html" class="btn" target="_blank">Lire l'article</a>
-                </article>
+        <article class="featured-card">
+          <img src="assets/img/films/Vingadores-Doomsday.jpg.webp" alt="Avengers Doomsday" />
+          <div class="featured-content">
+            <h3>Avengers : <em>Doomsday</em> — un casting monumental</h3>
+            <p>Marvel Studios dévoile un casting impressionnant, confirmant le retour des figures majeures du MCU.</p>
+            <a href="articles/films/Avengers-Doomsday-une-annonce-de-casting.html" class="btn" target="_blank">Lire l’article</a>
+          </div>
+        </article>
 
-                <article class="news-item main-news-item">
-                    <img src="assets/img/films/Sony-CinemaCon-schedule-Spider-Man.webp" alt="Sony cinemacon" />
-                    <h3>Les plus grosses annonces de Sony lors du CinemaCon !</h3>
-                    <p>Le CinemaCon 2025 promet des révélations pour des films très attendus comme Spider-Man, Jumanji, et Karaté Kid, entre autres surprises.</p>
-                    <a href="articles/films/sony-panel-cinemacon.html" class="btn" target="_blank">Lire l'article</a>
-                </article>
-            </div>
-        </section>
+        <article class="featured-card">
+          <img src="assets/img/films/Sony-CinemaCon-schedule-Spider-Man.webp" alt="Sony CinemaCon" />
+          <div class="featured-content">
+            <h3>Les plus grosses annonces de Sony lors du CinemaCon</h3>
+            <p>De Spider-Man à Jumanji, les révélations marquantes du studio lors du CinemaCon 2025.</p>
+            <a href="articles/films/sony-panel-cinemacon.html" class="btn" target="_blank">Lire l’article</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <section class="latest-news-section">
-            <h2 class="section-title">DERNIÈRES ACTUALITÉS</h2>
-            <div class="news-grid latest-news-grid">
-                <!-- Les articles seront chargés ici -->
-            </div>
-        </section>
-    </main>
+    <!-- ===========================
+         DERNIÈRES ACTUALITÉS
+         =========================== -->
+    <section class="latest-news-section">
+      <h2 class="section-title gold">Dernières Actualités</h2>
+      <div class="news-grid latest-news-grid">
+        <!-- Articles dynamiques insérés ici -->
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="mentions_légales.html">Mentions légales</a>
-                <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
-        </div>
-    </footer>
+  <footer id="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="mentions_légales.html">Mentions légales</a>
+        <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p>&copy; 2025 L’Œil Critique. Tous droits réservés.</p>
+    </div>
+  </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/loadFilmsBlocks.js"></script>
-    </body>
+  <!-- JS -->
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/loadFilmsBlocks.js"></script>
+</body>
 </html>
