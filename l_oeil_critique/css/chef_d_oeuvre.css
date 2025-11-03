@@ -342,7 +342,7 @@ header.scrolled {
 .news-item .read-more:hover { background-color: var(--primary-color); color: var(--secondary-color); }
 
 /* ========================================================================
-   4) BANDE-ANNONCES – SECTION MODERNISÉE
+   4) BANDE-ANNONCES – SECTION MODERNISÉE ET RÉPARÉE
    ======================================================================== */
 
 .bande-annonce-section {
@@ -401,6 +401,21 @@ header.scrolled {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
+}
+
+/* --- Cartes cachées (masquées avant clic) --- */
+.card-bande.hidden-card {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* --- Transition d’apparition fluide --- */
+.card-bande.revealed {
+  display: flex !important;
+  opacity: 1 !important;
+  transform: translateY(0);
 }
 
 /* --- Carte de bande-annonce --- */
@@ -463,7 +478,7 @@ header.scrolled {
   transform: translateY(-2px);
 }
 
-/* --- Dates & métadonnées --- */
+/* --- Métadonnées --- */
 .card-bande .date-sortie,
 .card-bande .ajout-site {
   font-size: 0.9rem;
@@ -518,16 +533,16 @@ header.scrolled {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* --- Bouton "Voir plus" --- */
+/* --- Bouton VOIR PLUS (fixé et fluide) --- */
 #voir-plus-btn {
-  display: none;
-  margin: 4rem auto 0;
-  padding: 1.2rem 3rem;
+  display: block;
+  margin: 3rem auto 0;
+  padding: 1.1rem 3rem;
   font-size: 1.2rem;
   background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 700;
   letter-spacing: 1px;
@@ -539,11 +554,8 @@ header.scrolled {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
 }
-#voir-plus-btn.active {
-  display: block;
-}
 
-/* --- Animation subtile du fond au survol de la section --- */
+/* --- Effet fond --- */
 .bande-annonce-section:hover {
   background: linear-gradient(180deg, #f5f7fa 0%, #dee6f0 100%);
 }
@@ -675,7 +687,6 @@ header.scrolled {
 .contact h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2.3rem;
-  color: black;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1.2rem;
