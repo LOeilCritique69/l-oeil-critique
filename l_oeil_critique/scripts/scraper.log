@@ -15,3 +15,19 @@
 2025-11-10 20:57:27,875 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2025-11-10 20:57:27,878 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-10 20:57:27,879 [INFO] ✅ 6 nouvelles bandes-annonces ajoutées.
+2025-11-10 20:57:29,941 [INFO] ✅ Push GitHub réussi.
+2025-11-10 20:57:29,941 [INFO] ============================================================
+2025-11-10 20:57:29,943 [INFO] ✅ Script terminé avec succès
+2025-11-10 20:57:29,944 [INFO] ============================================================
+2025-11-10 20:59:36,340 [INFO] ============================================================
+2025-11-10 20:59:36,340 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-10 20:59:36,340 [INFO] ============================================================
+2025-11-10 20:59:36,340 [INFO] 📋 6 bandes-annonces déjà en base
+2025-11-10 20:59:36,341 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-10 20:59:38,824 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-11-10 20:59:38,824 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-10 20:59:39,506 [INFO] ✅ Ajouté : Running Man
+2025-11-10 20:59:39,516 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-11-10 20:59:39,518 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2025-11-10 20:59:39,519 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-10 20:59:39,520 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
