@@ -330,40 +330,25 @@ def scrape_tmdb(log: List[str]) -> Tuple[List[str], List[str]]:
 # ------------------------------
 # PUSH GITHUB
 # ------------------------------
-def push_to_github() -> bool:
+def push_to_github() -> None:
     """Pousse automatiquement les mises à jour sur le dépôt GitHub."""
     try:
         repo_root = SCRIPT_DIR.parent.parent
         os.chdir(repo_root)
 
-        # Configuration Git
-        subprocess.run(["git", "config", "user.name", "LOeilCritique69"], check=True, capture_output=True)
-        subprocess.run(["git", "config", "user.email", "yanisfoa69@gmail.com"], check=True, capture_output=True)
-        
-        # Ajout des fichiers
-        subprocess.run(["git", "add", "."], check=True, capture_output=True)
+        subprocess.run(["git", "config", "user.name", "LOeilCritique69"], check=True)
+        subprocess.run(["git", "config", "user.email", "yanisfoa69@gmail.com"], check=True)
+        subprocess.run(["git", "add", "."], check=True)
 
-        # Vérification des changements
-        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, check=True)
-        
-        if not status.stdout.strip():
+        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        if status.stdout.strip():
+            subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
+            subprocess.run(["git", "push", "-f", "origin", "main"], check=True)
+            logger.info("✅ Push GitHub réussi.")
+        else:
             logger.info("ℹ️ Aucun changement détecté, push annulé.")
-            return False
-
-        # Commit et push
-        commit_msg = f"MAJ automatique des bandes-annonces - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
-        subprocess.run(["git", "commit", "-m", commit_msg], check=True, capture_output=True)
-        subprocess.run(["git", "push", "origin", "main"], check=True, capture_output=True)
-        
-        logger.info("✅ Push GitHub réussi.")
-        return True
-        
-    except subprocess.CalledProcessError as e:
-        logger.error(f"❌ Erreur Git : {e.stderr.decode() if e.stderr else str(e)}")
-        return False
     except Exception as e:
-        logger.error(f"❌ Erreur GitHub : {e}", exc_info=True)
-        return False
+        logger.error(f"❌ Erreur GitHub : {e}")
 
 # ------------------------------
 # MAIN
