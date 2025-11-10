@@ -1,50 +1,16 @@
-2025-11-10 20:49:12,667 [INFO] ============================================================
-2025-11-10 20:49:12,668 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
-2025-11-10 20:49:12,668 [INFO] ============================================================
-2025-11-10 20:49:12,668 [INFO] 📋 21 bandes-annonces déjà en base
-2025-11-10 20:49:12,669 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
-2025-11-10 20:49:25,449 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
-2025-11-10 20:49:25,450 [INFO] 🎞 [TMDb] Démarrage du scraping...
-2025-11-10 20:49:26,587 [INFO] ✅ Ajouté : Insaisissables 3
-2025-11-10 20:49:26,841 [INFO] ✅ Ajouté : Running Man
-2025-11-10 20:49:26,966 [INFO] ✅ [TMDb] 2 nouvelles bandes-annonces ajoutées.
-2025-11-10 20:49:27,000 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
-2025-11-10 20:49:27,002 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
-2025-11-10 20:49:29,109 [ERROR] ❌ Erreur Git : To https://github.com/LOeilCritique69/l-oeil-critique.git
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/LOeilCritique69/l-oeil-critique.git'
-hint: Updates were rejected because the remote contains work that you do not
-hint: have locally. This is usually caused by another repository pushing to
-hint: the same ref. If you want to integrate the remote changes, use
-hint: 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
-2025-11-10 20:49:29,110 [INFO] ============================================================
-2025-11-10 20:49:29,110 [INFO] ✅ Script terminé avec succès
-2025-11-10 20:49:29,110 [INFO] ============================================================
-2025-11-10 20:50:34,893 [INFO] ============================================================
-2025-11-10 20:50:34,893 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
-2025-11-10 20:50:34,893 [INFO] ============================================================
-2025-11-10 20:50:34,894 [INFO] 📋 23 bandes-annonces déjà en base
-2025-11-10 20:50:34,894 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
-2025-11-10 20:50:37,891 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
-2025-11-10 20:50:37,891 [INFO] 🎞 [TMDb] Démarrage du scraping...
-2025-11-10 20:50:39,243 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
-2025-11-10 20:50:39,246 [INFO] ℹ️ Aucune nouvelle bande-annonce détectée.
-2025-11-10 20:51:32,725 [INFO] ============================================================
-2025-11-10 20:51:32,725 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
-2025-11-10 20:51:32,726 [INFO] ============================================================
-2025-11-10 20:51:32,751 [WARNING] ⚠️ Erreur lecture log : Illegal trailing comma before end of array: line 23 column 40 (char 1543). Réinitialisation.
-2025-11-10 20:51:32,751 [INFO] 📋 0 bandes-annonces déjà en base
-2025-11-10 20:51:32,752 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
-2025-11-10 20:51:36,208 [INFO] ✅ Ajouté : Chers parents
-2025-11-10 20:51:37,555 [INFO] ✅ Ajouté : Scream 7
-2025-11-10 20:51:39,202 [INFO] ✅ Ajouté : Pompei, Sotto le Nuvole
-2025-11-10 20:51:39,300 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
-2025-11-10 20:51:39,301 [INFO] 🎞 [TMDb] Démarrage du scraping...
-2025-11-10 20:51:40,073 [INFO] ✅ Ajouté : Zootopie 2
-2025-11-10 20:51:40,093 [INFO] ✅ Ajouté : Insaisissables 3
-2025-11-10 20:51:40,106 [INFO] ✅ Ajouté : Wicked : Partie II
-2025-11-10 20:51:40,107 [INFO] ✅ [TMDb] 3 nouvelles bandes-annonces ajoutées.
-2025-11-10 20:51:40,110 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
-2025-11-10 20:51:40,111 [INFO] ✅ 6 nouvelles bandes-annonces ajoutées.
+2025-11-10 20:53:15,708 [INFO] ============================================================
+2025-11-10 20:53:15,708 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-10 20:53:15,708 [INFO] ============================================================
+2025-11-10 20:53:15,709 [INFO] 📋 0 bandes-annonces déjà en base
+2025-11-10 20:53:15,709 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-10 20:53:19,987 [INFO] ✅ Ajouté : Chers parents
+2025-11-10 20:53:20,695 [INFO] ✅ Ajouté : Scream 7
+2025-11-10 20:53:21,165 [INFO] ✅ Ajouté : Pompei, Sotto le Nuvole
+2025-11-10 20:53:21,235 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2025-11-10 20:53:21,235 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-10 20:53:21,872 [INFO] ✅ Ajouté : Zootopie 2
+2025-11-10 20:53:21,890 [INFO] ✅ Ajouté : Insaisissables 3
+2025-11-10 20:53:21,900 [INFO] ✅ Ajouté : Wicked : Partie II
+2025-11-10 20:53:21,901 [INFO] ✅ [TMDb] 3 nouvelles bandes-annonces ajoutées.
+2025-11-10 20:53:21,903 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2025-11-10 20:53:21,904 [INFO] ✅ 6 nouvelles bandes-annonces ajoutées.
