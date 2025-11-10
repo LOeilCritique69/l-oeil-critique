@@ -125,19 +125,23 @@ def generate_article_html(
     date_sortie: str,
     synopsis: str,
     iframe_html: str,
-    date_ajout: Optional[str] = None
+    date_ajout: Optional[str] = None,
+    is_nouveau: bool = False
 ) -> str:
     """Génère le HTML d'un article de bande-annonce."""
     if date_ajout is None:
         date_ajout = datetime.now().strftime("%d %B %Y")
     
     # Échappement HTML basique
-    titre = titre.replace('<', '&lt;').replace('>', '&gt;')
+    titre = titre.replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
     synopsis = synopsis.replace('<', '&lt;').replace('>', '&gt;')
+    
+    # Badge NOUVEAU uniquement si is_nouveau est True
+    badge = '<span class="badge-nouveau">NOUVEAU</span>' if is_nouveau else ''
     
     return f"""
 <article class="card-bande">
-    <span class="badge-nouveau">NOUVEAU</span>
+    {badge}
     <h2>{titre}</h2>
     <p class="date-sortie">Sortie prévue : {date_sortie}</p>
     <p class="ajout-site">Ajouté le : {date_ajout}</p>
@@ -229,7 +233,8 @@ def scrape_cinehorizons(log: List[str]) -> Tuple[List[str], List[str]]:
                     date_sortie=details["date_sortie"],
                     synopsis=details["synopsis"],
                     iframe_html=details["iframe_html"],
-                    date_ajout=date_ajout
+                    date_ajout=date_ajout,
+                    is_nouveau=True  # Les nouveaux articles obtiennent le badge
                 )
 
                 articles.append(article_html)
@@ -317,7 +322,8 @@ def scrape_tmdb(log: List[str]) -> Tuple[List[str], List[str]]:
                 date_sortie=date_sortie,
                 synopsis=synopsis,
                 iframe_html=iframe_html,
-                date_ajout=date_ajout
+                date_ajout=date_ajout,
+                is_nouveau=True  # Les nouveaux articles obtiennent le badge
             )
 
             articles.append(article_html)
@@ -328,27 +334,59 @@ def scrape_tmdb(log: List[str]) -> Tuple[List[str], List[str]]:
     return articles, ids
 
 # ------------------------------
+# UTILITAIRES HTML
+# ------------------------------
+def remove_badge_from_article(article_html: str) -> str:
+    """Retire le badge NOUVEAU d'un article HTML."""
+    # Retire la ligne complète contenant le badge
+    return re.sub(r'\s*<span class="badge-nouveau">NOUVEAU</span>\s*', '\n    ', article_html)
+
+def extract_articles_from_html(html_content: str) -> List[str]:
+    """Extrait tous les articles d'un contenu HTML."""
+    articles = re.findall(
+        r'(<article class="card-bande"[^>]*>.*?</article>)',
+        html_content,
+        flags=re.DOTALL
+    )
+    return articles
+
+# ------------------------------
 # PUSH GITHUB
 # ------------------------------
-def push_to_github() -> None:
+def push_to_github() -> bool:
     """Pousse automatiquement les mises à jour sur le dépôt GitHub."""
     try:
         repo_root = SCRIPT_DIR.parent.parent
         os.chdir(repo_root)
 
-        subprocess.run(["git", "config", "user.name", "LOeilCritique69"], check=True)
-        subprocess.run(["git", "config", "user.email", "yanisfoa69@gmail.com"], check=True)
-        subprocess.run(["git", "add", "."], check=True)
+        # Configuration Git
+        subprocess.run(["git", "config", "user.name", "LOeilCritique69"], check=True, capture_output=True)
+        subprocess.run(["git", "config", "user.email", "yanisfoa69@gmail.com"], check=True, capture_output=True)
+        
+        # Ajout des fichiers
+        subprocess.run(["git", "add", "."], check=True, capture_output=True)
 
-        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-        if status.stdout.strip():
-            subprocess.run(["git", "commit", "-m", "MAJ automatique des bandes-annonces"], check=True)
-            subprocess.run(["git", "push", "-f", "origin", "main"], check=True)
-            logger.info("✅ Push GitHub réussi.")
-        else:
+        # Vérification des changements
+        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, check=True)
+        
+        if not status.stdout.strip():
             logger.info("ℹ️ Aucun changement détecté, push annulé.")
+            return False
+
+        # Commit et push
+        commit_msg = f"MAJ automatique des bandes-annonces - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+        subprocess.run(["git", "commit", "-m", commit_msg], check=True, capture_output=True)
+        subprocess.run(["git", "push", "origin", "main"], check=True, capture_output=True)
+        
+        logger.info("✅ Push GitHub réussi.")
+        return True
+        
+    except subprocess.CalledProcessError as e:
+        logger.error(f"❌ Erreur Git : {e.stderr.decode() if e.stderr else str(e)}")
+        return False
     except Exception as e:
-        logger.error(f"❌ Erreur GitHub : {e}")
+        logger.error(f"❌ Erreur GitHub : {e}", exc_info=True)
+        return False
 
 # ------------------------------
 # MAIN
@@ -376,19 +414,27 @@ def main():
 
     # Fusion avec l'ancien contenu
     ancien_contenu = OUTPUT_FILE.read_text(encoding="utf-8") if OUTPUT_FILE.exists() else ""
-    anciens_articles = re.findall(
-        r'(<article class="card-bande"[^>]*>.*?</article>)',
-        ancien_contenu,
-        flags=re.DOTALL
-    )
+    anciens_articles = extract_articles_from_html(ancien_contenu)
+    
+    # Retirer le badge NOUVEAU des anciens articles
+    anciens_articles_sans_badge = [remove_badge_from_article(article) for article in anciens_articles]
 
-    # Les nouveaux articles en premier
-    all_articles = nouveaux_articles + anciens_articles
+    # Les nouveaux articles en premier (avec badge)
+    all_articles = nouveaux_articles + anciens_articles_sans_badge
+    
+    # Limiter le badge NOUVEAU aux 6 premiers articles seulement
+    articles_finaux = []
+    for i, article in enumerate(all_articles):
+        if i >= 6:
+            # Retirer le badge si présent pour les articles au-delà du 6ème
+            article = remove_badge_from_article(article)
+        articles_finaux.append(article)
 
     # Sauvegarde
     try:
-        OUTPUT_FILE.write_text("\n\n".join(all_articles), encoding="utf-8")
+        OUTPUT_FILE.write_text("\n\n".join(articles_finaux), encoding="utf-8")
         logger.info(f"💾 Fichier HTML mis à jour : {OUTPUT_FILE}")
+        logger.info(f"🏷️  Badge NOUVEAU appliqué aux 6 premiers articles")
     except IOError as e:
         logger.error(f"❌ Impossible d'écrire le fichier HTML : {e}")
         return
