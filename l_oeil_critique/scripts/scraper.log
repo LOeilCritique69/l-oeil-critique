@@ -31,3 +31,15 @@
 2025-11-10 20:59:39,518 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2025-11-10 20:59:39,519 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-10 20:59:39,520 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-11-11 07:26:46,818 [INFO] ============================================================
+2025-11-11 07:26:46,818 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-11 07:26:46,818 [INFO] ============================================================
+2025-11-11 07:26:46,818 [INFO] 📋 7 bandes-annonces déjà en base
+2025-11-11 07:26:46,818 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-11 07:26:51,418 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-11-11 07:26:51,418 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-11 07:26:51,977 [INFO] ✅ Ajouté : G.O.A.T.
+2025-11-11 07:26:51,978 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-11-11 07:26:51,980 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-11 07:26:51,980 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-11 07:26:51,980 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
