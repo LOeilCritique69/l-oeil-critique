@@ -55,3 +55,17 @@
 2025-11-12 07:26:36,431 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-12 07:26:36,432 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-12 07:26:36,432 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-11-12 19:12:48,931 [INFO] ============================================================
+2025-11-12 19:12:48,931 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-12 19:12:48,931 [INFO] ============================================================
+2025-11-12 19:12:48,931 [INFO] 📋 9 bandes-annonces déjà en base
+2025-11-12 19:12:48,931 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-12 19:12:53,849 [INFO] ✅ Ajouté : Louise
+2025-11-12 19:12:54,857 [INFO] ✅ Ajouté : Mektoub my Love : Canto Due
+2025-11-12 19:12:55,618 [INFO] ✅ Ajouté : Toy Story 5
+2025-11-12 19:12:55,665 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2025-11-12 19:12:55,665 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-12 19:12:56,485 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-11-12 19:12:56,487 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-12 19:12:56,487 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-12 19:12:56,488 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
