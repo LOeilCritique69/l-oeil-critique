@@ -43,3 +43,15 @@
 2025-11-11 07:26:51,980 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-11 07:26:51,980 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-11 07:26:51,980 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-11-12 07:26:31,917 [INFO] ============================================================
+2025-11-12 07:26:31,918 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-12 07:26:31,918 [INFO] ============================================================
+2025-11-12 07:26:31,918 [INFO] 📋 8 bandes-annonces déjà en base
+2025-11-12 07:26:31,918 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-12 07:26:35,556 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-11-12 07:26:35,556 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-12 07:26:36,428 [INFO] ✅ Ajouté : Five Nights at Freddy's 2
+2025-11-12 07:26:36,429 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-11-12 07:26:36,431 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-12 07:26:36,432 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-12 07:26:36,432 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
