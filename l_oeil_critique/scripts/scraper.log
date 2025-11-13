@@ -69,3 +69,16 @@
 2025-11-12 19:12:56,487 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-12 19:12:56,487 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-12 19:12:56,488 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
+2025-11-13 19:12:03,621 [INFO] ============================================================
+2025-11-13 19:12:03,621 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-13 19:12:03,621 [INFO] ============================================================
+2025-11-13 19:12:03,621 [INFO] 📋 12 bandes-annonces déjà en base
+2025-11-13 19:12:03,621 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-13 19:12:08,894 [INFO] ✅ Ajouté : Super Mario Galaxy Le Film
+2025-11-13 19:12:09,679 [INFO] ✅ Ajouté : Le diable s'habille en Prada 2
+2025-11-13 19:12:09,716 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2025-11-13 19:12:09,716 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-13 19:12:10,778 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-11-13 19:12:10,780 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-13 19:12:10,781 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-13 19:12:10,781 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
