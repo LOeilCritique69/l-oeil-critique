@@ -108,3 +108,15 @@
 2025-11-15 07:22:38,451 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-15 07:22:38,451 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-15 07:22:38,452 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-11-19 07:26:39,626 [INFO] ============================================================
+2025-11-19 07:26:39,626 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-19 07:26:39,626 [INFO] ============================================================
+2025-11-19 07:26:39,627 [INFO] 📋 18 bandes-annonces déjà en base
+2025-11-19 07:26:39,627 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-19 07:26:42,721 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-11-19 07:26:42,721 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-19 07:26:42,992 [INFO] ✅ Ajouté : Avatar : De feu et de cendres
+2025-11-19 07:26:43,138 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-11-19 07:26:43,142 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-19 07:26:43,142 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-19 07:26:43,142 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
