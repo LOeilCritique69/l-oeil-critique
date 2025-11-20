@@ -133,3 +133,16 @@
 2025-11-19 19:12:41,282 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-19 19:12:41,283 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-19 19:12:41,283 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
+2025-11-20 19:12:15,782 [INFO] ============================================================
+2025-11-20 19:12:15,782 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-20 19:12:15,782 [INFO] ============================================================
+2025-11-20 19:12:15,782 [INFO] 📋 21 bandes-annonces déjà en base
+2025-11-20 19:12:15,782 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-20 19:12:19,780 [INFO] ✅ Ajouté : La pire mère au monde
+2025-11-20 19:12:20,590 [INFO] ✅ Ajouté : La Petite Cuisine de Mehdi
+2025-11-20 19:12:20,643 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2025-11-20 19:12:20,643 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-20 19:12:21,228 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-11-20 19:12:21,231 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-20 19:12:21,231 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-20 19:12:21,231 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
