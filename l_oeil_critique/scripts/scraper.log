@@ -158,3 +158,15 @@
 2025-11-21 19:13:08,186 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-21 19:13:08,186 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-21 19:13:08,186 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-11-23 19:11:36,038 [INFO] ============================================================
+2025-11-23 19:11:36,038 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-23 19:11:36,038 [INFO] ============================================================
+2025-11-23 19:11:36,038 [INFO] 📋 24 bandes-annonces déjà en base
+2025-11-23 19:11:36,039 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-23 19:11:40,011 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-11-23 19:11:40,011 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-23 19:11:40,849 [INFO] ✅ Ajouté : Bugonia
+2025-11-23 19:11:40,952 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-11-23 19:11:40,954 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-23 19:11:40,954 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-23 19:11:40,955 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
