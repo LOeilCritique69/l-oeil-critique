@@ -170,3 +170,16 @@
 2025-11-23 19:11:40,954 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-23 19:11:40,954 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-23 19:11:40,955 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-11-24 19:10:17,722 [INFO] ============================================================
+2025-11-24 19:10:17,722 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-24 19:10:17,722 [INFO] ============================================================
+2025-11-24 19:10:17,722 [INFO] 📋 25 bandes-annonces déjà en base
+2025-11-24 19:10:17,722 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-24 19:10:21,757 [INFO] ✅ Ajouté : Marsupilami
+2025-11-24 19:10:22,593 [INFO] ✅ Ajouté : Astérix et le royaume de Nubie
+2025-11-24 19:10:22,801 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2025-11-24 19:10:22,801 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-24 19:10:23,127 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-11-24 19:10:23,130 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-24 19:10:23,130 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-24 19:10:23,130 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
