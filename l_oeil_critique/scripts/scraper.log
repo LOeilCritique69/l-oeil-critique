@@ -183,3 +183,16 @@
 2025-11-24 19:10:23,130 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-11-24 19:10:23,130 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-11-24 19:10:23,130 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
+2025-11-26 07:26:14,206 [INFO] ============================================================
+2025-11-26 07:26:14,206 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-11-26 07:26:14,206 [INFO] ============================================================
+2025-11-26 07:26:14,206 [INFO] 📋 27 bandes-annonces déjà en base
+2025-11-26 07:26:14,206 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-11-26 07:26:17,735 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-11-26 07:26:17,736 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-11-26 07:26:18,336 [INFO] ✅ Ajouté : L'Élue
+2025-11-26 07:26:18,356 [INFO] ✅ Ajouté : La Femme de ménage
+2025-11-26 07:26:18,357 [INFO] ✅ [TMDb] 2 nouvelles bandes-annonces ajoutées.
+2025-11-26 07:26:18,359 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-11-26 07:26:18,360 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-11-26 07:26:18,360 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
