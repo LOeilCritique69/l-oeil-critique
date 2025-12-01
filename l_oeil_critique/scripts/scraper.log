@@ -207,3 +207,16 @@
 2025-12-01 15:32:41,897 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2025-12-01 15:32:41,897 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-01 15:32:41,902 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-12-01 19:17:41,839 [INFO] ============================================================
+2025-12-01 19:17:41,839 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-01 19:17:41,839 [INFO] ============================================================
+2025-12-01 19:17:41,839 [INFO] 📋 30 bandes-annonces déjà en base
+2025-12-01 19:17:41,839 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-01 19:17:46,977 [INFO] ✅ Ajouté : Ma frère
+2025-12-01 19:17:47,746 [INFO] ✅ Ajouté : Zootopie 2
+2025-12-01 19:17:47,806 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2025-12-01 19:17:47,806 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-01 19:17:48,446 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-01 19:17:48,449 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-12-01 19:17:48,449 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-01 19:17:48,449 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
