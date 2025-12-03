@@ -232,3 +232,15 @@
 2025-12-02 19:16:11,505 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-12-02 19:16:11,505 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-02 19:16:11,505 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-12-03 07:28:55,588 [INFO] ============================================================
+2025-12-03 07:28:55,588 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-03 07:28:55,588 [INFO] ============================================================
+2025-12-03 07:28:55,588 [INFO] 📋 33 bandes-annonces déjà en base
+2025-12-03 07:28:55,589 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-03 07:29:00,760 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-12-03 07:29:00,760 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-03 07:29:01,379 [INFO] ✅ Ajouté : Bob L’Éponge – Le Film : Un Pour Tous, Tous Pirates !
+2025-12-03 07:29:01,451 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-12-03 07:29:01,455 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-12-03 07:29:01,455 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-03 07:29:01,455 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
