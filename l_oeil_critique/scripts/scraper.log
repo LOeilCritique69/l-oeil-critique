@@ -244,3 +244,18 @@
 2025-12-03 07:29:01,455 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-12-03 07:29:01,455 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-03 07:29:01,455 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-12-04 19:15:15,137 [INFO] ============================================================
+2025-12-04 19:15:15,137 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-04 19:15:15,137 [INFO] ============================================================
+2025-12-04 19:15:15,138 [INFO] 📋 34 bandes-annonces déjà en base
+2025-12-04 19:15:15,138 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-04 19:15:19,332 [WARNING] ⚠️ Pas d'iframe trouvée pour Goat – Rêver plus haut
+2025-12-04 19:15:19,332 [INFO] ✅ Ajouté : Goat – Rêver plus haut
+2025-12-04 19:15:21,471 [INFO] ✅ Ajouté : Dreams
+2025-12-04 19:15:22,263 [INFO] ✅ Ajouté : 28 ans plus tard : Le temple des morts
+2025-12-04 19:15:22,335 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2025-12-04 19:15:22,335 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-04 19:15:23,066 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-04 19:15:23,070 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-12-04 19:15:23,070 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-04 19:15:23,070 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
