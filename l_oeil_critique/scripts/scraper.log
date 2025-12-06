@@ -219,3 +219,44 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-01 15:32:44,597 [INFO] ============================================================
 2025-12-01 15:32:44,597 [INFO] ✅ Script terminé avec succès
 2025-12-01 15:32:44,597 [INFO] ============================================================
+2025-12-04 21:10:23,112 [INFO] ============================================================
+2025-12-04 21:10:23,130 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-04 21:10:23,134 [INFO] ============================================================
+2025-12-04 21:10:23,186 [INFO] 📋 30 bandes-annonces déjà en base
+2025-12-04 21:10:23,186 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-04 21:10:39,341 [WARNING] ⚠️ Pas d'iframe trouvée pour Goat – Rêver plus haut
+2025-12-04 21:10:39,342 [INFO] ✅ Ajouté : Goat – Rêver plus haut
+2025-12-04 21:10:40,318 [INFO] ✅ Ajouté : Dreams
+2025-12-04 21:10:40,958 [INFO] ✅ Ajouté : 28 ans plus tard : Le temple des morts
+2025-12-04 21:10:41,049 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2025-12-04 21:10:41,049 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-04 21:10:42,432 [INFO] ✅ Ajouté : Bob L’Éponge – Le Film : Un Pour Tous, Tous Pirates !
+2025-12-04 21:10:42,685 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-12-04 21:10:42,757 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2025-12-04 21:10:42,757 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-04 21:10:42,767 [INFO] ✅ 4 nouvelles bandes-annonces ajoutées.
+2025-12-04 21:10:45,194 [ERROR] ❌ Erreur Git : To https://github.com/LOeilCritique69/l-oeil-critique.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/LOeilCritique69/l-oeil-critique.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2025-12-04 21:10:45,194 [INFO] ============================================================
+2025-12-04 21:10:45,195 [INFO] ✅ Script terminé avec succès
+2025-12-04 21:10:45,195 [INFO] ============================================================
+2025-12-06 19:56:29,283 [INFO] ============================================================
+2025-12-06 19:56:29,299 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-06 19:56:29,301 [INFO] ============================================================
+2025-12-06 19:56:29,329 [INFO] 📋 34 bandes-annonces déjà en base
+2025-12-06 19:56:29,329 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-06 19:56:42,985 [INFO] ✅ Ajouté : Furcy, né libre
+2025-12-06 19:56:43,865 [INFO] ✅ Ajouté : Sur un air de blues
+2025-12-06 19:56:43,988 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2025-12-06 19:56:43,988 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-06 19:56:45,626 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-06 19:56:45,689 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2025-12-06 19:56:45,690 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-06 19:56:45,699 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
