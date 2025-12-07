@@ -7,18 +7,15 @@
     <meta name="keywords" content="actualités films, cinéma, nouveautés cinéma, films à l'affiche, critiques de films, actualités hollywood">
     <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
     <title>Devine Le Film - L'Œil Critique</title>
-    <!-- Fonts + CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/chef_d_oeuvre.css">
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/chef_d_oeuvre.css"> 
+</head>
 <body>
-
-  <style>
-
-/*
+    <style>
+        /*
  * -------------------------------------
  * CSS du Jeu "Devine le Film" - Optimisation des Boutons et Structure
  * -------------------------------------
@@ -26,12 +23,12 @@
 
 /* Variables pour les couleurs */
 :root {
-    --primary-color: #2e3440;      /* Bleu foncé Nordique (Texte/Structure) */
-    --secondary-color: #ffd27f;    /* Jaune/Orange (Accentuation) */
-    --background-light: #f0f2f5;   /* Fond très clair */
-    --background-dark: #e4e8f0;    /* Fond légèrement grisé */
-    --success-color: #4caf50;      /* Vert pour le succès */
-    --error-color: #f44336;        /* Rouge pour l'erreur */
+    --primary-color: #2e3440;       /* Bleu foncé Nordique (Texte/Structure) */
+    --secondary-color: #ffd27f;     /* Jaune/Orange (Accentuation) */
+    --background-light: #f0f2f5;    /* Fond très clair */
+    --background-dark: #e4e8f0;     /* Fond légèrement grisé */
+    --success-color: #4caf50;       /* Vert pour le succès */
+    --error-color: #f44336;         /* Rouge pour l'erreur */
     --shadow-light: rgba(0,0,0,0.1);
     --shadow-strong: rgba(0,0,0,0.25);
 }
@@ -39,12 +36,12 @@
 /* Styles de base de l'application (l'enveloppe) */
 .movie-game-app {
     width: 100%;
-    min-height: 100vh; /* Permet au footer de se positionner correctement */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    background-color: var(--background-light); /* Utilisation d'un fond global léger */
+    background-color: var(--background-light);
 }
 
 /* Conteneur principal du jeu */
@@ -55,7 +52,6 @@
     padding: 40px 30px;
     background: #fff;
     border-radius: 20px;
-    /* Ombre plus douce pour un effet moderne */
     box-shadow: 0 10px 30px var(--shadow-light), 0 30px 60px var(--shadow-strong);
     display: flex;
     align-items: flex-start;
@@ -84,51 +80,12 @@
     box-shadow: 0 5px 15px var(--shadow-light), 0 15px 35px var(--shadow-strong);
 }
 
-/* NOUVEAU : Style pour le Conteneur de Quêtes Journalières */
-.movie-game-app .daily-quests-container { 
-    max-width: 1000px; 
-    width: 90%; 
-    margin: 20px auto; 
-    padding: 20px; 
-    background: #fff; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 15px var(--shadow-light); 
-}
-
-.movie-game-app .daily-quests-container h3 {
-    text-align: center;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--background-dark);
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.movie-game-app .quest-item { 
-    padding: 10px; 
-    margin-bottom: 8px; 
-    border-radius: 6px; 
-    border-left: 5px solid var(--secondary-color); 
-    background: var(--background-dark); 
-    transition: opacity 0.3s;
-}
-
-.movie-game-app .quest-item small {
-    display: block;
-    margin-top: 3px;
-    font-weight: 700;
-}
-
-.movie-game-app .quest-item.completed { 
-    border-left-color: var(--success-color); 
-    opacity: 0.6;
-    background: #e6ffe6; /* Couleur très légère de succès */
-}
-
 .movie-game-app .poster-container img {
     width: 100%;
     display: block;
     border-radius: 10px;
     will-change: filter, transform;
+    transition: filter 1s linear, transform 0.2s ease-in-out;
 }
 
 /* Partie droite du jeu */
@@ -166,6 +123,7 @@
     margin-bottom: 20px;
     padding: 10px 0;
     border-bottom: 1px solid var(--background-dark);
+    position: relative; /* IMPORTANT pour positionner le scoreDrop */
 }
 
 .movie-game-app .score-timer-info span {
@@ -175,6 +133,32 @@
 .movie-game-app .score-timer-info i {
     margin-right: 5px;
     color: var(--secondary-color);
+}
+
+/* --- NOUVEAU: Affichage de la baisse de score --- */
+.movie-game-app .score-drop {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--error-color);
+    opacity: 0;
+    transform: translateY(0);
+    pointer-events: none;
+    z-index: 50;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.movie-game-app .score-drop.active {
+    opacity: 1;
+    transform: translateY(-30px);
+    /* L'animation keyframes est gérée dans le JS pour le timing, mais on garde le style de base */
+}
+
+@keyframes drop-fade {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-40px); }
 }
 
 /* -------------------------------------
@@ -189,7 +173,7 @@
     padding: 15px;
     border: 1px dashed var(--secondary-color);
     border-radius: 10px;
-    background-color: var(--background-dark); /* Léger fond pour l'indice */
+    background-color: var(--background-dark);
 }
 
 .movie-game-app .hint-button {
@@ -232,7 +216,7 @@
 }
 
 /* -------------------------------------
- * Boutons de suggestions (AMÉLIORÉ)
+ * Boutons de suggestions
  * -------------------------------------
  */
 .movie-game-app .suggestion-buttons {
@@ -247,17 +231,16 @@
     color: #fff;
     padding: 16px 25px;
     border: none;
-    border-radius: 12px; /* Rayon plus grand pour un look plus moderne */
+    border-radius: 12px;
     font-weight: 700;
     font-size: 1.05em;
     cursor: pointer;
-    /* Ajout d'une ombre interne pour un effet "pressé" et de couleur de fond pour l'animation */
     transition: all 0.2s cubic-bezier(0.17, 0.84, 0.44, 1);
     box-shadow: 0 5px 15px var(--shadow-strong);
 }
 
 .movie-game-app .suggestion-buttons button:hover:not(:disabled) {
-    transform: translateY(-4px); /* Remontée plus prononcée */
+    transform: translateY(-4px);
     background: #3b4252;
     box-shadow: 0 10px 25px var(--shadow-strong);
 }
@@ -278,14 +261,14 @@
     background: var(--error-color) !important;
     color: #fff;
     animation: shake 0.5s;
-    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.5); /* Ombre de couleur */
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.5);
 }
 
 .movie-game-app .suggestion-buttons button.correct-answer {
     background: var(--success-color) !important;
     color: #fff;
     animation: pulse 1s infinite alternate;
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.5); /* Ombre de couleur */
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.5);
 }
 
 @keyframes shake {
@@ -328,7 +311,7 @@
 
 .movie-game-app .next-movie button {
     padding: 14px 25px;
-    border-radius: 12px; /* Harmonisation du rayon */
+    border-radius: 12px;
     cursor: pointer;
     font-weight: 700;
     background: var(--secondary-color);
@@ -340,25 +323,27 @@
 
 .movie-game-app .next-movie button:hover:not(:disabled) {
     background: #ffc456;
-    transform: scale(1.03); /* Moins agressif que 1.05 */
+    transform: scale(1.03);
     box-shadow: 0 8px 15px rgba(255, 210, 127, 0.8);
 }
 
 /* -------------------------------------
- * Sélecteur de Difficulté (Mise en page)
+ * Sélecteur de Difficulté (Permanent)
+ * -------------------------------------
+ */
+/* -------------------------------------
+ * Sélecteur de Difficulté (Permanent)
  * -------------------------------------
  */
 .movie-game-app .header-settings {
-    /* Centrage de la div au-dessus du conteneur de jeu */
     width: 100%;
-    max-width: 1000px; /* Aligné avec la largeur max du jeu */
+    max-width: 1000px;
     margin: 20px auto 0;
-    padding: 0 5%; /* Padding pour correspondre au 90% de width du game-container */
+    padding: 0 5%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    background-color: transparent; /* Suppression du background-color: white inutile */
-    text-align: center; /* Inutile ici, remplacé par flex */
+    background-color: transparent;
 }
 
 .movie-game-app .difficulty-selector {
@@ -369,6 +354,35 @@
     border-radius: 12px;
     box-shadow: 0 5px 15px var(--shadow-light);
 }
+
+/* Style spécifique pour le sélecteur dans le modal d'introduction */
+.movie-game-app .modal-selector {
+    background: var(--background-dark);
+    padding: 20px;
+    box-shadow: none;
+    margin-bottom: 20px;
+    width: 90%;
+    flex-direction: column;
+}
+
+.movie-game-app .modal-selector .difficulty-options {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.movie-game-app .modal-selector label {
+    font-size: 1em;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.movie-game-app .modal-selector input[type="radio"]:checked + label {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
 
 .movie-game-app .difficulty-selector > label {
     font-weight: 700;
@@ -411,6 +425,50 @@
     background-color: var(--background-dark);
 }
 
+/* -------------------------------------
+ * Section des Quêtes Journalières
+ * -------------------------------------
+ */
+.movie-game-app .daily-quests-container { 
+    max-width: 1000px; 
+    width: 90%; 
+    margin: 20px auto; 
+    padding: 20px; 
+    background: #fff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px var(--shadow-light); 
+}
+
+.movie-game-app .daily-quests-container h3 {
+    text-align: center;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--background-dark);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.movie-game-app .quest-item { 
+    padding: 10px; 
+    margin-bottom: 8px; 
+    border-radius: 6px; 
+    border-left: 5px solid var(--secondary-color); 
+    background: var(--background-dark); 
+    transition: opacity 0.3s;
+}
+
+.movie-game-app .quest-item small {
+    display: block;
+    margin-top: 3px;
+    font-weight: 700;
+}
+
+.movie-game-app .quest-item.completed { 
+    border-left-color: var(--success-color); 
+    opacity: 0.6;
+    background: #e6ffe6;
+}
+
+
 /* Footer */
 .movie-game-app footer {
     width: 100%;
@@ -428,7 +486,10 @@
     transition: color 0.2s;
 }
 
-/* Modal de Fin de Partie */
+/* -------------------------------------
+ * Modals (Introduction & Fin de Partie)
+ * -------------------------------------
+ */
 .movie-game-app .modal {
     display: none;
     position: fixed;
@@ -438,7 +499,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour l'intro */
     justify-content: center;
     align-items: center;
 }
@@ -476,12 +537,13 @@
 .movie-game-app #finalScore {
     font-size: 2em;
     font-weight: 900;
-    color: var(--error-color);
+    color: var(--secondary-color); /* Utilisation de la couleur d'accent pour le score final */
     display: block;
     margin: 10px 0;
 }
 
-.movie-game-app .modal-content button#restartBtn {
+.movie-game-app .modal-content button#restartBtn,
+.movie-game-app .modal-content button#startGameBtn {
     background: var(--error-color);
     color: #fff;
     padding: 15px 30px;
@@ -491,12 +553,79 @@
     font-size: 1.1em;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
+    margin-top: 15px;
+}
+
+.movie-game-app .modal-content button#startGameBtn {
+    background: var(--success-color);
 }
 
 .movie-game-app .modal-content button#restartBtn:hover {
     background: #d03030;
     transform: scale(1.05);
 }
+
+.movie-game-app .modal-content button#startGameBtn:hover {
+    background: #408842;
+    transform: scale(1.05);
+}
+
+/* --- CLASSEMENT LOCAL --- */
+.movie-game-app #leaderboard-display {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--background-dark);
+    text-align: left;
+}
+
+.movie-game-app #leaderboard-display h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.movie-game-app .leaderboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+.movie-game-app .score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    background: var(--background-light);
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.movie-game-app .score-item strong {
+    color: var(--primary-color);
+}
+
+.movie-game-app .score-item.rank-1 {
+    background: #fff8e1;
+    border: 2px solid var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.movie-game-app .difficulty-tag {
+    font-size: 0.7em;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #fff;
+    background: #4c566a;
+}
+
+.movie-game-app .difficulty-facile { background: var(--success-color); }
+.movie-game-app .difficulty-normal { background: #5e81ac; }
+.movie-game-app .difficulty-difficile { background: #bf616a; }
+.movie-game-app .difficulty-expert { background: var(--error-color); }
 
 /* Animation Confettis */
 .movie-game-app .confetti {
@@ -545,7 +674,7 @@
     .movie-game-app .header-settings {
         justify-content: center;
         margin-bottom: 15px;
-        padding: 0 20px; /* Moins de padding sur petit écran */
+        padding: 0 20px;
     }
 
     .movie-game-app .poster-container {
@@ -577,6 +706,9 @@
     .movie-game-app .hint-section {
         align-items: center;
     }
+    .movie-game-app .modal-selector {
+        width: 100%;
+    }
 }
 
 @media (max-width: 500px) {
@@ -595,32 +727,36 @@
     .movie-game-app .difficulty-selector > label {
         margin-bottom: 5px;
     }
+    .movie-game-app .modal-content {
+        padding: 20px;
+    }
+    .movie-game-app .modal-content h2 {
+        font-size: 2em;
+    }
 }
-  </style>
+    </style>
 
     <div class="movie-game-app"> 
-    <div class="header-settings">
-        </div>
 
         <div class="header-settings">
             <div class="difficulty-selector">
-                <label>Difficulté :</label>
-                <div class="difficulty-options" id="difficulty-options">
-                    <input type="radio" name="difficulty" id="diff-facile" value="facile" data-blur="15" checked>
+                <label>Difficulté actuelle:</label>
+                <div class="difficulty-options">
+                    <input type="radio" name="difficulty" id="diff-facile" value="facile" data-blur="15" checked disabled>
                     <label for="diff-facile">Facile</label>
 
-                    <input type="radio" name="difficulty" id="diff-normal" value="normal" data-blur="20">
+                    <input type="radio" name="difficulty" id="diff-normal" value="normal" data-blur="20" disabled>
                     <label for="diff-normal">Normal</label>
 
-                    <input type="radio" name="difficulty" id="diff-difficile" value="difficile" data-blur="25">
+                    <input type="radio" name="difficulty" id="diff-difficile" value="difficile" data-blur="25" disabled>
                     <label for="diff-difficile">Difficile</label>
 
-                    <input type="radio" name="difficulty" id="diff-expert" value="expert" data-blur="30">
+                    <input type="radio" name="difficulty" id="diff-expert" value="expert" data-blur="30" disabled>
                     <label for="diff-expert">Expert</label>
                 </div>
             </div>
-          </div>
-
+        </div>
+        
         <main class="game-container" id="gameContainer">
             <div class="poster-container">
                 <div class="poster-frame">
@@ -633,11 +769,12 @@
                     <span id="round-count"><i class="fas fa-star"></i> Manche : 0 / 10</span>
                     <span id="score"><i class="fas fa-trophy"></i> Score : 0</span>
                     <span id="timer"><i class="fas fa-clock"></i> Temps : 15s</span>
+                    <div id="scoreDrop" class="score-drop"></div>
                 </div>
                 
                 <div class="hint-section">
                     <button id="hintBtn" class="hint-button"><i class="fas fa-lightbulb"></i> Indice (-5 pts)</button>
-                    <p id="hint-text" class="hidden-hint">Indice : Cliquez pour révéler</p>
+                    <p id="hint-text" class="hidden-hint">Indice : Genre du film</p>
                 </div>
 
                 <div class="suggestion-buttons" id="suggestions">
@@ -651,29 +788,58 @@
             </div>
         </main>
 
+        <div id="introModal" class="modal">
+            <div class="modal-content">
+                <h2>Bienvenue sur L'Œil Critique !</h2>
+                <p>Choisissez votre niveau de difficulté pour commencer la partie :</p>
+                
+                <div class="difficulty-selector modal-selector">
+                    <div class="difficulty-options" id="difficulty-options-intro">
+                        <input type="radio" name="difficulty-intro" id="intro-facile" value="facile" data-blur="15" checked>
+                        <label for="intro-facile">Facile (Flou léger, + facile)</label>
+
+                        <input type="radio" name="difficulty-intro" id="intro-normal" value="normal" data-blur="20">
+                        <label for="intro-normal">Normal (Flou moyen, standard)</label>
+
+                        <input type="radio" name="difficulty-intro" id="intro-difficile" value="difficile" data-blur="25">
+                        <label for="intro-difficile">Difficile (Très Flou, challenge)</label>
+
+                        <input type="radio" name="difficulty-intro" id="intro-expert" value="expert" data-blur="30">
+                        <label for="intro-expert">Expert (Extrêmement Flou, hardcore)</label>
+                    </div>
+                </div>
+
+                <button id="startGameBtn" class="start-button"><i class="fas fa-play"></i> Lancer la Partie !</button>
+            </div>
+        </div>
+
         <div id="endGameModal" class="modal">
             <div class="modal-content">
                 <h2>Partie Terminée !</h2>
                 <p>Votre score final : <span id="finalScore">0</span> points</p>
-                <p id="scoreMessage">Bien joué !</p>
+                <p id="scoreMessage">...</p>
+                
+                <div id="leaderboard-display">
+                    </div>
+
                 <button id="restartBtn"><i class="fas fa-redo"></i> Rejouer</button>
             </div>
         </div>
 
-    <footer>
-      <div class="footer-links">
-        <a href="mentions_légales.html">Mentions légales</a>
-        <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
-        <a href="contact.html">Contact</a>
-      </div>
-        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
-    </footer>
+        <footer>
+          <div class="footer-links">
+            <a href="mentions_légales.html">Mentions légales</a>
+            <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="contact.html">Contact</a>
+          </div>
+            <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
+        </footer>
 
         <script src="assets/js/main.js"></script>
-    <script src="assets/js/header.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
-     crossorigin="anonymous"></script>
-     <script src="assets/js/jeu-devine-le-film.js"></script>
+        <script src="assets/js/header.js"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
+          crossorigin="anonymous"></script>
+        <script src="assets/js/jeu-devine-le-film.js"></script> 
     </div>
-    </body>
+</body>
 </html>

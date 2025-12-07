@@ -117,7 +117,7 @@ a { color: inherit; }
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1001;
   background: rgba(46, 52, 64, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -315,6 +315,15 @@ header.scrolled {
 .category-link:hover { background-color: var(--primary-color); color: var(--secondary-color); transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 .category-link.new-item { padding-top: 5rem; justify-content: flex-start; }
 .category-links-container .new-label { top: 0.5rem; left: 50%; transform: translateX(-50%) rotate(-5deg); font-size: 0.7rem; padding: 0.3rem 0.7rem; }
+.badge-new {
+    background: #d60000;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: 600;
+}
 
 /* ========================================================================
    3) Pages — Intro, News grids
