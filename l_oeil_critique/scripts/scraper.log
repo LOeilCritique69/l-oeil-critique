@@ -290,3 +290,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-07 13:58:56,137 [INFO] 🎞 [TMDb] Démarrage du scraping...
 2025-12-07 13:58:57,911 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
 2025-12-07 13:58:57,912 [INFO] ℹ️ Aucune nouvelle bande-annonce détectée.
+2025-12-08 17:38:06,555 [INFO] ============================================================
+2025-12-08 17:38:06,578 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-08 17:38:06,578 [INFO] ============================================================
+2025-12-08 17:38:06,602 [INFO] 📋 36 bandes-annonces déjà en base
+2025-12-08 17:38:06,603 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-08 17:38:22,682 [INFO] ✅ Ajouté : The Mandalorian and Grogu
+2025-12-08 17:38:24,093 [INFO] ✅ Ajouté : Michael
+2025-12-08 17:38:27,813 [INFO] ✅ Ajouté : Michael
+2025-12-08 17:38:27,934 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2025-12-08 17:38:27,935 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-08 17:38:29,553 [INFO] ✅ Ajouté : La Femme de ménage
+2025-12-08 17:38:29,803 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-12-08 17:38:29,823 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2025-12-08 17:38:29,824 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-08 17:38:29,824 [INFO] ✅ 4 nouvelles bandes-annonces ajoutées.

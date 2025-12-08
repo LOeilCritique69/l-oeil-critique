@@ -129,17 +129,18 @@ header {
 header.scrolled {
   background: rgba(46, 52, 64, 0.95);
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: all 0.35s ease;
 }
 
-
+/* --- Structure globale --- */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.45rem 1rem;
+  column-gap: 1.5rem;          /* ← Ajoute de l’air entre tous les éléments */
+  flex-wrap: nowrap;           /* ← Interdit tout retour à la ligne */
 }
 
 /* --- Logo & Titre --- */
@@ -147,11 +148,12 @@ header.scrolled {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  flex-shrink: 0;              /* ← Empêche le logo + titre de rétrécir */
   text-decoration: none;
 }
 
 .logo {
-  width: 3.5rem;
+  width: 3rem;
   height: auto;
   border-radius: var(--border-radius-base);
   transition: transform 0.3s ease;
@@ -165,10 +167,13 @@ header.scrolled {
   font-family: var(--font-family-title);
   font-size: 2rem;
   font-weight: 600;
+  padding-right: 20px;         /* ← Plus d’espace au titre */
+  white-space: nowrap;         /* ← Jamais de retour à la ligne */
   color: var(--secondary-color);
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: color 0.3s ease;
+  flex-shrink: 0;              /* ← Ne doit PAS rétrécir */
 }
 
 .site-title-link {
@@ -180,11 +185,16 @@ header.scrolled {
   color: var(--accent-color);
 }
 
-/* --- Navigation principale --- */
+/* ========================================================================
+   NAVIGATION – FIX des mots à la ligne + espacements
+   ======================================================================== */
+
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.4rem;
+  white-space: nowrap;        /* ← Empêche totalement les retours à la ligne */
+  flex-shrink: 0;             /* ← La nav ne rétrécit jamais */
 }
 
 .main-nav a {
@@ -197,6 +207,7 @@ header.scrolled {
   border: 1px solid rgba(242, 205, 134, 0.4);
   transition: all 0.3s ease-in-out;
   text-decoration: none;
+  white-space: nowrap;        /* ← Encore une sécurité */
 }
 
 .main-nav a:hover,
@@ -207,7 +218,10 @@ header.scrolled {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Checkbox + burger (pure CSS) --- */
+/* ========================================================================
+   BURGER MENU
+   ======================================================================== */
+
 #nav-toggle {
   display: none;
 }
@@ -220,6 +234,7 @@ header.scrolled {
   gap: 5px;
   cursor: pointer;
   z-index: 1001;
+  flex-shrink: 0;            /* Important */
 }
 
 .burger-menu span {
@@ -242,6 +257,154 @@ header.scrolled {
 
 #nav-toggle:checked + .burger-menu span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ========================================================================
+   2) Barre de Recherche (Search Bar)
+   ======================================================================== */
+
+/* --- Conteneur principal --- */
+.search-container {
+    position: relative; /* Clé pour le positionnement des résultats */
+    display: flex;
+    align-items: center;
+    /* Ajustement de l'espace pour ne pas gêner le menu burger en mobile */
+    margin-left: 20px; 
+    z-index: 10; /* Assure que la barre de recherche est au-dessus de la nav */
+}
+
+/* --- Champ de saisie (Input) --- */
+#search-input {
+    padding: 0.6rem 1rem;
+    /* Utiliser une couleur de fond légèrement différente ou transparente */
+    background-color: rgba(255, 255, 255, 0.08); 
+    color: var(--secondary-color);
+    border: 1px solid rgba(242, 205, 134, 0.4); /* Bordure alignée avec les liens de nav */
+    border-right: none;
+    border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+    font-size: 1rem;
+    width: 200px; /* Largeur par défaut */
+    transition: all 0.3s ease;
+}
+
+#search-input::placeholder {
+    color: rgba(242, 205, 134, 0.6); /* Couleur de placeholder douce */
+}
+
+#search-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
+}
+
+/* --- Bouton de recherche --- */
+#search-button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color, #2e3440); /* Utiliser la couleur sombre du header */
+    border: 1px solid var(--secondary-color);
+    border-left: none; 
+    padding: 0.6rem 1rem;
+    border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1; 
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#search-button:hover {
+    background-color: var(--accent-color); /* Couleur d'accentuation au survol */
+    border-color: var(--accent-color);
+}
+
+/* --- Conteneur des résultats (Autocomplete) --- */
+.search-results {
+    position: absolute;
+    top: calc(100% + 5px); /* Juste sous la barre de recherche */
+    left: 0;
+    /* La largeur prendra la taille du conteneur de recherche */
+    width: calc(100% + 1px); 
+    max-height: 350px;
+    overflow-y: auto;
+    background: var(--primary-color, #2e3440); /* Fond sombre */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-xl);
+    z-index: 1000; /* Doit être au-dessus de tout sauf du header lui-même */
+    display: none; /* Masqué par défaut */
+}
+
+.search-results.active {
+    display: block;
+}
+
+/* --- Style de chaque résultat --- */
+.search-result-item {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    display: block;
+    font-size: 0.95rem;
+}
+
+.search-result-item a:hover {
+    color: var(--accent-color);
+}
+
+.search-result-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.result-type {
+    font-size: 0.75rem;
+    color: rgba(242, 205, 134, 0.7); /* Utiliser un accent clair */
+    margin-left: 10px;
+    /* Assure que le type de contenu (Film, Série, etc.) est aligné */
+    float: right; 
+}
+
+/* --- Gestion du responsive pour la barre de recherche --- */
+@media (max-width: 1050px) {
+    /* Rendre la barre de recherche un peu plus compacte sur les écrans intermédiaires */
+    #search-input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 850px) {
+    /* En mode mobile, on place la barre de recherche à part entière */
+    .search-container {
+        width: 90%;
+        margin: 0.5rem auto 0; /* Centre et ajoute un peu de marge */
+        order: 3; /* Place la barre de recherche sous le logo/titre dans le header-content */
+    }
+
+    /* Redimensionnement à 100% de la largeur du conteneur parent (90% du header) */
+    #search-input {
+        width: 100%;
+        border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+    }
+    
+    .search-results {
+        width: calc(100% + 1px); 
+        /* En mobile, les résultats s'étendent sur toute la largeur de la barre */
+    }
+    
+    /* Le header-content doit être configuré pour accepter ce changement d'ordre */
+    .header-content {
+        /* On retire 'justify-content: space-between;' et on passe en mode empilé/flux */
+        flex-wrap: wrap; 
+        justify-content: flex-start; 
+        gap: 1rem 2rem; /* Espacement entre les éléments */
+    }
 }
 
 /* --- Menu responsive --- */
