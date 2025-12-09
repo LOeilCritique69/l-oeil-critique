@@ -389,13 +389,21 @@ function checkGuess(title) {
  * Fin de la manche (arrêt timer, affichage feedback).
  */
 function endRound(correct, text) {
-    roundActive = false;
-    clearInterval(timer);
-    showFeedback(correct, text);
-    nextBtn.disabled = false;
-    hintBtn.disabled = true;
-    if (correct) triggerConfetti();
+    roundActive = false;
+    clearInterval(timer);
+
+    // Retire le flou immédiatement
+    poster.style.filter = "blur(0)";
+    poster.style.transform = "scale(1.05)"; // légèrement agrandi pour la victoire
+    if (!correct) poster.style.transform = "scale(1)"; // optionnel pour l’échec
+
+    showFeedback(correct, text);
+    nextBtn.disabled = false;
+    hintBtn.disabled = true;
+
+    if (correct) triggerConfetti();
 }
+
 
 /**
  * Génère les 4 choix de films (dont le bon).

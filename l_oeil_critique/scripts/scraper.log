@@ -305,3 +305,24 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-08 17:38:29,823 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2025-12-08 17:38:29,824 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-08 17:38:29,824 [INFO] ✅ 4 nouvelles bandes-annonces ajoutées.
+2025-12-08 17:38:32,834 [ERROR] ❌ Erreur Git : To https://github.com/LOeilCritique69/l-oeil-critique.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/LOeilCritique69/l-oeil-critique.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2025-12-08 17:38:32,835 [INFO] ============================================================
+2025-12-08 17:38:32,835 [INFO] ✅ Script terminé avec succès
+2025-12-08 17:38:32,836 [INFO] ============================================================
+2025-12-09 13:47:17,807 [INFO] ============================================================
+2025-12-09 13:47:17,825 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-09 13:47:17,825 [INFO] ============================================================
+2025-12-09 13:47:17,852 [INFO] 📋 40 bandes-annonces déjà en base
+2025-12-09 13:47:17,852 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-09 13:47:29,525 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-12-09 13:47:29,525 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-09 13:47:31,377 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-09 13:47:31,378 [INFO] ℹ️ Aucune nouvelle bande-annonce détectée.
