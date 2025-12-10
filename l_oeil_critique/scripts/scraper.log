@@ -326,3 +326,12 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-09 13:47:29,525 [INFO] 🎞 [TMDb] Démarrage du scraping...
 2025-12-09 13:47:31,377 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
 2025-12-09 13:47:31,378 [INFO] ℹ️ Aucune nouvelle bande-annonce détectée.
+2025-12-10 11:37:31,173 [INFO] ============================================================
+2025-12-10 11:37:31,189 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-10 11:37:31,190 [INFO] ============================================================
+2025-12-10 11:37:31,209 [INFO] 📋 40 bandes-annonces déjà en base
+2025-12-10 11:37:31,209 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-10 11:37:42,470 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2025-12-10 11:37:42,471 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-10 11:37:44,049 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-10 11:37:44,050 [INFO] ℹ️ Aucune nouvelle bande-annonce détectée.
