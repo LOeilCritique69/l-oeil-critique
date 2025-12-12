@@ -100,9 +100,54 @@
     "url": "/l_oeil_critique/articles/films/Une-premiere-image-du-nouveau-film-de-crhistopher-nolan-the-odyssey.html"
   },
   {
-    "title": "L'Œil Critique | [TITRE DE LA REVIEW]",
-    "type": "Reviews",
-    "url": "/l_oeil_critique/articles/reviews/createreviews.html"
+    "title": "L'Œil Critique | Captain America: Brave New World, un pas vers Secret Wars, mais un faux départ ?",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/Captain-America-Brave-New-World-un-bon-film-mais-inutile-pour-l-univers-de-Marvel.html"
+  },
+  {
+    "title": "L'Œil Critique | Flow (2024)",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/critique-flow.html"
+  },
+  {
+    "title": "L'Œil Critique | Robot Sauvage, l'âme d'une machine",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/critique-robot-sauvage.html"
+  },
+  {
+    "title": "L’Œil Critique | Grave of the Fireflies – Une lettre d'excuse au Studio Ghibli",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/le_tombeau_des_lucioles.html"
+  },
+  {
+    "title": "L'Œil Critique | Sinners, un thriller surnaturel qui captive et surprend",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/sinners-critique.html"
+  },
+  {
+    "title": "L'Œil Critique | Sonic 3",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/Sonic-3-le-meilleur-de-sa-trilogie.html"
+  },
+  {
+    "title": "L'Œil Critique | Thunderbolts",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/Thunderbolts-critique.html"
+  },
+  {
+    "title": "L’Œil Critique | Whiplash ,  L’obsession comme art du sacrifice",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/films/Whiplash-critique.html"
+  },
+  {
+    "title": "L'Œil Critique | Friendly Neighborhood Spider-Man",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/SERIES/Critique-Friendly-neighorhood-spider-man.html"
+  },
+  {
+    "title": "L'Œil Critique | Daredevil: Born Again - Épisodes 1 et 2",
+    "type": "Review",
+    "url": "/l_oeil_critique/articles/reviews/SERIES/daredevil-born-again-les-deux-premiers-episodes.html"
   },
   {
     "title": "bref.2 (2025) : Le grand retour français d'une série culte après 13 ans",
@@ -120,7 +165,7 @@
     "url": "/l_oeil_critique/articles/series/De-nouvelles-images-pour-la-serie-Netflix-One-Piexe.html"
   },
   {
-    "title": "od of War : La série Amazon revient après un développement chaotique",
+    "title": "God of War : La série Amazon revient après un développement chaotique",
     "type": "Series",
     "url": "/l_oeil_critique/articles/series/god-of-war-saison.html"
   },
