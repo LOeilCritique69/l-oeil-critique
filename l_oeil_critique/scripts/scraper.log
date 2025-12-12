@@ -349,3 +349,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-12 18:05:36,313 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2025-12-12 18:05:36,313 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-12 18:05:36,314 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
+2025-12-12 18:05:38,408 [INFO] ✅ Push GitHub réussi.
+2025-12-12 18:05:38,408 [INFO] ============================================================
+2025-12-12 18:05:38,408 [INFO] ✅ Script terminé avec succès
+2025-12-12 18:05:38,408 [INFO] ============================================================
