@@ -335,3 +335,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-10 11:37:42,471 [INFO] 🎞 [TMDb] Démarrage du scraping...
 2025-12-10 11:37:44,049 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
 2025-12-10 11:37:44,050 [INFO] ℹ️ Aucune nouvelle bande-annonce détectée.
+2025-12-12 18:05:20,678 [INFO] ============================================================
+2025-12-12 18:05:20,678 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-12 18:05:20,679 [INFO] ============================================================
+2025-12-12 18:05:20,696 [INFO] 📋 40 bandes-annonces déjà en base
+2025-12-12 18:05:20,696 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-12 18:05:33,795 [INFO] ✅ Ajouté : Supergirl : Woman of Tomorrow
+2025-12-12 18:05:34,525 [INFO] ✅ Ajouté : Qui brille au combat
+2025-12-12 18:05:34,626 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2025-12-12 18:05:34,626 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-12 18:05:36,305 [INFO] ✅ Ajouté : Ella McCay
+2025-12-12 18:05:36,307 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2025-12-12 18:05:36,313 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2025-12-12 18:05:36,313 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-12 18:05:36,314 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
