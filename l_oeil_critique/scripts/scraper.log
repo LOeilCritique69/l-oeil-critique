@@ -353,3 +353,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-12 18:05:38,408 [INFO] ============================================================
 2025-12-12 18:05:38,408 [INFO] ✅ Script terminé avec succès
 2025-12-12 18:05:38,408 [INFO] ============================================================
+2025-12-14 19:11:49,652 [INFO] ============================================================
+2025-12-14 19:11:49,652 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-14 19:11:49,652 [INFO] ============================================================
+2025-12-14 19:11:49,653 [INFO] 📋 43 bandes-annonces déjà en base
+2025-12-14 19:11:49,653 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-14 19:11:55,269 [INFO] ✅ Ajouté : Avatar : Fire and Ash
+2025-12-14 19:11:56,493 [INFO] ✅ Ajouté : Father Mother Sister Brother
+2025-12-14 19:11:57,433 [INFO] ✅ Ajouté : Los Tigres
+2025-12-14 19:11:57,514 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2025-12-14 19:11:57,514 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-14 19:11:58,246 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-14 19:11:58,249 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-12-14 19:11:58,249 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-14 19:11:58,250 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
