@@ -367,3 +367,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-14 19:11:58,249 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-12-14 19:11:58,249 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-14 19:11:58,250 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
+2025-12-15 19:16:16,735 [INFO] ============================================================
+2025-12-15 19:16:16,735 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-15 19:16:16,735 [INFO] ============================================================
+2025-12-15 19:16:16,735 [INFO] 📋 46 bandes-annonces déjà en base
+2025-12-15 19:16:16,735 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-15 19:16:21,410 [INFO] ✅ Ajouté : De Gaulle - Partie 1 (La France libre)
+2025-12-15 19:16:21,448 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2025-12-15 19:16:21,448 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-15 19:16:23,620 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-15 19:16:23,623 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-12-15 19:16:23,623 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-15 19:16:23,623 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
