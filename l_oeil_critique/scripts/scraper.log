@@ -379,3 +379,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-15 19:16:23,623 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-12-15 19:16:23,623 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-15 19:16:23,623 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-12-18 19:14:41,617 [INFO] ============================================================
+2025-12-18 19:14:41,617 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-18 19:14:41,617 [INFO] ============================================================
+2025-12-18 19:14:41,617 [INFO] 📋 47 bandes-annonces déjà en base
+2025-12-18 19:14:41,618 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-18 19:14:46,597 [INFO] ✅ Ajouté : Disclosure Day
+2025-12-18 19:14:46,635 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2025-12-18 19:14:46,635 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-18 19:14:47,555 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-18 19:14:47,558 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-12-18 19:14:47,558 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-18 19:14:47,558 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
