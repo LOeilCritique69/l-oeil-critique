@@ -429,3 +429,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-22 19:14:14,205 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2025-12-22 19:14:14,205 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2025-12-22 19:14:14,206 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2025-12-24 19:12:44,064 [INFO] ============================================================
+2025-12-24 19:12:44,064 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2025-12-24 19:12:44,064 [INFO] ============================================================
+2025-12-24 19:12:44,064 [INFO] 📋 53 bandes-annonces déjà en base
+2025-12-24 19:12:44,064 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2025-12-24 19:12:49,018 [INFO] ✅ Ajouté : Avengers : Doomsday
+2025-12-24 19:12:49,056 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2025-12-24 19:12:49,056 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2025-12-24 19:12:49,554 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2025-12-24 19:12:49,557 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2025-12-24 19:12:49,557 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2025-12-24 19:12:49,558 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
