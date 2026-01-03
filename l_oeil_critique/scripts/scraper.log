@@ -365,3 +365,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-03 20:05:43,386 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-01-03 20:05:43,389 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-03 20:05:43,392 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-01-03 20:05:47,981 [ERROR] ❌ Erreur Git : To https://github.com/LOeilCritique69/l-oeil-critique.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/LOeilCritique69/l-oeil-critique.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+2026-01-03 20:05:47,981 [INFO] ============================================================
+2026-01-03 20:05:47,982 [INFO] ✅ Script terminé avec succès
+2026-01-03 20:05:47,982 [INFO] ============================================================
