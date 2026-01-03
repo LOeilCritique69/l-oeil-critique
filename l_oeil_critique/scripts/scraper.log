@@ -353,3 +353,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2025-12-12 18:05:38,408 [INFO] ============================================================
 2025-12-12 18:05:38,408 [INFO] ✅ Script terminé avec succès
 2025-12-12 18:05:38,408 [INFO] ============================================================
+2026-01-03 20:05:22,690 [INFO] ============================================================
+2026-01-03 20:05:22,691 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-03 20:05:22,692 [INFO] ============================================================
+2026-01-03 20:05:22,720 [INFO] 📋 65 bandes-annonces déjà en base
+2026-01-03 20:05:22,720 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-03 20:05:40,717 [INFO] ✅ Ajouté : Forêt Rouge
+2026-01-03 20:05:40,947 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2026-01-03 20:05:40,947 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-03 20:05:43,366 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-03 20:05:43,386 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-01-03 20:05:43,389 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-03 20:05:43,392 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
