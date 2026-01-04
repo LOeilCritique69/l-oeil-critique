@@ -377,3 +377,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-03 20:05:47,981 [INFO] ============================================================
 2026-01-03 20:05:47,982 [INFO] ✅ Script terminé avec succès
 2026-01-03 20:05:47,982 [INFO] ============================================================
+2026-01-04 17:48:19,847 [INFO] ============================================================
+2026-01-04 17:48:19,847 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-04 17:48:19,849 [INFO] ============================================================
+2026-01-04 17:48:19,853 [INFO] 📋 66 bandes-annonces déjà en base
+2026-01-04 17:48:19,853 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-04 17:48:43,260 [INFO] ✅ Ajouté : À pied d'oeuvre
+2026-01-04 17:48:45,654 [INFO] ✅ Ajouté : Le Rêve Américain
+2026-01-04 17:48:45,817 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2026-01-04 17:48:45,817 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-04 17:48:47,810 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-04 17:48:47,824 [INFO] 💾 Fichier HTML mis à jour : D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-01-04 17:48:47,824 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-04 17:48:47,828 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
