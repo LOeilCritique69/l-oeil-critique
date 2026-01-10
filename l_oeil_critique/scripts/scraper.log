@@ -394,3 +394,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-04 17:48:52,411 [INFO] ============================================================
 2026-01-04 17:48:52,411 [INFO] ✅ Script terminé avec succès
 2026-01-04 17:48:52,412 [INFO] ============================================================
+2026-01-10 19:11:57,100 [INFO] ============================================================
+2026-01-10 19:11:57,100 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-10 19:11:57,100 [INFO] ============================================================
+2026-01-10 19:11:57,100 [INFO] 📋 71 bandes-annonces déjà en base
+2026-01-10 19:11:57,100 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-10 19:12:00,691 [INFO] ✅ Ajouté : They Will Kill You
+2026-01-10 19:12:01,538 [INFO] ✅ Ajouté : Coutures
+2026-01-10 19:12:02,055 [INFO] ✅ Ajouté : Primate
+2026-01-10 19:12:02,143 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2026-01-10 19:12:02,143 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-10 19:12:02,837 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-10 19:12:02,842 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-01-10 19:12:02,842 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-10 19:12:02,842 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
