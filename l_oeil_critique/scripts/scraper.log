@@ -408,3 +408,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-10 19:12:02,842 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-01-10 19:12:02,842 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-10 19:12:02,842 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
+2026-01-12 19:17:28,879 [INFO] ============================================================
+2026-01-12 19:17:28,879 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-12 19:17:28,879 [INFO] ============================================================
+2026-01-12 19:17:28,879 [INFO] 📋 74 bandes-annonces déjà en base
+2026-01-12 19:17:28,880 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-12 19:17:33,911 [INFO] ✅ Ajouté : Maigret et le mort amoureux
+2026-01-12 19:17:33,954 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2026-01-12 19:17:33,954 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-12 19:17:34,533 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-12 19:17:34,538 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-01-12 19:17:34,538 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-12 19:17:34,539 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
