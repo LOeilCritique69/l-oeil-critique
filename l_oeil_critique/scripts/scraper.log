@@ -420,3 +420,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-12 19:17:34,538 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-01-12 19:17:34,538 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-12 19:17:34,539 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-01-13 13:47:00,289 [INFO] ============================================================
+2026-01-13 13:47:00,289 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-13 13:47:00,290 [INFO] ============================================================
+2026-01-13 13:47:00,290 [INFO] 📋 75 bandes-annonces déjà en base
+2026-01-13 13:47:00,290 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-13 13:47:02,936 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2026-01-13 13:47:02,936 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-13 13:47:03,349 [INFO] ✅ Ajouté : 28 ans plus tard : Le Temple des morts
+2026-01-13 13:47:03,379 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2026-01-13 13:47:03,384 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-01-13 13:47:03,384 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-13 13:47:03,384 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
