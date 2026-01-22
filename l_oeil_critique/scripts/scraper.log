@@ -494,3 +494,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-21 19:22:29,847 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-01-21 19:22:29,847 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-21 19:22:29,847 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-01-22 19:20:37,714 [INFO] ============================================================
+2026-01-22 19:20:37,714 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-22 19:20:37,714 [INFO] ============================================================
+2026-01-22 19:20:37,714 [INFO] 📋 83 bandes-annonces déjà en base
+2026-01-22 19:20:37,714 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-22 19:20:41,762 [INFO] ✅ Ajouté : Un monde fragile et merveilleux
+2026-01-22 19:20:41,838 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2026-01-22 19:20:41,838 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-22 19:20:42,267 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-22 19:20:42,272 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-01-22 19:20:42,272 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-22 19:20:42,272 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
