@@ -530,3 +530,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-24 19:13:07,766 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-01-24 19:13:07,766 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-24 19:13:07,767 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-01-25 19:13:31,270 [INFO] ============================================================
+2026-01-25 19:13:31,270 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-25 19:13:31,270 [INFO] ============================================================
+2026-01-25 19:13:31,270 [INFO] 📋 86 bandes-annonces déjà en base
+2026-01-25 19:13:31,271 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-25 19:13:36,112 [INFO] ✅ Ajouté : David
+2026-01-25 19:13:36,949 [INFO] ✅ Ajouté : La Grazia
+2026-01-25 19:13:37,635 [INFO] ✅ Ajouté : Sainte-Marie-aux-Mines
+2026-01-25 19:13:37,691 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2026-01-25 19:13:37,691 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-25 19:13:38,351 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-25 19:13:38,356 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-01-25 19:13:38,356 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-25 19:13:38,356 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
