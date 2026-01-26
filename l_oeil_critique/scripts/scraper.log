@@ -544,3 +544,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-25 19:13:38,356 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-01-25 19:13:38,356 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-25 19:13:38,356 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
+2026-01-26 19:19:51,845 [INFO] ============================================================
+2026-01-26 19:19:51,845 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-26 19:19:51,845 [INFO] ============================================================
+2026-01-26 19:19:51,845 [INFO] 📋 89 bandes-annonces déjà en base
+2026-01-26 19:19:51,845 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-26 19:19:57,460 [INFO] ✅ Ajouté : La Famille Addams
+2026-01-26 19:19:58,179 [INFO] ✅ Ajouté : Kiss of the Spider Woman
+2026-01-26 19:19:58,220 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2026-01-26 19:19:58,220 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-26 19:19:58,717 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-26 19:19:58,723 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-01-26 19:19:58,723 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-26 19:19:58,723 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
