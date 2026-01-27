@@ -569,3 +569,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-27 13:53:00,608 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-01-27 13:53:00,608 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-27 13:53:00,609 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-01-27 19:22:41,150 [INFO] ============================================================
+2026-01-27 19:22:41,150 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-01-27 19:22:41,150 [INFO] ============================================================
+2026-01-27 19:22:41,150 [INFO] 📋 92 bandes-annonces déjà en base
+2026-01-27 19:22:41,150 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-01-27 19:22:45,985 [INFO] ✅ Ajouté : La maison des femmes
+2026-01-27 19:22:46,743 [INFO] ✅ Ajouté : The Mastermind
+2026-01-27 19:22:46,790 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2026-01-27 19:22:46,790 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-01-27 19:22:47,493 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-01-27 19:22:47,499 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-01-27 19:22:47,499 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-01-27 19:22:47,499 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
