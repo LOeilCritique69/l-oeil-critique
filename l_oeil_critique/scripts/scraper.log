@@ -620,3 +620,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-01-31 19:17:36,105 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-01-31 19:17:36,105 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-01-31 19:17:36,105 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
+2026-02-03 07:48:17,474 [INFO] ============================================================
+2026-02-03 07:48:17,474 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-03 07:48:17,474 [INFO] ============================================================
+2026-02-03 07:48:17,474 [INFO] 📋 99 bandes-annonces déjà en base
+2026-02-03 07:48:17,474 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-03 07:48:21,445 [INFO] ✅ Ajouté : Les K d'Or
+2026-02-03 07:48:21,493 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2026-02-03 07:48:21,493 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-03 07:48:22,020 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-03 07:48:22,026 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-03 07:48:22,026 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-03 07:48:22,026 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
