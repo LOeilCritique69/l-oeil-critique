@@ -656,3 +656,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-04 19:35:19,049 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-04 19:35:19,049 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-04 19:35:19,050 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-02-05 19:34:02,524 [INFO] ============================================================
+2026-02-05 19:34:02,524 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-05 19:34:02,524 [INFO] ============================================================
+2026-02-05 19:34:02,524 [INFO] 📋 102 bandes-annonces déjà en base
+2026-02-05 19:34:02,524 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-05 19:34:08,517 [INFO] ✅ Ajouté : Rue Málaga
+2026-02-05 19:34:09,328 [INFO] ✅ Ajouté : Le son des souvenirs
+2026-02-05 19:34:09,402 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2026-02-05 19:34:09,402 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-05 19:34:09,950 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-05 19:34:09,956 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-05 19:34:09,957 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-05 19:34:09,957 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
