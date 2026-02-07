@@ -682,3 +682,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-06 19:34:19,102 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-06 19:34:19,102 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-06 19:34:19,102 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
+2026-02-07 19:19:24,747 [INFO] ============================================================
+2026-02-07 19:19:24,747 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-07 19:19:24,747 [INFO] ============================================================
+2026-02-07 19:19:24,747 [INFO] 📋 106 bandes-annonces déjà en base
+2026-02-07 19:19:24,747 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-07 19:19:30,971 [INFO] ✅ Ajouté : La fille du Konbini
+2026-02-07 19:19:32,044 [INFO] ✅ Ajouté : Une jeunesse indienne
+2026-02-07 19:19:32,081 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2026-02-07 19:19:32,081 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-07 19:19:32,868 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-07 19:19:32,874 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-07 19:19:32,874 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-07 19:19:32,874 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
