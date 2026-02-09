@@ -708,3 +708,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-08 19:20:53,260 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-08 19:20:53,260 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-08 19:20:53,260 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
+2026-02-09 19:59:27,779 [INFO] ============================================================
+2026-02-09 19:59:27,779 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-09 19:59:27,779 [INFO] ============================================================
+2026-02-09 19:59:27,780 [INFO] 📋 110 bandes-annonces déjà en base
+2026-02-09 19:59:27,780 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-09 19:59:32,508 [INFO] ✅ Ajouté : Nino dans la nuit
+2026-02-09 19:59:33,249 [INFO] ✅ Ajouté : Les Minions 3
+2026-02-09 19:59:33,294 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2026-02-09 19:59:33,294 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-09 19:59:33,846 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-09 19:59:33,853 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-09 19:59:33,853 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-09 19:59:33,853 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
