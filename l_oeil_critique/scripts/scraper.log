@@ -745,3 +745,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-10 19:57:11,082 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-10 19:57:11,082 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-10 19:57:11,082 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-02-11 07:58:15,650 [INFO] ============================================================
+2026-02-11 07:58:15,650 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-11 07:58:15,650 [INFO] ============================================================
+2026-02-11 07:58:15,650 [INFO] 📋 114 bandes-annonces déjà en base
+2026-02-11 07:58:15,650 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-11 07:58:19,624 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2026-02-11 07:58:19,625 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-11 07:58:20,071 [INFO] ✅ Ajouté : Cold Storage
+2026-02-11 07:58:20,112 [INFO] ✅ Ajouté : Jumpers
+2026-02-11 07:58:20,151 [INFO] ✅ [TMDb] 2 nouvelles bandes-annonces ajoutées.
+2026-02-11 07:58:20,157 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-11 07:58:20,157 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-11 07:58:20,158 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
