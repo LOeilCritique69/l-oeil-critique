@@ -770,3 +770,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-12 07:56:50,598 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-12 07:56:50,598 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-12 07:56:50,599 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-02-12 19:46:37,159 [INFO] ============================================================
+2026-02-12 19:46:37,159 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-12 19:46:37,159 [INFO] ============================================================
+2026-02-12 19:46:37,159 [INFO] 📋 117 bandes-annonces déjà en base
+2026-02-12 19:46:37,159 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-12 19:46:41,650 [INFO] ✅ Ajouté : Compostelle
+2026-02-12 19:46:42,810 [INFO] ✅ Ajouté : La Guerre des prix
+2026-02-12 19:46:43,293 [INFO] ✅ Ajouté : EPiC: Elvis Presley in Concert
+2026-02-12 19:46:43,343 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2026-02-12 19:46:43,343 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-12 19:46:43,935 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-12 19:46:43,942 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-12 19:46:43,942 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-12 19:46:43,942 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
