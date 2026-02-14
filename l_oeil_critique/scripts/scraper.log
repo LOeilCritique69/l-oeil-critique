@@ -797,3 +797,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-13 19:38:12,946 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-13 19:38:12,947 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-13 19:38:12,947 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
+2026-02-14 19:19:25,732 [INFO] ============================================================
+2026-02-14 19:19:25,733 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-14 19:19:25,733 [INFO] ============================================================
+2026-02-14 19:19:25,733 [INFO] 📋 122 bandes-annonces déjà en base
+2026-02-14 19:19:25,733 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-14 19:19:31,308 [WARNING] ⚠️ Pas d'iframe trouvée pour Iron Lung
+2026-02-14 19:19:31,308 [INFO] ✅ Ajouté : Iron Lung
+2026-02-14 19:19:32,067 [INFO] ✅ Ajouté : Mauvaise Pioche
+2026-02-14 19:19:32,112 [INFO] ✅ [CineHorizons] 2 nouvelles bandes-annonces trouvées.
+2026-02-14 19:19:32,112 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-14 19:19:32,778 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-14 19:19:32,785 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-14 19:19:32,785 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-14 19:19:32,785 [INFO] ✅ 2 nouvelles bandes-annonces ajoutées.
