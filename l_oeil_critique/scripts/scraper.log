@@ -823,3 +823,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-15 19:21:01,977 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-15 19:21:01,977 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-15 19:21:01,978 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-02-17 19:46:11,070 [INFO] ============================================================
+2026-02-17 19:46:11,070 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-17 19:46:11,070 [INFO] ============================================================
+2026-02-17 19:46:11,070 [INFO] 📋 125 bandes-annonces déjà en base
+2026-02-17 19:46:11,070 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-17 19:46:18,041 [INFO] ✅ Ajouté : Les rayons et les ombres
+2026-02-17 19:46:18,085 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2026-02-17 19:46:18,085 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-17 19:46:18,578 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-17 19:46:18,585 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-17 19:46:18,585 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-17 19:46:18,585 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
