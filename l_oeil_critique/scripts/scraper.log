@@ -847,3 +847,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-18 07:55:36,504 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-18 07:55:36,504 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-18 07:55:36,504 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-02-19 19:35:56,971 [INFO] ============================================================
+2026-02-19 19:35:56,971 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-19 19:35:56,971 [INFO] ============================================================
+2026-02-19 19:35:56,971 [INFO] 📋 127 bandes-annonces déjà en base
+2026-02-19 19:35:56,971 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-19 19:36:03,466 [INFO] ✅ Ajouté : Le Réveil de la Momie
+2026-02-19 19:36:05,471 [INFO] ✅ Ajouté : Orphelin
+2026-02-19 19:36:06,470 [INFO] ✅ Ajouté : Il maestro
+2026-02-19 19:36:06,520 [INFO] ✅ [CineHorizons] 3 nouvelles bandes-annonces trouvées.
+2026-02-19 19:36:06,520 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-19 19:36:07,385 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-19 19:36:07,392 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-19 19:36:07,393 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-19 19:36:07,393 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
