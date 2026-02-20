@@ -861,3 +861,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-19 19:36:07,392 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-19 19:36:07,393 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-19 19:36:07,393 [INFO] ✅ 3 nouvelles bandes-annonces ajoutées.
+2026-02-20 14:03:46,035 [INFO] ============================================================
+2026-02-20 14:03:46,035 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-20 14:03:46,035 [INFO] ============================================================
+2026-02-20 14:03:46,036 [INFO] 📋 130 bandes-annonces déjà en base
+2026-02-20 14:03:46,036 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-20 14:03:54,415 [INFO] ✅ [CineHorizons] 0 nouvelles bandes-annonces trouvées.
+2026-02-20 14:03:54,415 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-20 14:03:54,782 [INFO] ✅ Ajouté : Scream 7
+2026-02-20 14:03:55,043 [INFO] ✅ [TMDb] 1 nouvelles bandes-annonces ajoutées.
+2026-02-20 14:03:55,050 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-20 14:03:55,051 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-20 14:03:55,051 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
