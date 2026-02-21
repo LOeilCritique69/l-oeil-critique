@@ -873,3 +873,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-02-20 14:03:55,050 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-02-20 14:03:55,051 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
 2026-02-20 14:03:55,051 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
+2026-02-21 19:19:39,200 [INFO] ============================================================
+2026-02-21 19:19:39,200 [INFO] 🚀 Lancement du script de mise à jour des bandes-annonces
+2026-02-21 19:19:39,200 [INFO] ============================================================
+2026-02-21 19:19:39,200 [INFO] 📋 131 bandes-annonces déjà en base
+2026-02-21 19:19:39,200 [INFO] 🎬 [CineHorizons] Démarrage du scraping...
+2026-02-21 19:19:48,352 [INFO] ✅ Ajouté : Allah n'est pas obligé
+2026-02-21 19:19:48,395 [INFO] ✅ [CineHorizons] 1 nouvelles bandes-annonces trouvées.
+2026-02-21 19:19:48,395 [INFO] 🎞 [TMDb] Démarrage du scraping...
+2026-02-21 19:19:48,742 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
+2026-02-21 19:19:48,750 [INFO] 💾 Fichier HTML mis à jour : /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-02-21 19:19:48,750 [INFO] 🏷️  Badge NOUVEAU appliqué aux 6 premiers articles
+2026-02-21 19:19:48,750 [INFO] ✅ 1 nouvelles bandes-annonces ajoutées.
