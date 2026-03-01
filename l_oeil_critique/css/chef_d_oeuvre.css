@@ -261,77 +261,89 @@ header.scrolled {
 
 
 /* ========================================================================
-   2) Barre de Recherche (Search Bar)
+   2) Barre de Recherche (Search Bar) - Version Premium
    ======================================================================== */
 
-/* --- Conteneur principal --- */
 .search-container {
-    position: relative; /* Clé pour le positionnement des résultats */
+    position: relative;
     display: flex;
     align-items: center;
-    /* Ajustement de l'espace pour ne pas gêner le menu burger en mobile */
     margin-left: 20px; 
-    z-index: 10; /* Assure que la barre de recherche est au-dessus de la nav */
+    z-index: 100; /* Augmenté pour passer au-dessus de tout */
+    transition: all 0.3s ease;
 }
 
 /* --- Champ de saisie (Input) --- */
 #search-input {
-    padding: 0.6rem 1rem;
-    /* Utiliser une couleur de fond légèrement différente ou transparente */
-    background-color: rgba(255, 255, 255, 0.08); 
-    color: var(--secondary-color);
-    border: 1px solid rgba(242, 205, 134, 0.4); /* Bordure alignée avec les liens de nav */
+    padding: 0.7rem 1.2rem;
+    background-color: rgba(255, 255, 255, 0.05); 
+    color: #fff;
+    border: 1px solid rgba(242, 205, 134, 0.3);
     border-right: none;
-    border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
-    font-size: 1rem;
-    width: 200px; /* Largeur par défaut */
-    transition: all 0.3s ease;
+    border-radius: 50px 0 0 50px; /* Forme pilule plus moderne */
+    font-size: 0.95rem;
+    width: 220px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(5px);
 }
 
 #search-input::placeholder {
-    color: rgba(242, 205, 134, 0.6); /* Couleur de placeholder douce */
+    color: rgba(242, 205, 134, 0.5);
+    font-style: italic;
+    font-size: 0.9rem;
 }
 
+/* Effet d'expansion au focus */
 #search-input:focus {
     outline: none;
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: var(--accent-color);
+    width: 300px; /* La barre s'allonge quand on tape */
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--secondary-color);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
 }
 
 /* --- Bouton de recherche --- */
 #search-button {
     background-color: var(--secondary-color);
-    color: var(--primary-color, #2e3440); /* Utiliser la couleur sombre du header */
+    color: #000; /* Texte noir sur fond jaune/doré pour le contraste */
     border: 1px solid var(--secondary-color);
     border-left: none; 
-    padding: 0.6rem 1rem;
-    border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0 50px 50px 0; /* Forme pilule */
     cursor: pointer;
     font-size: 1rem;
-    line-height: 1; 
-    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 #search-button:hover {
-    background-color: var(--accent-color); /* Couleur d'accentuation au survol */
-    border-color: var(--accent-color);
+    background-color: #fff; /* Flash blanc au survol */
+    border-color: #fff;
+    transform: scale(1.05);
 }
 
 /* --- Conteneur des résultats (Autocomplete) --- */
 .search-results {
     position: absolute;
-    top: calc(100% + 5px); /* Juste sous la barre de recherche */
+    top: calc(100% + 12px); /* Un peu plus d'espace */
     left: 0;
-    /* La largeur prendra la taille du conteneur de recherche */
-    width: calc(100% + 1px); 
-    max-height: 350px;
+    width: 120%; /* Plus large que la barre pour le confort */
+    max-height: 400px;
     overflow-y: auto;
-    background: var(--primary-color, #2e3440); /* Fond sombre */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-base);
-    box-shadow: var(--shadow-xl);
-    z-index: 1000; /* Doit être au-dessus de tout sauf du header lui-même */
-    display: none; /* Masqué par défaut */
+    background: rgba(30, 34, 42, 0.98); /* Fond très sombre et opaque */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(242, 205, 134, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    display: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .search-results.active {
@@ -340,110 +352,55 @@ header.scrolled {
 
 /* --- Style de chaque résultat --- */
 .search-result-item {
-    padding: 0.8rem 1rem;
+    transition: all 0.2s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.search-result-item:last-child {
-    border-bottom: none;
+.search-result-item:hover {
+    background-color: rgba(242, 205, 134, 0.1);
 }
 
 .search-result-item a {
+    padding: 1rem;
     text-decoration: none;
-    color: var(--secondary-color);
-    display: block;
+    color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 0.95rem;
 }
 
-.search-result-item a:hover {
-    color: var(--accent-color);
-}
-
-.search-result-item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
 .result-type {
-    font-size: 0.75rem;
-    color: rgba(242, 205, 134, 0.7); /* Utiliser un accent clair */
-    margin-left: 10px;
-    /* Assure que le type de contenu (Film, Série, etc.) est aligné */
-    float: right; 
+    font-size: 0.7rem;
+    background: rgba(242, 205, 134, 0.15);
+    color: var(--secondary-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-/* --- Gestion du responsive pour la barre de recherche --- */
-@media (max-width: 1050px) {
-    /* Rendre la barre de recherche un peu plus compacte sur les écrans intermédiaires */
-    #search-input {
-        width: 150px;
-    }
-}
-
+/* --- Responsive --- */
 @media (max-width: 850px) {
-    /* En mode mobile, on place la barre de recherche à part entière */
     .search-container {
-        width: 90%;
-        margin: 0.5rem auto 0; /* Centre et ajoute un peu de marge */
-        order: 3; /* Place la barre de recherche sous le logo/titre dans le header-content */
-    }
-
-    /* Redimensionnement à 100% de la largeur du conteneur parent (90% du header) */
-    #search-input {
         width: 100%;
-        border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+        margin: 1rem 0;
+        justify-content: center;
     }
     
+    #search-input {
+        width: 70%; /* Largeur équilibrée sur mobile */
+    }
+    
+    #search-input:focus {
+        width: 80%;
+    }
+
     .search-results {
-        width: calc(100% + 1px); 
-        /* En mobile, les résultats s'étendent sur toute la largeur de la barre */
+        width: 100%;
+        left: 0;
     }
-    
-    /* Le header-content doit être configuré pour accepter ce changement d'ordre */
-    .header-content {
-        /* On retire 'justify-content: space-between;' et on passe en mode empilé/flux */
-        flex-wrap: wrap; 
-        justify-content: flex-start; 
-        gap: 1rem 2rem; /* Espacement entre les éléments */
-    }
-}
-
-/* --- Menu responsive --- */
-@media (max-width: 850px) {
-  .main-nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    flex-direction: column;
-    background: rgba(46, 52, 64, 0.98);
-    backdrop-filter: blur(8px);
-    width: 100%;
-    text-align: center;
-    padding: 1.5rem 0;
-    display: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Affiche le menu quand le toggle est activé */
-  #nav-toggle:checked ~ .main-nav {
-    display: flex;
-  }
-
-  .main-nav a {
-    display: block;
-    width: 90%;
-    margin: 0.3rem auto;
-    border: none;
-    border-bottom: 1px solid rgba(242, 205, 134, 0.15);
-    border-radius: 0;
-    padding: 1rem;
-  }
-
-  .burger-menu {
-    display: flex;
-    position: absolute;
-    right: 1.5rem;
-    top: 1.3rem;
-  }
 }
 
 
@@ -742,25 +699,42 @@ header.scrolled {
  * 0. STYLES GÉNÉRAUX/UTILITAIRES
  * ======================================================================== */
 
-/* Style du bouton générique (utilisé dans le Hero) */
+/* Style du bouton générique amélioré */
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px;
+    padding: 0.9rem 2rem;
+    border-radius: 6px;
+    font-family: 'Bebas Neue', sans-serif; /* Pour le style cinématographique */
+    font-size: 1.1rem;
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: 
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
 .btn--primary {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: var(--secondary-color); /* Couleur initiale (ex: jaune ou blanc) */
+    color: var(--primary-color); /* Couleur du texte initiale (ex: noir) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
+
+/* Changement au survol : passage en NOIR */
 .btn--primary:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background-color: #000000; /* Force le fond en noir */
+    color: #ffffff; /* Force le texte en blanc pour la lisibilité */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn--primary:active {
+    transform: translateY(-2px);
 }
 
 /** ========================================================================
@@ -768,27 +742,29 @@ header.scrolled {
  * ======================================================================== */
 
 .hero-block {
-    height: 70vh; /* Augmentation de la hauteur pour l'impact */
+    height: 70vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-size: cover; /* Assure que l'image couvre bien */
+    background-size: cover;
     background-position: center;
     position: relative;
-    /* Ajout d'une pseudo-classe pour un effet de gradient plus fort */
+    /* On s'assure qu'il n'y a pas de padding interne en bas de la section elle-même */
+    padding-bottom: 0; 
 }
 
 .hero-block__content {
     z-index: 10;
     color: #fff;
     max-width: 90%;
-    padding: 2rem;
+    /* On réduit le padding vertical global du contenu */
+    padding: 1rem 2rem; 
 }
 
 .hero-block__title {
     font-family: var(--font-family-title);
-    font-size: 5rem; /* Plus grand */
+    font-size: 5rem;
     margin-bottom: 0.5rem;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
     letter-spacing: 3px;
@@ -797,10 +773,15 @@ header.scrolled {
 
 .hero-block__subtitle {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    /* Réduction drastique de la marge sous le texte avant le bouton */
+    margin-bottom: 1.2rem; 
     font-weight: 400;
 }
 
+/* Optionnel : Si ton bouton a une marge par défaut, on la supprime ici */
+.hero-block__content .btn {
+    margin-bottom: 0;
+}
 /** ========================================================================
  * 2. REVIEWS LIST & LETTERBOXD
  * ======================================================================== */
@@ -814,51 +795,64 @@ header.scrolled {
     flex-direction: column; 
     gap: 3rem; /* Plus grand espacement entre les sections */
 }
-
-/* 2.1. Letterboxd Link (Styles existants/nettoyés) */
+/* 2.1. Letterboxd Link - Style Premium */
 .reviews-list__letterboxd-link {
     background-color: var(--primary-color);
-    border: 1px solid var(--secondary-color);
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure plus discrète */
+    border-radius: 16px; /* Plus arrondi pour le côté moderne */
     max-width: 700px;
-    margin: 0 auto; /* Ajusté */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    margin: 3rem auto; /* Plus d'espace autour du bloc */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem 0.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2rem 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Effet ressort */
+    position: relative;
+    overflow: hidden;
 }
 
+/* Effet de lueur au survol du bloc complet */
 .reviews-list__letterboxd-link:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(64, 180, 121, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    border-color: var(--secondary-color);
 }
 
 .letterboxd-heading {
-    font-family: var(--font-family-title);
-    font-size: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
     text-align: center;
+    transition: color 0.3s ease;
+}
+
+.reviews-list__letterboxd-link:hover .letterboxd-heading {
+    color: var(--secondary-color); /* Le titre s'éclaire au survol */
 }
 
 .letterboxd-icon {
     width: 280px; 
     height: auto;
     max-width: 90%;
-    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease;
-    opacity: 0.95;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); 
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0.9;
+    filter: grayscale(20%) drop-shadow(0 4px 10px rgba(0,0,0,0.5)); 
 }
 
 .letterboxd-icon:hover {
-    transform: scale(1.1) rotate(1deg);
+    transform: scale(1.15) rotate(-2deg); /* Rotation inverse pour plus de dynamisme */
     opacity: 1;
-    filter: drop-shadow(0 0 15px var(--secondary-color));
+    filter: grayscale(0%) drop-shadow(0 0 20px rgba(64, 180, 121, 0.5)); /* Lueur verte Letterboxd */
+}
+
+/* Petit ajout : indicateur visuel de clic */
+.reviews-list__letterboxd-link:active {
+    transform: translateY(-4px) scale(0.98);
 }
 
 /* 2.2. Reviews Grid & Cards (RÉORGANISÉ et DYNAMIQUE) */
@@ -867,64 +861,66 @@ header.scrolled {
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Min-width légèrement réduit pour plus de flexibilité */
     gap: 2.5rem; 
-    margin-top: 1rem; /* Moins d'espace ici car Letterboxd a déjà de l'espace */
+    margin-top: 2rem; /* Moins d'espace ici car Letterboxd a déjà de l'espace */
 }
 
 .review-card { 
     background-color: #fff; 
-    border-radius: 12px; /* Rayon légèrement plus grand */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Ombre plus marquée */
+    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
     overflow: hidden; 
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     display: flex; 
     flex-direction: column; 
     text-align: left; 
-    border: 1px solid rgba(0,0,0,0.05); /* Ajout d'une bordure subtile */
-    min-height: 550px; /* Hauteur minimale augmentée */
+    border: 1px solid rgba(0,0,0,0.05); 
+    min-height: 550px; 
 }
 
-/* Le lien englobe toute la carte et gère le survol */
+/* Le lien englobe toute la carte */
 .review-card__link {
     display: flex;
     flex-direction: column;
     height: 100%;
+    text-decoration: none; /* Évite les soulignements par défaut */
 }
 
 .review-card:hover { 
-    transform: translateY(-10px); /* Montée plus prononcée */
-    box-shadow: 0 18px 40px rgba(0,0,0,0.25); /* Ombre plus puissante */
-    border-color: var(--secondary-color); /* Bordure colorée au survol */
+    transform: translateY(-10px); 
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25); 
+    border-color: #000; /* Bordure noire plus élégante au survol */
 }
 
 .review-card__image { 
     width: 100%; 
-    height: 240px; /* Image légèrement plus haute */
+    height: 240px; 
     object-fit: cover; 
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .review-card:hover .review-card__image {
-    transform: scale(1.05); /* Zoom subtil de l'image au survol */
+    transform: scale(1.08); /* Zoom un peu plus immersif */
 }
 
 .review-card__content { 
-    padding: 1.7rem; /* Plus de padding */
+    padding: 1.7rem; 
     display: flex; 
     flex-direction: column; 
     flex-grow: 1; 
 }
 
 .review-card__title { 
-    font-size: 1.75rem; /* Plus grand */
+    font-size: 1.75rem; 
     color: var(--primary-color); 
     margin-bottom: 0.5rem;
     line-height: 1.2; 
     font-weight: 700; 
+    font-family: 'Bebas Neue', sans-serif; /* Style ciné */
 }
 
 .review-card__meta { 
     font-size: 0.9rem; 
-    color: #999; /* Couleur des métadonnées plus douce */
+    color: #999; 
     margin-bottom: 1rem;
     font-style: italic;
 }
@@ -942,25 +938,28 @@ header.scrolled {
     -webkit-box-orient: vertical; 
 }
 
-/* Le bouton "Lire plus" devient un Span dans le nouveau HTML */
+/* --- Bouton "Lire plus" (Span) --- */
 .review-card__read-more { 
     display: inline-block; 
     padding: 0.8rem 1.6rem; 
     background-color: var(--secondary-color); 
     color: var(--primary-color); 
-    border-radius: 8px; 
+    border-radius: 6px; 
     font-weight: 700;
     text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; 
+    letter-spacing: 1px;
+    transition: all 0.3s ease; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
     align-self: flex-start;
-    margin-top: 1rem; /* Maintient l'espacement */
+    margin-top: 1rem; 
 }
 
+/* Quand on survole LA CARTE, le bouton passe en NOIR */
 .review-card:hover .review-card__read-more { 
-    background-color: var(--accent-color); 
-    transform: translateY(-2px) scale(1.02); 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+    background-color: #000000; /* Fond noir au survol */
+    color: #ffffff; /* Texte blanc */
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3); 
 }
 /* ========================================================================
    6) Mentions légales, À propos, Contact – Version raffinée
@@ -1468,13 +1467,14 @@ footer p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- À LA UNE (CARTES INTERACTIVES) --- */
+/* --- À LA UNE (CARTES INTERACTIVES - OPTIMISÉ POUR 4) --- */
 .featured-section {
   background: linear-gradient(180deg, #fff 0%, #f4f4f4 100%);
   padding: 4rem 1.5rem;
   position: relative;
   overflow: hidden;
 }
+
 .featured-section::before {
   content: "";
   position: absolute;
@@ -1485,49 +1485,84 @@ footer p {
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
+  /* On utilise auto-fit avec une taille max pour que les cartes se centrent */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); 
+  gap: 2rem; 
+  max-width: 1400px; 
   margin: 0 auto;
+  justify-content: center; /* C'est LA règle magique pour centrer s'il y en a moins de 4 */
 }
+
+/* --- RESPONSIVE AJUSTÉ --- */
+@media (max-width: 1350px) {
+  .featured-grid {
+    /* Pour éviter d'avoir une carte isolée sur une ligne, on passe à 2 colonnes propres */
+    grid-template-columns: repeat(2, minmax(280px, 400px)); 
+  }
+}
+
+@media (max-width: 650px) {
+  .featured-grid {
+    grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
+    padding: 0 10px;
+  }
+}
+
 .featured-card {
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.05);
 }
+
 .featured-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
 }
+
 .featured-card img {
   width: 100%;
-  height: 220px;
+  height: 180px; /* Légèrement réduit pour garder un bon ratio avec 4 cartes */
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
+
+.featured-card:hover img {
+    transform: scale(1.05);
+}
+
 .featured-content {
-  padding: 1.3rem 1.4rem 1.8rem;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
+
 .featured-content h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem; /* Légèrement réduit pour s'adapter aux colonnes plus étroites */
   color: var(--primary-color);
   margin-bottom: 0.6rem;
   font-weight: 700;
+  line-height: 1.3;
 }
+
 .featured-content p {
   color: var(--text-color-dark);
-  font-size: 1rem;
+  font-size: 0.95rem;
   flex-grow: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
 }
+
 .featured-content .btn {
   align-self: flex-start;
+  padding: 0.6rem 1.2rem; /* Bouton un peu plus compact */
+  font-size: 0.9rem;
 }
 
 /* --- Titre section doré cinéma --- */
