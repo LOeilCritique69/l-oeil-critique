@@ -112,248 +112,199 @@ a { color: inherit; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } 100% { transform: scale(1); opacity: 1; } }
 
 /* ========================================================================
-   1) Header, Logo & Navigation (version sans JS)
+   1) CONFIGURATION DU HEADER (L'ossature)
    ======================================================================== */
 header {
   position: sticky;
   top: 0;
-  z-index: 1001;
+  z-index: 2000;
   background: rgba(46, 52, 64, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: var(--shadow-md);
-  transition: all 0.35s ease;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 header.scrolled {
+  height: 60px;
   background: rgba(46, 52, 64, 0.95);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* --- Structure globale --- */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.45rem 1rem;
-  column-gap: 1.5rem;          /* ← Ajoute de l’air entre tous les éléments */
-  flex-wrap: nowrap;           /* ← Interdit tout retour à la ligne */
+  padding: 0 1.5rem;
+  gap: 1.5rem;
 }
 
-/* --- Logo & Titre --- */
+/* ========================================================================
+   2) LOGO & TITRE (Remarquable)
+   ======================================================================== */
 .logo-link {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  flex-shrink: 0;              /* ← Empêche le logo + titre de rétrécir */
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo {
-  width: 3rem;
+  width: 2.8rem;
   height: auto;
-  border-radius: var(--border-radius-base);
-  transition: transform 0.3s ease;
-}
-
-.logo-link:hover .logo {
-  transform: scale(1.08);
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
 .site-title {
   font-family: var(--font-family-title);
-  font-size: 2rem;
-  font-weight: 600;
-  padding-right: 20px;         /* ← Plus d’espace au titre */
-  white-space: nowrap;         /* ← Jamais de retour à la ligne */
+  font-size: 2.2rem;
+  font-weight: 800;
   color: var(--secondary-color);
-  letter-spacing: 1px;
   text-transform: uppercase;
-  transition: color 0.3s ease;
-  flex-shrink: 0;              /* ← Ne doit PAS rétrécir */
+  letter-spacing: 1px;
+  line-height: 1;
+  transition: transform 0.3s ease;
 }
 
 .site-title-link {
   color: inherit;
   text-decoration: none;
+  display: inline-block;
 }
 
 .site-title-link:hover {
-  color: var(--accent-color);
+  transform: scale(1.03);
 }
 
 /* ========================================================================
-   NAVIGATION – FIX des mots à la ligne + espacements
+   3) NAVIGATION DESKTOP
    ======================================================================== */
-
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
-  white-space: nowrap;        /* ← Empêche totalement les retours à la ligne */
-  flex-shrink: 0;             /* ← La nav ne rétrécit jamais */
+  gap: 0.8rem;
 }
 
 .main-nav a {
-  position: relative;
   color: var(--secondary-color);
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.6rem 1.1rem;
-  border-radius: var(--border-radius-base);
-  border: 1px solid rgba(242, 205, 134, 0.4);
-  transition: all 0.3s ease-in-out;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(242, 205, 134, 0.2);
   text-decoration: none;
-  white-space: nowrap;        /* ← Encore une sécurité */
+  transition: 0.3s;
+  white-space: nowrap;
 }
 
-.main-nav a:hover,
+.main-nav a:hover, 
 .main-nav a.active {
-  background-color: var(--secondary-color);
+  background: var(--secondary-color);
   color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* ========================================================================
-   BURGER MENU
+   4) BARRE DE RECHERCHE (Néo-minimaliste)
    ======================================================================== */
-
-#nav-toggle {
-  display: none;
-}
-
-.burger-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 1001;
-  flex-shrink: 0;            /* Important */
-}
-
-.burger-menu span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background-color: var(--secondary-color);
-  border-radius: 2px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* --- Animation burger --- */
-#nav-toggle:checked + .burger-menu span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-#nav-toggle:checked + .burger-menu span:nth-child(2) {
-  opacity: 0;
-}
-
-#nav-toggle:checked + .burger-menu span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-
-/* ========================================================================
-   2) Barre de Recherche (Search Bar) - Version Premium
-   ======================================================================== */
-
 .search-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-left: 20px; 
-    z-index: 100; /* Augmenté pour passer au-dessus de tout */
-    transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50px;
+  border: 1px solid rgba(242, 205, 134, 0.15);
+  padding: 2px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* --- Champ de saisie (Input) --- */
 #search-input {
-    padding: 0.7rem 1.2rem;
-    background-color: rgba(255, 255, 255, 0.05); 
-    color: #fff;
-    border: 1px solid rgba(242, 205, 134, 0.3);
-    border-right: none;
-    border-radius: 50px 0 0 50px; /* Forme pilule plus moderne */
-    font-size: 0.95rem;
-    width: 220px;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    backdrop-filter: blur(5px);
+  padding: 0.7rem 1.2rem;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  width: 180px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: width 0.4s ease;
 }
 
 #search-input::placeholder {
-    color: rgba(242, 205, 134, 0.5);
-    font-style: italic;
-    font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-/* Effet d'expansion au focus */
-#search-input:focus {
-    outline: none;
-    width: 300px; /* La barre s'allonge quand on tape */
-    background-color: rgba(255, 255, 255, 0.12);
-    border-color: var(--secondary-color);
-    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-}
-
-/* --- Bouton de recherche --- */
 #search-button {
-    background-color: var(--secondary-color);
-    color: #000; /* Texte noir sur fond jaune/doré pour le contraste */
-    border: 1px solid var(--secondary-color);
-    border-left: none; 
-    padding: 0.7rem 1.2rem;
-    border-radius: 0 50px 50px 0; /* Forme pilule */
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  background: var(--secondary-color);
+  color: #1a1a1a;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 #search-button:hover {
-    background-color: #fff; /* Flash blanc au survol */
-    border-color: #fff;
-    transform: scale(1.05);
+  background: #ffffff;
+  transform: rotate(15deg) scale(1.1);
 }
 
-/* --- Conteneur des résultats (Autocomplete) --- */
+/* ========================================================================
+   CONTENEUR DES RÉSULTATS (FIX COULEUR BLANCHE)
+   ======================================================================== */
 .search-results {
     position: absolute;
-    top: calc(100% + 12px); /* Un peu plus d'espace */
+    top: calc(100% + 10px);
     left: 0;
-    width: 120%; /* Plus large que la barre pour le confort */
-    max-height: 400px;
+    width: 100%;
+    min-width: 300px;
+    max-height: 380px; 
     overflow-y: auto;
-    background: rgba(30, 34, 42, 0.98); /* Fond très sombre et opaque */
+    
+    /* Fond sombre forcé pour faire ressortir le blanc */
+    background: #1e222a; 
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(242, 205, 134, 0.2);
+    
+    border: 1px solid var(--secondary-color);
     border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-2xl);
+    
     display: none;
-    animation: slideDown 0.3s ease-out;
+    z-index: 3000;
 }
 
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Scrollbar */
+.search-results::-webkit-scrollbar {
+    width: 4px;
+}
+.search-results::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
 }
 
 .search-results.active {
     display: block;
+    animation: slideDown var(--transition-speed) ease-out;
 }
 
-/* --- Style de chaque résultat --- */
 .search-result-item {
-    transition: all 0.2s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
 }
 
 .search-result-item:hover {
@@ -361,48 +312,130 @@ header.scrolled {
 }
 
 .search-result-item a {
-    padding: 1rem;
+    color: white;
+    padding: 12px 18px;
     text-decoration: none;
-    color: #eee;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.95rem;
+    gap: 15px;
 }
 
+/* --- LE TEXTE ICI EST FORCÉ EN BLANC --- */
+.result-title {
+    color: #ffffff !important; /* Force le blanc pur */
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Badge Catégorie */
 .result-type {
+    font-family: var(--font-family-title);
     font-size: 0.7rem;
-    background: rgba(242, 205, 134, 0.15);
     color: var(--secondary-color);
+    border: 1px solid rgba(242, 204, 134, 0.5);
     padding: 2px 8px;
     border-radius: 4px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 1px;
+    flex-shrink: 0;
 }
 
-/* --- Responsive --- */
-@media (max-width: 850px) {
-    .search-container {
-        width: 100%;
-        margin: 1rem 0;
-        justify-content: center;
-    }
-    
-    #search-input {
-        width: 70%; /* Largeur équilibrée sur mobile */
-    }
-    
-    #search-input:focus {
-        width: 80%;
-    }
+/* ========================================================================
+   5) BURGER & MOBILE RESPONSIVE
+   ======================================================================== */
+#nav-toggle { display: none; }
 
-    .search-results {
-        width: 100%;
-        left: 0;
-    }
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 2100;
+  width: 30px;
 }
 
+.burger-menu span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: 0.3s;
+}
+
+/* Animation de l'icône Burger en X */
+#nav-toggle:checked + .burger-menu span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#nav-toggle:checked + .burger-menu span:nth-child(2) { opacity: 0; }
+#nav-toggle:checked + .burger-menu span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* --- Media Query Tablettes & Mobiles --- */
+@media (max-width: 1100px) {
+  .site-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 992px) {
+  .site-title { display: none; }
+  .burger-menu { display: flex; }
+  
+  .header-content { padding: 0 1rem; }
+
+  /* On rend la recherche flexible */
+  .search-container { 
+    flex: 1; 
+    justify-content: flex-end; 
+    max-width: 220px; 
+  }
+  
+  #search-input { width: 100% !important; padding: 0.5rem 0.8rem; }
+  #search-input:focus { width: 100% !important; }
+
+  /* Navigation Mobile Compacte (Grille) */
+  .main-nav {
+    display: none; /* Changera en grid via JS ou Checkbox Hack */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(34, 39, 48, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 15px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  #nav-toggle:checked ~ .main-nav {
+    display: grid;
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.85rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(242, 205, 134, 0.1);
+  }
+}
+
+/* --- Media Query Smartphones (Petits) --- */
+@media (max-width: 480px) {
+  .search-container { max-width: 140px; }
+  #search-input::placeholder { color: transparent; }
+  .main-nav { grid-template-columns: 1fr; } /* Repasse en une colonne pour la lisibilité */
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* ========================================================================
    2) Home — Welcome, Slider, Categories
@@ -962,222 +995,295 @@ header.scrolled {
     box-shadow: 0 6px 15px rgba(0,0,0,0.3); 
 }
 /* ========================================================================
-   6) Mentions légales, À propos, Contact – Version raffinée
+   6) MENTIONS, À PROPOS, CONTACT – DESIGN "L'ŒIL CRITIQUE"
    ======================================================================== */
 
-/* ---- Structure générale ---- */
 .a-propos, .mentions-legales, .contact {
   max-width: 900px;
-  margin: 4rem auto;
-  padding: 3rem 2.5rem;
-  background: linear-gradient(180deg, #f5f6f8 0%, #eceef1 100%);
-  border-left: 5px solid var(--accent-color);
-  border-radius: 16px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-  color: var(--primary-color);
-  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  margin: var(--space-10) auto;
+  padding: var(--space-10) var(--space-8);
+  
+  /* Utilisation de ta couleur sombre avec un léger dégradé */
+  background: linear-gradient(145deg, var(--primary-color) 0%, #242933 100%);
+  
+  /* Bordure dorée iconique à gauche */
+  border-left: 4px solid var(--secondary-color);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-2xl);
+  
+  color: var(--text-color-light); /* Texte blanc forcé */
+  font-family: var(--font-family);
   line-height: 1.8;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.a-propos:hover, .mentions-legales:hover, .contact:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform var(--transition-speed) ease;
 }
 
-/* ---- Titres ---- */
+.a-propos:hover, .mentions-legales:hover, .contact:hover {
+  transform: translateY(-5px);
+}
+
+/* ---- Titres (Style Affiche) ---- */
 .a-propos h1, .mentions-legales h1, .contact h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
+  font-family: var(--font-family-title);
+  font-size: 3rem;
   text-align: center;
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+  color: var(--secondary-color); /* Doré */
+  margin-bottom: var(--space-8);
+  letter-spacing: 2px;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--accent-color);
-  display: inline-block;
-  padding-bottom: 0.4rem;
+  /* Soulignement stylisé */
+  background: linear-gradient(transparent 80%, rgba(242, 205, 134, 0.2) 20%);
+  display: block;
 }
 
 .a-propos h2, .mentions-legales h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.7rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
-  position: relative;
-}
-.a-propos h2::before, .mentions-legales h2::before {
-  content: "";
-  position: absolute;
-  left: -1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 100%;
-  background: var(--accent-color);
-  border-radius: 3px;
+  font-family: var(--font-family-title);
+  font-size: 1.8rem;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  color: var(--accent-color); /* Or plus clair */
+  letter-spacing: 1px;
 }
 
-/* ---- Texte ---- */
+/* ---- Contenu (Lisibilité maximale) ---- */
 .a-propos p, .mentions-legales p {
-  margin-bottom: 1.2rem;
-  text-align: justify;
-  color: #222;
-  font-size: 1.05rem;
+  margin-bottom: var(--space-5);
+  text-align: left; /* Justify crée des trous moches, left est plus pro */
+  color: #d8dee9; /* Blanc bleuté plus doux pour les yeux */
+  font-size: 1.1rem;
 }
+
+/* Message d'accueil mis en avant */
+.a-propos .welcome-message {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: var(--space-8);
+  text-align: center;
+  font-style: italic;
+  border-bottom: 1px solid rgba(242, 205, 134, 0.1);
+  padding-bottom: var(--space-4);
+}
+
+/* Mise en gras dorée */
 .a-propos p strong, .mentions-legales p strong {
   color: var(--secondary-color);
   font-weight: 700;
 }
-.a-propos .welcome-message {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent-color);
-  margin-bottom: 2rem;
-  text-align: center;
-}
+
+/* Liens stylisés */
 .a-propos a, .mentions-legales a {
-  color: var(--accent-color);
-  font-weight: 600;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-.a-propos a:hover, .mentions-legales a:hover {
   color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-speed) ease;
+}
+
+.a-propos a:hover, .mentions-legales a:hover {
+  border-bottom-color: var(--secondary-color);
+  opacity: 0.8;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .a-propos, .mentions-legales, .contact {
+    margin: var(--space-6) 1rem;
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .a-propos h1, .mentions-legales h1 {
+    font-size: 2.2rem;
+  }
 }
 
 /* ========================================================================
-   Section Contact – Version sombre, élégante et cohérente avec le site
+   Section Contact – Design Cinéma (Sombre & Or)
    ======================================================================== */
 .contact {
   max-width: 750px;
-  margin: 4rem auto;
-  padding: 2.5rem 2rem;
-  background: linear-gradient(180deg, #1b1b1b 0%, #222 100%);
+  margin: var(--space-10) auto;
+  padding: 3rem 2rem;
+  /* On utilise ta variable primary pour le fond */
+  background: linear-gradient(145deg, var(--primary-color) 0%, #1a1d23 100%);
   border-left: 4px solid var(--secondary-color);
-  border-radius: 12px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-2xl);
   color: var(--text-color-light);
-  font-family: 'Roboto', sans-serif;
   text-align: center;
 }
+
 .contact h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.3rem;
+  font-family: var(--font-family-title); /* Bebas Neue */
+  font-size: 2.8rem;
+  color: var(--secondary-color);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.2rem;
-  border-bottom: 2px solid var(--secondary-color);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-4);
   display: inline-block;
-  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
 }
 
 .contact p {
-  font-size: 1.05rem;
-  color: #ccc;
-  margin-bottom: 2rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #aeb3bc; /* Un gris plus doux que #ccc */
+  margin-bottom: var(--space-8);
+  line-height: 1.8;
 }
 
+/* ---- Formulaire ---- */
 .contact form {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 1.5rem;
   text-align: left;
-  margin-top: 1rem;
 }
 
 .contact label {
   font-weight: 600;
-  color: var(--text-color-light);
-  font-size: 1rem;
+  color: var(--secondary-color); /* Label doré pour plus de style */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .contact input,
 .contact textarea {
   width: 100%;
-  padding: 0.9rem 1rem;
-  border: 1px solid #444;
+  padding: 1rem;
+  /* Fond ultra sombre pour le contraste avec le doré */
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(242, 205, 134, 0.2); 
   border-radius: 8px;
-  background: #111;
-  color: #f5f5f5;
+  color: #ffffff;
+  font-family: var(--font-family);
   font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all var(--transition-speed) ease;
 }
 
 .contact input:focus,
 .contact textarea:focus {
-  border-color: var(--secondary-color);
-  box-shadow: 0 0 8px rgba(178, 34, 34, 0.4);
   outline: none;
+  border-color: var(--secondary-color);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(242, 205, 134, 0.15);
 }
 
 .contact textarea {
+  min-height: 160px;
   resize: vertical;
-  min-height: 150px;
 }
 
+/* ---- Bouton (Suppression du rouge) ---- */
 .contact button[type="submit"] {
   background: var(--secondary-color);
-  color: #fff;
+  color: var(--primary-color); /* Texte sombre sur bouton doré */
   border: none;
-  border-radius: 8px;
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
+  border-radius: 50px; /* Style pilule comme ton bouton recherche */
+  padding: 1rem 3rem;
+  font-family: var(--font-family-title);
+  font-size: 1.4rem;
   font-weight: 700;
+  letter-spacing: 1px;
   cursor: pointer;
   align-self: center;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: all var(--transition-speed) ease;
+  margin-top: 1rem;
 }
 
 .contact button[type="submit"]:hover {
-  background: #b22222;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(178, 34, 34, 0.4);
+  background: #ffffff; /* Devient blanc au survol comme ton bouton recherche */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .contact {
+    margin: 2rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+  .contact h1 { font-size: 2.2rem; }
+  .contact button[type="submit"] { width: 100%; }
 }
 
 /* ========================================================================
-   7) Footer
+   7) Footer – L'Œil Critique (Épuré & Institutionnel)
    ======================================================================== */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: var(--primary-color);
+  padding: 3rem 1.5rem; /* Un peu plus d'espace pour le prestige */
+  background: linear-gradient(to bottom, var(--primary-color), #1a1d23);
   color: var(--secondary-color);
   font-size: 0.9rem;
   margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(242, 205, 134, 0.1); /* Bordure dorée très subtile */
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .footer-links {
-  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.2rem;
+  gap: 2rem; /* Plus d'espace entre les liens */
 }
 
 .footer-links a {
   color: var(--secondary-color);
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  transition: color var(--transition-speed) ease;
+  font-family: var(--font-family-title); /* Style "Bebas Neue" pour les titres de sections */
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+/* Petit effet de soulignement élégant au survol */
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width var(--transition-speed) ease;
 }
 
 .footer-links a:hover {
   color: var(--accent-color);
 }
 
+.footer-links a:hover::after {
+  width: 100%;
+}
+
 footer p {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
-  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.4); /* Blanc très tamisé pour le copyright */
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  font-family: var(--font-family);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  footer {
+    padding: 2rem 1rem;
+  }
 }
 
 /* ========================================================================
