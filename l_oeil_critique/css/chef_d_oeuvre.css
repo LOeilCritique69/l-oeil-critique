@@ -55,15 +55,13 @@
 
 /* Reset modernisé */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
-body {
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Supprime définitivement le blanc à droite */
   background-color: var(--background-color);
   font-family: var(--font-family);
   color: var(--text-color-dark);
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 main { flex-grow: 1; padding: 2rem 0; }
 img { max-width: 100%; display: block; }
@@ -118,13 +116,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 2000;
+  height: 70px;
+  display: flex;
+  align-items: center;
   background: rgba(46, 52, 64, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  height: 70px;
-  display: flex;
-  align-items: center;
   transition: all 0.3s ease;
 }
 
@@ -141,18 +139,19 @@ header.scrolled {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: nowrap; /* Empêche le décalage au zoom */
 }
 
 /* ========================================================================
-   2) LOGO & TITRE (Remarquable)
+   2) LOGO & TITRE
    ======================================================================== */
 .logo-link {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  text-decoration: none;
-  flex-shrink: 0;
+  text-decoration: none !important;
+  flex-shrink: 0; /* Garde sa taille au zoom */
 }
 
 .logo {
@@ -170,13 +169,13 @@ header.scrolled {
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1;
-  transition: transform 0.3s ease;
 }
 
 .site-title-link {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block;
+  transition: transform 0.3s ease;
 }
 
 .site-title-link:hover {
@@ -198,7 +197,7 @@ header.scrolled {
   padding: 0.5rem 0.8rem;
   border-radius: 6px;
   border: 1px solid rgba(242, 205, 134, 0.2);
-  text-decoration: none;
+  text-decoration: none !important;
   transition: 0.3s;
   white-space: nowrap;
 }
@@ -210,230 +209,188 @@ header.scrolled {
 }
 
 /* ========================================================================
-   4) BARRE DE RECHERCHE (Néo-minimaliste)
+   4) BLOC RECHERCHE & RÉSULTATS
    ======================================================================== */
 .search-container {
   position: relative;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 50px;
-  border: 1px solid rgba(242, 205, 134, 0.15);
-  padding: 2px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px;
+  transition: all 0.3s ease;
+  flex-shrink: 1; /* C'est elle qui rétrécit en premier au zoom */
+  min-width: 42px; /* Garde au moins le bouton visible */
+}
+
+.search-container:focus-within {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(242, 205, 134, 0.1);
 }
 
 #search-input {
-  padding: 0.7rem 1.2rem;
+  padding: 0.6rem 1rem;
   background: transparent;
   color: #ffffff;
   border: none;
   outline: none;
-  width: 180px;
-  font-size: 0.95rem;
+  width: 160px;
+  font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: width 0.4s ease;
+  transition: width 0.3s ease;
 }
+
+#search-input:focus { width: 200px; }
 
 #search-input::placeholder {
   color: rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.7rem;
   letter-spacing: 1px;
 }
 
 #search-button {
   background: var(--secondary-color);
-  color: #1a1a1a;
+  color: var(--primary-color);
   border: none;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 #search-button:hover {
   background: #ffffff;
-  transform: rotate(15deg) scale(1.1);
+  transform: translateY(-1px);
 }
 
-/* ========================================================================
-   CONTENEUR DES RÉSULTATS (FIX COULEUR BLANCHE)
-   ======================================================================== */
+/* --- Résultats --- */
 .search-results {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    width: 100%;
-    min-width: 300px;
-    max-height: 380px; 
-    overflow-y: auto;
-    
-    /* Fond sombre forcé pour faire ressortir le blanc */
-    background: #1e222a; 
-    backdrop-filter: blur(15px);
-    
-    border: 1px solid var(--secondary-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow-2xl);
-    
-    display: none;
-    z-index: 3000;
-}
-
-/* Scrollbar */
-.search-results::-webkit-scrollbar {
-    width: 4px;
-}
-.search-results::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
-    border-radius: 10px;
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #1e222a;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3000;
 }
 
 .search-results.active {
-    display: block;
-    animation: slideDown var(--transition-speed) ease-out;
+  display: block;
+  animation: fadeIn 0.2s ease-out forwards;
 }
 
-.search-result-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.2s ease;
-}
-
-.search-result-item:hover {
-    background-color: rgba(242, 205, 134, 0.1);
-}
+.search-results::-webkit-scrollbar { width: 4px; }
+.search-results::-webkit-scrollbar-thumb { background: var(--secondary-color); border-radius: 10px; }
 
 .search-result-item a {
-    color: white;
-    padding: 12px 18px;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background 0.2s;
 }
 
-/* --- LE TEXTE ICI EST FORCÉ EN BLANC --- */
-.result-title {
-    color: #ffffff !important; /* Force le blanc pur */
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Badge Catégorie */
-.result-type {
-    font-family: var(--font-family-title);
-    font-size: 0.7rem;
-    color: var(--secondary-color);
-    border: 1px solid rgba(242, 204, 134, 0.5);
-    padding: 2px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
-    flex-shrink: 0;
-}
+.search-result-item:hover { background: rgba(242, 205, 134, 0.08); }
 
 /* ========================================================================
-   5) BURGER & MOBILE RESPONSIVE
+   5) RESPONSIVE & BURGER (Correction Zoom)
    ======================================================================== */
-#nav-toggle { display: none; }
-
 .burger-menu {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
   z-index: 2100;
-  width: 30px;
+  flex-shrink: 0; /* INTERDIT de disparaître au zoom */
 }
 
 .burger-menu span {
-  display: block;
-  width: 25px;
+  width: 24px;
   height: 2px;
   background: var(--secondary-color);
-  transition: 0.3s;
-}
-
-/* Animation de l'icône Burger en X */
-#nav-toggle:checked + .burger-menu span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-#nav-toggle:checked + .burger-menu span:nth-child(2) { opacity: 0; }
-#nav-toggle:checked + .burger-menu span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* --- Media Query Tablettes & Mobiles --- */
-@media (max-width: 1100px) {
-  .site-title { font-size: 1.8rem; }
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (max-width: 992px) {
-  .site-title { display: none; }
-  .burger-menu { display: flex; }
-  
-  .header-content { padding: 0 1rem; }
+  .header-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10px; /* Espace minimum entre les blocs */
+    padding: 0 1rem;
+  }
 
-  /* On rend la recherche flexible */
-  .search-container { 
-    flex: 1; 
-    justify-content: flex-end; 
-    max-width: 220px; 
+  /* 1) LOGO & TITRE : On réduit l'encombrement */
+  .logo-link {
+    flex-shrink: 0; /* Interdit au logo de s'écraser */
+    max-width: 40%; /* Ne prend pas plus de 40% de la largeur */
   }
   
-  #search-input { width: 100% !important; padding: 0.5rem 0.8rem; }
-  #search-input:focus { width: 100% !important; }
-
-  /* Navigation Mobile Compacte (Grille) */
-  .main-nav {
-    display: none; /* Changera en grid via JS ou Checkbox Hack */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(34, 39, 48, 0.98);
-    backdrop-filter: blur(20px);
-    padding: 15px;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px;
-    border-bottom: 2px solid var(--secondary-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  .site-title {
+    font-size: 1.2rem; /* Titre plus petit pour laisser de l'air */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Coupe proprement si le titre est trop long */
   }
 
-  #nav-toggle:checked ~ .main-nav {
-    display: grid;
-    animation: slideDown 0.3s ease-out forwards;
+  /* 2) BARRE DE RECHERCHE : Elle devient l'élément ajustable */
+  .search-container {
+    flex: 1; /* Elle prend tout l'espace restant */
+    min-width: 100px; /* Mais ne descend pas en dessous de 100px */
+    max-width: 200px; /* Et ne dépasse pas 200px pour ne pas étouffer le reste */
+    order: 2;
+    margin: 0 5px; /* Petit tampon sur les côtés */
   }
 
-  .main-nav a {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 0.85rem;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(242, 205, 134, 0.1);
+  #search-input {
+    width: 100%; /* L'input remplit son container flexible */
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* 3) BURGER : On le fige à droite */
+  .burger-menu {
+    display: flex !important;
+    flex-shrink: 0; /* Interdit de rétrécir */
+    order: 3;
+    margin-left: auto; /* Force le collage à droite */
   }
 }
 
-/* --- Media Query Smartphones (Petits) --- */
 @media (max-width: 480px) {
-  .search-container { max-width: 140px; }
-  #search-input::placeholder { color: transparent; }
-  .main-nav { grid-template-columns: 1fr; } /* Repasse en une colonne pour la lisibilité */
+  .logo-link { gap: 0.5rem; }
+  .site-title { display: none; } /* Cache le texte sur mini-mobile pour sauver le burger */
+  .search-container { max-width: 150px; }
+  #search-input::placeholder { display: none; }
+  .main-nav { grid-template-columns: 1fr; }
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
