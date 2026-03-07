@@ -108,27 +108,30 @@ a { color: inherit; }
 /* Label générique "Nouveau" */
 .new-label { position: absolute; background-color: crimson; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px; animation: pulse 1.5s infinite; z-index: 10; white-space: nowrap; box-shadow: 0 2px 8px rgba(220,20,60,0.5); }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } 100% { transform: scale(1); opacity: 1; } }
-
 /* ========================================================================
-   1) CONFIGURATION DU HEADER (L'ossature)
+   1) CONFIGURATION DU HEADER (Fixe & Collé)
    ======================================================================== */
 header {
-  position: sticky;
+  position: fixed; /* Reste en haut de l'écran */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 2000;
-  height: 70px;
+  height: 80px; /* Taille initiale légèrement plus grande */
   display: flex;
   align-items: center;
   background: rgba(46, 52, 64, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transition fluide */
 }
 
+/* ÉTAT MINIMISÉ AU SCROLL (Via JS) */
 header.scrolled {
   height: 60px;
-  background: rgba(46, 52, 64, 0.95);
+  background: rgba(46, 52, 64, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .header-content {
@@ -140,25 +143,31 @@ header.scrolled {
   margin: 0 auto;
   padding: 0 1.5rem;
   gap: 1rem;
-  flex-wrap: nowrap; /* Empêche le décalage au zoom */
+  flex-wrap: nowrap;
 }
 
 /* ========================================================================
-   2) LOGO & TITRE
+   2) LOGO & TITRE (Adaptatifs)
    ======================================================================== */
 .logo-link {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   text-decoration: none !important;
-  flex-shrink: 0; /* Garde sa taille au zoom */
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
 .logo {
   width: 2.8rem;
   height: auto;
   border-radius: 8px;
-  transition: 0.3s;
+  transition: width 0.3s ease;
+}
+
+/* Réduction discrète du logo au scroll */
+header.scrolled .logo {
+  width: 2.2rem;
 }
 
 .site-title {
@@ -169,17 +178,11 @@ header.scrolled {
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1;
+  transition: font-size 0.3s ease;
 }
 
-.site-title-link {
-  color: inherit;
-  text-decoration: none !important;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.site-title-link:hover {
-  transform: scale(1.03);
+header.scrolled .site-title {
+  font-size: 1.6rem; /* Titre plus compact au scroll */
 }
 
 /* ========================================================================
@@ -202,14 +205,13 @@ header.scrolled {
   white-space: nowrap;
 }
 
-.main-nav a:hover, 
-.main-nav a.active {
+.main-nav a:hover, .main-nav a.active {
   background: var(--secondary-color);
   color: var(--primary-color);
 }
 
 /* ========================================================================
-   4) BLOC RECHERCHE & RÉSULTATS
+   4) RECHERCHE & RÉSULTATS
    ======================================================================== */
 .search-container {
   position: relative;
@@ -220,177 +222,167 @@ header.scrolled {
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 4px;
   transition: all 0.3s ease;
-  flex-shrink: 1; /* C'est elle qui rétrécit en premier au zoom */
-  min-width: 42px; /* Garde au moins le bouton visible */
-}
-
-.search-container:focus-within {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--secondary-color);
-  box-shadow: 0 0 0 3px rgba(242, 205, 134, 0.1);
+  flex: 1;
+  max-width: 180px;
 }
 
 #search-input {
-  padding: 0.6rem 1rem;
+  padding: 0.6rem;
   background: transparent;
-  color: #ffffff;
+  color: #fff;
   border: none;
   outline: none;
-  width: 160px;
+  width: 100%;
   font-size: 0.9rem;
-  font-weight: 500;
-  transition: width 0.3s ease;
-}
-
-#search-input:focus { width: 200px; }
-
-#search-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 1px;
 }
 
 #search-button {
   background: var(--secondary-color);
-  color: var(--primary-color);
   border: none;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
   cursor: pointer;
+  flex-shrink: 0;
   display: grid;
   place-items: center;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
 }
 
-#search-button:hover {
-  background: #ffffff;
-  transform: translateY(-1px);
-}
-
-/* --- Résultats --- */
+/* BLOC DES RÉSULTATS (Dropdown) */
 .search-results {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 10px); /* Juste en dessous de la barre */
   right: 0;
-  width: 320px;
+  width: 300px; /* Plus large que la barre pour la lisibilité */
   max-height: 400px;
   overflow-y: auto;
   background: #1e222a;
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--secondary-color);
   border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  display: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   z-index: 3000;
+  display: none; /* Caché par défaut */
 }
 
+/* État actif (à déclencher en JS) */
 .search-results.active {
   display: block;
   animation: fadeIn 0.2s ease-out forwards;
 }
 
-.search-results::-webkit-scrollbar { width: 4px; }
-.search-results::-webkit-scrollbar-thumb { background: var(--secondary-color); border-radius: 10px; }
-
+/* Style des items de recherche */
 .search-result-item a {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  padding: 14px 18px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  justify-content: space-between;
+  padding: 12px 15px;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: background 0.2s;
+  font-size: 0.9rem;
 }
 
-.search-result-item:hover { background: rgba(242, 205, 134, 0.08); }
+.search-result-item:last-child a {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: rgba(242, 205, 134, 0.1);
+}
+
+/* Scrollbar personnalisée pour le dropdown */
+.search-results::-webkit-scrollbar {
+  width: 5px;
+}
+.search-results::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+/* Mobile : on ajuste la largeur pour éviter que ça sorte de l'écran */
+@media (max-width: 480px) {
+  .search-results {
+    width: calc(100vw - 40px); /* Prend presque toute la largeur écran */
+    right: -50px; /* Recentrage manuel si nécessaire selon ton burger */
+  }
+}
 
 /* ========================================================================
-   5) RESPONSIVE & BURGER (Correction Zoom)
+   5) RESPONSIVE & BURGER (Compact 2 par 2)
    ======================================================================== */
+#nav-toggle { display: none; }
+
 .burger-menu {
   display: none;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
   z-index: 2100;
-  flex-shrink: 0; /* INTERDIT de disparaître au zoom */
+  flex-shrink: 0;
+  padding: 5px;
 }
 
 .burger-menu span {
-  width: 24px;
+  display: block;
+  width: 25px;
   height: 2px;
   background: var(--secondary-color);
-  border-radius: 2px;
-  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.3s;
 }
 
 @media (max-width: 992px) {
-  .header-content {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    gap: 10px; /* Espace minimum entre les blocs */
-    padding: 0 1rem;
+  .burger-menu { display: flex; order: 3; }
+  .logo-link { order: 1; }
+  .search-container { order: 2; margin: 0 5px; }
+
+  /* NAVIGATION MOBILE COMPACTE 2x2 */
+  .main-nav {
+    display: none; 
+    position: absolute;
+    top: 100%; /* S'aligne sous le header */
+    left: 0;
+    width: 100%;
+    background: rgba(30, 34, 42, 0.98);
+    backdrop-filter: blur(15px);
+    padding: 1.2rem;
+    
+    /* Grille 2 par 2 */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    border-bottom: 2px solid var(--secondary-color);
   }
 
-  /* 1) LOGO & TITRE : On réduit l'encombrement */
-  .logo-link {
-    flex-shrink: 0; /* Interdit au logo de s'écraser */
-    max-width: 40%; /* Ne prend pas plus de 40% de la largeur */
-  }
-  
-  .site-title {
-    font-size: 1.2rem; /* Titre plus petit pour laisser de l'air */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Coupe proprement si le titre est trop long */
+  /* Affichage quand coché */
+  #nav-toggle:checked ~ .main-nav {
+    display: grid; 
+    animation: slideDown 0.3s ease-out forwards;
   }
 
-  /* 2) BARRE DE RECHERCHE : Elle devient l'élément ajustable */
-  .search-container {
-    flex: 1; /* Elle prend tout l'espace restant */
-    min-width: 100px; /* Mais ne descend pas en dessous de 100px */
-    max-width: 200px; /* Et ne dépasse pas 200px pour ne pas étouffer le reste */
-    order: 2;
-    margin: 0 5px; /* Petit tampon sur les côtés */
+  .main-nav a {
+    text-align: center;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    font-size: 0.85rem;
   }
 
-  #search-input {
-    width: 100%; /* L'input remplit son container flexible */
-    padding: 0.5rem;
-    font-size: 0.8rem;
-  }
-
-  /* 3) BURGER : On le fige à droite */
-  .burger-menu {
-    display: flex !important;
-    flex-shrink: 0; /* Interdit de rétrécir */
-    order: 3;
-    margin-left: auto; /* Force le collage à droite */
-  }
+  /* Animation Burger en X */
+  #nav-toggle:checked ~ .burger-menu span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  #nav-toggle:checked ~ .burger-menu span:nth-child(2) { opacity: 0; }
+  #nav-toggle:checked ~ .burger-menu span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
 
+/* Correction pour mobile pour sauver le burger */
 @media (max-width: 480px) {
-  .logo-link { gap: 0.5rem; }
-  .site-title { display: none; } /* Cache le texte sur mini-mobile pour sauver le burger */
-  .search-container { max-width: 150px; }
-  #search-input::placeholder { display: none; }
-  .main-nav { grid-template-columns: 1fr; }
+  .site-title { display: none; } 
+  .search-container { max-width: 140px; }
 }
 
-/* --- ANIMATIONS --- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* Animation de descente */
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
+  from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
