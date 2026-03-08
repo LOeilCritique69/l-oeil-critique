@@ -108,6 +108,7 @@ a { color: inherit; }
 /* Label générique "Nouveau" */
 .new-label { position: absolute; background-color: crimson; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px; animation: pulse 1.5s infinite; z-index: 10; white-space: nowrap; box-shadow: 0 2px 8px rgba(220,20,60,0.5); }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; } 100% { transform: scale(1); opacity: 1; } }
+
 /* ========================================================================
    1) CONFIGURATION DU HEADER (Fixe & Collé)
    ======================================================================== */
@@ -453,229 +454,185 @@ header.scrolled .site-title {
 .news-item .read-more:hover { background-color: var(--primary-color); color: var(--secondary-color); }
 
 /* ========================================================================
-   4) BANDE-ANNONCES – SECTION MODERNISÉE ET RÉPARÉE
+   4) BANDES-ANNONCES – DESIGN PREMIUM & GRID OPTIMISÉ
    ======================================================================== */
 
 .bande-annonce-section {
-  padding: 5rem 1.5rem;
-  background: linear-gradient(180deg, var(--background-color) 0%, #e9edf3 100%);
-  transition: background 0.5s ease;
+  padding: 4rem 1.5rem;
+  background: radial-gradient(circle at top, #ffffff 0%, var(--background-color) 100%);
   position: relative;
-  overflow: hidden;
 }
 
 .bande-annonce-container {
   max-width: 1400px;
   margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
 }
 
-/* --- Titre principal --- */
+/* --- Titre Section (Style "Cinéma") --- */
 .titre-bande-annonce {
   font-family: var(--font-family-title);
-  font-size: clamp(2rem, 3vw, 3rem);
-  color: var(--secondary-color);
-  letter-spacing: 1.5px;
-  margin: 0 auto 2rem;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: var(--text-color-light);
   text-align: center;
-  background: linear-gradient(135deg, #1f252f 0%, var(--primary-color) 100%);
-  border-radius: 14px;
-  padding: 1.2rem 2.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  margin-bottom: 3rem;
+  
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1a1e26 100%);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius-base);
+  box-shadow: var(--shadow-lg);
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
   text-transform: uppercase;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.titre-bande-annonce:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Date / Dernière mise à jour --- */
-.maj-annonces {
-  text-align: center;
-  margin: 2.5rem auto 3.5rem;
-  letter-spacing: 2px;
-  font-size: 1.15rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-/* --- Grille des cartes --- */
+/* --- Grille Adaptative --- */
 .grille-bandes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 3rem;
-  padding: 0 1rem 5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem 0;
 }
 
-/* --- Cartes cachées (masquées avant clic) --- */
-.card-bande.hidden-card {
-  display: none;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* --- Transition d’apparition fluide --- */
-.card-bande.revealed {
-  display: flex !important;
-  opacity: 1 !important;
-  transform: translateY(0);
-}
-
-/* --- Carte de bande-annonce --- */
+/* --- Carte Bande-Annonce (Glassmorphism Light) --- */
 .card-bande {
-  background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  position: relative;
-  padding: 2rem 2rem 2.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-height: 540px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: visible; /* Pour laisser dépasser le badge si besoin */
 }
+
 .card-bande:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-2xl);
   border-color: var(--secondary-color);
 }
 
-/* --- Badge NOUVEAU --- */
+/* --- Badge Nouveau (Compact & Punchy) --- */
 .badge-nouveau {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  background: linear-gradient(45deg, #e50914, #ff6b81);
+  top: -10px;
+  right: 20px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
   color: #fff;
-  padding: 0.55rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   z-index: 10;
-  animation: pulse 1.5s infinite ease-in-out;
-  box-shadow: 0 3px 14px rgba(229, 9, 20, 0.6);
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.08); opacity: 0.85; }
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+  animation: pulse-soft 2s infinite;
 }
 
-/* --- Titre du film --- */
-.card-bande h2 {
-  font-size: 1.9rem;
-  margin: 1.2rem 0 0.6rem;
-  color: var(--primary-color);
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  min-height: 3.3rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.card-bande:hover h2 {
-  color: var(--secondary-color);
-  transform: translateY(-2px);
+@keyframes pulse-soft {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-/* --- Métadonnées --- */
-.card-bande .date-sortie,
-.card-bande .ajout-site {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-}
-
-/* --- Synopsis --- */
-.card-bande .synopsis {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 1rem 0 2rem;
-  flex-grow: 1;
-  color: #444;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.4s ease, transform 0.3s ease;
-}
-.card-bande:hover .synopsis {
-  color: #222;
-  transform: translateY(-2px);
-}
-
-/* --- Vidéo intégrée --- */
+/* --- Conteneur Vidéo --- */
 .video-responsive {
-  position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  border-radius: 14px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
   overflow: hidden;
-  margin-top: auto;
-  background-color: #000;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  background: #000;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
 }
+
 .video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: none;
 }
-.card-bande:hover .video-responsive {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+/* --- Infos Film --- */
+.card-bande h2 {
+  font-family: var(--font-family-title);
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
 }
 
-/* --- Bouton VOIR PLUS (fixé et fluide) --- */
+.card-bande .meta-info {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-bande .synopsis {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- Bouton "Voir Plus" (Transparent -> Plein) --- */
 #voir-plus-btn {
   display: block;
-  margin: 3rem auto 0;
-  padding: 1.1rem 3rem;
-  font-size: 1.2rem;
-  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
+  margin: 4rem auto;
+  padding: 1rem 3rem;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
   font-weight: 700;
-  letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all 0.35s ease;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
 #voir-plus-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
 }
 
-/* --- Effet fond --- */
-.bande-annonce-section:hover {
-  background: linear-gradient(180deg, #f5f7fa 0%, #dee6f0 100%);
+/* --- Logique d'affichage --- */
+.card-bande.hidden-card {
+  display: none;
 }
 
+.card-bande.revealed {
+  display: flex !important;
+  animation: slideUp 0.5s ease forwards;
+}
 
-    /* Définissez ici les variables et styles globaux (root/body/a) que vous avez exclus.
-   Je pars du principe que ces variables sont disponibles: 
-   --primary-color, --secondary-color, --accent-color, --font-family-title, etc.
-*/
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .grille-bandes {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .titre-bande-annonce {
+    width: 90%;
+    font-size: 1.8rem;
+  }
+}
 
 /** ========================================================================
  * 0. STYLES GÉNÉRAUX/UTILITAIRES

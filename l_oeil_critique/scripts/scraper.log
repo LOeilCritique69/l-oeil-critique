@@ -1035,3 +1035,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-08 12:11:51,893 [INFO] 6 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-03-08 12:11:51,893 [INFO] Sauvegarde du log avec 6 identifiants
 2026-03-08 12:11:51,894 [INFO] Poussée automatique vers GitHub...
+2026-03-08 12:11:53,139 [ERROR] Erreur push GitHub: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+2026-03-08 12:11:53,139 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-08 13:58:13,043 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 13:58:13,043 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 13:58:13,060 [INFO] 142 identifiants chargés depuis le log
+2026-03-08 13:58:13,060 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 13:58:17,474 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 13:58:17,492 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 13:58:17,522 [INFO] Scraping CineHorizons terminé
+2026-03-08 13:58:17,535 [INFO] Démarrage scraping TMDb...
+2026-03-08 13:58:17,875 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 13:58:17,910 [INFO] Article ajouté TMDb: Super Mario Galaxy, le film
+2026-03-08 13:58:17,947 [INFO] Article ajouté TMDb: L'ultime Héritier
+2026-03-08 13:58:18,070 [INFO] Scraping TMDb terminé
+2026-03-08 13:58:18,071 [INFO] 2 nouveaux articles détectés
+2026-03-08 13:58:18,076 [INFO] 21 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-08 13:58:18,076 [INFO] Sauvegarde du log avec 144 identifiants
+2026-03-08 13:58:18,077 [INFO] Poussée automatique vers GitHub...
