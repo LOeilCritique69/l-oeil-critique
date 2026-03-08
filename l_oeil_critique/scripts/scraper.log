@@ -1120,3 +1120,28 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-08 17:53:11,815 [INFO] 6 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-03-08 17:53:11,815 [INFO] Sauvegarde du log avec 6 identifiants
 2026-03-08 17:53:11,816 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-08 17:53:32,001 [INFO] Push GitHub FORCE réussi
+2026-03-08 17:53:32,002 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-08 17:55:06,462 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 17:55:06,463 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 17:55:06,463 [INFO] 0 identifiants chargés depuis le log
+2026-03-08 17:55:06,463 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 17:55:08,408 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 17:55:08,425 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 17:55:08,425 [INFO] Extraction détails CineHorizons pour Plus forts que le diable
+2026-03-08 17:55:09,102 [INFO] Article ajouté CineHorizons: Plus forts que le diable
+2026-03-08 17:55:09,102 [INFO] Extraction détails CineHorizons pour L'Ultime Héritier
+2026-03-08 17:55:09,692 [INFO] Article ajouté CineHorizons: L'Ultime Héritier
+2026-03-08 17:55:09,692 [INFO] Extraction détails CineHorizons pour Mortal Kombat 2
+2026-03-08 17:55:10,554 [INFO] Article ajouté CineHorizons: Mortal Kombat 2
+2026-03-08 17:55:10,586 [INFO] Scraping CineHorizons terminé
+2026-03-08 17:55:10,597 [INFO] Démarrage scraping TMDb...
+2026-03-08 17:55:10,819 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 17:55:10,838 [INFO] Article ajouté TMDb: Le Sifflet
+2026-03-08 17:55:10,866 [INFO] Article ajouté TMDb: Super Mario Galaxy, le film
+2026-03-08 17:55:10,879 [INFO] Article ajouté TMDb: Projet Dernière Chance
+2026-03-08 17:55:10,880 [INFO] Scraping TMDb terminé
+2026-03-08 17:55:10,880 [INFO] 6 nouveaux articles détectés
+2026-03-08 17:55:10,885 [INFO] 40 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-08 17:55:10,885 [INFO] Sauvegarde du log avec 6 identifiants
+2026-03-08 17:55:10,885 [INFO] Poussée automatique FORCÉE vers GitHub...
