@@ -1053,3 +1053,33 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-08 13:58:18,076 [INFO] 21 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-03-08 13:58:18,076 [INFO] Sauvegarde du log avec 144 identifiants
 2026-03-08 13:58:18,077 [INFO] Poussée automatique vers GitHub...
+2026-03-08 13:58:19,522 [ERROR] Erreur push GitHub: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+2026-03-08 13:58:19,523 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-08 14:01:15,813 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 14:01:15,813 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 14:01:15,813 [INFO] 144 identifiants chargés depuis le log
+2026-03-08 14:01:15,814 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 14:01:17,176 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 14:01:17,194 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 14:01:17,237 [INFO] Scraping CineHorizons terminé
+2026-03-08 14:01:17,247 [INFO] Démarrage scraping TMDb...
+2026-03-08 14:01:17,451 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 14:01:17,503 [INFO] Scraping TMDb terminé
+2026-03-08 14:01:17,504 [INFO] 0 nouveaux articles détectés
+2026-03-08 14:01:17,504 [INFO] Aucun nouvel article à ajouter
+2026-03-08 14:01:52,989 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 14:01:52,989 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 14:01:53,007 [INFO] 142 identifiants chargés depuis le log
+2026-03-08 14:01:53,007 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 14:01:54,379 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 14:01:54,396 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 14:01:54,431 [INFO] Scraping CineHorizons terminé
+2026-03-08 14:01:54,441 [INFO] Démarrage scraping TMDb...
+2026-03-08 14:01:54,660 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 14:01:54,692 [INFO] Article ajouté TMDb: Super Mario Galaxy, le film
+2026-03-08 14:01:54,710 [INFO] Article ajouté TMDb: L'ultime Héritier
+2026-03-08 14:01:54,719 [INFO] Scraping TMDb terminé
+2026-03-08 14:01:54,720 [INFO] 2 nouveaux articles détectés
+2026-03-08 14:01:54,724 [INFO] 20 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-08 14:01:54,725 [INFO] Sauvegarde du log avec 144 identifiants
+2026-03-08 14:01:54,725 [INFO] Poussée automatique vers GitHub...

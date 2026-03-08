@@ -1,68 +1,75 @@
-// js/loadTrailers.js
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('grille-bandes');
     const voirPlusBtn = document.getElementById('voir-plus-btn');
-    const initialVisibleCount = 9; // Nombre de bandes-annonces visibles par défaut
+    const step = 10; // On affiche 10 par 10
+    let currentIndex = 0;
+    let allCards = [];
 
-    if (!container || !voirPlusBtn) {
-        console.error('Éléments HTML requis introuvables : #grille-bandes ou #voir-plus-btn');
-        return;
-    }
+    if (!container || !voirPlusBtn) return;
 
     try {
         const response = await fetch('bande_annonces_blocs.html');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const html = await response.text();
-
-        // Création d'un conteneur temporaire pour parser le HTML chargé
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
+        allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
 
-        const allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
-        container.innerHTML = ''; // Vide le container avant d'insérer les cartes
+        container.innerHTML = ''; 
 
-        // Ajout des cartes dans le container avec gestion du masquage
-        allCards.forEach((card, index) => {
-            if (index >= initialVisibleCount) {
-                card.classList.add('hidden-card');
+        // Fonction pour afficher le prochain lot de 10
+        const showNextBatch = () => {
+            const nextBatch = allCards.slice(currentIndex, currentIndex + step);
+            
+            nextBatch.forEach(card => {
+                card.classList.add('revealed'); // Animation d'apparition
+                container.appendChild(card);
+            });
+
+            currentIndex += step;
+
+            // Cache le bouton s'il n'y a plus rien à afficher
+            if (currentIndex >= allCards.length) {
+                voirPlusBtn.style.display = 'none';
+            } else {
+                voirPlusBtn.style.display = 'block';
             }
-            container.appendChild(card);
-        });
+        };
 
-        // Affiche ou masque le bouton "Voir plus" selon le nombre de cartes cachées
-        voirPlusBtn.style.display = allCards.length > initialVisibleCount ? 'block' : 'none';
+        // Premier chargement
+        showNextBatch();
 
-        // Au clic, révèle toutes les cartes cachées et masque le bouton
-        voirPlusBtn.addEventListener('click', () => {
-            const hiddenCards = container.querySelectorAll('.card-bande.hidden-card');
-            hiddenCards.forEach(card => card.classList.remove('hidden-card'));
-            voirPlusBtn.style.display = 'none';
-        });
+        // Clic sur Voir Plus
+        voirPlusBtn.addEventListener('click', showNextBatch);
 
-        // Gère le lazy load des vidéos YouTube au clic sur les placeholders
-        container.addEventListener('click', (event) => {
-            const placeholder = event.target.closest('.youtube-placeholder');
-            if (!placeholder) return;
+        // --- GESTION DU CHARGEMENT DES VIDÉOS AU CLIC ---
+        container.addEventListener('click', (e) => {
+            const card = e.target.closest('.card-bande');
+            if (!card) return;
 
-            // Sécurité : éviter de remplacer plusieurs fois
-            if (placeholder.tagName.toLowerCase() === 'iframe') return;
+            // On cherche le conteneur vidéo (qui contient l'image/placeholder)
+            const videoWrapper = card.querySelector('.video-responsive');
+            const placeholder = videoWrapper.querySelector('img, .play-button'); // l'élément cliqué
 
-            const iframe = document.createElement('iframe');
-            iframe.setAttribute('src', placeholder.dataset.src);
-            iframe.setAttribute('width', '1920');
-            iframe.setAttribute('height', '750');
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allowfullscreen', '');
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay');
-            iframe.setAttribute('title', placeholder.getAttribute('aria-label'));
-            iframe.setAttribute('loading', 'lazy');
-
-            placeholder.replaceWith(iframe);
+            if (placeholder && videoWrapper.dataset.youtubeId) {
+                const youtubeId = videoWrapper.dataset.youtubeId;
+                
+                // On crée l'iframe SEULEMENT maintenant
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeId}?autoplay=1`);
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                
+                // On vide le wrapper et on met l'iframe
+                videoWrapper.innerHTML = '';
+                videoWrapper.appendChild(iframe);
+            }
         });
 
     } catch (err) {
-        container.innerHTML = '<p>Impossible de charger les bandes-annonces.</p>';
-        console.error('Erreur chargement bandes annonces:', err);
+        container.innerHTML = '<p>Erreur de chargement.</p>';
+        console.error(err);
     }
 });
