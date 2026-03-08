@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('grille-bandes');
     const voirPlusBtn = document.getElementById('voir-plus-btn');
-    const step = 12; // On affiche 10 par 10
+    const searchInput = document.getElementById('trailers-search');
+    
+    const step = 12; 
     let currentIndex = 0;
     let allCards = [];
+    let filteredCards = []; // Liste dynamique (toutes les cartes ou seulement les recherchées)
 
     if (!container || !voirPlusBtn) return;
 
+    // --- CHARGEMENT INITIAL ---
     try {
         const response = await fetch('bande_annonces_blocs.html');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -14,62 +18,98 @@ document.addEventListener('DOMContentLoaded', async () => {
         const html = await response.text();
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
+        
         allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
+        filteredCards = [...allCards]; // Au départ, pas de filtre
 
         container.innerHTML = ''; 
-
-        // Fonction pour afficher le prochain lot de 10
-        const showNextBatch = () => {
-            const nextBatch = allCards.slice(currentIndex, currentIndex + step);
-            
-            nextBatch.forEach(card => {
-                card.classList.add('revealed'); // Animation d'apparition
-                container.appendChild(card);
-            });
-
-            currentIndex += step;
-
-            // Cache le bouton s'il n'y a plus rien à afficher
-            if (currentIndex >= allCards.length) {
-                voirPlusBtn.style.display = 'none';
-            } else {
-                voirPlusBtn.style.display = 'block';
-            }
-        };
-
-        // Premier chargement
         showNextBatch();
 
-        // Clic sur Voir Plus
-        voirPlusBtn.addEventListener('click', showNextBatch);
-
-        // --- GESTION DU CHARGEMENT DES VIDÉOS AU CLIC ---
-        container.addEventListener('click', (e) => {
-            const card = e.target.closest('.card-bande');
-            if (!card) return;
-
-            // On cherche le conteneur vidéo (qui contient l'image/placeholder)
-            const videoWrapper = card.querySelector('.video-responsive');
-            const placeholder = videoWrapper.querySelector('img, .play-button'); // l'élément cliqué
-
-            if (placeholder && videoWrapper.dataset.youtubeId) {
-                const youtubeId = videoWrapper.dataset.youtubeId;
-                
-                // On crée l'iframe SEULEMENT maintenant
-                const iframe = document.createElement('iframe');
-                iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeId}?autoplay=1`);
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
-                iframe.setAttribute('allowfullscreen', '');
-                
-                // On vide le wrapper et on met l'iframe
-                videoWrapper.innerHTML = '';
-                videoWrapper.appendChild(iframe);
-            }
-        });
-
     } catch (err) {
-        container.innerHTML = '<p>Erreur de chargement.</p>';
+        container.innerHTML = '<p class="no-results">Erreur de chargement des bandes-annonces.</p>';
         console.error(err);
     }
+
+    // --- FONCTION D'AFFICHAGE ---
+    function showNextBatch() {
+        const fragment = document.createDocumentFragment();
+        const nextBatch = filteredCards.slice(currentIndex, currentIndex + step);
+        
+        if (nextBatch.length === 0 && currentIndex === 0) {
+            container.innerHTML = '<div class="no-results">Aucun film ne correspond à votre recherche.</div>';
+            voirPlusBtn.style.display = 'none';
+            return;
+        }
+
+        nextBatch.forEach(card => {
+            // On s'assure que la carte est visible et on peut ajouter une micro-animation CSS ici
+            card.style.display = 'block'; 
+            fragment.appendChild(card);
+        });
+
+        container.appendChild(fragment);
+        currentIndex += step;
+
+        // Gestion de la visibilité du bouton
+        voirPlusBtn.style.display = (currentIndex >= filteredCards.length) ? 'none' : 'block';
+    }
+
+    // --- GESTION DE LA RECHERCHE ---
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase().trim();
+            
+            // On réinitialise tout pour la recherche
+            container.innerHTML = '';
+            currentIndex = 0;
+
+            if (term === '') {
+                filteredCards = [...allCards];
+            } else {
+                filteredCards = allCards.filter(card => {
+                    const title = card.querySelector('h2').textContent.toLowerCase();
+                    return title.includes(term);
+                });
+            }
+            
+            showNextBatch();
+        });
+    }
+
+    // --- CLIC VOIR PLUS ---
+    voirPlusBtn.addEventListener('click', showNextBatch);
+
+    // --- CHARGEMENT VIDÉO AU CLIC (DÉLÉGATION D'ÉVÉNEMENT) ---
+    container.addEventListener('click', (e) => {
+        const card = e.target.closest('.card-bande');
+        if (!card) return;
+
+        const videoWrapper = card.querySelector('.video-responsive');
+        // On vérifie si une iframe n'est pas déjà présente
+        if (!videoWrapper || videoWrapper.querySelector('iframe')) return;
+
+        // On cherche l'ID YouTube (soit dans data-youtube-id, soit on l'extrait de l'iframe src si présente en texte)
+        let youtubeId = videoWrapper.getAttribute('data-youtube-id');
+        
+        // Sécurité : Si ton script Python a mis l'iframe en brut, on la laisse. 
+        // Mais si on veut optimiser, on l'active au clic :
+        if (!youtubeId) {
+            const staticIframe = videoWrapper.querySelector('iframe');
+            if (staticIframe) {
+                // Si l'iframe est déjà là, on ne fait rien, elle chargera normalement
+                return;
+            }
+        }
+
+        if (youtubeId) {
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeId}?autoplay=1`);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            
+            videoWrapper.innerHTML = ''; // On enlève le placeholder (image)
+            videoWrapper.appendChild(iframe);
+        }
+    });
 });

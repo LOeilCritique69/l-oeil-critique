@@ -1147,3 +1147,27 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-08 17:55:10,885 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-03-08 17:55:26,814 [INFO] Push GitHub FORCE réussi
 2026-03-08 17:55:26,814 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-08 18:32:34,020 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 18:32:34,020 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 18:32:34,021 [INFO] 122 identifiants chargés depuis le log
+2026-03-08 18:32:34,021 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 18:32:38,169 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 18:32:38,199 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 18:32:38,242 [INFO] Scraping CineHorizons terminé
+2026-03-08 18:32:38,253 [INFO] Démarrage scraping TMDb...
+2026-03-08 18:32:38,466 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 18:32:38,640 [INFO] Scraping TMDb terminé
+2026-03-08 18:32:38,641 [INFO] 0 nouveaux articles détectés
+2026-03-08 18:32:38,642 [INFO] Aucun nouvel article à ajouter
+2026-03-08 18:35:39,395 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 18:35:39,396 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 18:35:39,396 [INFO] 122 identifiants chargés depuis le log
+2026-03-08 18:35:39,396 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 18:35:41,596 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 18:35:41,611 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 18:35:41,648 [INFO] Scraping CineHorizons terminé
+2026-03-08 18:35:41,659 [INFO] Démarrage scraping TMDb...
+2026-03-08 18:35:41,865 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 18:35:41,920 [INFO] Scraping TMDb terminé
+2026-03-08 18:35:41,921 [INFO] 0 nouveaux articles détectés
+2026-03-08 18:35:41,921 [INFO] Aucun nouvel article à ajouter

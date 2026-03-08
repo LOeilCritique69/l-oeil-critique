@@ -1,272 +1,275 @@
+/* ========================================================================
+   L’ŒIL CRITIQUE — ARCHITECTURE FUSIONNÉE (MAGAZINE + SIDEBAR)
+   ======================================================================== */
 
-/* --- Animation d’apparition douce --- */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* --- 1. CONFIGURATION & DESIGN TOKENS --- */
+:root {
+    --primary-color: #2e3440;
+    --secondary-color: #f2cd86;
+    --accent-color: #ffd27f;
+    
+    --bg-body: #f0f2f5;
+    --bg-card: #ffffff;
+    --bg-subtle: #f8f9fb;
+    
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #eeeeee;
+    
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 25px rgba(0,0,0,0.2);
+    
+    --border-radius-base: 12px;
+    --transition-speed: 0.35s;
 }
 
-/* --- Conteneur principal --- */
+/* --- 2. DARK MODE DYNAMIQUE --- */
+body.dark-mode {
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --bg-subtle: #0f172a;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --primary-color: #f2cd86;
+}
+
+/* --- 3. ANIMATIONS --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 4. LAYOUT PRINCIPAL --- */
 .container {
-  display: flex;
-  gap: var(--space-8);
-  max-width: 1200px;
-  margin: var(--space-8) auto;
-  padding: 0 var(--space-4);
-  flex-grow: 1;
-  animation: fadeInUp 0.8s ease-out;
+    display: flex;
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: var(--space-8) auto;
+    padding: 0 var(--space-4);
+    flex-grow: 1;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .main-content {
-  flex: 3;
-  background-color: #fff;
-  padding: var(--space-6);
-  border-radius: var(--border-radius-base);
-  box-shadow: var(--shadow-md);
-  transition: box-shadow var(--transition-speed) ease;
-}
-.main-content:hover {
-  box-shadow: var(--shadow-lg);
+    flex: 3;
+    background-color: var(--bg-card);
+    padding: var(--space-8);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: box-shadow var(--transition-speed) ease;
 }
 
-/* --- Sidebar --- */
+.main-content:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- 5. SIDEBAR & WIDGETS --- */
 .sidebar {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
 }
 
 .sidebar .widget {
-  background: #fff;
-  padding: var(--space-5);
-  border-radius: var(--border-radius-base);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0,0,0,0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.sidebar .widget:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-.sidebar .widget img {
-  width: 100%;
-  border-radius: var(--border-radius-base);
-  margin-top: var(--space-4);
-  box-shadow: var(--shadow-xs);
+    background: var(--bg-card);
+    padding: var(--space-5);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- Titre principal --- */
+.sidebar .widget:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.sidebar .widget img {
+    width: 100%;
+    border-radius: var(--border-radius-base);
+    margin-top: var(--space-4);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- 6. TYPOGRAPHIE D'ARTICLE --- */
 .article-title {
-  font-family: var(--font-family-title);
-  font-size: 2.8rem;
-  text-align: center;
-  color: var(--primary-color);
-  margin-bottom: var(--space-4);
-  letter-spacing: 1px;
+    font-family: var(--font-family-title);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--space-4);
+    letter-spacing: 1px;
+    line-height: 1.1;
 }
 
 .article-meta {
-  text-align: center;
-  color: #777;
-  font-size: 0.95rem;
-  margin-bottom: var(--space-5);
-  border-bottom: 1px solid #eee;
-  padding-bottom: var(--space-2);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-5);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-4);
 }
 
-/* --- Image & légende --- */
-.article-image img {
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  object-fit: cover;
-  border-radius: var(--border-radius-base);
-  margin-bottom: var(--space-5);
-  box-shadow: var(--shadow-lg);
-}
-.titre-sous-image {
-  text-align: center;
-  font-style: italic;
-  color: #666;
-  font-size: 0.9rem;
-  margin-top: -10px;
-  margin-bottom: var(--space-6);
-}
-
-/* --- Paragraphes & typographie --- */
 .article-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-color-dark);
-  margin-bottom: var(--space-4);
-  text-align: justify;
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: var(--text-main);
+    margin-bottom: var(--space-6);
+    text-align: justify;
 }
 
 h2 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  border-left: 5px solid var(--secondary-color);
-  padding-left: var(--space-4);
-  margin: var(--space-8) 0 var(--space-4);
+    font-size: 2.2rem;
+    font-family: var(--font-family-title);
+    color: var(--primary-color);
+    border-left: 6px solid var(--secondary-color);
+    padding-left: var(--space-4);
+    margin: var(--space-10) 0 var(--space-4);
 }
 
-/* --- Citations --- */
-blockquote {
-  font-family: 'Georgia', serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  background-color: #fafafa;
-  padding: var(--space-5);
-  border-left: 4px solid var(--accent-color);
-  border-radius: var(--border-radius-base);
-  margin: var(--space-6) 0;
-  color: #444;
+/* --- 7. MÉDIAS --- */
+.article-image img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: cover;
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--space-2);
+    box-shadow: var(--shadow-lg);
 }
 
-/* --- Listes --- */
-li {
-  margin: 0.6rem 0 0.6rem 2rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
+.titre-sous-image {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-8);
 }
 
-/* --- Encarts spéciaux --- */
-.spoiler-warning {
-  background: #fff4e5;
-  border-left: 5px solid var(--accent-color);
-  color: #a55a00;
-  padding: var(--space-4);
-  border-radius: var(--border-radius-base);
-  margin-bottom: var(--space-6);
-  font-weight: 700;
-  text-align: center;
-  box-shadow: var(--shadow-xs);
-}
-.note-importante {
-  background: #ffeaea;
-  border-left: 5px solid #e74c3c;
-  color: #a60000;
-  padding: var(--space-4);
-  border-radius: var(--border-radius-base);
-  margin: var(--space-6) 0;
-  font-weight: 600;
-}
-
-/* --- Vidéo responsive --- */
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  border-radius: var(--border-radius-base);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  margin: var(--space-8) 0;
-  background-color: #000;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin: var(--space-8) 0;
+    background-color: #000;
 }
 .video-container iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+    position: absolute;
+    inset: 0; width: 100%; height: 100%; border: none;
 }
 
-/* --- Q&A Section --- */
-.qa {
-  margin-top: var(--space-8);
-  font-family: var(--font-family);
-  line-height: 1.7;
+/* --- 8. ENCARTS & Q&A --- */
+blockquote {
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    background-color: var(--bg-subtle);
+    padding: var(--space-6);
+    border-left: 6px solid var(--accent-color);
+    border-radius: 4px;
+    margin: var(--space-8) 0;
+    color: var(--text-main);
 }
+
+.spoiler-warning {
+    background: rgba(255, 165, 0, 0.1);
+    border: 1px dashed var(--accent-color);
+    border-left: 5px solid var(--accent-color);
+    color: var(--text-main);
+    padding: var(--space-4);
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--space-6);
+    font-weight: 700;
+    text-align: center;
+}
+
+.note-importante {
+    background: rgba(231, 76, 60, 0.1);
+    border-left: 5px solid #e74c3c;
+    color: var(--text-main);
+    padding: var(--space-4);
+    border-radius: var(--border-radius-base);
+    margin: var(--space-6) 0;
+    font-weight: 600;
+}
+
 .qa .qa-block {
-  background-color: #fff;
-  border-radius: var(--border-radius-base);
-  box-shadow: var(--shadow-sm);
-  border-left: 4px solid var(--secondary-color);
-  padding: var(--space-5);
-  margin-bottom: var(--space-5);
+    background-color: var(--bg-subtle);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--secondary-color);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
 }
+
 .qa .question {
-  font-weight: 700;
-  background-color: rgba(242,205,134,0.15);
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
-}
-.qa .answer {
-  background-color: #fafafa;
-  padding: 0.8rem 1rem;
-  border-left: 3px solid var(--accent-color);
-  border-radius: 6px;
-  color: #333;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-/* --- Sidebar: Titre & Liste tendances --- */
+/* --- 9. TENDANCES (SIDEBAR) --- */
 .titre-tendances {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  padding: var(--space-4);
-  border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-  font-weight: 700;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    background-color: var(--secondary-color);
+    color: #2e3440;
+    padding: var(--space-4);
+    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-#tendances-list {
-  list-style: none;
-  padding: 0 var(--space-4) var(--space-4);
-  margin: 0;
-}
 #tendances-list li {
-  border-bottom: 1px dashed #ddd;
-  padding: var(--space-3) 0;
-  transition: background-color var(--transition-speed) ease;
+    list-style: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-3) var(--space-2);
+    transition: all 0.2s;
 }
+
 #tendances-list li:hover {
-  background-color: rgba(0,0,0,0.03);
+    background-color: var(--bg-subtle);
+    padding-left: 15px;
 }
+
 #tendances-list a {
-  text-decoration: none;
-  color: var(--text-color-dark);
-  font-weight: 500;
-  transition: color 0.3s ease, padding-left 0.3s ease;
-}
-#tendances-list a:hover {
-  color: var(--secondary-color);
-  padding-left: 5px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
 }
 
-/* --- Conclusion et article lié --- */
+/* --- 10. CONCLUSION & RESPONSIVE --- */
 .conclusion {
-  background-color: #f7f7f7;
-  padding: var(--space-5);
-  border-left: 4px solid var(--accent-color);
-  border-radius: var(--border-radius-base);
-  margin-top: var(--space-8);
-  font-weight: 500;
-}
-.related-article {
-  margin-top: var(--space-6);
-  background-color: #fff8e1;
-  border-left: 4px solid var(--secondary-color);
-  padding: var(--space-4);
-  border-radius: var(--border-radius-base);
-  font-weight: 500;
+    background-color: var(--bg-subtle);
+    padding: var(--space-6);
+    border-left: 5px solid var(--accent-color);
+    border-radius: var(--border-radius-base);
+    margin-top: var(--space-8);
 }
 
-/* --- Responsive --- */
 @media (max-width: 992px) {
-  .container { flex-direction: column; gap: var(--space-6); }
-  .main-content, .sidebar { padding: var(--space-5); }
-  .article-title { font-size: 2.2rem; }
+    .container { flex-direction: column; }
+    .main-content { padding: var(--space-6); }
+    .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 }
+
 @media (max-width: 768px) {
-  .container { padding: 0 var(--space-3); }
-  .article-title { font-size: 1.9rem; }
-  .titre-tendances { font-size: 1.1rem; text-align: center; }
-  .sidebar { order: 2; }
+    .sidebar { grid-template-columns: 1fr; order: 2; }
+    .article-title { font-size: 2rem; }
+    .main-content { padding: 30px 20px; }
 }
-@media (max-width: 480px) {
-  .main-content { padding: var(--space-4); }
-  .article-title { font-size: 1.6rem; }
+
+/* FORCE RESET DARK MODE (ANTI-TEXTE NOIR) */
+body.dark-mode .article-content p, 
+body.dark-mode h2, 
+body.dark-mode .question, 
+body.dark-mode blockquote {
+    color: var(--text-main) !important;
 }

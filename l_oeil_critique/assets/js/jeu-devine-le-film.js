@@ -91,60 +91,76 @@ async function initApp() {
 /**
  * Récupère ~100 films populaires par genre ET quelques nouveautés. (MODIFIÉE)
  */
+/**
+ * Récupère un grand volume de films (environ 100 par genre)
+ */
 async function fetchMovies() {
-    console.log("Chargement des films par genre et des nouveautés...");
-    moviesByGenre = {};
-    const genreIds = Object.keys(GENRES);
+    console.log("🚀 Démarrage du chargement massif de la cinémathèque...");
+    moviesByGenre = {};
+    const genreIds = Object.keys(GENRES);
+    const PAGES_TO_FETCH = 10; // On récupère 5 pages par genre (20 films par page)
 
-    try {
-        // 1. Récupération des films populaires par genre (comme avant)
-        const promises = genreIds.map(async (genreId) => {
-            const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=fr-FR&sort_by=popularity.desc&with_genres=${genreId}&page=1`;
-            const res = await fetch(url);
-            if (!res.ok) throw new Error(`Erreur de l'API pour le genre ${GENRES[genreId]}`);
-            
-            const data = await res.json();
-            let validMovies = data.results.filter(m => m.poster_path && m.overview);
+    try {
+        const promises = genreIds.map(async (genreId) => {
+            let allMoviesForGenre = [];
+            
+            // Boucle pour récupérer plusieurs pages de résultats
+            for (let page = 1; page <= PAGES_TO_FETCH; page++) {
+                const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=fr-FR&sort_by=popularity.desc&with_genres=${genreId}&page=${page}&vote_count.gte=100`;
+                
+                try {
+                    const res = await fetch(url);
+                    if (res.ok) {
+                        const data = await res.json();
+                        // Filtrage : on garde seulement les films avec poster et synopsis
+                        const validOnPage = data.results.filter(m => m.poster_path && m.overview);
+                        allMoviesForGenre.push(...validOnPage);
+                    }
+                } catch (e) {
+                    console.error(`Erreur sur la page ${page} du genre ${genreId}`);
+                }
+            }
+            
+            moviesByGenre[genreId] = allMoviesForGenre;
+            console.log(`✅ Genre ${GENRES[genreId]} : ${allMoviesForGenre.length} films chargés.`);
+        });
 
-            // Tente de récupérer plus de films (Page 2)
-            if (validMovies.length < 100 && data.total_pages > 1) {
-                const urlPage2 = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=fr-FR&sort_by=popularity.desc&with_genres=${genreId}&page=2`;
-                const res2 = await fetch(urlPage2);
-                if (res2.ok) {
-                    const data2 = await res2.json();
-                    validMovies.push(...data2.results.filter(m => m.poster_path && m.overview));
-                }
-            }
-            moviesByGenre[genreId] = validMovies.slice(0, 100);
-        });
+        await Promise.all(promises);
 
-        await Promise.all(promises);
+        // Optionnel : Récupérer aussi les films "Tendances" pour varier encore plus
+        await fetchTrendingMovies();
+
+        console.log("🏁 Chargement terminé. Total films en mémoire :", Object.values(moviesByGenre).flat().length);
+
+    } catch (error) {
+        console.error("Erreur critique lors du fetch :", error);
+        feedback.textContent = "Erreur de connexion à la base de données TMDb.";
+    }
+}
+
+/**
+ * Ajoute les films tendances du moment pour mélanger les genres
+ */
+async function fetchTrendingMovies() {
+    const url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=fr-FR`;
+    const res = await fetch(url);
+    if (res.ok) {
+        const data = await res.json();
+        const trending = data.results.filter(m => m.poster_path && m.overview);
         
-        // 2. NOUVEAU: Ajout des films "Now Playing" (actuellement à l'affiche) dans un genre spécial (ID 0)
-        const nowPlayingUrl = `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=fr-FR&page=1`;
-        const resNowPlaying = await fetch(nowPlayingUrl);
-        if (resNowPlaying.ok) {
-            const dataNowPlaying = await resNowPlaying.json();
-            const nowPlayingMovies = dataNowPlaying.results.filter(m => m.poster_path && m.overview).slice(0, 50); // 50 films
-            // Ajout des films récents à tous les films disponibles
-            // Nous n'utilisons pas un genre 0, mais nous les mélangeons dans la liste globale
-            Object.keys(moviesByGenre).forEach(genreId => {
-                 if (moviesByGenre[genreId] && moviesByGenre[genreId].length > 0) {
-                     // Ajoute une petite quantité de films récents pour varier
-                     const filmsToAdd = nowPlayingMovies.filter(m => m.genre_ids.includes(parseInt(genreId))).slice(0, 5); 
-                     moviesByGenre[genreId].push(...filmsToAdd);
-                     shuffleArray(moviesByGenre[genreId]); // Mélange pour ne pas avoir les récents en fin de liste
-                 }
-            });
-        }
-
-
-        console.log("Films chargés. Nombre total de films (approximatif) :", Object.values(moviesByGenre).flat().length);
-
-    } catch (error) {
-        console.error("Erreur de chargement des films :", error);
-        feedback.textContent = "Erreur de chargement des données. Veuillez vérifier la console.";
-    }
+        // On les distribue dans les genres existants
+        trending.forEach(movie => {
+            if (movie.genre_ids && movie.genre_ids[0]) {
+                const gId = movie.genre_ids[0];
+                if (moviesByGenre[gId]) {
+                    // On l'ajoute seulement s'il n'est pas déjà présent
+                    if (!moviesByGenre[gId].find(m => m.id === movie.id)) {
+                        moviesByGenre[gId].push(movie);
+                    }
+                }
+            }
+        });
+    }
 }
 
 /**
@@ -216,68 +232,72 @@ function restartGame() {
 /**
  * Prépare et lance la manche suivante. Gère l'augmentation de difficulté après chaque manche.
  */
+/**
+ * Prépare et lance la manche suivante avec sécurité anti-triche (flou instantané).
+ */
 function nextMovie() {
-    if (currentRound >= MAX_ROUNDS) {
-        return showEndGameModal();
-    }
+    if (currentRound >= MAX_ROUNDS) {
+        return showEndGameModal();
+    }
 
-    clearInterval(timer);
-    timeLeft = START_TIME;
-    roundActive = true;
-    hintLevel = 0; // Réinitialisation de l'indice
-    currentPenalty = 0; // Réinitialisation de la pénalité totale
-    currentRound++;
-    
-    // Augmentation dynamique de la difficulté (flou) après chaque manche
-    if (currentRound > 1) { 
-        let baseIncrement = 2; 
-        if (difficultyLevel === 'facile') baseIncrement = 1;
-        else if (difficultyLevel === 'difficile') baseIncrement = 3;
-        else if (difficultyLevel === 'expert') baseIncrement = 4;
+    clearInterval(timer);
+    timeLeft = START_TIME;
+    roundActive = true;
+    hintLevel = 0;
+    currentPenalty = 0;
+    currentRound++;
+    
+    // 1. Mise à jour de la difficulté
+    if (currentRound > 1) { 
+        let baseIncrement = (difficultyLevel === 'facile') ? 1 : (difficultyLevel === 'difficile' ? 3 : 4);
+        initialBlur = Math.min(35, initialBlur + baseIncrement);
+    }
+    
+    // 2. RESET UI
+    feedback.textContent = "";
+    feedback.className = "feedback";
+    nextBtn.disabled = true;
+    suggestionsDiv.innerHTML = "";
+    timerDisplay.innerHTML = `<i class="fas fa-clock"></i> Temps : ${timeLeft}s`;
+    roundCountDisplay.innerHTML = `<i class="fas fa-star"></i> Manche : ${currentRound} / ${MAX_ROUNDS}`;
 
-        initialBlur = Math.min(35, initialBlur + baseIncrement); // Max blur à 35
-    }
-    
-    // Réinitialisation de l'affichage
-    feedback.textContent = "";
-    feedback.className = "feedback";
-    nextBtn.disabled = true;
-    suggestionsDiv.innerHTML = "";
-    timerDisplay.innerHTML = `<i class="fas fa-clock"></i> Temps : ${timeLeft}s`;
-    roundCountDisplay.innerHTML = `<i class="fas fa-star"></i> Manche : ${currentRound} / ${MAX_ROUNDS}`;
+    hintText.textContent = `Indice : Genre du film`;
+    hintText.classList.add("hidden-hint");
+    hintBtn.disabled = false;
+    hintBtn.textContent = `Indice (-${HINT_PENALTY_1} pts)`;
+    
+    if (currentCombo > 0) {
+        roundCountDisplay.innerHTML += `<span style="margin-left:15px;color:#ffc456;">🔥 Combo x${currentCombo}</span>`;
+    }
 
-    // Réinitialisation de l'indice
-    hintText.textContent = `Indice : Genre du film`;
-    hintText.classList.add("hidden-hint");
-    hintBtn.disabled = false;
-    hintBtn.textContent = `Indice (-${HINT_PENALTY_1} pts)`;
-    
-    // Affichage du combo
-    if (currentCombo > 0) {
-        roundCountDisplay.innerHTML += `<span style="margin-left:15px;color:#ffc456;">🔥 Combo x${currentCombo}</span>`;
-    }
+    // 3. CHOIX DU FILM
+    const availableGenres = Object.keys(moviesByGenre).filter(id => moviesByGenre[id].length > 0);
+    currentGenreId = availableGenres[Math.floor(Math.random() * availableGenres.length)];
+    const genreMovies = moviesByGenre[currentGenreId];
+    const movieIndex = Math.floor(Math.random() * genreMovies.length);
+    currentMovie = genreMovies[movieIndex];
+    genreMovies.splice(movieIndex, 1); 
 
+    // --- 4. CONFIGURATION SÉCURISÉE DU POSTER ---
+    
+    // A. On coupe temporairement les transitions CSS pour éviter le "glissement" visuel du flou
+    poster.style.transition = "none";
+    
+    // B. On applique le flou initial immédiatement
+    poster.style.filter = `blur(${initialBlur}px)`;
+    poster.style.transform = "scale(1.02)"; 
+    
+    // C. Force le navigateur à appliquer ces styles AVANT de charger l'image (Reflow)
+    void poster.offsetWidth; 
+    
+    // D. On change la source : l'image s'affiche directement floue
+    poster.src = IMG_URL + currentMovie.poster_path;
 
-    // Choix du film
-    const availableGenres = Object.keys(moviesByGenre).filter(id => moviesByGenre[id].length > 0);
-    if (availableGenres.length === 0) {
-        feedback.textContent = "Erreur: Pas assez de films disponibles.";
-        return;
-    }
+    // E. On rétablit la transition pour que le flou se réduise doucement pendant le timer
+    poster.style.transition = "filter 0.5s ease-out, transform 0.4s ease-out";
 
-    currentGenreId = availableGenres[Math.floor(Math.random() * availableGenres.length)];
-    const genreMovies = moviesByGenre[currentGenreId];
-
-    const movieIndex = Math.floor(Math.random() * genreMovies.length);
-    currentMovie = genreMovies[movieIndex];
-    genreMovies.splice(movieIndex, 1); 
-
-    poster.src = IMG_URL + currentMovie.poster_path;
-    poster.style.filter = `blur(${initialBlur}px)`;
-    poster.style.transform = "scale(1)";
-
-    generateSuggestions();
-    startTimer();
+    generateSuggestions();
+    startTimer();
 }
 
 /**
@@ -392,16 +412,23 @@ function endRound(correct, text) {
     roundActive = false;
     clearInterval(timer);
 
-    // Retire le flou immédiatement
-    poster.style.filter = "blur(0)";
-    poster.style.transform = "scale(1.05)"; // légèrement agrandi pour la victoire
-    if (!correct) poster.style.transform = "scale(1)"; // optionnel pour l’échec
+    // Révélation fluide de l'image
+    poster.style.filter = "blur(0)"; // Le CSS fera la transition fluide
+    
+    if (correct) {
+        poster.style.transform = "scale(1.08)"; // Petit zoom de victoire
+        triggerConfetti();
+    } else {
+        poster.style.transform = "scale(1)"; 
+    }
 
     showFeedback(correct, text);
     nextBtn.disabled = false;
     hintBtn.disabled = true;
 
-    if (correct) triggerConfetti();
+    // Désactive les boutons de réponse
+    const buttons = suggestionsDiv.querySelectorAll('button');
+    buttons.forEach(btn => btn.disabled = true);
 }
 
 

@@ -85,7 +85,14 @@
     display: block;
     border-radius: 10px;
     will-change: filter, transform;
-    transition: filter 0.3s ease, transform 0.3s ease;
+    
+    /* --- MODIFICATIONS ICI --- */
+    filter: blur(20px); /* Flou par défaut AVANT le chargement JS */
+    transform: scale(1.02); /* Cache les bords nets */
+    
+    /* On garde une transition pour la fin de manche, 
+       mais le JS écrasera la valeur de flou instantanément au début */
+    transition: filter 0.5s ease-out, transform 0.4s ease-out;
 }
 
 /* Partie droite du jeu */
@@ -152,13 +159,14 @@
 
 .movie-game-app .score-drop.active {
     opacity: 1;
-    transform: translateY(-30px);
-    /* L'animation keyframes est gérée dans le JS pour le timing, mais on garde le style de base */
+    transform: translateY(-40px);
+    animation: drop-fade 1.5s forwards;
 }
 
 @keyframes drop-fade {
-    0% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-40px); }
+    0% { opacity: 0; transform: translateY(10px); }
+    20% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-50px); }
 }
 
 /* -------------------------------------

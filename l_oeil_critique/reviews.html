@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Découvrez les critiques de films et séries de L’Œil Critique — analyses, émotions et réflexions sur les œuvres qui marquent le cinéma.">
-  <meta name="keywords" content="critiques cinéma, reviews films, avis séries, analyses cinéma, L’Œil Critique">
+  <meta name="keywords" content="critiques cinéma, reviews films, avis séries, analyses cinéma, L’Œil Critique, Man of Steel, Superman">
   <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
   <title>Reviews – L’Œil Critique</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="css/chef_d_oeuvre.css" />
@@ -17,17 +17,54 @@
 <body>
   <main>
 
-    <section class="hero-block" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55), var(--primary-color)), url('assets/img/reviews/OIP.webp') center/cover no-repeat;">
+    <section class="hero-block" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55), var(--primary-color)), url('assets/img/reviews/91033-man-of-steel-henry-cavill-super-heroes-movies-hd-4k-superman.jpg') center/cover no-repeat;">
       <div class="hero-block__content">
-        <h1 class="hero-block__title">Good Will Hunting</h1>
-        <p class="hero-block__subtitle"><strong>Un chef-d'œuvre de sensibilité et d'humanité</strong>. Un duel émotionnel magistral entre Matt Damon et Robin Williams qui nous rappelle pourquoi on aime le cinéma.</p>
-        <a href="articles/reviews/films/good-will-hunting.html" class="btn btn--primary">Lire la critique</a>
+        <h1 class="hero-block__title">Man of Steel</h1>
+        <p class="hero-block__subtitle"><strong>L'aura et l'acier</strong>. Entre une farm d'aura légendaire et un filtre gris discutable, découvrez pourquoi le Superman de Zack Snyder ne laisse personne indifférent.</p>
+        <a href="articles/reviews/films/man-of-steel-critique.html" class="btn btn--primary">Lire la critique</a>
       </div>
     </section>
 
     <section id="reviews" class="reviews-list">
 
+      <div class="container" style="margin-bottom: 50px; max-width: 900px;">
+        <div style="background-color: var(--bg-subtle); padding: 30px; border-radius: 12px; border: 1px dashed var(--primary-color); position: relative;">
+          
+          <h2 style="font-family: 'Bebas Neue', cursive; font-size: 2.2rem; color: var(--primary-color); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+            Comment sont rédigées mes reviews ?
+          </h2>
+
+          <div style="line-height: 1.7; font-size: 1.05rem; color: var(--text-main);">
+            <p style="margin-bottom: 15px;">
+              C'est simple : j'écris quand un film me marque, que ce soit en bien ou en mal. Ma sélection n'a <strong style="color: #f2cd86;">aucune limite de temps</strong> : je peux aussi bien parler d'un blockbuster sorti hier que d'un classique d'il y a 50 ans. Ce qui compte, c'est l'impact de l'œuvre.
+            </p>
+            <p style="margin-bottom: 15px;">
+              Si une critique te semble plus courte ou moins détaillée, c'est qu'elle reflète mon <strong style="color: #f2cd86;">ressenti brut</strong> au moment du visionnage. Je privilégie l'authenticité de l'émotion à une analyse scolaire trop rigide.
+            </p>
+            <p style="margin-bottom: 0;">
+              <strong style="color: #f2cd86;">Mon avis n'est jamais figé :</strong> le cinéma est un art qui se redécouvre. Si de nouveaux détails me reviennent ou si ma réflexion mûrit avec le temps, je mets régulièrement les pages à jour. C'est un contenu vivant, à l'image de ma passion.
+            </p>
+          </div>
+
+          <div style="position: absolute; top: -15px; right: 20px; background: #f2cd86; color: #000; padding: 5px 15px; font-family: 'Bebas Neue'; border-radius: 5px; transform: rotate(2deg); font-size: 1.1rem;">
+            L'ŒIL CRITIQUE
+          </div>
+        </div>
+      </div>
+
       <div class="reviews-list__grid">
+
+        <article class="review-card">
+          <a href="articles/reviews/films/man-of-steel-critique.html" class="review-card__link">
+            <img src="assets/img/reviews/91033-man-of-steel-henry-cavill-super-heroes-movies-hd-4k-superman.jpg" alt="Affiche de Man of Steel" class="review-card__image">
+            <div class="review-card__content">
+              <h3 class="review-card__title">Man of Steel</h3>
+              <p class="review-card__meta">Par Yanis &bull; 08/03/2026</p>
+              <p class="review-card__summary"><strong>Une surprise solide</strong>. Malgré un visuel un peu trop gris, le film impressionne par sa puissance et une OST magistrale signée Hans Zimmer.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
 
         <article class="review-card">
           <a href="articles/reviews/films/good-will-hunting.html" class="review-card__link">
@@ -35,7 +72,7 @@
             <div class="review-card__content">
               <h3 class="review-card__title">Good Will Hunting</h3>
               <p class="review-card__meta">Par Yanis &bull; 01/03/2026</p>
-              <p class="review-card__summary"><strong>Un film d'une justesse incroyable</strong>, porté par des interprétations magistrales. C’est le genre d’œuvre qui rappelle pourquoi le cinéma est un art du partage émotionnel.</p>
+              <p class="review-card__summary"><strong>Un film d'une justesse incroyable</strong>, porté par des interprétations magistrales.</p>
               <span class="review-card__read-more">Lire plus</span>
             </div>
           </a>
@@ -47,133 +84,23 @@
             <div class="review-card__content">
               <h3 class="review-card__title">Wuthering Heights</h3>
               <p class="review-card__meta">Par Yanis &bull; 01/03/2026</p>
-              <p class="review-card__summary"><strong>Une réinterprétation viscérale et moderne</strong> d'un classique gothique. Emerald Fennell réussit à capturer l'obsession adolescente avec une esthétique sublime.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="review-card">
-          <a href="articles/reviews/films/challengers-critique.html" class="review-card__link">
-            <img src="assets/img/reviews/wallpapersden.com_challengers-2024-zendaya-movie_3840x2160.jpg" alt="Affiche de Challengers" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Challengers</h3>
-              <p class="review-card__meta">Par Yanis &bull; 02/01/2026</p>
-              <p class="review-card__summary"><strong>Un film tendu, sensuel et intelligent</strong>, qui transforme le sport en champ de bataille émotionnel. Audacieux dans l’intention.</p>
+              <p class="review-card__summary"><strong>Une réinterprétation viscérale et moderne</strong> d'un classique gothique.</p>
               <span class="review-card__read-more">Lire plus</span>
             </div>
           </a>
         </article>
         
-        <article class="review-card">
-          <a href="articles/reviews/films/le_tombeau_des_lucioles.html" class="review-card__link">
-            <img src="assets/img/reviews/le_tombeau_des_lucioles_-_8.jpg" alt="Affiche de Grave of the Fireflies (Le Tombeau des lucioles)" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Grave of the Fireflies</h3>
-              <p class="review-card__meta">Par Yanis &bull; 12/12/2025</p>
-              <p class="review-card__summary"><strong>Un chef-d'œuvre déchirant</strong> où la guerre est racontée à hauteur d’enfant. Une œuvre bouleversante et profondément humaine.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="review-card">
-          <a href="articles/reviews/films/Whiplash-critique.html" class="review-card__link">
-            <img src="assets/img/reviews/whiplash_title.jpg" alt="Logo de Whiplash" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Whiplash</h3>
-              <p class="review-card__meta">Par Yanis &bull; 03/11/2025</p>
-              <p class="review-card__summary"><strong>Un duel viscéral entre maître et élève</strong>, où la passion pour la perfection devient une guerre psychologique.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="review-card">
-          <a href="articles/reviews/films/sinners-critique.html" class="review-card__link">
-            <img src="assets/img/reviews/logosinners.jpg" alt="Affiche de Sinners" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Sinners</h3>
-              <p class="review-card__meta">Par Yanis &bull; 27/04/2025</p>
-              <p class="review-card__summary"><em>Sinners</em> vous plonge dans un univers où le passé rencontre l'invisible. Une expérience cinématographique incontournable !</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-        
-        <article class="review-card">
-          <a href="articles/reviews/films/Thunderbolts-critique.html" class="review-card__link">
-            <img src="assets/img/reviews/thunderbolts_logo.avif" alt="Logo de Thunderbolts" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Thunderbolts</h3>
-              <p class="review-card__meta">Par Yanis &bull; 06/05/2025</p>
-              <p class="review-card__summary">Une équipe de personnages fascinants qui apporte une nouvelle dimension au MCU, entre lutte intérieure et quête de rédemption.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-        
-        <article class="review-card">
-          <a href="articles/reviews/films/critique-robot-sauvage.html" class="review-card__link">
-            <img src="assets/img/reviews/robot sauvage logo.jpeg" alt="Affiche de Robot Sauvage" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Robot Sauvage</h3>
-              <p class="review-card__meta">Par Yanis &bull; 15/04/2025</p>
-              <p class="review-card__summary"><em>Robot Sauvage</em> est une réflexion poignante sur la nature humaine. Porté par des effets spéciaux impressionnants et une narration touchante.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="review-card">
-          <a href="articles/reviews/films/critique-flow.html" class="review-card__link">
-            <img src="assets/img/reviews/flow-critique-630x280.jpg.webp" alt="Affiche de Flow" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Flow</h3>
-              <p class="review-card__meta">Par Yanis &bull; 20/03/2025</p>
-              <p class="review-card__summary"><em>Flow</em> est une fable poétique et sensorielle qui parvient à captiver par la puissance de son animation. Une œuvre contemplative.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-        
-        <article class="review-card">
-          <a href="articles/reviews/SERIES/daredevil-born-again-les-deux-premiers-episodes.html" class="review-card__link">
-            <img src="assets/img/reviews/daredevil-born-again-1741150309.avif" alt="Affiche de Daredevil Born Again" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Daredevil: Born Again</h3>
-              <p class="review-card__meta">Par Yanis &bull; 08/03/2025</p>
-              <p class="review-card__summary">Un retour fracassant pour le justicier de Hell's Kitchen, mêlant tragédie et ambitions politiques.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="review-card">
-          <a href="articles/reviews/SERIES/Critique-Friendly-neighorhood-spider-man.html" class="review-card__link">
-            <img src="assets/img/reviews/your-friendly-neighborhood-spider-man.avif" alt="Affiche de Friendly Neighborhood Spider-Man" class="review-card__image">
-            <div class="review-card__content">
-              <h3 class="review-card__title">Spider-Man: Friendly Neighborhood</h3>
-              <p class="review-card__meta">Par Yanis &bull; 26/02/2025</p>
-              <p class="review-card__summary">Une série animée captivante qui réinvente l'histoire de Peter Parker avec une approche originale.</p>
-              <span class="review-card__read-more">Lire plus</span>
-            </div>
-          </a>
-        </article>
-
-      </div>
+        </div>
 
       <div class="reviews-list__letterboxd-link container">
         <h2 class="letterboxd-heading">Mes dernières critiques sur Letterboxd</h2>
         <a href="https://letterboxd.com/oni_le_chan/" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil Letterboxd de L'Œil Critique">
-          <img src="assets/img/reviews/letterboxd-mac-icon.png" alt="Logo Letterboxd (Cliquez pour voir les critiques)" class="letterboxd-icon">
+          <img src="assets/img/reviews/letterboxd-mac-icon.png" alt="Logo Letterboxd" class="letterboxd-icon">
         </a>
       </div>
       
     </section>
   </main>
-
-
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/header.js"></script>
