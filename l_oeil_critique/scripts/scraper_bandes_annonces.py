@@ -40,7 +40,7 @@ TMDB_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming"
 MAX_BANDES_CINE = 3
 MAX_BANDES_TMDB = 3
 MAX_SYNOPSIS_LEN = 500
-MAX_CARDS_FILE = 20
+MAX_CARDS_FILE = 40
 
 REQUEST_TIMEOUT = 10
 PAGE_TIMEOUT = 15000
@@ -258,14 +258,25 @@ def extract_articles_from_html(html_content):
 # ------------------------------
 
 def push_to_github():
-    logger.info("Poussée automatique vers GitHub...")
+    logger.info("Poussée automatique FORCÉE vers GitHub...")
     try:
         repo_root = SCRIPT_DIR.parent.parent
         os.chdir(repo_root)
-        subprocess.run(["git","add","."], check=True)
-        subprocess.run(["git","commit","-m","MAJ automatique bandes annonces"], check=True)
-        subprocess.run(["git","push","origin","main"], check=True)
-        logger.info("Push GitHub réussi")
+        
+        # Prépare les fichiers
+        subprocess.run(["git", "add", "."], check=True)
+        
+        # Commit (on ignore l'erreur si rien n'a changé avec un try/except local ou en vérifiant le status)
+        try:
+            subprocess.run(["git", "commit", "-m", "MAJ automatique bandes annonces"], check=True)
+        except subprocess.CalledProcessError:
+            logger.info("Rien à commiter, le répertoire est propre.")
+            return True
+
+        # LE PUSH FORCÉ : On ajoute "-f"
+        subprocess.run(["git", "push", "-f", "origin", "main"], check=True)
+        
+        logger.info("Push GitHub FORCE réussi")
         return True
     except Exception as e:
         logger.error(f"Erreur push GitHub: {e}")

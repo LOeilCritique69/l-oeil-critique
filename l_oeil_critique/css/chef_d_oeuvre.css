@@ -62,6 +62,7 @@ html, body {
   font-family: var(--font-family);
   color: var(--text-color-dark);
   line-height: 1.6;
+  padding-top: 40px;
 }
 main { flex-grow: 1; padding: 2rem 0; }
 img { max-width: 100%; display: block; }
@@ -1482,7 +1483,7 @@ footer p {
 /* --- À LA UNE (CARTES INTERACTIVES - OPTIMISÉ POUR 4) --- */
 .featured-section {
   background: linear-gradient(180deg, #fff 0%, #f4f4f4 100%);
-  padding: 4rem 1.5rem;
+  padding: 0rem 1.5rem;
   position: relative;
   overflow: hidden;
 }

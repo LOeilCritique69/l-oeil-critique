@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('grille-bandes');
     const voirPlusBtn = document.getElementById('voir-plus-btn');
-    const step = 10; // On affiche 10 par 10
+    const step = 12; // On affiche 10 par 10
     let currentIndex = 0;
     let allCards = [];
 
