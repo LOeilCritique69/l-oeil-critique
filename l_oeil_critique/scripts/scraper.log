@@ -1010,3 +1010,28 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-08 12:10:56,517 [INFO] 21 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-03-08 12:10:56,517 [INFO] Sauvegarde du log avec 6 identifiants
 2026-03-08 12:10:56,518 [INFO] Poussée automatique vers GitHub...
+2026-03-08 12:10:58,042 [ERROR] Erreur push GitHub: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+2026-03-08 12:10:58,043 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-08 12:11:48,117 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 12:11:48,118 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 12:11:48,118 [INFO] 0 identifiants chargés depuis le log
+2026-03-08 12:11:48,118 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 12:11:49,560 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 12:11:49,584 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 12:11:49,585 [INFO] Extraction détails CineHorizons pour Plus forts que le diable
+2026-03-08 12:11:50,291 [INFO] Article ajouté CineHorizons: Plus forts que le diable
+2026-03-08 12:11:50,291 [INFO] Extraction détails CineHorizons pour L'Ultime Héritier
+2026-03-08 12:11:50,859 [INFO] Article ajouté CineHorizons: L'Ultime Héritier
+2026-03-08 12:11:50,859 [INFO] Extraction détails CineHorizons pour Mortal Kombat 2
+2026-03-08 12:11:51,391 [INFO] Article ajouté CineHorizons: Mortal Kombat 2
+2026-03-08 12:11:51,433 [INFO] Scraping CineHorizons terminé
+2026-03-08 12:11:51,450 [INFO] Démarrage scraping TMDb...
+2026-03-08 12:11:51,841 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 12:11:51,872 [INFO] Article ajouté TMDb: Le Sifflet
+2026-03-08 12:11:51,882 [INFO] Article ajouté TMDb: Projet Dernière Chance
+2026-03-08 12:11:51,891 [INFO] Article ajouté TMDb: Super Mario Galaxy, le film
+2026-03-08 12:11:51,891 [INFO] Scraping TMDb terminé
+2026-03-08 12:11:51,892 [INFO] 6 nouveaux articles détectés
+2026-03-08 12:11:51,893 [INFO] 6 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-08 12:11:51,893 [INFO] Sauvegarde du log avec 6 identifiants
+2026-03-08 12:11:51,894 [INFO] Poussée automatique vers GitHub...
