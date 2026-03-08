@@ -10,22 +10,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/chef_d_oeuvre.css">
     
     <style>
+        /* --- BLOC INFO / DISCLAIMER --- */
         .info-disclaimer {
             margin: 2rem auto;
             padding: 1.2rem 1.5rem;
-            /* Fond sombre et pur pour éviter l'effet "jauni" */
             background: rgba(20, 23, 28, 0.6); 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            
-            /* Bordure dorée fine et nette */
             border: 1px solid rgba(242, 205, 134, 0.15);
-            border-left: 4px solid #f2cd86; /* Ton doré pur */
+            border-left: 4px solid #f2cd86;
             border-radius: 8px;
-            
             max-width: 800px;
             display: flex;
             align-items: flex-start;
@@ -34,26 +32,89 @@
 
         .info-disclaimer p {
             font-size: 0.9rem;
-            /* On oublie le doré pour le texte, on met un blanc cassé propre */
             color: #e0e0e0; 
             line-height: 1.6;
             margin: 0;
             font-weight: 400;
+            font-style: italic;
         }
 
         .info-icon {
-            /* L'icône porte la couleur dorée pour le rappel visuel */
             color: #f2cd86;
             font-size: 1.2rem;
             flex-shrink: 0;
         }
 
-        /* Version Mobile */
+        /* --- BARRE DE RECHERCHE DARK & VISIBLE --- */
+        .search-wrapper {
+            max-width: 650px; /* Légèrement plus large pour le confort */
+            margin: 0 auto 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: #000000; /* Noir pur pour une visibilité totale */
+            border: 2px solid rgba(242, 205, 134, 0.3); /* Bordure dorée plus épaisse */
+            border-radius: 12px; /* Look un peu plus moderne/rectangulaire arrondi */
+            padding: 12px 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Ombre portée pour décoller du fond */
+        }
+
+        .search-box:focus-within {
+            border-color: #f2cd86; /* Or pur au focus */
+            box-shadow: 0 0 20px rgba(242, 205, 134, 0.2);
+            transform: translateY(-2px); /* Petit effet de lévitation au focus */
+        }
+
+        .search-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: #f2cd86; /* Icône dorée pour être bien visible */
+            opacity: 0.9;
+        }
+
+        #trailers-search {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #ffffff; /* Texte blanc pur */
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            outline: none;
+        }
+
+        #trailers-search::placeholder {
+            color: #888888; /* Gris moyen pour le placeholder, bien lisible */
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #f2cd86; /* Message d'erreur en doré pour être vu */
+            font-size: 1.1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        /* --- RESPONSIVE OPTIMISÉ --- */
         @media (max-width: 768px) {
-            .info-disclaimer {
-                width: 92%;
-                margin: 1.5rem auto;
-                padding: 1rem;
+            .search-wrapper { 
+                margin-bottom: 2rem; 
+                padding: 0 1rem;
+            }
+            .search-box {
+                padding: 10px 15px;
+                border-radius: 8px; /* On réduit un peu l'arrondi sur mobile */
+            }
+            #trailers-search {
+                font-size: 1rem;
             }
         }
     </style>
@@ -74,17 +135,24 @@
         </section>
 
         <div class="info-disclaimer">
+            <span class="info-icon">ℹ️</span> 
             <p>
-                <span class="info-icon">ℹ️</span> 
                 Le site s'améliore chaque jour pour récupérer le maximum de contenus. 
                 Les mises à jour ne sont pas quotidiennes et il peut arriver que certains titres apparaissent en double selon les versions (VO/VF).
             </p>
         </div>
 
+        <div class="search-wrapper">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="trailers-search" placeholder="Rechercher un film..." aria-label="Rechercher">
+            </div>
+        </div>
+
         <div class="grille-bandes" id="grille-bandes" role="list" aria-live="polite">
             </div>
 
-        <button id="voir-plus-btn" aria-controls="grille-bandes" aria-expanded="false" hidden>
+        <button id="voir-plus-btn" class="btn-primary" aria-controls="grille-bandes" hidden>
             Voir plus
         </button>
 
@@ -94,46 +162,84 @@
 
 <script src="assets/js/header.js"></script>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/loadTrailers.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('grille-bandes');
     const voirPlusBtn = document.getElementById('voir-plus-btn');
     const dateMajContainer = document.getElementById('date-maj');
+    const searchInput = document.getElementById('trailers-search');
+
+    let allCards = []; // Cache pour la recherche
+    const initialLimit = 10;
 
     try {
-        // Un seul fetch pour tout récupérer
-        const response = await fetch('scripts/bande_annonces_blocs.html');
-        if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
+        // Chargement du fichier généré par le script Python
+        const response = await fetch('bande_annonces_blocs.html');
+        if (!response.ok) throw new Error('Fichier introuvable (404)');
+        
         const html = await response.text();
-
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
 
-        // Gestion des cartes
-        const allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
-        const initialCount = 10; // On passe à 10 pour rester sur ton idée de départ
+        // On récupère toutes les cartes
+        allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
 
-        allCards.slice(0, initialCount).forEach(card => container.appendChild(card));
+        // Fonction pour afficher le mode normal (10 + bouton)
+        const renderDefault = () => {
+            container.innerHTML = '';
+            allCards.slice(0, initialLimit).forEach(card => container.appendChild(card));
+            
+            if (allCards.length > initialLimit) {
+                voirPlusBtn.hidden = false;
+            }
+        };
 
-        if (allCards.length > initialCount) {
-            voirPlusBtn.hidden = false;
-            voirPlusBtn.addEventListener('click', () => {
-                allCards.slice(initialCount).forEach(card => container.appendChild(card));
-                voirPlusBtn.hidden = true;
-            });
+        // Initialisation
+        if (allCards.length > 0) {
+            renderDefault();
+        } else {
+            container.innerHTML = '<p class="no-results">Aucune bande-annonce disponible.</p>';
         }
 
-        // Gestion de la date (récupérée du même fetch)
+        // Clic sur "Voir plus"
+        voirPlusBtn.addEventListener('click', () => {
+            allCards.slice(initialLimit).forEach(card => container.appendChild(card));
+            voirPlusBtn.hidden = true;
+        });
+
+        // RECHERCHE EN TEMPS RÉEL
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length > 0) {
+                voirPlusBtn.hidden = true;
+                container.innerHTML = '';
+
+                const filtered = allCards.filter(card => {
+                    const title = card.querySelector('h2').innerText.toLowerCase();
+                    return title.includes(query);
+                });
+
+                if (filtered.length > 0) {
+                    filtered.forEach(card => container.appendChild(card));
+                } else {
+                    container.innerHTML = `<div class="no-results">Aucun résultat pour "${query}"</div>`;
+                }
+            } else {
+                renderDefault();
+            }
+        });
+
+        // Extraction de la date de MAJ
         const majP = tempDiv.querySelector('.maj-annonces');
         if (majP && dateMajContainer) {
             dateMajContainer.innerHTML = majP.outerHTML;
         }
 
     } catch (err) {
-        container.innerHTML = '<p>Impossible de charger les bandes-annonces.</p>';
-        console.error('Erreur:', err);
+        container.innerHTML = '<p class="no-results">Erreur de chargement des données.</p>';
+        console.error('Erreur au fetch:', err);
     }
 });
 </script>
