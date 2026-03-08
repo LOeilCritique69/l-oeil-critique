@@ -963,3 +963,50 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-07 12:11:16,417 [INFO] 🎞 [TMDb] Démarrage du scraping...
 2026-03-07 12:11:17,969 [INFO] ✅ [TMDb] 0 nouvelles bandes-annonces ajoutées.
 2026-03-07 12:11:17,970 [INFO] ℹ️ Aucune nouvelle bande-annonce détectée.
+2026-03-08 12:05:10,750 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 12:05:10,761 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 12:05:10,761 [INFO] 145 identifiants chargés depuis le log
+2026-03-08 12:05:10,762 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 12:05:12,304 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 12:05:12,334 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 12:05:12,384 [INFO] Scraping CineHorizons terminé
+2026-03-08 12:05:12,400 [INFO] Démarrage scraping TMDb...
+2026-03-08 12:05:12,761 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 12:05:12,940 [INFO] Scraping TMDb terminé
+2026-03-08 12:05:12,941 [INFO] 0 nouveaux articles détectés
+2026-03-08 12:05:12,941 [INFO] Aucun nouvel article à ajouter
+2026-03-08 12:07:54,345 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 12:07:54,345 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 12:07:54,346 [INFO] 145 identifiants chargés depuis le log
+2026-03-08 12:07:54,346 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 12:07:55,857 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 12:07:55,882 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 12:07:55,925 [INFO] Scraping CineHorizons terminé
+2026-03-08 12:07:55,940 [INFO] Démarrage scraping TMDb...
+2026-03-08 12:07:56,273 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 12:07:56,324 [INFO] Scraping TMDb terminé
+2026-03-08 12:07:56,326 [INFO] 0 nouveaux articles détectés
+2026-03-08 12:07:56,326 [INFO] Aucun nouvel article à ajouter
+2026-03-08 12:10:52,641 [INFO] ==== Début du script bandes-annonces ====
+2026-03-08 12:10:52,641 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-08 12:10:52,642 [INFO] 0 identifiants chargés depuis le log
+2026-03-08 12:10:52,642 [INFO] Démarrage scraping CineHorizons...
+2026-03-08 12:10:54,215 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-08 12:10:54,244 [INFO] 3 blocs détectés (limite 3)
+2026-03-08 12:10:54,245 [INFO] Extraction détails CineHorizons pour Plus forts que le diable
+2026-03-08 12:10:54,971 [INFO] Article ajouté CineHorizons: Plus forts que le diable
+2026-03-08 12:10:54,972 [INFO] Extraction détails CineHorizons pour L'Ultime Héritier
+2026-03-08 12:10:55,623 [INFO] Article ajouté CineHorizons: L'Ultime Héritier
+2026-03-08 12:10:55,624 [INFO] Extraction détails CineHorizons pour Mortal Kombat 2
+2026-03-08 12:10:56,044 [INFO] Article ajouté CineHorizons: Mortal Kombat 2
+2026-03-08 12:10:56,095 [INFO] Scraping CineHorizons terminé
+2026-03-08 12:10:56,111 [INFO] Démarrage scraping TMDb...
+2026-03-08 12:10:56,469 [INFO] 20 films récupérés depuis TMDb
+2026-03-08 12:10:56,495 [INFO] Article ajouté TMDb: Le Sifflet
+2026-03-08 12:10:56,504 [INFO] Article ajouté TMDb: Projet Dernière Chance
+2026-03-08 12:10:56,513 [INFO] Article ajouté TMDb: Super Mario Galaxy, le film
+2026-03-08 12:10:56,514 [INFO] Scraping TMDb terminé
+2026-03-08 12:10:56,515 [INFO] 6 nouveaux articles détectés
+2026-03-08 12:10:56,517 [INFO] 21 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-08 12:10:56,517 [INFO] Sauvegarde du log avec 6 identifiants
+2026-03-08 12:10:56,518 [INFO] Poussée automatique vers GitHub...
