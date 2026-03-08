@@ -1,100 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Retrouvez toutes les actualités majeures du cinéma et des séries, y compris les événements comme les Oscars et les Golden Globes." />
-    <meta name="keywords" content="actualités cinéma, actualités séries, Oscars, Golden Globes, Marvel, festivals de cinéma, industrie du film" />
-    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
-    <title>Bandes-Annonces - L'Œil Critique</title>
-    <!-- Fonts + CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/chef_d_oeuvre.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Retrouvez toutes les dernières bandes-annonces du cinéma.">
+<meta name="keywords" content="bandes annonces cinéma, trailers films, teasers films">
+
+<title>Bandes-Annonces - L'Œil Critique</title>
+
+<link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/chef_d_oeuvre.css">
+
 </head>
+
+
 <body>
 
-    <main>
-        <section class="bande-annonce-container" aria-label="Section des bandes-annonces">
-            <section class="page-intro-section">
-            <h2 class="page-title">Bandes-Annonces</h2>
-            <p class="page-description">
-            Découvrez toutes les dernières bandes-annonces, teasers et exclusivités du cinéma. Restez à jour avec les films qui font parler d’eux et préparez-vous à ne rien manquer !</p>
-        </section>
 
-            <div class="grille-bandes" id="grille-bandes" role="list" aria-live="polite">
-                <!-- Bandes-annonces chargées dynamiquement -->
-            </div>
-            <button id="voir-plus-btn" aria-controls="grille-bandes" aria-expanded="false" style="display:none;">Voir plus</button>
-        </section>
-    </main>
+<main>
 
-    <footer>
-        <div class="footer-links">
-            <a href="mentions_légales.html">Mentions légales</a>
-            <a href="politique-de-confidentialité.html">Politique de confidentialité</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <p>© 2025 L'Œil Critique. Tous droits réservés.</p>
-    </footer>
+<section class="bande-annonce-container" aria-label="Section des bandes-annonces">
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/header.js"></script>
-    <script>
-       document.addEventListener('DOMContentLoaded', async () => {
-    const container = document.getElementById('grille-bandes');
-    const voirPlusBtn = document.getElementById('voir-plus-btn');
-    const dateMajContainer = document.getElementById('date-maj'); // élément cible pour la date
+<section class="page-intro-section">
 
-    try {
-        // Chargement des bandes-annonces
-        const response = await fetch('scripts/bande_annonces_blocs.html');
-        const html = await response.text();
+<h2 class="page-title">Bandes-Annonces</h2>
 
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = html;
+<p class="page-description">
+Découvrez toutes les dernières bandes-annonces, teasers et exclusivités du cinéma. 
+Restez à jour avec les films qui font parler d’eux et préparez-vous à ne rien manquer.
+</p>
 
-        const allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
-        const initialCount = 9;
-
-        const visibleCards = allCards.slice(0, initialCount);
-        const hiddenCards = allCards.slice(initialCount);
-
-        visibleCards.forEach(card => container.appendChild(card));
-
-        if (hiddenCards.length > 0) {
-            voirPlusBtn.classList.add('active'); // Affiche le bouton
-            voirPlusBtn.addEventListener('click', () => {
-                hiddenCards.forEach(card => container.appendChild(card));
-                voirPlusBtn.classList.remove('active'); // Cache après clic
-            });
-        }
+</section>
 
 
-        // Chargement et injection de la date de mise à jour
-        if (dateMajContainer) {
-            const dateResp = await fetch('bande_annonces_maj.html');
-            if (dateResp.ok) {
-                const dateHtml = await dateResp.text();
-                const tempDateDiv = document.createElement('div');
-                tempDateDiv.innerHTML = dateHtml;
-                const majP = tempDateDiv.querySelector('.maj-annonces');
-                if (majP) {
-                    dateMajContainer.innerHTML = majP.outerHTML;
-                }
-            }
-        }
 
-    } catch (err) {
-        container.innerHTML = '<p>Impossible de charger les bandes-annonces.</p>';
-        console.error('Erreur chargement bandes annonces:', err);
-    }
-});
+<div class="grille-bandes" id="grille-bandes" role="list" aria-live="polite">
+<!-- Les trailers seront injectés ici -->
+</div>
 
-    </script>
-    <script src="assets/js/loadTrailers.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
-     crossorigin="anonymous"></script>
+
+
+<button id="voir-plus-btn"
+        aria-controls="grille-bandes"
+        aria-expanded="false"
+        style="display:none;">
+
+Voir plus
+
+</button>
+
+
+</section>
+
+</main>
+
+
+
+<!-- Scripts principaux du site -->
+
+<script src="assets/js/main.js"></script>
+
+<script src="assets/js/header.js"></script>
+
+<script src="assets/js/loadTrailers.js"></script>
+
+
+
+<!-- Google Adsense -->
+
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
+crossorigin="anonymous"></script>
+
+
 </body>
+
 </html>

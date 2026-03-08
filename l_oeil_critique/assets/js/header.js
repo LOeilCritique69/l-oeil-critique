@@ -35,6 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Injection du header
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
+    // FOOTER
+    const footerHTML = `
+      <footer>
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="/l_oeil_critique/mentions_légales.html">Mentions légales</a>
+            <a href="/l_oeil_critique/politique-de-confidentialité.html">Politique de confidentialité</a>
+            <a href="/l_oeil_critique/contact.html">Contact</a>
+          </div>
+          <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
+        </div>
+      </footer>
+    `;
+
+    // 2. Injection du footer
+
+    document.body.insertAdjacentHTML("beforeend", footerHTML);
+
     // 3. Déclaration des variables et initialisation de la recherche
     const searchInput = document.querySelector("#search-input");
     const resultsContainer = document.querySelector("#search-results-container");
