@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="/l_oeil_critique/politique-de-confidentialité.html">Politique de confidentialité</a>
             <a href="/l_oeil_critique/contact.html">Contact</a>
           </div>
-          <p>&copy; 2025 L'Œil Critique. Tous droits réservés.</p>
+          <p>&copy; 2026 L'Œil Critique. Tous droits réservés.</p>
         </div>
       </footer>
     `;
