@@ -1189,3 +1189,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-09 15:59:42,847 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-03-09 16:00:00,995 [INFO] Push GitHub FORCE réussi
 2026-03-09 16:00:00,995 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-13 10:42:28,818 [INFO] ==== Début du script bandes-annonces ====
+2026-03-13 10:42:28,818 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-13 10:42:28,829 [INFO] 123 identifiants chargés depuis le log
+2026-03-13 10:42:28,830 [INFO] Démarrage scraping CineHorizons...
+2026-03-13 10:42:38,391 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-13 10:42:38,410 [INFO] 3 blocs détectés (limite 3)
+2026-03-13 10:42:38,457 [INFO] Scraping CineHorizons terminé
+2026-03-13 10:42:38,466 [INFO] Démarrage scraping TMDb...
+2026-03-13 10:42:38,838 [INFO] 20 films récupérés depuis TMDb
+2026-03-13 10:42:39,113 [INFO] Article ajouté TMDb: Projet dernière chance
+2026-03-13 10:42:39,362 [INFO] Article ajouté TMDb: Super Mario Galaxy, le film
+2026-03-13 10:42:39,614 [INFO] Scraping TMDb terminé
+2026-03-13 10:42:39,617 [INFO] 2 nouveaux articles détectés
+2026-03-13 10:42:39,620 [INFO] 42 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-13 10:42:39,621 [INFO] Sauvegarde du log avec 125 identifiants
+2026-03-13 10:42:39,622 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-13 10:42:58,639 [INFO] Push GitHub FORCE réussi
+2026-03-13 10:42:58,640 [INFO] ==== Fin du script bandes-annonces ====
