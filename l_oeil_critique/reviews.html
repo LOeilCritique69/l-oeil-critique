@@ -13,15 +13,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="css/chef_d_oeuvre.css" />
+  <style>
+    .review-card {
+  position: relative; /* pour positionner le badge */
+  overflow: hidden;   /* pour que le badge ne déborde pas */
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.review-card__type {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Couleurs par type avec dégradé léger */
+.review-card__type.film {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+}
+
+.review-card__type.serie {
+  background: linear-gradient(135deg, #2196f3, #42a5f5);
+}
+
+.review-card__type::after {
+  content: '✔';
+  margin-left: 6px;
+  font-size: 0.9rem;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+  </style>
 </head>
 <body>
   <main>
 
-    <section class="hero-block" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55), var(--primary-color)), url('assets/img/reviews/91033-man-of-steel-henry-cavill-super-heroes-movies-hd-4k-superman.jpg') center/cover no-repeat;">
+    <section class="hero-block" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55), var(--primary-color)), url('assets/img/reviews/rr.jpg') center/cover no-repeat;">
       <div class="hero-block__content">
-        <h1 class="hero-block__title">Man of Steel</h1>
-        <p class="hero-block__subtitle"><strong>L'aura et l'acier</strong>. Entre une farm d'aura légendaire et un filtre gris discutable, découvrez pourquoi le Superman de Zack Snyder ne laisse personne indifférent.</p>
-        <a href="articles/reviews/films/man-of-steel-critique.html" class="btn btn--primary">Lire la critique</a>
+        <h1 class="hero-block__title">Agents of S.H.I.E.L.D.</h1>
+        <p class="hero-block__subtitle"><strong>Une série Marvel qui dépasse son statut de spin-off.</strong> Malgré des débuts parfois hésitants et des saisons inégales, Agents of S.H.I.E.L.D. finit par devenir une aventure très attachante portée par ses personnages et des arcs narratifs ambitieux !</p>
+
+        <a href="articles/reviews/series/Agent-Of-Shield-critique.html" class="btn btn--primary">Lire la critique</a>
       </div>
     </section>
 
@@ -55,9 +104,23 @@
       <div class="reviews-list__grid">
 
         <article class="review-card">
+          <a href="articles/reviews/series/Agent-Of-Shield-critique.html" class="review-card__link">
+            <img src="assets/img/reviews/rr.jpg" alt="Affiche de AOS" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type serie">Série </span>
+              <h3 class="review-card__title">Agents of S.H.I.E.L.D.</h3>
+              <p class="review-card__meta">Par Yanis &bull; 16/03/2026</p>
+              <p class="review-card__summary"><strong>Une série Marvel qui dépasse son statut de spin-off.</strong> Malgré des débuts parfois hésitants et des saisons inégales, Agents of S.H.I.E.L.D. finit par devenir une aventure très attachante portée par ses personnages et des arcs narratifs ambitieux !</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="review-card">
           <a href="articles/reviews/films/man-of-steel-critique.html" class="review-card__link">
             <img src="assets/img/reviews/91033-man-of-steel-henry-cavill-super-heroes-movies-hd-4k-superman.jpg" alt="Affiche de Man of Steel" class="review-card__image">
             <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
               <h3 class="review-card__title">Man of Steel</h3>
               <p class="review-card__meta">Par Yanis &bull; 08/03/2026</p>
               <p class="review-card__summary"><strong>Une surprise solide</strong>. Malgré un visuel un peu trop gris, le film impressionne par sa puissance et une OST magistrale signée Hans Zimmer.</p>
@@ -70,6 +133,7 @@
           <a href="articles/reviews/films/good-will-hunting.html" class="review-card__link">
             <img src="assets/img/reviews/OIP.webp" alt="Affiche de Good Will Hunting" class="review-card__image">
             <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
               <h3 class="review-card__title">Good Will Hunting</h3>
               <p class="review-card__meta">Par Yanis &bull; 01/03/2026</p>
               <p class="review-card__summary"><strong>Un film d'une justesse incroyable</strong>, porté par des interprétations magistrales.</p>
@@ -82,9 +146,127 @@
           <a href="articles/reviews/films/wuthering-heights-critique.html" class="review-card__link">
             <img src="assets/img/reviews/Wuthering-Heights.webp" alt="Affiche de Wuthering Heights" class="review-card__image">
             <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
               <h3 class="review-card__title">Wuthering Heights</h3>
               <p class="review-card__meta">Par Yanis &bull; 01/03/2026</p>
               <p class="review-card__summary"><strong>Une réinterprétation viscérale et moderne</strong> d'un classique gothique.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="review-card">
+          <a href="articles/reviews/films/challengers-critique.html" class="review-card__link">
+            <img src="assets/img/reviews/wallpapersden.com_challengers-2024-zendaya-movie_3840x2160.jpg" alt="Affiche de Challengers" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
+              <h3 class="review-card__title">Challengers</h3>
+              <p class="review-card__meta">Par Yanis &bull; 02/01/2026</p>
+              <p class="review-card__summary"><strong>Un film tendu, sensuel et intelligent</strong>, qui transforme le sport en champ de bataille émotionnel. Audacieux dans l’intention.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="review-card">
+          <a href="articles/reviews/films/le_tombeau_des_lucioles.html" class="review-card__link">
+            <img src="assets/img/reviews/le_tombeau_des_lucioles_-_8.jpg" alt="Affiche de Grave of the Fireflies (Le Tombeau des lucioles)" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
+              <h3 class="review-card__title">Grave of the Fireflies</h3>
+              <p class="review-card__meta">Par Yanis &bull; 12/12/2025</p>
+              <p class="review-card__summary"><strong>Un chef-d'œuvre déchirant</strong> où la guerre est racontée à hauteur d’enfant. Une œuvre bouleversante et profondément humaine.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="review-card">
+          <a href="articles/reviews/films/Whiplash-critique.html" class="review-card__link">
+            <img src="assets/img/reviews/whiplash_title.jpg" alt="Logo de Whiplash" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
+              <h3 class="review-card__title">Whiplash</h3>
+              <p class="review-card__meta">Par Yanis &bull; 03/11/2025</p>
+              <p class="review-card__summary"><strong>Un duel viscéral entre maître et élève</strong>, où la passion pour la perfection devient une guerre psychologique.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="review-card">
+          <a href="articles/reviews/films/sinners-critique.html" class="review-card__link">
+            <img src="assets/img/reviews/logosinners.jpg" alt="Affiche de Sinners" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
+              <h3 class="review-card__title">Sinners</h3>
+              <p class="review-card__meta">Par Yanis &bull; 27/04/2025</p>
+              <p class="review-card__summary"><em>Sinners</em> vous plonge dans un univers où le passé rencontre l'invisible. Une expérience cinématographique incontournable !</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="review-card">
+          <a href="articles/reviews/films/Thunderbolts-critique.html" class="review-card__link">
+            <img src="assets/img/reviews/thunderbolts_logo.avif" alt="Logo de Thunderbolts" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type film">Film </span>
+              <h3 class="review-card__title">Thunderbolts</h3>
+              <p class="review-card__meta">Par Yanis &bull; 06/05/2025</p>
+              <p class="review-card__summary">Une équipe de personnages fascinants qui apporte une nouvelle dimension au MCU, entre lutte intérieure et quête de rédemption.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="review-card">
+          <a href="articles/reviews/films/critique-robot-sauvage.html" class="review-card__link">
+            <img src="assets/img/reviews/robot sauvage logo.jpeg" alt="Affiche de Robot Sauvage" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type film">Film</span>
+              <h3 class="review-card__title">Robot Sauvage</h3>
+              <p class="review-card__meta">Par Yanis &bull; 15/04/2025</p>
+              <p class="review-card__summary"><em>Robot Sauvage</em> est une réflexion poignante sur la nature humaine. Porté par des effets spéciaux impressionnants et une narration touchante.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="review-card">
+          <a href="articles/reviews/films/critique-flow.html" class="review-card__link">
+            <img src="assets/img/reviews/flow-critique-630x280.jpg.webp" alt="Affiche de Flow" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type film">Film</span>
+              <h3 class="review-card__title">Flow</h3>
+              <p class="review-card__meta">Par Yanis &bull; 20/03/2025</p>
+              <p class="review-card__summary"><em>Flow</em> est une fable poétique et sensorielle qui parvient à captiver par la puissance de son animation. Une œuvre contemplative.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+        
+        <article class="review-card">
+          <a href="articles/reviews/SERIES/daredevil-born-again-les-deux-premiers-episodes.html" class="review-card__link">
+            <img src="assets/img/reviews/daredevil-born-again-1741150309.avif" alt="Affiche de Daredevil Born Again" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type serie">Série</span>
+              <h3 class="review-card__title">Daredevil: Born Again</h3>
+              <p class="review-card__meta">Par Yanis &bull; 08/03/2025</p>
+              <p class="review-card__summary">Un retour fracassant pour le justicier de Hell's Kitchen, mêlant tragédie et ambitions politiques.</p>
+              <span class="review-card__read-more">Lire plus</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="review-card">
+          <a href="articles/reviews/SERIES/Critique-Friendly-neighorhood-spider-man.html" class="review-card__link">
+            <img src="assets/img/reviews/your-friendly-neighborhood-spider-man.avif" alt="Affiche de Friendly Neighborhood Spider-Man" class="review-card__image">
+            <div class="review-card__content">
+              <span class="review-card__type serie">Série</span>
+              <h3 class="review-card__title">Spider-Man: Friendly Neighborhood</h3>
+              <p class="review-card__meta">Par Yanis &bull; 26/02/2025</p>
+              <p class="review-card__summary">Une série animée captivante qui réinvente l'histoire de Peter Parker avec une approche originale.</p>
               <span class="review-card__read-more">Lire plus</span>
             </div>
           </a>

@@ -273,3 +273,15 @@ body.dark-mode .question,
 body.dark-mode blockquote {
     color: var(--text-main) !important;
 }
+
+
+.review-explanation {
+    background-color: #f9f9f9;
+    border-left: 4px solid #333;
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
