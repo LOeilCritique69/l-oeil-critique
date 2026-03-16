@@ -1207,3 +1207,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-13 10:42:39,622 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-03-13 10:42:58,639 [INFO] Push GitHub FORCE réussi
 2026-03-13 10:42:58,640 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-16 15:59:03,959 [INFO] ==== Début du script bandes-annonces ====
+2026-03-16 15:59:03,971 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-16 15:59:03,998 [INFO] 125 identifiants chargés depuis le log
+2026-03-16 15:59:03,999 [INFO] Démarrage scraping CineHorizons...
+2026-03-16 15:59:13,020 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-16 15:59:13,038 [INFO] 3 blocs détectés (limite 3)
+2026-03-16 15:59:13,039 [INFO] Extraction détails CineHorizons pour Le Cri des gardes
+2026-03-16 15:59:13,592 [INFO] Article ajouté CineHorizons: Le Cri des gardes
+2026-03-16 15:59:13,592 [INFO] Extraction détails CineHorizons pour Wedding Nightmare : deuxième partie
+2026-03-16 15:59:14,019 [INFO] Article ajouté CineHorizons: Wedding Nightmare : deuxième partie
+2026-03-16 15:59:14,068 [INFO] Scraping CineHorizons terminé
+2026-03-16 15:59:14,078 [INFO] Démarrage scraping TMDb...
+2026-03-16 15:59:14,434 [INFO] 20 films récupérés depuis TMDb
+2026-03-16 15:59:15,291 [INFO] Scraping TMDb terminé
+2026-03-16 15:59:15,295 [INFO] 2 nouveaux articles détectés
+2026-03-16 15:59:15,303 [INFO] 44 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-16 15:59:15,303 [INFO] Sauvegarde du log avec 127 identifiants
+2026-03-16 15:59:15,320 [INFO] Poussée automatique FORCÉE vers GitHub...
