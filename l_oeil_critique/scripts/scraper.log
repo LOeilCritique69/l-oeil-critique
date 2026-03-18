@@ -1227,3 +1227,38 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-16 15:59:15,320 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-03-16 15:59:31,212 [INFO] Push GitHub FORCE réussi
 2026-03-16 15:59:31,212 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-17 09:46:24,346 [INFO] ==== Début du script bandes-annonces ====
+2026-03-17 09:46:24,358 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-17 09:46:24,393 [INFO] 127 identifiants chargés depuis le log
+2026-03-17 09:46:24,408 [INFO] Démarrage scraping CineHorizons...
+2026-03-17 09:46:33,613 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-17 09:46:33,634 [INFO] 3 blocs détectés (limite 3)
+2026-03-17 09:46:33,679 [INFO] Scraping CineHorizons terminé
+2026-03-17 09:46:33,688 [INFO] Démarrage scraping TMDb...
+2026-03-17 09:46:34,041 [INFO] 20 films récupérés depuis TMDb
+2026-03-17 09:46:34,804 [INFO] Article ajouté TMDb: Plus fort que moi
+2026-03-17 09:46:34,804 [INFO] Scraping TMDb terminé
+2026-03-17 09:46:34,805 [INFO] 1 nouveaux articles détectés
+2026-03-17 09:46:34,839 [INFO] 45 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-17 09:46:34,839 [INFO] Sauvegarde du log avec 128 identifiants
+2026-03-17 09:46:34,840 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-17 09:46:55,995 [INFO] Push GitHub FORCE réussi
+2026-03-17 09:46:55,996 [INFO] ==== Fin du script bandes-annonces ====
+2026-03-18 17:29:58,435 [INFO] ==== Début du script bandes-annonces ====
+2026-03-18 17:29:58,444 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-03-18 17:29:58,445 [INFO] 128 identifiants chargés depuis le log
+2026-03-18 17:29:58,445 [INFO] Démarrage scraping CineHorizons...
+2026-03-18 17:30:07,268 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-18 17:30:07,290 [INFO] 3 blocs détectés (limite 3)
+2026-03-18 17:30:07,291 [INFO] Extraction détails CineHorizons pour Dune : Messiah
+2026-03-18 17:30:07,953 [INFO] Article ajouté CineHorizons: Dune : Messiah
+2026-03-18 17:30:07,999 [INFO] Scraping CineHorizons terminé
+2026-03-18 17:30:08,012 [INFO] Démarrage scraping TMDb...
+2026-03-18 17:30:08,382 [INFO] 20 films récupérés depuis TMDb
+2026-03-18 17:30:08,931 [INFO] Article ajouté TMDb: Wedding Nightmare : deuxième partie
+2026-03-18 17:30:09,056 [INFO] Article ajouté TMDb: Terminator 2 : Le Jugement dernier
+2026-03-18 17:30:09,181 [INFO] Scraping TMDb terminé
+2026-03-18 17:30:09,185 [INFO] 3 nouveaux articles détectés
+2026-03-18 17:30:09,240 [INFO] 48 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-03-18 17:30:09,240 [INFO] Sauvegarde du log avec 131 identifiants
+2026-03-18 17:30:09,241 [INFO] Poussée automatique FORCÉE vers GitHub...

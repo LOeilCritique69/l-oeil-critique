@@ -301,3 +301,43 @@ body.dark-mode blockquote {
   width: 100%;
   height: 100%;
 }
+
+/* Bloc mise en avant / call-to-action */
+.highlight-block {
+    background-color: #f9f9f9;
+    border-left: 4px solid #e50914;
+    padding: 15px 20px;
+    margin: 25px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.highlight-block p {
+    margin: 10px 0;
+    color: #111;
+}
+
+.highlight-block p strong {
+    font-weight: 700;
+    color: #111;
+}
+
+.highlight-block p a {
+    color: #e50914;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.highlight-block p a:hover {
+    text-decoration: underline;
+    transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .highlight-block {
+        padding: 12px 15px;
+    }
+}
