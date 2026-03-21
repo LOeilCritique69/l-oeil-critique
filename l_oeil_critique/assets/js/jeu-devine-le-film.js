@@ -1,654 +1,626 @@
-// -------------------------------------
-// JAVASCRIPT DU JEU (L'Œil Critique) - V3.0 (AMÉLIORÉ)
-// -------------------------------------
+// ============================================================
+// CONFIG
+// ============================================================
+const API_KEY = 'c733ef0d6713d6a5b282beff57cd6343';
+const BASE = 'https://api.themoviedb.org/3';
+const IMG = 'https://image.tmdb.org/t/p/w500';
 
-const API_KEY = "c733ef0d6713d6a5b282beff57cd6343";
-const BASE_URL = "https://api.themoviedb.org/3";
-const IMG_URL = "https://image.tmdb.org/t/p/w500";
 const MAX_ROUNDS = 10;
-const START_TIME = 15;
-const HINT_PENALTY_1 = 5; // Pénalité de points pour l'indice 1 (Genre)
-const HINT_PENALTY_2 = 15; // NOUVEAU: Pénalité pour l'indice 2 (Synopsis)
-const COMBO_BONUS = 5; // NOUVEAU: Points bonus par combo
+const START_TIME = 20;
 
-// Genres TMDb
 const GENRES = {
-    28: "Action", 12: "Aventure", 16: "Animation", 35: "Comédie", 80: "Crime",
-    99: "Documentaire", 18: "Drame", 10751: "Familial", 14: "Fantastique",
-    36: "Histoire", 27: "Horreur", 10402: "Musique", 9648: "Mystère",
-    10749: "Romance", 878: "Science-Fiction", 10770: "Téléfilm", 53: "Thriller",
-    10752: "Guerre", 37: "Western"
+  28:'Action',12:'Aventure',16:'Animation',35:'Comédie',80:'Crime',
+  99:'Documentaire',18:'Drame',10751:'Familial',14:'Fantastique',
+  36:'Histoire',27:'Horreur',10402:'Musique',9648:'Mystère',
+  10749:'Romance',878:'Science-Fiction',53:'Thriller',10752:'Guerre',37:'Western'
 };
 
-// --- Variables de Jeu Globales ---
-let moviesByGenre = {}; 
+const DIFFICULTIES = {
+  facile:  { blur:14, lives:3, multiplier:1,   label:'Facile' },
+  normal:  { blur:22, lives:3, multiplier:1.2, label:'Normal' },
+  difficile:{ blur:28, lives:2, multiplier:1.5, label:'Difficile' },
+  expert:  { blur:36, lives:1, multiplier:2,   label:'Expert' }
+};
+
+// ============================================================
+// STATE
+// ============================================================
+let allMovies = [];
+let usedIds = new Set();
 let score = 0;
-let currentMovie = null;
+let lives = 3;
+let combo = 0;
+let round = 0;
 let timeLeft = START_TIME;
-let timer;
+let timer = null;
 let roundActive = false;
-let currentRound = 0;
-let initialBlur = 15; 
-let hintLevel = 0; // NOUVEAU: 0: aucun, 1: genre, 2: synopsis
-let currentPenalty = 0; // NOUVEAU: Total des pénalités pour la manche
-let currentCombo = 0; // NOUVEAU: Compteur de victoires consécutives
-let difficultyLevel = 'facile'; 
+let currentMovie = null;
+let currentGenre = '';
+let hintsUsed = [];
+let penaltyAcc = 0;
+let diff = 'facile';
+let initialBlur = 14;
+let multiplier = 1;
+let inputMode = 'text'; // 'text' or 'choice'
+let acItems = [];
+let acIndex = -1;
+let loadedCount = 0;
+let totalToLoad = 0;
 
-// --- Éléments du DOM ---
-const poster = document.getElementById("poster");
-const suggestionsDiv = document.getElementById("suggestions");
-const feedback = document.getElementById("feedback");
-const nextBtn = document.getElementById("nextBtn");
-const scoreDisplay = document.getElementById("score");
-const timerDisplay = document.getElementById("timer");
-const roundCountDisplay = document.getElementById("round-count");
-const hintText = document.getElementById("hint-text");
-const hintBtn = document.getElementById("hintBtn");
-const container = document.getElementById("gameContainer");
-const endGameModal = document.getElementById("endGameModal");
-const finalScoreDisplay = document.getElementById("finalScore");
-const scoreMessage = document.getElementById("scoreMessage");
-const restartBtn = document.getElementById("restartBtn");
-const appContainer = document.querySelector('.movie-game-app');
-const introModal = document.getElementById('introModal');
-const startGameBtn = document.getElementById('startGameBtn');
-const difficultyOptionsIntro = document.getElementById('difficulty-options-intro');
-const scoreDropDisplay = document.getElementById('scoreDrop'); 
-// const closeIntroBtn = document.getElementById('closeIntroBtn'); // N'est pas dans le HTML fourni, on l'ignore
+// ============================================================
+// DOM
+// ============================================================
+const $ = id => document.getElementById(id);
+const posterImg = $('posterImg');
+const hintContent = $('hintContent');
+const feedbackLine = $('feedbackLine');
+const timerBar = $('timerBar');
+const timerVal = $('timerVal');
+const blurFill = $('blurFill');
+const scoreVal = $('scoreVal');
+const livesDisplay = $('livesDisplay');
+const roundBadge = $('roundBadge');
+const comboBadge = $('comboBadge');
+const comboVal = $('comboVal');
+const movieInput = $('movieInput');
+const acList = $('acList');
+const nextBtn = $('nextBtn');
+const suggestionsGrid = $('suggestionsGrid');
+const streakBanner = $('streakBanner');
 
+// ============================================================
+// LOADING
+// ============================================================
+async function loadMovies() {
+  const genreIds = Object.keys(GENRES);
+  const pages = 8; // 8 pages × 20 films × 18 genres ≈ 2880 films
+  totalToLoad = genreIds.length * pages;
+  loadedCount = 0;
 
-// ===================================================================
-// 1. GESTION DU DÉMARRAGE ET DE L'API
-// ===================================================================
+  $('loadingBox').style.display = 'block';
+  $('startBtn').disabled = true;
+  $('startBtn').style.opacity = '0.4';
 
-async function initApp() {
-    // Crée l'élément pour l'affichage de la baisse de score s'il n'existe pas
-    if (!document.getElementById('scoreDrop')) {
-        const dropDiv = document.createElement('div');
-        dropDiv.id = 'scoreDrop';
-        dropDiv.className = 'score-drop';
-        const scoreInfo = document.querySelector('.score-timer-info');
-        if (scoreInfo) {
-            scoreInfo.appendChild(dropDiv);
-        }
-    }
-    
-    // Crée l'élément pour le classement s'il n'existe pas
-    let leaderboardDiv = document.getElementById('leaderboard-display');
-    if (!leaderboardDiv) {
-        leaderboardDiv = document.createElement('div');
-        leaderboardDiv.id = 'leaderboard-display';
-        const modalContent = endGameModal.querySelector('.modal-content');
-        if (modalContent) {
-            modalContent.insertBefore(leaderboardDiv, restartBtn);
-        }
-    }
+  const seen = new Set();
+  const results = [];
 
-    await fetchMovies();
-    loadLeaderboard();
-}
-
-/**
- * Récupère ~100 films populaires par genre ET quelques nouveautés. (MODIFIÉE)
- */
-/**
- * Récupère un grand volume de films (environ 100 par genre)
- */
-async function fetchMovies() {
-    console.log("🚀 Démarrage du chargement massif de la cinémathèque...");
-    moviesByGenre = {};
-    const genreIds = Object.keys(GENRES);
-    const PAGES_TO_FETCH = 10; // On récupère 5 pages par genre (20 films par page)
-
-    try {
-        const promises = genreIds.map(async (genreId) => {
-            let allMoviesForGenre = [];
-            
-            // Boucle pour récupérer plusieurs pages de résultats
-            for (let page = 1; page <= PAGES_TO_FETCH; page++) {
-                const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=fr-FR&sort_by=popularity.desc&with_genres=${genreId}&page=${page}&vote_count.gte=100`;
-                
-                try {
-                    const res = await fetch(url);
-                    if (res.ok) {
-                        const data = await res.json();
-                        // Filtrage : on garde seulement les films avec poster et synopsis
-                        const validOnPage = data.results.filter(m => m.poster_path && m.overview);
-                        allMoviesForGenre.push(...validOnPage);
-                    }
-                } catch (e) {
-                    console.error(`Erreur sur la page ${page} du genre ${genreId}`);
-                }
-            }
-            
-            moviesByGenre[genreId] = allMoviesForGenre;
-            console.log(`✅ Genre ${GENRES[genreId]} : ${allMoviesForGenre.length} films chargés.`);
-        });
-
-        await Promise.all(promises);
-
-        // Optionnel : Récupérer aussi les films "Tendances" pour varier encore plus
-        await fetchTrendingMovies();
-
-        console.log("🏁 Chargement terminé. Total films en mémoire :", Object.values(moviesByGenre).flat().length);
-
-    } catch (error) {
-        console.error("Erreur critique lors du fetch :", error);
-        feedback.textContent = "Erreur de connexion à la base de données TMDb.";
+  const tasks = [];
+  for (const gId of genreIds) {
+    for (let p = 1; p <= pages; p++) {
+      tasks.push({ gId, p });
     }
-}
+  }
 
-/**
- * Ajoute les films tendances du moment pour mélanger les genres
- */
-async function fetchTrendingMovies() {
-    const url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&language=fr-FR`;
-    const res = await fetch(url);
-    if (res.ok) {
-        const data = await res.json();
-        const trending = data.results.filter(m => m.poster_path && m.overview);
-        
-        // On les distribue dans les genres existants
-        trending.forEach(movie => {
-            if (movie.genre_ids && movie.genre_ids[0]) {
-                const gId = movie.genre_ids[0];
-                if (moviesByGenre[gId]) {
-                    // On l'ajoute seulement s'il n'est pas déjà présent
-                    if (!moviesByGenre[gId].find(m => m.id === movie.id)) {
-                        moviesByGenre[gId].push(movie);
-                    }
-                }
+  // Fetch in parallel batches of 20
+  const BATCH = 20;
+  for (let i = 0; i < tasks.length; i += BATCH) {
+    const batch = tasks.slice(i, i + BATCH);
+    await Promise.all(batch.map(async ({ gId, p }) => {
+      try {
+        const url = `${BASE}/discover/movie?api_key=${API_KEY}&language=fr-FR&sort_by=popularity.desc&with_genres=${gId}&page=${p}&vote_count.gte=50`;
+        const r = await fetch(url);
+        if (r.ok) {
+          const d = await r.json();
+          for (const m of d.results) {
+            if (m.poster_path && m.overview && m.title && !seen.has(m.id)) {
+              seen.add(m.id);
+              results.push({ ...m, genre_main: gId });
             }
-        });
+          }
+        }
+      } catch {}
+      loadedCount++;
+      updateLoadBar();
+    }));
+  }
+
+  // Add trending
+  try {
+    const tr = await fetch(`${BASE}/trending/movie/week?api_key=${API_KEY}&language=fr-FR`);
+    if (tr.ok) {
+      const td = await tr.json();
+      for (const m of td.results) {
+        if (m.poster_path && m.overview && !seen.has(m.id)) {
+          seen.add(m.id);
+          results.push({ ...m, genre_main: m.genre_ids?.[0] || 28 });
+        }
+      }
     }
+  } catch {}
+
+  allMovies = results;
+  console.log(`✅ ${allMovies.length} films chargés`);
+
+  $('loadText').textContent = `${allMovies.length} films chargés !`;
+  $('loadBar').style.width = '100%';
+  $('startBtn').disabled = false;
+  $('startBtn').style.opacity = '1';
+  $('startBtn').textContent = '🎬 Lancer la partie !';
 }
 
-/**
- * Fonction pour fermer le modal d'introduction.
- */
-function closeIntroScreen() {
-    introModal.style.display = 'none';
-    appContainer.classList.remove('modal-open');
+function updateLoadBar() {
+  const pct = Math.round((loadedCount / totalToLoad) * 100);
+  $('loadBar').style.width = pct + '%';
+  $('loadText').textContent = `Chargement… ${pct}%`;
 }
 
-
-/**
- * Gère l'affichage du modal d'introduction et la sélection de difficulté.
- */
-function showIntroScreen() {
-    introModal.style.display = 'flex';
-    appContainer.classList.add('modal-open');
-
-    startGameBtn.onclick = () => { 
-        const selectedDifficultyInput = difficultyOptionsIntro.querySelector('input[name="difficulty-intro"]:checked');
-        
-        if (selectedDifficultyInput) {
-            initialBlur = parseInt(selectedDifficultyInput.dataset.blur);
-            difficultyLevel = selectedDifficultyInput.value; 
-
-            // Met à jour l'affichage de la difficulté permanente
-            document.getElementById(`diff-${difficultyLevel}`).checked = true;
-
-            closeIntroScreen(); // Utilise la fonction de fermeture
-            
-            startGame(); 
-        } else {
-            alert("Veuillez choisir une difficulté pour commencer.");
-        }
-    };
-
-    // NOUVEAU: Événement pour le bouton de fermeture (si le bouton existe)
-    /* if (closeIntroBtn) {
-        closeIntroBtn.onclick = closeIntroScreen;
-    } */
+// ============================================================
+// DIFFICULTY
+// ============================================================
+function selectDiff(card) {
+  document.querySelectorAll('.diff-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  diff = card.dataset.diff;
 }
 
-
-// ===================================================================
-// 2. LOGIQUE DU JEU PRINCIPAL
-// ===================================================================
-
+// ============================================================
+// GAME FLOW
+// ============================================================
 function startGame() {
-    score = 0;
-    currentRound = 0;
-    currentCombo = 0; // Réinitialisation
-    scoreDisplay.innerHTML = `<i class="fas fa-trophy"></i> Score : ${score}`;
-    endGameModal.style.display = "none";
-    nextMovie();
+  if (allMovies.length === 0) return;
+  const cfg = DIFFICULTIES[diff];
+  initialBlur = cfg.blur;
+  lives = cfg.lives;
+  multiplier = cfg.multiplier;
+  score = 0;
+  combo = 0;
+  round = 0;
+  usedIds.clear();
+
+  updateScoreDisplay();
+  updateLivesDisplay();
+
+  $('introModal').style.display = 'none';
+  $('gameArea').style.display = 'grid';
+  nextMovie();
 }
 
-/**
- * Gère le redémarrage du jeu après la fin de partie.
- */
-function restartGame() {
-    // 1. Masque le modal de fin de partie
-    endGameModal.style.display = "none";
-    
-    // 2. Affiche l'écran d'introduction pour permettre de choisir la difficulté
-    showIntroScreen(); 
-}
-
-
-/**
- * Prépare et lance la manche suivante. Gère l'augmentation de difficulté après chaque manche.
- */
-/**
- * Prépare et lance la manche suivante avec sécurité anti-triche (flou instantané).
- */
 function nextMovie() {
-    if (currentRound >= MAX_ROUNDS) {
-        return showEndGameModal();
-    }
+  if (round >= MAX_ROUNDS) return showEnd();
 
-    clearInterval(timer);
-    timeLeft = START_TIME;
-    roundActive = true;
-    hintLevel = 0;
-    currentPenalty = 0;
-    currentRound++;
-    
-    // 1. Mise à jour de la difficulté
-    if (currentRound > 1) { 
-        let baseIncrement = (difficultyLevel === 'facile') ? 1 : (difficultyLevel === 'difficile' ? 3 : 4);
-        initialBlur = Math.min(35, initialBlur + baseIncrement);
-    }
-    
-    // 2. RESET UI
-    feedback.textContent = "";
-    feedback.className = "feedback";
-    nextBtn.disabled = true;
-    suggestionsDiv.innerHTML = "";
-    timerDisplay.innerHTML = `<i class="fas fa-clock"></i> Temps : ${timeLeft}s`;
-    roundCountDisplay.innerHTML = `<i class="fas fa-star"></i> Manche : ${currentRound} / ${MAX_ROUNDS}`;
+  clearInterval(timer);
+  round++;
+  hintsUsed = [];
+  penaltyAcc = 0;
+  roundActive = true;
+  timeLeft = START_TIME;
 
-    hintText.textContent = `Indice : Genre du film`;
-    hintText.classList.add("hidden-hint");
-    hintBtn.disabled = false;
-    hintBtn.textContent = `Indice (-${HINT_PENALTY_1} pts)`;
-    
-    if (currentCombo > 0) {
-        roundCountDisplay.innerHTML += `<span style="margin-left:15px;color:#ffc456;">🔥 Combo x${currentCombo}</span>`;
-    }
+  // Reset UI
+  feedbackLine.textContent = '';
+  feedbackLine.className = 'feedback-line';
+  nextBtn.disabled = true;
+  hintContent.textContent = 'Aucun indice révélé';
+  hintContent.className = 'hint-content';
+  $('hint1Btn').disabled = false;
+  $('hint2Btn').disabled = false;
+  $('hint3Btn').disabled = false;
+  $('posterOverlay').classList.remove('show');
+  $('posterLabel').classList.remove('show');
+  movieInput.value = '';
+  acList.classList.remove('show');
+  acItems = [];
 
-    // 3. CHOIX DU FILM
-    const availableGenres = Object.keys(moviesByGenre).filter(id => moviesByGenre[id].length > 0);
-    currentGenreId = availableGenres[Math.floor(Math.random() * availableGenres.length)];
-    const genreMovies = moviesByGenre[currentGenreId];
-    const movieIndex = Math.floor(Math.random() * genreMovies.length);
-    currentMovie = genreMovies[movieIndex];
-    genreMovies.splice(movieIndex, 1); 
+  roundBadge.textContent = `Manche ${round} / ${MAX_ROUNDS}`;
 
-    // --- 4. CONFIGURATION SÉCURISÉE DU POSTER ---
-    
-    // A. On coupe temporairement les transitions CSS pour éviter le "glissement" visuel du flou
-    poster.style.transition = "none";
-    
-    // B. On applique le flou initial immédiatement
-    poster.style.filter = `blur(${initialBlur}px)`;
-    poster.style.transform = "scale(1.02)"; 
-    
-    // C. Force le navigateur à appliquer ces styles AVANT de charger l'image (Reflow)
-    void poster.offsetWidth; 
-    
-    // D. On change la source : l'image s'affiche directement floue
-    poster.src = IMG_URL + currentMovie.poster_path;
+  if (combo >= 2) {
+    comboBadge.classList.add('show');
+    comboVal.textContent = `×${combo}`;
+  } else {
+    comboBadge.classList.remove('show');
+  }
 
-    // E. On rétablit la transition pour que le flou se réduise doucement pendant le timer
-    poster.style.transition = "filter 0.5s ease-out, transform 0.4s ease-out";
+  // Pick movie
+  const pool = allMovies.filter(m => !usedIds.has(m.id));
+  if (pool.length === 0) { usedIds.clear(); }
+  const available = allMovies.filter(m => !usedIds.has(m.id));
+  currentMovie = available[Math.floor(Math.random() * available.length)];
+  usedIds.add(currentMovie.id);
+  currentGenre = GENRES[currentMovie.genre_main] || GENRES[currentMovie.genre_ids?.[0]] || '?';
 
-    generateSuggestions();
-    startTimer();
+  // Poster with instant blur
+  posterImg.style.transition = 'none';
+  posterImg.style.filter = `blur(${initialBlur}px)`;
+  posterImg.style.transform = 'scale(1.04)';
+  void posterImg.offsetWidth;
+  posterImg.src = IMG + currentMovie.poster_path;
+  posterImg.style.transition = 'filter 0.8s ease, transform 0.5s ease';
+
+  blurFill.style.width = '100%';
+
+  // Generate choices if needed
+  if (inputMode === 'choice') generateChoices();
+
+  startTimer();
 }
 
-/**
- * Gère la diminution progressive du flou et le temps.
- */
 function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => {
-        if (!roundActive) return;
+  clearInterval(timer);
+  timerBar.style.transition = 'none';
+  timerBar.style.width = '100%';
+  timerBar.className = 'timer-bar';
+  void timerBar.offsetWidth;
+  timerBar.style.transition = 'width 1s linear';
 
-        timeLeft--;
-        timerDisplay.innerHTML = `<i class="fas fa-clock"></i> Temps : ${timeLeft}s`;
+  timer = setInterval(() => {
+    if (!roundActive) return;
+    timeLeft--;
+    timerVal.textContent = timeLeft;
 
-        // Réduction progressive du flou (se réduit à 0 à la fin du temps)
-        const currentBlur = initialBlur * (timeLeft / START_TIME);
-        poster.style.filter = `blur(${Math.max(currentBlur, 0)}px)`;
+    const pct = (timeLeft / START_TIME) * 100;
+    timerBar.style.width = pct + '%';
+    if (timeLeft <= 5) timerBar.className = 'timer-bar urgent';
 
-        if (timeLeft <= 0) {
-            clearInterval(timer);
-            endRound(false, `❌ Le temps est écoulé ! Le film était : ${currentMovie.title}`);
-            currentCombo = 0; // Réinitialisation du combo
-        }
-    }, 1000);
-}
+    // Progressive unblur
+    const blurNow = initialBlur * (timeLeft / START_TIME);
+    posterImg.style.filter = `blur(${Math.max(blurNow, 0)}px)`;
+    blurFill.style.width = pct + '%';
 
-/**
- * Révèle l'indice (Genre puis Synopsis) et applique la pénalité. (MODIFIÉE)
- */
-function revealHint() {
-    if (!roundActive || hintLevel >= 2) return;
-
-    hintLevel++;
-    let penalty = 0;
-    let hintTextContent = '';
-    let feedbackText = '';
-    
-    if (hintLevel === 1) {
-        penalty = HINT_PENALTY_1;
-        const genreName = GENRES[currentGenreId] || "Inconnu";
-        hintTextContent = `Indice 1/2 : Le genre est "**${genreName.toUpperCase()}**"`;
-        hintBtn.textContent = `Indice 2 (-${HINT_PENALTY_2} pts)`;
-        feedbackText = `⚠️ -${HINT_PENALTY_1} points pour l'Indice 1 !`;
-    
-    } else if (hintLevel === 2) {
-        penalty = HINT_PENALTY_2;
-        // Coupe le synopsis au premier point pour un indice court
-        const shortSynopsis = currentMovie.overview.split('. ')[0] + (currentMovie.overview.includes('.') ? '.' : ''); 
-        hintTextContent = `Indice 2/2 : **Synopsis** : ${shortSynopsis}`;
-        hintBtn.disabled = true;
-        hintBtn.textContent = "Tous les indices sont utilisés";
-        feedbackText = `⚠️ -${HINT_PENALTY_2} points pour l'Indice 2 !`;
-    }
-    
-    currentPenalty += penalty;
-    score = Math.max(0, score - penalty);
-    showScoreDrop(penalty); 
-    scoreDisplay.innerHTML = `<i class="fas fa-trophy"></i> Score : ${score}`;
-    
-    hintText.innerHTML = hintTextContent;
-    hintText.classList.remove("hidden-hint");
-    showFeedback(false, feedbackText);
-}
-
-/**
- * Vérification de la supposition et fin de manche. (MODIFIÉE)
- */
-function checkGuess(title) {
-    if (!roundActive) return;
-
-    document.querySelectorAll(".suggestion-buttons button").forEach(b => b.disabled = true);
-    hintBtn.disabled = true;
-
-    if (title === currentMovie.title) {
-        let ptsBase = Math.max(5, Math.floor(20 * (timeLeft / START_TIME))); 
-        
-        // 1. Pénalité appliquée pour les indices
-        ptsBase = Math.max(5, ptsBase - currentPenalty); 
-        if (currentPenalty > 0) showScoreDrop(currentPenalty, true); 
-        
-        // 2. NOUVEAU: Ajout du bonus de combo
-        currentCombo++;
-        const comboPts = currentCombo * COMBO_BONUS;
-        
-        const totalPts = ptsBase + comboPts;
-        score += totalPts;
-        
-        scoreDisplay.innerHTML = `<i class="fas fa-trophy"></i> Score : ${score}`;
-        poster.style.filter = "blur(0)";
-        poster.style.transform = "scale(1.05)"; 
-        
-        let feedbackMsg = `✅ Correct ! ${currentMovie.title} (+${ptsBase} pts)`;
-        if (currentCombo > 1) {
-            feedbackMsg += ` +🔥 ${comboPts} pts de COMBO x${currentCombo} !`;
-        }
-        
-        endRound(true, feedbackMsg);
-    } else {
-        const buttons = document.querySelectorAll(".suggestion-buttons button");
-        buttons.forEach(b => {
-            if (b.textContent === title) b.classList.add("wrong-guess");
-            if (b.textContent === currentMovie.title) b.classList.add("correct-answer");
-        });
-        endRound(false, `❌ Faux ! C'était : ${currentMovie.title}`);
-        currentCombo = 0; // Réinitialisation du combo
-    }
-}
-
-/**
- * Fin de la manche (arrêt timer, affichage feedback).
- */
-function endRound(correct, text) {
-    roundActive = false;
-    clearInterval(timer);
-
-    // Révélation fluide de l'image
-    poster.style.filter = "blur(0)"; // Le CSS fera la transition fluide
-    
-    if (correct) {
-        poster.style.transform = "scale(1.08)"; // Petit zoom de victoire
-        triggerConfetti();
-    } else {
-        poster.style.transform = "scale(1)"; 
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      loseLife();
+      endRound(false, '⏱ Temps écoulé ! C\'était : ' + currentMovie.title);
     }
-
-    showFeedback(correct, text);
-    nextBtn.disabled = false;
-    hintBtn.disabled = true;
-
-    // Désactive les boutons de réponse
-    const buttons = suggestionsDiv.querySelectorAll('button');
-    buttons.forEach(btn => btn.disabled = true);
+  }, 1000);
 }
 
-
-/**
- * Génère les 4 choix de films (dont le bon).
- */
-function generateSuggestions() {
-    let options = [currentMovie.title];
-    const allMovies = Object.values(moviesByGenre).flat();
-    
-    // 1. Choisir d'abord des titres dans le même genre pour plus de difficulté
-    let availableTitles = moviesByGenre[currentGenreId]
-        ? moviesByGenre[currentGenreId].map(m => m.title).filter(title => title !== currentMovie.title)
-        : [];
-    
-    // 2. Si pas assez de titres du même genre, piocher dans tous les films
-    if (availableTitles.length < 3) {
-        availableTitles = [...new Set(allMovies.map(m => m.title).filter(title => title !== currentMovie.title))];
-    }
-
-
-    while (options.length < 4 && availableTitles.length > 0) {
-        const randomIndex = Math.floor(Math.random() * availableTitles.length);
-        let opt = availableTitles[randomIndex];
-
-        if (!options.includes(opt)) {
-            options.push(opt);
-        }
-        availableTitles.splice(randomIndex, 1);
-    }
-    
-    // Assurer qu'il y a toujours 4 options
-    if (options.length < 4) {
-        while(options.length < 4) {
-            options.push(`Film inconnu ${options.length + 1}`);
-        }
-    }
-
-
-    shuffleArray(options).forEach(opt => {
-        const btn = document.createElement("button");
-        btn.textContent = opt;
-        btn.addEventListener("click", () => checkGuess(opt));
-        suggestionsDiv.appendChild(btn);
-    });
+function submitGuess() {
+  const val = movieInput.value.trim();
+  if (!val || !roundActive) return;
+  checkGuess(val);
 }
 
-/**
- * Affichage du Feedback.
- */
-function showFeedback(correct, text) {
-    feedback.innerHTML = text; // Utilisation de innerHTML pour le formatage du combo
-    feedback.className = "feedback " + (correct ? "correct" : "wrong");
+function checkGuess(title) {
+  if (!roundActive) return;
+  roundActive = false;
+  clearInterval(timer);
+
+  disableInputs();
+
+  const correct = normalize(title) === normalize(currentMovie.title);
+
+  if (correct) {
+    handleCorrect();
+  } else {
+    // Highlight correct in choice mode
+    if (inputMode === 'choice') {
+      document.querySelectorAll('.sug-btn').forEach(b => {
+        if (normalize(b.dataset.title) === normalize(currentMovie.title)) b.classList.add('correct');
+        else if (normalize(b.dataset.title) === normalize(title)) b.classList.add('wrong');
+      });
+    }
+    handleWrong('❌ Faux ! C\'était : ' + currentMovie.title);
+  }
+
+  revealPoster();
+  nextBtn.disabled = false;
 }
 
-/**
- * Modal de Fin de Partie (avec sauvegarde du score).
- */
-function showEndGameModal() {
-    clearInterval(timer);
-    
-    // Sauvegarde et mise à jour du classement
-    saveScore({
-        score: score,
-        date: new Date().toLocaleDateString('fr-FR'),
-        time: new Date().toLocaleTimeString('fr-FR'),
-        difficulty: difficultyLevel.toUpperCase()
-    });
-    loadLeaderboard();
+function handleCorrect() {
+  combo++;
+  const timePts = Math.max(5, Math.floor(20 * (timeLeft / START_TIME)));
+  const comboPts = combo > 1 ? (combo - 1) * 5 : 0;
+  const penaltyFinal = penaltyAcc;
+  const rawPts = Math.max(2, timePts - penaltyFinal + comboPts);
+  const finalPts = Math.round(rawPts * multiplier);
 
-    // Affichage du modal
-    finalScoreDisplay.textContent = score;
-    let message = "";
-    if (score >= 150) {
-        message = "Maître Critique ! Un score ÉNORME ! 🏆";
-    } else if (score >= 100) {
-        message = "Expert de la pellicule ! Bien joué ! 🎬";
-    } else if (score >= 50) {
-        message = "Très bonne performance ! 👏";
-    } else {
-        message = "Réessayez pour affûter votre œil ! 😉";
-    }
-    scoreMessage.textContent = message;
-    endGameModal.style.display = "flex";
+  score += finalPts;
+  updateScoreDisplay();
+
+  floatScore(finalPts, true);
+
+  let msg = `✅ Correct ! +${finalPts} pts`;
+  if (penaltyFinal > 0) msg += ` (−${penaltyFinal} indices)`;
+  if (combo > 1) msg += ` 🔥 Combo ×${combo}`;
+  setFeedback(msg, 'correct');
+
+  if (combo >= 3) showStreak(`🔥 COMBO ×${combo} !`);
+
+  triggerConfetti();
 }
 
-
-// -------------------------------------
-// 3. FONCTIONS UTILITAIRES ET AFFICHAGE
-// -------------------------------------
-
-/**
- * Mélange de tableau.
- */
-function shuffleArray(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
+function handleWrong(msg) {
+  combo = 0;
+  loseLife();
+  setFeedback(msg, 'wrong');
+  floatScore(0, false);
 }
 
-/**
- * Affiche la perte de points de manière visuelle.
- */
-function showScoreDrop(amount, isPostGuess = false) {
-    const scoreDrop = document.getElementById('scoreDrop');
-    if (!scoreDrop) return;
-    
-    scoreDrop.textContent = `-${amount}`;
-    scoreDrop.className = 'score-drop active';
-
-    if (isPostGuess) {
-        scoreDrop.style.color = 'orange'; // Pénalité après guess
-    } else {
-        scoreDrop.style.color = '#bf616a'; // Pénalité au clic sur Indice
-    }
-
-    setTimeout(() => {
-        scoreDrop.className = 'score-drop'; 
-    }, 1500);
+function loseLife() {
+  if (lives > 0) lives--;
+  updateLivesDisplay();
+  if (lives <= 0) {
+    setTimeout(showEnd, 800);
+  }
 }
 
-/**
- * Confettis (Inchanggée).
- */
+function endRound(correct, msg) {
+  if (!correct) {
+    loseLife();
+    setFeedback(msg, 'wrong');
+  }
+  revealPoster();
+  nextBtn.disabled = false;
+  disableInputs();
+}
+
+function revealPoster() {
+  posterImg.style.filter = 'blur(0px)';
+  posterImg.style.transform = 'scale(1)';
+  blurFill.style.width = '0%';
+  $('posterOverlay').classList.add('show');
+  $('posterLabel').textContent = currentMovie.title;
+  $('posterLabel').classList.add('show');
+}
+
+function disableInputs() {
+  $('submitBtn') && ($('submitBtn').disabled = true);
+  movieInput.disabled = true;
+  $('hint1Btn').disabled = true;
+  $('hint2Btn').disabled = true;
+  $('hint3Btn').disabled = true;
+  document.querySelectorAll('.sug-btn').forEach(b => b.disabled = true);
+  acList.classList.remove('show');
+}
+
+function restartGame() {
+  $('endModal').style.display = 'none';
+  $('gameArea').style.display = 'none';
+  // Reset and show intro
+  score = 0; combo = 0; round = 0; lives = 3;
+  updateScoreDisplay();
+  $('introModal').style.display = 'flex';
+}
+
+function showEnd() {
+  clearInterval(timer);
+  $('gameArea').style.display = 'none';
+
+  saveScore();
+  renderLeaderboard();
+
+  $('finalScore').textContent = score;
+  const msgs = [
+    [150, '🏆 Maître Critique — score légendaire !'],
+    [100, '🎬 Expert de la pellicule !'],
+    [60,  '👏 Très bonne performance !'],
+    [0,   '🎥 Réessaie pour affûter ton œil !']
+  ];
+  $('endMsg').textContent = msgs.find(([min]) => score >= min)[1];
+  $('endModal').style.display = 'flex';
+}
+
+// ============================================================
+// HINTS
+// ============================================================
+function revealHint(n) {
+  if (!roundActive || hintsUsed.includes(n)) return;
+  hintsUsed.push(n);
+
+  const penalties = { 1: 5, 2: 8, 3: 15 };
+  const penalty = penalties[n];
+  penaltyAcc += penalty;
+  score = Math.max(0, score - penalty);
+  updateScoreDisplay();
+  floatScore(penalty, false);
+
+  let hintLines = [];
+  if (hintsUsed.includes(1)) hintLines.push(`Genre : ${currentGenre}`);
+  if (hintsUsed.includes(2)) hintLines.push(`Année : ${(currentMovie.release_date || '????').substring(0,4)}`);
+  if (hintsUsed.includes(3)) {
+    const syn = currentMovie.overview.split('.')[0] + '.';
+    hintLines.push(`Synopsis : ${syn}`);
+  }
+
+  hintContent.innerHTML = hintLines.join('<br>');
+  hintContent.className = 'hint-content revealed';
+
+  $(`hint${n}Btn`).disabled = true;
+  setFeedback(`⚠️ Indice révélé — ${penalty} pts déduits`, 'info');
+}
+
+// ============================================================
+// MODE (text / choice)
+// ============================================================
+function setMode(mode) {
+  inputMode = mode;
+  $('modeText').classList.toggle('active', mode === 'text');
+  $('modeChoice').classList.toggle('active', mode === 'choice');
+  $('inputSection').style.display = mode === 'text' ? 'block' : 'none';
+  $('choiceSection').style.display = mode === 'choice' ? 'block' : 'none';
+
+  if (mode === 'choice' && roundActive) generateChoices();
+}
+
+function generateChoices() {
+  const pool = allMovies.filter(m => m.id !== currentMovie.id && m.title !== currentMovie.title);
+  const shuffled = shuffle([...pool]).slice(0, 3).map(m => m.title);
+  const opts = shuffle([currentMovie.title, ...shuffled]);
+
+  suggestionsGrid.innerHTML = '';
+  opts.forEach(title => {
+    const btn = document.createElement('button');
+    btn.className = 'sug-btn';
+    btn.textContent = title;
+    btn.dataset.title = title;
+    btn.onclick = () => { if (roundActive) checkGuess(title); };
+    suggestionsGrid.appendChild(btn);
+  });
+}
+
+// ============================================================
+// AUTOCOMPLETE
+// ============================================================
+function onInputChange() {
+  const val = movieInput.value.trim().toLowerCase();
+  acIndex = -1;
+
+  if (val.length < 2) { acList.classList.remove('show'); return; }
+
+  const matches = allMovies
+    .filter(m => m.title.toLowerCase().includes(val))
+    .slice(0, 7);
+
+  acItems = matches.map(m => m.title);
+
+  if (matches.length === 0) { acList.classList.remove('show'); return; }
+
+  acList.innerHTML = matches.map((m, i) => {
+    const hi = m.title.replace(new RegExp(`(${escapeRe(val)})`, 'gi'), '<em>$1</em>');
+    return `<div class="ac-item" data-i="${i}" onclick="selectAc(${i})">${hi}</div>`;
+  }).join('');
+
+  acList.classList.add('show');
+}
+
+function onInputKey(e) {
+  const items = acList.querySelectorAll('.ac-item');
+  if (e.key === 'ArrowDown') {
+    acIndex = Math.min(acIndex + 1, items.length - 1);
+    items.forEach((it, i) => it.classList.toggle('active', i === acIndex));
+    e.preventDefault();
+  } else if (e.key === 'ArrowUp') {
+    acIndex = Math.max(acIndex - 1, -1);
+    items.forEach((it, i) => it.classList.toggle('active', i === acIndex));
+    e.preventDefault();
+  } else if (e.key === 'Enter') {
+    if (acIndex >= 0 && acItems[acIndex]) {
+      selectAc(acIndex);
+    } else {
+      submitGuess();
+    }
+  } else if (e.key === 'Escape') {
+    acList.classList.remove('show');
+  }
+}
+
+function selectAc(i) {
+  movieInput.value = acItems[i];
+  acList.classList.remove('show');
+  movieInput.focus();
+}
+
+// ============================================================
+// UI HELPERS
+// ============================================================
+function setFeedback(msg, type) {
+  feedbackLine.textContent = msg;
+  feedbackLine.className = 'feedback-line ' + type;
+}
+
+function updateScoreDisplay() {
+  scoreVal.textContent = score;
+}
+
+function updateLivesDisplay() {
+  const hearts = Array(Math.max(lives, 0)).fill('❤️').join('') +
+                 Array(Math.max(DIFFICULTIES[diff].lives - lives, 0)).fill('🖤').join('');
+  livesDisplay.textContent = hearts;
+}
+
+function floatScore(pts, positive) {
+  const el = document.createElement('div');
+  el.className = 'score-float';
+  el.style.color = positive ? '#3dd68c' : '#e84545';
+  el.textContent = positive ? `+${pts}` : `−${pts}`;
+  el.style.left = (window.innerWidth / 2) + 'px';
+  el.style.top = '80px';
+  document.body.appendChild(el);
+  el.style.animation = 'float-up 1.2s ease forwards';
+  setTimeout(() => el.remove(), 1300);
+}
+
+function showStreak(msg) {
+  streakBanner.textContent = msg;
+  streakBanner.classList.add('show');
+  setTimeout(() => streakBanner.classList.remove('show'), 2200);
+}
+
 function triggerConfetti() {
-    for (let i = 0; i < 50; i++) {
-        const c = document.createElement("div");
-        c.className = "confetti";
-        c.style.left = Math.random() * container.offsetWidth + "px";
-        c.style.top = -20 + "px";
-        c.style.animationDuration = Math.random() * 2 + 1 + "s";
-        c.style.animationDelay = Math.random() * 0.5 + "s";
-        c.style.setProperty('--rand-x', (Math.random() * 4 - 2).toFixed(2));
-        c.style.background = `hsl(${Math.random() * 360}, 80%, 60%)`;
-        container.appendChild(c);
-        setTimeout(() => c.remove(), 3500);
-    }
+  const colors = ['#f0c040','#3dd68c','#4d9fff','#e84545','#ffd966','#c084fc'];
+  for (let i = 0; i < 60; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetto';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.top = '-10px';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+    el.style.animationDelay = (Math.random() * 0.8) + 's';
+    el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    el.style.width = el.style.height = (Math.random() * 6 + 5) + 'px';
+    el.style.setProperty('--dx', (Math.random() * 200 - 100) + 'px');
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 4000);
+  }
 }
 
+// ============================================================
+// LEADERBOARD (localStorage)
+// ============================================================
+const LB_KEY = 'cinaguess_lb';
 
-// -------------------------------------
-// 4. CLASSEMENT LOCAL (LocalStorage)
-// -------------------------------------
-
-const STORAGE_KEY = 'movieGuesserLeaderboard';
-const MAX_SCORES = 5;
-
-/**
- * Charge le classement depuis le stockage local.
- */
-function getLeaderboard() {
-    const data = localStorage.getItem(STORAGE_KEY);
-    return data ? JSON.parse(data) : [];
+function saveScore() {
+  const lb = JSON.parse(localStorage.getItem(LB_KEY) || '[]');
+  lb.push({ score, diff, date: new Date().toLocaleDateString('fr-FR') });
+  lb.sort((a, b) => b.score - a.score);
+  localStorage.setItem(LB_KEY, JSON.stringify(lb.slice(0, 10)));
 }
 
-/**
- * Ajoute le score actuel au classement et le sauvegarde.
- */
-function saveScore(newScore) {
-    let leaderboard = getLeaderboard();
-    
-    // Ajout et tri (du plus grand au plus petit)
-    leaderboard.push(newScore);
-    leaderboard.sort((a, b) => b.score - a.score);
-    
-    // Ne garder que les 5 meilleurs scores
-    leaderboard = leaderboard.slice(0, MAX_SCORES);
-    
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(leaderboard));
+function renderLeaderboard() {
+  const lb = JSON.parse(localStorage.getItem(LB_KEY) || '[]');
+  if (!lb.length) { $('lbDisplay').innerHTML = ''; return; }
+  const medals = ['🥇','🥈','🥉'];
+  $('lbDisplay').innerHTML = `
+    <div class="lb-list">
+      <h4>Meilleurs scores</h4>
+      ${lb.map((e, i) => `
+        <div class="lb-item">
+          <span class="lb-rank${i===0?' first':''}">${medals[i] || (i+1)+'.'}</span>
+          <span>${e.date}</span>
+          <span class="lb-diff ${e.diff}">${DIFFICULTIES[e.diff]?.label || e.diff}</span>
+          <span class="lb-score">${e.score} pts</span>
+        </div>
+      `).join('')}
+    </div>`;
 }
 
-/**
- * Affiche le classement dans le modal de fin de partie.
- */
-function loadLeaderboard() {
-    const leaderboard = getLeaderboard();
-    let html = '<h3>Meilleurs Scores (Local)</h3>';
-    
-    if (leaderboard.length === 0) {
-        html += '<p>Pas encore de scores enregistrés.</p>';
-    } else {
-        html += '<ol class="leaderboard-list">';
-        leaderboard.forEach((item, index) => {
-            // Utilisation de toLowerCase() pour la classe CSS
-            const difficultyClass = item.difficulty.toLowerCase(); 
-            html += `
-                <li class="score-item rank-${index + 1}">
-                    <span>${index + 1}.</span>
-                    <strong>${item.score} pts</strong>
-                    <span class="difficulty-tag difficulty-${difficultyClass}">${item.difficulty}</span>
-                    <small>(${item.date})</small>
-                </li>
-            `;
-        });
-        html += '</ol>';
-    }
-
-    const leaderboardDiv = document.getElementById('leaderboard-display');
-    if (leaderboardDiv) {
-        leaderboardDiv.innerHTML = html;
-    }
+// ============================================================
+// UTILS
+// ============================================================
+function normalize(s) {
+  return s.trim().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9 ]/g, '');
 }
 
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
-// ===================================================================
-// DÉMARRAGE
-// ===================================================================
+function escapeRe(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 
-// Événements
-nextBtn.addEventListener("click", nextMovie);
-restartBtn.addEventListener("click", restartGame); 
-hintBtn.addEventListener("click", revealHint); 
+// Close autocomplete on outside click
+document.addEventListener('click', e => {
+  if (!e.target.closest('#inputSection')) acList.classList.remove('show');
+});
 
-// Lancement de l'application
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialisation des données et des éléments DOM
-    initApp().then(() => {
-        // Une fois que tout est chargé (films), on affiche l'écran d'introduction
-        showIntroScreen(); 
-    });
+// Keyboard submit
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target === movieInput) return; // handled above
+});
+
+// ============================================================
+// INIT
+// ============================================================
+window.addEventListener('DOMContentLoaded', () => {
+  // Re-enable submit when round is active
+  const origSubmit = $('submitBtn');
+  origSubmit.addEventListener('click', submitGuess);
+
+  loadMovies();
 });

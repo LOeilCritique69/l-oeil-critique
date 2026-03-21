@@ -7,840 +7,167 @@
     <meta name="keywords" content="actualités films, cinéma, nouveautés cinéma, films à l'affiche, critiques de films, actualités hollywood">
     <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
     <title>Devine Le Film - L'Œil Critique</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/chef_d_oeuvre.css"> 
+    <!-- Fonts + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/chef_d_oeuvre.css">
+  <link rel="stylesheet" href="css/devine.css">
+    </head>
 </head>
 <body>
-    <style>
-        /*
- * -------------------------------------
- * CSS du Jeu "Devine le Film" - Optimisation des Boutons et Structure
- * -------------------------------------
- */
 
-/* Variables pour les couleurs */
-:root {
-    --primary-color: #2e3440;       /* Bleu foncé Nordique (Texte/Structure) */
-    --secondary-color: #ffd27f;     /* Jaune/Orange (Accentuation) */
-    --background-light: #f0f2f5;    /* Fond très clair */
-    --background-dark: #e4e8f0;     /* Fond légèrement grisé */
-    --success-color: #4caf50;       /* Vert pour le succès */
-    --error-color: #f44336;         /* Rouge pour l'erreur */
-    --shadow-light: rgba(0,0,0,0.1);
-    --shadow-strong: rgba(0,0,0,0.25);
-}
-
-/* Styles de base de l'application (l'enveloppe) */
-.movie-game-app {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-light);
-}
-
-/* Conteneur principal du jeu */
-.movie-game-app .game-container {
-    max-width: 1000px;
-    width: 90%;
-    margin: 20px auto 50px auto; 
-    padding: 40px 30px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px var(--shadow-light), 0 30px 60px var(--shadow-strong);
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.movie-game-app .game-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px var(--shadow-light), 0 40px 80px var(--shadow-strong);
-}
-
-/* Conteneur du poster */
-.movie-game-app .poster-container {
-    flex: 0 0 320px;
-    margin-right: 30px;
-    position: relative;
-}
-
-.movie-game-app .poster-frame {
-    padding: 10px;
-    background: linear-gradient(45deg, var(--primary-color), #4c566a);
-    border-radius: 18px;
-    box-shadow: 0 5px 15px var(--shadow-light), 0 15px 35px var(--shadow-strong);
-}
-
-.movie-game-app .poster-container img {
-    width: 100%;
-    display: block;
-    border-radius: 10px;
-    will-change: filter, transform;
-    
-    /* --- MODIFICATIONS ICI --- */
-    filter: blur(20px); /* Flou par défaut AVANT le chargement JS */
-    transform: scale(1.02); /* Cache les bords nets */
-    
-    /* On garde une transition pour la fin de manche, 
-       mais le JS écrasera la valeur de flou instantanément au début */
-    transition: filter 0.5s ease-out, transform 0.4s ease-out;
-}
-
-/* Partie droite du jeu */
-.movie-game-app .game-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 400px;
-}
-
-/* Titre */
-.movie-game-app .game-right h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3.5em;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--secondary-color);
-    padding-bottom: 5px;
-}
-
-.movie-game-app .game-right h1 i {
-    color: var(--secondary-color);
-    margin-right: 10px;
-}
-
-/* Score et Timer */
-.movie-game-app .score-timer-info {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-weight: 700;
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--background-dark);
-    position: relative; /* IMPORTANT pour positionner le scoreDrop */
-}
-
-.movie-game-app .score-timer-info span {
-    color: var(--primary-color);
-}
-
-.movie-game-app .score-timer-info i {
-    margin-right: 5px;
-    color: var(--secondary-color);
-}
-
-/* --- NOUVEAU: Affichage de la baisse de score --- */
-.movie-game-app .score-drop {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 1.5em;
-    font-weight: 900;
-    color: var(--error-color);
-    opacity: 0;
-    transform: translateY(0);
-    pointer-events: none;
-    z-index: 50;
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-.movie-game-app .score-drop.active {
-    opacity: 1;
-    transform: translateY(-40px);
-    animation: drop-fade 1.5s forwards;
-}
-
-@keyframes drop-fade {
-    0% { opacity: 0; transform: translateY(10px); }
-    20% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-50px); }
-}
-
-/* -------------------------------------
- * Indice et Bouton Indice
- * -------------------------------------
- */
-.movie-game-app .hint-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px dashed var(--secondary-color);
-    border-radius: 10px;
-    background-color: var(--background-dark);
-}
-
-.movie-game-app .hint-button {
-    background: #4c566a; 
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 10px;
-}
-
-.movie-game-app .hint-button:hover:not(:disabled) {
-    background: var(--primary-color);
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px var(--shadow-light);
-}
-
-.movie-game-app .hint-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
-    opacity: 0.8;
-    box-shadow: none;
-}
-
-.movie-game-app .hint-section p {
-    margin: 0;
-    font-style: italic;
-    color: var(--primary-color);
-    font-weight: 700;
-    transition: opacity 0.5s ease;
-}
-
-.movie-game-app .hint-section .hidden-hint {
-    color: #aaa;
-    font-weight: 400;
-    opacity: 0.5;
-}
-
-/* -------------------------------------
- * Boutons de suggestions
- * -------------------------------------
- */
-.movie-game-app .suggestion-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.movie-game-app .suggestion-buttons button {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 16px 25px;
-    border: none;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 1.05em;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.17, 0.84, 0.44, 1);
-    box-shadow: 0 5px 15px var(--shadow-strong);
-}
-
-.movie-game-app .suggestion-buttons button:hover:not(:disabled) {
-    transform: translateY(-4px);
-    background: #3b4252;
-    box-shadow: 0 10px 25px var(--shadow-strong);
-}
-
-.movie-game-app .suggestion-buttons button:active:not(:disabled) {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px var(--shadow-strong);
-}
-
-.movie-game-app .suggestion-buttons button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    box-shadow: none;
-}
-
-/* Classes pour les réponses */
-.movie-game-app .suggestion-buttons button.wrong-guess {
-    background: var(--error-color) !important;
-    color: #fff;
-    animation: shake 0.5s;
-    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.5);
-}
-
-.movie-game-app .suggestion-buttons button.correct-answer {
-    background: var(--success-color) !important;
-    color: #fff;
-    animation: pulse 1s infinite alternate;
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.5);
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-5px); }
-    40%, 80% { transform: translateX(5px); }
-}
-
-@keyframes pulse {
-    from { box-shadow: 0 0 0 0 var(--success-color); }
-    to { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
-}
-
-/* Feedback (Correct/Faux) */
-.movie-game-app .feedback {
-    min-height: 30px;
-    font-weight: 900;
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.movie-game-app .feedback.correct {
-    color: var(--success-color);
-    background: rgba(76, 175, 80, 0.15);
-}
-
-.movie-game-app .feedback.wrong {
-    color: var(--error-color);
-    background: rgba(244, 67, 54, 0.15);
-}
-
-/* Bouton Film Suivant */
-.movie-game-app .next-movie {
-    width: 100%;
-    text-align: right;
-}
-
-.movie-game-app .next-movie button {
-    padding: 14px 25px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    transition: 0.2s;
-    box-shadow: 0 5px 10px rgba(255, 210, 127, 0.6);
-}
-
-.movie-game-app .next-movie button:hover:not(:disabled) {
-    background: #ffc456;
-    transform: scale(1.03);
-    box-shadow: 0 8px 15px rgba(255, 210, 127, 0.8);
-}
-
-/* -------------------------------------
- * Sélecteur de Difficulté (Permanent)
- * -------------------------------------
- */
-/* -------------------------------------
- * Sélecteur de Difficulté (Permanent)
- * -------------------------------------
- */
-.movie-game-app .header-settings {
-    width: 100%;
-    max-width: 1000px;
-    margin: 20px auto 0;
-    padding: 0 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-}
-
-.movie-game-app .difficulty-selector {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    padding: 10px 15px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px var(--shadow-light);
-}
-
-/* Style spécifique pour le sélecteur dans le modal d'introduction */
-.movie-game-app .modal-selector {
-    background: var(--background-dark);
-    padding: 20px;
-    box-shadow: none;
-    margin-bottom: 20px;
-    width: 90%;
-    flex-direction: column;
-}
-
-.movie-game-app .modal-selector .difficulty-options {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    padding: 10px;
-}
-
-.movie-game-app .modal-selector label {
-    font-size: 1em;
-    text-align: left;
-    padding: 10px 15px;
-}
-
-.movie-game-app .modal-selector input[type="radio"]:checked + label {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-
-.movie-game-app .difficulty-selector > label {
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-right: 15px;
-    font-size: 1em;
-}
-
-.movie-game-app .difficulty-options {
-    display: flex;
-    gap: 9px;
-    border: 1px solid var(--background-dark);
-    border-radius: 8px;
-    padding: 3px;
-    background: var(--background-light);
-}
-
-.movie-game-app .difficulty-options input[type="radio"] {
-    display: none; 
-}
-
-.movie-game-app .difficulty-options label {
-    padding: 8px 15px;
-    border-radius: 6px;
-    font-weight: 700;
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    font-size: 0.9em;
-}
-
-/* Style de l'option sélectionnée */
-.movie-game-app .difficulty-options input[type="radio"]:checked + label {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    box-shadow: 0 2px 5px var(--shadow-light);
-}
-
-.movie-game-app .difficulty-options label:hover {
-    background-color: var(--background-dark);
-}
-
-/* -------------------------------------
- * Section des Quêtes Journalières
- * -------------------------------------
- */
-.movie-game-app .daily-quests-container { 
-    max-width: 1000px; 
-    width: 90%; 
-    margin: 20px auto; 
-    padding: 20px; 
-    background: #fff; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 15px var(--shadow-light); 
-}
-
-.movie-game-app .daily-quests-container h3 {
-    text-align: center;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--background-dark);
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.movie-game-app .quest-item { 
-    padding: 10px; 
-    margin-bottom: 8px; 
-    border-radius: 6px; 
-    border-left: 5px solid var(--secondary-color); 
-    background: var(--background-dark); 
-    transition: opacity 0.3s;
-}
-
-.movie-game-app .quest-item small {
-    display: block;
-    margin-top: 3px;
-    font-weight: 700;
-}
-
-.movie-game-app .quest-item.completed { 
-    border-left-color: var(--success-color); 
-    opacity: 0.6;
-    background: #e6ffe6;
-}
-
-
-/* Footer */
-.movie-game-app footer {
-    width: 100%;
-    max-width: 1000px;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-    font-size: 0.9em;
-}
-
-.movie-game-app .footer-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.2s;
-}
-
-/* -------------------------------------
- * Modals (Introduction & Fin de Partie)
- * -------------------------------------
- */
-.movie-game-app .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre pour l'intro */
-    justify-content: center;
-    align-items: center;
-}
-
-.movie-game-app .modal-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 40px;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 10px 40px var(--shadow-strong);
-    animation: modalopen 0.4s;
-}
-
-@keyframes modalopen {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-.movie-game-app .modal-content h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3em;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.movie-game-app .modal-content p {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-    color: #4c566a;
-}
-
-.movie-game-app #finalScore {
-    font-size: 2em;
-    font-weight: 900;
-    color: var(--secondary-color); /* Utilisation de la couleur d'accent pour le score final */
-    display: block;
-    margin: 10px 0;
-}
-
-.movie-game-app .modal-content button#restartBtn,
-.movie-game-app .modal-content button#startGameBtn {
-    background: var(--error-color);
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    margin-top: 15px;
-}
-
-.movie-game-app .modal-content button#startGameBtn {
-    background: var(--success-color);
-}
-
-.movie-game-app .modal-content button#restartBtn:hover {
-    background: #d03030;
-    transform: scale(1.05);
-}
-
-.movie-game-app .modal-content button#startGameBtn:hover {
-    background: #408842;
-    transform: scale(1.05);
-}
-
-/* --- CLASSEMENT LOCAL --- */
-.movie-game-app #leaderboard-display {
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid var(--background-dark);
-    text-align: left;
-}
-
-.movie-game-app #leaderboard-display h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5em;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.movie-game-app .leaderboard-list {
-    list-style: none;
-    padding: 0;
-}
-
-.movie-game-app .score-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    margin-bottom: 5px;
-    background: var(--background-light);
-    border-radius: 8px;
-    font-weight: 700;
-    box-shadow: 0 2px 5px var(--shadow-light);
-}
-
-.movie-game-app .score-item strong {
-    color: var(--primary-color);
-}
-
-.movie-game-app .score-item.rank-1 {
-    background: #fff8e1;
-    border: 2px solid var(--secondary-color);
-    transform: scale(1.02);
-}
-
-.movie-game-app .difficulty-tag {
-    font-size: 0.7em;
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-weight: 700;
-    color: #fff;
-    background: #4c566a;
-}
-
-.movie-game-app .difficulty-facile { background: var(--success-color); }
-.movie-game-app .difficulty-normal { background: #5e81ac; }
-.movie-game-app .difficulty-difficile { background: #bf616a; }
-.movie-game-app .difficulty-expert { background: var(--error-color); }
-
-/* Animation Confettis */
-.movie-game-app .confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #f00;
-    border-radius: 50%;
-    animation: fall linear forwards;
-    pointer-events: none;
-}
-
-@keyframes fall {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(calc(var(--rand-x) * 200px), 800px) rotate(720deg);
-        opacity: 0;
-    }
-}
-
-
-/* Media Queries pour la responsivité */
-@media (max-width: 900px) {
-    .movie-game-app .difficulty-selector {
-        padding: 8px 10px;
-    }
-    .movie-game-app .difficulty-selector > label {
-        margin-right: 10px;
-    }
-    .movie-game-app .difficulty-options label {
-        padding: 6px 10px;
-        font-size: 0.85em;
-    }
-}
-
-@media (max-width: 850px) {
-    .movie-game-app .game-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 20px;
-    }
-
-    .movie-game-app .header-settings {
-        justify-content: center;
-        margin-bottom: 15px;
-        padding: 0 20px;
-    }
-
-    .movie-game-app .poster-container {
-        flex: none;
-        width: 80%;
-        max-width: 350px;
-        margin-right: 0;
-        margin-bottom: 25px;
-    }
-
-    .movie-game-app .game-right {
-        min-width: unset;
-        width: 100%;
-    }
-
-    .movie-game-app .score-timer-info {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .movie-game-app .suggestion-buttons {
-        grid-template-columns: 1fr;
-    }
-
-    .movie-game-app .next-movie {
-        text-align: center;
-    }
-    
-    .movie-game-app .hint-section {
-        align-items: center;
-    }
-    .movie-game-app .modal-selector {
-        width: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    .movie-game-app .game-right h1 {
-        font-size: 2.5em;
-    }
-    .movie-game-app .difficulty-options {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .movie-game-app .difficulty-selector {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-    .movie-game-app .difficulty-selector > label {
-        margin-bottom: 5px;
-    }
-    .movie-game-app .modal-content {
-        padding: 20px;
-    }
-    .movie-game-app .modal-content h2 {
-        font-size: 2em;
-    }
-}
-    </style>
-
-    <div class="movie-game-app"> 
-
-        <div class="header-settings">
-            <div class="difficulty-selector">
-                <label>Difficulté actuelle:</label>
-                <div class="difficulty-options">
-                    <input type="radio" name="difficulty" id="diff-facile" value="facile" data-blur="15" checked disabled>
-                    <label for="diff-facile">Facile</label>
-
-                    <input type="radio" name="difficulty" id="diff-normal" value="normal" data-blur="20" disabled>
-                    <label for="diff-normal">Normal</label>
-
-                    <input type="radio" name="difficulty" id="diff-difficile" value="difficile" data-blur="25" disabled>
-                    <label for="diff-difficile">Difficile</label>
-
-                    <input type="radio" name="difficulty" id="diff-expert" value="expert" data-blur="30" disabled>
-                    <label for="diff-expert">Expert</label>
-                </div>
-            </div>
+<!-- Film sprocket decoration -->
+<div class="sprocket-bar">
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+</div>
+<div class="sprocket-bar right">
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+</div>
+
+<div class="streak-banner" id="streakBanner"></div>
+
+<div class="app">
+  <!-- INTRO MODAL -->
+<div class="stat-pill gold" id="scoreDisplay"><i class="fas fa-trophy"></i> <span id="scoreVal">0</span></div>
+      <div class="stat-pill lives"><i class="fas fa-heart"></i> <span id="livesDisplay">❤️❤️❤️</span></div>
+
+  <div class="modal-overlay" id="introModal">
+    <div class="modal-box">
+      <h2>CinéGuess</h2>
+      <p>Identifie le film depuis son affiche floue.<br>Plus tu réponds vite, plus tu gagnes de points !</p>
+      
+      <div class="diff-options-modal" id="diffGrid">
+        <div class="diff-card selected" data-diff="facile" data-blur="14" onclick="selectDiff(this)">
+          <div class="diff-name">Facile</div>
+          <div class="diff-desc">Flou léger · 3 vies · +bonus</div>
         </div>
-        
-        <main class="game-container" id="gameContainer">
-            <div class="poster-container">
-                <div class="poster-frame">
-                    <img id="poster" src="" alt="Poster du film">
-                </div>
-            </div>
-            <div class="game-right">
-                <h1><i class="fas fa-video"></i> Devine le Film</h1>
-                <div class="score-timer-info">
-                    <span id="round-count"><i class="fas fa-star"></i> Manche : 0 / 10</span>
-                    <span id="score"><i class="fas fa-trophy"></i> Score : 0</span>
-                    <span id="timer"><i class="fas fa-clock"></i> Temps : 15s</span>
-                    <div id="scoreDrop" class="score-drop"></div>
-                </div>
-                
-                <div class="hint-section">
-                    <button id="hintBtn" class="hint-button"><i class="fas fa-lightbulb"></i> Indice (-5 pts)</button>
-                    <p id="hint-text" class="hidden-hint">Indice : Genre du film</p>
-                </div>
-
-                <div class="suggestion-buttons" id="suggestions">
-                    </div>
-                
-                <div class="feedback" id="feedback"></div>
-                
-                <div class="next-movie">
-                    <button id="nextBtn" disabled><i class="fas fa-forward"></i> Film suivant</button>
-                </div>
-            </div>
-        </main>
-
-        <div id="introModal" class="modal">
-            <div class="modal-content">
-                <h2>Bienvenue sur L'Œil Critique !</h2>
-                <p>Choisissez votre niveau de difficulté pour commencer la partie :</p>
-                
-                <div class="difficulty-selector modal-selector">
-                    <div class="difficulty-options" id="difficulty-options-intro">
-                        <input type="radio" name="difficulty-intro" id="intro-facile" value="facile" data-blur="15" checked>
-                        <label for="intro-facile">Facile (Flou léger, + facile)</label>
-
-                        <input type="radio" name="difficulty-intro" id="intro-normal" value="normal" data-blur="20">
-                        <label for="intro-normal">Normal (Flou moyen, standard)</label>
-
-                        <input type="radio" name="difficulty-intro" id="intro-difficile" value="difficile" data-blur="25">
-                        <label for="intro-difficile">Difficile (Très Flou, challenge)</label>
-
-                        <input type="radio" name="difficulty-intro" id="intro-expert" value="expert" data-blur="30">
-                        <label for="intro-expert">Expert (Extrêmement Flou, hardcore)</label>
-                    </div>
-                </div>
-
-                <button id="startGameBtn" class="start-button"><i class="fas fa-play"></i> Lancer la Partie !</button>
-            </div>
+        <div class="diff-card" data-diff="normal" data-blur="22" onclick="selectDiff(this)">
+          <div class="diff-name">Normal</div>
+          <div class="diff-desc">Flou moyen · 3 vies</div>
         </div>
-
-        <div id="endGameModal" class="modal">
-            <div class="modal-content">
-                <h2>Partie Terminée !</h2>
-                <p>Votre score final : <span id="finalScore">0</span> points</p>
-                <p id="scoreMessage">...</p>
-                
-                <div id="leaderboard-display">
-                    </div>
-
-                <button id="restartBtn"><i class="fas fa-redo"></i> Rejouer</button>
-            </div>
+        <div class="diff-card" data-diff="difficile" data-blur="28" onclick="selectDiff(this)">
+          <div class="diff-name">Difficile</div>
+          <div class="diff-desc">Très flou · 2 vies</div>
         </div>
+        <div class="diff-card" data-diff="expert" data-blur="36" onclick="selectDiff(this)">
+          <div class="diff-name">Expert</div>
+          <div class="diff-desc">Extrême · 1 vie · ×2 points</div>
+        </div>
+      </div>
 
-        
-
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/header.js"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
-          crossorigin="anonymous"></script>
-        <script src="assets/js/jeu-devine-le-film.js"></script> 
+      <button class="modal-btn" id="startBtn" onclick="startGame()"><i class="fas fa-play"></i> Lancer la partie</button>
+      
+      <!-- Loading progress shown here when loading -->
+      <div id="loadingBox" style="display:none;margin-top:16px">
+        <div class="load-text" id="loadText">Chargement de la cinémathèque…</div>
+        <div class="load-bar-wrap" style="margin:10px auto 0"><div class="load-bar" id="loadBar"></div></div>
+      </div>
     </div>
+  </div>
+
+  <!-- END MODAL -->
+  <div class="modal-overlay" id="endModal" style="display:none">
+    <div class="modal-box">
+      <h2>Fin de partie !</h2>
+      <span class="modal-score" id="finalScore">0</span>
+      <div class="modal-msg" id="endMsg">Bien joué !</div>
+      
+      <div class="lb-list" id="lbDisplay"></div>
+
+      <button class="modal-btn" onclick="restartGame()" style="margin-top:20px"><i class="fas fa-redo"></i> Rejouer</button>
+    </div>
+  </div>
+
+  <!-- MAIN GAME -->
+  <div class="game-area" id="gameArea" style="display:none">
+
+    <!-- POSTER SIDE -->
+    <div class="poster-side">
+      <div class="poster-wrap">
+        <img id="posterImg" class="poster-img" src="" alt="">
+        <div class="poster-overlay" id="posterOverlay"></div>
+        <div class="poster-label" id="posterLabel"></div>
+      </div>
+      <div class="blur-meter">
+        <i class="fas fa-eye" style="font-size:11px;color:var(--text3)"></i>
+        <div class="blur-bar"><div class="blur-fill" id="blurFill" style="width:0%"></div></div>
+        <i class="fas fa-eye-slash" style="font-size:11px;color:var(--text3)"></i>
+      </div>
+    </div>
+
+    <!-- GAME RIGHT -->
+    <div class="game-right">
+
+      <div class="round-header">
+        <span class="round-badge" id="roundBadge">Manche 1 / 10</span>
+        <div class="combo-badge" id="comboBadge"><i class="fas fa-fire"></i> <span id="comboVal">×2</span> COMBO</div>
+      </div>
+
+      <!-- TIMER -->
+      <div class="timer-bar-wrap"><div class="timer-bar" id="timerBar"></div></div>
+      <div class="timer-text"><span id="timerVal">20</span>s restantes</div>
+
+      <!-- HINT BOX -->
+      <div class="hint-box">
+        <div class="hint-label">Indice</div>
+        <div class="hint-content" id="hintContent">Aucun indice révélé</div>
+      </div>
+
+      <!-- HINT BUTTONS -->
+      <div class="hints-row">
+        <button class="hint-btn" id="hint1Btn" onclick="revealHint(1)">
+          <i class="fas fa-tag"></i> Genre (−5 pts)
+        </button>
+        <button class="hint-btn" id="hint2Btn" onclick="revealHint(2)">
+          <i class="fas fa-calendar"></i> Année (−8 pts)
+        </button>
+        <button class="hint-btn" id="hint3Btn" onclick="revealHint(3)">
+          <i class="fas fa-align-left"></i> Synopsis (−15 pts)
+        </button>
+      </div>
+
+      <!-- MODE TOGGLE -->
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="modeText" onclick="setMode('text')"><i class="fas fa-keyboard"></i> Saisie libre</button>
+        <button class="mode-btn" id="modeChoice" onclick="setMode('choice')"><i class="fas fa-list"></i> Choix multiple</button>
+      </div>
+
+      <!-- INPUT MODE -->
+      <div id="inputSection">
+        <div class="input-section">
+          <i class="fas fa-search input-icon"></i>
+          <input type="text" class="movie-input" id="movieInput" placeholder="Titre du film…" autocomplete="off" oninput="onInputChange()" onkeydown="onInputKey(event)">
+          <div class="autocomplete" id="acList"></div>
+        </div>
+        <button class="submit-btn" id="submitBtn" onclick="submitGuess()">Valider <i class="fas fa-arrow-right"></i></button>
+      </div>
+
+      <!-- CHOICE MODE -->
+      <div id="choiceSection" style="display:none">
+        <div class="suggestions-grid" id="suggestionsGrid"></div>
+      </div>
+
+      <!-- FEEDBACK -->
+      <div class="feedback-line" id="feedbackLine"></div>
+
+      <!-- NEXT -->
+      <button class="next-btn" id="nextBtn" disabled onclick="nextMovie()">
+        <i class="fas fa-forward"></i> Film suivant
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/header.js"></script>
+<script src="assets/js/jeu-devine-le-film.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
 </body>
 </html>
