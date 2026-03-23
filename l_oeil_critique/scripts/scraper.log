@@ -1322,3 +1322,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-22 19:21:07,312 [INFO] 51 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-03-22 19:21:07,312 [INFO] Sauvegarde du log avec 134 identifiants
 2026-03-22 19:21:07,312 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-23 08:05:29,548 [INFO] ==== Début du script bandes-annonces ====
+2026-03-23 08:05:29,549 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-03-23 08:05:29,549 [INFO] 134 identifiants chargés depuis le log
+2026-03-23 08:05:29,549 [INFO] Démarrage scraping CineHorizons...
+2026-03-23 08:05:33,293 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-23 08:05:33,330 [INFO] 3 blocs détectés (limite 3)
+2026-03-23 08:05:33,369 [INFO] Scraping CineHorizons terminé
+2026-03-23 08:05:33,379 [INFO] Démarrage scraping TMDb...
+2026-03-23 08:05:33,521 [INFO] 20 films récupérés depuis TMDb
+2026-03-23 08:05:33,644 [INFO] Article ajouté TMDb: Wedding Nightmare : Deuxième Partie
+2026-03-23 08:05:33,820 [INFO] Scraping TMDb terminé
+2026-03-23 08:05:33,821 [INFO] 1 nouveaux articles détectés
+2026-03-23 08:05:33,824 [INFO] 52 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-03-23 08:05:33,824 [INFO] Sauvegarde du log avec 135 identifiants
+2026-03-23 08:05:33,824 [INFO] Poussée automatique FORCÉE vers GitHub...
