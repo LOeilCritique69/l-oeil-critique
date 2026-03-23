@@ -1337,3 +1337,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-23 08:05:33,824 [INFO] 52 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-03-23 08:05:33,824 [INFO] Sauvegarde du log avec 135 identifiants
 2026-03-23 08:05:33,824 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-23 19:43:46,700 [INFO] ==== Début du script bandes-annonces ====
+2026-03-23 19:43:46,701 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-03-23 19:43:46,701 [INFO] 135 identifiants chargés depuis le log
+2026-03-23 19:43:46,701 [INFO] Démarrage scraping CineHorizons...
+2026-03-23 19:43:51,549 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-23 19:43:51,583 [INFO] 3 blocs détectés (limite 3)
+2026-03-23 19:43:51,583 [INFO] Extraction détails CineHorizons pour Vivaldi et moi
+2026-03-23 19:43:53,074 [INFO] Article ajouté CineHorizons: Vivaldi et moi
+2026-03-23 19:43:53,074 [INFO] Extraction détails CineHorizons pour Vaiana, la légende du bout du monde
+2026-03-23 19:43:54,445 [INFO] Article ajouté CineHorizons: Vaiana, la légende du bout du monde
+2026-03-23 19:43:54,479 [INFO] Scraping CineHorizons terminé
+2026-03-23 19:43:54,493 [INFO] Démarrage scraping TMDb...
+2026-03-23 19:43:54,671 [INFO] 20 films récupérés depuis TMDb
+2026-03-23 19:43:55,283 [INFO] Scraping TMDb terminé
+2026-03-23 19:43:55,284 [INFO] 2 nouveaux articles détectés
+2026-03-23 19:43:55,286 [INFO] 54 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-03-23 19:43:55,286 [INFO] Sauvegarde du log avec 137 identifiants
+2026-03-23 19:43:55,287 [INFO] Poussée automatique FORCÉE vers GitHub...
