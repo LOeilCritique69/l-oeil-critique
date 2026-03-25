@@ -1370,3 +1370,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-25 07:58:25,446 [INFO] 55 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-03-25 07:58:25,446 [INFO] Sauvegarde du log avec 138 identifiants
 2026-03-25 07:58:25,446 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-25 19:42:24,934 [INFO] ==== Début du script bandes-annonces ====
+2026-03-25 19:42:24,935 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-03-25 19:42:24,935 [INFO] 138 identifiants chargés depuis le log
+2026-03-25 19:42:24,935 [INFO] Démarrage scraping CineHorizons...
+2026-03-25 19:42:33,887 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-25 19:42:33,926 [INFO] 3 blocs détectés (limite 3)
+2026-03-25 19:42:33,927 [INFO] Extraction détails CineHorizons pour Yellow Letters
+2026-03-25 19:42:38,709 [INFO] Article ajouté CineHorizons: Yellow Letters
+2026-03-25 19:42:38,743 [INFO] Scraping CineHorizons terminé
+2026-03-25 19:42:38,754 [INFO] Démarrage scraping TMDb...
+2026-03-25 19:42:38,843 [INFO] 20 films récupérés depuis TMDb
+2026-03-25 19:42:39,139 [INFO] Scraping TMDb terminé
+2026-03-25 19:42:39,140 [INFO] 1 nouveaux articles détectés
+2026-03-25 19:42:39,143 [INFO] 56 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-03-25 19:42:39,143 [INFO] Sauvegarde du log avec 139 identifiants
+2026-03-25 19:42:39,144 [INFO] Poussée automatique FORCÉE vers GitHub...
