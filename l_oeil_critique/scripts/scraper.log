@@ -1386,3 +1386,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-25 19:42:39,143 [INFO] 56 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-03-25 19:42:39,143 [INFO] Sauvegarde du log avec 139 identifiants
 2026-03-25 19:42:39,144 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-30 08:24:27,584 [INFO] ==== Début du script bandes-annonces ====
+2026-03-30 08:24:27,584 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-03-30 08:24:27,584 [INFO] 139 identifiants chargés depuis le log
+2026-03-30 08:24:27,584 [INFO] Démarrage scraping CineHorizons...
+2026-03-30 08:24:30,182 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-30 08:24:30,219 [INFO] 3 blocs détectés (limite 3)
+2026-03-30 08:24:30,220 [INFO] Extraction détails CineHorizons pour Le Dernier pour la route
+2026-03-30 08:24:33,181 [INFO] Article ajouté CineHorizons: Le Dernier pour la route
+2026-03-30 08:24:33,213 [INFO] Scraping CineHorizons terminé
+2026-03-30 08:24:33,222 [INFO] Démarrage scraping TMDb...
+2026-03-30 08:24:33,472 [INFO] 20 films récupérés depuis TMDb
+2026-03-30 08:24:33,847 [INFO] Scraping TMDb terminé
+2026-03-30 08:24:33,848 [INFO] 1 nouveaux articles détectés
+2026-03-30 08:24:33,851 [INFO] 57 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-03-30 08:24:33,851 [INFO] Sauvegarde du log avec 140 identifiants
+2026-03-30 08:24:33,851 [INFO] Poussée automatique FORCÉE vers GitHub...
