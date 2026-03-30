@@ -1402,3 +1402,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-30 08:24:33,851 [INFO] 57 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-03-30 08:24:33,851 [INFO] Sauvegarde du log avec 140 identifiants
 2026-03-30 08:24:33,851 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-03-30 19:52:10,470 [INFO] ==== Début du script bandes-annonces ====
+2026-03-30 19:52:10,470 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-03-30 19:52:10,470 [INFO] 140 identifiants chargés depuis le log
+2026-03-30 19:52:10,470 [INFO] Démarrage scraping CineHorizons...
+2026-03-30 19:52:14,752 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-03-30 19:52:14,787 [INFO] 3 blocs détectés (limite 3)
+2026-03-30 19:52:14,788 [INFO] Extraction détails CineHorizons pour Good Luck, Have Fun, Don't Die
+2026-03-30 19:52:16,119 [INFO] Article ajouté CineHorizons: Good Luck, Have Fun, Don't Die
+2026-03-30 19:52:16,120 [INFO] Extraction détails CineHorizons pour Une fille en or
+2026-03-30 19:52:17,820 [INFO] Article ajouté CineHorizons: Une fille en or
+2026-03-30 19:52:17,857 [INFO] Scraping CineHorizons terminé
+2026-03-30 19:52:17,869 [INFO] Démarrage scraping TMDb...
+2026-03-30 19:52:17,991 [INFO] 20 films récupérés depuis TMDb
+2026-03-30 19:52:18,202 [INFO] Scraping TMDb terminé
+2026-03-30 19:52:18,203 [INFO] 2 nouveaux articles détectés
+2026-03-30 19:52:18,206 [INFO] 59 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-03-30 19:52:18,206 [INFO] Sauvegarde du log avec 142 identifiants
+2026-03-30 19:52:18,207 [INFO] Poussée automatique FORCÉE vers GitHub...
