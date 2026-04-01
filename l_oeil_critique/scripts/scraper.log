@@ -1436,3 +1436,20 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-03-31 19:52:07,151 [INFO] 60 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-03-31 19:52:07,151 [INFO] Sauvegarde du log avec 143 identifiants
 2026-03-31 19:52:07,151 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-01 08:18:44,079 [INFO] ==== Début du script bandes-annonces ====
+2026-04-01 08:18:44,079 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-01 08:18:44,079 [INFO] 143 identifiants chargés depuis le log
+2026-04-01 08:18:44,079 [INFO] Démarrage scraping CineHorizons...
+2026-04-01 08:18:46,669 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-01 08:18:46,702 [INFO] 3 blocs détectés (limite 3)
+2026-04-01 08:18:46,739 [INFO] Scraping CineHorizons terminé
+2026-04-01 08:18:46,748 [INFO] Démarrage scraping TMDb...
+2026-04-01 08:18:47,034 [INFO] 20 films récupérés depuis TMDb
+2026-04-01 08:18:47,215 [INFO] Article ajouté TMDb: Le Réveil de la Momie
+2026-04-01 08:18:47,263 [INFO] Article ajouté TMDb: Le Diable s'habille en Prada 2
+2026-04-01 08:18:47,279 [INFO] Article ajouté TMDb: Die My Love
+2026-04-01 08:18:47,279 [INFO] Scraping TMDb terminé
+2026-04-01 08:18:47,280 [INFO] 3 nouveaux articles détectés
+2026-04-01 08:18:47,283 [INFO] 63 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-01 08:18:47,284 [INFO] Sauvegarde du log avec 146 identifiants
+2026-04-01 08:18:47,284 [INFO] Poussée automatique FORCÉE vers GitHub...
