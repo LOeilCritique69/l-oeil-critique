@@ -1469,3 +1469,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-03 08:05:27,870 [INFO] 64 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-03 08:05:27,870 [INFO] Sauvegarde du log avec 147 identifiants
 2026-04-03 08:05:27,870 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-03 14:04:23,718 [INFO] ==== Début du script bandes-annonces ====
+2026-04-03 14:04:23,718 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-03 14:04:23,718 [INFO] 147 identifiants chargés depuis le log
+2026-04-03 14:04:23,718 [INFO] Démarrage scraping CineHorizons...
+2026-04-03 14:04:27,412 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-03 14:04:27,447 [INFO] 3 blocs détectés (limite 3)
+2026-04-03 14:04:27,483 [INFO] Scraping CineHorizons terminé
+2026-04-03 14:04:27,492 [INFO] Démarrage scraping TMDb...
+2026-04-03 14:04:27,706 [INFO] 20 films récupérés depuis TMDb
+2026-04-03 14:04:27,805 [INFO] Article ajouté TMDb: Good Luck, Have Fun, Don't Die
+2026-04-03 14:04:27,995 [INFO] Scraping TMDb terminé
+2026-04-03 14:04:27,996 [INFO] 1 nouveaux articles détectés
+2026-04-03 14:04:27,999 [INFO] 65 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-03 14:04:27,999 [INFO] Sauvegarde du log avec 148 identifiants
+2026-04-03 14:04:28,000 [INFO] Poussée automatique FORCÉE vers GitHub...
