@@ -1453,3 +1453,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-01 08:18:47,283 [INFO] 63 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-01 08:18:47,284 [INFO] Sauvegarde du log avec 146 identifiants
 2026-04-01 08:18:47,284 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-03 08:05:23,612 [INFO] ==== Début du script bandes-annonces ====
+2026-04-03 08:05:23,612 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-03 08:05:23,612 [INFO] 146 identifiants chargés depuis le log
+2026-04-03 08:05:23,612 [INFO] Démarrage scraping CineHorizons...
+2026-04-03 08:05:26,557 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-03 08:05:26,592 [INFO] 3 blocs détectés (limite 3)
+2026-04-03 08:05:26,593 [INFO] Extraction détails CineHorizons pour Mi Amor
+2026-04-03 08:05:27,423 [INFO] Article ajouté CineHorizons: Mi Amor
+2026-04-03 08:05:27,462 [INFO] Scraping CineHorizons terminé
+2026-04-03 08:05:27,472 [INFO] Démarrage scraping TMDb...
+2026-04-03 08:05:27,586 [INFO] 20 films récupérés depuis TMDb
+2026-04-03 08:05:27,866 [INFO] Scraping TMDb terminé
+2026-04-03 08:05:27,867 [INFO] 1 nouveaux articles détectés
+2026-04-03 08:05:27,870 [INFO] 64 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-03 08:05:27,870 [INFO] Sauvegarde du log avec 147 identifiants
+2026-04-03 08:05:27,870 [INFO] Poussée automatique FORCÉE vers GitHub...
