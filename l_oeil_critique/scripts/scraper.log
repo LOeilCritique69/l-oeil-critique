@@ -1484,3 +1484,23 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-03 14:04:27,999 [INFO] 65 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-03 14:04:27,999 [INFO] Sauvegarde du log avec 148 identifiants
 2026-04-03 14:04:28,000 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-04 07:52:43,761 [INFO] ==== Début du script bandes-annonces ====
+2026-04-04 07:52:43,761 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-04 07:52:43,761 [INFO] 148 identifiants chargés depuis le log
+2026-04-04 07:52:43,761 [INFO] Démarrage scraping CineHorizons...
+2026-04-04 07:52:46,843 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-04 07:52:46,876 [INFO] 3 blocs détectés (limite 3)
+2026-04-04 07:52:46,877 [INFO] Extraction détails CineHorizons pour The Criminals
+2026-04-04 07:52:47,608 [INFO] Article ajouté CineHorizons: The Criminals
+2026-04-04 07:52:47,609 [INFO] Extraction détails CineHorizons pour Sorda
+2026-04-04 07:52:48,347 [INFO] Article ajouté CineHorizons: Sorda
+2026-04-04 07:52:48,347 [INFO] Extraction détails CineHorizons pour L'Arnaqueuse
+2026-04-04 07:52:49,032 [INFO] Article ajouté CineHorizons: L'Arnaqueuse
+2026-04-04 07:52:49,083 [INFO] Scraping CineHorizons terminé
+2026-04-04 07:52:49,092 [INFO] Démarrage scraping TMDb...
+2026-04-04 07:52:49,329 [INFO] 20 films récupérés depuis TMDb
+2026-04-04 07:52:49,545 [INFO] Scraping TMDb terminé
+2026-04-04 07:52:49,546 [INFO] 3 nouveaux articles détectés
+2026-04-04 07:52:49,549 [INFO] 68 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-04 07:52:49,549 [INFO] Sauvegarde du log avec 151 identifiants
+2026-04-04 07:52:49,549 [INFO] Poussée automatique FORCÉE vers GitHub...
