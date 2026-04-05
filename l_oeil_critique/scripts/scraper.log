@@ -1504,3 +1504,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-04 07:52:49,549 [INFO] 68 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-04 07:52:49,549 [INFO] Sauvegarde du log avec 151 identifiants
 2026-04-04 07:52:49,549 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-05 07:57:45,842 [INFO] ==== Début du script bandes-annonces ====
+2026-04-05 07:57:45,842 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-05 07:57:45,843 [INFO] 151 identifiants chargés depuis le log
+2026-04-05 07:57:45,843 [INFO] Démarrage scraping CineHorizons...
+2026-04-05 07:57:48,852 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-05 07:57:48,889 [INFO] 3 blocs détectés (limite 3)
+2026-04-05 07:57:48,889 [INFO] Extraction détails CineHorizons pour Pour le plaisir
+2026-04-05 07:57:49,810 [INFO] Article ajouté CineHorizons: Pour le plaisir
+2026-04-05 07:57:49,811 [INFO] Extraction détails CineHorizons pour C'est quoi l'amour ?
+2026-04-05 07:57:50,608 [INFO] Article ajouté CineHorizons: C'est quoi l'amour ?
+2026-04-05 07:57:50,643 [INFO] Scraping CineHorizons terminé
+2026-04-05 07:57:50,652 [INFO] Démarrage scraping TMDb...
+2026-04-05 07:57:50,766 [INFO] 20 films récupérés depuis TMDb
+2026-04-05 07:57:51,034 [INFO] Scraping TMDb terminé
+2026-04-05 07:57:51,035 [INFO] 2 nouveaux articles détectés
+2026-04-05 07:57:51,038 [INFO] 70 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-05 07:57:51,038 [INFO] Sauvegarde du log avec 153 identifiants
+2026-04-05 07:57:51,038 [INFO] Poussée automatique FORCÉE vers GitHub...
