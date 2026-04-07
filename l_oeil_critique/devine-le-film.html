@@ -7,167 +7,154 @@
     <meta name="keywords" content="actualités films, cinéma, nouveautés cinéma, films à l'affiche, critiques de films, actualités hollywood">
     <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
     <title>Devine Le Film - L'Œil Critique</title>
-    <!-- Fonts + CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/chef_d_oeuvre.css">
-  <link rel="stylesheet" href="css/devine.css">
-    </head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
+    <link rel="stylesheet" href="css/devine.css">
 </head>
 <body>
 
-<!-- Film sprocket decoration -->
 <div class="sprocket-bar">
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
 </div>
 <div class="sprocket-bar right">
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
-  <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
 </div>
 
 <div class="streak-banner" id="streakBanner"></div>
 
 <div class="app">
-  <!-- INTRO MODAL -->
-<div class="stat-pill gold" id="scoreDisplay"><i class="fas fa-trophy"></i> <span id="scoreVal">0</span></div>
-      <div class="stat-pill lives"><i class="fas fa-heart"></i> <span id="livesDisplay">❤️❤️❤️</span></div>
-
-  <div class="modal-overlay" id="introModal">
-    <div class="modal-box">
-      <h2>CinéGuess</h2>
-      <p>Identifie le film depuis son affiche floue.<br>Plus tu réponds vite, plus tu gagnes de points !</p>
-      
-      <div class="diff-options-modal" id="diffGrid">
-        <div class="diff-card selected" data-diff="facile" data-blur="14" onclick="selectDiff(this)">
-          <div class="diff-name">Facile</div>
-          <div class="diff-desc">Flou léger · 3 vies · +bonus</div>
-        </div>
-        <div class="diff-card" data-diff="normal" data-blur="22" onclick="selectDiff(this)">
-          <div class="diff-name">Normal</div>
-          <div class="diff-desc">Flou moyen · 3 vies</div>
-        </div>
-        <div class="diff-card" data-diff="difficile" data-blur="28" onclick="selectDiff(this)">
-          <div class="diff-name">Difficile</div>
-          <div class="diff-desc">Très flou · 2 vies</div>
-        </div>
-        <div class="diff-card" data-diff="expert" data-blur="36" onclick="selectDiff(this)">
-          <div class="diff-name">Expert</div>
-          <div class="diff-desc">Extrême · 1 vie · ×2 points</div>
-        </div>
-      </div>
-
-      <button class="modal-btn" id="startBtn" onclick="startGame()"><i class="fas fa-play"></i> Lancer la partie</button>
-      
-      <!-- Loading progress shown here when loading -->
-      <div id="loadingBox" style="display:none;margin-top:16px">
-        <div class="load-text" id="loadText">Chargement de la cinémathèque…</div>
-        <div class="load-bar-wrap" style="margin:10px auto 0"><div class="load-bar" id="loadBar"></div></div>
-      </div>
+    <div class="game-stats-top">
+    <div class="stat-pill gold" id="scoreDisplay">
+        <i class="fas fa-trophy"></i> 
+        <span id="scoreVal">0</span>
     </div>
-  </div>
-
-  <!-- END MODAL -->
-  <div class="modal-overlay" id="endModal" style="display:none">
-    <div class="modal-box">
-      <h2>Fin de partie !</h2>
-      <span class="modal-score" id="finalScore">0</span>
-      <div class="modal-msg" id="endMsg">Bien joué !</div>
-      
-      <div class="lb-list" id="lbDisplay"></div>
-
-      <button class="modal-btn" onclick="restartGame()" style="margin-top:20px"><i class="fas fa-redo"></i> Rejouer</button>
+    
+    <div class="stat-pill lives">
+        <div id="livesDisplay" class="lives-display"></div>
     </div>
-  </div>
+</div>
 
-  <!-- MAIN GAME -->
-  <div class="game-area" id="gameArea" style="display:none">
+    <div class="modal-overlay" id="introModal">
+        <div class="modal-box">
+            <h2>CinéGuess</h2>
+            <p>Identifie le film depuis son affiche floue.<br>Plus tu réponds vite, plus tu gagnes de points !</p>
+            
+            <div class="diff-options-modal" id="diffGrid">
+                <div class="diff-card selected" data-diff="facile" onclick="selectDiff(this)">
+                    <div class="diff-name">Facile</div>
+                    <div class="diff-desc">Flou léger · 3 vies · +bonus</div>
+                </div>
+                <div class="diff-card" data-diff="normal" onclick="selectDiff(this)">
+                    <div class="diff-name">Normal</div>
+                    <div class="diff-desc">Flou moyen · 3 vies</div>
+                </div>
+                <div class="diff-card" data-diff="difficile" onclick="selectDiff(this)">
+                    <div class="diff-name">Difficile</div>
+                    <div class="diff-desc">Très flou · 2 vies</div>
+                </div>
+                <div class="diff-card" data-diff="expert" data-diff="expert" onclick="selectDiff(this)">
+                    <div class="diff-name">Expert</div>
+                    <div class="diff-desc">Extrême · 1 vie · ×2 points</div>
+                </div>
+            </div>
 
-    <!-- POSTER SIDE -->
-    <div class="poster-side">
-      <div class="poster-wrap">
-        <img id="posterImg" class="poster-img" src="" alt="">
-        <div class="poster-overlay" id="posterOverlay"></div>
-        <div class="poster-label" id="posterLabel"></div>
-      </div>
-      <div class="blur-meter">
-        <i class="fas fa-eye" style="font-size:11px;color:var(--text3)"></i>
-        <div class="blur-bar"><div class="blur-fill" id="blurFill" style="width:0%"></div></div>
-        <i class="fas fa-eye-slash" style="font-size:11px;color:var(--text3)"></i>
-      </div>
+            <button class="modal-btn" id="startBtn" onclick="startGame()"><i class="fas fa-play"></i> Lancer la partie</button>
+            
+            <div id="loadingBox" style="display:none;margin-top:16px">
+                <div class="load-text" id="loadText">Chargement de la cinémathèque…</div>
+                <div class="load-bar-wrap" style="margin:10px auto 0"><div class="load-bar" id="loadBar"></div></div>
+            </div>
+        </div>
     </div>
 
-    <!-- GAME RIGHT -->
-    <div class="game-right">
+    <div class="modal-overlay" id="endModal" style="display:none">
+        <div class="modal-box">
+            <h2>Fin de partie !</h2>
+            <span class="modal-score" id="finalScore">0</span>
+            <div class="modal-msg" id="endMsg">Bien joué !</div>
+            
+            <div id="lbDisplay"></div>
 
-      <div class="round-header">
-        <span class="round-badge" id="roundBadge">Manche 1 / 10</span>
-        <div class="combo-badge" id="comboBadge"><i class="fas fa-fire"></i> <span id="comboVal">×2</span> COMBO</div>
-      </div>
-
-      <!-- TIMER -->
-      <div class="timer-bar-wrap"><div class="timer-bar" id="timerBar"></div></div>
-      <div class="timer-text"><span id="timerVal">20</span>s restantes</div>
-
-      <!-- HINT BOX -->
-      <div class="hint-box">
-        <div class="hint-label">Indice</div>
-        <div class="hint-content" id="hintContent">Aucun indice révélé</div>
-      </div>
-
-      <!-- HINT BUTTONS -->
-      <div class="hints-row">
-        <button class="hint-btn" id="hint1Btn" onclick="revealHint(1)">
-          <i class="fas fa-tag"></i> Genre (−5 pts)
-        </button>
-        <button class="hint-btn" id="hint2Btn" onclick="revealHint(2)">
-          <i class="fas fa-calendar"></i> Année (−8 pts)
-        </button>
-        <button class="hint-btn" id="hint3Btn" onclick="revealHint(3)">
-          <i class="fas fa-align-left"></i> Synopsis (−15 pts)
-        </button>
-      </div>
-
-      <!-- MODE TOGGLE -->
-      <div class="mode-toggle">
-        <button class="mode-btn active" id="modeText" onclick="setMode('text')"><i class="fas fa-keyboard"></i> Saisie libre</button>
-        <button class="mode-btn" id="modeChoice" onclick="setMode('choice')"><i class="fas fa-list"></i> Choix multiple</button>
-      </div>
-
-      <!-- INPUT MODE -->
-      <div id="inputSection">
-        <div class="input-section">
-          <i class="fas fa-search input-icon"></i>
-          <input type="text" class="movie-input" id="movieInput" placeholder="Titre du film…" autocomplete="off" oninput="onInputChange()" onkeydown="onInputKey(event)">
-          <div class="autocomplete" id="acList"></div>
+            <button class="modal-btn" onclick="restartGame()" style="margin-top:20px"><i class="fas fa-redo"></i> Rejouer</button>
         </div>
-        <button class="submit-btn" id="submitBtn" onclick="submitGuess()">Valider <i class="fas fa-arrow-right"></i></button>
-      </div>
-
-      <!-- CHOICE MODE -->
-      <div id="choiceSection" style="display:none">
-        <div class="suggestions-grid" id="suggestionsGrid"></div>
-      </div>
-
-      <!-- FEEDBACK -->
-      <div class="feedback-line" id="feedbackLine"></div>
-
-      <!-- NEXT -->
-      <button class="next-btn" id="nextBtn" disabled onclick="nextMovie()">
-        <i class="fas fa-forward"></i> Film suivant
-      </button>
     </div>
-  </div>
+
+    <div class="game-area" id="gameArea" style="display:none">
+        <div class="poster-side">
+            <div class="poster-wrap">
+                <img id="posterImg" class="poster-img" src="" alt="Affiche du film">
+                <div class="poster-overlay" id="posterOverlay"></div>
+                <div class="poster-label" id="posterLabel"></div>
+            </div>
+            <div class="blur-meter">
+                <i class="fas fa-eye" style="font-size:11px;"></i>
+                <div class="blur-bar"><div class="blur-fill" id="blurFill" style="width:0%"></div></div>
+                <i class="fas fa-eye-slash" style="font-size:11px;"></i>
+            </div>
+        </div>
+
+        <div class="game-right">
+            <div class="round-header">
+                <span class="round-badge" id="roundBadge">Manche 1 / 10</span>
+                <div class="combo-badge" id="comboBadge"><i class="fas fa-fire"></i> <span id="comboVal">×2</span> COMBO</div>
+            </div>
+
+            <div class="timer-bar-wrap"><div class="timer-bar" id="timerBar"></div></div>
+            <div class="timer-text"><span id="timerVal">20</span>s restantes</div>
+
+            <div class="hint-box">
+                <div class="hint-label">Indice</div>
+                <div class="hint-content" id="hintContent">Aucun indice révélé</div>
+            </div>
+
+            <div class="hints-row">
+                <button class="hint-btn" id="hint1Btn" onclick="revealHint(1)"><i class="fas fa-tag"></i> Genre</button>
+                <button class="hint-btn" id="hint2Btn" onclick="revealHint(2)"><i class="fas fa-calendar"></i> Année</button>
+                <button class="hint-btn" id="hint3Btn" onclick="revealHint(3)"><i class="fas fa-align-left"></i> Synopsis</button>
+            </div>
+
+            <div class="mode-toggle">
+                <button class="mode-btn active" id="modeText" onclick="setMode('text')"><i class="fas fa-keyboard"></i> Clavier</button>
+                <button class="mode-btn" id="modeChoice" onclick="setMode('choice')"><i class="fas fa-list"></i> Choix</button>
+            </div>
+
+            <div id="inputSection">
+                <div class="input-container" style="position:relative;">
+                    <i class="fas fa-search input-icon"></i>
+                    <input type="text" class="movie-input" id="movieInput" placeholder="Titre du film…" autocomplete="off" oninput="onInputChange()" onkeydown="onInputKey(event)">
+                    <div class="autocomplete" id="acList"></div>
+                </div>
+                <button class="submit-btn" id="submitBtn" onclick="submitGuess()">Valider <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div id="choiceSection" style="display:none">
+                <div class="suggestions-grid" id="suggestionsGrid"></div>
+            </div>
+
+            <div class="feedback-line" id="feedbackLine"></div>
+
+            <button class="next-btn" id="nextBtn" disabled onclick="nextMovie()">
+                <i class="fas fa-forward"></i> Film suivant
+            </button>
+        </div>
+    </div>
 </div>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/header.js"></script>
 <script src="assets/js/jeu-devine-le-film.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
+
 </body>
 </html>

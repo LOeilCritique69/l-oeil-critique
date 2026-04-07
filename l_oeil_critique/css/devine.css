@@ -134,10 +134,24 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .diff-btn{flex:1;padding:8px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text3);font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font-mono);text-transform:uppercase}
 .diff-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(240,192,64,0.08)}
 
-/* LIVES */
-.lives-display{display:flex;gap:6px}
-.life{font-size:14px;transition:all 0.3s}
-.life.lost{opacity:0.2;transform:scale(0.7)}
+.lives-display {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.life {
+    display: inline-block;
+    color: var(--red);
+    font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.life.lost {
+    opacity: 0.2;
+    transform: scale(0.7) rotate(-15deg);
+    filter: grayscale(1);
+}
 
 /* SCORE FLOAT */
 .score-float{position:fixed;pointer-events:none;font-family:var(--font-mono);font-weight:700;font-size:1.2rem;z-index:500;transition:none;opacity:0}

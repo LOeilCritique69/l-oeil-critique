@@ -512,9 +512,21 @@ function updateScoreDisplay() {
 }
 
 function updateLivesDisplay() {
-  const hearts = Array(Math.max(lives, 0)).fill('❤️').join('') +
-                 Array(Math.max(DIFFICULTIES[diff].lives - lives, 0)).fill('🖤').join('');
-  livesDisplay.textContent = hearts;
+    const container = document.getElementById('livesDisplay');
+    if (!container) return;
+
+    // On récupère le nombre de vies total selon la difficulté choisie
+    const totalMaxLives = DIFFICULTIES[diff].lives; 
+    let heartHTML = '';
+
+    for (let i = 0; i < totalMaxLives; i++) {
+        // Si l'index i est inférieur aux vies restantes (ex: 1 < 2), le cœur est plein
+        // Sinon, on lui donne la classe .lost
+        const isLost = i >= lives; 
+        heartHTML += `<span class="life ${isLost ? 'lost' : ''}"><i class="fas fa-heart"></i></span>`;
+    }
+
+    container.innerHTML = heartHTML;
 }
 
 function floatScore(pts, positive) {
