@@ -22,7 +22,7 @@
   /* Palette et tokens existants (inchangés) */
   --primary-color: #2e3440;        /* sombre principal */
   --secondary-color: #f2cd86;      /* doré */
-  --background-color: #f0f2f5;     /* fond clair */
+  --background-color: #ece7df;    /* fond clair */
   --accent-color: #ffd27f;         /* accent doré/orangé */
   --text-color-dark: #333;         /* texte foncé */
   --text-color-light: #f9f9f9;     /* texte clair */
@@ -77,7 +77,7 @@ html, body {
   overflow-x: hidden; /* Supprime le scroll horizontal indésirable */
   
   /* Utilisation des variables adaptatives (Mode Clair par défaut) */
-  background-color: var(--bg-body, #f0f2f5);
+  background-color: var(--bg-body, #ece7df);
   color: var(--text-main, #333);
   
   font-family: var(--font-family, 'Roboto', sans-serif);
@@ -367,6 +367,33 @@ header.scrolled .site-title {
   }
 }
 
+/* ========================================================================
+   Scrollbar & Responsive
+   ======================================================================== */
+
+.search-results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: rgba(242, 205, 134, 0.2);
+  border-radius: 10px;
+}
+
+@media (max-width: 520px) {
+  .search-results {
+    width: calc(100vw - 40px);
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    right: 20px;
+    max-height: 70vh;
+  }
+}
 /* ========================================================================
    5) RESPONSIVE & BURGER (Compact 2 par 2)
    ======================================================================== */
@@ -1538,7 +1565,7 @@ footer p {
 
 /* --- À LA UNE (CARTES INTERACTIVES - OPTIMISÉ POUR 4) --- */
 .featured-section {
-  background: linear-gradient(180deg, #fff 0%, #f4f4f4 100%);
+  background: linear-gradient(180deg, #fff 0%, #ece7df 100%);
   padding: 0rem 1.5rem;
   position: relative;
   overflow: hidden;

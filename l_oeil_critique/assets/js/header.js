@@ -53,104 +53,118 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.insertAdjacentHTML("beforeend", footerHTML);
 
-    // 3. Déclaration des variables et initialisation de la recherche
+     // =========================
+    // SEARCH SYSTEM
+    // =========================
     const searchInput = document.querySelector("#search-input");
     const resultsContainer = document.querySelector("#search-results-container");
-    let articlesIndex = []; // Pour stocker les données du JSON
 
-    // Charger le JSON de l'index des articles
-    fetch("/l_oeil_critique/articles_index.json")
-        .then(res => {
-            if (!res.ok) throw new Error("Erreur de chargement du fichier JSON.");
-            return res.json();
+    let articlesIndex = [];
+
+    fetch("/l_oeil_critique/assets/data/articles_index.json")
+        .then(r => r.ok ? r.json() : [])
+        .then(data => {
+            articlesIndex = Array.isArray(data) ? data : [];
         })
-        .then(data => articlesIndex = data)
-        .catch(err => console.error("Erreur chargement index articles :", err));
+        .catch(() => {
+            articlesIndex = [];
+        });
 
-    // Logique de recherche au fur et à mesure de la saisie
+    function getImageSrc(img) {
+        if (!img) return null;
+
+        // si string simple
+        if (typeof img === "string") return img;
+
+        // si objet
+        if (typeof img === "object") {
+            return img.src || null;
+        }
+
+        return null;
+    }
+
     searchInput.addEventListener("input", () => {
-        const query = searchInput.value.toLowerCase().trim();
+
+        const query = searchInput.value.trim().toLowerCase();
         resultsContainer.innerHTML = "";
-        
-        // Cacher les résultats si la requête est vide
+
         if (!query) {
             resultsContainer.classList.remove("active");
             return;
         }
 
-        // Filtrage et limitation des résultats (ici à 10)
         const filtered = articlesIndex
-            .filter(a => a.title.toLowerCase().includes(query))
+            .filter(a =>
+                a &&
+                a.title &&
+                typeof a.title === "string" &&
+                a.title.toLowerCase().includes(query)
+            )
             .slice(0, 10);
 
-        filtered.forEach(a => {
-            const div = document.createElement("div");
-            div.classList.add("search-result-item");
-            // Utilisation d'un lien pour naviguer vers l'article
-            div.innerHTML = `<a href="${a.url}">${a.title} <span class="result-type">(${a.type})</span></a>`;
-            resultsContainer.appendChild(div);
-        });
+        for (const a of filtered) {
 
-        // Afficher ou cacher le conteneur des résultats
-        if (filtered.length > 0) {
-            resultsContainer.classList.add("active");
-        } else {
-            // Optionnel : Afficher un message "Aucun résultat"
-            // const noResult = document.createElement("div");
-            // noResult.classList.add("search-result-item");
-            // noResult.textContent = "Aucun résultat trouvé.";
-            // resultsContainer.appendChild(noResult);
-            // resultsContainer.classList.add("active"); 
-            resultsContainer.classList.remove("active"); 
+            const url = typeof a.url === "string" ? a.url : "#";
+            const imgSrc = getImageSrc(a.image);
+
+            const div = document.createElement("div");
+            div.className = "search-result-item";
+
+            div.innerHTML = `
+                <a href="${url}">
+                    <div class="search-item">
+
+                        <div class="search-thumb">
+                            ${imgSrc ? `<img src="${imgSrc}" alt="">` : ""}
+                        </div>
+
+                        <div class="search-text">
+                            <div class="search-title">
+                                ${a.title || "Sans titre"}
+                            </div>
+                            <div class="search-meta">
+                                ${a.type || ""}
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            `;
+
+            resultsContainer.appendChild(div);
         }
+
+        resultsContainer.classList.toggle("active", filtered.length > 0);
     });
 
-    // Fermer les résultats lorsque l'utilisateur clique en dehors du conteneur de recherche
+    // fermeture click extérieur
     document.addEventListener("click", (e) => {
-        const searchContainer = document.querySelector(".search-container");
-        if (searchContainer && !searchContainer.contains(e.target)) {
+        if (!document.querySelector(".search-container").contains(e.target)) {
             resultsContainer.classList.remove("active");
         }
     });
-    
-    // Fermer les résultats si l'utilisateur appuie sur Echap
+
+    // ESC
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             resultsContainer.classList.remove("active");
         }
     });
 
+    // =========================
+    // ACTIVE LINK FIX
+    // =========================
+    const current = window.location.pathname.split("/").pop();
 
-    // --- Autres fonctionnalités du Header ---
-
-    // 4. Sticky header
-    const header = document.querySelector("header");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) header.classList.add("scrolled");
-        else header.classList.remove("scrolled");
+    document.querySelectorAll(".main-nav a").forEach(a => {
+        const link = a.getAttribute("href").split("/").pop();
+        if (link === current) a.classList.add("active");
     });
 
-    // 5. Lien actif selon la page
-    const currentPath = window.location.pathname;
-    document.querySelectorAll(".main-nav a").forEach(link => {
-        // Utilisation de la méthode la plus robuste pour vérifier la correspondance
-        const linkPath = link.getAttribute("href").split("/").pop();
-        const currentFileName = currentPath.split("/").pop();
-
-        if (currentFileName === linkPath && linkPath !== "") {
-            link.classList.add("active");
-        } else if (currentFileName === "" && linkPath === "index.html") {
-             // Cas spécial pour la page d'accueil
-             link.classList.add("active");
-        }
-    });
-
-    // 6. Burger menu : fermeture au clic sur un lien
-    const burgerToggle = document.querySelector("#nav-toggle");
-    document.querySelectorAll(".main-nav a").forEach(link => {
-        link.addEventListener("click", () => {
-            // Ferme le menu en décochant la checkbox
-            burgerToggle.checked = false;
-        });
+    // burger close
+    const burger = document.querySelector("#nav-toggle");
+    document.querySelectorAll(".main-nav a").forEach(a => {
+        a.addEventListener("click", () => burger.checked = false);
     });
 });
