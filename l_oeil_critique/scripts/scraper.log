@@ -1650,3 +1650,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-11 22:13:30,515 [INFO] Scraping TMDb terminé
 2026-04-11 22:13:30,516 [INFO] 0 nouveaux articles détectés
 2026-04-11 22:13:30,517 [INFO] Aucun nouvel article à ajouter
+2026-04-12 14:15:12,800 [INFO] ==== Début du script bandes-annonces ====
+2026-04-12 14:15:12,811 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-04-12 14:15:12,842 [INFO] 165 identifiants chargés depuis le log
+2026-04-12 14:15:12,842 [INFO] Démarrage scraping CineHorizons...
+2026-04-12 14:15:24,369 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-12 14:15:24,391 [INFO] 3 blocs détectés (limite 3)
+2026-04-12 14:15:24,391 [INFO] Extraction détails CineHorizons pour Die My Love
+2026-04-12 14:15:24,888 [INFO] Article ajouté CineHorizons: Die My Love
+2026-04-12 14:15:24,953 [INFO] Scraping CineHorizons terminé
+2026-04-12 14:15:24,968 [INFO] Démarrage scraping TMDb...
+2026-04-12 14:15:25,279 [INFO] 20 films récupérés depuis TMDb
+2026-04-12 14:15:26,075 [INFO] Scraping TMDb terminé
+2026-04-12 14:15:26,076 [INFO] 1 nouveaux articles détectés
+2026-04-12 14:15:26,106 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-04-12 14:15:26,107 [INFO] Sauvegarde du log avec 166 identifiants
+2026-04-12 14:15:26,108 [INFO] Poussée automatique FORCÉE vers GitHub...
