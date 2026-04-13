@@ -1666,3 +1666,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-12 14:15:26,106 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-04-12 14:15:26,107 [INFO] Sauvegarde du log avec 166 identifiants
 2026-04-12 14:15:26,108 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-13 09:05:33,675 [INFO] ==== Début du script bandes-annonces ====
+2026-04-13 09:05:33,675 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-13 09:05:33,675 [INFO] 166 identifiants chargés depuis le log
+2026-04-13 09:05:33,675 [INFO] Démarrage scraping CineHorizons...
+2026-04-13 09:05:36,944 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-13 09:05:36,979 [INFO] 3 blocs détectés (limite 3)
+2026-04-13 09:05:36,980 [INFO] Extraction détails CineHorizons pour Les Goûteuses d'Hitler
+2026-04-13 09:05:38,054 [INFO] Article ajouté CineHorizons: Les Goûteuses d'Hitler
+2026-04-13 09:05:38,055 [INFO] Extraction détails CineHorizons pour Hokum
+2026-04-13 09:05:38,747 [INFO] Article ajouté CineHorizons: Hokum
+2026-04-13 09:05:38,786 [INFO] Scraping CineHorizons terminé
+2026-04-13 09:05:38,799 [INFO] Démarrage scraping TMDb...
+2026-04-13 09:05:39,037 [INFO] 20 films récupérés depuis TMDb
+2026-04-13 09:05:39,302 [INFO] Scraping TMDb terminé
+2026-04-13 09:05:39,303 [INFO] 2 nouveaux articles détectés
+2026-04-13 09:05:39,307 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-13 09:05:39,307 [INFO] Sauvegarde du log avec 168 identifiants
+2026-04-13 09:05:39,307 [INFO] Poussée automatique FORCÉE vers GitHub...
