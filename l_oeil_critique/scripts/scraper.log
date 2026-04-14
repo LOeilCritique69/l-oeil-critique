@@ -1684,3 +1684,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-13 09:05:39,307 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-13 09:05:39,307 [INFO] Sauvegarde du log avec 168 identifiants
 2026-04-13 09:05:39,307 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-14 08:47:52,788 [INFO] ==== Début du script bandes-annonces ====
+2026-04-14 08:47:52,788 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-14 08:47:52,788 [INFO] 168 identifiants chargés depuis le log
+2026-04-14 08:47:52,789 [INFO] Démarrage scraping CineHorizons...
+2026-04-14 08:47:57,130 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-14 08:47:57,166 [INFO] 3 blocs détectés (limite 3)
+2026-04-14 08:47:57,167 [INFO] Extraction détails CineHorizons pour Élise sous emprise
+2026-04-14 08:47:58,054 [INFO] Article ajouté CineHorizons: Élise sous emprise
+2026-04-14 08:47:58,088 [INFO] Scraping CineHorizons terminé
+2026-04-14 08:47:58,098 [INFO] Démarrage scraping TMDb...
+2026-04-14 08:47:58,375 [INFO] 20 films récupérés depuis TMDb
+2026-04-14 08:47:58,723 [INFO] Scraping TMDb terminé
+2026-04-14 08:47:58,724 [INFO] 1 nouveaux articles détectés
+2026-04-14 08:47:58,728 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-14 08:47:58,728 [INFO] Sauvegarde du log avec 169 identifiants
+2026-04-14 08:47:58,728 [INFO] Poussée automatique FORCÉE vers GitHub...
