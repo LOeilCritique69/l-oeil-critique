@@ -1700,3 +1700,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-14 08:47:58,728 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-14 08:47:58,728 [INFO] Sauvegarde du log avec 169 identifiants
 2026-04-14 08:47:58,728 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-15 08:49:12,875 [INFO] ==== Début du script bandes-annonces ====
+2026-04-15 08:49:12,875 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-15 08:49:12,875 [INFO] 169 identifiants chargés depuis le log
+2026-04-15 08:49:12,875 [INFO] Démarrage scraping CineHorizons...
+2026-04-15 08:49:16,796 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-15 08:49:16,826 [INFO] 3 blocs détectés (limite 3)
+2026-04-15 08:49:16,855 [INFO] Scraping CineHorizons terminé
+2026-04-15 08:49:16,864 [INFO] Démarrage scraping TMDb...
+2026-04-15 08:49:17,129 [INFO] 20 films récupérés depuis TMDb
+2026-04-15 08:49:17,316 [INFO] Article ajouté TMDb: The Criminals
+2026-04-15 08:49:17,316 [INFO] Scraping TMDb terminé
+2026-04-15 08:49:17,317 [INFO] 1 nouveaux articles détectés
+2026-04-15 08:49:17,320 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-15 08:49:17,320 [INFO] Sauvegarde du log avec 170 identifiants
+2026-04-15 08:49:17,321 [INFO] Poussée automatique FORCÉE vers GitHub...
