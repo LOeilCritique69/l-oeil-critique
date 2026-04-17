@@ -1752,3 +1752,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-17 08:48:48,750 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-17 08:48:48,750 [INFO] Sauvegarde du log avec 175 identifiants
 2026-04-17 08:48:48,750 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-17 14:22:56,195 [INFO] ==== Début du script bandes-annonces ====
+2026-04-17 14:22:56,195 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-17 14:22:56,195 [INFO] 175 identifiants chargés depuis le log
+2026-04-17 14:22:56,195 [INFO] Démarrage scraping CineHorizons...
+2026-04-17 14:23:00,918 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-17 14:23:00,952 [INFO] 3 blocs détectés (limite 3)
+2026-04-17 14:23:00,992 [INFO] Scraping CineHorizons terminé
+2026-04-17 14:23:01,000 [INFO] Démarrage scraping TMDb...
+2026-04-17 14:23:01,060 [INFO] 20 films récupérés depuis TMDb
+2026-04-17 14:23:01,557 [INFO] Article ajouté TMDb: Billie Eilish - Hit Me Hard and Soft : The Tour (3D)
+2026-04-17 14:23:01,557 [INFO] Scraping TMDb terminé
+2026-04-17 14:23:01,558 [INFO] 1 nouveaux articles détectés
+2026-04-17 14:23:01,561 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-17 14:23:01,561 [INFO] Sauvegarde du log avec 176 identifiants
+2026-04-17 14:23:01,562 [INFO] Poussée automatique FORCÉE vers GitHub...
