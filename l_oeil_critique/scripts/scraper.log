@@ -1783,3 +1783,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-18 08:02:32,444 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-18 08:02:32,444 [INFO] Sauvegarde du log avec 177 identifiants
 2026-04-18 08:02:32,444 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-18 19:36:41,569 [INFO] ==== Début du script bandes-annonces ====
+2026-04-18 19:36:41,569 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-18 19:36:41,569 [INFO] 177 identifiants chargés depuis le log
+2026-04-18 19:36:41,569 [INFO] Démarrage scraping CineHorizons...
+2026-04-18 19:36:43,998 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-18 19:36:44,033 [INFO] 3 blocs détectés (limite 3)
+2026-04-18 19:36:44,066 [INFO] Scraping CineHorizons terminé
+2026-04-18 19:36:44,075 [INFO] Démarrage scraping TMDb...
+2026-04-18 19:36:44,159 [INFO] 20 films récupérés depuis TMDb
+2026-04-18 19:36:44,364 [INFO] Article ajouté TMDb: Hokum
+2026-04-18 19:36:44,364 [INFO] Scraping TMDb terminé
+2026-04-18 19:36:44,365 [INFO] 1 nouveaux articles détectés
+2026-04-18 19:36:44,369 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-18 19:36:44,369 [INFO] Sauvegarde du log avec 178 identifiants
+2026-04-18 19:36:44,370 [INFO] Poussée automatique FORCÉE vers GitHub...
