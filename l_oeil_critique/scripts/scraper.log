@@ -1767,3 +1767,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-17 14:23:01,561 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
 2026-04-17 14:23:01,561 [INFO] Sauvegarde du log avec 176 identifiants
 2026-04-17 14:23:01,562 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-18 08:02:26,685 [INFO] ==== Début du script bandes-annonces ====
+2026-04-18 08:02:26,685 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-18 08:02:26,686 [INFO] 176 identifiants chargés depuis le log
+2026-04-18 08:02:26,686 [INFO] Démarrage scraping CineHorizons...
+2026-04-18 08:02:30,363 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-18 08:02:30,392 [INFO] 3 blocs détectés (limite 3)
+2026-04-18 08:02:30,392 [INFO] Extraction détails CineHorizons pour Mata
+2026-04-18 08:02:31,724 [INFO] Article ajouté CineHorizons: Mata
+2026-04-18 08:02:31,751 [INFO] Scraping CineHorizons terminé
+2026-04-18 08:02:31,761 [INFO] Démarrage scraping TMDb...
+2026-04-18 08:02:31,974 [INFO] 20 films récupérés depuis TMDb
+2026-04-18 08:02:32,439 [INFO] Scraping TMDb terminé
+2026-04-18 08:02:32,440 [INFO] 1 nouveaux articles détectés
+2026-04-18 08:02:32,444 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-18 08:02:32,444 [INFO] Sauvegarde du log avec 177 identifiants
+2026-04-18 08:02:32,444 [INFO] Poussée automatique FORCÉE vers GitHub...
