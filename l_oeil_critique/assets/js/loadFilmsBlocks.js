@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  fetch("articles/blocs_films.html")
+  fetch("../articles/blocs_films.html")
     .then(response => {
       if (!response.ok) {
         throw new Error(`Erreur HTTP : ${response.status}`);

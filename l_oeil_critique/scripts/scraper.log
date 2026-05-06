@@ -1666,3 +1666,403 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-04-12 14:15:26,106 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-04-12 14:15:26,107 [INFO] Sauvegarde du log avec 166 identifiants
 2026-04-12 14:15:26,108 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-13 09:05:33,675 [INFO] ==== Début du script bandes-annonces ====
+2026-04-13 09:05:33,675 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-13 09:05:33,675 [INFO] 166 identifiants chargés depuis le log
+2026-04-13 09:05:33,675 [INFO] Démarrage scraping CineHorizons...
+2026-04-13 09:05:36,944 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-13 09:05:36,979 [INFO] 3 blocs détectés (limite 3)
+2026-04-13 09:05:36,980 [INFO] Extraction détails CineHorizons pour Les Goûteuses d'Hitler
+2026-04-13 09:05:38,054 [INFO] Article ajouté CineHorizons: Les Goûteuses d'Hitler
+2026-04-13 09:05:38,055 [INFO] Extraction détails CineHorizons pour Hokum
+2026-04-13 09:05:38,747 [INFO] Article ajouté CineHorizons: Hokum
+2026-04-13 09:05:38,786 [INFO] Scraping CineHorizons terminé
+2026-04-13 09:05:38,799 [INFO] Démarrage scraping TMDb...
+2026-04-13 09:05:39,037 [INFO] 20 films récupérés depuis TMDb
+2026-04-13 09:05:39,302 [INFO] Scraping TMDb terminé
+2026-04-13 09:05:39,303 [INFO] 2 nouveaux articles détectés
+2026-04-13 09:05:39,307 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-13 09:05:39,307 [INFO] Sauvegarde du log avec 168 identifiants
+2026-04-13 09:05:39,307 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-14 08:47:52,788 [INFO] ==== Début du script bandes-annonces ====
+2026-04-14 08:47:52,788 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-14 08:47:52,788 [INFO] 168 identifiants chargés depuis le log
+2026-04-14 08:47:52,789 [INFO] Démarrage scraping CineHorizons...
+2026-04-14 08:47:57,130 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-14 08:47:57,166 [INFO] 3 blocs détectés (limite 3)
+2026-04-14 08:47:57,167 [INFO] Extraction détails CineHorizons pour Élise sous emprise
+2026-04-14 08:47:58,054 [INFO] Article ajouté CineHorizons: Élise sous emprise
+2026-04-14 08:47:58,088 [INFO] Scraping CineHorizons terminé
+2026-04-14 08:47:58,098 [INFO] Démarrage scraping TMDb...
+2026-04-14 08:47:58,375 [INFO] 20 films récupérés depuis TMDb
+2026-04-14 08:47:58,723 [INFO] Scraping TMDb terminé
+2026-04-14 08:47:58,724 [INFO] 1 nouveaux articles détectés
+2026-04-14 08:47:58,728 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-14 08:47:58,728 [INFO] Sauvegarde du log avec 169 identifiants
+2026-04-14 08:47:58,728 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-15 08:49:12,875 [INFO] ==== Début du script bandes-annonces ====
+2026-04-15 08:49:12,875 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-15 08:49:12,875 [INFO] 169 identifiants chargés depuis le log
+2026-04-15 08:49:12,875 [INFO] Démarrage scraping CineHorizons...
+2026-04-15 08:49:16,796 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-15 08:49:16,826 [INFO] 3 blocs détectés (limite 3)
+2026-04-15 08:49:16,855 [INFO] Scraping CineHorizons terminé
+2026-04-15 08:49:16,864 [INFO] Démarrage scraping TMDb...
+2026-04-15 08:49:17,129 [INFO] 20 films récupérés depuis TMDb
+2026-04-15 08:49:17,316 [INFO] Article ajouté TMDb: The Criminals
+2026-04-15 08:49:17,316 [INFO] Scraping TMDb terminé
+2026-04-15 08:49:17,317 [INFO] 1 nouveaux articles détectés
+2026-04-15 08:49:17,320 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-15 08:49:17,320 [INFO] Sauvegarde du log avec 170 identifiants
+2026-04-15 08:49:17,321 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-16 08:49:33,515 [INFO] ==== Début du script bandes-annonces ====
+2026-04-16 08:49:33,516 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-16 08:49:33,516 [INFO] 170 identifiants chargés depuis le log
+2026-04-16 08:49:33,516 [INFO] Démarrage scraping CineHorizons...
+2026-04-16 08:49:36,616 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-16 08:49:36,648 [INFO] 3 blocs détectés (limite 3)
+2026-04-16 08:49:36,649 [INFO] Extraction détails CineHorizons pour Toi, moi et la Toscane
+2026-04-16 08:49:37,661 [INFO] Article ajouté CineHorizons: Toi, moi et la Toscane
+2026-04-16 08:49:37,662 [INFO] Extraction détails CineHorizons pour Le Garçon qui faisait danser les collines
+2026-04-16 08:49:38,457 [INFO] Article ajouté CineHorizons: Le Garçon qui faisait danser les collines
+2026-04-16 08:49:38,457 [INFO] Extraction détails CineHorizons pour La Pat' Patrouille - Le Film Mission Dino
+2026-04-16 08:49:39,205 [INFO] Article ajouté CineHorizons: La Pat' Patrouille - Le Film Mission Dino
+2026-04-16 08:49:39,235 [INFO] Scraping CineHorizons terminé
+2026-04-16 08:49:39,243 [INFO] Démarrage scraping TMDb...
+2026-04-16 08:49:39,392 [INFO] 20 films récupérés depuis TMDb
+2026-04-16 08:49:39,700 [INFO] Scraping TMDb terminé
+2026-04-16 08:49:39,701 [INFO] 3 nouveaux articles détectés
+2026-04-16 08:49:39,704 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-16 08:49:39,704 [INFO] Sauvegarde du log avec 173 identifiants
+2026-04-16 08:49:39,705 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-17 08:48:42,292 [INFO] ==== Début du script bandes-annonces ====
+2026-04-17 08:48:42,292 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-17 08:48:42,293 [INFO] 173 identifiants chargés depuis le log
+2026-04-17 08:48:42,293 [INFO] Démarrage scraping CineHorizons...
+2026-04-17 08:48:46,874 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-17 08:48:46,903 [INFO] 3 blocs détectés (limite 3)
+2026-04-17 08:48:46,904 [INFO] Extraction détails CineHorizons pour Mon beau-père, ma belle-fille et moi
+2026-04-17 08:48:47,799 [INFO] Article ajouté CineHorizons: Mon beau-père, ma belle-fille et moi
+2026-04-17 08:48:47,830 [INFO] Scraping CineHorizons terminé
+2026-04-17 08:48:47,841 [INFO] Démarrage scraping TMDb...
+2026-04-17 08:48:48,034 [INFO] 20 films récupérés depuis TMDb
+2026-04-17 08:48:48,745 [INFO] Article ajouté TMDb: Billie Eilish - Hit Me Hard and Soft : The Tour (3D)
+2026-04-17 08:48:48,745 [INFO] Scraping TMDb terminé
+2026-04-17 08:48:48,746 [INFO] 2 nouveaux articles détectés
+2026-04-17 08:48:48,750 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-17 08:48:48,750 [INFO] Sauvegarde du log avec 175 identifiants
+2026-04-17 08:48:48,750 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-17 14:22:56,195 [INFO] ==== Début du script bandes-annonces ====
+2026-04-17 14:22:56,195 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-17 14:22:56,195 [INFO] 175 identifiants chargés depuis le log
+2026-04-17 14:22:56,195 [INFO] Démarrage scraping CineHorizons...
+2026-04-17 14:23:00,918 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-17 14:23:00,952 [INFO] 3 blocs détectés (limite 3)
+2026-04-17 14:23:00,992 [INFO] Scraping CineHorizons terminé
+2026-04-17 14:23:01,000 [INFO] Démarrage scraping TMDb...
+2026-04-17 14:23:01,060 [INFO] 20 films récupérés depuis TMDb
+2026-04-17 14:23:01,557 [INFO] Article ajouté TMDb: Billie Eilish - Hit Me Hard and Soft : The Tour (3D)
+2026-04-17 14:23:01,557 [INFO] Scraping TMDb terminé
+2026-04-17 14:23:01,558 [INFO] 1 nouveaux articles détectés
+2026-04-17 14:23:01,561 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-17 14:23:01,561 [INFO] Sauvegarde du log avec 176 identifiants
+2026-04-17 14:23:01,562 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-18 08:02:26,685 [INFO] ==== Début du script bandes-annonces ====
+2026-04-18 08:02:26,685 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-18 08:02:26,686 [INFO] 176 identifiants chargés depuis le log
+2026-04-18 08:02:26,686 [INFO] Démarrage scraping CineHorizons...
+2026-04-18 08:02:30,363 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-18 08:02:30,392 [INFO] 3 blocs détectés (limite 3)
+2026-04-18 08:02:30,392 [INFO] Extraction détails CineHorizons pour Mata
+2026-04-18 08:02:31,724 [INFO] Article ajouté CineHorizons: Mata
+2026-04-18 08:02:31,751 [INFO] Scraping CineHorizons terminé
+2026-04-18 08:02:31,761 [INFO] Démarrage scraping TMDb...
+2026-04-18 08:02:31,974 [INFO] 20 films récupérés depuis TMDb
+2026-04-18 08:02:32,439 [INFO] Scraping TMDb terminé
+2026-04-18 08:02:32,440 [INFO] 1 nouveaux articles détectés
+2026-04-18 08:02:32,444 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-18 08:02:32,444 [INFO] Sauvegarde du log avec 177 identifiants
+2026-04-18 08:02:32,444 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-18 19:36:41,569 [INFO] ==== Début du script bandes-annonces ====
+2026-04-18 19:36:41,569 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-18 19:36:41,569 [INFO] 177 identifiants chargés depuis le log
+2026-04-18 19:36:41,569 [INFO] Démarrage scraping CineHorizons...
+2026-04-18 19:36:43,998 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-18 19:36:44,033 [INFO] 3 blocs détectés (limite 3)
+2026-04-18 19:36:44,066 [INFO] Scraping CineHorizons terminé
+2026-04-18 19:36:44,075 [INFO] Démarrage scraping TMDb...
+2026-04-18 19:36:44,159 [INFO] 20 films récupérés depuis TMDb
+2026-04-18 19:36:44,364 [INFO] Article ajouté TMDb: Hokum
+2026-04-18 19:36:44,364 [INFO] Scraping TMDb terminé
+2026-04-18 19:36:44,365 [INFO] 1 nouveaux articles détectés
+2026-04-18 19:36:44,369 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-18 19:36:44,369 [INFO] Sauvegarde du log avec 178 identifiants
+2026-04-18 19:36:44,370 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-19 08:10:49,182 [INFO] ==== Début du script bandes-annonces ====
+2026-04-19 08:10:49,182 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-19 08:10:49,182 [INFO] 178 identifiants chargés depuis le log
+2026-04-19 08:10:49,182 [INFO] Démarrage scraping CineHorizons...
+2026-04-19 08:10:53,048 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-19 08:10:53,079 [INFO] 3 blocs détectés (limite 3)
+2026-04-19 08:10:53,080 [INFO] Extraction détails CineHorizons pour La fin d’Oak Street
+2026-04-19 08:10:53,783 [INFO] Article ajouté CineHorizons: La fin d’Oak Street
+2026-04-19 08:10:53,831 [INFO] Scraping CineHorizons terminé
+2026-04-19 08:10:53,841 [INFO] Démarrage scraping TMDb...
+2026-04-19 08:10:54,093 [INFO] 20 films récupérés depuis TMDb
+2026-04-19 08:10:54,344 [INFO] Scraping TMDb terminé
+2026-04-19 08:10:54,345 [INFO] 1 nouveaux articles détectés
+2026-04-19 08:10:54,349 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-19 08:10:54,349 [INFO] Sauvegarde du log avec 179 identifiants
+2026-04-19 08:10:54,349 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-20 09:11:50,111 [INFO] ==== Début du script bandes-annonces ====
+2026-04-20 09:11:50,112 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-20 09:11:50,112 [INFO] 179 identifiants chargés depuis le log
+2026-04-20 09:11:50,112 [INFO] Démarrage scraping CineHorizons...
+2026-04-20 09:11:53,754 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-20 09:11:53,787 [INFO] 3 blocs détectés (limite 3)
+2026-04-20 09:11:53,788 [INFO] Extraction détails CineHorizons pour L'Abandon
+2026-04-20 09:11:54,848 [INFO] Article ajouté CineHorizons: L'Abandon
+2026-04-20 09:11:54,848 [INFO] Extraction détails CineHorizons pour INSIDIOUS : L'INVASION DU LOINTAIN
+2026-04-20 09:11:55,696 [INFO] Article ajouté CineHorizons: INSIDIOUS : L'INVASION DU LOINTAIN
+2026-04-20 09:11:55,734 [INFO] Scraping CineHorizons terminé
+2026-04-20 09:11:55,745 [INFO] Démarrage scraping TMDb...
+2026-04-20 09:11:55,917 [INFO] 20 films récupérés depuis TMDb
+2026-04-20 09:11:56,158 [INFO] Scraping TMDb terminé
+2026-04-20 09:11:56,159 [INFO] 2 nouveaux articles détectés
+2026-04-20 09:11:56,163 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-20 09:11:56,163 [INFO] Sauvegarde du log avec 181 identifiants
+2026-04-20 09:11:56,164 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-22 14:50:49,157 [INFO] ==== Début du script bandes-annonces ====
+2026-04-22 14:50:49,157 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-22 14:50:49,158 [INFO] 181 identifiants chargés depuis le log
+2026-04-22 14:50:49,158 [INFO] Démarrage scraping CineHorizons...
+2026-04-22 14:50:51,430 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-22 14:50:51,461 [INFO] 3 blocs détectés (limite 3)
+2026-04-22 14:50:51,461 [INFO] Extraction détails CineHorizons pour L'Objet du délit
+2026-04-22 14:50:52,176 [INFO] Article ajouté CineHorizons: L'Objet du délit
+2026-04-22 14:50:52,209 [INFO] Scraping CineHorizons terminé
+2026-04-22 14:50:52,218 [INFO] Démarrage scraping TMDb...
+2026-04-22 14:50:52,306 [INFO] 20 films récupérés depuis TMDb
+2026-04-22 14:50:52,387 [INFO] Article ajouté TMDb: Mortal Kombat II
+2026-04-22 14:50:52,442 [INFO] Article ajouté TMDb: Star Wars: The Mandalorian and Grogu
+2026-04-22 14:50:52,515 [INFO] Scraping TMDb terminé
+2026-04-22 14:50:52,516 [INFO] 3 nouveaux articles détectés
+2026-04-22 14:50:52,520 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-22 14:50:52,520 [INFO] Sauvegarde du log avec 184 identifiants
+2026-04-22 14:50:52,521 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-23 08:58:00,228 [INFO] ==== Début du script bandes-annonces ====
+2026-04-23 08:58:00,228 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-23 08:58:00,228 [INFO] 184 identifiants chargés depuis le log
+2026-04-23 08:58:00,228 [INFO] Démarrage scraping CineHorizons...
+2026-04-23 08:58:05,123 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-23 08:58:05,157 [INFO] 3 blocs détectés (limite 3)
+2026-04-23 08:58:05,158 [INFO] Extraction détails CineHorizons pour Sauvons les meubles
+2026-04-23 08:58:05,893 [INFO] Article ajouté CineHorizons: Sauvons les meubles
+2026-04-23 08:58:05,926 [INFO] Scraping CineHorizons terminé
+2026-04-23 08:58:05,935 [INFO] Démarrage scraping TMDb...
+2026-04-23 08:58:06,257 [INFO] 20 films récupérés depuis TMDb
+2026-04-23 08:58:06,340 [INFO] Article ajouté TMDb: Top Gun : Maverick
+2026-04-23 08:58:06,426 [INFO] Article ajouté TMDb: Top Gun
+2026-04-23 08:58:06,501 [INFO] Scraping TMDb terminé
+2026-04-23 08:58:06,502 [INFO] 3 nouveaux articles détectés
+2026-04-23 08:58:06,506 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-23 08:58:06,506 [INFO] Sauvegarde du log avec 187 identifiants
+2026-04-23 08:58:06,506 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-24 09:05:09,454 [INFO] ==== Début du script bandes-annonces ====
+2026-04-24 09:05:09,454 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-24 09:05:09,454 [INFO] 187 identifiants chargés depuis le log
+2026-04-24 09:05:09,454 [INFO] Démarrage scraping CineHorizons...
+2026-04-24 09:05:13,345 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-24 09:05:13,378 [INFO] 3 blocs détectés (limite 3)
+2026-04-24 09:05:13,378 [INFO] Extraction détails CineHorizons pour Evil Dead Burn
+2026-04-24 09:05:14,249 [INFO] Article ajouté CineHorizons: Evil Dead Burn
+2026-04-24 09:05:14,249 [INFO] Extraction détails CineHorizons pour Scary Movie 6
+2026-04-24 09:05:15,026 [INFO] Article ajouté CineHorizons: Scary Movie 6
+2026-04-24 09:05:15,062 [INFO] Scraping CineHorizons terminé
+2026-04-24 09:05:15,071 [INFO] Démarrage scraping TMDb...
+2026-04-24 09:05:15,231 [INFO] 20 films récupérés depuis TMDb
+2026-04-24 09:05:15,801 [INFO] Scraping TMDb terminé
+2026-04-24 09:05:15,802 [INFO] 2 nouveaux articles détectés
+2026-04-24 09:05:15,806 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-24 09:05:15,806 [INFO] Sauvegarde du log avec 189 identifiants
+2026-04-24 09:05:15,806 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-26 08:19:42,036 [INFO] ==== Début du script bandes-annonces ====
+2026-04-26 08:19:42,036 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-26 08:19:42,036 [INFO] 189 identifiants chargés depuis le log
+2026-04-26 08:19:42,036 [INFO] Démarrage scraping CineHorizons...
+2026-04-26 08:19:45,648 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-26 08:19:45,685 [INFO] 3 blocs détectés (limite 3)
+2026-04-26 08:19:45,685 [INFO] Extraction détails CineHorizons pour L'Être aimé
+2026-04-26 08:19:46,537 [INFO] Article ajouté CineHorizons: L'Être aimé
+2026-04-26 08:19:46,573 [INFO] Scraping CineHorizons terminé
+2026-04-26 08:19:46,584 [INFO] Démarrage scraping TMDb...
+2026-04-26 08:19:46,715 [INFO] 20 films récupérés depuis TMDb
+2026-04-26 08:19:47,275 [INFO] Scraping TMDb terminé
+2026-04-26 08:19:47,276 [INFO] 1 nouveaux articles détectés
+2026-04-26 08:19:47,281 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-26 08:19:47,281 [INFO] Sauvegarde du log avec 190 identifiants
+2026-04-26 08:19:47,281 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-26 14:06:47,031 [INFO] ==== Début du script bandes-annonces ====
+2026-04-26 14:06:47,031 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-26 14:06:47,032 [INFO] 190 identifiants chargés depuis le log
+2026-04-26 14:06:47,032 [INFO] Démarrage scraping CineHorizons...
+2026-04-26 14:06:51,019 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-26 14:06:51,061 [INFO] 3 blocs détectés (limite 3)
+2026-04-26 14:06:51,062 [INFO] Extraction détails CineHorizons pour La Vénus électrique
+2026-04-26 14:06:51,891 [INFO] Article ajouté CineHorizons: La Vénus électrique
+2026-04-26 14:06:51,936 [INFO] Scraping CineHorizons terminé
+2026-04-26 14:06:51,946 [INFO] Démarrage scraping TMDb...
+2026-04-26 14:06:52,102 [INFO] 20 films récupérés depuis TMDb
+2026-04-26 14:06:52,434 [INFO] Scraping TMDb terminé
+2026-04-26 14:06:52,435 [INFO] 1 nouveaux articles détectés
+2026-04-26 14:06:52,439 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-26 14:06:52,439 [INFO] Sauvegarde du log avec 191 identifiants
+2026-04-26 14:06:52,439 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-27 09:25:37,700 [INFO] ==== Début du script bandes-annonces ====
+2026-04-27 09:25:37,700 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-27 09:25:37,700 [INFO] 191 identifiants chargés depuis le log
+2026-04-27 09:25:37,700 [INFO] Démarrage scraping CineHorizons...
+2026-04-27 09:25:41,889 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-27 09:25:41,923 [INFO] 3 blocs détectés (limite 3)
+2026-04-27 09:25:41,924 [INFO] Extraction détails CineHorizons pour Charlie et les Kangourous
+2026-04-27 09:25:42,832 [INFO] Article ajouté CineHorizons: Charlie et les Kangourous
+2026-04-27 09:25:42,832 [INFO] Extraction détails CineHorizons pour Top Gun 40th Anniversary
+2026-04-27 09:25:43,789 [INFO] Article ajouté CineHorizons: Top Gun 40th Anniversary
+2026-04-27 09:25:43,830 [INFO] Scraping CineHorizons terminé
+2026-04-27 09:25:43,842 [INFO] Démarrage scraping TMDb...
+2026-04-27 09:25:43,977 [INFO] 20 films récupérés depuis TMDb
+2026-04-27 09:25:44,525 [INFO] Scraping TMDb terminé
+2026-04-27 09:25:44,526 [INFO] 2 nouveaux articles détectés
+2026-04-27 09:25:44,530 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-27 09:25:44,530 [INFO] Sauvegarde du log avec 193 identifiants
+2026-04-27 09:25:44,530 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-28 09:29:39,261 [INFO] ==== Début du script bandes-annonces ====
+2026-04-28 09:29:39,261 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-28 09:29:39,261 [INFO] 193 identifiants chargés depuis le log
+2026-04-28 09:29:39,261 [INFO] Démarrage scraping CineHorizons...
+2026-04-28 09:29:44,473 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-28 09:29:44,507 [INFO] 3 blocs détectés (limite 3)
+2026-04-28 09:29:44,508 [INFO] Extraction détails CineHorizons pour Colony
+2026-04-28 09:29:45,812 [INFO] Article ajouté CineHorizons: Colony
+2026-04-28 09:29:45,812 [INFO] Extraction détails CineHorizons pour Autofiction
+2026-04-28 09:29:46,632 [INFO] Article ajouté CineHorizons: Autofiction
+2026-04-28 09:29:46,664 [INFO] Scraping CineHorizons terminé
+2026-04-28 09:29:46,674 [INFO] Démarrage scraping TMDb...
+2026-04-28 09:29:46,808 [INFO] 20 films récupérés depuis TMDb
+2026-04-28 09:29:47,350 [INFO] Scraping TMDb terminé
+2026-04-28 09:29:47,351 [INFO] 2 nouveaux articles détectés
+2026-04-28 09:29:47,356 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-28 09:29:47,356 [INFO] Sauvegarde du log avec 195 identifiants
+2026-04-28 09:29:47,356 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-29 09:18:53,746 [INFO] ==== Début du script bandes-annonces ====
+2026-04-29 09:18:53,746 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-29 09:18:53,746 [INFO] 195 identifiants chargés depuis le log
+2026-04-29 09:18:53,746 [INFO] Démarrage scraping CineHorizons...
+2026-04-29 09:18:59,421 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-29 09:18:59,455 [INFO] 3 blocs détectés (limite 3)
+2026-04-29 09:18:59,479 [INFO] Scraping CineHorizons terminé
+2026-04-29 09:18:59,483 [INFO] Démarrage scraping TMDb...
+2026-04-29 09:18:59,698 [INFO] 20 films récupérés depuis TMDb
+2026-04-29 09:19:00,144 [INFO] Article ajouté TMDb: Obsession
+2026-04-29 09:19:00,144 [INFO] Scraping TMDb terminé
+2026-04-29 09:19:00,145 [INFO] 1 nouveaux articles détectés
+2026-04-29 09:19:00,148 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-29 09:19:00,148 [INFO] Sauvegarde du log avec 196 identifiants
+2026-04-29 09:19:00,149 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-04-30 09:21:15,417 [INFO] ==== Début du script bandes-annonces ====
+2026-04-30 09:21:15,417 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-04-30 09:21:15,418 [INFO] 196 identifiants chargés depuis le log
+2026-04-30 09:21:15,418 [INFO] Démarrage scraping CineHorizons...
+2026-04-30 09:21:18,983 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-04-30 09:21:19,018 [INFO] 3 blocs détectés (limite 3)
+2026-04-30 09:21:19,019 [INFO] Extraction détails CineHorizons pour Le Virtuose
+2026-04-30 09:21:20,651 [INFO] Article ajouté CineHorizons: Le Virtuose
+2026-04-30 09:21:20,691 [INFO] Scraping CineHorizons terminé
+2026-04-30 09:21:20,699 [INFO] Démarrage scraping TMDb...
+2026-04-30 09:21:20,841 [INFO] 20 films récupérés depuis TMDb
+2026-04-30 09:21:21,035 [INFO] Scraping TMDb terminé
+2026-04-30 09:21:21,036 [INFO] 1 nouveaux articles détectés
+2026-04-30 09:21:21,040 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-04-30 09:21:21,040 [INFO] Sauvegarde du log avec 197 identifiants
+2026-04-30 09:21:21,041 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-05-01 09:05:20,715 [INFO] ==== Début du script bandes-annonces ====
+2026-05-01 09:05:20,715 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-05-01 09:05:20,715 [INFO] 197 identifiants chargés depuis le log
+2026-05-01 09:05:20,715 [INFO] Démarrage scraping CineHorizons...
+2026-05-01 09:05:23,814 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-05-01 09:05:23,837 [INFO] 3 blocs détectés (limite 3)
+2026-05-01 09:05:23,838 [INFO] Extraction détails CineHorizons pour The Furious
+2026-05-01 09:05:24,777 [INFO] Article ajouté CineHorizons: The Furious
+2026-05-01 09:05:24,777 [INFO] Extraction détails CineHorizons pour Clayface
+2026-05-01 09:05:25,532 [INFO] Article ajouté CineHorizons: Clayface
+2026-05-01 09:05:25,566 [INFO] Scraping CineHorizons terminé
+2026-05-01 09:05:25,573 [INFO] Démarrage scraping TMDb...
+2026-05-01 09:05:25,743 [INFO] 20 films récupérés depuis TMDb
+2026-05-01 09:05:26,149 [INFO] Scraping TMDb terminé
+2026-05-01 09:05:26,149 [INFO] 2 nouveaux articles détectés
+2026-05-01 09:05:26,177 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-05-01 09:05:26,177 [INFO] Sauvegarde du log avec 199 identifiants
+2026-05-01 09:05:26,178 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-05-02 14:12:19,226 [INFO] ==== Début du script bandes-annonces ====
+2026-05-02 14:12:19,226 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-05-02 14:12:19,226 [INFO] 199 identifiants chargés depuis le log
+2026-05-02 14:12:19,226 [INFO] Démarrage scraping CineHorizons...
+2026-05-02 14:12:23,175 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-05-02 14:12:23,205 [INFO] 3 blocs détectés (limite 3)
+2026-05-02 14:12:23,206 [INFO] Extraction détails CineHorizons pour L'illusion de Yakushima
+2026-05-02 14:12:24,213 [INFO] Article ajouté CineHorizons: L'illusion de Yakushima
+2026-05-02 14:12:24,248 [INFO] Scraping CineHorizons terminé
+2026-05-02 14:12:24,257 [INFO] Démarrage scraping TMDb...
+2026-05-02 14:12:24,461 [INFO] 20 films récupérés depuis TMDb
+2026-05-02 14:12:24,808 [INFO] Scraping TMDb terminé
+2026-05-02 14:12:24,809 [INFO] 1 nouveaux articles détectés
+2026-05-02 14:12:24,813 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-05-02 14:12:24,813 [INFO] Sauvegarde du log avec 200 identifiants
+2026-05-02 14:12:24,814 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-05-05 09:14:25,842 [INFO] ==== Début du script bandes-annonces ====
+2026-05-05 09:14:25,842 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-05-05 09:14:25,843 [INFO] 200 identifiants chargés depuis le log
+2026-05-05 09:14:25,843 [INFO] Démarrage scraping CineHorizons...
+2026-05-05 09:14:28,202 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-05-05 09:14:28,233 [INFO] 3 blocs détectés (limite 3)
+2026-05-05 09:14:28,234 [INFO] Extraction détails CineHorizons pour The Amazing Digital Circus : acte final
+2026-05-05 09:14:28,951 [INFO] Article ajouté CineHorizons: The Amazing Digital Circus : acte final
+2026-05-05 09:14:28,951 [INFO] Extraction détails CineHorizons pour Toutes mes soeurs
+2026-05-05 09:14:29,746 [INFO] Article ajouté CineHorizons: Toutes mes soeurs
+2026-05-05 09:14:29,746 [INFO] Extraction détails CineHorizons pour Passenger
+2026-05-05 09:14:30,244 [INFO] Article ajouté CineHorizons: Passenger
+2026-05-05 09:14:30,287 [INFO] Scraping CineHorizons terminé
+2026-05-05 09:14:30,296 [INFO] Démarrage scraping TMDb...
+2026-05-05 09:14:30,370 [INFO] 20 films récupérés depuis TMDb
+2026-05-05 09:14:30,670 [INFO] Scraping TMDb terminé
+2026-05-05 09:14:30,671 [INFO] 3 nouveaux articles détectés
+2026-05-05 09:14:30,675 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-05-05 09:14:30,675 [INFO] Sauvegarde du log avec 203 identifiants
+2026-05-05 09:14:30,676 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-05-06 09:31:20,142 [INFO] ==== Début du script bandes-annonces ====
+2026-05-06 09:31:20,142 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-05-06 09:31:20,143 [INFO] 203 identifiants chargés depuis le log
+2026-05-06 09:31:20,143 [INFO] Démarrage scraping CineHorizons...
+2026-05-06 09:31:23,714 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-05-06 09:31:23,748 [INFO] 3 blocs détectés (limite 3)
+2026-05-06 09:31:23,784 [INFO] Scraping CineHorizons terminé
+2026-05-06 09:31:23,791 [INFO] Démarrage scraping TMDb...
+2026-05-06 09:31:23,945 [INFO] 20 films récupérés depuis TMDb
+2026-05-06 09:31:24,448 [INFO] Article ajouté TMDb: Scary Movie
+2026-05-06 09:31:24,542 [INFO] Article ajouté TMDb: Passenger
+2026-05-06 09:31:24,542 [INFO] Scraping TMDb terminé
+2026-05-06 09:31:24,543 [INFO] 2 nouveaux articles détectés
+2026-05-06 09:31:24,547 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-05-06 09:31:24,547 [INFO] Sauvegarde du log avec 205 identifiants
+2026-05-06 09:31:24,547 [INFO] Poussée automatique FORCÉE vers GitHub...2026-05-06 17:29:53,457 [INFO] ==== Début du script bandes-annonces ====
+2026-05-06 17:29:53,458 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-05-06 17:29:53,471 [INFO] 205 identifiants chargés depuis le log
+2026-05-06 17:29:53,471 [INFO] Démarrage scraping CineHorizons...
+2026-05-06 17:30:04,505 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-05-06 17:30:04,523 [INFO] 3 blocs détectés (limite 3)
+2026-05-06 17:30:04,565 [INFO] Scraping CineHorizons terminé
+2026-05-06 17:30:04,577 [INFO] Démarrage scraping TMDb...
+2026-05-06 17:30:04,903 [INFO] 20 films récupérés depuis TMDb
+2026-05-06 17:30:05,663 [INFO] Scraping TMDb terminé
+2026-05-06 17:30:05,664 [INFO] 0 nouveaux articles détectés
+2026-05-06 17:30:05,664 [INFO] Aucun nouvel article à ajouter

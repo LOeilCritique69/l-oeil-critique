@@ -1,131 +1,146 @@
-name: 🎬 MAJ Automatique — Bandes Annonces
+name: 🎬 MAJ Automatique — Bandes Annonces + Letterboxd
 
 on:
   schedule:
-    # Exécution 3 fois par jour (horaires France métropolitaine)
-    - cron: '0 7 * * *'   # 09h00 heure française (UTC+2 été / UTC+1 hiver)
-    - cron: '0 13 * * *'  # 15h00 heure française
-    - cron: '0 19 * * *'  # 21h00 heure française
-  workflow_dispatch:      # Permet un déclenchement manuel depuis l'interface GitHub
+    - cron: '0 7 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 19 * * *'
+
+  workflow_dispatch:
+
   push:
     branches:
       - main
     paths:
       - 'l_oeil_critique/scripts/scraper_bandes_annonces.py'
+      - 'l_oeil_critique/movies/lb.py'
       - 'requirements.txt'
       - '.github/workflows/*.yml'
 
-# Évite les exécutions concurrentes
 concurrency:
-  group: bandes-annonces-update
+  group: media-update
   cancel-in-progress: true
 
 jobs:
   update-content:
     runs-on: ubuntu-latest
-    timeout-minutes: 15  # Limite le temps d'exécution
-    
+    timeout-minutes: 15
+
     permissions:
-      contents: write  # Nécessaire pour pousser les changements
+      contents: write
 
     steps:
-      - name: ⬇️ Cloner le dépôt
-        uses: actions/checkout@v4  # Version plus récente
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN_2 }}
-          fetch-depth: 0  # Clone complet pour l'historique Git
+          fetch-depth: 0
 
-      - name: 🐍 Configurer Python
-        uses: actions/setup-python@v5  # Version plus récente
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'  # Cache les dépendances pip pour accélérer
+          cache: 'pip'
 
-      - name: 📦 Installer les dépendances
+      - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
-          
-      - name: 🎭 Installer Playwright
+
+      - name: 🎭 Install Playwright
         run: |
           python -m playwright install --with-deps chromium
-          
-      - name: 🔍 Vérifier l'environnement
+
+      - name: 🔍 Environment check
         run: |
-          echo "Python version: $(python --version)"
-          echo "Pip version: $(pip --version)"
-          pip list | grep -E "(requests|beautifulsoup4|playwright)"
-          
-      - name: 🎬 Exécuter le scraper
-        id: scraper
+          python --version
+          pip --version
+
+      # =========================
+      # SCRAPER BANDES ANNONCES
+      # =========================
+      - name: 🎬 Run trailers scraper
         run: |
-          echo "🚀 Démarrage du scraping..."
+          echo "🚀 Scraper bandes annonces"
           python l_oeil_critique/scripts/scraper_bandes_annonces.py
-          echo "✅ Scraping terminé"
-        continue-on-error: false  # Stopper si le script échoue
-        
-      - name: 📊 Vérifier les changements
-        id: check_changes
+          echo "✅ Done"
+
+      # =========================
+      # LETTERBOXD RSS
+      # =========================
+      - name: 🎞️ Run Letterboxd RSS (lb.py)
         run: |
-          if [[ -n $(git status --porcelain) ]]; then
+          echo "🚀 Fetch Letterboxd RSS"
+          python l_oeil_critique/movies/lb.py
+          echo "✅ Letterboxd update done"
+
+      # =========================
+      # DETECT CHANGES
+      # =========================
+      - name: 📊 Check changes
+        id: changes
+        run: |
+          git status --porcelain > changes.txt
+
+          if [ -s changes.txt ]; then
             echo "changes=true" >> $GITHUB_OUTPUT
-            echo "✅ Changements détectés"
-            git status --short
+            echo "📌 Changes detected"
+            cat changes.txt
           else
             echo "changes=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ Aucun changement détecté"
+            echo "ℹ️ No changes"
           fi
 
-      - name: 🔧 Configurer Git
-        if: steps.check_changes.outputs.changes == 'true'
+      # =========================
+      # CONFIG GIT
+      # =========================
+      - name: 🔧 Git config
+        if: steps.changes.outputs.changes == 'true'
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: 🔁 Commit et push automatique
-        if: steps.check_changes.outputs.changes == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5  # Version plus récente
+      # =========================
+      # COMMIT PUSH
+      # =========================
+      - name: 🔁 Commit & push
+        if: steps.changes.outputs.changes == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🎬 MAJ automatique — Bandes Annonces (${{ github.run_number }})"
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "🎬 Auto update media (#${{ github.run_number }})"
           branch: main
           file_pattern: |
-            l_oeil_critique/scripts/bande_annonces_log.json
-            l_oeil_critique/scripts/scraper.log
+            l_oeil_critique/scripts/*.json
+            l_oeil_critique/scripts/*.log
             bande_annonces_blocs.html
             bande_annonces_maj.html
-          commit_options: '--no-verify'
-          skip_dirty_check: false
-          skip_fetch: false
-          skip_checkout: false
-          disable_globbing: false
-          create_branch: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_2 }}
+            movies.json
 
-      - name: 📝 Résumé de l'exécution
+      # =========================
+      # SUMMARY
+      # =========================
+      - name: 🧾 Summary
         if: always()
         run: |
-          echo "## 📊 Résumé du Workflow" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Statut** : ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Changements détectés** : ${{ steps.check_changes.outputs.changes || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Date** : $(date +'%d/%m/%Y %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
-          echo "- **Numéro d'exécution** : ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
-          
-      - name: 📤 Upload des logs (en cas d'erreur)
+          echo "## Workflow résumé" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Changes: ${{ steps.changes.outputs.changes }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Run: ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+
+      # =========================
+      # FAIL LOGS
+      # =========================
+      - name: 📤 Upload logs
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: scraper-logs-${{ github.run_number }}
+          name: logs-${{ github.run_number }}
           path: |
-            l_oeil_critique/scripts/scraper.log
-            l_oeil_critique/scripts/bande_annonces_log.json
+            l_oeil_critique/scripts/*.log
+            l_oeil_critique/scripts/*.json
           retention-days: 7
 
-      - name: 🚨 Notifier en cas d'échec
+      - name: 🚨 Error
         if: failure()
         run: |
-          echo "::error::Le workflow a échoué. Consultez les logs pour plus de détails."
-          echo "::error::Vérifiez les artifacts uploadés pour analyser l'erreur."
+          echo "::error::Workflow failed"

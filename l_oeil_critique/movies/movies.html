@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Histoires, anecdotes et fun facts cinéma racontés par L’Œil Critique. Plongez dans les secrets et légendes du septième art. Les vidéos sont publiées de façon irrégulière, selon l’inspiration et les histoires à raconter." />
+  <meta name="keywords" content="cinéma, anecdotes, histoires, fun facts, mystères du cinéma, films, réalisateurs" />
+  <link rel="icon" href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
+  <title>Mes Films – L’Œil Critique</title>
+  <!-- Fonts + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/chef_d_oeuvre.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="films-page">
+
+    <div class="films-header">
+
+        <h1>Mes Films</h1>
+        <div class="films-subtitle">
+            Mes films vus sur Letterboxd, avec mes notes. Pas de critiques ici, juste mon historique de visionnage.
+        </div>
+
+        <div class="films-stats">
+            <div id="film-count">0 films</div>
+        </div>
+
+        <div class="controls">
+            <select id="sort">
+                <option value="recent">Récemment vus</option>
+                <option value="rating">Note ↓</option>
+                <option value="year">Année ↓</option>
+                <option value="year-asc">Année ↑</option>
+            </select>
+
+            <input type="text" id="search" placeholder="Rechercher un film...">
+        </div>
+
+    </div>
+
+    <div id="film-list" class="films-grid"></div>
+
+</main>
+
+<script src="app.js"></script>
+<script src="../assets/js/header.js"></script>
+<script src="../assets/js/main.js"></script>
+<!-- ADS -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
+crossorigin="anonymous"></script>
+
+</body>
+</html>

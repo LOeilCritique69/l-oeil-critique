@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "text": "L'Œil Critique change de direction : Expérimentation, Direction Artistique, Sincérité. Découvrez pourquoi.",
+    "icon": "‼️",
+    "unread": true,
+    "url": "/l_oeil_critique/A_propos.html"
+  },
+  {
+    "id": 2,
+    "text": "Nouvelle page disponible : mes films Letterboxd sont maintenant centralisés dans Reviews (notes sans critique écrite).",
+    "icon": "📚",
+    "unread": true,
+    "url": "/l_oeil_critique/movies/movies.html"
+  },
+  {
+    "id": 3,
+    "text": "Critique — Daredevil: Born Again (Saison 2) – Le Diable face au Maire",
+    "icon": "🎬",
+    "unread": true,
+    "url": "/l_oeil_critique/articles/reviews/series/Daredevil_born_again-critique.html"
+  },
+  {
+    "id": 4,
+    "text": "Critique — Le Voyage de Chihiro – Mea culpa envers le Studio Ghibli",
+    "icon": "🎬",
+    "unread": true,
+    "url": "/l_oeil_critique/articles/reviews/films/spirited_away-critique.html"
+  },
+  {
+    "id": 5,
+    "text": "Critique — Michael – Le roi sans ses ombres",
+    "icon": "🎬",
+    "unread": true,
+    "url": "/l_oeil_critique/articles/reviews/films/michael-critique.html"
+  },
+  {
+    "id": 6,
+    "text": "Critique — Invincible Saison 4 - La guerre ne demande pas si t'es prêt",
+    "icon": "🎬",
+    "unread": true,
+    "url": "/l_oeil_critique/articles/reviews/series/invinciblesaison4-critique.html"
+  }
+]

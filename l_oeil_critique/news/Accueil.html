@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Archives News Films & Séries – L’Œil Critique : accès aux anciennes pages et évolution éditoriale." />
+  <title>Archives News – L’Œil Critique</title>
+
+  <link rel="icon" href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/chef_d_oeuvre.css" />
+
+  <style>
+    :root{
+      --ink:#2e3440;
+      --gold:#f2cd86;
+      --muted:#5a5f6a;
+      --card:#ffffff;
+      --line:rgba(0,0,0,0.08);
+    }
+
+    body{
+      background:#ece7df;
+    }
+
+    .arc{
+      max-width:1100px;
+      margin:0 auto;
+      padding:70px 20px;
+    }
+
+    /* HEADER ARCHIVE */
+    .arc-head{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .arc-title{
+      font-family:"Bebas Neue",sans-serif;
+      font-size:3rem;
+      letter-spacing:2px;
+      color:var(--ink);
+      margin-bottom:12px;
+    }
+
+    .arc-meta{
+      max-width:800px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:1.05rem;
+      line-height:1.8;
+    }
+
+    .arc-tag{
+      display:inline-block;
+      margin-top:18px;
+      padding:4px 10px;
+      font-size:0.75rem;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      background:var(--gold);
+      color:#000;
+      border-radius:999px;
+    }
+
+    /* SECTIONS */
+    .arc-sec{
+      margin-top:70px;
+    }
+
+    .arc-h{
+      font-family:"Bebas Neue",sans-serif;
+      font-size:2.1rem;
+      text-align:center;
+      color:var(--ink);
+      letter-spacing:2px;
+      margin-bottom:30px;
+      position:relative;
+    }
+
+    .arc-h::after{
+      content:"";
+      display:block;
+      width:70px;
+      height:3px;
+      background:var(--gold);
+      margin:10px auto 0;
+      border-radius:10px;
+    }
+
+    /* GRID */
+    .arc-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+    }
+
+    /* CARD */
+    .arc-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:18px;
+      transition:.2s ease;
+    }
+
+    .arc-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .arc-card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:8px;
+      margin-bottom:12px;
+    }
+
+    .arc-card h3{
+      font-size:1.15rem;
+      margin-bottom:8px;
+      color:var(--ink);
+    }
+
+    .arc-card p{
+      font-size:0.95rem;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    /* BUTTON */
+    .arc-btn{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 14px;
+      background:var(--gold);
+      color:#000;
+      font-weight:700;
+      text-transform:uppercase;
+      font-size:0.85rem;
+      border-radius:6px;
+      transition:.2s ease;
+    }
+
+    .arc-btn:hover{
+      background:var(--ink);
+      color:var(--gold);
+    }
+
+    /* NOTE EDITO */
+    .arc-note{
+      max-width:750px;
+      margin:0 auto;
+      text-align:center;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:1rem;
+    }
+
+    /* FOOT */
+    .arc-foot{
+      margin-top:70px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="arc">
+
+  <!-- INTRO -->
+  <section class="arc-head">
+    <h1 class="arc-title">Archives éditoriales</h1>
+
+    <p class="arc-meta">
+      Cette page n’est plus un flux d’actualité actif.  
+      Elle constitue un point d’accès aux anciennes sections Films, Séries et Grandes Actualités.
+      Le site évolue vers une sélection plus stricte : moins de publications, davantage de tri éditorial.
+    </p>
+  </section>
+
+  <!-- ACCÈS -->
+  <section class="arc-sec">
+    <h2 class="arc-h">Accès aux contenus</h2>
+
+    <div class="arc-grid">
+
+      <article class="arc-card">
+        <img src="../assets/img/films/spider-man_BND/spidey-comics.jpg" alt="Films">
+        <h3>Films</h3>
+        <p>Anciennes publications films. Contenu conservé, non alimenté en continu.</p>
+        <a class="arc-btn" href="films.html">Accéder</a>
+      </article>
+
+      <article class="arc-card">
+        <img src="../assets/img/series/daredevil-born-again-netflix-daredevil.avif" alt="Séries">
+        <h3>Séries</h3>
+        <p>Anciennes publications séries. Archivage complet des articles passés.</p>
+        <a class="arc-btn" href="series.html">Accéder</a>
+      </article>
+
+      <article class="arc-card">
+        <img src="../assets/img/bigactualités/Oscars-2026-Winners-List.webp" alt="Actualités">
+        <h3>Grandes actualités</h3>
+        <p>Événements majeurs (Oscars, annonces studios, industrie cinéma).</p>
+        <a class="arc-btn" href="actualites.html">Accéder</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- EDITO -->
+  <section class="arc-sec">
+    <h2 class="arc-h">Position éditoriale</h2>
+
+    <p class="arc-note">
+      L’objectif n’est plus de couvrir l’actualité en continu.  
+      Le contenu est désormais filtré, hiérarchisé et publié uniquement lorsqu’il apporte une valeur critique réelle.
+      Cette page marque la transition entre un flux d’information et une logique de sélection.
+    </p>
+  </section>
+
+  <!-- FOOT -->
+  <section class="arc-foot">
+    <a class="arc-btn" href="../A_propos.html">Comprendre la démarche</a>
+  </section>
+
+</main>
+
+<script src="../assets/js/header.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,5092 @@
+[
+  {
+    "Date": "2024-10-12",
+    "Name": 300,
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/28XI",
+    "Rating": 5,
+    "poster_path": "/hGZ9sDGcekhJUFmu3NnOhRT8uQS.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hGZ9sDGcekhJUFmu3NnOhRT8uQS.jpg",
+    "tmdb_id": 1271
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Get Out",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/eOCm",
+    "Rating": 5,
+    "poster_path": "/8WzjAhgc4HvpN3Y6LLCc6AbpIhF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8WzjAhgc4HvpN3Y6LLCc6AbpIhF.jpg",
+    "tmdb_id": 419430
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Shawshank Redemption",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/2aHi",
+    "Rating": 5,
+    "poster_path": "/t30GjttOdb5At1sYy8b3TOwFgWV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/t30GjttOdb5At1sYy8b3TOwFgWV.jpg",
+    "tmdb_id": 278
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Prisoners",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/4E5i",
+    "Rating": 5,
+    "poster_path": "/fUk1f0iOAezl5PZ7gQW6nrguOXk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fUk1f0iOAezl5PZ7gQW6nrguOXk.jpg",
+    "tmdb_id": 146233
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Demolition",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/9GuY",
+    "Rating": 4.5,
+    "poster_path": "/ec0bwYUEYBhcHutx4nIShLzX7Dl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ec0bwYUEYBhcHutx4nIShLzX7Dl.jpg",
+    "tmdb_id": 1168190
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Equalizer",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/4TUK",
+    "Rating": 4.5,
+    "poster_path": "/lgzPn7C9dWanHl2DjE97855dsJF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lgzPn7C9dWanHl2DjE97855dsJF.jpg",
+    "tmdb_id": 156022
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "John Wick: Chapter 2",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/ayGu",
+    "Rating": 4.5,
+    "poster_path": "/r687UV1zQ5KDB9AxRokRscWIRvt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r687UV1zQ5KDB9AxRokRscWIRvt.jpg",
+    "tmdb_id": 324552
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "John Wick: Chapter 3 – Parabellum",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/gmFw",
+    "Rating": 3.5,
+    "poster_path": "/8gd71hpzHIF3gCkmJBwV5egtu3k.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8gd71hpzHIF3gCkmJBwV5egtu3k.jpg",
+    "tmdb_id": 458156
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "John Wick: Chapter 4",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/mh48",
+    "Rating": 3,
+    "poster_path": "/n1YTIyhAqqqFyDGFTzV7WaU1JfK.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n1YTIyhAqqqFyDGFTzV7WaU1JfK.jpg",
+    "tmdb_id": 603692
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Equalizer 2",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/bAEW",
+    "Rating": 4.5,
+    "poster_path": "/7WqXdXqWBwOO8LYOYxoD1RtIcNM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7WqXdXqWBwOO8LYOYxoD1RtIcNM.jpg",
+    "tmdb_id": 345887
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Equalizer 3",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/yU54",
+    "Rating": 3,
+    "poster_path": "/go2gtucO5LT92jnU40pbD0LImgg.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/go2gtucO5LT92jnU40pbD0LImgg.jpg",
+    "tmdb_id": 926393
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "First Man",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/cPym",
+    "Rating": 4.5,
+    "poster_path": "/txUD2EzyNnPIX3dFb7jbKqAQTbm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/txUD2EzyNnPIX3dFb7jbKqAQTbm.jpg",
+    "tmdb_id": 369972
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Reservoir Dogs",
+    "Year": 1992,
+    "Letterboxd URI": "https://boxd.it/2agc",
+    "Rating": 4.5,
+    "poster_path": "/b62t5xsAMGZ2LOLbD0l85xQE3tr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/b62t5xsAMGZ2LOLbD0l85xQE3tr.jpg",
+    "tmdb_id": 500
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Martian",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/8SeG",
+    "Rating": 4.5,
+    "poster_path": "/51CqiKVStZ2YPx64iPs3LDDiQnt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/51CqiKVStZ2YPx64iPs3LDDiQnt.jpg",
+    "tmdb_id": 286217
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Groundhog Day",
+    "Year": 1993,
+    "Letterboxd URI": "https://boxd.it/2b3e",
+    "Rating": 4.5,
+    "poster_path": "/kSdgmtOmxFxdiJqK1R3kfKBqRUo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kSdgmtOmxFxdiJqK1R3kfKBqRUo.jpg",
+    "tmdb_id": 137
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Inside Out",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/4KHC",
+    "Rating": 4.5,
+    "poster_path": "/KUhrtJN02RNt3Sxc4IMTa1d9Lt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/KUhrtJN02RNt3Sxc4IMTa1d9Lt.jpg",
+    "tmdb_id": 150540
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Inside Out 2",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/CFrC",
+    "Rating": 4.5,
+    "poster_path": "/9Jic8z9NEeCEmSJFgFHZF1lWMFo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9Jic8z9NEeCEmSJFgFHZF1lWMFo.jpg",
+    "tmdb_id": 1022789
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Brothers",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/20WW",
+    "Rating": 4,
+    "poster_path": "/nSdAZw7HmcABKxxyjeC9C1h4CNg.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nSdAZw7HmcABKxxyjeC9C1h4CNg.jpg",
+    "tmdb_id": 7445
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Dune",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/fA7G",
+    "Rating": 4,
+    "poster_path": "/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
+    "tmdb_id": 438631
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Gladiator",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/2b9m",
+    "Rating": 4,
+    "poster_path": "/5gJOu3t2QrznuJqjCG7FQDMI76t.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5gJOu3t2QrznuJqjCG7FQDMI76t.jpg",
+    "tmdb_id": 98
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Glass",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/g3uO",
+    "Rating": 4,
+    "poster_path": "/68SUBI1gOaC2LkMQ57OlAybZL7y.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/68SUBI1gOaC2LkMQ57OlAybZL7y.jpg",
+    "tmdb_id": 450465
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Hansel & Gretel: Witch Hunters",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/gmw",
+    "Rating": 4,
+    "poster_path": "/yVJNn8jESKi7lLPHhyEGFHdEkPt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yVJNn8jESKi7lLPHhyEGFHdEkPt.jpg",
+    "tmdb_id": 60304
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Hunger Games",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/2uds",
+    "Rating": 4,
+    "poster_path": "/wSvsjqyRWk5xku9yEUNZYFwUF87.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wSvsjqyRWk5xku9yEUNZYFwUF87.jpg",
+    "tmdb_id": 70160
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Hunger Games: Mockingjay – Part 1",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/4hka",
+    "Rating": 4.5,
+    "poster_path": "/4LzjVMUit99buiiuhqW4pe0OhmA.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4LzjVMUit99buiiuhqW4pe0OhmA.jpg",
+    "tmdb_id": 131631
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Hunger Games: Mockingjay – Part 2",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/4hk0",
+    "Rating": 4,
+    "poster_path": "/ojFCU0K7Err8n87VOONrnrCcQxj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ojFCU0K7Err8n87VOONrnrCcQxj.jpg",
+    "tmdb_id": 131634
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Hunger Games: The Ballad of Songbirds & Snakes",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/pZCY",
+    "Rating": 4,
+    "poster_path": "/q4EDvPcf956FgakWwcXiWdQEgxU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/q4EDvPcf956FgakWwcXiWdQEgxU.jpg",
+    "tmdb_id": 695721
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Now You See Me",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2Bsu",
+    "Rating": 4,
+    "poster_path": "/q8JJ7vKuV7IFE6TIbViuPokqIpr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/q8JJ7vKuV7IFE6TIbViuPokqIpr.jpg",
+    "tmdb_id": 75656
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Now You See Me 2",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/99fw",
+    "Rating": 4,
+    "poster_path": "/w7Q9BAqpbPHSeo6ZDYRpFGpGUxn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/w7Q9BAqpbPHSeo6ZDYRpFGpGUxn.jpg",
+    "tmdb_id": 291805
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Lucy",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/75hu",
+    "Rating": 4,
+    "poster_path": "/hLKoSzjOPC8tQaA2AmFvDjBbKTw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hLKoSzjOPC8tQaA2AmFvDjBbKTw.jpg",
+    "tmdb_id": 240832
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Matrix",
+    "Year": 1999,
+    "Letterboxd URI": "https://boxd.it/2a1m",
+    "Rating": 4,
+    "poster_path": "/pEoqbqtLc4CcwDUDqxmEDSWpWTZ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pEoqbqtLc4CcwDUDqxmEDSWpWTZ.jpg",
+    "tmdb_id": 603
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "A Quiet Place",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/fVJQ",
+    "Rating": 4.5,
+    "poster_path": "/xlJCSHnR7sbaibX3OY97vEmsjxt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xlJCSHnR7sbaibX3OY97vEmsjxt.jpg",
+    "tmdb_id": 447332
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Searching",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/hDPg",
+    "Rating": 4,
+    "poster_path": "/hsXFadgegUygPqMrW8McvmNWGpX.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hsXFadgegUygPqMrW8McvmNWGpX.jpg",
+    "tmdb_id": 489999
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Sonic the Hedgehog",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/gdK8",
+    "Rating": 4,
+    "poster_path": "/qi6qwClvTfZJiI5GhsKbtkqg28W.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qi6qwClvTfZJiI5GhsKbtkqg28W.jpg",
+    "tmdb_id": 454626
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Toy Story",
+    "Year": 1995,
+    "Letterboxd URI": "https://boxd.it/29qA",
+    "Rating": 4.5,
+    "poster_path": "/4cWLRhub0yY9VJpdw0nqoTPYyiN.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4cWLRhub0yY9VJpdw0nqoTPYyiN.jpg",
+    "tmdb_id": 862
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Toy Story 2",
+    "Year": 1999,
+    "Letterboxd URI": "https://boxd.it/29qq",
+    "Rating": 4.5,
+    "poster_path": "/144DDQdfZxAK5xyPTETmygzGGuH.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/144DDQdfZxAK5xyPTETmygzGGuH.jpg",
+    "tmdb_id": 863
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Toy Story 3",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1WRe",
+    "Rating": 5,
+    "poster_path": "/hhOQ0FGXs0ux2GNMihx9itfRCm1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hhOQ0FGXs0ux2GNMihx9itfRCm1.jpg",
+    "tmdb_id": 10193
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Toy Story 4",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/9ALu",
+    "Rating": 4,
+    "poster_path": "/smFyhZHuOCZEmH0kfXOrJLC3Acx.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/smFyhZHuOCZEmH0kfXOrJLC3Acx.jpg",
+    "tmdb_id": 301528
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Troy",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/29TW",
+    "Rating": 4,
+    "poster_path": "/pkKBYrihVm5kuBgOH04KagSids0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pkKBYrihVm5kuBgOH04KagSids0.jpg",
+    "tmdb_id": 652
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Beetlejuice",
+    "Year": 1988,
+    "Letterboxd URI": "https://boxd.it/24QI",
+    "Rating": 3.5,
+    "poster_path": "/AtBDU4kFKkW0nWDtzROUHGdx4Br.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AtBDU4kFKkW0nWDtzROUHGdx4Br.jpg",
+    "tmdb_id": 4011
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "American Psycho",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/28Vs",
+    "Rating": 3.5,
+    "poster_path": "/2DWqsx0vafGcfytSIwhtL5nI1uV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2DWqsx0vafGcfytSIwhtL5nI1uV.jpg",
+    "tmdb_id": 1359
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Chronicle",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/2Emk",
+    "Rating": 3.5,
+    "poster_path": "/dSUl8nTPsadDblGPK6Qm9rXUcdd.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dSUl8nTPsadDblGPK6Qm9rXUcdd.jpg",
+    "tmdb_id": 76726
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Unbreakable",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/1XV2",
+    "Rating": 3.5,
+    "poster_path": "/t2Vvyqs3M7706Da1dUVDwP2bE7d.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/t2Vvyqs3M7706Da1dUVDwP2bE7d.jpg",
+    "tmdb_id": 9741
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "The Platform",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/mUm6",
+    "Rating": 3.5,
+    "poster_path": "/vtQ8BS9htQ5TEVk3WDvnJFPOQdo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vtQ8BS9htQ5TEVk3WDvnJFPOQdo.jpg",
+    "tmdb_id": 660295
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Pirates of the Caribbean: The Curse of the Black Pearl",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/70G",
+    "Rating": 3.5,
+    "poster_path": "/jFmc6zbnx6mSoxejECYvdi3IHIs.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jFmc6zbnx6mSoxejECYvdi3IHIs.jpg",
+    "tmdb_id": 22
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Pirates of the Caribbean: On Stranger Tides",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/27Z4",
+    "Rating": 3.5,
+    "poster_path": "/5JjjjGg24IGRXIQtaZkPU59acjV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5JjjjGg24IGRXIQtaZkPU59acjV.jpg",
+    "tmdb_id": 1865
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Pulp Fiction",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/29Pq",
+    "Rating": 3.5,
+    "poster_path": "/4TBdF7nFw2aKNM0gPOlDNq3v3se.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4TBdF7nFw2aKNM0gPOlDNq3v3se.jpg",
+    "tmdb_id": 680
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Blade Runner 2049",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/b8wK",
+    "Rating": 3,
+    "poster_path": "/qWD9E0Wgn8w6nMMutCNFAUiSHrX.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qWD9E0Wgn8w6nMMutCNFAUiSHrX.jpg",
+    "tmdb_id": 335984
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Madame Web",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/nwD0",
+    "Rating": 3,
+    "poster_path": "/xAHGuVQFTbSbbdeUbkfrAY8kf2m.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xAHGuVQFTbSbbdeUbkfrAY8kf2m.jpg",
+    "tmdb_id": 634492
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Nightcrawler",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/780m",
+    "Rating": 3,
+    "poster_path": "/pATJSq0OobFU9DmcKQUqQPpzDET.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pATJSq0OobFU9DmcKQUqQPpzDET.jpg",
+    "tmdb_id": 242582
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "28 Days Later",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/2aXU",
+    "Rating": 2.5,
+    "poster_path": "/y0u77LC6C0UvhiWe4LiI2KulHN9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/y0u77LC6C0UvhiWe4LiI2KulHN9.jpg",
+    "tmdb_id": 170
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "28 Weeks Later",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/28Bi",
+    "Rating": 2.5,
+    "poster_path": "/gh7McOrkelpNmXV9HY8elGt73aQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gh7McOrkelpNmXV9HY8elGt73aQ.jpg",
+    "tmdb_id": 1562
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Tenet",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/leq4",
+    "Rating": 2.5,
+    "poster_path": "/72SOtZnFhCumLRZhoXlX8g2IkgF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/72SOtZnFhCumLRZhoXlX8g2IkgF.jpg",
+    "tmdb_id": 577922
+  },
+  {
+    "Date": "2024-10-12",
+    "Name": "Damsel",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/sFY2",
+    "Rating": 1.5,
+    "poster_path": "/fP9OIOzJFPRLBkNfHyPGPf6wmfx.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fP9OIOzJFPRLBkNfHyPGPf6wmfx.jpg",
+    "tmdb_id": 763215
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Avengers: Infinity War",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/9vEe",
+    "Rating": 5,
+    "poster_path": "/hSfuKPtyEryeFzapZ8UgZd4aESu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hSfuKPtyEryeFzapZ8UgZd4aESu.jpg",
+    "tmdb_id": 299536
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Avengers: Endgame",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/9vE4",
+    "Rating": 4.5,
+    "poster_path": "/wF7jv3x51hXgkl7t5KHePuRjXc8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wF7jv3x51hXgkl7t5KHePuRjXc8.jpg",
+    "tmdb_id": 299534
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Guardians of the Galaxy",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/3VH2",
+    "Rating": 3.5,
+    "poster_path": "/9a6fGeSV5kffyNPPMWCPhLOhLdJ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9a6fGeSV5kffyNPPMWCPhLOhLdJ.jpg",
+    "tmdb_id": 118340
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Black Panther",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/8MHs",
+    "Rating": 3.5,
+    "poster_path": "/g94IcdzPswTYl1ISdgn2EwvaZtt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g94IcdzPswTYl1ISdgn2EwvaZtt.jpg",
+    "tmdb_id": 284054
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Guardians of the Galaxy Vol. 3",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/fVNI",
+    "Rating": 4.5,
+    "poster_path": "/dnyQnKSSqQ8aOEMiE5hYDNJO4dE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dnyQnKSSqQ8aOEMiE5hYDNJO4dE.jpg",
+    "tmdb_id": 447365
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Spider-Man: Far From Home",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/fegG",
+    "Rating": 4.5,
+    "poster_path": "/9FkewgPxlMPjgKhFN7LaRJEqmCI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9FkewgPxlMPjgKhFN7LaRJEqmCI.jpg",
+    "tmdb_id": 429617
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Doctor Strange in the Multiverse of Madness",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/gaTc",
+    "Rating": 3,
+    "poster_path": "/arfzjn1tGvXWwkX7eaGVuXsc0mp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/arfzjn1tGvXWwkX7eaGVuXsc0mp.jpg",
+    "tmdb_id": 453395
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Guardians of the Galaxy Vol. 2",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/8MxC",
+    "Rating": 3,
+    "poster_path": "/brgkPEPQJNGLuKRy8omRTcDfDuL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/brgkPEPQJNGLuKRy8omRTcDfDuL.jpg",
+    "tmdb_id": 283995
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Captain America: Civil War",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/89Ja",
+    "Rating": 4.5,
+    "poster_path": "/i2nc9IAP1xRWoa3MgeR7ldsshkV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/i2nc9IAP1xRWoa3MgeR7ldsshkV.jpg",
+    "tmdb_id": 271110
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Doctor Strange",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/8MH8",
+    "Rating": 3.5,
+    "poster_path": "/7wZ7mx7tY5SgflQKuJmQvwu3wGm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7wZ7mx7tY5SgflQKuJmQvwu3wGm.jpg",
+    "tmdb_id": 284052
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Captain America: The Winter Soldier",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/3r58",
+    "Rating": 4.5,
+    "poster_path": "/n3Xa8g1sWrUVUal6zk0OoC9ARo1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n3Xa8g1sWrUVUal6zk0OoC9ARo1.jpg",
+    "tmdb_id": 100402
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Avengers: Age of Ultron",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/3qi6",
+    "Rating": 3,
+    "poster_path": "/A0tw88n1byyR2vodhJMlFPQGQgF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/A0tw88n1byyR2vodhJMlFPQGQgF.jpg",
+    "tmdb_id": 99861
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Thor: Love and Thunder",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/mMAY",
+    "Rating": 2,
+    "poster_path": "/kSMarEm3ESOOr11dzsep2RZ1ClD.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kSMarEm3ESOOr11dzsep2RZ1ClD.jpg",
+    "tmdb_id": 616037
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Black Widow",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/hWV8",
+    "Rating": 2,
+    "poster_path": "/tIdq9lGrbSsq3RkgB9r0g0vYTbl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tIdq9lGrbSsq3RkgB9r0g0vYTbl.jpg",
+    "tmdb_id": 497698
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Captain Marvel",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/9vSA",
+    "Rating": 3,
+    "poster_path": "/aRJAoQ6mqPHAKXjP3CqNyLC8FAh.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aRJAoQ6mqPHAKXjP3CqNyLC8FAh.jpg",
+    "tmdb_id": 299537
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Captain America: The First Avenger",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/28b0",
+    "Rating": 1.5,
+    "poster_path": "/l1SP3gyHA5ZEuf72WKx5ihtZZFO.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/l1SP3gyHA5ZEuf72WKx5ihtZZFO.jpg",
+    "tmdb_id": 1771
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Ant-Man",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/3vmW",
+    "Rating": 2.5,
+    "poster_path": "/hAH2Rt2WvfMBK2tZDLMNuUTUwxG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hAH2Rt2WvfMBK2tZDLMNuUTUwxG.jpg",
+    "tmdb_id": 102899
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Black Panther: Wakanda Forever",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/igPu",
+    "Rating": 3.5,
+    "poster_path": "/7cSyJcUf8twHn05h7PMQHv6tgFV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7cSyJcUf8twHn05h7PMQHv6tgFV.jpg",
+    "tmdb_id": 505642
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Iron Man 3",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2cBQ",
+    "Rating": 2,
+    "poster_path": "/sE71EBrRMfW0NKMHlXPO55Km88X.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sE71EBrRMfW0NKMHlXPO55Km88X.jpg",
+    "tmdb_id": 68721
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Iron Man 2",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1WZM",
+    "Rating": 1.5,
+    "poster_path": "/g9DSeSozGi4zpUyeOYZYMNmIv9O.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g9DSeSozGi4zpUyeOYZYMNmIv9O.jpg",
+    "tmdb_id": 10138
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Eternals",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/j36o",
+    "Rating": 4,
+    "poster_path": "/vV7TrS7PNRZJHCxNmiYN1SU7s1w.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vV7TrS7PNRZJHCxNmiYN1SU7s1w.jpg",
+    "tmdb_id": 524434
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Ant-Man and the Wasp",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/cqUW",
+    "Rating": 2,
+    "poster_path": "/r3Vapr4sdXOhHBThTNtfuijKe5V.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r3Vapr4sdXOhHBThTNtfuijKe5V.jpg",
+    "tmdb_id": 363088
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Thor: The Dark World",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2DqA",
+    "Rating": 0.5,
+    "poster_path": "/eAIGX0nlwlb5sMb4uDRGNFqMyG9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/eAIGX0nlwlb5sMb4uDRGNFqMyG9.jpg",
+    "tmdb_id": 76338
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Ant-Man and the Wasp: Quantumania",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/nL2y",
+    "Rating": 2.5,
+    "poster_path": "/2hq8EKF6kaUyOxB9KhmIb5JUxEe.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2hq8EKF6kaUyOxB9KhmIb5JUxEe.jpg",
+    "tmdb_id": 640146
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "The Incredible Hulk",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/28dU",
+    "Rating": 3,
+    "poster_path": "/cImKVGUiEnwLsNUyoMA0a0na2y5.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cImKVGUiEnwLsNUyoMA0a0na2y5.jpg",
+    "tmdb_id": 1724
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "The Guardians of the Galaxy Holiday Special",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/t77K",
+    "Rating": 2,
+    "poster_path": "/cF3E6CrCm3NUy5PDRBbGyXRChYb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cF3E6CrCm3NUy5PDRBbGyXRChYb.jpg",
+    "tmdb_id": 774752
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Werewolf by Night",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/xMrO",
+    "Rating": 3,
+    "poster_path": "/5p6Q5dsqgT7dknImjtoRvNx50k9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5p6Q5dsqgT7dknImjtoRvNx50k9.jpg",
+    "tmdb_id": 894205
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Fantastic Four: Rise of the Silver Surfer",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/27Ii",
+    "Rating": 3.5,
+    "poster_path": "/9Ejo1jwcq4T3CtB2fbUd2qLZOS6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9Ejo1jwcq4T3CtB2fbUd2qLZOS6.jpg",
+    "tmdb_id": 1979
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Ghost Rider",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/290M",
+    "Rating": 3,
+    "poster_path": "/7kSRmdf80BART95tsOhuZkcmde6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7kSRmdf80BART95tsOhuZkcmde6.jpg",
+    "tmdb_id": 1250
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Spider-Man 2",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/2a88",
+    "Rating": 5,
+    "poster_path": "/m8X5HdADsW5YdmVNjwTOArMOUoL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/m8X5HdADsW5YdmVNjwTOArMOUoL.jpg",
+    "tmdb_id": 558
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Spider-Man: Across the Spider-Verse",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/kSz4",
+    "Rating": 5,
+    "poster_path": "/ydaJsTyrRimSQ1dTf2xvrmJKz5b.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ydaJsTyrRimSQ1dTf2xvrmJKz5b.jpg",
+    "tmdb_id": 569094
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "The Amazing Spider-Man 2",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/3utM",
+    "Rating": 4,
+    "poster_path": "/rZ47R21ZGNTGr5ORxdMmxQWdcFn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rZ47R21ZGNTGr5ORxdMmxQWdcFn.jpg",
+    "tmdb_id": 102382
+  },
+  {
+    "Date": "2024-10-13",
+    "Name": "Spider-Man: Into the Spider-Verse",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/azpY",
+    "Rating": 4.5,
+    "poster_path": "/7uPGS5CgvIjDcFUhw9HB9qYeDXf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7uPGS5CgvIjDcFUhw9HB9qYeDXf.jpg",
+    "tmdb_id": 324857
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Conjuring",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/4sr2",
+    "Rating": 4,
+    "poster_path": "/vOnTvcSsxdJWL9xgauljHHmFSN4.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vOnTvcSsxdJWL9xgauljHHmFSN4.jpg",
+    "tmdb_id": 138843
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Conjuring 2",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/7GJg",
+    "Rating": 3.5,
+    "poster_path": "/oHQRX1zrBH1Li5JNbNJSUi0h22d.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oHQRX1zrBH1Li5JNbNJSUi0h22d.jpg",
+    "tmdb_id": 259693
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Conjuring: The Devil Made Me Do It",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/eXZY",
+    "Rating": 3,
+    "poster_path": "/k0JaMRifwHCk9b1T12koZKqXnnS.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/k0JaMRifwHCk9b1T12koZKqXnnS.jpg",
+    "tmdb_id": 423108
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Paranormal Activity",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/1yIM",
+    "Rating": 3.5,
+    "poster_path": "/1Kxhdm6up44BzZoVGAGuD5zYxYY.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1Kxhdm6up44BzZoVGAGuD5zYxYY.jpg",
+    "tmdb_id": 23827
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Paranormal Activity 2",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/ZnO",
+    "Rating": 3.5,
+    "poster_path": "/oRhtAdntF9PUvNaCRHUpTHOD7Ej.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oRhtAdntF9PUvNaCRHUpTHOD7Ej.jpg",
+    "tmdb_id": 41436
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Paranormal Activity 3",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/2o4O",
+    "Rating": 3,
+    "poster_path": "/ha4lmOD3sAP4fcS7UEBjKzracm0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ha4lmOD3sAP4fcS7UEBjKzracm0.jpg",
+    "tmdb_id": 72571
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Paranormal Activity: The Ghost Dimension",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/4Ed2",
+    "Rating": 2,
+    "poster_path": "/rSpOPlcpWNLzaAaX3HE6qp4Akka.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rSpOPlcpWNLzaAaX3HE6qp4Akka.jpg",
+    "tmdb_id": 146301
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Drive",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/IG",
+    "Rating": 4,
+    "poster_path": "/mUKm5eaYm30KYyaudRn5tA204ua.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mUKm5eaYm30KYyaudRn5tA204ua.jpg",
+    "tmdb_id": 64690
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Interstellar",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/4VZ8",
+    "Rating": 5,
+    "poster_path": "/1pnigkWWy8W032o9TKDneBa3eVK.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1pnigkWWy8W032o9TKDneBa3eVK.jpg",
+    "tmdb_id": 157336
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Forrest Gump",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/728",
+    "Rating": 4.5,
+    "poster_path": "/zi6RNYK1vXjIvpSBgjatXRcFYh2.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zi6RNYK1vXjIvpSBgjatXRcFYh2.jpg",
+    "tmdb_id": 13
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Barbie",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/bCLK",
+    "Rating": 3,
+    "poster_path": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+    "tmdb_id": 346698
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Oppenheimer",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/wUow",
+    "Rating": 5,
+    "poster_path": "/boAUuJBeID7VNp4L7LNMQs8mfQS.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/boAUuJBeID7VNp4L7LNMQs8mfQS.jpg",
+    "tmdb_id": 872585
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Batman",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/eDGs",
+    "Rating": 4.5,
+    "poster_path": "/t9JGg10CW1DzXEdWL54ewkUko6N.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/t9JGg10CW1DzXEdWL54ewkUko6N.jpg",
+    "tmdb_id": 414906
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Truman Show",
+    "Year": 1998,
+    "Letterboxd URI": "https://boxd.it/18U8",
+    "Rating": 5,
+    "poster_path": "/cOkoQaOPZBxqxQYlGu2i0o00sLn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cOkoQaOPZBxqxQYlGu2i0o00sLn.jpg",
+    "tmdb_id": 37165
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Inception",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1skk",
+    "Rating": 4.5,
+    "poster_path": "/aej3LRUga5rhgkmRP6XMFw3ejbl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aej3LRUga5rhgkmRP6XMFw3ejbl.jpg",
+    "tmdb_id": 27205
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Wolf of Wall Street",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/3C1m",
+    "Rating": 4,
+    "poster_path": "/dQIQZbJXn1pflQw3nwvXLJX0dHa.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dQIQZbJXn1pflQw3nwvXLJX0dHa.jpg",
+    "tmdb_id": 106646
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Lord of the Rings: The Fellowship of the Ring",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/2b5O",
+    "Rating": 4.5,
+    "poster_path": "/5OPg6M0yHr21Ovs1fni2H1xpKuF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5OPg6M0yHr21Ovs1fni2H1xpKuF.jpg",
+    "tmdb_id": 120
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Deadpool",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/9fOC",
+    "Rating": 3.5,
+    "poster_path": "/z5VjcCEioj2c2dvxmoqBW0Rj8Xj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/z5VjcCEioj2c2dvxmoqBW0Rj8Xj.jpg",
+    "tmdb_id": 293660
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Titanic",
+    "Year": 1997,
+    "Letterboxd URI": "https://boxd.it/2a2k",
+    "Rating": 3.5,
+    "poster_path": "/vpsvHLkoeKUjceIMeNSqCp3xEyY.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vpsvHLkoeKUjceIMeNSqCp3xEyY.jpg",
+    "tmdb_id": 597
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Coco",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/bYJQ",
+    "Rating": 4.5,
+    "poster_path": "/sZqcEV3KhDITHlUBmyj1a3RRvT9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sZqcEV3KhDITHlUBmyj1a3RRvT9.jpg",
+    "tmdb_id": 354912
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Up",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1OEc",
+    "Rating": 4,
+    "poster_path": "/k55kMEPkxGej70udPcVNqhTiwBz.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/k55kMEPkxGej70udPcVNqhTiwBz.jpg",
+    "tmdb_id": 14160
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Coraline",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1NhQ",
+    "Rating": 3,
+    "poster_path": "/xuUfl07Wdc150rDwKLKCCbLfLGQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xuUfl07Wdc150rDwKLKCCbLfLGQ.jpg",
+    "tmdb_id": 14836
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Back to the Future",
+    "Year": 1985,
+    "Letterboxd URI": "https://boxd.it/2b8e",
+    "Rating": 4,
+    "poster_path": "/iCgFtDUZxN8iUzNBCisjUrBmg2q.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iCgFtDUZxN8iUzNBCisjUrBmg2q.jpg",
+    "tmdb_id": 105
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Prisoner of Azkaban",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/29Qy",
+    "Rating": 4,
+    "poster_path": "/t4P2079IyK19njHDP2GwQrKdvzd.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/t4P2079IyK19njHDP2GwQrKdvzd.jpg",
+    "tmdb_id": 673
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Avatar: The Way of Water",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/2E2E",
+    "Rating": 3,
+    "poster_path": "/7TOaaKbSYfilIpZsRCS1AyFCxaJ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7TOaaKbSYfilIpZsRCS1AyFCxaJ.jpg",
+    "tmdb_id": 76600
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Philosopher's Stone",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/29QS",
+    "Rating": 3,
+    "poster_path": "/fbxQ44VRdM2PVzHSNajUseUteem.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fbxQ44VRdM2PVzHSNajUseUteem.jpg",
+    "tmdb_id": 671
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Avatar",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1Efm",
+    "Rating": 3,
+    "poster_path": "/7N8L80OaG8EBTDdRBjGqT8PBzCM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7N8L80OaG8EBTDdRBjGqT8PBzCM.jpg",
+    "tmdb_id": 19995
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Catch Me If You Can",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/29VS",
+    "Rating": 4,
+    "poster_path": "/nafyoqVGi87AwaV51GSJ0pk97gs.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nafyoqVGi87AwaV51GSJ0pk97gs.jpg",
+    "tmdb_id": 640
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Lord of the Rings: The Return of the King",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/2b5u",
+    "Rating": 4,
+    "poster_path": "/ypUCFOvOf07bcHy81jng9LyMUfi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ypUCFOvOf07bcHy81jng9LyMUfi.jpg",
+    "tmdb_id": 122
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Incredibles",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/1XLm",
+    "Rating": 3,
+    "poster_path": "/1FLKNiL41KPRgByj4uwlIqrpD6f.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1FLKNiL41KPRgByj4uwlIqrpD6f.jpg",
+    "tmdb_id": 9806
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Lord of the Rings: The Two Towers",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/2b5E",
+    "Rating": 4,
+    "poster_path": "/qVHBqQYLDRs7ESjP9q6o9iPHLWj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qVHBqQYLDRs7ESjP9q6o9iPHLWj.jpg",
+    "tmdb_id": 121
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Super Mario Bros. Movie",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/i8C8",
+    "Rating": 4,
+    "poster_path": "/ahMxyHMSJXingQr4yJBMzMU9k42.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ahMxyHMSJXingQr4yJBMzMU9k42.jpg",
+    "tmdb_id": 502356
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Home Alone",
+    "Year": 1990,
+    "Letterboxd URI": "https://boxd.it/29Fg",
+    "Rating": 3.5,
+    "poster_path": "/g0QlNeZzMkqyHfbSeoBCTcFNLWL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g0QlNeZzMkqyHfbSeoBCTcFNLWL.jpg",
+    "tmdb_id": 771
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Goblet of Fire",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/29Qo",
+    "Rating": 3.5,
+    "poster_path": "/hBak1pn5pbI4ycAbrgMMn1YI7P1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hBak1pn5pbI4ycAbrgMMn1YI7P1.jpg",
+    "tmdb_id": 674
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Chamber of Secrets",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/29QI",
+    "Rating": 4,
+    "poster_path": "/8KpHRokGpiaqEGpjYe0rpywtvUx.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8KpHRokGpiaqEGpjYe0rpywtvUx.jpg",
+    "tmdb_id": 672
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Lion King",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/201Q",
+    "Rating": 4.5,
+    "poster_path": "/n6UChiAOSTHGih2FBactLjA4Cdt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n6UChiAOSTHGih2FBactLjA4Cdt.jpg",
+    "tmdb_id": 8587
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Babylon",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/mM02",
+    "Rating": 4,
+    "poster_path": "/vxlBfQANmzReZqtpE2tad9gokf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vxlBfQANmzReZqtpE2tad9gokf.jpg",
+    "tmdb_id": 615777
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Deathly Hallows: Part 2",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/1RYk",
+    "Rating": 3.5,
+    "poster_path": "/alQOPmKEPHkH4BLMEla1vTNYrUr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/alQOPmKEPHkH4BLMEla1vTNYrUr.jpg",
+    "tmdb_id": 12445
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Deadpool 2",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/dlLM",
+    "Rating": 3.5,
+    "poster_path": "/ybjooZMNlRBaFNfs52XqONc4Xyw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ybjooZMNlRBaFNfs52XqONc4Xyw.jpg",
+    "tmdb_id": 383498
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Split",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/dgSy",
+    "Rating": 4,
+    "poster_path": "/8nn3m1wyu3woLg2tW1CAr44q53K.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8nn3m1wyu3woLg2tW1CAr44q53K.jpg",
+    "tmdb_id": 358364
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Order of the Phoenix",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/29Qe",
+    "Rating": 4.5,
+    "poster_path": "/9ZfpCVNx0y8jpColnnfdA1HI4Zb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9ZfpCVNx0y8jpColnnfdA1HI4Zb.jpg",
+    "tmdb_id": 675
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Logan",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/7Piy",
+    "Rating": 4.5,
+    "poster_path": "/sUYRG0ZGck9SYvMkTNcNibdE8M6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sUYRG0ZGck9SYvMkTNcNibdE8M6.jpg",
+    "tmdb_id": 263115
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Deathly Hallows: Part 1",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1RYu",
+    "Rating": 3.5,
+    "poster_path": "/yJm61MmTMjOmNXxPxdoaIkdqnOm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yJm61MmTMjOmNXxPxdoaIkdqnOm.jpg",
+    "tmdb_id": 12444
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Shrek 2",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/29z8",
+    "Rating": 4.5,
+    "poster_path": "/2e8hcPLaWjLXdQLgdi5otr4Jj9L.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2e8hcPLaWjLXdQLgdi5otr4Jj9L.jpg",
+    "tmdb_id": 809
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Harry Potter and the Half-Blood Prince",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/29FU",
+    "Rating": 4,
+    "poster_path": "/A4WWOzWUASfUeESXxduQxVmoD7t.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/A4WWOzWUASfUeESXxduQxVmoD7t.jpg",
+    "tmdb_id": 767
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Great Gatsby",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/JY",
+    "Rating": 3,
+    "poster_path": "/apvQQZTVLTEHrkQiDdUe3jUDY9Y.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/apvQQZTVLTEHrkQiDdUe3jUDY9Y.jpg",
+    "tmdb_id": 64682
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Zootopia",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/84xS",
+    "Rating": 3.5,
+    "poster_path": "/xEx4dHi2IrTB0vkVPccrGrMcZQW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xEx4dHi2IrTB0vkVPccrGrMcZQW.jpg",
+    "tmdb_id": 269149
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Moana",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/8tfY",
+    "Rating": 3.5,
+    "poster_path": "/u9rrmuYW9jCmFn3zN0RX9vhzRKp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/u9rrmuYW9jCmFn3zN0RX9vhzRKp.jpg",
+    "tmdb_id": 277834
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Kingsman: The Secret Service",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/6dxe",
+    "Rating": 3.5,
+    "poster_path": "/huKIbQiz2s1X1CWeXNkBj9wkElu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/huKIbQiz2s1X1CWeXNkBj9wkElu.jpg",
+    "tmdb_id": 207703
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Hangover",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1GjK",
+    "Rating": 4,
+    "poster_path": "/dGOwVbGN5eJlgAnFwGRaANnyZMF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dGOwVbGN5eJlgAnFwGRaANnyZMF.jpg",
+    "tmdb_id": 18785
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Crazy, Stupid, Love.",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/D9A",
+    "Rating": 4,
+    "poster_path": "/wYQ8LLOGoxqVtRTdKPmi1J59FWo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wYQ8LLOGoxqVtRTdKPmi1J59FWo.jpg",
+    "tmdb_id": 50646
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Kung Fu Panda",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1Yws",
+    "Rating": 3,
+    "poster_path": "/pxZNY88UWH0uic83QHBSh2yFEYL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pxZNY88UWH0uic83QHBSh2yFEYL.jpg",
+    "tmdb_id": 9502
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Train to Busan",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/dSQU",
+    "Rating": 4,
+    "poster_path": "/9FiRluXOwGJZhb1BPSvJYO7SB7y.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9FiRluXOwGJZhb1BPSvJYO7SB7y.jpg",
+    "tmdb_id": 396535
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Venom",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/b8wA",
+    "Rating": 3,
+    "poster_path": "/vVusHIRlyyFVS42XnqZso2wGKr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vVusHIRlyyFVS42XnqZso2wGKr.jpg",
+    "tmdb_id": 335983
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Free Guy",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/k8dm",
+    "Rating": 4,
+    "poster_path": "/lG7Rv88OANLVbeR6Zymlid1cRuk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lG7Rv88OANLVbeR6Zymlid1cRuk.jpg",
+    "tmdb_id": 550988
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Lego Movie",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/4pDO",
+    "Rating": 3.5,
+    "poster_path": "/8SPuFYQ6jm7DSmof0haYZr1lQFN.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8SPuFYQ6jm7DSmof0haYZr1lQFN.jpg",
+    "tmdb_id": 137106
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "The Green Mile",
+    "Year": 1999,
+    "Letterboxd URI": "https://boxd.it/2agG",
+    "Rating": 5,
+    "poster_path": "/cRBUYC02CPsVa1GqBq6rfHn5a8g.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cRBUYC02CPsVa1GqBq6rfHn5a8g.jpg",
+    "tmdb_id": 497
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Ready Player One",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/aZes",
+    "Rating": 4.5,
+    "poster_path": "/832ngDVXhOVp6HBnuMMeeWTrGXN.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/832ngDVXhOVp6HBnuMMeeWTrGXN.jpg",
+    "tmdb_id": 333339
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Zombieland",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1En6",
+    "Rating": 3.5,
+    "poster_path": "/4PztLhccCdfKDnlf3BQ83NnSzJA.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4PztLhccCdfKDnlf3BQ83NnSzJA.jpg",
+    "tmdb_id": 19908
+  },
+  {
+    "Date": "2024-10-15",
+    "Name": "Attack on Titan The Final Chapters: Special 2",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/JyZw",
+    "Rating": 4,
+    "poster_path": null,
+    "poster_url": null,
+    "tmdb_id": null
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Deadpool & Wolverine",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/jq8s",
+    "Rating": 3.5,
+    "poster_path": "/7CtRdKd5hQPB2b1apKCqxxQUKSf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7CtRdKd5hQPB2b1apKCqxxQUKSf.jpg",
+    "tmdb_id": 533535
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Sharknado",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/69Qc",
+    "Rating": 0.5,
+    "poster_path": "/atEmHkVFTSGRYt2PeCiziQqbZnI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/atEmHkVFTSGRYt2PeCiziQqbZnI.jpg",
+    "tmdb_id": 205321
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Venom: Let There Be Carnage",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/llco",
+    "Rating": 2,
+    "poster_path": "/9j21DXo7Gwtfxj81iC20AbOqumt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9j21DXo7Gwtfxj81iC20AbOqumt.jpg",
+    "tmdb_id": 580489
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Spider-Man: No Way Home",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/nwRw",
+    "Rating": 3,
+    "poster_path": "/jwfDFqzxBkXC5bERBZrCEfK9iii.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jwfDFqzxBkXC5bERBZrCEfK9iii.jpg",
+    "tmdb_id": 634649
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Amazing Spider-Man",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/27PI",
+    "Rating": 3.5,
+    "poster_path": "/gsIkMf1VErbF0xtrgXEZXqLgsBG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gsIkMf1VErbF0xtrgXEZXqLgsBG.jpg",
+    "tmdb_id": 1930
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Spider-Man 3",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/2a7Y",
+    "Rating": 3,
+    "poster_path": "/hPkfodeYB0ZqBjxaynsEdXl0bbR.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hPkfodeYB0ZqBjxaynsEdXl0bbR.jpg",
+    "tmdb_id": 559
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Spider-Man",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/2a8i",
+    "Rating": 4.5,
+    "poster_path": "/pNz1NREgddPdlzytlR8mW4B26fW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pNz1NREgddPdlzytlR8mW4B26fW.jpg",
+    "tmdb_id": 557
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Morbius",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/j978",
+    "Rating": 1.5,
+    "poster_path": "/xBoIe0eX9UuSSPe5Qt6KXIQOd3I.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xBoIe0eX9UuSSPe5Qt6KXIQOd3I.jpg",
+    "tmdb_id": 526896
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "A Quiet Place Part II",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/iTx0",
+    "Rating": 3,
+    "poster_path": "/8ZUVoCUk3i2gikavPlneVKYfjqj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8ZUVoCUk3i2gikavPlneVKYfjqj.jpg",
+    "tmdb_id": 520763
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The 40 Year Old Virgin",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/21hK",
+    "Rating": 3.5,
+    "poster_path": "/uCczfLC36tQRAo0HwfqVVLiXoxe.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uCczfLC36tQRAo0HwfqVVLiXoxe.jpg",
+    "tmdb_id": 6957
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Puss in Boots: The Last Wish",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/aaie",
+    "Rating": 4,
+    "poster_path": "/kO35BwoKHyP1VRulxZJVeEl5dvS.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kO35BwoKHyP1VRulxZJVeEl5dvS.jpg",
+    "tmdb_id": 315162
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Dragonball Evolution",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1ODy",
+    "Rating": 0.5,
+    "poster_path": "/sunS9xhPnFNP5wlOWrvbpBteAB.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sunS9xhPnFNP5wlOWrvbpBteAB.jpg",
+    "tmdb_id": 14164
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Fantastic Four",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/5a9c",
+    "Rating": 0.5,
+    "poster_path": "/aVGL67lLyUJmmpgmrsgRDkDY8Nm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aVGL67lLyUJmmpgmrsgRDkDY8Nm.jpg",
+    "tmdb_id": 166424
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Sister Act",
+    "Year": 1992,
+    "Letterboxd URI": "https://boxd.it/27EA",
+    "Rating": 3.5,
+    "poster_path": "/4RPuvJ2IhF9EQkUGOa0jr7idlRP.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4RPuvJ2IhF9EQkUGOa0jr7idlRP.jpg",
+    "tmdb_id": 2005
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Sister Act 2: Back in the Habit",
+    "Year": 1993,
+    "Letterboxd URI": "https://boxd.it/21Qq",
+    "Rating": 3.5,
+    "poster_path": "/x195QLkSpAPzGa76vkK7FIpZ16x.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/x195QLkSpAPzGa76vkK7FIpZ16x.jpg",
+    "tmdb_id": 6279
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Social Network",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/17ue",
+    "Rating": 4.5,
+    "poster_path": "/cvUfwhoAReL4e5eegFCHM73rIda.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cvUfwhoAReL4e5eegFCHM73rIda.jpg",
+    "tmdb_id": 37799
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "tick, tick... BOOM!",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/jz2e",
+    "Rating": 3.5,
+    "poster_path": "/wopPaXrewT53omRIqaSK3cRXOQX.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wopPaXrewT53omRIqaSK3cRXOQX.jpg",
+    "tmdb_id": 537116
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Hacksaw Ridge",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/azew",
+    "Rating": 4.5,
+    "poster_path": "/zyxSZvaA7mU7mwnO1lR2cXUdQdV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zyxSZvaA7mU7mwnO1lR2cXUdQdV.jpg",
+    "tmdb_id": 324786
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Boss Baby",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/9mfO",
+    "Rating": 3,
+    "poster_path": "/k3szwIbPnQ7uCyMReaUfuc5xaf4.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/k3szwIbPnQ7uCyMReaUfuc5xaf4.jpg",
+    "tmdb_id": 295693
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Beautiful Creatures",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/3GIk",
+    "Rating": 4,
+    "poster_path": "/xESYISOQFS66rrshEKue9WCSbjp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xESYISOQFS66rrshEKue9WCSbjp.jpg",
+    "tmdb_id": 109491
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Twilight",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1Zui",
+    "Rating": 3,
+    "poster_path": "/8phJ4i9m1tBDJbOwwQPvdeWhN2h.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8phJ4i9m1tBDJbOwwQPvdeWhN2h.jpg",
+    "tmdb_id": 8966
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Twilight Saga: New Moon",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1Hj2",
+    "Rating": 3,
+    "poster_path": "/qgVulW7kkuvs3VnI0fuzLQmMTjt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qgVulW7kkuvs3VnI0fuzLQmMTjt.jpg",
+    "tmdb_id": 18239
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Twilight Saga: Breaking Dawn – Part 2",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/DdC",
+    "Rating": 2.5,
+    "poster_path": "/u33XPvDpUuwQGvw3Jwg0RlrIfIj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/u33XPvDpUuwQGvw3Jwg0RlrIfIj.jpg",
+    "tmdb_id": 50620
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Twilight Saga: Eclipse",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1ytW",
+    "Rating": 2.5,
+    "poster_path": "/5Mi2rvCTs04XS3ILQpnrnHFZxoq.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5Mi2rvCTs04XS3ILQpnrnHFZxoq.jpg",
+    "tmdb_id": 24021
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Twilight Saga: Breaking Dawn – Part 1",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/DdM",
+    "Rating": 1.5,
+    "poster_path": "/cpzUbPXkt2qUFWJgloU9aMmUscz.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cpzUbPXkt2qUFWJgloU9aMmUscz.jpg",
+    "tmdb_id": 50619
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Bee Movie",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/22Vw",
+    "Rating": 3,
+    "poster_path": "/29y7oQ75MNIhtQFd3KlwUTjyXh8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/29y7oQ75MNIhtQFd3KlwUTjyXh8.jpg",
+    "tmdb_id": 5559
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Kaizen",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/PRJY",
+    "Rating": 2.5,
+    "poster_path": "/mbpZW0TOykpaEZwEIO5RR4ul3ca.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mbpZW0TOykpaEZwEIO5RR4ul3ca.jpg",
+    "tmdb_id": 1341552
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Dark Phoenix",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/anyO",
+    "Rating": 2,
+    "poster_path": "/iIsMHA3gX9E7ceNgvjfu99vTF7v.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iIsMHA3gX9E7ceNgvjfu99vTF7v.jpg",
+    "tmdb_id": 320288
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "X-Men: Apocalypse",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/7eJi",
+    "Rating": 2.5,
+    "poster_path": "/iGdg9nHTDI8e9n8cUlVVJpbvpDc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iGdg9nHTDI8e9n8cUlVVJpbvpDc.jpg",
+    "tmdb_id": 246655
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "X-Men: Days of Future Past",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/4aRw",
+    "Rating": 3.5,
+    "poster_path": "/oMfkCE8yNuf53Xqu5k0zECF7nPr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oMfkCE8yNuf53Xqu5k0zECF7nPr.jpg",
+    "tmdb_id": 127585
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "The Wolverine",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2CWU",
+    "Rating": 2,
+    "poster_path": "/o7mGuVPrgBq1jSrq3gTWWKTdnEi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/o7mGuVPrgBq1jSrq3gTWWKTdnEi.jpg",
+    "tmdb_id": 76170
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "X-Men: First Class",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/FOA",
+    "Rating": 3,
+    "poster_path": "/6vZHDdyKXhd2CezhWLmxLT9EP4s.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6vZHDdyKXhd2CezhWLmxLT9EP4s.jpg",
+    "tmdb_id": 49538
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "X-Men Origins: Wolverine",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/27ug",
+    "Rating": 0.5,
+    "poster_path": "/ucJroLJ6RCqXY6hjYeLCW6jbWwE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ucJroLJ6RCqXY6hjYeLCW6jbWwE.jpg",
+    "tmdb_id": 2080
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "X2",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/1a7i",
+    "Rating": 3,
+    "poster_path": "/t4GcIXUiMZsPoyOuxThKjjsb76D.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/t4GcIXUiMZsPoyOuxThKjjsb76D.jpg",
+    "tmdb_id": 36658
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "X-Men: The Last Stand",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/1a5Q",
+    "Rating": 1,
+    "poster_path": "/c5oKaVtfy5Y02oI2LdCo638rg6U.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/c5oKaVtfy5Y02oI2LdCo638rg6U.jpg",
+    "tmdb_id": 36668
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "X-Men",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/1a7s",
+    "Rating": 3,
+    "poster_path": "/vF02RqXLgtmpJM5CRLSuvN3fVHi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vF02RqXLgtmpJM5CRLSuvN3fVHi.jpg",
+    "tmdb_id": 447399
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Dawn of the Planet of the Apes",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/3XyQ",
+    "Rating": 3.5,
+    "poster_path": "/ioCKDIwA4iXs8h4pEMTXN7E5LKG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ioCKDIwA4iXs8h4pEMTXN7E5LKG.jpg",
+    "tmdb_id": 119450
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Kingdom of the Planet of the Apes",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/ohEE",
+    "Rating": 3.5,
+    "poster_path": "/4925wPllJdQmHd1RxbZ62ZekaW3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4925wPllJdQmHd1RxbZ62ZekaW3.jpg",
+    "tmdb_id": 653346
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Kung Fu Panda 4",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/CepE",
+    "Rating": 3,
+    "poster_path": "/y8K9wRRv7YK1ACHqaDlMBrNebVU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/y8K9wRRv7YK1ACHqaDlMBrNebVU.jpg",
+    "tmdb_id": 1011985
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Kung Fu Panda 3",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/4uRQ",
+    "Rating": 3,
+    "poster_path": "/qUrLaT8NLUXpP9cOmLftdKt98Ag.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qUrLaT8NLUXpP9cOmLftdKt98Ag.jpg",
+    "tmdb_id": 140300
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Kung Fu Panda 2",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/G36",
+    "Rating": 3,
+    "poster_path": "/wKVBcZn7v7PH7jbjMGtP4Vhd1Rx.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wKVBcZn7v7PH7jbjMGtP4Vhd1Rx.jpg",
+    "tmdb_id": 49444
+  },
+  {
+    "Date": "2024-11-06",
+    "Name": "Dune: Part Two",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/pUfA",
+    "Rating": 4,
+    "poster_path": "/iRNbRAIGQQr5diGnjpwJFm0dgt4.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iRNbRAIGQQr5diGnjpwJFm0dgt4.jpg",
+    "tmdb_id": 693134
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "The Intouchables",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/2FT0",
+    "Rating": 4,
+    "poster_path": "/i97FM40bOMKvKIo3hjQviETE5yf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/i97FM40bOMKvKIo3hjQviETE5yf.jpg",
+    "tmdb_id": 77338
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Kirikou and the Sorceress",
+    "Year": 1998,
+    "Letterboxd URI": "https://boxd.it/1C3y",
+    "Rating": 2,
+    "poster_path": "/3fawMZ623Gxju8iJf5vsMJWazut.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3fawMZ623Gxju8iJf5vsMJWazut.jpg",
+    "tmdb_id": 21348
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "The Tuche Family",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/1RE",
+    "Rating": 2.5,
+    "poster_path": "/ed1cbXew2Ez8FqDFN39xL1DKVH1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ed1cbXew2Ez8FqDFN39xL1DKVH1.jpg",
+    "tmdb_id": 66129
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Serial Teachers",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/5xY8",
+    "Rating": 2,
+    "poster_path": "/59Bi4wtdoxXV9eaPat7em2ahISI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/59Bi4wtdoxXV9eaPat7em2ahISI.jpg",
+    "tmdb_id": 182219
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Serial Teachers 2",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/aCqq",
+    "Rating": 2,
+    "poster_path": "/2qW5bsYI2RjduaJhUz3U6extqNb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2qW5bsYI2RjduaJhUz3U6extqNb.jpg",
+    "tmdb_id": 325844
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Shrek",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/29zi",
+    "Rating": 4,
+    "poster_path": "/rJIju4i2sENrfTbAXwL9OKv2e1i.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rJIju4i2sENrfTbAXwL9OKv2e1i.jpg",
+    "tmdb_id": 808
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Jack and the Cuckoo-Clock Heart",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/68tc",
+    "Rating": 2.5,
+    "poster_path": "/2oKEdtqVbVeday0NyYUznTnPQEz.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2oKEdtqVbVeday0NyYUznTnPQEz.jpg",
+    "tmdb_id": 204436
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Scary Movie",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/24CG",
+    "Rating": 2.5,
+    "poster_path": "/2Glue9aj5VDv6q4x9v8PwilmUfY.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2Glue9aj5VDv6q4x9v8PwilmUfY.jpg",
+    "tmdb_id": 4247
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "OSS 117: Cairo, Nest of Spies",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/1MIm",
+    "Rating": 2.5,
+    "poster_path": "/vxcqpokAB2bn2PzG3g4kFsL5h7V.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vxcqpokAB2bn2PzG3g4kFsL5h7V.jpg",
+    "tmdb_id": 15152
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Kingsman: The Golden Circle",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/buJm",
+    "Rating": 2.5,
+    "poster_path": "/h3V2b7wSwJgLm0ncgJgljtPS8iV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/h3V2b7wSwJgLm0ncgJgljtPS8iV.jpg",
+    "tmdb_id": 343668
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "The King's Man",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/h714",
+    "Rating": 1.5,
+    "poster_path": "/jd9MJwItVm5iGxZO1CwtrTJ9kGD.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jd9MJwItVm5iGxZO1CwtrTJ9kGD.jpg",
+    "tmdb_id": 476669
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Double zéro",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/1f8q",
+    "Rating": 3,
+    "poster_path": "/vCPKGHTiuxg3y7JsWfN0ScoWAQ4.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vCPKGHTiuxg3y7JsWfN0ScoWAQ4.jpg",
+    "tmdb_id": 33624
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Don't Die Too Hard!",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/1Mec",
+    "Rating": 3,
+    "poster_path": "/heukySMm3v6NCV4lCqbyVK3ArGt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/heukySMm3v6NCV4lCqbyVK3ArGt.jpg",
+    "tmdb_id": 15449
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Monsters, Inc.",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/2a46",
+    "Rating": 3,
+    "poster_path": "/rIjzsrY8xQ4M4ZthmVqHtiqsioQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rIjzsrY8xQ4M4ZthmVqHtiqsioQ.jpg",
+    "tmdb_id": 585
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Johnny English",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/1YyI",
+    "Rating": 2,
+    "poster_path": "/qsSUH8zkRhbY23ebAuIHE0PhMUc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qsSUH8zkRhbY23ebAuIHE0PhMUc.jpg",
+    "tmdb_id": 9486
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Finding Nemo",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/72i",
+    "Rating": 2.5,
+    "poster_path": "/8zR2vXoXfdlknEYjfHvCbb1rJbI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8zR2vXoXfdlknEYjfHvCbb1rJbI.jpg",
+    "tmdb_id": 12
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Madagascar",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/29dc",
+    "Rating": 2.5,
+    "poster_path": "/aA1eZtISZ2rqUk2QIUgu1pXcHrm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aA1eZtISZ2rqUk2QIUgu1pXcHrm.jpg",
+    "tmdb_id": 953
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Neuilly Yo Mama!",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1tmw",
+    "Rating": 2,
+    "poster_path": "/XLNEeGnPhazwU0GuEuJMShGUvS.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/XLNEeGnPhazwU0GuEuJMShGUvS.jpg",
+    "tmdb_id": 26691
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Despicable Me",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1DD8",
+    "Rating": 2.5,
+    "poster_path": "/wuhJx9bTbxHfJHeeR3L8uRjAZ7C.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wuhJx9bTbxHfJHeeR3L8uRjAZ7C.jpg",
+    "tmdb_id": 20352
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Case départ",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/1Tq",
+    "Rating": 3,
+    "poster_path": "/eGNpK9qDsSK4hgEoLSQTraxOUsE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/eGNpK9qDsSK4hgEoLSQTraxOUsE.jpg",
+    "tmdb_id": 66118
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Hollywoo",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/2MVM",
+    "Rating": 2,
+    "poster_path": "/oI0om8vqiiBmIifxLr73nsWBFcB.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oI0om8vqiiBmIifxLr73nsWBFcB.jpg",
+    "tmdb_id": 80015
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Hotel Transylvania",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/2DF6",
+    "Rating": 2.5,
+    "poster_path": "/2SqkrWiYOrIVHI8cKHh6fNDMcnG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2SqkrWiYOrIVHI8cKHh6fNDMcnG.jpg",
+    "tmdb_id": 76492
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Monsters University",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/bQm",
+    "Rating": 1.5,
+    "poster_path": "/dyFoZ2c8J3VLoHxzDTwaTnG1YYE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dyFoZ2c8J3VLoHxzDTwaTnG1YYE.jpg",
+    "tmdb_id": 62211
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Le Crocodile du Botswanga",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7hrw",
+    "Rating": 2.5,
+    "poster_path": "/hur2WyJDF37HqbmA6NCxPqd3BTy.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hur2WyJDF37HqbmA6NCxPqd3BTy.jpg",
+    "tmdb_id": 248390
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Babysitting",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7NUq",
+    "Rating": 3,
+    "poster_path": "/lY5u3bvWXRk3KMrSoP0Sd3Ro5gW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lY5u3bvWXRk3KMrSoP0Sd3Ro5gW.jpg",
+    "tmdb_id": 262551
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Your Name.",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/cUqs",
+    "Rating": 1,
+    "poster_path": "/zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zyHjvVRgKOt9wgVx4ikp2kGArGF.jpg",
+    "tmdb_id": 372058
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "The Kissing Booth",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/geR0",
+    "Rating": 1.5,
+    "poster_path": "/d8dK08TThUbIHqCaWcGvzpUvGNq.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d8dK08TThUbIHqCaWcGvzpUvGNq.jpg",
+    "tmdb_id": 454983
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Back to the Future Part II",
+    "Year": 1989,
+    "Letterboxd URI": "https://boxd.it/2aYI",
+    "Rating": 4,
+    "poster_path": "/pvSf95zo0GZNp83QCtmK1GFLHtT.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pvSf95zo0GZNp83QCtmK1GFLHtT.jpg",
+    "tmdb_id": 165
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "The Mask",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/29rS",
+    "Rating": 3,
+    "poster_path": "/5OBK9sksRSyrwrcMtxpdxql75Sw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5OBK9sksRSyrwrcMtxpdxql75Sw.jpg",
+    "tmdb_id": 854
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Men in Black II",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/2a0y",
+    "Rating": 2.5,
+    "poster_path": "/uuCitEX1b1OdWqu8upqoSuIwmoz.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uuCitEX1b1OdWqu8upqoSuIwmoz.jpg",
+    "tmdb_id": 608
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Men in Black 3",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/103U",
+    "Rating": 3.5,
+    "poster_path": "/gCFDozeckKAWsaGWL5f190gZRnq.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gCFDozeckKAWsaGWL5f190gZRnq.jpg",
+    "tmdb_id": 41154
+  },
+  {
+    "Date": "2024-11-07",
+    "Name": "Men in Black",
+    "Year": 1997,
+    "Letterboxd URI": "https://boxd.it/2a0I",
+    "Rating": 4,
+    "poster_path": "/rd0VCTHFFIE7BbZfy0aEIkOYxGA.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rd0VCTHFFIE7BbZfy0aEIkOYxGA.jpg",
+    "tmdb_id": 607
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Zombieland: Double Tap",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/bgb6",
+    "Rating": 2.5,
+    "poster_path": "/kH705HbDWmAD6wjXknbRMtZEljc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kH705HbDWmAD6wjXknbRMtZEljc.jpg",
+    "tmdb_id": 338967
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Shaun of the Dead",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/29J8",
+    "Rating": 3,
+    "poster_path": "/vAEV1zwDC2WoNmNloCXTk8jPqD.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vAEV1zwDC2WoNmNloCXTk8jPqD.jpg",
+    "tmdb_id": 747
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Suicide Squad",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/9row",
+    "Rating": 2.5,
+    "poster_path": "/5EmbqsAD7lBt5obT1dVwwbR5sra.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5EmbqsAD7lBt5obT1dVwwbR5sra.jpg",
+    "tmdb_id": 297761
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "I Am Legend",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/21DG",
+    "Rating": 3.5,
+    "poster_path": "/dSkSEcVXUEBvOkyYAF00zvRdKrO.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dSkSEcVXUEBvOkyYAF00zvRdKrO.jpg",
+    "tmdb_id": 6479
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Aladdin",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/eSjy",
+    "Rating": 1.5,
+    "poster_path": "/1Z0gk73JuDSZyG04lSudR9zxyjr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1Z0gk73JuDSZyG04lSudR9zxyjr.jpg",
+    "tmdb_id": 420817
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Hancock",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1Zv6",
+    "Rating": 2.5,
+    "poster_path": "/e2eeuY0FOeOhKNJ9TeTvpDjmUdi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e2eeuY0FOeOhKNJ9TeTvpDjmUdi.jpg",
+    "tmdb_id": 8960
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Focus",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/7zl2",
+    "Rating": 3,
+    "poster_path": "/opGNFbQUyiod4FUx6vRrtsIIcpW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/opGNFbQUyiod4FUx6vRrtsIIcpW.jpg",
+    "tmdb_id": 256591
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Hitch",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/205o",
+    "Rating": 3,
+    "poster_path": "/d3b1doh9yAlr8rUel13YL93MMkB.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d3b1doh9yAlr8rUel13YL93MMkB.jpg",
+    "tmdb_id": 8488
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Percy Jackson: Sea of Monsters",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2D8m",
+    "Rating": 2,
+    "poster_path": "/2FxxERFRIFhW4ubkeVAGHIDb6HT.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2FxxERFRIFhW4ubkeVAGHIDb6HT.jpg",
+    "tmdb_id": 76285
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Percy Jackson & the Olympians: The Lightning Thief",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1gJi",
+    "Rating": 3,
+    "poster_path": "/7VytSOVN8JsMugBY3Y4KfmQF2QN.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7VytSOVN8JsMugBY3Y4KfmQF2QN.jpg",
+    "tmdb_id": 32657
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Incredibles 2",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/7IPg",
+    "Rating": 2.5,
+    "poster_path": "/Apish2YD3QIAepzxZ96VLkqEZo3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/Apish2YD3QIAepzxZ96VLkqEZo3.jpg",
+    "tmdb_id": 260513
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Don't Look Up",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/o0Hc",
+    "Rating": 2.5,
+    "poster_path": "/pUFoWtUNQLDHHDMm0rVX3uOhIeu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pUFoWtUNQLDHHDMm0rVX3uOhIeu.jpg",
+    "tmdb_id": 646380
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "No Hard Feelings",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/xouu",
+    "Rating": 2.5,
+    "poster_path": "/AtQ28K2mTbVsiECogXENQ8DxGbm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AtQ28K2mTbVsiECogXENQ8DxGbm.jpg",
+    "tmdb_id": 884605
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Dumb and Dumber",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/206m",
+    "Rating": 2.5,
+    "poster_path": "/cLHVGuK1iXeJzNKtHUibfnNeUIH.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cLHVGuK1iXeJzNKtHUibfnNeUIH.jpg",
+    "tmdb_id": 8467
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Ace Ventura: Pet Detective",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/25RW",
+    "Rating": 3.5,
+    "poster_path": "/tquh5DEbgRPFBHukUp9mcPbjEBb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tquh5DEbgRPFBHukUp9mcPbjEBb.jpg",
+    "tmdb_id": 3049
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Liar Liar",
+    "Year": 1997,
+    "Letterboxd URI": "https://boxd.it/28sg",
+    "Rating": 3.5,
+    "poster_path": "/yvb0rSUVGv6dQJupdjcqkuo5kaV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yvb0rSUVGv6dQJupdjcqkuo5kaV.jpg",
+    "tmdb_id": 1624
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Yes Man",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1WPW",
+    "Rating": 3.5,
+    "poster_path": "/bLT6DdHf1LWSVIViBufpkSUOnEy.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bLT6DdHf1LWSVIViBufpkSUOnEy.jpg",
+    "tmdb_id": 10201
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Dark Shadows",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/bQ2",
+    "Rating": 3,
+    "poster_path": "/bIUkkBet49KmlHoXU3WmD2K0qdL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bIUkkBet49KmlHoXU3WmD2K0qdL.jpg",
+    "tmdb_id": 62213
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Noah",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/34QA",
+    "Rating": 4,
+    "poster_path": "/AhyIZeEgzGQ5YxxQTgt4xZzxoPl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AhyIZeEgzGQ5YxxQTgt4xZzxoPl.jpg",
+    "tmdb_id": 86834
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Cast Away",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/20i8",
+    "Rating": 3.5,
+    "poster_path": "/w1bnhSkcT4pa2KQZzRoq0BHBn8T.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/w1bnhSkcT4pa2KQZzRoq0BHBn8T.jpg",
+    "tmdb_id": 8358
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "The Simpsons Movie",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/6YU",
+    "Rating": 4,
+    "poster_path": "/8RAHFsRCE4Jwa1jD00tWFCvrsIa.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8RAHFsRCE4Jwa1jD00tWFCvrsIa.jpg",
+    "tmdb_id": 35
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Ice Age",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/2apS",
+    "Rating": 3.5,
+    "poster_path": "/ecgLEPhlpEloh58OireixHvEhur.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ecgLEPhlpEloh58OireixHvEhur.jpg",
+    "tmdb_id": 425
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Frozen",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/3GNa",
+    "Rating": 2.5,
+    "poster_path": "/nnQLuzh2H6tSk1U0Zyu0ju16FXU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nnQLuzh2H6tSk1U0Zyu0ju16FXU.jpg",
+    "tmdb_id": 109445
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Bolt",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1QXg",
+    "Rating": 3,
+    "poster_path": "/1ORq9pUYEObq8to60ssU1IMgnyM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1ORq9pUYEObq8to60ssU1IMgnyM.jpg",
+    "tmdb_id": 13053
+  },
+  {
+    "Date": "2024-11-08",
+    "Name": "Ralph Breaks the Internet",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/edAy",
+    "Rating": 3.5,
+    "poster_path": "/5PK8wcRf5ORcwB1Ffi8cCaMPBvG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5PK8wcRf5ORcwB1Ffi8cCaMPBvG.jpg",
+    "tmdb_id": 404368
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "The Making of The Walking Dead",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/76Ps",
+    "Rating": 3,
+    "poster_path": "/8V7FDbfxqgA6rKTEYOKpgeORPFV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8V7FDbfxqgA6rKTEYOKpgeORPFV.jpg",
+    "tmdb_id": 241829
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Creed III",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/pf68",
+    "Rating": 3.5,
+    "poster_path": "/gToAIxdoi2RMAwFFAaXn2u6U1fm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gToAIxdoi2RMAwFFAaXn2u6U1fm.jpg",
+    "tmdb_id": 677179
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Black Adam",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/fup0",
+    "Rating": 2.5,
+    "poster_path": "/hYALH5NPM7xk2XQd2J8wrfmliIW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hYALH5NPM7xk2XQd2J8wrfmliIW.jpg",
+    "tmdb_id": 436270
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Army of the Dead",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/ic7S",
+    "Rating": 3.5,
+    "poster_path": "/m38Zh5LdjRuRckI2EFFeSV4xKUY.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/m38Zh5LdjRuRckI2EFFeSV4xKUY.jpg",
+    "tmdb_id": 503736
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Creed II",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/hgl8",
+    "Rating": 3,
+    "poster_path": "/84FrvyX2QiAy2QXYSanaCcnqgE1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/84FrvyX2QiAy2QXYSanaCcnqgE1.jpg",
+    "tmdb_id": 480530
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Death Note",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/bOS4",
+    "Rating": 2,
+    "poster_path": "/8xRQ0KG9ZZzjEiFa5fgEaTKhc0d.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8xRQ0KG9ZZzjEiFa5fgEaTKhc0d.jpg",
+    "tmdb_id": 351460
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "War for the Planet of the Apes",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/8FE2",
+    "Rating": 4,
+    "poster_path": "/4Ar01t6sW1ZZBcbz2R1wqjzIBdr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4Ar01t6sW1ZZBcbz2R1wqjzIBdr.jpg",
+    "tmdb_id": 281338
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Allegiant",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/7NNE",
+    "Rating": 3.5,
+    "poster_path": "/wy5jkm3MlRTxdFKbxPUsvRmkyKy.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wy5jkm3MlRTxdFKbxPUsvRmkyKy.jpg",
+    "tmdb_id": 262504
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Creed",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/a2qk",
+    "Rating": 3,
+    "poster_path": "/yZsrBgOgz59cCGCltv02DVzmOtA.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yZsrBgOgz59cCGCltv02DVzmOtA.jpg",
+    "tmdb_id": 312221
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Insurgent",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/7NNa",
+    "Rating": 3,
+    "poster_path": "/dtRKONnsCCfsa6BXrZqSKWN6k7m.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dtRKONnsCCfsa6BXrZqSKWN6k7m.jpg",
+    "tmdb_id": 262500
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "The Hobbit: The Battle of the Five Armies",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/43aU",
+    "Rating": 4,
+    "poster_path": "/h4wjbuC61iMaCqrO3bmGQ3ibuJE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/h4wjbuC61iMaCqrO3bmGQ3ibuJE.jpg",
+    "tmdb_id": 122917
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "The Hobbit: The Desolation of Smaug",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/nmS",
+    "Rating": 4,
+    "poster_path": "/sqZWKOM4PXtJQH9tMveBtWCdKri.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sqZWKOM4PXtJQH9tMveBtWCdKri.jpg",
+    "tmdb_id": 57158
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "World War Z",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2p2E",
+    "Rating": 3.5,
+    "poster_path": "/xqk3gTrNODmH90QEgeBgEIHN1Fu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xqk3gTrNODmH90QEgeBgEIHN1Fu.jpg",
+    "tmdb_id": 72190
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Pacific Rim",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2cB2",
+    "Rating": 4,
+    "poster_path": "/g1vCUUxa9MJw2kEEgaTAW5b23xh.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g1vCUUxa9MJw2kEEgaTAW5b23xh.jpg",
+    "tmdb_id": 68726
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "The Hobbit: An Unexpected Journey",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/GZk",
+    "Rating": 4,
+    "poster_path": "/mdy9mG31U7jSB8edfRELv53Yfjp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mdy9mG31U7jSB8edfRELv53Yfjp.jpg",
+    "tmdb_id": 49051
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": 2012,
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1OE2",
+    "Rating": 3.5,
+    "poster_path": "/fuImIBldvqlh21mJNJzFKUdUU3u.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fuImIBldvqlh21mJNJzFKUdUU3u.jpg",
+    "tmdb_id": 14161
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "The Curious Case of Benjamin Button",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/23Fk",
+    "Rating": 4,
+    "poster_path": "/17hzD5UG3RLq0BTszufC9mzXynd.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/17hzD5UG3RLq0BTszufC9mzXynd.jpg",
+    "tmdb_id": 4922
+  },
+  {
+    "Date": "2024-11-12",
+    "Name": "Fantastic Four",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/1XVw",
+    "Rating": 2.5,
+    "poster_path": "/msISNqhfehAE3xBlIdwK5tBjiev.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/msISNqhfehAE3xBlIdwK5tBjiev.jpg",
+    "tmdb_id": 9738
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Operation Portugal",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/nRBk",
+    "Rating": 3,
+    "poster_path": "/2268V5XBtpWJ3oGnvn0p6XT3cEu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2268V5XBtpWJ3oGnvn0p6XT3cEu.jpg",
+    "tmdb_id": 642684
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Shang-Chi and the Legend of the Ten Rings",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/kLDI",
+    "Rating": 4,
+    "poster_path": "/g54eUtuCTAOQaNlVpr7Kpr7sVoH.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g54eUtuCTAOQaNlVpr7Kpr7sVoH.jpg",
+    "tmdb_id": 566525
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Bullet Train",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/qW26",
+    "Rating": 4,
+    "poster_path": "/uJvMXO1DNEER2lZocNjJy2zXtYs.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uJvMXO1DNEER2lZocNjJy2zXtYs.jpg",
+    "tmdb_id": 718930
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "The Hunger Games: Catching Fire",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/3sAw",
+    "Rating": 4,
+    "poster_path": "/32mRJXEjmpcVYcQFvzvXCLPsUgS.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/32mRJXEjmpcVYcQFvzvXCLPsUgS.jpg",
+    "tmdb_id": 101299
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Paranormal Activity 4",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/2UGq",
+    "Rating": 4,
+    "poster_path": "/iD2uZwnnUwJSQdk23UTrwOif0Fj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iD2uZwnnUwJSQdk23UTrwOif0Fj.jpg",
+    "tmdb_id": 82990
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "21 Jump Street",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/J0",
+    "Rating": 3.5,
+    "poster_path": "/zEoQ0hyZqZymGNNcjajstYelFx2.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zEoQ0hyZqZymGNNcjajstYelFx2.jpg",
+    "tmdb_id": 64688
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Sucker Punch",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/1yYg",
+    "Rating": 4,
+    "poster_path": "/oQN7bmjvbIYH2H8DebvecLQ9kRK.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oQN7bmjvbIYH2H8DebvecLQ9kRK.jpg",
+    "tmdb_id": 23629
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Ratatouille",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/27ww",
+    "Rating": 3.5,
+    "poster_path": "/iFcWBdTPeHQDS3OQxBcH3QaYXYv.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iFcWBdTPeHQDS3OQxBcH3QaYXYv.jpg",
+    "tmdb_id": 2062
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Pirates of the Caribbean: At World's End",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/2aGu",
+    "Rating": 4,
+    "poster_path": "/3JjceHUzbtgJ4fJs6x2ow4ckH89.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3JjceHUzbtgJ4fJs6x2ow4ckH89.jpg",
+    "tmdb_id": 285
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Pirates of the Caribbean: Dead Man's Chest",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/2bfk",
+    "Rating": 4,
+    "poster_path": "/bzOlMYEfNmgCDnFHj3zL3RBqwau.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bzOlMYEfNmgCDnFHj3zL3RBqwau.jpg",
+    "tmdb_id": 58
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Plane",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/o0lq",
+    "Rating": 3.5,
+    "poster_path": "/brEs4KRNOpwkVByb4xfxKvQYKlD.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/brEs4KRNOpwkVByb4xfxKvQYKlD.jpg",
+    "tmdb_id": 646389
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Smile",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/xjfE",
+    "Rating": 3.5,
+    "poster_path": "/3kbtoJw6ZN0UUQhSuiRbAatr2kV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3kbtoJw6ZN0UUQhSuiRbAatr2kV.jpg",
+    "tmdb_id": 882598
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "A Quiet Place: Day One",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/sDAi",
+    "Rating": 3.5,
+    "poster_path": "/ymMaqwKN3Ovy9nlIRmk5GsnxEkx.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ymMaqwKN3Ovy9nlIRmk5GsnxEkx.jpg",
+    "tmdb_id": 762441
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Terrifier",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/eRzg",
+    "Rating": 3.5,
+    "poster_path": "/cmW2hoZXc3nLSupUi1U0kYld9P6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cmW2hoZXc3nLSupUi1U0kYld9P6.jpg",
+    "tmdb_id": 640424
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Miracle in Cell No. 7",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/nFrM",
+    "Rating": 1.5,
+    "poster_path": "/5ns6OLeD0SKslt4ea87KXIYuGc7.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5ns6OLeD0SKslt4ea87KXIYuGc7.jpg",
+    "tmdb_id": 638240
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Taken 3",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7Iqq",
+    "Rating": 1,
+    "poster_path": "/2CZkH6fYKUBq7exixbGcPa4Ksc6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2CZkH6fYKUBq7exixbGcPa4Ksc6.jpg",
+    "tmdb_id": 260346
+  },
+  {
+    "Date": "2024-11-14",
+    "Name": "Taken 2",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/2TWi",
+    "Rating": 2.5,
+    "poster_path": "/9T34Mfv3yM59iMaUIXJjYQlv2JL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9T34Mfv3yM59iMaUIXJjYQlv2JL.jpg",
+    "tmdb_id": 82675
+  },
+  {
+    "Date": "2024-11-21",
+    "Name": "The Count of Monte Cristo",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/F1Nk",
+    "Rating": 4.5,
+    "poster_path": "/g7kiprYdXxaYCZABWQwTWAgRYjl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g7kiprYdXxaYCZABWQwTWAgRYjl.jpg",
+    "tmdb_id": 1084736
+  },
+  {
+    "Date": "2024-12-02",
+    "Name": "White Chicks",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/1SpK",
+    "Rating": 3,
+    "poster_path": "/PedA5zKb8Y3nZEHPGx9LwGlfPx.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/PedA5zKb8Y3nZEHPGx9LwGlfPx.jpg",
+    "tmdb_id": 12153
+  },
+  {
+    "Date": "2024-12-16",
+    "Name": "Sunshine",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/28Xy",
+    "Rating": 2.5,
+    "poster_path": "/pyj5oX4lucbWnqV3jGyS0gpbJoc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pyj5oX4lucbWnqV3jGyS0gpbJoc.jpg",
+    "tmdb_id": 1272
+  },
+  {
+    "Date": "2024-12-17",
+    "Name": "Venom: The Last Dance",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/ynqo",
+    "Rating": 3,
+    "poster_path": "/9sAK8lZDNkH9QBFjmqLytXnmzyM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9sAK8lZDNkH9QBFjmqLytXnmzyM.jpg",
+    "tmdb_id": 912649
+  },
+  {
+    "Date": "2024-12-17",
+    "Name": "[REC]",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/20ma",
+    "Rating": 2.5,
+    "poster_path": "/cA4EJPDUCcbpI6gteKYGZlHRZl5.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cA4EJPDUCcbpI6gteKYGZlHRZl5.jpg",
+    "tmdb_id": 8329
+  },
+  {
+    "Date": "2024-12-27",
+    "Name": "Gladiator II",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/kqQQ",
+    "Rating": 4,
+    "poster_path": "/sUnGXbEdXlgHlK3EkmB5w2NiLlc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sUnGXbEdXlgHlK3EkmB5w2NiLlc.jpg",
+    "tmdb_id": 558449
+  },
+  {
+    "Date": "2025-01-05",
+    "Name": "The Kissing Booth 2",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/lrky",
+    "Rating": 1,
+    "poster_path": "/fkzXKpj6WFoF6Z291apAlMP64u0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fkzXKpj6WFoF6Z291apAlMP64u0.jpg",
+    "tmdb_id": 583083
+  },
+  {
+    "Date": "2025-01-18",
+    "Name": "Kraven the Hunter",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/jGuE",
+    "Rating": 3,
+    "poster_path": "/bwhKUzPtwtJ00CGv67IEXmS2WaM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bwhKUzPtwtJ00CGv67IEXmS2WaM.jpg",
+    "tmdb_id": 539972
+  },
+  {
+    "Date": "2025-01-21",
+    "Name": "Ford v Ferrari",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/ce74",
+    "Rating": 4,
+    "poster_path": "/2KQI0x6AEdbiN6z4LWjKZHukMzZ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2KQI0x6AEdbiN6z4LWjKZHukMzZ.jpg",
+    "tmdb_id": 359724
+  },
+  {
+    "Date": "2025-01-22",
+    "Name": "Real Steel",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/147m",
+    "Rating": 3,
+    "poster_path": "/ebV1lxTaLBS1Vk1ihHCVhhdg03X.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ebV1lxTaLBS1Vk1ihHCVhhdg03X.jpg",
+    "tmdb_id": 39254
+  },
+  {
+    "Date": "2025-01-24",
+    "Name": "Fury",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/6JwC",
+    "Rating": 3.5,
+    "poster_path": "/7V05gBGiE5LCTKzylIva2nG3JVW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7V05gBGiE5LCTKzylIva2nG3JVW.jpg",
+    "tmdb_id": 228150
+  },
+  {
+    "Date": "2025-01-24",
+    "Name": "Sonic the Hedgehog 3",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/zq0U",
+    "Rating": 4,
+    "poster_path": "/gERwLGTa6JGN4qXjkip13eDaxy1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gERwLGTa6JGN4qXjkip13eDaxy1.jpg",
+    "tmdb_id": 939243
+  },
+  {
+    "Date": "2025-01-27",
+    "Name": "The Nice Guys",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/94Hg",
+    "Rating": 2.5,
+    "poster_path": "/p94BXHeJQagD3M8p4LuAB87RMQv.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/p94BXHeJQagD3M8p4LuAB87RMQv.jpg",
+    "tmdb_id": 290250
+  },
+  {
+    "Date": "2025-02-20",
+    "Name": "Captain America: Brave New World",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/uYDm",
+    "Rating": 3,
+    "poster_path": "/wDRXmiAEJdhNIcuetM4016fOCx8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wDRXmiAEJdhNIcuetM4016fOCx8.jpg",
+    "tmdb_id": 822119
+  },
+  {
+    "Date": "2025-03-11",
+    "Name": "Saw",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/2aWW",
+    "Rating": 4,
+    "poster_path": "/3fhUaMnlY72GGuBlzEeKA4brZAb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3fhUaMnlY72GGuBlzEeKA4brZAb.jpg",
+    "tmdb_id": 176
+  },
+  {
+    "Date": "2025-03-20",
+    "Name": "Final Destination",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/1YrC",
+    "Rating": 3,
+    "poster_path": "/ooTB3486ybRLrIr46vdjEhoYcsy.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ooTB3486ybRLrIr46vdjEhoYcsy.jpg",
+    "tmdb_id": 9532
+  },
+  {
+    "Date": "2025-03-21",
+    "Name": "Flow",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/v1Ei",
+    "Rating": 4,
+    "poster_path": "/ggFrFg3l2FPOIkwgsXZDzEQ5nrg.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ggFrFg3l2FPOIkwgsXZDzEQ5nrg.jpg",
+    "tmdb_id": 1281775
+  },
+  {
+    "Date": "2025-04-16",
+    "Name": "Mr. & Mrs. Smith",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/29CG",
+    "Rating": 2.5,
+    "poster_path": "/jBForKpzcUBTRBdPJs8IEyBjeir.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jBForKpzcUBTRBdPJs8IEyBjeir.jpg",
+    "tmdb_id": 787
+  },
+  {
+    "Date": "2025-04-19",
+    "Name": "The Wild Robot",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/IWFy",
+    "Rating": 4.5,
+    "poster_path": "/2IUCa73cvvIgZSiJcNtPBf4L5iF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2IUCa73cvvIgZSiJcNtPBf4L5iF.jpg",
+    "tmdb_id": 1184918
+  },
+  {
+    "Date": "2025-04-21",
+    "Name": "The Avengers",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/1xFW",
+    "Rating": 3.5,
+    "poster_path": "/ylsAO88v2tF0iXRFojPa0UaAJf1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ylsAO88v2tF0iXRFojPa0UaAJf1.jpg",
+    "tmdb_id": 24428
+  },
+  {
+    "Date": "2025-04-21",
+    "Name": "Babysitting 2",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/aTwK",
+    "Rating": 3,
+    "poster_path": "/aZ7JWKenzR28H4bCgFJwdCuHovW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aZ7JWKenzR28H4bCgFJwdCuHovW.jpg",
+    "tmdb_id": 331836
+  },
+  {
+    "Date": "2025-04-22",
+    "Name": "Taken",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1ZXa",
+    "Rating": 3.5,
+    "poster_path": "/4h9b8E2C9FdIVKbQRDMwZzpSIjL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4h9b8E2C9FdIVKbQRDMwZzpSIjL.jpg",
+    "tmdb_id": 8681
+  },
+  {
+    "Date": "2025-04-22",
+    "Name": "The Hangover Part II",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/PZI",
+    "Rating": 3,
+    "poster_path": "/cxMt5EMcyZYQZo3WAEJvGulM7bf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cxMt5EMcyZYQZo3WAEJvGulM7bf.jpg",
+    "tmdb_id": 45243
+  },
+  {
+    "Date": "2025-04-22",
+    "Name": "The Hangover Part III",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/3GNY",
+    "Rating": 2.5,
+    "poster_path": "/nkPb9ntp6sI6kjodZg1tpdc7nWM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nkPb9ntp6sI6kjodZg1tpdc7nWM.jpg",
+    "tmdb_id": 109439
+  },
+  {
+    "Date": "2025-04-26",
+    "Name": "Sinners",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/KQMM",
+    "Rating": 4.5,
+    "poster_path": "/9ZmdDOIbiFCZOvRXBQ7muWUu32l.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9ZmdDOIbiFCZOvRXBQ7muWUu32l.jpg",
+    "tmdb_id": 1233413
+  },
+  {
+    "Date": "2025-05-01",
+    "Name": "Thunderbolts*",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/BfbQ",
+    "Rating": 4,
+    "poster_path": "/zctISSBEZRgVQPG178HqRJMnc4x.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zctISSBEZRgVQPG178HqRJMnc4x.jpg",
+    "tmdb_id": 986056
+  },
+  {
+    "Date": "2025-05-15",
+    "Name": "Thor: Ragnarok",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/8MHi",
+    "Rating": 4,
+    "poster_path": "/mAA8RXkgF87jSWWMSf6hgLl73mk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mAA8RXkgF87jSWWMSf6hgLl73mk.jpg",
+    "tmdb_id": 284053
+  },
+  {
+    "Date": "2025-05-15",
+    "Name": "The Marvels",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/mwU4",
+    "Rating": 2.5,
+    "poster_path": "/mqAQO6j5gkq6iwCXNbXpzf0RXBU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mqAQO6j5gkq6iwCXNbXpzf0RXBU.jpg",
+    "tmdb_id": 609681
+  },
+  {
+    "Date": "2025-05-15",
+    "Name": "Gold Brick",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/H78m",
+    "Rating": 3,
+    "poster_path": "/iIVTJE7Ldq3uVgYNL3QP5zUXmp8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iIVTJE7Ldq3uVgYNL3QP5zUXmp8.jpg",
+    "tmdb_id": 1140056
+  },
+  {
+    "Date": "2025-05-17",
+    "Name": "Jumper",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/20ss",
+    "Rating": 2,
+    "poster_path": "/l6xYBnfWcAnuMhQtzDlUnNWfuyQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/l6xYBnfWcAnuMhQtzDlUnNWfuyQ.jpg",
+    "tmdb_id": 8247
+  },
+  {
+    "Date": "2025-05-17",
+    "Name": "The Sorcerer's Apprentice",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1sGg",
+    "Rating": 2,
+    "poster_path": "/iszDGgBwKd47GMmnWekGSVj9wwM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iszDGgBwKd47GMmnWekGSVj9wwM.jpg",
+    "tmdb_id": 27022
+  },
+  {
+    "Date": "2025-05-17",
+    "Name": "Warm Bodies",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2TFm",
+    "Rating": 3,
+    "poster_path": "/yJw1f2xD1evLDzvVO2jnYdSRzWt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yJw1f2xD1evLDzvVO2jnYdSRzWt.jpg",
+    "tmdb_id": 82654
+  },
+  {
+    "Date": "2025-05-17",
+    "Name": "Maleficent",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/3v1u",
+    "Rating": 3,
+    "poster_path": "/v1ggksl61yDoTL3WqqUyoKhN6TH.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/v1ggksl61yDoTL3WqqUyoKhN6TH.jpg",
+    "tmdb_id": 102651
+  },
+  {
+    "Date": "2025-06-04",
+    "Name": "Pirates of the Caribbean: Dead Men Tell No Tales",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/5a9m",
+    "Rating": 2.5,
+    "poster_path": "/fVMudKQfhosujwgAKhfxNGfS9sL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fVMudKQfhosujwgAKhfxNGfS9sL.jpg",
+    "tmdb_id": 166426
+  },
+  {
+    "Date": "2025-06-04",
+    "Name": "The Tuche Family: The American Dream",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/cOXg",
+    "Rating": 3,
+    "poster_path": "/lQKTIBaI8BrsWY7CPcB8jgvW4vE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lQKTIBaI8BrsWY7CPcB8jgvW4vE.jpg",
+    "tmdb_id": 369776
+  },
+  {
+    "Date": "2025-06-04",
+    "Name": "Passengers",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/8lFu",
+    "Rating": 3.5,
+    "poster_path": "/o42I8c12vtqDBg9oqrUK7dzfH4e.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/o42I8c12vtqDBg9oqrUK7dzfH4e.jpg",
+    "tmdb_id": 274870
+  },
+  {
+    "Date": "2025-06-04",
+    "Name": "Annabelle",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7l84",
+    "Rating": 3,
+    "poster_path": "/yLsuU2P2SpDYFwtZQ7dtfVAf6TE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yLsuU2P2SpDYFwtZQ7dtfVAf6TE.jpg",
+    "tmdb_id": 250546
+  },
+  {
+    "Date": "2025-06-09",
+    "Name": "Iron Man",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/28dA",
+    "Rating": 3,
+    "poster_path": "/kNKUCNLu1lZDGAHOBEHxR6psYHx.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kNKUCNLu1lZDGAHOBEHxR6psYHx.jpg",
+    "tmdb_id": 1726
+  },
+  {
+    "Date": "2025-06-10",
+    "Name": "Everything Everywhere All at Once",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/jUk4",
+    "Rating": 4,
+    "poster_path": "/qHy7BlA1I3iUEIGp7atsMjSNJSK.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qHy7BlA1I3iUEIGp7atsMjSNJSK.jpg",
+    "tmdb_id": 545611
+  },
+  {
+    "Date": "2025-06-12",
+    "Name": "My Fault",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/CcDk",
+    "Rating": 0.5,
+    "poster_path": "/3ZCfSSxZ2e4Kiwu3Y9dvfT5n1m6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3ZCfSSxZ2e4Kiwu3Y9dvfT5n1m6.jpg",
+    "tmdb_id": 1010581
+  },
+  {
+    "Date": "2025-06-13",
+    "Name": "Inglourious Basterds",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1JzG",
+    "Rating": 4,
+    "poster_path": "/lPKwFzX4TiWLA4Mo5Bnf8aIIrJm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lPKwFzX4TiWLA4Mo5Bnf8aIIrJm.jpg",
+    "tmdb_id": 16869
+  },
+  {
+    "Date": "2025-06-14",
+    "Name": "Parasite",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/hTha",
+    "Rating": 4.5,
+    "poster_path": "/7hLSzZX2jROmEXz2aEoh6JKUFy2.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7hLSzZX2jROmEXz2aEoh6JKUFy2.jpg",
+    "tmdb_id": 496243
+  },
+  {
+    "Date": "2025-06-16",
+    "Name": "Jurassic Park",
+    "Year": 1993,
+    "Letterboxd URI": "https://boxd.it/2aA2",
+    "Rating": 4,
+    "poster_path": "/i268GVIlp777W1Ykws5R3LYYLIw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/i268GVIlp777W1Ykws5R3LYYLIw.jpg",
+    "tmdb_id": 329
+  },
+  {
+    "Date": "2025-06-26",
+    "Name": "Memories of Murder",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/1TSo",
+    "Rating": 3.5,
+    "poster_path": "/fz5NYI8PUmPplu3UA70AOqEDJL7.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fz5NYI8PUmPplu3UA70AOqEDJL7.jpg",
+    "tmdb_id": 11423
+  },
+  {
+    "Date": "2025-06-28",
+    "Name": "He's All That",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/bFbA",
+    "Rating": 0.5,
+    "poster_path": "/knIJuuHWjPZKtGZlC9VCrEoY73V.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/knIJuuHWjPZKtGZlC9VCrEoY73V.jpg",
+    "tmdb_id": 347626
+  },
+  {
+    "Date": "2025-07-03",
+    "Name": "The Lost World: Jurassic Park",
+    "Year": 1997,
+    "Letterboxd URI": "https://boxd.it/2azS",
+    "Rating": 2,
+    "poster_path": "/7E1xABX8fPJgFMgjKXcNRq6qDZP.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7E1xABX8fPJgFMgjKXcNRq6qDZP.jpg",
+    "tmdb_id": 330
+  },
+  {
+    "Date": "2025-07-06",
+    "Name": "Jurassic Park III",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/2azI",
+    "Rating": 3,
+    "poster_path": "/evUJpV6wfX8mHCuuHTTdCK0EiEl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/evUJpV6wfX8mHCuuHTTdCK0EiEl.jpg",
+    "tmdb_id": 331
+  },
+  {
+    "Date": "2025-07-07",
+    "Name": "Jurassic World",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/4n0g",
+    "Rating": 3,
+    "poster_path": "/gUY5B8OaRqPnLUwjNxITUTrPbIN.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gUY5B8OaRqPnLUwjNxITUTrPbIN.jpg",
+    "tmdb_id": 135397
+  },
+  {
+    "Date": "2025-07-09",
+    "Name": "Superman",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/E9IU",
+    "Rating": 4.5,
+    "poster_path": "/bL1U8TDb2ZiThIBFAdKHOfpv8lk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bL1U8TDb2ZiThIBFAdKHOfpv8lk.jpg",
+    "tmdb_id": 1061474
+  },
+  {
+    "Date": "2025-07-10",
+    "Name": "The Three Musketeers: Milady",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/vSti",
+    "Rating": 3,
+    "poster_path": "/oxPdfTJLfCZauJiUdhHe5lA4bhD.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oxPdfTJLfCZauJiUdhHe5lA4bhD.jpg",
+    "tmdb_id": 845111
+  },
+  {
+    "Date": "2025-07-10",
+    "Name": "The Three Musketeers: D'Artagnan",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/tXF0",
+    "Rating": 3,
+    "poster_path": "/lm0pfF0HSLsSpFlhGCmR6Bhl8EE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lm0pfF0HSLsSpFlhGCmR6Bhl8EE.jpg",
+    "tmdb_id": 796185
+  },
+  {
+    "Date": "2025-07-12",
+    "Name": "Oldboy",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/29R2",
+    "Rating": 3.5,
+    "poster_path": "/u0Ct3708zXaoJCkF65bLfenQmhM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/u0Ct3708zXaoJCkF65bLfenQmhM.jpg",
+    "tmdb_id": 670
+  },
+  {
+    "Date": "2025-07-14",
+    "Name": "Jurassic World: Fallen Kingdom",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/bOnU",
+    "Rating": 3,
+    "poster_path": "/oseBCjfTaA5ZaeuR3NR6rgwa3kR.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oseBCjfTaA5ZaeuR3NR6rgwa3kR.jpg",
+    "tmdb_id": 351286
+  },
+  {
+    "Date": "2025-07-16",
+    "Name": "Jurassic World Dominion",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/ikXW",
+    "Rating": 1.5,
+    "poster_path": "/lfx3ilYMmvtnsSXikHGoJcSkUTs.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lfx3ilYMmvtnsSXikHGoJcSkUTs.jpg",
+    "tmdb_id": 507086
+  },
+  {
+    "Date": "2025-07-17",
+    "Name": "Sharknado 2: The Second One",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7hGQ",
+    "Rating": 0.5,
+    "poster_path": "/zJIruNnaGLZMBCXAD9eBYGgkYgI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zJIruNnaGLZMBCXAD9eBYGgkYgI.jpg",
+    "tmdb_id": 248504
+  },
+  {
+    "Date": "2025-07-19",
+    "Name": "Sharknado 3: Oh Hell No!",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/aRYM",
+    "Rating": 1,
+    "poster_path": "/r7pYDCfhqw1DIxAcNNPvwKnn8ms.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r7pYDCfhqw1DIxAcNNPvwKnn8ms.jpg",
+    "tmdb_id": 331446
+  },
+  {
+    "Date": "2025-07-20",
+    "Name": "Sharknado 4: The 4th Awakens",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/dF4e",
+    "Rating": 0.5,
+    "poster_path": "/n3Kpn1kLcjvWx0QhK0XhFEirnyP.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n3Kpn1kLcjvWx0QhK0XhFEirnyP.jpg",
+    "tmdb_id": 390989
+  },
+  {
+    "Date": "2025-07-22",
+    "Name": "Sharknado 5: Global Swarming",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/fB4S",
+    "Rating": 0.5,
+    "poster_path": "/g09UuM2Fd0iiFgXWGD1qW6IyXs5.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g09UuM2Fd0iiFgXWGD1qW6IyXs5.jpg",
+    "tmdb_id": 438970
+  },
+  {
+    "Date": "2025-07-23",
+    "Name": "The Last Sharknado: It's About Time",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/j1gQ",
+    "Rating": 0.5,
+    "poster_path": "/eHehSkBhhBqapetWEtjF8Yf9rd2.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/eHehSkBhhBqapetWEtjF8Yf9rd2.jpg",
+    "tmdb_id": 523849
+  },
+  {
+    "Date": "2025-07-24",
+    "Name": "The Fantastic 4: First Steps",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/mP6C",
+    "Rating": 4,
+    "poster_path": "/rNc4KARs6fVa4axzvuv3NfUiNy1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rNc4KARs6fVa4axzvuv3NfUiNy1.jpg",
+    "tmdb_id": 617126
+  },
+  {
+    "Date": "2025-08-05",
+    "Name": "Spider-Man: Homecoming",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/aboM",
+    "Rating": 3.5,
+    "poster_path": "/77Z0g5fc1qWJ7SfHyeiHsMkYx5O.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/77Z0g5fc1qWJ7SfHyeiHsMkYx5O.jpg",
+    "tmdb_id": 315635
+  },
+  {
+    "Date": "2025-08-11",
+    "Name": "Final Destination Bloodlines",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/l5y4",
+    "Rating": 2.5,
+    "poster_path": "/4uI8C2zcfLWRhZDBgd0oTlZjV9j.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4uI8C2zcfLWRhZDBgd0oTlZjV9j.jpg",
+    "tmdb_id": 574475
+  },
+  {
+    "Date": "2025-08-11",
+    "Name": "The Final Destination",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1EmW",
+    "Rating": 1.5,
+    "poster_path": "/f5WuHcfoQTP0ZT9p9qipDYk7b9I.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/f5WuHcfoQTP0ZT9p9qipDYk7b9I.jpg",
+    "tmdb_id": 19912
+  },
+  {
+    "Date": "2025-08-11",
+    "Name": "Final Destination 5",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/r1k",
+    "Rating": 1,
+    "poster_path": "/o8lYhiXBiDKpE07iacJv76TX1gA.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/o8lYhiXBiDKpE07iacJv76TX1gA.jpg",
+    "tmdb_id": 55779
+  },
+  {
+    "Date": "2025-08-11",
+    "Name": "Final Destination 3",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/1Z40",
+    "Rating": 1,
+    "poster_path": "/jP2pfzQlvixYAbBkoXGPkjCLVRj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jP2pfzQlvixYAbBkoXGPkjCLVRj.jpg",
+    "tmdb_id": 9286
+  },
+  {
+    "Date": "2025-08-11",
+    "Name": "Final Destination 2",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/1YSS",
+    "Rating": 1,
+    "poster_path": "/dT4lecoyrfEuSHmcFs5Kqef3giJ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dT4lecoyrfEuSHmcFs5Kqef3giJ.jpg",
+    "tmdb_id": 9358
+  },
+  {
+    "Date": "2025-08-11",
+    "Name": "Transformers",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/280c",
+    "Rating": 3.5,
+    "poster_path": "/riwrxn8gSdvHqARVxSlwMaEJxT3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/riwrxn8gSdvHqARVxSlwMaEJxT3.jpg",
+    "tmdb_id": 1858
+  },
+  {
+    "Date": "2025-08-13",
+    "Name": "Transformers: Revenge of the Fallen",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/20gG",
+    "Rating": 2,
+    "poster_path": "/fgUlcYSp0iY1fJN9mPx6ZR50mjp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fgUlcYSp0iY1fJN9mPx6ZR50mjp.jpg",
+    "tmdb_id": 8373
+  },
+  {
+    "Date": "2025-08-14",
+    "Name": "Transformers: Dark of the Moon",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/16aC",
+    "Rating": 3.5,
+    "poster_path": "/30ARa1BLnID8t7O4tPzTDXTa6pZ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/30ARa1BLnID8t7O4tPzTDXTa6pZ.jpg",
+    "tmdb_id": 38356
+  },
+  {
+    "Date": "2025-08-15",
+    "Name": "Transformers: Age of Extinction",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/3d1m",
+    "Rating": 1.5,
+    "poster_path": "/jX44v2Czbgg87DNnkB0efx0RtFs.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jX44v2Czbgg87DNnkB0efx0RtFs.jpg",
+    "tmdb_id": 91314
+  },
+  {
+    "Date": "2025-08-16",
+    "Name": "Transformers: The Last Knight",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/b8xo",
+    "Rating": 2,
+    "poster_path": "/oGw5OVdGHx91f70MqJPCq4JlPN8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/oGw5OVdGHx91f70MqJPCq4JlPN8.jpg",
+    "tmdb_id": 335988
+  },
+  {
+    "Date": "2025-08-16",
+    "Name": "Trap",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/D4nK",
+    "Rating": 2.5,
+    "poster_path": "/aNti0Y0Bo5YVW8WRrIlpXxXt5AM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aNti0Y0Bo5YVW8WRrIlpXxXt5AM.jpg",
+    "tmdb_id": 1032823
+  },
+  {
+    "Date": "2025-08-17",
+    "Name": "Bumblebee",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/f21O",
+    "Rating": 2.5,
+    "poster_path": "/8ypa8szrl6hhfQGoWPin5cOEeRj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8ypa8szrl6hhfQGoWPin5cOEeRj.jpg",
+    "tmdb_id": 424783
+  },
+  {
+    "Date": "2025-08-19",
+    "Name": "Transformers: Rise of the Beasts",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/oQTa",
+    "Rating": 2.5,
+    "poster_path": "/kq6AYN96FjWSZQVRYpAPmBAVq2s.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kq6AYN96FjWSZQVRYpAPmBAVq2s.jpg",
+    "tmdb_id": 667538
+  },
+  {
+    "Date": "2025-08-20",
+    "Name": "Transformers One",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/q7bc",
+    "Rating": 3.5,
+    "poster_path": "/6PVLEv0WvXyIbp3RvGC5j3X5dAz.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6PVLEv0WvXyIbp3RvGC5j3X5dAz.jpg",
+    "tmdb_id": 698687
+  },
+  {
+    "Date": "2025-08-20",
+    "Name": "Palmer",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/gmRW",
+    "Rating": 3,
+    "poster_path": "/xSDdRAjxKAGi8fUBLOqSrBhJmF0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xSDdRAjxKAGi8fUBLOqSrBhJmF0.jpg",
+    "tmdb_id": 458220
+  },
+  {
+    "Date": "2025-08-22",
+    "Name": "28 Years Later",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/FEGM",
+    "Rating": 3,
+    "poster_path": "/3ACUg2j2ZsgrwT1RnaBmni8mOuI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3ACUg2j2ZsgrwT1RnaBmni8mOuI.jpg",
+    "tmdb_id": 1100988
+  },
+  {
+    "Date": "2025-09-14",
+    "Name": "Girl in the Basement",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/u9PQ",
+    "Rating": 3,
+    "poster_path": "/tPP9n6r5QrIKPnshnJqE7klptj2.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tPP9n6r5QrIKPnshnJqE7klptj2.jpg",
+    "tmdb_id": 801335
+  },
+  {
+    "Date": "2025-09-17",
+    "Name": "McWalter",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/NDz2",
+    "Rating": 3,
+    "poster_path": "/93XDwOGPFh4HJEMmOSSrWL29tOM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/93XDwOGPFh4HJEMmOSSrWL29tOM.jpg",
+    "tmdb_id": 1301072
+  },
+  {
+    "Date": "2025-09-25",
+    "Name": "Weapons",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/EMTM",
+    "Rating": 2,
+    "poster_path": "/3eRJV97oZDY6LORwPNdWlfdPLnd.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3eRJV97oZDY6LORwPNdWlfdPLnd.jpg",
+    "tmdb_id": 1078605
+  },
+  {
+    "Date": "2025-09-29",
+    "Name": "Tangled",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/15gO",
+    "Rating": 4,
+    "poster_path": "/xZhAFR0N2r5q7tJNWaBGzHUaeb5.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xZhAFR0N2r5q7tJNWaBGzHUaeb5.jpg",
+    "tmdb_id": 38757
+  },
+  {
+    "Date": "2025-10-03",
+    "Name": "Whiplash",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7bQA",
+    "Rating": 4.5,
+    "poster_path": "/3XriEpTdnplQRzyphAC0cu3emns.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3XriEpTdnplQRzyphAC0cu3emns.jpg",
+    "tmdb_id": 244786
+  },
+  {
+    "Date": "2025-10-04",
+    "Name": "Hercules",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/5B7s",
+    "Rating": 2,
+    "poster_path": "/fddSmqy89RCMafzvGbUJM11BWTV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fddSmqy89RCMafzvGbUJM11BWTV.jpg",
+    "tmdb_id": 184315
+  },
+  {
+    "Date": "2025-10-09",
+    "Name": "The Conjuring: Last Rites",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/Dh8e",
+    "Rating": 2,
+    "poster_path": "/mlkMH0Em29I0QBc7YeRc9yGFRKw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mlkMH0Em29I0QBc7YeRc9yGFRKw.jpg",
+    "tmdb_id": 1038392
+  },
+  {
+    "Date": "2025-10-23",
+    "Name": "Chainsaw Man – The Movie: Reze Arc",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/Kgyu",
+    "Rating": 4,
+    "poster_path": "/cHcG6wXRPjIbeUqydKdG7r0oMmc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cHcG6wXRPjIbeUqydKdG7r0oMmc.jpg",
+    "tmdb_id": 1218925
+  },
+  {
+    "Date": "2025-11-11",
+    "Name": "12 Years a Slave",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/2D2e",
+    "Rating": 3,
+    "poster_path": "/AeoXonCArZda8vgBb7IbXiUJsdi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AeoXonCArZda8vgBb7IbXiUJsdi.jpg",
+    "tmdb_id": 76203
+  },
+  {
+    "Date": "2025-11-11",
+    "Name": "Soldier Boy",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/nTR0",
+    "Rating": 1,
+    "poster_path": "/a6hwBYl3po066akX8iuc3RUnyld.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/a6hwBYl3po066akX8iuc3RUnyld.jpg",
+    "tmdb_id": 643794
+  },
+  {
+    "Date": "2025-11-11",
+    "Name": "Frankenstein",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/Ecsg",
+    "Rating": 3.5,
+    "poster_path": "/aSMz7X2yQaN0ojeXEmOonbIJFhU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aSMz7X2yQaN0ojeXEmOonbIJFhU.jpg",
+    "tmdb_id": 1062722
+  },
+  {
+    "Date": "2025-11-13",
+    "Name": "The Artist",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/2AwK",
+    "Rating": 2.5,
+    "poster_path": "/khtVL4abxYczXAWbo1wAz13CLx3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/khtVL4abxYczXAWbo1wAz13CLx3.jpg",
+    "tmdb_id": 74643
+  },
+  {
+    "Date": "2025-11-15",
+    "Name": "Pan's Labyrinth",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/28No",
+    "Rating": 3,
+    "poster_path": "/bpzGLrQC5nXvU3wrLtp1TDIKYX9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bpzGLrQC5nXvU3wrLtp1TDIKYX9.jpg",
+    "tmdb_id": 1417
+  },
+  {
+    "Date": "2025-11-16",
+    "Name": "Nosferatu",
+    "Year": 1922,
+    "Letterboxd URI": "https://boxd.it/29TM",
+    "Rating": 2,
+    "poster_path": "/9WUpFfsUIHuiY4MwTEw46Rvf1Od.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9WUpFfsUIHuiY4MwTEw46Rvf1Od.jpg",
+    "tmdb_id": 653
+  },
+  {
+    "Date": "2025-11-17",
+    "Name": "Godzilla Minus One",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/zu4c",
+    "Rating": 3,
+    "poster_path": "/tBzOqSc51CiUeOlxW2unvYVBU8v.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tBzOqSc51CiUeOlxW2unvYVBU8v.jpg",
+    "tmdb_id": 940721
+  },
+  {
+    "Date": "2025-11-18",
+    "Name": "The Departed",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/28MA",
+    "Rating": 4,
+    "poster_path": "/xHeuF5zzlx1YxkULiz0mx1TMBJ7.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xHeuF5zzlx1YxkULiz0mx1TMBJ7.jpg",
+    "tmdb_id": 1422
+  },
+  {
+    "Date": "2025-12-01",
+    "Name": "La La Land",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/a5fa",
+    "Rating": 3,
+    "poster_path": "/5KIj6aioW1UtUT1IV0qqW5iZbNH.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5KIj6aioW1UtUT1IV0qqW5iZbNH.jpg",
+    "tmdb_id": 313369
+  },
+  {
+    "Date": "2025-12-03",
+    "Name": "Grave of the Fireflies",
+    "Year": 1988,
+    "Letterboxd URI": "https://boxd.it/1RUM",
+    "Rating": 4.5,
+    "poster_path": "/r9a6jyW4CBsQ5QyF12eJC84YdAd.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r9a6jyW4CBsQ5QyF12eJC84YdAd.jpg",
+    "tmdb_id": 12477
+  },
+  {
+    "Date": "2025-12-07",
+    "Name": "Ad Astra",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/ePzI",
+    "Rating": 3,
+    "poster_path": "/cJ0wqaQ9KPzs3fROXUuaWgRg9Pj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cJ0wqaQ9KPzs3fROXUuaWgRg9Pj.jpg",
+    "tmdb_id": 419704
+  },
+  {
+    "Date": "2025-12-09",
+    "Name": "The Nightmare Before Christmas",
+    "Year": 1993,
+    "Letterboxd URI": "https://boxd.it/1YzQ",
+    "Rating": 4,
+    "poster_path": "/41hibKUdlEo6Qy8BZmc5GOenB8y.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/41hibKUdlEo6Qy8BZmc5GOenB8y.jpg",
+    "tmdb_id": 9479
+  },
+  {
+    "Date": "2025-12-10",
+    "Name": "Prospect",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/iijg",
+    "Rating": 1.5,
+    "poster_path": "/3oCJsENcfJd6tx5hN7FjfYNu3gY.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3oCJsENcfJd6tx5hN7FjfYNu3gY.jpg",
+    "tmdb_id": 506072
+  },
+  {
+    "Date": "2025-12-11",
+    "Name": "Master and Commander: The Far Side of the World",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/200S",
+    "Rating": 2,
+    "poster_path": "/xgxlMRIrtHqmkUKv9IuMnXINYsE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xgxlMRIrtHqmkUKv9IuMnXINYsE.jpg",
+    "tmdb_id": 8619
+  },
+  {
+    "Date": "2025-12-14",
+    "Name": "Pompeii",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/2E8W",
+    "Rating": 2.5,
+    "poster_path": "/msjN6FbxE1gt6esDicVLO2mVpBe.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/msjN6FbxE1gt6esDicVLO2mVpBe.jpg",
+    "tmdb_id": 76649
+  },
+  {
+    "Date": "2025-12-16",
+    "Name": "Dungeons & Dragons: Honor Among Thieves",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/hN1A",
+    "Rating": 2.5,
+    "poster_path": "/mluzig5cwjFTLE2CiV7eg8c8CrX.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mluzig5cwjFTLE2CiV7eg8c8CrX.jpg",
+    "tmdb_id": 493529
+  },
+  {
+    "Date": "2025-12-17",
+    "Name": "Lord of War",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/284y",
+    "Rating": 2,
+    "poster_path": "/xdtwvmZaYiDMivwQLuuM146rrCj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xdtwvmZaYiDMivwQLuuM146rrCj.jpg",
+    "tmdb_id": 1830
+  },
+  {
+    "Date": "2025-12-18",
+    "Name": "Van Helsing",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/21aa",
+    "Rating": 1.5,
+    "poster_path": "/hnZwzv8yCU27nNnMnquyo9n9cR3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hnZwzv8yCU27nNnMnquyo9n9cR3.jpg",
+    "tmdb_id": 7131
+  },
+  {
+    "Date": "2025-12-19",
+    "Name": "Jojo Rabbit",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/iEBG",
+    "Rating": 2.5,
+    "poster_path": "/1uiuoWE0XUqCZpwWKMQwoFpqjkp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1uiuoWE0XUqCZpwWKMQwoFpqjkp.jpg",
+    "tmdb_id": 515001
+  },
+  {
+    "Date": "2025-12-20",
+    "Name": "Mother",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1m9g",
+    "Rating": 2,
+    "poster_path": "/lkcYWbWC2hlOyiaC649Br4qLjoW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lkcYWbWC2hlOyiaC649Br4qLjoW.jpg",
+    "tmdb_id": 698885
+  },
+  {
+    "Date": "2025-12-21",
+    "Name": "The Fly",
+    "Year": 1986,
+    "Letterboxd URI": "https://boxd.it/1YIe",
+    "Rating": 3.5,
+    "poster_path": "/xRmSKEQ6sw9yHoe4W3ftvdEG91X.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xRmSKEQ6sw9yHoe4W3ftvdEG91X.jpg",
+    "tmdb_id": 9426
+  },
+  {
+    "Date": "2025-12-23",
+    "Name": "Akira",
+    "Year": 1988,
+    "Letterboxd URI": "https://boxd.it/2b1i",
+    "Rating": 2.5,
+    "poster_path": "/8fCn7TwTe0Z4fTugIiLssX6UcHe.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8fCn7TwTe0Z4fTugIiLssX6UcHe.jpg",
+    "tmdb_id": 149
+  },
+  {
+    "Date": "2025-12-24",
+    "Name": "Zodiac",
+    "Year": 2007,
+    "Letterboxd URI": "https://boxd.it/27MO",
+    "Rating": 4,
+    "poster_path": "/ajHaO6hqFmvRNsUh3BIFwE5ghsI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ajHaO6hqFmvRNsUh3BIFwE5ghsI.jpg",
+    "tmdb_id": 1949
+  },
+  {
+    "Date": "2025-12-26",
+    "Name": "Magazine Dreams",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/tv1w",
+    "Rating": 2.5,
+    "poster_path": "/vSidx9NHKuQIPEQ4yI9b9zkTeh3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vSidx9NHKuQIPEQ4yI9b9zkTeh3.jpg",
+    "tmdb_id": 784524
+  },
+  {
+    "Date": "2025-12-27",
+    "Name": "The Descent",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/1YNy",
+    "Rating": 3,
+    "poster_path": "/hUZbZj7yb16tokai802DmawqUxE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hUZbZj7yb16tokai802DmawqUxE.jpg",
+    "tmdb_id": 9392
+  },
+  {
+    "Date": "2025-12-28",
+    "Name": "Rope",
+    "Year": 1948,
+    "Letterboxd URI": "https://boxd.it/28yo",
+    "Rating": 4,
+    "poster_path": "/3RPGC82EQVY3syzvD6ECeZCg39w.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3RPGC82EQVY3syzvD6ECeZCg39w.jpg",
+    "tmdb_id": 1580
+  },
+  {
+    "Date": "2025-12-28",
+    "Name": "Thor",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/1WQU",
+    "Rating": 1.5,
+    "poster_path": "/q8pF6s9b9veTQvxTqMDIQf9nJKi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/q8pF6s9b9veTQvxTqMDIQf9nJKi.jpg",
+    "tmdb_id": 10195
+  },
+  {
+    "Date": "2025-12-28",
+    "Name": "The New Adventures of Aladdin",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/bw1G",
+    "Rating": 2,
+    "poster_path": "/4ugfhfTwkqGjF3uDx9cUHd0Z4ds.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/4ugfhfTwkqGjF3uDx9cUHd0Z4ds.jpg",
+    "tmdb_id": 344268
+  },
+  {
+    "Date": "2025-12-28",
+    "Name": "The Platform 2",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/Gz88",
+    "Rating": 1.5,
+    "poster_path": "/gL7gz6EaG28NJRfBAveOZZm5mFo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gL7gz6EaG28NJRfBAveOZZm5mFo.jpg",
+    "tmdb_id": 1125510
+  },
+  {
+    "Date": "2025-12-29",
+    "Name": "The Shining",
+    "Year": 1980,
+    "Letterboxd URI": "https://boxd.it/29Nu",
+    "Rating": 2,
+    "poster_path": "/cnniZQGtjK8kh2tsjih4GtkX6bl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cnniZQGtjK8kh2tsjih4GtkX6bl.jpg",
+    "tmdb_id": 694
+  },
+  {
+    "Date": "2025-12-30",
+    "Name": "Steve Jobs",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/araG",
+    "Rating": 3.5,
+    "poster_path": "/eUcb82BhRiI58Y9aTZPmNlFTwFi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/eUcb82BhRiI58Y9aTZPmNlFTwFi.jpg",
+    "tmdb_id": 321697
+  },
+  {
+    "Date": "2025-12-30",
+    "Name": "Ghost Rider: Spirit of Vengeance",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/2qne",
+    "Rating": 1,
+    "poster_path": "/xQkZZ3UpbtmhtSaEfXCFJUx0XL.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xQkZZ3UpbtmhtSaEfXCFJUx0XL.jpg",
+    "tmdb_id": 71676
+  },
+  {
+    "Date": "2025-12-31",
+    "Name": "The Exorcism of Emily Rose",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/200I",
+    "Rating": 1.5,
+    "poster_path": "/teEF7nmO2qhw93pqZj78PJbMSDR.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/teEF7nmO2qhw93pqZj78PJbMSDR.jpg",
+    "tmdb_id": 8643
+  },
+  {
+    "Date": "2026-01-01",
+    "Name": "127 Hours",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/SLa",
+    "Rating": 3,
+    "poster_path": "/95t9onaQh0nUudfWOGvyJgZSka0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/95t9onaQh0nUudfWOGvyJgZSka0.jpg",
+    "tmdb_id": 44115
+  },
+  {
+    "Date": "2026-01-02",
+    "Name": "Stranger Things 5: The Finale",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/YqXW",
+    "Rating": 2.5,
+    "poster_path": null,
+    "poster_url": null,
+    "tmdb_id": null
+  },
+  {
+    "Date": "2026-01-02",
+    "Name": "Hulk",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/27PS",
+    "Rating": 0.5,
+    "poster_path": "/9Vdwl3KGZgnhiTCg2YnSKMyG3Vn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9Vdwl3KGZgnhiTCg2YnSKMyG3Vn.jpg",
+    "tmdb_id": 1927
+  },
+  {
+    "Date": "2026-01-03",
+    "Name": "Challengers",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/zld0",
+    "Rating": 4,
+    "poster_path": "/wCVIoOlw1NG1dAriVLYRcoQyP6o.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wCVIoOlw1NG1dAriVLYRcoQyP6o.jpg",
+    "tmdb_id": 937287
+  },
+  {
+    "Date": "2026-01-04",
+    "Name": "Kingdom of Heaven",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/28Gs",
+    "Rating": 2.5,
+    "poster_path": "/wJDtVqtj6PVjxGYd6dhIED7PS4U.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wJDtVqtj6PVjxGYd6dhIED7PS4U.jpg",
+    "tmdb_id": 1495
+  },
+  {
+    "Date": "2026-01-05",
+    "Name": "Escape from the 21st Century",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/LcC0",
+    "Rating": 3,
+    "poster_path": "/nmGrdIikw7VG3OwtaP4vXNX3fuW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nmGrdIikw7VG3OwtaP4vXNX3fuW.jpg",
+    "tmdb_id": 1242372
+  },
+  {
+    "Date": "2026-01-06",
+    "Name": "Saving Private Ryan",
+    "Year": 1998,
+    "Letterboxd URI": "https://boxd.it/29ro",
+    "Rating": 4.5,
+    "poster_path": "/mlSsQWIQV0NKIqqRQRI0yi9gqk8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mlSsQWIQV0NKIqqRQRI0yi9gqk8.jpg",
+    "tmdb_id": 857
+  },
+  {
+    "Date": "2026-01-07",
+    "Name": "Come and See",
+    "Year": 1985,
+    "Letterboxd URI": "https://boxd.it/1w9q",
+    "Rating": 1.5,
+    "poster_path": "/aT7fV0q7mbsN0HCrcC41NeYQoCU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aT7fV0q7mbsN0HCrcC41NeYQoCU.jpg",
+    "tmdb_id": 25237
+  },
+  {
+    "Date": "2026-01-08",
+    "Name": "Sausage Party",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/6CCe",
+    "Rating": 3,
+    "poster_path": "/7FKGFjzNwlnTQBbIa5PJYpCg9TG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7FKGFjzNwlnTQBbIa5PJYpCg9TG.jpg",
+    "tmdb_id": 223702
+  },
+  {
+    "Date": "2026-01-09",
+    "Name": "Good Will Hunting",
+    "Year": 1997,
+    "Letterboxd URI": "https://boxd.it/2ahY",
+    "Rating": 4,
+    "poster_path": "/gvWfXts6Qp34z8VTzpMagatA0nD.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gvWfXts6Qp34z8VTzpMagatA0nD.jpg",
+    "tmdb_id": 489
+  },
+  {
+    "Date": "2026-01-10",
+    "Name": "La Haine",
+    "Year": 1995,
+    "Letterboxd URI": "https://boxd.it/2as8",
+    "Rating": 3,
+    "poster_path": "/gfdhSzPyAWtAizqs4ytc0MwOlQg.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gfdhSzPyAWtAizqs4ytc0MwOlQg.jpg",
+    "tmdb_id": 406
+  },
+  {
+    "Date": "2026-01-10",
+    "Name": "The SpongeBob SquarePants Movie",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/1SYq",
+    "Rating": 4,
+    "poster_path": "/xNzhSaXoOpXIyYsid3L5FWsXkbb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xNzhSaXoOpXIyYsid3L5FWsXkbb.jpg",
+    "tmdb_id": 11836
+  },
+  {
+    "Date": "2026-01-11",
+    "Name": "The Godfather",
+    "Year": 1972,
+    "Letterboxd URI": "https://boxd.it/2aNK",
+    "Rating": 3.5,
+    "poster_path": "/k3uIbYtiuK8pwbCcbma29nTqmgG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/k3uIbYtiuK8pwbCcbma29nTqmgG.jpg",
+    "tmdb_id": 238
+  },
+  {
+    "Date": "2026-01-12",
+    "Name": "Zootopia 2",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/F0vO",
+    "Rating": 2,
+    "poster_path": "/hBI7Wrps6tDjhEzBxJgoPLhbmT1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hBI7Wrps6tDjhEzBxJgoPLhbmT1.jpg",
+    "tmdb_id": 1084242
+  },
+  {
+    "Date": "2026-01-12",
+    "Name": "The Chorus",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/22X8",
+    "Rating": 4.5,
+    "poster_path": "/d2plsuUbqVPOwdA1We9kbBTtltl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d2plsuUbqVPOwdA1We9kbBTtltl.jpg",
+    "tmdb_id": 253987
+  },
+  {
+    "Date": "2026-01-13",
+    "Name": "Carrie",
+    "Year": 1976,
+    "Letterboxd URI": "https://boxd.it/20ZQ",
+    "Rating": 3,
+    "poster_path": "/zaqBZyy5QeQ4YhiMurGb54TdvtU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zaqBZyy5QeQ4YhiMurGb54TdvtU.jpg",
+    "tmdb_id": 7340
+  },
+  {
+    "Date": "2026-01-14",
+    "Name": "The Imitation Game",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/6aig",
+    "Rating": 3,
+    "poster_path": "/gBxCZuieAe8KClWWP1vVijXBlTp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gBxCZuieAe8KClWWP1vVijXBlTp.jpg",
+    "tmdb_id": 205596
+  },
+  {
+    "Date": "2026-01-15",
+    "Name": "28 Years Later: The Bone Temple",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/MwlA",
+    "Rating": 4,
+    "poster_path": "/1SQVgXrkBVbwUWugj3ZZ6T26So2.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1SQVgXrkBVbwUWugj3ZZ6T26So2.jpg",
+    "tmdb_id": 1272837
+  },
+  {
+    "Date": "2026-01-15",
+    "Name": "Life of Pi",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/37pC",
+    "Rating": 3.5,
+    "poster_path": "/blXairhpLg7HMcs9nGwWjkyfLC1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/blXairhpLg7HMcs9nGwWjkyfLC1.jpg",
+    "tmdb_id": 87827
+  },
+  {
+    "Date": "2026-01-16",
+    "Name": "Knives Out",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/jWEA",
+    "Rating": 2.5,
+    "poster_path": "/qebfcMW8RDjoMTNLNeDFfMlVCGp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qebfcMW8RDjoMTNLNeDFfMlVCGp.jpg",
+    "tmdb_id": 546554
+  },
+  {
+    "Date": "2026-01-17",
+    "Name": "Cold War",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/fEoc",
+    "Rating": 1.5,
+    "poster_path": "/i5PLFpgrXI7QgLj6DjuB2yd39eK.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/i5PLFpgrXI7QgLj6DjuB2yd39eK.jpg",
+    "tmdb_id": 440298
+  },
+  {
+    "Date": "2026-01-19",
+    "Name": "The Last of the Mohicans",
+    "Year": 1992,
+    "Letterboxd URI": "https://boxd.it/1YSo",
+    "Rating": 1,
+    "poster_path": "/tWaGxm8LkneIICsM8FvcTSUKvMB.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tWaGxm8LkneIICsM8FvcTSUKvMB.jpg",
+    "tmdb_id": 9361
+  },
+  {
+    "Date": "2026-01-20",
+    "Name": "The Housemaid",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/QFEO",
+    "Rating": 3,
+    "poster_path": "/ordUueMu5qauAQfEq8UUjETHkCD.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ordUueMu5qauAQfEq8UUjETHkCD.jpg",
+    "tmdb_id": 1368166
+  },
+  {
+    "Date": "2026-01-21",
+    "Name": "Elephant",
+    "Year": 2003,
+    "Letterboxd URI": "https://boxd.it/287i",
+    "Rating": 1.5,
+    "poster_path": "/ygkfkGkIDoQLvRK83nNsw3DxLNu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ygkfkGkIDoQLvRK83nNsw3DxLNu.jpg",
+    "tmdb_id": 1807
+  },
+  {
+    "Date": "2026-01-22",
+    "Name": "Amadeus",
+    "Year": 1984,
+    "Letterboxd URI": "https://boxd.it/2aH8",
+    "Rating": 3,
+    "poster_path": "/5k8QYv1vJGY2ymqxPbfkHwJLhNp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5k8QYv1vJGY2ymqxPbfkHwJLhNp.jpg",
+    "tmdb_id": 279
+  },
+  {
+    "Date": "2026-01-24",
+    "Name": "Eyes Wide Shut",
+    "Year": 1999,
+    "Letterboxd URI": "https://boxd.it/2axs",
+    "Rating": 1.5,
+    "poster_path": "/zrkNeLqUBm6bE2cqY5SBiM6LIf8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zrkNeLqUBm6bE2cqY5SBiM6LIf8.jpg",
+    "tmdb_id": 345
+  },
+  {
+    "Date": "2026-01-26",
+    "Name": "Dikkenek",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/1ZUA",
+    "Rating": 2.5,
+    "poster_path": "/kqI4z9Hzw2GqwzLpYYGO29xqb7K.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kqI4z9Hzw2GqwzLpYYGO29xqb7K.jpg",
+    "tmdb_id": 8736
+  },
+  {
+    "Date": "2026-01-28",
+    "Name": "Pelé: Birth of a Legend",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/7dFE",
+    "Rating": 2.5,
+    "poster_path": "/riAJ0I6xcacXYPUAIU8Msukbp6W.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/riAJ0I6xcacXYPUAIU8Msukbp6W.jpg",
+    "tmdb_id": 245913
+  },
+  {
+    "Date": "2026-01-31",
+    "Name": "Superman",
+    "Year": 1978,
+    "Letterboxd URI": "https://boxd.it/27Qm",
+    "Rating": 2,
+    "poster_path": "/mQfD5mIt2NwgVRRhO8GtijeOFfA.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mQfD5mIt2NwgVRRhO8GtijeOFfA.jpg",
+    "tmdb_id": 1924
+  },
+  {
+    "Date": "2026-01-31",
+    "Name": "Superman II",
+    "Year": 1980,
+    "Letterboxd URI": "https://boxd.it/204q",
+    "Rating": 1.5,
+    "poster_path": "/zYDG5YVVWHtTqCXumTt89J5Ir73.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zYDG5YVVWHtTqCXumTt89J5Ir73.jpg",
+    "tmdb_id": 8536
+  },
+  {
+    "Date": "2026-02-02",
+    "Name": "Amélie",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/2aUc",
+    "Rating": 2.5,
+    "poster_path": "/7dkCfOJ4rjEZNrNJQReht5od7aW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7dkCfOJ4rjEZNrNJQReht5od7aW.jpg",
+    "tmdb_id": 194
+  },
+  {
+    "Date": "2026-02-04",
+    "Name": "Coexist",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/fllo",
+    "Rating": 3,
+    "poster_path": "/lTXjPswcvDIqI72m4nuwEg12oPI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lTXjPswcvDIqI72m4nuwEg12oPI.jpg",
+    "tmdb_id": 432618
+  },
+  {
+    "Date": "2026-02-06",
+    "Name": "Superman III",
+    "Year": 1983,
+    "Letterboxd URI": "https://boxd.it/1YrM",
+    "Rating": 1.5,
+    "poster_path": "/viA8vBrHcWmgIo498Hu68OXAxUA.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/viA8vBrHcWmgIo498Hu68OXAxUA.jpg",
+    "tmdb_id": 9531
+  },
+  {
+    "Date": "2026-02-08",
+    "Name": "Supergirl",
+    "Year": 1984,
+    "Letterboxd URI": "https://boxd.it/1Y8A",
+    "Rating": 1.5,
+    "poster_path": "/6OfuKKCPFclHOj4SSRRpLzF1lfP.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6OfuKKCPFclHOj4SSRRpLzF1lfP.jpg",
+    "tmdb_id": 9651
+  },
+  {
+    "Date": "2026-02-09",
+    "Name": "Apocalypto",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/28yy",
+    "Rating": 1.5,
+    "poster_path": "/5xR5OjvGQfaRZNL7GTuPAZy8tdr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5xR5OjvGQfaRZNL7GTuPAZy8tdr.jpg",
+    "tmdb_id": 1579
+  },
+  {
+    "Date": "2026-02-10",
+    "Name": "Green Lantern",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/QN4",
+    "Rating": 1,
+    "poster_path": "/7MMrRbyOts9v1YHYoc7LSrz8XnQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7MMrRbyOts9v1YHYoc7LSrz8XnQ.jpg",
+    "tmdb_id": 44912
+  },
+  {
+    "Date": "2026-02-11",
+    "Name": "Poor Things",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/tNWU",
+    "Rating": 3,
+    "poster_path": "/roRjNH7cRVrZQYv1Ex8ownMu2ey.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/roRjNH7cRVrZQYv1Ex8ownMu2ey.jpg",
+    "tmdb_id": 792307
+  },
+  {
+    "Date": "2026-02-12",
+    "Name": "The Life of Chuck",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/vMTu",
+    "Rating": 4,
+    "poster_path": "/gSJzgltK1mx2m6SNQhStbXiqu7l.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gSJzgltK1mx2m6SNQhStbXiqu7l.jpg",
+    "tmdb_id": 842924
+  },
+  {
+    "Date": "2026-02-13",
+    "Name": "Superman IV: The Quest for Peace",
+    "Year": 1987,
+    "Letterboxd URI": "https://boxd.it/1TUk",
+    "Rating": 1,
+    "poster_path": "/jv0FRhUW3ZYerTwObjnh2VslVsm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jv0FRhUW3ZYerTwObjnh2VslVsm.jpg",
+    "tmdb_id": 11411
+  },
+  {
+    "Date": "2026-02-14",
+    "Name": "HOUBA! On the Trail of the Marsupilami",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/3u7c",
+    "Rating": 2.5,
+    "poster_path": "/7H2hk9IzYhRPU0iPMOzEwJkeUBn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7H2hk9IzYhRPU0iPMOzEwJkeUBn.jpg",
+    "tmdb_id": 102207
+  },
+  {
+    "Date": "2026-02-14",
+    "Name": "Fresh Guacamole",
+    "Year": 2012,
+    "Letterboxd URI": "https://boxd.it/4y9S",
+    "Rating": 3.5,
+    "poster_path": "/3uBH7edC9cbJqh180iWmAndVsz0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3uBH7edC9cbJqh180iWmAndVsz0.jpg",
+    "tmdb_id": 142563
+  },
+  {
+    "Date": "2026-02-15",
+    "Name": "Superman Returns",
+    "Year": 2006,
+    "Letterboxd URI": "https://boxd.it/28J2",
+    "Rating": 2.5,
+    "poster_path": "/A8O4WyJHeOE6YAGimSNtibXejfG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/A8O4WyJHeOE6YAGimSNtibXejfG.jpg",
+    "tmdb_id": 1452
+  },
+  {
+    "Date": "2026-02-16",
+    "Name": "Black Swan",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/Sw0",
+    "Rating": 3.5,
+    "poster_path": "/PgK9d0vegvPCx92b7c15sk4x8h.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/PgK9d0vegvPCx92b7c15sk4x8h.jpg",
+    "tmdb_id": 44214
+  },
+  {
+    "Date": "2026-02-17",
+    "Name": "Justice League: The Flashpoint Paradox",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/5yWW",
+    "Rating": 1.5,
+    "poster_path": "/hV5OVcAkWlhaFUzTVs6x0Dq1k7f.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hV5OVcAkWlhaFUzTVs6x0Dq1k7f.jpg",
+    "tmdb_id": 183011
+  },
+  {
+    "Date": "2026-02-17",
+    "Name": "Justice League: War",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/6tFo",
+    "Rating": 1,
+    "poster_path": "/cvKs904mZMpxzJJmrEpalVme5Qf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cvKs904mZMpxzJJmrEpalVme5Qf.jpg",
+    "tmdb_id": 217993
+  },
+  {
+    "Date": "2026-02-18",
+    "Name": "Downfall",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/2a04",
+    "Rating": 2,
+    "poster_path": "/hnpPNtG9mXxlodH3QQ9HxYyV1QF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hnpPNtG9mXxlodH3QQ9HxYyV1QF.jpg",
+    "tmdb_id": 913862
+  },
+  {
+    "Date": "2026-02-19",
+    "Name": "Son of Batman",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7mQm",
+    "Rating": 1.5,
+    "poster_path": "/uQz93ytcYDJMBdF6WsM2eZxEa9i.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uQz93ytcYDJMBdF6WsM2eZxEa9i.jpg",
+    "tmdb_id": 251519
+  },
+  {
+    "Date": "2026-02-19",
+    "Name": "Justice League: Throne of Atlantis",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/9qWs",
+    "Rating": 1,
+    "poster_path": "/cSNpfIblT8Jgx0ELSm3YpHhtME4.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cSNpfIblT8Jgx0ELSm3YpHhtME4.jpg",
+    "tmdb_id": 297556
+  },
+  {
+    "Date": "2026-02-21",
+    "Name": "Wuthering Heights",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/OdIa",
+    "Rating": 3,
+    "poster_path": "/yEa8UQA71rjKhCq04mATDNOIT2B.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yEa8UQA71rjKhCq04mATDNOIT2B.jpg",
+    "tmdb_id": 1316092
+  },
+  {
+    "Date": "2026-02-24",
+    "Name": "Nightwing and Robin",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/ijh6",
+    "Rating": 0.5,
+    "poster_path": "/9BFTFHTynUf3XfJKDt9svkr15Di.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9BFTFHTynUf3XfJKDt9svkr15Di.jpg",
+    "tmdb_id": 506452
+  },
+  {
+    "Date": "2026-02-24",
+    "Name": "Batman vs. Robin",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/aqNs",
+    "Rating": 2.5,
+    "poster_path": "/aGp9XDXmVM5lCKHWtgBC15S7XLr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aGp9XDXmVM5lCKHWtgBC15S7XLr.jpg",
+    "tmdb_id": 321528
+  },
+  {
+    "Date": "2026-02-24",
+    "Name": "Batman: Bad Blood",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/cI0W",
+    "Rating": 1,
+    "poster_path": "/nehC7zJQsK2SKWWHgYRR851UkNi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nehC7zJQsK2SKWWHgYRR851UkNi.jpg",
+    "tmdb_id": 366924
+  },
+  {
+    "Date": "2026-02-25",
+    "Name": "Marriage Story",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/hJAw",
+    "Rating": 3,
+    "poster_path": "/kYGvkQpq6yibGTMp7LcauV0fnc8.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kYGvkQpq6yibGTMp7LcauV0fnc8.jpg",
+    "tmdb_id": 492188
+  },
+  {
+    "Date": "2026-02-26",
+    "Name": "Justice League vs. Teen Titans",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/dc8w",
+    "Rating": 0.5,
+    "poster_path": "/jUPs52maoXm1ENJrovATwqkypSw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jUPs52maoXm1ENJrovATwqkypSw.jpg",
+    "tmdb_id": 379291
+  },
+  {
+    "Date": "2026-02-26",
+    "Name": "Justice League Dark",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/en7G",
+    "Rating": 1,
+    "poster_path": "/gWcTaDFXDrOAPfVzfBFz0Aya5BE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gWcTaDFXDrOAPfVzfBFz0Aya5BE.jpg",
+    "tmdb_id": 408220
+  },
+  {
+    "Date": "2026-02-27",
+    "Name": "RRR",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/ljDs",
+    "Rating": 1.5,
+    "poster_path": "/sxI1qKDHZRAi2LPmJUPhQ2x1u07.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sxI1qKDHZRAi2LPmJUPhQ2x1u07.jpg",
+    "tmdb_id": 579974
+  },
+  {
+    "Date": "2026-02-28",
+    "Name": "Marty Supreme",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/Off0",
+    "Rating": 3,
+    "poster_path": "/hjrvtc7UCrnsypfnLJuxx9ODKCi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hjrvtc7UCrnsypfnLJuxx9ODKCi.jpg",
+    "tmdb_id": 1317288
+  },
+  {
+    "Date": "2026-02-28",
+    "Name": "Teen Titans: The Judas Contract",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/eo2s",
+    "Rating": 1,
+    "poster_path": "/nuGIlNAJUati4qEAH1nrYKUA3xa.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/nuGIlNAJUati4qEAH1nrYKUA3xa.jpg",
+    "tmdb_id": 408647
+  },
+  {
+    "Date": "2026-02-28",
+    "Name": "Suicide Squad: Hell to Pay",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/hxrM",
+    "Rating": 1,
+    "poster_path": "/va1IgsZeWBbKLsZcFwz3CM1MkMu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/va1IgsZeWBbKLsZcFwz3CM1MkMu.jpg",
+    "tmdb_id": 487242
+  },
+  {
+    "Date": "2026-03-01",
+    "Name": "They Live",
+    "Year": 1988,
+    "Letterboxd URI": "https://boxd.it/20lm",
+    "Rating": 2,
+    "poster_path": "/v5ug8ye2Al4m1CL8ndAnSck81TF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/v5ug8ye2Al4m1CL8ndAnSck81TF.jpg",
+    "tmdb_id": 8337
+  },
+  {
+    "Date": "2026-03-01",
+    "Name": "Malcolm X",
+    "Year": 1992,
+    "Letterboxd URI": "https://boxd.it/27WE",
+    "Rating": 3,
+    "poster_path": "/rIwqavVc721XzK7vR7uKrr0w2BG.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/rIwqavVc721XzK7vR7uKrr0w2BG.jpg",
+    "tmdb_id": 1883
+  },
+  {
+    "Date": "2026-03-02",
+    "Name": "Django",
+    "Year": 1966,
+    "Letterboxd URI": "https://boxd.it/1Vr0",
+    "Rating": 1.5,
+    "poster_path": "/j5Q5o00Fxxt5E0rNpXrSLQyG50O.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/j5Q5o00Fxxt5E0rNpXrSLQyG50O.jpg",
+    "tmdb_id": 10772
+  },
+  {
+    "Date": "2026-03-03",
+    "Name": "Infested",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/Egl4",
+    "Rating": 3,
+    "poster_path": "/j0zGO01cLQZoIriXst8TAFJaUqJ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/j0zGO01cLQZoIriXst8TAFJaUqJ.jpg",
+    "tmdb_id": 1063879
+  },
+  {
+    "Date": "2026-03-03",
+    "Name": "The Death of Superman",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/hyjk",
+    "Rating": 2,
+    "poster_path": "/vhhIUPUhv3UXQdIhqY4UFN4ZkDa.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vhhIUPUhv3UXQdIhqY4UFN4ZkDa.jpg",
+    "tmdb_id": 487670
+  },
+  {
+    "Date": "2026-03-03",
+    "Name": "Constantine: City of Demons - The Movie",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/jFlc",
+    "Rating": 1,
+    "poster_path": "/aYdISQz30K8jR2bUn8yGbAQWQDp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/aYdISQz30K8jR2bUn8yGbAQWQDp.jpg",
+    "tmdb_id": 539517
+  },
+  {
+    "Date": "2026-03-03",
+    "Name": "The Blob",
+    "Year": 1988,
+    "Letterboxd URI": "https://boxd.it/1YgY",
+    "Rating": 2,
+    "poster_path": "/sfSK61WvqTbbNUgFN9D6Me4FbZr.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sfSK61WvqTbbNUgFN9D6Me4FbZr.jpg",
+    "tmdb_id": 9599
+  },
+  {
+    "Date": "2026-03-04",
+    "Name": "Hardcore Henry",
+    "Year": 2015,
+    "Letterboxd URI": "https://boxd.it/aAIM",
+    "Rating": 3.5,
+    "poster_path": "/npSg63pVyGbUbPfWg7wYT7x0pqI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/npSg63pVyGbUbPfWg7wYT7x0pqI.jpg",
+    "tmdb_id": 325348
+  },
+  {
+    "Date": "2026-03-05",
+    "Name": "Reign of the Supermen",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/hyrI",
+    "Rating": 1,
+    "poster_path": "/366dkEQdLH8IfhhVPYTw1xQnz67.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/366dkEQdLH8IfhhVPYTw1xQnz67.jpg",
+    "tmdb_id": 487672
+  },
+  {
+    "Date": "2026-03-05",
+    "Name": "Batman: Hush",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/jyDI",
+    "Rating": 2.5,
+    "poster_path": "/xIMNHtmddRsZJW2YgVHbkrn7Qhw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xIMNHtmddRsZJW2YgVHbkrn7Qhw.jpg",
+    "tmdb_id": 537056
+  },
+  {
+    "Date": "2026-03-07",
+    "Name": "Man of Steel",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/FRk",
+    "Rating": 3.5,
+    "poster_path": "/3HGq0BI0ukKr53oPiTAgOXQprzc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3HGq0BI0ukKr53oPiTAgOXQprzc.jpg",
+    "tmdb_id": 49521
+  },
+  {
+    "Date": "2026-03-08",
+    "Name": "Le Trou",
+    "Year": 1960,
+    "Letterboxd URI": "https://boxd.it/1nSw",
+    "Rating": 2,
+    "poster_path": "/pyCMEIAtMPpWTVwZTajcbCIBI3u.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pyCMEIAtMPpWTVwZTajcbCIBI3u.jpg",
+    "tmdb_id": 29259
+  },
+  {
+    "Date": "2026-03-08",
+    "Name": "Wonder Woman: Bloodlines",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/jyDS",
+    "Rating": 0.5,
+    "poster_path": "/w1SBqj0fn1j72ST5i1jauWo3swT.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/w1SBqj0fn1j72ST5i1jauWo3swT.jpg",
+    "tmdb_id": 537055
+  },
+  {
+    "Date": "2026-03-08",
+    "Name": "Justice League Dark: Apokolips War",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/mSeO",
+    "Rating": 1,
+    "poster_path": "/c01Y4suApJ1Wic2xLmaq1QYcfoZ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/c01Y4suApJ1Wic2xLmaq1QYcfoZ.jpg",
+    "tmdb_id": 618344
+  },
+  {
+    "Date": "2026-03-09",
+    "Name": "DC Showcase - Constantine: The House of Mystery",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/tLqM",
+    "Rating": 1,
+    "poster_path": "/n3FQYSzptYZJRvp9yGVDxoTfE0L.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n3FQYSzptYZJRvp9yGVDxoTfE0L.jpg",
+    "tmdb_id": 791348
+  },
+  {
+    "Date": "2026-03-09",
+    "Name": "Brokeback Mountain",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/2b2q",
+    "Rating": 2.5,
+    "poster_path": "/1DesxE73jrYnnCJI2fAfOeO8kCF.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1DesxE73jrYnnCJI2fAfOeO8kCF.jpg",
+    "tmdb_id": 142
+  },
+  {
+    "Date": "2026-03-10",
+    "Name": "DC Showcase: Adam Strange",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/mSfi",
+    "Rating": 1.5,
+    "poster_path": "/hUDA8NrPtyV9xP6a0n4ZH4NhVD0.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hUDA8NrPtyV9xP6a0n4ZH4NhVD0.jpg",
+    "tmdb_id": 618350
+  },
+  {
+    "Date": "2026-03-10",
+    "Name": "Superman: Man of Tomorrow",
+    "Year": 2020,
+    "Letterboxd URI": "https://boxd.it/mSaC",
+    "Rating": 2.5,
+    "poster_path": "/wpzb0qq2QdHXYo7ZYk5CPLfYfka.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wpzb0qq2QdHXYo7ZYk5CPLfYfka.jpg",
+    "tmdb_id": 618354
+  },
+  {
+    "Date": "2026-03-10",
+    "Name": "DC Showcase: Kamandi: The Last Boy on Earth!",
+    "Year": 2021,
+    "Letterboxd URI": "https://boxd.it/tLr6",
+    "Rating": 1,
+    "poster_path": "/g2b1l8nDIugR2668bDJB8ZfQMzw.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g2b1l8nDIugR2668bDJB8ZfQMzw.jpg",
+    "tmdb_id": 791343
+  },
+  {
+    "Date": "2026-03-11",
+    "Name": "Lost River",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/5cjy",
+    "Rating": 1.5,
+    "poster_path": "/g9N5TUBTzx4KrQnTCVWar2r0G93.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/g9N5TUBTzx4KrQnTCVWar2r0G93.jpg",
+    "tmdb_id": 167810
+  },
+  {
+    "Date": "2026-03-12",
+    "Name": "Dragon Ball Super: Broly",
+    "Year": 2018,
+    "Letterboxd URI": "https://boxd.it/iaWE",
+    "Rating": 4.5,
+    "poster_path": "/baxPKXiQCNMdccDGebcnZdHhIzC.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/baxPKXiQCNMdccDGebcnZdHhIzC.jpg",
+    "tmdb_id": 503314
+  },
+  {
+    "Date": "2026-03-12",
+    "Name": "Dragon Ball Z: Broly - The Legendary Super Saiyan",
+    "Year": 1993,
+    "Letterboxd URI": "https://boxd.it/1dTu",
+    "Rating": 3.5,
+    "poster_path": "/lGcTDElHglWUzgjb0TBcAF6L4MU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lGcTDElHglWUzgjb0TBcAF6L4MU.jpg",
+    "tmdb_id": 34433
+  },
+  {
+    "Date": "2026-03-13",
+    "Name": "The Substance",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/zanS",
+    "Rating": 3.5,
+    "poster_path": "/bUPlFWbl8jVdhrBYNOOurOMzad6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bUPlFWbl8jVdhrBYNOOurOMzad6.jpg",
+    "tmdb_id": 933260
+  },
+  {
+    "Date": "2026-03-14",
+    "Name": "Voyage of Time: The IMAX Experience",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/eJjO",
+    "Rating": 3,
+    "poster_path": "/2ScetO35rdhBIdYPXvhPJdXPUVm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2ScetO35rdhBIdYPXvhPJdXPUVm.jpg",
+    "tmdb_id": 417198
+  },
+  {
+    "Date": "2026-03-15",
+    "Name": "Starred Up",
+    "Year": 2013,
+    "Letterboxd URI": "https://boxd.it/6fRq",
+    "Rating": 2.5,
+    "poster_path": "/2gWcTaziWhacrnlrK88IqMM0iCc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2gWcTaziWhacrnlrK88IqMM0iCc.jpg",
+    "tmdb_id": 209276
+  },
+  {
+    "Date": "2026-03-16",
+    "Name": "It Follows",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/87wo",
+    "Rating": 2,
+    "poster_path": "/jh8bol1N8COAGSj4ksrcUNo8xxc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/jh8bol1N8COAGSj4ksrcUNo8xxc.jpg",
+    "tmdb_id": 270303
+  },
+  {
+    "Date": "2026-03-17",
+    "Name": "Uncut Gems",
+    "Year": 2019,
+    "Letterboxd URI": "https://boxd.it/gXGc",
+    "Rating": 3,
+    "poster_path": "/f6J8thFsSox0zunjyo4YnxRhbuE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/f6J8thFsSox0zunjyo4YnxRhbuE.jpg",
+    "tmdb_id": 473033
+  },
+  {
+    "Date": "2026-03-18",
+    "Name": "Pervert!",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/2k38",
+    "Rating": 0.5,
+    "poster_path": "/byRmwND80CVgsKoC5Im2dDXv4aM.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/byRmwND80CVgsKoC5Im2dDXv4aM.jpg",
+    "tmdb_id": 46333
+  },
+  {
+    "Date": "2026-03-20",
+    "Name": "Eternal Sunshine of the Spotless Mind",
+    "Year": 2004,
+    "Letterboxd URI": "https://boxd.it/6YK",
+    "Rating": 4,
+    "poster_path": "/vcKAFM6Q2wDonRXznoOwoPChzkl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vcKAFM6Q2wDonRXznoOwoPChzkl.jpg",
+    "tmdb_id": 38
+  },
+  {
+    "Date": "2026-03-21",
+    "Name": "Project Hail Mary",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/pEeQ",
+    "Rating": 3,
+    "poster_path": "/wzyy8ZrsuHfAt4iz4iH3rT0tdoT.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wzyy8ZrsuHfAt4iz4iH3rT0tdoT.jpg",
+    "tmdb_id": 687163
+  },
+  {
+    "Date": "2026-03-21",
+    "Name": "Buried",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/1tXC",
+    "Rating": 1.5,
+    "poster_path": "/iI1omfsoKlQZM5mUtWyg1HfDQs6.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iI1omfsoKlQZM5mUtWyg1HfDQs6.jpg",
+    "tmdb_id": 26388
+  },
+  {
+    "Date": "2026-03-23",
+    "Name": "Punch-Drunk Love",
+    "Year": 2002,
+    "Letterboxd URI": "https://boxd.it/20E4",
+    "Rating": 2.5,
+    "poster_path": "/32BsDRGsNgnwyUMsah6KRPUD9tb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/32BsDRGsNgnwyUMsah6KRPUD9tb.jpg",
+    "tmdb_id": 8051
+  },
+  {
+    "Date": "2026-03-24",
+    "Name": "12 Angry Men",
+    "Year": 1957,
+    "Letterboxd URI": "https://boxd.it/2auI",
+    "Rating": 3.5,
+    "poster_path": "/fFXrCl7nBFFaQU3IgTlinvk6vTi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fFXrCl7nBFFaQU3IgTlinvk6vTi.jpg",
+    "tmdb_id": 389
+  },
+  {
+    "Date": "2026-03-25",
+    "Name": "Rise of the Planet of the Apes",
+    "Year": 2011,
+    "Letterboxd URI": "https://boxd.it/cS4",
+    "Rating": 4,
+    "poster_path": "/9BjFzzbke1sWu9IqJEFSTvTtTuU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9BjFzzbke1sWu9IqJEFSTvTtTuU.jpg",
+    "tmdb_id": 61791
+  },
+  {
+    "Date": "2026-03-25",
+    "Name": "John Wick",
+    "Year": 2014,
+    "Letterboxd URI": "https://boxd.it/7dEc",
+    "Rating": 4,
+    "poster_path": "/orB4dHfZ9rOJbKYow7W0etezchl.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/orB4dHfZ9rOJbKYow7W0etezchl.jpg",
+    "tmdb_id": 245891
+  },
+  {
+    "Date": "2026-03-25",
+    "Name": "Fight Club",
+    "Year": 1999,
+    "Letterboxd URI": "https://boxd.it/2a9q",
+    "Rating": 4,
+    "poster_path": "/t1i10ptOivG4hV7erkX3tmKpiqm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/t1i10ptOivG4hV7erkX3tmKpiqm.jpg",
+    "tmdb_id": 550
+  },
+  {
+    "Date": "2026-03-29",
+    "Name": "Friday the 13th",
+    "Year": 1980,
+    "Letterboxd URI": "https://boxd.it/24fs",
+    "Rating": 1,
+    "poster_path": "/buFpnvGDjGtmucc0DkodQsPwMjZ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/buFpnvGDjGtmucc0DkodQsPwMjZ.jpg",
+    "tmdb_id": 4488
+  },
+  {
+    "Date": "2026-03-31",
+    "Name": "Perfect Blue",
+    "Year": 1997,
+    "Letterboxd URI": "https://boxd.it/1W7A",
+    "Rating": 2.5,
+    "poster_path": "/pTjuiITuZHIii9PSRZjWzTRNwoC.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pTjuiITuZHIii9PSRZjWzTRNwoC.jpg",
+    "tmdb_id": 10494
+  },
+  {
+    "Date": "2026-04-01",
+    "Name": "Apollo 13",
+    "Year": 1995,
+    "Letterboxd URI": "https://boxd.it/2a6G",
+    "Rating": 4,
+    "poster_path": "/6npr35siRnvQ5oIq06pZtQSRFRZ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6npr35siRnvQ5oIq06pZtQSRFRZ.jpg",
+    "tmdb_id": 568
+  },
+  {
+    "Date": "2026-04-02",
+    "Name": "Friday the 13th Part 2",
+    "Year": 1981,
+    "Letterboxd URI": "https://boxd.it/1XXC",
+    "Rating": 0.5,
+    "poster_path": "/1TMoKnOrryl5TJvs6RhI4F9zYBo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1TMoKnOrryl5TJvs6RhI4F9zYBo.jpg",
+    "tmdb_id": 9725
+  },
+  {
+    "Date": "2026-04-03",
+    "Name": "Hush",
+    "Year": 2016,
+    "Letterboxd URI": "https://boxd.it/d5ys",
+    "Rating": 3,
+    "poster_path": "/tFAeTk5aDsGoltbd6HipnhESxq3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tFAeTk5aDsGoltbd6HipnhESxq3.jpg",
+    "tmdb_id": 376570
+  },
+  {
+    "Date": "2026-04-04",
+    "Name": "Spirited Away",
+    "Year": 2001,
+    "Letterboxd URI": "https://boxd.it/2b4m",
+    "Rating": 4,
+    "poster_path": "/12TAqK0AUgdcYE9ZYZ9r7ASbH5Q.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/12TAqK0AUgdcYE9ZYZ9r7ASbH5Q.jpg",
+    "tmdb_id": 129
+  },
+  {
+    "Date": "2026-04-05",
+    "Name": "Friday the 13th Part III",
+    "Year": 1982,
+    "Letterboxd URI": "https://boxd.it/1XX8",
+    "Rating": 0.5,
+    "poster_path": "/em5rS28jN3WQRIBxy5ZCf9WPidR.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/em5rS28jN3WQRIBxy5ZCf9WPidR.jpg",
+    "tmdb_id": 9728
+  },
+  {
+    "Date": "2026-04-06",
+    "Name": "Moon",
+    "Year": 2009,
+    "Letterboxd URI": "https://boxd.it/1IGQ",
+    "Rating": 2.5,
+    "poster_path": "/6S34vVOl2MzdIDpb1tpLACLLdBJ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6S34vVOl2MzdIDpb1tpLACLLdBJ.jpg",
+    "tmdb_id": 17431
+  },
+  {
+    "Date": "2026-04-07",
+    "Name": "Mickey 17",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/q1Dk",
+    "Rating": 3.5,
+    "poster_path": "/on60ASUpGg1xfiFucuMCv9wVqtq.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/on60ASUpGg1xfiFucuMCv9wVqtq.jpg",
+    "tmdb_id": 696506
+  },
+  {
+    "Date": "2026-04-08",
+    "Name": "Rear Window",
+    "Year": 1954,
+    "Letterboxd URI": "https://boxd.it/2a6Q",
+    "Rating": 1.5,
+    "poster_path": "/xiPX9jCpPXQIqIrbbuHfsL4qt9c.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xiPX9jCpPXQIqIrbbuHfsL4qt9c.jpg",
+    "tmdb_id": 567
+  },
+  {
+    "Date": "2026-04-09",
+    "Name": "Finding Harry: The Craft Behind the Magic",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/121Te",
+    "Rating": 2.5,
+    "poster_path": "/5TUG0bEeoHoi8RcL27maevZkavP.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5TUG0bEeoHoi8RcL27maevZkavP.jpg",
+    "tmdb_id": 1662432
+  },
+  {
+    "Date": "2026-04-10",
+    "Name": "Stronger",
+    "Year": 2017,
+    "Letterboxd URI": "https://boxd.it/dRqQ",
+    "Rating": 4,
+    "poster_path": "/hSRSRSJA71r2cQA481aRCUHE8T7.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hSRSRSJA71r2cQA481aRCUHE8T7.jpg",
+    "tmdb_id": 395993
+  },
+  {
+    "Date": "2026-04-11",
+    "Name": "Léon: The Professional",
+    "Year": 1994,
+    "Letterboxd URI": "https://boxd.it/2b8S",
+    "Rating": 3.5,
+    "poster_path": "/efqJtlo5J1hBNFmbwyjyAR9Mpr2.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/efqJtlo5J1hBNFmbwyjyAR9Mpr2.jpg",
+    "tmdb_id": 101
+  },
+  {
+    "Date": "2026-04-14",
+    "Name": "Love & Other Drugs",
+    "Year": 2010,
+    "Letterboxd URI": "https://boxd.it/UIi",
+    "Rating": 3.5,
+    "poster_path": "/kltDOuF8SxHXlaGSO2Qrkbgc5Rv.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kltDOuF8SxHXlaGSO2Qrkbgc5Rv.jpg",
+    "tmdb_id": 43347
+  },
+  {
+    "Date": "2026-04-15",
+    "Name": "Wicked City",
+    "Year": 1987,
+    "Letterboxd URI": "https://boxd.it/1BSA",
+    "Rating": 0.5,
+    "poster_path": "/zYQSVEgpqU1czcMbVbUw8qtTdhu.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zYQSVEgpqU1czcMbVbUw8qtTdhu.jpg",
+    "tmdb_id": 21453
+  },
+  {
+    "Date": "2026-04-18",
+    "Name": "A History of Violence",
+    "Year": 2005,
+    "Letterboxd URI": "https://boxd.it/2bfa",
+    "Rating": 2,
+    "poster_path": "/keHREQ9jRiHp7ja1SM8xmDCo6vI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/keHREQ9jRiHp7ja1SM8xmDCo6vI.jpg",
+    "tmdb_id": 59
+  }
+]

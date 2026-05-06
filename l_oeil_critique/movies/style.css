@@ -1,0 +1,215 @@
+:root {
+    --primary-gold: #c9a24a;
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --text: #f0f0f0;
+    --muted: #b0b0b0;
+}
+
+/* =========================
+   RESET GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Roboto, sans-serif;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+
+.films-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.films-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.films-header h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(40px, 5vw, 60px);
+    margin: 0;
+    background: linear-gradient(135deg, #fff, var(--primary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   SUBTITLE (LETTERBOXD LOGIC)
+========================= */
+
+.films-subtitle {
+    max-width: 650px;
+    margin: 10px auto 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+
+    color: var(--muted);
+    opacity: 0.7;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.films-stats {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#search,
+#sort {
+    padding: 12px 16px;
+    border-radius: 30px;
+    border: none;
+    background: #1e1e1e;
+    color: white;
+    outline: none;
+    min-width: 220px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.film-card {
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.25s ease;
+}
+
+.film-card:hover {
+    transform: translateY(-8px);
+}
+
+/* =========================
+   POSTER
+========================= */
+
+.film-poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.film-card-inner {
+    padding: 12px;
+}
+
+.film-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.film-year {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.film-rating {
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.film-link {
+    font-size: 12px;
+    color: var(--primary-gold);
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.film-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge-new {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary-gold);
+    color: #000;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .films-page {
+        padding: 100px 16px 40px;
+    }
+
+    #search,
+    #sort {
+        width: 100%;
+        max-width: 320px;
+    }
+}
