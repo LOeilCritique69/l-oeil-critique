@@ -2,16 +2,20 @@ name: 🎬 Auto Update — Bandes Annonces + Letterboxd
 
 on:
   schedule:
-    # Heure FR actuelle (UTC+2)
-    # 07h FR = 05h UTC
-    # 13h FR = 11h UTC
-    # 19h FR = 17h UTC
-
-    - cron: '0 5 * * *'
-    - cron: '0 11 * * *'
-    - cron: '0 17 * * *'
+    - cron: '0 7 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 19 * * *'
 
   workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    paths:
+      - 'l_oeil_critique/scripts/**'
+      - 'l_oeil_critique/movies/**'
+      - 'requirements.txt'
+      - '.github/workflows/**'
 
 concurrency:
   group: media-update
@@ -29,7 +33,6 @@ jobs:
       TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
 
     steps:
-
       # =========================
       # CHECKOUT
       # =========================
@@ -49,7 +52,7 @@ jobs:
           cache: 'pip'
 
       # =========================
-      # INSTALL DEPENDENCIES
+      # DEPENDENCIES
       # =========================
       - name: 📦 Install dependencies
         run: |
@@ -57,57 +60,57 @@ jobs:
           pip install -r requirements.txt
 
       # =========================
-      # INSTALL PLAYWRIGHT
+      # PLAYWRIGHT
       # =========================
       - name: 🎭 Install Playwright
         run: |
           python -m playwright install --with-deps chromium
 
       # =========================
-      # ENVIRONMENT CHECK
+      # ENV CHECK
       # =========================
       - name: 🔍 Environment check
         run: |
-          echo "========== PYTHON =========="
+          echo "Python version:"
           python --version
 
           echo ""
-          echo "========== PIP =========="
+          echo "Pip version:"
           pip --version
 
           echo ""
-          echo "========== CURRENT DIR =========="
+          echo "Current directory:"
           pwd
 
           echo ""
-          echo "========== REPOSITORY TREE =========="
+          echo "Repository tree:"
           ls -R
 
       # =========================
-      # RUN TRAILERS SCRAPER
+      # SCRAPER BANDES ANNONCES
       # =========================
       - name: 🎬 Run trailers scraper
         run: |
-          echo "🚀 Starting trailers scraper..."
+          echo "🚀 Launching scraper..."
           python l_oeil_critique/scripts/scraper_bandes_annonces.py
-          echo "✅ Trailers scraper completed"
+          echo "✅ Scraper completed"
 
       # =========================
-      # RUN LETTERBOXD
+      # LETTERBOXD RSS
       # =========================
       - name: 🎞️ Run Letterboxd RSS
         run: |
-          echo "🚀 Starting Letterboxd update..."
+          echo "🚀 Updating Letterboxd..."
           python l_oeil_critique/movies/lb.py
           echo "✅ Letterboxd update completed"
 
       # =========================
-      # CHECK FOR CHANGES
+      # DETECT CHANGES
       # =========================
       - name: 📊 Detect repository changes
         id: changes
         run: |
-          echo "🔍 Checking repository changes..."
+          echo "Checking git changes..."
 
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
@@ -123,7 +126,7 @@ jobs:
           fi
 
       # =========================
-      # CONFIGURE GIT
+      # GIT CONFIG
       # =========================
       - name: 🔧 Configure Git
         if: steps.changes.outputs.changes == 'true'
@@ -134,25 +137,22 @@ jobs:
       # =========================
       # COMMIT + PUSH
       # =========================
-      - name: 🔁 Commit and push changes
+      - name: 🔁 Commit & Push
         if: steps.changes.outputs.changes == 'true'
         run: |
           echo "📦 Adding all files..."
           git add .
 
-          echo ""
           echo "📝 Creating commit..."
           git commit -m "🎬 Auto update media (#${{ github.run_number }})"
 
-          echo ""
           echo "🚀 Pushing to GitHub..."
           git push origin main
 
-          echo ""
           echo "✅ Push completed"
 
       # =========================
-      # WORKFLOW SUMMARY
+      # SUMMARY
       # =========================
       - name: 🧾 Workflow summary
         if: always()
