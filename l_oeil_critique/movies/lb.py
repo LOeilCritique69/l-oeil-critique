@@ -23,7 +23,10 @@ BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = os.path.join(BASE_DIR, "movies.json")
 CACHE_FILE = os.path.join(BASE_DIR, "tmdb_cache.json")
 
-TMDB_API_KEY  = os.environ.get("TMDB_API_KEY", "2cf75db44f938aeaf1e7d873a38fdcaa")
+# Clé TMDB : variable env en priorité, fallback hardcodé si absent
+_TMDB_KEY_ENV      = os.environ.get("TMDB_API_KEY", "").strip()
+_TMDB_KEY_FALLBACK = "2cf75db44f938aeaf1e7d873a38fdcaa"
+TMDB_API_KEY       = _TMDB_KEY_ENV if _TMDB_KEY_ENV else _TMDB_KEY_FALLBACK
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 IMAGE_BASE    = "https://image.tmdb.org/t/p/w500"
 
@@ -209,6 +212,12 @@ def enrich(movie: dict) -> dict:
 # SYNC
 # ============================================================
 def sync() -> None:
+    # Log source clé TMDB
+    if _TMDB_KEY_ENV:
+        info("Clé TMDB chargée depuis la variable d'environnement.")
+    else:
+        warn("Variable TMDB_API_KEY absente — utilisation de la clé hardcodée de secours.")
+
     existing_movies = load_movies()
 
     # Index mutable nom → indice
