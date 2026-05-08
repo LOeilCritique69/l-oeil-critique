@@ -111,13 +111,7 @@ jobs:
         with:
           commit_message: "🎬 Auto update media (#${{ github.run_number }})"
           branch: main
-          file_pattern: |
-            l_oeil_critique/scripts/*.json
-            l_oeil_critique/scripts/*.log
-            l_oeil_critique/movies/movies.json
-            l_oeil_critique/movies/tmdb_cache.json
-            bande_annonces_blocs.html
-            bande_annonces_maj.html
+          file_pattern: "l_oeil_critique/scripts/*.json l_oeil_critique/scripts/*.log l_oeil_critique/movies/movies.json l_oeil_critique/movies/tmdb_cache.json bande_annonces_blocs.html bande_annonces_maj.html"
 
       # =========================
       # SUMMARY
