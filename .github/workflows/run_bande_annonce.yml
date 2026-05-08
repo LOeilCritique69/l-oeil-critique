@@ -2,20 +2,9 @@ name: 🎬 Auto Update — Bandes Annonces + Letterboxd
 
 on:
   schedule:
-    - cron: '0 7 * * *'
-    - cron: '0 13 * * *'
-    - cron: '0 19 * * *'
+    - cron: '0 * * * *'  # toutes les heures (minute 0)
 
   workflow_dispatch:
-
-  push:
-    branches:
-      - main
-    paths:
-      - 'l_oeil_critique/scripts/**'
-      - 'l_oeil_critique/movies/**'
-      - 'requirements.txt'
-      - '.github/workflows/**'
 
 concurrency:
   group: media-update
@@ -33,6 +22,7 @@ jobs:
       TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
 
     steps:
+
       # =========================
       # CHECKOUT
       # =========================
@@ -52,7 +42,7 @@ jobs:
           cache: 'pip'
 
       # =========================
-      # DEPENDENCIES
+      # INSTALL DEPENDENCIES
       # =========================
       - name: 📦 Install dependencies
         run: |
@@ -67,103 +57,83 @@ jobs:
           python -m playwright install --with-deps chromium
 
       # =========================
-      # ENV CHECK
+      # DEBUG BEFORE
       # =========================
-      - name: 🔍 Environment check
+      - name: 🔍 BEFORE run state
         run: |
-          echo "Python version:"
-          python --version
-
-          echo ""
-          echo "Pip version:"
-          pip --version
-
-          echo ""
-          echo "Current directory:"
-          pwd
-
-          echo ""
-          echo "Repository tree:"
-          ls -R
+          echo "=== BEFORE ==="
+          git status
+          ls -R l_oeil_critique || true
 
       # =========================
-      # SCRAPER BANDES ANNONCES
+      # SCRAPER
       # =========================
       - name: 🎬 Run trailers scraper
         run: |
-          echo "🚀 Launching scraper..."
           python l_oeil_critique/scripts/scraper_bandes_annonces.py
-          echo "✅ Scraper completed"
 
       # =========================
-      # LETTERBOXD RSS
+      # LETTERBOXD
       # =========================
       - name: 🎞️ Run Letterboxd RSS
         run: |
-          echo "🚀 Updating Letterboxd..."
           python l_oeil_critique/movies/lb.py
-          echo "✅ Letterboxd update completed"
+
+      # =========================
+      # DEBUG AFTER
+      # =========================
+      - name: 🔍 AFTER run state
+        run: |
+          echo "=== AFTER ==="
+          git status
+          git diff --name-only || true
 
       # =========================
       # DETECT CHANGES
       # =========================
-      - name: 📊 Detect repository changes
+      - name: 📊 Detect changes
         id: changes
         run: |
-          echo "Checking git changes..."
-
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
-
-            echo ""
-            echo "✅ Changes detected:"
+            echo "CHANGES FOUND"
             git status --short
           else
             echo "changes=false" >> $GITHUB_OUTPUT
-
-            echo ""
-            echo "ℹ️ No changes detected"
+            echo "NO CHANGES"
           fi
 
       # =========================
       # GIT CONFIG
       # =========================
-      - name: 🔧 Configure Git
+      - name: 🔧 Git config
         if: steps.changes.outputs.changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       # =========================
-      # COMMIT + PUSH
+      # COMMIT
       # =========================
-      - name: 🔁 Commit & Push
+      - name: 🔁 Commit & push
         if: steps.changes.outputs.changes == 'true'
         run: |
-          echo "📦 Adding all files..."
           git add .
-
-          echo "📝 Creating commit..."
           git commit -m "🎬 Auto update media (#${{ github.run_number }})"
-
-          echo "🚀 Pushing to GitHub..."
           git push origin main
-
-          echo "✅ Push completed"
 
       # =========================
       # SUMMARY
       # =========================
-      - name: 🧾 Workflow summary
+      - name: 🧾 Summary
         if: always()
         run: |
-          echo "## Workflow Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## Summary" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Changes detected: ${{ steps.changes.outputs.changes }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Run number: ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Changes: ${{ steps.changes.outputs.changes }}" >> $GITHUB_STEP_SUMMARY
 
       # =========================
-      # UPLOAD LOGS IF FAILURE
+      # ERROR LOGS
       # =========================
       - name: 📤 Upload logs
         if: failure()
@@ -174,12 +144,3 @@ jobs:
             l_oeil_critique/scripts/*.log
             l_oeil_critique/scripts/*.json
             l_oeil_critique/movies/*.log
-          retention-days: 7
-
-      # =========================
-      # FAILURE MESSAGE
-      # =========================
-      - name: 🚨 Workflow failed
-        if: failure()
-        run: |
-          echo "::error::Workflow failed"
