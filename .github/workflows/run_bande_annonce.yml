@@ -29,6 +29,9 @@ jobs:
     permissions:
       contents: write
 
+    env:
+      TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
@@ -112,9 +115,10 @@ jobs:
           file_pattern: |
             l_oeil_critique/scripts/*.json
             l_oeil_critique/scripts/*.log
+            l_oeil_critique/movies/movies.json
+            l_oeil_critique/movies/tmdb_cache.json
             bande_annonces_blocs.html
             bande_annonces_maj.html
-            movies.json
 
       # =========================
       # SUMMARY
@@ -138,6 +142,7 @@ jobs:
           path: |
             l_oeil_critique/scripts/*.log
             l_oeil_critique/scripts/*.json
+            l_oeil_critique/movies/*.log
           retention-days: 7
 
       - name: 🚨 Error

@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Histoires, anecdotes et fun facts cinéma racontés par L’Œil Critique. Plongez dans les secrets et légendes du septième art. Les vidéos sont publiées de façon irrégulière, selon l’inspiration et les histoires à raconter." />
-  <meta name="keywords" content="cinéma, anecdotes, histoires, fun facts, mystères du cinéma, films, réalisateurs" />
+  <meta name="description" content="Tous les films vus et notés par L'Œil Critique sur Letterboxd." />
+  <meta name="keywords" content="cinéma, films vus, letterboxd, notes, critiques" />
   <link rel="icon" href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
-  <title>Mes Films – L’Œil Critique</title>
-  <!-- Fonts + CSS -->
+  <title>Mes Films – L'Œil Critique</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/chef_d_oeuvre.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,40 +17,86 @@
 
 <main class="films-page">
 
-    <div class="films-header">
+  <div class="films-header">
+    <div class="films-header__eyebrow">Letterboxd · Journal de visionnage</div>
+    <h1>Mes <span class="gold">Films</span></h1>
+    <p class="films-subtitle">
+      Tout ce que j'ai vu, noté, oublié ou chéri. Sans critiques — juste l'honnêteté d'une note.
+    </p>
 
-        <h1>Mes Films</h1>
-        <div class="films-subtitle">
-            Mes films vus sur Letterboxd, avec mes notes. Pas de critiques ici, juste mon historique de visionnage.
-        </div>
-
-        <div class="films-stats">
-            <div id="film-count">0 films</div>
-        </div>
-
-        <div class="controls">
-            <select id="sort">
-                <option value="recent">Récemment vus</option>
-                <option value="rating">Note ↓</option>
-                <option value="year">Année ↓</option>
-                <option value="year-asc">Année ↑</option>
-            </select>
-
-            <input type="text" id="search" placeholder="Rechercher un film...">
-        </div>
-
+    <!-- STATS BAR -->
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat-item">
+        <span class="stat-value" id="stat-total">—</span>
+        <span class="stat-label">films vus</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-avg">—</span>
+        <span class="stat-label">note moyenne</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-top">—</span>
+        <span class="stat-label">film préféré</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-year">—</span>
+        <span class="stat-label">films cette année</span>
+      </div>
     </div>
 
-    <div id="film-list" class="films-grid"></div>
+    <!-- CONTROLS -->
+    <div class="controls">
+      <div class="control-group">
+        <svg class="control-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="9" cy="9" r="6"/><path d="M15 15l3 3"/>
+        </svg>
+        <input type="text" id="search" placeholder="Rechercher un film…" autocomplete="off" spellcheck="false">
+      </div>
+
+      <div class="control-group">
+        <svg class="control-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 5h14M6 10h8M9 15h2"/>
+        </svg>
+        <select id="sort">
+          <option value="recent">Récemment vus</option>
+          <option value="rating">Meilleure note</option>
+          <option value="year">Année ↓</option>
+          <option value="year-asc">Année ↑</option>
+        </select>
+      </div>
+
+      <div class="control-group rating-filter-group">
+        <svg class="control-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 1l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 13.4l-4.8 2.5.9-5.4L2.2 6.7l5.4-.8z"/>
+        </svg>
+        <span class="rating-filter-label">Note min : <strong id="rating-val">0</strong></span>
+        <input type="range" id="rating-filter" min="0" max="5" step="0.5" value="0">
+      </div>
+    </div>
+
+    <div class="results-count" id="film-count">Chargement…</div>
+  </div>
+
+  <!-- GRID -->
+  <div id="film-list" class="films-grid"></div>
+
+  <!-- SENTINEL pour infinite scroll -->
+  <div id="scroll-sentinel"></div>
+
+  <!-- LOADER BOTTOM -->
+  <div id="load-more-indicator" class="load-more-indicator" style="display:none">
+    <span></span><span></span><span></span>
+  </div>
 
 </main>
 
 <script src="app.js"></script>
 <script src="../assets/js/header.js"></script>
 <script src="../assets/js/main.js"></script>
-<!-- ADS -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
-crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
 
 </body>
 </html>

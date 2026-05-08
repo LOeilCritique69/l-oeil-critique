@@ -490,7 +490,7 @@
     "tmdb_id": 242582
   },
   {
-    "Date": "2024-10-12",
+    "Date": null,
     "Name": "28 Days Later",
     "Year": 2002,
     "Letterboxd URI": "https://boxd.it/2aXU",
@@ -500,7 +500,7 @@
     "tmdb_id": 170
   },
   {
-    "Date": "2024-10-12",
+    "Date": null,
     "Name": "28 Weeks Later",
     "Year": 2007,
     "Letterboxd URI": "https://boxd.it/28Bi",
@@ -4690,7 +4690,7 @@
     "tmdb_id": 29259
   },
   {
-    "Date": "2026-03-08",
+    "Date": "2026-03-07",
     "Name": "Wonder Woman: Bloodlines",
     "Year": 2019,
     "Letterboxd URI": "https://boxd.it/jyDS",
@@ -4700,27 +4700,27 @@
     "tmdb_id": 537055
   },
   {
-    "Date": "2026-03-08",
+    "Date": "2026-03-07",
     "Name": "Justice League Dark: Apokolips War",
     "Year": 2020,
     "Letterboxd URI": "https://boxd.it/mSeO",
-    "Rating": 1,
+    "Rating": 1.0,
     "poster_path": "/c01Y4suApJ1Wic2xLmaq1QYcfoZ.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/c01Y4suApJ1Wic2xLmaq1QYcfoZ.jpg",
     "tmdb_id": 618344
   },
   {
-    "Date": "2026-03-09",
+    "Date": "2026-03-08",
     "Name": "DC Showcase - Constantine: The House of Mystery",
     "Year": 2022,
     "Letterboxd URI": "https://boxd.it/tLqM",
-    "Rating": 1,
+    "Rating": 1.0,
     "poster_path": "/n3FQYSzptYZJRvp9yGVDxoTfE0L.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/n3FQYSzptYZJRvp9yGVDxoTfE0L.jpg",
     "tmdb_id": 791348
   },
   {
-    "Date": "2026-03-09",
+    "Date": "2026-03-08",
     "Name": "Brokeback Mountain",
     "Year": 2005,
     "Letterboxd URI": "https://boxd.it/2b2q",
@@ -4730,7 +4730,7 @@
     "tmdb_id": 142
   },
   {
-    "Date": "2026-03-10",
+    "Date": "2026-03-09",
     "Name": "DC Showcase: Adam Strange",
     "Year": 2020,
     "Letterboxd URI": "https://boxd.it/mSfi",
@@ -4740,7 +4740,7 @@
     "tmdb_id": 618350
   },
   {
-    "Date": "2026-03-10",
+    "Date": "2026-03-09",
     "Name": "Superman: Man of Tomorrow",
     "Year": 2020,
     "Letterboxd URI": "https://boxd.it/mSaC",
@@ -4750,17 +4750,17 @@
     "tmdb_id": 618354
   },
   {
-    "Date": "2026-03-10",
+    "Date": "2026-03-09",
     "Name": "DC Showcase: Kamandi: The Last Boy on Earth!",
     "Year": 2021,
     "Letterboxd URI": "https://boxd.it/tLr6",
-    "Rating": 1,
+    "Rating": 1.0,
     "poster_path": "/g2b1l8nDIugR2668bDJB8ZfQMzw.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/g2b1l8nDIugR2668bDJB8ZfQMzw.jpg",
     "tmdb_id": 791343
   },
   {
-    "Date": "2026-03-11",
+    "Date": "2026-03-10",
     "Name": "Lost River",
     "Year": 2014,
     "Letterboxd URI": "https://boxd.it/5cjy",
@@ -4770,7 +4770,7 @@
     "tmdb_id": 167810
   },
   {
-    "Date": "2026-03-12",
+    "Date": "2026-03-11",
     "Name": "Dragon Ball Super: Broly",
     "Year": 2018,
     "Letterboxd URI": "https://boxd.it/iaWE",
@@ -4780,7 +4780,7 @@
     "tmdb_id": 503314
   },
   {
-    "Date": "2026-03-12",
+    "Date": "2026-03-11",
     "Name": "Dragon Ball Z: Broly - The Legendary Super Saiyan",
     "Year": 1993,
     "Letterboxd URI": "https://boxd.it/1dTu",
@@ -4790,7 +4790,7 @@
     "tmdb_id": 34433
   },
   {
-    "Date": "2026-03-13",
+    "Date": "2026-03-12",
     "Name": "The Substance",
     "Year": 2024,
     "Letterboxd URI": "https://boxd.it/zanS",
@@ -4800,17 +4800,17 @@
     "tmdb_id": 933260
   },
   {
-    "Date": "2026-03-14",
+    "Date": "2026-03-13",
     "Name": "Voyage of Time: The IMAX Experience",
     "Year": 2016,
     "Letterboxd URI": "https://boxd.it/eJjO",
-    "Rating": 3,
+    "Rating": 3.0,
     "poster_path": "/2ScetO35rdhBIdYPXvhPJdXPUVm.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/2ScetO35rdhBIdYPXvhPJdXPUVm.jpg",
     "tmdb_id": 417198
   },
   {
-    "Date": "2026-03-15",
+    "Date": "2026-03-14",
     "Name": "Starred Up",
     "Year": 2013,
     "Letterboxd URI": "https://boxd.it/6fRq",
@@ -4820,27 +4820,27 @@
     "tmdb_id": 209276
   },
   {
-    "Date": "2026-03-16",
+    "Date": "2026-03-15",
     "Name": "It Follows",
     "Year": 2014,
     "Letterboxd URI": "https://boxd.it/87wo",
-    "Rating": 2,
+    "Rating": 2.0,
     "poster_path": "/jh8bol1N8COAGSj4ksrcUNo8xxc.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/jh8bol1N8COAGSj4ksrcUNo8xxc.jpg",
     "tmdb_id": 270303
   },
   {
-    "Date": "2026-03-17",
+    "Date": "2026-03-16",
     "Name": "Uncut Gems",
     "Year": 2019,
     "Letterboxd URI": "https://boxd.it/gXGc",
-    "Rating": 3,
+    "Rating": 3.0,
     "poster_path": "/f6J8thFsSox0zunjyo4YnxRhbuE.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/f6J8thFsSox0zunjyo4YnxRhbuE.jpg",
     "tmdb_id": 473033
   },
   {
-    "Date": "2026-03-18",
+    "Date": "2026-03-17",
     "Name": "Pervert!",
     "Year": 2005,
     "Letterboxd URI": "https://boxd.it/2k38",
@@ -4850,27 +4850,27 @@
     "tmdb_id": 46333
   },
   {
-    "Date": "2026-03-20",
+    "Date": "2026-03-19",
     "Name": "Eternal Sunshine of the Spotless Mind",
     "Year": 2004,
     "Letterboxd URI": "https://boxd.it/6YK",
-    "Rating": 4,
+    "Rating": 4.0,
     "poster_path": "/vcKAFM6Q2wDonRXznoOwoPChzkl.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/vcKAFM6Q2wDonRXznoOwoPChzkl.jpg",
     "tmdb_id": 38
   },
   {
-    "Date": "2026-03-21",
+    "Date": "2026-03-15",
     "Name": "Project Hail Mary",
     "Year": 2026,
     "Letterboxd URI": "https://boxd.it/pEeQ",
-    "Rating": 3,
+    "Rating": 3.0,
     "poster_path": "/wzyy8ZrsuHfAt4iz4iH3rT0tdoT.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/wzyy8ZrsuHfAt4iz4iH3rT0tdoT.jpg",
     "tmdb_id": 687163
   },
   {
-    "Date": "2026-03-21",
+    "Date": "2026-03-20",
     "Name": "Buried",
     "Year": 2010,
     "Letterboxd URI": "https://boxd.it/1tXC",
@@ -4880,7 +4880,7 @@
     "tmdb_id": 26388
   },
   {
-    "Date": "2026-03-23",
+    "Date": "2026-03-22",
     "Name": "Punch-Drunk Love",
     "Year": 2002,
     "Letterboxd URI": "https://boxd.it/20E4",
@@ -4890,7 +4890,7 @@
     "tmdb_id": 8051
   },
   {
-    "Date": "2026-03-24",
+    "Date": "2026-03-23",
     "Name": "12 Angry Men",
     "Year": 1957,
     "Letterboxd URI": "https://boxd.it/2auI",
@@ -4930,17 +4930,17 @@
     "tmdb_id": 550
   },
   {
-    "Date": "2026-03-29",
+    "Date": "2026-03-28",
     "Name": "Friday the 13th",
     "Year": 1980,
     "Letterboxd URI": "https://boxd.it/24fs",
-    "Rating": 1,
+    "Rating": 1.0,
     "poster_path": "/buFpnvGDjGtmucc0DkodQsPwMjZ.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/buFpnvGDjGtmucc0DkodQsPwMjZ.jpg",
     "tmdb_id": 4488
   },
   {
-    "Date": "2026-03-31",
+    "Date": "2026-03-30",
     "Name": "Perfect Blue",
     "Year": 1997,
     "Letterboxd URI": "https://boxd.it/1W7A",
@@ -4950,11 +4950,11 @@
     "tmdb_id": 10494
   },
   {
-    "Date": "2026-04-01",
+    "Date": "2026-03-31",
     "Name": "Apollo 13",
     "Year": 1995,
     "Letterboxd URI": "https://boxd.it/2a6G",
-    "Rating": 4,
+    "Rating": 4.0,
     "poster_path": "/6npr35siRnvQ5oIq06pZtQSRFRZ.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/6npr35siRnvQ5oIq06pZtQSRFRZ.jpg",
     "tmdb_id": 568
