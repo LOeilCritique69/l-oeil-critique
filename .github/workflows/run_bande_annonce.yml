@@ -29,6 +29,9 @@ jobs:
     permissions:
       contents: write
 
+    env:
+      TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
@@ -69,8 +72,6 @@ jobs:
       # LETTERBOXD RSS
       # =========================
       - name: 🎞️ Run Letterboxd RSS (lb.py)
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: |
           echo "🚀 Fetch Letterboxd RSS"
           python l_oeil_critique/movies/lb.py
@@ -111,7 +112,13 @@ jobs:
         with:
           commit_message: "🎬 Auto update media (#${{ github.run_number }})"
           branch: main
-          file_pattern: "l_oeil_critique/scripts/*.json l_oeil_critique/scripts/*.log l_oeil_critique/movies/movies.json l_oeil_critique/movies/tmdb_cache.json bande_annonces_blocs.html bande_annonces_maj.html"
+          file_pattern: |
+            l_oeil_critique/scripts/*.json
+            l_oeil_critique/scripts/*.log
+            l_oeil_critique/movies/movies.json
+            l_oeil_critique/movies/tmdb_cache.json
+            bande_annonces_blocs.html
+            bande_annonces_maj.html
 
       # =========================
       # SUMMARY
