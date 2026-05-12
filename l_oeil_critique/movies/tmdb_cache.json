@@ -10254,5 +10254,106 @@
     "video": false,
     "vote_average": 6.786,
     "vote_count": 2158
+  },
+  "Project X_2012": {
+    "adult": false,
+    "backdrop_path": "/cUqXHZtnptgvyAE1hN47Wsf3ami.jpg",
+    "genre_ids": [
+      35
+    ],
+    "id": 57214,
+    "title": "Projet X",
+    "original_language": "en",
+    "original_title": "Project X",
+    "overview": "Alors qu'ils semblaient jusque-là se fondre dans la masse, trois lycéens décident de sortir de l'anonymat. En apparence, leur projet est plutôt inoffensif puisqu'ils ont l'intention d'organiser une fête des plus mémorables. Mais rien n'aurait pu les préparer à la soirée qu'ils s'apprêtent à vivre… La rumeur se propage alors rapidement, tandis que les rêves des uns s'effondrent, les résultats scolaires des autres dégringolent, et des légendes se forgent…",
+    "popularity": 9.5275,
+    "poster_path": "/6DoM52IhBrMgz2w1x1FkbYQfXBp.jpg",
+    "release_date": "2012-03-01",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.884,
+    "vote_count": 6768
+  },
+  "Fifty Shades Freed_2018": {
+    "adult": false,
+    "backdrop_path": "/9ywA15OAiwjSTvg3cBs9B7kOCBF.jpg",
+    "genre_ids": [
+      18,
+      10749
+    ],
+    "id": 337167,
+    "title": "Cinquante nuances plus claires",
+    "original_language": "en",
+    "original_title": "Fifty Shades Freed",
+    "overview": "Plus heureux que jamais, Anastasia et Christian forment désormais un couple solide. Cependant, leur bonheur est troublé par Jack Hyde, l'ancien patron d'Anastasia et par une nouvelle qui pourrait détruire leur relation.",
+    "popularity": 17.3245,
+    "poster_path": "/szcCAclX4YW9YMLO4zsBccHCOdP.jpg",
+    "release_date": "2018-01-17",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.673,
+    "vote_count": 8332
+  },
+  "Fifty Shades Darker_2017": {
+    "adult": false,
+    "backdrop_path": "/16aJtXO6lObbBUr11IvkjB1QD1f.jpg",
+    "genre_ids": [
+      18,
+      10749
+    ],
+    "id": 341174,
+    "title": "Cinquante nuances plus sombres",
+    "original_language": "en",
+    "original_title": "Fifty Shades Darker",
+    "overview": "Dépassée par les sombres secrets de Christian Grey, Ana Steele a mis un terme à leur relation pour se consacrer à sa carrière d'éditrice. Mais son désir pour Grey occupe toujours toutes ses pensées et lorsqu'il lui propose un nouvel accord, elle ne peut y résister. Peu à peu, elle en apprend davantage sur le douloureux passé de son ténébreux M. Grey, toujours aussi passionné. Tandis que Christian lutte contre ses démons intérieurs, Ana doit prendre la décision la plus importante de sa vie.",
+    "popularity": 6.4676,
+    "poster_path": "/apRr1r6pOqhNzOfL3s7ZzhjCxU.jpg",
+    "release_date": "2017-02-08",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.472,
+    "vote_count": 7923
+  },
+  "Fifty Shades of Grey_2015": {
+    "adult": false,
+    "backdrop_path": "/7IGKrY1f1KfwMipx9wZC4NRgIdF.jpg",
+    "genre_ids": [
+      18,
+      10749,
+      53
+    ],
+    "id": 216015,
+    "title": "Cinquante Nuances de Grey",
+    "original_language": "en",
+    "original_title": "Fifty Shades of Grey",
+    "overview": "Anastasia Steele accepte de remplacer sa colocataire malade, Katherine, pour interviewer l'homme d'affaires et milliardaire Christian Grey. Jeune PDG séduisant et mystérieux, ce dernier l'intimide. À sa grande surprise, Christian Grey vient la voir au magasin où elle travaille, prétextant des achats. Très attirée par lui, elle se verra rapidement devenir sa soumise. Pour cela un contrat va être rédigé pour permettre de définir les règles de ce jeu dangereux. Cependant, ce contrat devient souvent un sujet tabou et sera changé sans cesse.  À mesure que leur relation progresse, la jeune et innocente Ana est confrontée à un tout nouvel univers aux côtés du riche entrepreneur. Christian a cependant une face sombre : il est adepte du BDSM. La jeune femme doit alors décider si elle est prête ou non à entrer dans cet univers.",
+    "popularity": 15.9318,
+    "poster_path": "/2bioz9SBIel2ijV6SHPV2I4Nj2E.jpg",
+    "release_date": "2015-02-11",
+    "softcore": false,
+    "video": false,
+    "vote_average": 5.869,
+    "vote_count": 12354
+  },
+  "Slither_2006": {
+    "adult": false,
+    "backdrop_path": "/kUpD6EnpnQBi3mjYxmiM4xvuh8g.jpg",
+    "genre_ids": [
+      27,
+      878,
+      35
+    ],
+    "id": 9035,
+    "title": "Horribilis",
+    "original_language": "en",
+    "original_title": "Slither",
+    "overview": "L'homme d'affaires Grant Grant est un des citoyens les plus fortunés de la paisible bourgade de Wheelsy, mais son luxueux train de vie et son opulente résidence ne suffisent pas à compenser l'indifférence croissante de sa jeune et belle épouse, Starla, qu'il aime d'un amour sans retour. À part cela, tout baigne pour lui, ou plutôt tout baignait avant une certaine balade nocturne... Au cours d'une virée dans les bois, Grant et sa consolatrice d'un soir, Brenda, découvrent une masse gélatineuse d'origine extraterrestre à proximité d'un cratère creusé de fraîche date. Soudain, un puissant tentacule jaillit de la masse informe, enserrant Grant avant de lui inoculer un germe mortel... Starla constate bientôt chez son mari les symptômes d'une insidieuse et troublante métamorphose...",
+    "popularity": 4.7052,
+    "poster_path": "/n8ftEQeqfLgJWNhXNPCiN4fKCv9.jpg",
+    "release_date": "2006-03-31",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.543,
+    "vote_count": 1705
   }
 }

@@ -5165,5 +5165,50 @@
     "poster_path": "/2vFJAed3XBp3aFzgeHOq3SqC663.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/2vFJAed3XBp3aFzgeHOq3SqC663.jpg",
     "tmdb_id": 1946
+  },
+  {
+    "Name": "Project X",
+    "Year": 2012,
+    "Date": "2026-05-07",
+    "Rating": 4.0,
+    "poster_path": "/6DoM52IhBrMgz2w1x1FkbYQfXBp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6DoM52IhBrMgz2w1x1FkbYQfXBp.jpg",
+    "tmdb_id": 57214
+  },
+  {
+    "Name": "Fifty Shades Freed",
+    "Year": 2018,
+    "Date": "2026-05-11",
+    "Rating": 2.0,
+    "poster_path": "/szcCAclX4YW9YMLO4zsBccHCOdP.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/szcCAclX4YW9YMLO4zsBccHCOdP.jpg",
+    "tmdb_id": 337167
+  },
+  {
+    "Name": "Fifty Shades Darker",
+    "Year": 2017,
+    "Date": "2026-05-10",
+    "Rating": 3.0,
+    "poster_path": "/apRr1r6pOqhNzOfL3s7ZzhjCxU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/apRr1r6pOqhNzOfL3s7ZzhjCxU.jpg",
+    "tmdb_id": 341174
+  },
+  {
+    "Name": "Fifty Shades of Grey",
+    "Year": 2015,
+    "Date": "2026-05-09",
+    "Rating": 3.0,
+    "poster_path": "/2bioz9SBIel2ijV6SHPV2I4Nj2E.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2bioz9SBIel2ijV6SHPV2I4Nj2E.jpg",
+    "tmdb_id": 216015
+  },
+  {
+    "Name": "Slither",
+    "Year": 2006,
+    "Date": "2026-05-08",
+    "Rating": 2.0,
+    "poster_path": "/n8ftEQeqfLgJWNhXNPCiN4fKCv9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n8ftEQeqfLgJWNhXNPCiN4fKCv9.jpg",
+    "tmdb_id": 9035
   }
 ]
