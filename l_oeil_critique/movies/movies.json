@@ -5210,5 +5210,14 @@
     "poster_path": "/n8ftEQeqfLgJWNhXNPCiN4fKCv9.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/n8ftEQeqfLgJWNhXNPCiN4fKCv9.jpg",
     "tmdb_id": 9035
+  },
+  {
+    "Name": "The Devil Wears Prada",
+    "Year": 2006,
+    "Date": "2026-05-12",
+    "Rating": 3.5,
+    "poster_path": "/vTIBjWMWx1p5Wv2J3IRhEW13lrj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/vTIBjWMWx1p5Wv2J3IRhEW13lrj.jpg",
+    "tmdb_id": 350
   }
 ]

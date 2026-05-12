@@ -10355,5 +10355,25 @@
     "video": false,
     "vote_average": 6.543,
     "vote_count": 1705
+  },
+  "The Devil Wears Prada_2006": {
+    "adult": false,
+    "backdrop_path": "/gkh6Nt8DtY1XT4gQsyFq9XAVJlJ.jpg",
+    "genre_ids": [
+      18,
+      35
+    ],
+    "id": 350,
+    "title": "Le Diable s'habille en Prada",
+    "original_language": "en",
+    "original_title": "The Devil Wears Prada",
+    "overview": "Fraîchement diplômée, Andrea débarque à New York et décroche le job de rêve. Mais en tant qu’assistante de la tyrannique rédactrice en chef d’un prestigieux magazine de mode, elle va vite découvrir ce que le mot « enfer » veut dire…",
+    "popularity": 284.2322,
+    "poster_path": "/vTIBjWMWx1p5Wv2J3IRhEW13lrj.jpg",
+    "release_date": "2006-06-29",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.4,
+    "vote_count": 13318
   }
 }
