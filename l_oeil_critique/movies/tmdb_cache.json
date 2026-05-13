@@ -10375,5 +10375,26 @@
     "video": false,
     "vote_average": 7.4,
     "vote_count": 13318
+  },
+  "The Punisher: One Last Kill_2026": {
+    "adult": false,
+    "backdrop_path": "/qO55CD8tgVL1T4WKn6zYFFiD6lL.jpg",
+    "genre_ids": [
+      28,
+      18,
+      80
+    ],
+    "id": 1439930,
+    "title": "Une Présentation Spéciale Marvel Television : The Punisher : One Last Kill",
+    "original_language": "en",
+    "original_title": "A Marvel Television Special Presentation - The Punisher: One Last Kill",
+    "overview": "Alors que Frank Castle cherche un sens à sa vie au-delà de la vengeance, il replonge contre toute attente au cœur du combat.",
+    "popularity": 34.1264,
+    "poster_path": "/74VbBYHmpjgeES1zkRo1DwHkWnE.jpg",
+    "release_date": "2026-05-12",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.6,
+    "vote_count": 13
   }
 }
