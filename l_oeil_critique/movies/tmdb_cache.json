@@ -10396,5 +10396,24 @@
     "video": false,
     "vote_average": 7.6,
     "vote_count": 13
+  },
+  "The Bus: A French Football Mutiny_2026": {
+    "adult": false,
+    "backdrop_path": "/dTEbfFiaYupyhgFg9ZC4NpH5p8G.jpg",
+    "genre_ids": [
+      99
+    ],
+    "id": 1678844,
+    "title": "Le Bus : Les Bleus en grève",
+    "original_language": "en",
+    "original_title": "Le Bus : Les Bleus en grève",
+    "overview": "Ce documentaire revient sur la controverse entourant l'équipe de France de football lors de la Coupe du monde 2010 et sur la grève qui a fait la une et indigné tout un pays.",
+    "popularity": 7.1462,
+    "poster_path": "/xy5oC3dWw2OuSUHXIBPm6XQLk8n.jpg",
+    "release_date": "2026-05-13",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.9,
+    "vote_count": 6
   }
 }
