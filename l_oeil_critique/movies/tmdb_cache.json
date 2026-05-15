@@ -10415,5 +10415,25 @@
     "video": false,
     "vote_average": 7.9,
     "vote_count": 6
+  },
+  "The Devil Wears Prada 2_2026": {
+    "adult": false,
+    "backdrop_path": "/y3fQa7pytlysovXzovpXc1OQlTW.jpg",
+    "genre_ids": [
+      35,
+      18
+    ],
+    "id": 1314481,
+    "title": "Le Diable s'habille en Prada 2",
+    "original_language": "en",
+    "original_title": "The Devil Wears Prada 2",
+    "overview": "Près de vingt ans après, Meryl Streep, Anne Hathaway, Emily Blunt et Stanley Tucci reprennent leurs rôles emblématiques de Miranda, Andy, Emily et Nigel, et nous replongent dans l’univers impitoyable et glamour du magazine Runway et des rues new-yorkaises où l’élégance est une arme redoutable.",
+    "popularity": 81.6798,
+    "poster_path": "/pD5fSVgDW2L5993eAlDd2GFXwIp.jpg",
+    "release_date": "2026-04-29",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.7,
+    "vote_count": 516
   }
 }
