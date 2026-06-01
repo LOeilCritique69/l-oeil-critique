@@ -1,8 +1,9 @@
 """
 lb.py — Sync Letterboxd RSS → movies.json
 - Récupère les nouveaux films via RSS
+- Stocke le lien vers la critique perso (tag <link> RSS)
 - Enrichit via TMDB (poster, tmdb_id)
-- Met à jour les ratings/dates existants
+- Met à jour les ratings/dates/liens existants
 - Ré-enrichit les films sans poster
 - Retry automatique en cas d'erreur réseau
 """
@@ -23,16 +24,15 @@ BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = os.path.join(BASE_DIR, "movies.json")
 CACHE_FILE = os.path.join(BASE_DIR, "tmdb_cache.json")
 
-# Clé TMDB : variable env en priorité, fallback hardcodé si absent
 _TMDB_KEY_ENV      = os.environ.get("TMDB_API_KEY", "").strip()
 _TMDB_KEY_FALLBACK = "2cf75db44f938aeaf1e7d873a38fdcaa"
 TMDB_API_KEY       = _TMDB_KEY_ENV if _TMDB_KEY_ENV else _TMDB_KEY_FALLBACK
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 IMAGE_BASE    = "https://image.tmdb.org/t/p/w500"
 
-TMDB_DELAY    = 0.20   # secondes entre chaque appel TMDB
-MAX_RETRIES   = 3      # tentatives en cas d'erreur réseau
-RETRY_DELAY   = 2.0    # attente entre deux tentatives (s)
+TMDB_DELAY  = 0.20
+MAX_RETRIES = 3
+RETRY_DELAY = 2.0
 
 # ============================================================
 # LOG HELPERS
@@ -77,7 +77,7 @@ def is_valid_movie(m: dict) -> bool:
     return bool(m and safe_str(m.get("Name")))
 
 # ============================================================
-# LOAD LOCAL DB
+# LOAD / SAVE LOCAL DB
 # ============================================================
 def load_movies() -> list:
     if not os.path.exists(INPUT_FILE):
@@ -143,11 +143,36 @@ def fetch_rss() -> list[dict]:
         rating   = tag("memberRating")
         watched  = tag("watchedDate")
 
+        # Le tag <link> RSS pointe vers la critique perso :
+        # ex. https://letterboxd.com/oni_le_chan/film/300/
+        link_el = item.find("link")
+        # ElementTree retourne None pour <link> car c'est un tag vide-style atom ;
+        # on essaie aussi le text suivant le tag
+        review_link = None
+        if link_el is not None and link_el.text:
+            review_link = link_el.text.strip()
+        else:
+            # Fallback : certains parsers mettent le lien dans le tail du tag précédent
+            for child in item:
+                if child.tag == "link" or child.tag.endswith("}link"):
+                    if child.text:
+                        review_link = child.text.strip()
+                        break
+                    if child.tail:
+                        review_link = child.tail.strip()
+                        break
+
+        # Dernier fallback : construire l'URL depuis le filmSlug ou le titre
+        film_url = tag("filmUrl")  # parfois présent dans certaines versions du RSS
+        if not review_link and film_url:
+            review_link = film_url
+
         films.append({
-            "Name":   name,
-            "Year":   int(year_str) if year_str and year_str.isdigit() else None,
-            "Date":   watched,
-            "Rating": float(rating) if rating is not None else None,
+            "Name":          name,
+            "Year":          int(year_str) if year_str and year_str.isdigit() else None,
+            "Date":          watched,
+            "Rating":        float(rating) if rating is not None else None,
+            "Letterboxd URI": review_link,  # lien critique perso
         })
 
     return films
@@ -174,12 +199,10 @@ def search_tmdb(title: str, year: int | None) -> dict | None:
         return None
 
     results = r.json().get("results", [])
-
     if not results:
         cache[cache_key] = None
         return None
 
-    # Préférer un match exact sur l'année
     if year:
         for m in results:
             rd = m.get("release_date", "")
@@ -187,13 +210,12 @@ def search_tmdb(title: str, year: int | None) -> dict | None:
                 cache[cache_key] = m
                 return m
 
-    # Sinon, le plus populaire
     best = max(results, key=lambda x: x.get("popularity", 0))
     cache[cache_key] = best
     return best
 
 # ============================================================
-# ENRICH (applique poster + tmdb_id sur un film)
+# ENRICH
 # ============================================================
 def enrich(movie: dict) -> dict:
     result = search_tmdb(movie["Name"], movie.get("Year"))
@@ -212,7 +234,6 @@ def enrich(movie: dict) -> dict:
 # SYNC
 # ============================================================
 def sync() -> None:
-    # Log source clé TMDB
     if _TMDB_KEY_ENV:
         info("Clé TMDB chargée depuis la variable d'environnement.")
     else:
@@ -220,7 +241,6 @@ def sync() -> None:
 
     existing_movies = load_movies()
 
-    # Index mutable nom → indice
     index_by_name: dict[str, int] = {
         movie_key(m): i
         for i, m in enumerate(existing_movies)
@@ -238,21 +258,23 @@ def sync() -> None:
         key = movie_key(m)
 
         if key in index_by_name:
-            # ── Mise à jour rating / date ──────────────────────────────
             idx      = index_by_name[key]
             existing = existing_movies[idx]
 
             changed = (
-                existing.get("Rating") != m.get("Rating") or
-                existing.get("Date")   != m.get("Date")
+                existing.get("Rating")         != m.get("Rating") or
+                existing.get("Date")            != m.get("Date")   or
+                existing.get("Letterboxd URI")  != m.get("Letterboxd URI")
             )
             if changed:
-                existing["Rating"] = m.get("Rating")
-                existing["Date"]   = m.get("Date")
+                existing["Rating"]        = m.get("Rating")
+                existing["Date"]          = m.get("Date")
+                # Mise à jour du lien si le RSS fournit un meilleur lien
+                if m.get("Letterboxd URI"):
+                    existing["Letterboxd URI"] = m["Letterboxd URI"]
                 updated_count += 1
                 info(f"UPD [{i+1}/{len(rss_movies)}] {m['Name']}")
 
-            # ── Re-enrichissement si pas de poster ────────────────────
             if not existing.get("poster_url"):
                 warn(f"Pas de poster pour « {m['Name']} » → tentative TMDB")
                 enrich(existing)
@@ -260,14 +282,12 @@ def sync() -> None:
                 re_enriched_count += 1
 
         else:
-            # ── Nouveau film ──────────────────────────────────────────
             info(f"NEW [{i+1}/{len(rss_movies)}] {m['Name']}")
             m = enrich(m)
             new_movies.append(m)
             index_by_name[key] = len(existing_movies) + len(new_movies) - 1
             time.sleep(TMDB_DELAY)
 
-    # ── Sauvegarde ────────────────────────────────────────────────────
     save_cache(cache)
 
     final    = existing_movies + new_movies

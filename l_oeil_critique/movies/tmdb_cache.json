@@ -10355,5 +10355,189 @@
     "video": false,
     "vote_average": 6.543,
     "vote_count": 1705
+  },
+  "The Hunt_2012": {
+    "adult": false,
+    "backdrop_path": "/evo3crueRIK9Eutb3lnDLVbD2xD.jpg",
+    "genre_ids": [
+      28,
+      53,
+      27
+    ],
+    "id": 514847,
+    "title": "The Hunt",
+    "original_language": "en",
+    "original_title": "The Hunt",
+    "overview": "Douze inconnus se réveillent dans un entrepôt. Ils ne savent ni où ils sont, ni comment ils sont arrivés là. Ils ne savent pas qu’ils ont été choisis dans un but bien spécifique… la chasse. Sur fond d’obscure théorie du complot sur internet, un groupe de dirigeants se rassemble pour la première fois dans un manoir retiré, afin de se divertir en chassant de simples citoyens. Mais leurs sombres desseins vont être mis en péril par Crystal, une de leurs proies, capable de les battre à leur propre jeu. La jeune femme renverse les règles, et abat un par un les chasseurs qui la séparent de la mystérieuse femme qui tire les ficelles de ce passe-temps macabre.",
+    "popularity": 10.6499,
+    "poster_path": "/omz6L7TUKIneTiC1TsXS7intr5Z.jpg",
+    "release_date": "2020-03-11",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.648,
+    "vote_count": 3651
+  },
+  "Anora_2024": {
+    "adult": false,
+    "backdrop_path": "/qvyOfwTC3qdbzkqdXWSSEMHtjBZ.jpg",
+    "genre_ids": [
+      18,
+      35,
+      10749
+    ],
+    "id": 1064213,
+    "title": "Anora",
+    "original_language": "en",
+    "original_title": "Anora",
+    "overview": "Anora, jeune travailleuse du sexe de Brooklyn, se transforme en Cendrillon des temps modernes lorsqu’elle rencontre le fils d’un oligarque russe. Sans réfléchir, elle épouse avec enthousiasme son prince charmant ; mais lorsque la nouvelle parvient en Russie, le conte de fées est vite menacé : les parents du jeune homme partent pour New York avec la ferme intention de faire annuler le mariage…",
+    "popularity": 17.5901,
+    "poster_path": "/2dNtTwMvoMGtISS2cTrMB8woqUy.jpg",
+    "release_date": "2024-10-14",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.1,
+    "vote_count": 3158
+  },
+  "Escape from Alcatraz_1979": {
+    "adult": false,
+    "backdrop_path": "/lfLVH3F8Xt8nITqG9cn97b54au1.jpg",
+    "genre_ids": [
+      18,
+      53
+    ],
+    "id": 10734,
+    "title": "L'Évadé d'Alcatraz",
+    "original_language": "en",
+    "original_title": "Escape from Alcatraz",
+    "overview": "En 29 ans, le pénitencier fédéral d’Alcatraz, construit sur un piton rocheux face à la côte, dite forteresse impénétrable, n’a été forcé qu’une seule fois, par trois hommes qui n'ont plus jamais fait parler d'eux. Frank Morris, l’astucieux voleur de banques, évadé de plusieurs prisons, en 1960, il est écroué et transféré à Alcatraz. Avec deux autres complices, il mettre au point cette évasion élaborée dans ses moindres détails.",
+    "popularity": 7.0942,
+    "poster_path": "/ifdjQWvuV3zGcsfzzL1devCfWTy.jpg",
+    "release_date": "1979-06-22",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.504,
+    "vote_count": 3158
+  },
+  "Bloodsport_1988": {
+    "adult": false,
+    "backdrop_path": "/aSA7RuKmCQBnYKn70GYPi6ckgoY.jpg",
+    "genre_ids": [
+      28,
+      53,
+      18
+    ],
+    "id": 11690,
+    "title": "Bloodsport, tous les coups sont permis",
+    "original_language": "en",
+    "original_title": "Bloodsport",
+    "overview": "Franck Dux, un champion américain de karaté, n'a qu'une obsession : remporter le Kumite, un tournoi clandestin d'arts martiaux organisé à Hong Kong, une rencontre où tous les coups sont permis, y compris les coups mortels !",
+    "popularity": 8.6714,
+    "poster_path": "/r9Jijds91tMq28MYyK9eK185los.jpg",
+    "release_date": "1988-02-26",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.048,
+    "vote_count": 2158
+  },
+  "A Silent Voice: The Movie_2016": {
+    "adult": false,
+    "backdrop_path": "/5lAMQMWpXMsirvtLLvW7cJgEPkU.jpg",
+    "genre_ids": [
+      16,
+      18,
+      10749
+    ],
+    "id": 378064,
+    "title": "Silent Voice",
+    "original_language": "ja",
+    "original_title": "映画 聲の形",
+    "overview": "Nishimiya est une élève douce et attentionnée. Chaque jour, elle est harcelée par Ishida, car elle est sourde. Dénoncé pour son comportement, le garçon est à son tour mis à l’écart et renvoyé de l’école… Des années plus tard, il apprend la langue des signes… et part à la recherche de la jeune fille.",
+    "popularity": 13.7248,
+    "poster_path": "/xjeYI75uMBtBjNlJ0cDJZDFg5Yv.jpg",
+    "release_date": "2016-09-17",
+    "softcore": false,
+    "video": false,
+    "vote_average": 8.387,
+    "vote_count": 4489
+  },
+  "The Devil Wears Prada 2_2026": {
+    "adult": false,
+    "backdrop_path": "/y3fQa7pytlysovXzovpXc1OQlTW.jpg",
+    "genre_ids": [
+      35,
+      18
+    ],
+    "id": 1314481,
+    "title": "Le Diable s'habille en Prada 2",
+    "original_language": "en",
+    "original_title": "The Devil Wears Prada 2",
+    "overview": "Près de vingt ans après, Meryl Streep, Anne Hathaway, Emily Blunt et Stanley Tucci reprennent leurs rôles emblématiques de Miranda, Andy, Emily et Nigel, et nous replongent dans l’univers impitoyable et glamour du magazine Runway et des rues new-yorkaises où l’élégance est une arme redoutable.",
+    "popularity": 53.9372,
+    "poster_path": "/pD5fSVgDW2L5993eAlDd2GFXwIp.jpg",
+    "release_date": "2026-04-29",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.63,
+    "vote_count": 721
+  },
+  "The Bus: A French Football Mutiny_2026": {
+    "adult": false,
+    "backdrop_path": "/dTEbfFiaYupyhgFg9ZC4NpH5p8G.jpg",
+    "genre_ids": [
+      99
+    ],
+    "id": 1678844,
+    "title": "Le Bus : Les Bleus en grève",
+    "original_language": "fr",
+    "original_title": "Le Bus : Les Bleus en grève",
+    "overview": "Ce documentaire revient sur la controverse entourant l'équipe de France de football lors de la Coupe du monde 2010 et sur la grève qui a fait la une et indigné tout un pays.",
+    "popularity": 1.7318,
+    "poster_path": "/xy5oC3dWw2OuSUHXIBPm6XQLk8n.jpg",
+    "release_date": "2026-05-13",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.014,
+    "vote_count": 35
+  },
+  "The Punisher: One Last Kill_2026": {
+    "adult": false,
+    "backdrop_path": "/qO55CD8tgVL1T4WKn6zYFFiD6lL.jpg",
+    "genre_ids": [
+      28,
+      18,
+      80
+    ],
+    "id": 1439930,
+    "title": "The Punisher : One Last Kill",
+    "original_language": "en",
+    "original_title": "The Punisher: One Last Kill",
+    "overview": "Alors que Frank Castle cherche un sens à sa vie au-delà de la vengeance, il replonge contre toute attente au cœur du combat.",
+    "popularity": 314.4766,
+    "poster_path": "/74VbBYHmpjgeES1zkRo1DwHkWnE.jpg",
+    "release_date": "2026-05-12",
+    "softcore": false,
+    "video": false,
+    "vote_average": 8.401,
+    "vote_count": 1357
+  },
+  "The Devil Wears Prada_2006": {
+    "adult": false,
+    "backdrop_path": "/gkh6Nt8DtY1XT4gQsyFq9XAVJlJ.jpg",
+    "genre_ids": [
+      18,
+      35
+    ],
+    "id": 350,
+    "title": "Le Diable s'habille en Prada",
+    "original_language": "en",
+    "original_title": "The Devil Wears Prada",
+    "overview": "Fraîchement diplômée, Andrea débarque à New York et décroche le job de rêve. Mais en tant qu’assistante de la tyrannique rédactrice en chef d’un prestigieux magazine de mode, elle va vite découvrir ce que le mot « enfer » veut dire…",
+    "popularity": 155.4556,
+    "poster_path": "/vTIBjWMWx1p5Wv2J3IRhEW13lrj.jpg",
+    "release_date": "2006-06-29",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.427,
+    "vote_count": 13622
   }
 }
