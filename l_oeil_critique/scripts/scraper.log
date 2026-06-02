@@ -4275,3 +4275,20 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-06-02 14:07:41,646 [INFO] Scraping TMDb terminé
 2026-06-02 14:07:41,647 [INFO] 0 nouveaux articles détectés
 2026-06-02 14:07:41,647 [INFO] Aucun nouvel article à ajouter
+2026-06-02 18:43:24,300 [INFO] ==== Début du script bandes-annonces ====
+2026-06-02 18:43:24,300 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-06-02 18:43:24,301 [INFO] 221 identifiants chargés depuis le log
+2026-06-02 18:43:24,301 [INFO] Démarrage scraping CineHorizons...
+2026-06-02 18:43:28,462 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-06-02 18:43:28,493 [INFO] 3 blocs détectés (limite 3)
+2026-06-02 18:43:28,524 [INFO] Scraping CineHorizons terminé
+2026-06-02 18:43:28,534 [INFO] Démarrage scraping TMDb...
+2026-06-02 18:43:28,690 [INFO] 20 films récupérés depuis TMDb
+2026-06-02 18:43:28,946 [INFO] Article ajouté TMDb: Des Minions et des monstres
+2026-06-02 18:43:28,946 [INFO] Scraping TMDb terminé
+2026-06-02 18:43:28,946 [INFO] 1 nouveaux articles détectés
+2026-06-02 18:43:28,950 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-06-02 18:43:28,950 [INFO] Sauvegarde du log avec 222 identifiants
+2026-06-02 18:43:28,951 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-06-02 18:43:28,964 [INFO] Rien à commiter, le répertoire est propre.
+2026-06-02 18:43:28,964 [INFO] ==== Fin du script bandes-annonces ====
