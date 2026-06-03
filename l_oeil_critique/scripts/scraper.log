@@ -4328,3 +4328,20 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-06-03 04:27:40,679 [INFO] Scraping TMDb terminé
 2026-06-03 04:27:40,680 [INFO] 0 nouveaux articles détectés
 2026-06-03 04:27:40,680 [INFO] Aucun nouvel article à ajouter
+2026-06-03 09:54:33,492 [INFO] ==== Début du script bandes-annonces ====
+2026-06-03 09:54:33,492 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-06-03 09:54:33,492 [INFO] 222 identifiants chargés depuis le log
+2026-06-03 09:54:33,492 [INFO] Démarrage scraping CineHorizons...
+2026-06-03 09:54:37,588 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-06-03 09:54:37,619 [INFO] 3 blocs détectés (limite 3)
+2026-06-03 09:54:37,648 [INFO] Scraping CineHorizons terminé
+2026-06-03 09:54:37,654 [INFO] Démarrage scraping TMDb...
+2026-06-03 09:54:37,806 [INFO] 20 films récupérés depuis TMDb
+2026-06-03 09:54:37,986 [INFO] Article ajouté TMDb: Supergirl
+2026-06-03 09:54:38,019 [INFO] Scraping TMDb terminé
+2026-06-03 09:54:38,020 [INFO] 1 nouveaux articles détectés
+2026-06-03 09:54:38,023 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-06-03 09:54:38,024 [INFO] Sauvegarde du log avec 223 identifiants
+2026-06-03 09:54:38,024 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-06-03 09:54:38,036 [INFO] Rien à commiter, le répertoire est propre.
+2026-06-03 09:54:38,036 [INFO] ==== Fin du script bandes-annonces ====
