@@ -10539,5 +10539,24 @@
     "video": false,
     "vote_average": 7.427,
     "vote_count": 13622
+  },
+  "Venus in Fur_2013": {
+    "adult": false,
+    "backdrop_path": "/9OZBgxriOtS0XgNgiQX4BhhkSVv.jpg",
+    "genre_ids": [
+      18
+    ],
+    "id": 197082,
+    "title": "La Vénus à la fourrure",
+    "original_language": "fr",
+    "original_title": "La Vénus à la fourrure",
+    "overview": "Seul dans un théâtre parisien après une journée passée à auditionner des comédiennes pour la pièce qu’il s’apprête à mettre en scène, Thomas se lamente au téléphone sur la piètre performance des candidates. Pas une n’a l’envergure requise pour tenir le rôle principal et il se prépare à partir lorsque Vanda surgit, véritable tourbillon d’énergie aussi débridée que délurée. Vanda incarne tout ce que Thomas déteste. Elle est vulgaire, écervelée, et ne reculerait devant rien pour obtenir le rôle. Mais un peu contraint et forcé, Thomas la laisse tenter sa chance et c’est avec stupéfaction qu’il voit Vanda se métamorphoser. Non seulement elle s’est procuré des accessoires et des costumes, mais elle comprend parfaitement le personnage (dont elle porte par ailleurs le prénom) et connaît toutes les répliques par cœur. Alors que l’« audition » se prolonge et redouble d’intensité, l’attraction de Thomas se mue en obsession…",
+    "popularity": 1.9284,
+    "poster_path": "/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
+    "release_date": "2013-05-28",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.216,
+    "vote_count": 751
   }
 }

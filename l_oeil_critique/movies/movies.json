@@ -5328,5 +5328,15 @@
     "poster_url": "https://image.tmdb.org/t/p/w500/vTIBjWMWx1p5Wv2J3IRhEW13lrj.jpg",
     "tmdb_id": 350,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-devil-wears-prada/"
+  },
+  {
+    "Name": "Venus in Fur",
+    "Year": 2013,
+    "Date": "2026-06-03",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/venus-in-fur/",
+    "poster_path": "/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
+    "tmdb_id": 197082
   }
 ]
