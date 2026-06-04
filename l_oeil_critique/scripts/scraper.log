@@ -4458,3 +4458,23 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-06-04 18:22:21,006 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-06-04 18:22:21,021 [INFO] Rien à commiter, le répertoire est propre.
 2026-06-04 18:22:21,021 [INFO] ==== Fin du script bandes-annonces ====
+2026-06-04 21:00:36,190 [INFO] ==== Début du script bandes-annonces ====
+2026-06-04 21:00:36,190 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-06-04 21:00:36,190 [INFO] 224 identifiants chargés depuis le log
+2026-06-04 21:00:36,191 [INFO] Démarrage scraping CineHorizons...
+2026-06-04 21:00:39,865 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-06-04 21:00:39,890 [INFO] 3 blocs détectés (limite 3)
+2026-06-04 21:00:39,890 [INFO] Extraction détails CineHorizons pour Comment braquer une banque
+2026-06-04 21:00:40,359 [INFO] Article ajouté CineHorizons: Comment braquer une banque
+2026-06-04 21:00:40,359 [INFO] Extraction détails CineHorizons pour Permis de détruire
+2026-06-04 21:00:41,221 [INFO] Article ajouté CineHorizons: Permis de détruire
+2026-06-04 21:00:41,249 [INFO] Scraping CineHorizons terminé
+2026-06-04 21:00:41,261 [INFO] Démarrage scraping TMDb...
+2026-06-04 21:00:41,380 [INFO] 20 films récupérés depuis TMDb
+2026-06-04 21:00:41,888 [INFO] Scraping TMDb terminé
+2026-06-04 21:00:41,889 [INFO] 2 nouveaux articles détectés
+2026-06-04 21:00:41,892 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-06-04 21:00:41,892 [INFO] Sauvegarde du log avec 226 identifiants
+2026-06-04 21:00:41,892 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-06-04 21:00:41,904 [INFO] Rien à commiter, le répertoire est propre.
+2026-06-04 21:00:41,904 [INFO] ==== Fin du script bandes-annonces ====
