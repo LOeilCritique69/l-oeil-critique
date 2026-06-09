@@ -10558,5 +10558,26 @@
     "video": false,
     "vote_average": 7.216,
     "vote_count": 751
+  },
+  "Snow White and the Seven Dwarfs_1937": {
+    "adult": false,
+    "backdrop_path": "/4yWayBvwl9gHXaWrDrAslxjL7mh.jpg",
+    "genre_ids": [
+      14,
+      16,
+      10751
+    ],
+    "id": 408,
+    "title": "Blanche-Neige et les Sept Nains",
+    "original_language": "en",
+    "original_title": "Snow White and the Seven Dwarfs",
+    "overview": "Blanche-Neige est une princesse d’une très grande beauté, ce qui rend jalouse sa belle‐mère. Celle‐ci demande quotidiennement à son miroir magique de lui dire qu’elle est la plus belle, mais un jour, le miroir affirme que la plus belle femme du royaume est Blanche-Neige. La reine décide alors de la tuer, mais le garde chargé de cette tâche ne trouve pas le courage et abandonne Blanche-Neige dans la forêt. Perdue, à bout de force, elle échoue dans une maison où habitent sept nains.",
+    "popularity": 9.5364,
+    "poster_path": "/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
+    "release_date": "1938-01-22",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.124,
+    "vote_count": 7985
   }
 }

@@ -5338,5 +5338,15 @@
     "poster_path": "/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
     "tmdb_id": 197082
+  },
+  {
+    "Name": "Snow White and the Seven Dwarfs",
+    "Year": 1937,
+    "Date": "2026-06-09",
+    "Rating": 3.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/snow-white-and-the-seven-dwarfs/",
+    "poster_path": "/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
+    "tmdb_id": 408
   }
 ]
