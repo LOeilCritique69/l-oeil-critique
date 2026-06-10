@@ -10579,5 +10579,26 @@
     "video": false,
     "vote_average": 7.124,
     "vote_count": 7985
+  },
+  "Pinocchio_1940": {
+    "adult": false,
+    "backdrop_path": "/crKA6WzkjWhvGdzvonRnGr1ZFv8.jpg",
+    "genre_ids": [
+      16,
+      10751,
+      14
+    ],
+    "id": 10895,
+    "title": "Pinocchio",
+    "original_language": "en",
+    "original_title": "Pinocchio",
+    "overview": "L’histoire intemporelle de Pinocchio inspire une nouvelle génération avec sa musique et ses personnages inoubliables. Quand Gepetto crée une marionnette et qu’elle devient un petit garçon en bois, son vœu devient réalité. Avec sa conscience, Jiminy Cricket, Pinocchio embarque dans une aventure qui mettra son courage, sa loyauté et son honnêteté à l’épreuve, afin de devenir un vrai petit garçon.",
+    "popularity": 6.8908,
+    "poster_path": "/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
+    "release_date": "1940-02-23",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.1,
+    "vote_count": 6247
   }
 }

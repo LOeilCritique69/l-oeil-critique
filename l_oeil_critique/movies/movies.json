@@ -5348,5 +5348,15 @@
     "poster_path": "/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
     "tmdb_id": 408
+  },
+  {
+    "Name": "Pinocchio",
+    "Year": 1940,
+    "Date": "2026-06-10",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/pinocchio/",
+    "poster_path": "/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
+    "tmdb_id": 10895
   }
 ]
