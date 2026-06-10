@@ -5062,3 +5062,23 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-06-10 21:27:01,036 [INFO] Scraping TMDb terminé
 2026-06-10 21:27:01,036 [INFO] 0 nouveaux articles détectés
 2026-06-10 21:27:01,037 [INFO] Aucun nouvel article à ajouter
+2026-06-10 23:28:30,256 [INFO] ==== Début du script bandes-annonces ====
+2026-06-10 23:28:30,256 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-06-10 23:28:30,256 [INFO] 231 identifiants chargés depuis le log
+2026-06-10 23:28:30,256 [INFO] Démarrage scraping CineHorizons...
+2026-06-10 23:28:33,353 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-06-10 23:28:33,383 [INFO] 3 blocs détectés (limite 3)
+2026-06-10 23:28:33,383 [INFO] Extraction détails CineHorizons pour Kyma, l'onde mystérieuse
+2026-06-10 23:28:34,590 [INFO] Article ajouté CineHorizons: Kyma, l'onde mystérieuse
+2026-06-10 23:28:34,591 [INFO] Extraction détails CineHorizons pour De la comédie française
+2026-06-10 23:28:35,985 [INFO] Article ajouté CineHorizons: De la comédie française
+2026-06-10 23:28:36,026 [INFO] Scraping CineHorizons terminé
+2026-06-10 23:28:36,037 [INFO] Démarrage scraping TMDb...
+2026-06-10 23:28:36,237 [INFO] 20 films récupérés depuis TMDb
+2026-06-10 23:28:36,431 [INFO] Scraping TMDb terminé
+2026-06-10 23:28:36,432 [INFO] 2 nouveaux articles détectés
+2026-06-10 23:28:36,436 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-06-10 23:28:36,436 [INFO] Sauvegarde du log avec 233 identifiants
+2026-06-10 23:28:36,437 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-06-10 23:28:36,452 [INFO] Rien à commiter, le répertoire est propre.
+2026-06-10 23:28:36,452 [INFO] ==== Fin du script bandes-annonces ====
