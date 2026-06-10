@@ -4996,3 +4996,21 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-06-10 00:19:13,322 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-06-10 00:19:13,336 [INFO] Rien à commiter, le répertoire est propre.
 2026-06-10 00:19:13,336 [INFO] ==== Fin du script bandes-annonces ====
+2026-06-10 05:22:34,426 [INFO] ==== Début du script bandes-annonces ====
+2026-06-10 05:22:34,426 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-06-10 05:22:34,426 [INFO] 229 identifiants chargés depuis le log
+2026-06-10 05:22:34,426 [INFO] Démarrage scraping CineHorizons...
+2026-06-10 05:22:43,987 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-06-10 05:22:44,018 [INFO] 3 blocs détectés (limite 3)
+2026-06-10 05:22:44,055 [INFO] Scraping CineHorizons terminé
+2026-06-10 05:22:44,068 [INFO] Démarrage scraping TMDb...
+2026-06-10 05:22:44,369 [INFO] 20 films récupérés depuis TMDb
+2026-06-10 05:22:44,496 [INFO] Article ajouté TMDb: Kill Bill : The Whole Bloody Affair
+2026-06-10 05:22:44,516 [INFO] Article ajouté TMDb: Vaiana, la légende du bout du monde
+2026-06-10 05:22:44,516 [INFO] Scraping TMDb terminé
+2026-06-10 05:22:44,517 [INFO] 2 nouveaux articles détectés
+2026-06-10 05:22:44,520 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-06-10 05:22:44,521 [INFO] Sauvegarde du log avec 231 identifiants
+2026-06-10 05:22:44,521 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-06-10 05:22:44,536 [INFO] Rien à commiter, le répertoire est propre.
+2026-06-10 05:22:44,536 [INFO] ==== Fin du script bandes-annonces ====
