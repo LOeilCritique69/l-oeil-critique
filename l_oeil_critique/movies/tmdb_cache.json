@@ -10600,5 +10600,25 @@
     "video": false,
     "vote_average": 7.1,
     "vote_count": 6247
+  },
+  "Dumbo_1941": {
+    "adult": false,
+    "backdrop_path": "/eEKpOowAkVAF3sKJKqY2h4h12GV.jpg",
+    "genre_ids": [
+      16,
+      10751
+    ],
+    "id": 11360,
+    "title": "Dumbo",
+    "original_language": "en",
+    "original_title": "Dumbo",
+    "overview": "Venez voir Dumbo ! Ce bébé adoré par sa mère, Mme Jumbo, charme tous les regards… jusqu'à ce qu'on s’aperçoive qu'il a d'immenses oreilles tombantes. Avec le soutien de son meilleur ami, Timothée, Dumbo apprend bientôt que ses oreilles spectaculaires le rendent unique, lui permettant de devenir une vedette et le seul éléphant volant au monde.",
+    "popularity": 5.2873,
+    "poster_path": "/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
+    "release_date": "1941-10-31",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.991,
+    "vote_count": 5293
   }
 }

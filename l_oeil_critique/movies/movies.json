@@ -5358,5 +5358,15 @@
     "poster_path": "/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
     "tmdb_id": 10895
+  },
+  {
+    "Name": "Dumbo",
+    "Year": 1941,
+    "Date": "2026-06-11",
+    "Rating": 1.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/dumbo/",
+    "poster_path": "/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
+    "tmdb_id": 11360
   }
 ]
