@@ -5368,5 +5368,15 @@
     "poster_path": "/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
     "tmdb_id": 11360
+  },
+  {
+    "Name": "Fantasia",
+    "Year": 1940,
+    "Date": "2026-06-12",
+    "Rating": 0.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/fantasia/",
+    "poster_path": "/hg5QpPLIvaFEon60Vyo2CK3LB1C.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hg5QpPLIvaFEon60Vyo2CK3LB1C.jpg",
+    "tmdb_id": 756
   }
 ]

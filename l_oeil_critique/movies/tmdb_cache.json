@@ -10620,5 +10620,26 @@
     "video": false,
     "vote_average": 6.991,
     "vote_count": 5293
+  },
+  "Fantasia_1940": {
+    "adult": false,
+    "backdrop_path": "/lyzI5uFJC2E7sIYCCdaU0oZkDw2.jpg",
+    "genre_ids": [
+      16,
+      10751,
+      14
+    ],
+    "id": 756,
+    "title": "Fantasia",
+    "original_language": "en",
+    "original_title": "Fantasia",
+    "overview": "Ce chef-d’œuvre intemporel de Walt Disney est une célébration de sons et lumières de huit séquences, alliant musique classique et animations innovantes de l'époque. Admirez « La Suite Casse-Noisette », « L’Apprenti Sorcier », « La Danse des Heures » et « Une Nuit sur le Mont Chauve ». Écoutez la musique prendre vie, regardez les images exploser en chanson et vivez l’exaltation de Fantasia.",
+    "popularity": 3.4632,
+    "poster_path": "/hg5QpPLIvaFEon60Vyo2CK3LB1C.jpg",
+    "release_date": "1940-11-13",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.3,
+    "vote_count": 3315
   }
 }
