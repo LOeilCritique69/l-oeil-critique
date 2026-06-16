@@ -4191,4 +4191,26 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-06-01 04:24:54,500 [INFO] Sauvegarde du log avec 221 identifiants
 2026-06-01 04:24:54,501 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-06-01 04:24:54,514 [INFO] Rien à commiter, le répertoire est propre.
-2026-06-01 04:24:54,515 [INFO] ==== Fin du script bandes-annonces ====
+2026-06-01 04:24:54,515 [INFO] ==== Fin du script bandes-annonces ====2026-06-16 13:04:09,743 [INFO] ==== Début du script bandes-annonces ====
+2026-06-16 13:04:09,782 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-06-16 13:04:09,802 [INFO] 221 identifiants chargés depuis le log
+2026-06-16 13:04:09,803 [INFO] Démarrage scraping CineHorizons...
+2026-06-16 13:04:19,903 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-06-16 13:04:19,932 [INFO] 3 blocs détectés (limite 3)
+2026-06-16 13:04:19,933 [INFO] Extraction détails CineHorizons pour Fjord
+2026-06-16 13:04:20,651 [INFO] Article ajouté CineHorizons: Fjord
+2026-06-16 13:04:20,651 [INFO] Extraction détails CineHorizons pour Resident Evil
+2026-06-16 13:04:21,248 [INFO] Article ajouté CineHorizons: Resident Evil
+2026-06-16 13:04:21,248 [INFO] Extraction détails CineHorizons pour Mutiny
+2026-06-16 13:04:21,644 [INFO] Article ajouté CineHorizons: Mutiny
+2026-06-16 13:04:21,712 [INFO] Scraping CineHorizons terminé
+2026-06-16 13:04:21,728 [INFO] Démarrage scraping TMDb...
+2026-06-16 13:04:22,192 [INFO] 20 films récupérés depuis TMDb
+2026-06-16 13:04:22,577 [INFO] Article ajouté TMDb: Supergirl
+2026-06-16 13:04:22,739 [INFO] Article ajouté TMDb: Des Minions et des monstres
+2026-06-16 13:04:22,866 [INFO] Article ajouté TMDb: Vaiana, la légende du bout du monde
+2026-06-16 13:04:22,866 [INFO] Scraping TMDb terminé
+2026-06-16 13:04:22,867 [INFO] 6 nouveaux articles détectés
+2026-06-16 13:04:22,896 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-06-16 13:04:22,897 [INFO] Sauvegarde du log avec 227 identifiants
+2026-06-16 13:04:22,898 [INFO] Poussée automatique FORCÉE vers GitHub...
