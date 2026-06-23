@@ -1070,11 +1070,11 @@
     "tmdb_id": 14160
   },
   {
-    "Date": "2024-10-15",
+    "Date": "2026-06-04",
     "Name": "Coraline",
     "Year": 2009,
-    "Letterboxd URI": "https://boxd.it/1NhQ",
-    "Rating": 3,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/coraline/",
+    "Rating": 4.0,
     "poster_path": "/xuUfl07Wdc150rDwKLKCCbLfLGQ.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/xuUfl07Wdc150rDwKLKCCbLfLGQ.jpg",
     "tmdb_id": 14836
@@ -5328,5 +5328,115 @@
     "poster_url": "https://image.tmdb.org/t/p/w500/vTIBjWMWx1p5Wv2J3IRhEW13lrj.jpg",
     "tmdb_id": 350,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-devil-wears-prada/"
+  },
+  {
+    "Name": "De Gaulle: Résistance",
+    "Year": 2026,
+    "Date": "2026-06-23",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/de-gaulle-resistance/",
+    "poster_path": "/tFdosLwBWPwaslsyQP4yUSezxOg.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tFdosLwBWPwaslsyQP4yUSezxOg.jpg",
+    "tmdb_id": 1165366
+  },
+  {
+    "Name": "My Life as a Zucchini",
+    "Year": 2016,
+    "Date": "2026-06-19",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/my-life-as-a-zucchini/",
+    "poster_path": "/sDre2NQ5PYNagHww6bQTLO07MaS.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/sDre2NQ5PYNagHww6bQTLO07MaS.jpg",
+    "tmdb_id": 393559
+  },
+  {
+    "Name": "Backrooms",
+    "Year": 2026,
+    "Date": "2026-06-19",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/backrooms-2026/",
+    "poster_path": "/thQQ3BBBhGDtWm3UTtabhyDJd8U.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/thQQ3BBBhGDtWm3UTtabhyDJd8U.jpg",
+    "tmdb_id": 1083381
+  },
+  {
+    "Name": "Saludos Amigos",
+    "Year": 1942,
+    "Date": "2026-06-15",
+    "Rating": 0.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/saludos-amigos/",
+    "poster_path": "/cL36Rkb2qi0Hvt0F5hKSGTf5If3.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/cL36Rkb2qi0Hvt0F5hKSGTf5If3.jpg",
+    "tmdb_id": 14906
+  },
+  {
+    "Name": "Obsession",
+    "Year": 2025,
+    "Date": "2026-06-15",
+    "Rating": 4.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/obsession-2025/",
+    "poster_path": "/r1gem8WJjUphdplOcrQhzCrYmIE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/r1gem8WJjUphdplOcrQhzCrYmIE.jpg",
+    "tmdb_id": 1012148
+  },
+  {
+    "Name": "Bambi",
+    "Year": 1942,
+    "Date": "2026-06-13",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/bambi/",
+    "poster_path": "/mQaTaFMu8fr4Y6w8fCfoRU49BVn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mQaTaFMu8fr4Y6w8fCfoRU49BVn.jpg",
+    "tmdb_id": 3170
+  },
+  {
+    "Name": "Fantasia",
+    "Year": 1940,
+    "Date": "2026-06-12",
+    "Rating": 0.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/fantasia/",
+    "poster_path": "/hg5QpPLIvaFEon60Vyo2CK3LB1C.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hg5QpPLIvaFEon60Vyo2CK3LB1C.jpg",
+    "tmdb_id": 756
+  },
+  {
+    "Name": "Dumbo",
+    "Year": 1941,
+    "Date": "2026-06-11",
+    "Rating": 1.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/dumbo/",
+    "poster_path": "/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
+    "tmdb_id": 11360
+  },
+  {
+    "Name": "Pinocchio",
+    "Year": 1940,
+    "Date": "2026-06-10",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/pinocchio/",
+    "poster_path": "/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
+    "tmdb_id": 10895
+  },
+  {
+    "Name": "Snow White and the Seven Dwarfs",
+    "Year": 1937,
+    "Date": "2026-06-09",
+    "Rating": 3.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/snow-white-and-the-seven-dwarfs/",
+    "poster_path": "/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
+    "tmdb_id": 408
+  },
+  {
+    "Name": "Venus in Fur",
+    "Year": 2013,
+    "Date": "2026-06-03",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/venus-in-fur/",
+    "poster_path": "/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
+    "tmdb_id": 197082
   }
 ]

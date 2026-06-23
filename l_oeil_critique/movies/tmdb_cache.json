@@ -10539,5 +10539,232 @@
     "video": false,
     "vote_average": 7.427,
     "vote_count": 13622
+  },
+  "De Gaulle: Résistance_2026": {
+    "adult": false,
+    "backdrop_path": "/ovzRhiBZjaZXTX5dd36yL9BvGyr.jpg",
+    "genre_ids": [
+      36,
+      18
+    ],
+    "id": 1165366,
+    "title": "La Bataille de Gaulle : L’âge de fer",
+    "original_language": "fr",
+    "original_title": "La Bataille de Gaulle : L’âge de fer",
+    "overview": "Juin 1940. La France s'effondre et signe l’armistice. Au milieu du chaos, un homme refuse de céder. Seul contre tous, ce général inconnu s'échappe vers Londres pour sauver ce qu'il reste d'un rêve : la liberté. Sans armée, sans appui, sans espoir. Mais avec une folle conviction : la France, sa France, n'a pas déposé les armes. Il tente un ultime pari : convaincre le monde que la bataille de France n'est ni terminée, ni perdue. La réalité est têtue, et lui donne tort. Mais peu à peu se lèvent autour de lui en Angleterre, en France et en Afrique des résistants de l'ombre, des lycéens révoltés, des soldats déterminés. Leur foi, leur audace, leur rage de liberté défient l'Histoire qui semblait pourtant écrite d’avance.",
+    "popularity": 6.5152,
+    "poster_path": "/tFdosLwBWPwaslsyQP4yUSezxOg.jpg",
+    "release_date": "2026-06-03",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.814,
+    "vote_count": 59
+  },
+  "My Life as a Zucchini_2016": {
+    "adult": false,
+    "backdrop_path": "/lTOr8fcxlsLrGfe2lqZLCjhvrIH.jpg",
+    "genre_ids": [
+      16,
+      35,
+      18
+    ],
+    "id": 393559,
+    "title": "Ma vie de courgette",
+    "original_language": "fr",
+    "original_title": "Ma vie de courgette",
+    "overview": "Courgette n’a rien d’un légume, c’est un vaillant petit garçon. Il croit qu’il est seul au monde quand il perd sa mère. Mais c’est sans compter sur les rencontres qu’il va faire dans sa nouvelle vie au foyer pour enfants. Simon, Ahmed, Jujube, Alice et Béatrice : ils ont tous leurs histoires et elles sont aussi dures qu’ils sont tendres. Et puis il y a cette fille, Camille. Quand on a 10 ans, avoir une bande de copains, tomber amoureux, il y en a des choses à découvrir et à apprendre. Et pourquoi pas même, être heureux.",
+    "popularity": 1.2358,
+    "poster_path": "/sDre2NQ5PYNagHww6bQTLO07MaS.jpg",
+    "release_date": "2016-09-22",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.798,
+    "vote_count": 1513
+  },
+  "Backrooms_2026": {
+    "adult": false,
+    "backdrop_path": "/oUozq2XHWifwAVOoS1qHU0qfXqM.jpg",
+    "genre_ids": [
+      27,
+      9648,
+      878
+    ],
+    "id": 1083381,
+    "title": "Backrooms",
+    "original_language": "en",
+    "original_title": "Backrooms",
+    "overview": "Une étrange porte apparaît dans le sous-sol d'un magasin de meubles.",
+    "popularity": 122.5026,
+    "poster_path": "/thQQ3BBBhGDtWm3UTtabhyDJd8U.jpg",
+    "release_date": "2026-05-27",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.869,
+    "vote_count": 688
+  },
+  "Saludos Amigos_1942": {
+    "adult": false,
+    "backdrop_path": "/epWLmnK6XYtlR8ICOKauGH546W2.jpg",
+    "genre_ids": [
+      16,
+      12,
+      10402,
+      99
+    ],
+    "id": 14906,
+    "title": "Saludos Amigos",
+    "original_language": "en",
+    "original_title": "Saludos Amigos",
+    "overview": "Mélange d'animation et de prises de vues réelles, Saludos Amigos est un kaléidoscope coloré d'art, d'aventures et de musique, au rythme de la samba. Depuis le sommet des Andes, jusqu'à la pampa argentine, en passant par Rio de Janeiro, vous serez accompagnés des célèbres Donald Duck et Dingo. Donald rencontre un lama têtu et Dingo essaye de se transformer en cow-boy sud-américain.",
+    "popularity": 1.6985,
+    "poster_path": "/cL36Rkb2qi0Hvt0F5hKSGTf5If3.jpg",
+    "release_date": "1942-08-24",
+    "softcore": false,
+    "video": false,
+    "vote_average": 5.8,
+    "vote_count": 512
+  },
+  "Obsession_2025": {
+    "adult": false,
+    "backdrop_path": "/hZVIwxi6kK4KnpVPEWwdhG0cMM5.jpg",
+    "genre_ids": [
+      9648,
+      53
+    ],
+    "id": 1012148,
+    "title": "Obsession mortelle",
+    "original_language": "en",
+    "original_title": "Chapel",
+    "overview": "Cohen Black se réveille d'un long coma totalement amnésique. Epaulé par Sofia, une infirmière, il tente de recoller les morceaux. Tout se complique lorsqu'il devient le principal suspect dans une affaire de meurtres en série.",
+    "popularity": 0.9398,
+    "poster_path": "/r1gem8WJjUphdplOcrQhzCrYmIE.jpg",
+    "release_date": "2025-05-09",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.1,
+    "vote_count": 9
+  },
+  "Bambi_1942": {
+    "adult": false,
+    "backdrop_path": "/1ZKHzSGJm0kvlCp4echAOtKnDTm.jpg",
+    "genre_ids": [
+      16,
+      18,
+      10751
+    ],
+    "id": 3170,
+    "title": "Bambi",
+    "original_language": "en",
+    "original_title": "Bambi",
+    "overview": "Après que sa vie a été bouleversée, Bambi part explorer les merveilles et les défis des bois avec ses meilleurs amis, Panpan et Fleur, afin de satisfaire sa destinée en tant que prince de la forêt.",
+    "popularity": 5.9382,
+    "poster_path": "/mQaTaFMu8fr4Y6w8fCfoRU49BVn.jpg",
+    "release_date": "1942-08-14",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.011,
+    "vote_count": 6042
+  },
+  "Fantasia_1940": {
+    "adult": false,
+    "backdrop_path": "/lyzI5uFJC2E7sIYCCdaU0oZkDw2.jpg",
+    "genre_ids": [
+      16,
+      10751,
+      14
+    ],
+    "id": 756,
+    "title": "Fantasia",
+    "original_language": "en",
+    "original_title": "Fantasia",
+    "overview": "Ce chef-d’œuvre intemporel de Walt Disney est une célébration de sons et lumières de huit séquences, alliant musique classique et animations innovantes de l'époque. Admirez « La Suite Casse-Noisette », « L’Apprenti Sorcier », « La Danse des Heures » et « Une Nuit sur le Mont Chauve ». Écoutez la musique prendre vie, regardez les images exploser en chanson et vivez l’exaltation de Fantasia.",
+    "popularity": 3.7956,
+    "poster_path": "/hg5QpPLIvaFEon60Vyo2CK3LB1C.jpg",
+    "release_date": "1940-11-13",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.344,
+    "vote_count": 3321
+  },
+  "Dumbo_1941": {
+    "adult": false,
+    "backdrop_path": "/eEKpOowAkVAF3sKJKqY2h4h12GV.jpg",
+    "genre_ids": [
+      16,
+      10751
+    ],
+    "id": 11360,
+    "title": "Dumbo",
+    "original_language": "en",
+    "original_title": "Dumbo",
+    "overview": "Venez voir Dumbo ! Ce bébé adoré par sa mère, Mme Jumbo, charme tous les regards… jusqu'à ce qu'on s’aperçoive qu'il a d'immenses oreilles tombantes. Avec le soutien de son meilleur ami, Timothée, Dumbo apprend bientôt que ses oreilles spectaculaires le rendent unique, lui permettant de devenir une vedette et le seul éléphant volant au monde.",
+    "popularity": 4.9273,
+    "poster_path": "/3Matx8Dps249DAeBmsMXBl6WhTv.jpg",
+    "release_date": "1941-10-31",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.99,
+    "vote_count": 5302
+  },
+  "Pinocchio_1940": {
+    "adult": false,
+    "backdrop_path": "/crKA6WzkjWhvGdzvonRnGr1ZFv8.jpg",
+    "genre_ids": [
+      16,
+      10751,
+      14
+    ],
+    "id": 10895,
+    "title": "Pinocchio",
+    "original_language": "en",
+    "original_title": "Pinocchio",
+    "overview": "L’histoire intemporelle de Pinocchio inspire une nouvelle génération avec sa musique et ses personnages inoubliables. Quand Gepetto crée une marionnette et qu’elle devient un petit garçon en bois, son vœu devient réalité. Avec sa conscience, Jiminy Cricket, Pinocchio embarque dans une aventure qui mettra son courage, sa loyauté et son honnêteté à l’épreuve, afin de devenir un vrai petit garçon.",
+    "popularity": 14.7448,
+    "poster_path": "/3GF5eUWvTEB90KzBlQnab4po7Wt.jpg",
+    "release_date": "1940-02-23",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.111,
+    "vote_count": 6262
+  },
+  "Snow White and the Seven Dwarfs_1937": {
+    "adult": false,
+    "backdrop_path": "/4yWayBvwl9gHXaWrDrAslxjL7mh.jpg",
+    "genre_ids": [
+      14,
+      16,
+      10751
+    ],
+    "id": 408,
+    "title": "Blanche-Neige et les Sept Nains",
+    "original_language": "en",
+    "original_title": "Snow White and the Seven Dwarfs",
+    "overview": "Blanche-Neige est une princesse d’une très grande beauté, ce qui rend jalouse sa belle‐mère. Celle‐ci demande quotidiennement à son miroir magique de lui dire qu’elle est la plus belle, mais un jour, le miroir affirme que la plus belle femme du royaume est Blanche-Neige. La reine décide alors de la tuer, mais le garde chargé de cette tâche ne trouve pas le courage et abandonne Blanche-Neige dans la forêt. Perdue, à bout de force, elle échoue dans une maison où habitent sept nains.",
+    "popularity": 9.5038,
+    "poster_path": "/pf2dhaGRYNtBgjkw24ot3AAXfPi.jpg",
+    "release_date": "1938-01-22",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.123,
+    "vote_count": 7994
+  },
+  "Venus in Fur_2013": {
+    "adult": false,
+    "backdrop_path": "/9OZBgxriOtS0XgNgiQX4BhhkSVv.jpg",
+    "genre_ids": [
+      18
+    ],
+    "id": 197082,
+    "title": "La Vénus à la fourrure",
+    "original_language": "fr",
+    "original_title": "La Vénus à la fourrure",
+    "overview": "Seul dans un théâtre parisien après une journée passée à auditionner des comédiennes pour la pièce qu’il s’apprête à mettre en scène, Thomas se lamente au téléphone sur la piètre performance des candidates. Pas une n’a l’envergure requise pour tenir le rôle principal et il se prépare à partir lorsque Vanda surgit, véritable tourbillon d’énergie aussi débridée que délurée. Vanda incarne tout ce que Thomas déteste. Elle est vulgaire, écervelée, et ne reculerait devant rien pour obtenir le rôle. Mais un peu contraint et forcé, Thomas la laisse tenter sa chance et c’est avec stupéfaction qu’il voit Vanda se métamorphoser. Non seulement elle s’est procuré des accessoires et des costumes, mais elle comprend parfaitement le personnage (dont elle porte par ailleurs le prénom) et connaît toutes les répliques par cœur. Alors que l’« audition » se prolonge et redouble d’intensité, l’attraction de Thomas se mue en obsession…",
+    "popularity": 0.9296,
+    "poster_path": "/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
+    "release_date": "2013-05-28",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.216,
+    "vote_count": 753
   }
 }
