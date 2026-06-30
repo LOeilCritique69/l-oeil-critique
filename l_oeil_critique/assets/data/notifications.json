@@ -15,37 +15,30 @@
   },
   {
     "id": 3,
-    "text": "Critique — Michael – Le roi sans ses ombres",
-    "icon": "🎬",
-    "unread": true,
-    "url": "/l_oeil_critique/articles/reviews/films/michael-critique.html"
-  },
-  {
-    "id": 4,
-    "text": "Critique — Invincible Saison 4 - La guerre ne demande pas si t'es prêt",
-    "icon": "🎬",
-    "unread": true,
-    "url": "/l_oeil_critique/articles/reviews/series/invinciblesaison4-critique.html"
-  },
-  {
-    "id": 5,
     "text": "Critique — Obsession - Simple, efficace, et ça marque.",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/obsession-critique.html"
   },
   {
-    "id": 6,
+    "id": 4,
     "text": "Critique — De Gaulle : Résistance – Une fresque plus qu'un biopic",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/de-gaulle-resistance-critique.html"
   },
   {
-    "id": 7,
+    "id": 5,
     "text": "Critique — Supergirl – Une bonne base héroïque, mais une normalité",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/supergirl-critique.html"
+  },
+  {
+    "id": 6,
+    "text": "Critique — Disclosure Day – Spielberg dépassé par son propre sujet",
+    "icon": "🎬",
+    "unread": true,
+    "url": "/l_oeil_critique/articles/reviews/films/disclosure-day-critique.html"
   }
 ]
