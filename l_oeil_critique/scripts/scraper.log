@@ -5529,3 +5529,19 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-06-30 00:33:30,936 [INFO] Scraping TMDb terminé
 2026-06-30 00:33:30,937 [INFO] 0 nouveaux articles détectés
 2026-06-30 00:33:30,937 [INFO] Aucun nouvel article à ajouter
+2026-06-30 15:20:52,087 [INFO] ==== Début du script bandes-annonces ====
+2026-06-30 15:20:52,109 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-06-30 15:20:52,145 [INFO] 237 identifiants chargés depuis le log
+2026-06-30 15:20:52,145 [INFO] Démarrage scraping CineHorizons...
+2026-06-30 15:21:02,768 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-06-30 15:21:02,789 [INFO] 3 blocs détectés (limite 3)
+2026-06-30 15:21:02,790 [INFO] Extraction détails CineHorizons pour Angry Birds 3 - La Grande Envolée
+2026-06-30 15:21:03,344 [INFO] Article ajouté CineHorizons: Angry Birds 3 - La Grande Envolée
+2026-06-30 15:21:03,396 [INFO] Scraping CineHorizons terminé
+2026-06-30 15:21:03,409 [INFO] Démarrage scraping TMDb...
+2026-06-30 15:21:03,763 [INFO] 20 films récupérés depuis TMDb
+2026-06-30 15:21:04,501 [INFO] Scraping TMDb terminé
+2026-06-30 15:21:04,502 [INFO] 1 nouveaux articles détectés
+2026-06-30 15:21:04,554 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-06-30 15:21:04,555 [INFO] Sauvegarde du log avec 238 identifiants
+2026-06-30 15:21:04,555 [INFO] Poussée automatique FORCÉE vers GitHub...
