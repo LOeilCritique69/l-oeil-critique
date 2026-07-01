@@ -10830,5 +10830,27 @@
     "video": false,
     "vote_average": 7.823,
     "vote_count": 6149
+  },
+  "The Death of Robin Hood_2026": {
+    "adult": false,
+    "backdrop_path": "/lh3BDkmWJh998n4fQcHYcVi7dpm.jpg",
+    "genre_ids": [
+      12,
+      18,
+      53,
+      28
+    ],
+    "id": 1284465,
+    "title": "On l'appelait Robin des Bois",
+    "original_language": "en",
+    "original_title": "The Death of Robin Hood",
+    "overview": "Hanté par son passé après une vie de crimes et de violence, Robin des Bois est laissé pour mort à l’issue d’un combat qu’il pensait être le dernier. Recueilli par une femme mystérieuse, il se voit offrir une ultime chance de rédemption…",
+    "popularity": 36.6287,
+    "poster_path": "/bYaznBVPlQ4C0uTu6wXn68NZFoB.jpg",
+    "release_date": "2026-06-18",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.7,
+    "vote_count": 40
   }
 }
