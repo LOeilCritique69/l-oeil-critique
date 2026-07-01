@@ -10766,5 +10766,69 @@
     "video": false,
     "vote_average": 7.216,
     "vote_count": 753
+  },
+  "Disclosure Day_2026": {
+    "adult": false,
+    "backdrop_path": "/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg",
+    "genre_ids": [
+      878,
+      53
+    ],
+    "id": 1275779,
+    "title": "Disclosure Day",
+    "original_language": "en",
+    "original_title": "Disclosure Day",
+    "overview": "Si vous découvriez que nous ne sommes pas seuls, si quelqu'un vous le montrait, vous le prouvait, cela vous effraierait-il ?",
+    "popularity": 592.339,
+    "poster_path": "/8GRMeKaDFnuzXBzqGiDMzCFDnwQ.jpg",
+    "release_date": "2026-06-10",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.693,
+    "vote_count": 732
+  },
+  "Bleach: Thousand-Year Blood War - The Calamity_2026": {
+    "adult": false,
+    "backdrop_path": "/fwdosqd1BW1tDlvaF9qhMuERQGY.jpg",
+    "genre_ids": [
+      28,
+      12,
+      16,
+      878
+    ],
+    "id": 1669841,
+    "title": "Bleach: Thousand-Year Blood War - The Calamity",
+    "original_language": "ja",
+    "original_title": "Bleach: Thousand-Year Blood War - The Calamity",
+    "overview": "",
+    "popularity": 12.6429,
+    "poster_path": "/9HW5N89FN8hdo0PjbYiYVENBeH1.jpg",
+    "release_date": "2026-06-25",
+    "softcore": false,
+    "video": true,
+    "vote_average": 7.5,
+    "vote_count": 4
+  },
+  "Fantastic Mr. Fox_2009": {
+    "adult": false,
+    "backdrop_path": "/xRxSLhhjPG2D8l0BXi0KdN4IvPt.jpg",
+    "genre_ids": [
+      12,
+      16,
+      35,
+      10751
+    ],
+    "id": 10315,
+    "title": "Fantastic Mr. Fox",
+    "original_language": "en",
+    "original_title": "Fantastic Mr. Fox",
+    "overview": "Mr. Fox est le plus rusé des voleurs de poules. À la naissance de son fils, son épouse lui demande d'arrêter ce métier trop dangereux. Il devient alors journaliste mais s'ennuie terriblement. 12 ans plus tard, lorsque la famille Fox déménage au pied d'un arbre surplombant les fermes de trois éleveurs aussi prospères que méchants, la tentation devient trop forte et Mr. Fox reprend ses anciennes activités. Il va alors entraîner tous les animaux de la forêt dans une guerre acharnée contre les fermiers…",
+    "popularity": 7.5769,
+    "poster_path": "/2l6PJ6ux9b7RqQuQOUg7eL29PLW.jpg",
+    "release_date": "2009-10-14",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.823,
+    "vote_count": 6149
   }
 }

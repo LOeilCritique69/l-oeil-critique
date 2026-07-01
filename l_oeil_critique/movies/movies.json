@@ -1520,10 +1520,10 @@
     "tmdb_id": 559
   },
   {
-    "Date": "2024-11-06",
+    "Date": "2026-06-28",
     "Name": "Spider-Man",
     "Year": 2002,
-    "Letterboxd URI": "https://boxd.it/2a8i",
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/spider-man/",
     "Rating": 4.5,
     "poster_path": "/pNz1NREgddPdlzytlR8mW4B26fW.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/pNz1NREgddPdlzytlR8mW4B26fW.jpg",
@@ -4310,11 +4310,11 @@
     "tmdb_id": 9531
   },
   {
-    "Date": "2026-02-08",
+    "Date": "2026-06-29",
     "Name": "Supergirl",
     "Year": 1984,
-    "Letterboxd URI": "https://boxd.it/1Y8A",
-    "Rating": 1.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/supergirl-2026/",
+    "Rating": 3.0,
     "poster_path": "/6OfuKKCPFclHOj4SSRRpLzF1lfP.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/6OfuKKCPFclHOj4SSRRpLzF1lfP.jpg",
     "tmdb_id": 9651
@@ -5438,5 +5438,35 @@
     "poster_path": "/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/1dDf4Agwx9V4WzwT1RlwDD4Zy4B.jpg",
     "tmdb_id": 197082
+  },
+  {
+    "Name": "Disclosure Day",
+    "Year": 2026,
+    "Date": "2026-06-30",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/disclosure-day/",
+    "poster_path": "/8GRMeKaDFnuzXBzqGiDMzCFDnwQ.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8GRMeKaDFnuzXBzqGiDMzCFDnwQ.jpg",
+    "tmdb_id": 1275779
+  },
+  {
+    "Name": "Bleach: Thousand-Year Blood War - The Calamity",
+    "Year": 2026,
+    "Date": "2026-06-27",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/bleach-thousand-year-blood-war-the-calamity/",
+    "poster_path": "/9HW5N89FN8hdo0PjbYiYVENBeH1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9HW5N89FN8hdo0PjbYiYVENBeH1.jpg",
+    "tmdb_id": 1669841
+  },
+  {
+    "Name": "Fantastic Mr. Fox",
+    "Year": 2009,
+    "Date": "2026-06-24",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/fantastic-mr-fox/",
+    "poster_path": "/2l6PJ6ux9b7RqQuQOUg7eL29PLW.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2l6PJ6ux9b7RqQuQOUg7eL29PLW.jpg",
+    "tmdb_id": 10315
   }
 ]
