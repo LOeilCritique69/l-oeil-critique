@@ -15,7 +15,7 @@ from xml.sax.saxutils import escape
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_FILE = REPO_ROOT / "sitemap.xml"
-SITE_URL = "https://www.l-oeil-critique.com"
+SITE_URL = "https://l-oeil-critique.netlify.app"
 EXCLUDED_DIRS = {".git", ".github", ".venv", "venv", "node_modules", "__pycache__", "site-packages", "assets", "css", "scripts", "movies"}
 EXCLUDED_PATH_SNIPPETS = ("site-packages", "/site-packages/", "/Lib/site-packages/", "/playwright/driver/", "/__pycache__")
 EXCLUDED_FILES = {"robots.txt", "sitemap.xml"}
