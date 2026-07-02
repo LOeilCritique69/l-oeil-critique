@@ -5633,3 +5633,5 @@ playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at 
 2026-07-02 14:57:52,512 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-07-02 14:57:52,512 [INFO] Sauvegarde du log avec 241 identifiants
 2026-07-02 14:57:52,512 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-02 14:57:54,693 [INFO] Push GitHub FORCE réussi
+2026-07-02 14:57:54,694 [INFO] ==== Fin du script bandes-annonces ====
