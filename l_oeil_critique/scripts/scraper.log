@@ -5692,3 +5692,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-02 05:00:43,654 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-07-02 05:00:43,667 [INFO] Rien à commiter, le répertoire est propre.
 2026-07-02 05:00:43,667 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-02 08:20:29,655 [INFO] ==== Début du script bandes-annonces ====
+2026-07-02 08:20:29,655 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-02 08:20:29,656 [INFO] 242 identifiants chargés depuis le log
+2026-07-02 08:20:29,656 [INFO] Démarrage scraping CineHorizons...
+2026-07-02 08:20:33,225 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-02 08:20:33,276 [INFO] 3 blocs détectés (limite 3)
+2026-07-02 08:20:33,311 [INFO] Scraping CineHorizons terminé
+2026-07-02 08:20:33,322 [INFO] Démarrage scraping TMDb...
+2026-07-02 08:20:33,427 [INFO] 20 films récupérés depuis TMDb
+2026-07-02 08:20:33,583 [INFO] Scraping TMDb terminé
+2026-07-02 08:20:33,584 [INFO] 0 nouveaux articles détectés
+2026-07-02 08:20:33,585 [INFO] Aucun nouvel article à ajouter
