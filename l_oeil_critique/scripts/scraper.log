@@ -5559,3 +5559,77 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2026-07-01 01:06:36,004 [INFO] Scraping TMDb terminé
 2026-07-01 01:06:36,008 [INFO] 0 nouveaux articles détectés
 2026-07-01 01:06:36,009 [INFO] Aucun nouvel article à ajouter
+2026-07-02 14:57:00,810 [INFO] ==== Début du script bandes-annonces ====
+2026-07-02 14:57:00,846 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-02 14:57:00,847 [INFO] 238 identifiants chargés depuis le log
+2026-07-02 14:57:00,847 [INFO] Démarrage scraping CineHorizons...
+2026-07-02 14:57:02,362 [CRITICAL] Erreur critique: BrowserType.launch: Executable doesn't exist at C:\Users\yanis\AppData\Local\ms-playwright\chromium_headless_shell-1228\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+Traceback (most recent call last):
+  File "d:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\scraper_bandes_annonces.py", line 325, in <module>
+    main()
+    ~~~~^^
+  File "d:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\scraper_bandes_annonces.py", line 292, in main
+    cine_articles, cine_ids = scrape_cinehorizons(log)
+                              ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "d:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\scraper_bandes_annonces.py", line 168, in scrape_cinehorizons
+    browser = p.chromium.launch(headless=True)
+  File "D:\projet_webs\CHEF D'OEUVRE\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 16515, in launch
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.launch(
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<17 lines>...
+        )
+        ^
+    )
+    ^
+  File "D:\projet_webs\CHEF D'OEUVRE\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "D:\projet_webs\CHEF D'OEUVRE\.venv\Lib\site-packages\playwright\_impl\_browser_type.py", line 97, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "D:\projet_webs\CHEF D'OEUVRE\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\projet_webs\CHEF D'OEUVRE\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at C:\Users\yanis\AppData\Local\ms-playwright\chromium_headless_shell-1228\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2026-07-02 14:57:46,776 [INFO] ==== Début du script bandes-annonces ====
+2026-07-02 14:57:46,777 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-02 14:57:46,777 [INFO] 238 identifiants chargés depuis le log
+2026-07-02 14:57:46,777 [INFO] Démarrage scraping CineHorizons...
+2026-07-02 14:57:50,889 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-02 14:57:50,914 [INFO] 3 blocs détectés (limite 3)
+2026-07-02 14:57:50,915 [INFO] Extraction détails CineHorizons pour Les Vacances de Golo & Ritchie
+2026-07-02 14:57:51,438 [INFO] Article ajouté CineHorizons: Les Vacances de Golo & Ritchie
+2026-07-02 14:57:51,471 [INFO] Scraping CineHorizons terminé
+2026-07-02 14:57:51,483 [INFO] Démarrage scraping TMDb...
+2026-07-02 14:57:51,760 [INFO] 20 films récupérés depuis TMDb
+2026-07-02 14:57:51,900 [INFO] Article ajouté TMDb: Spider-Man: Brand New Day
+2026-07-02 14:57:52,024 [INFO] Article ajouté TMDb: L'Odyssée
+2026-07-02 14:57:52,508 [INFO] Scraping TMDb terminé
+2026-07-02 14:57:52,509 [INFO] 3 nouveaux articles détectés
+2026-07-02 14:57:52,512 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-07-02 14:57:52,512 [INFO] Sauvegarde du log avec 241 identifiants
+2026-07-02 14:57:52,512 [INFO] Poussée automatique FORCÉE vers GitHub...
