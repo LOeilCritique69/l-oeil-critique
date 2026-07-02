@@ -1,19 +1,33 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Retrouvez toutes les actualités majeures du cinéma et des séries, y compris les événements comme les Oscars et les Golden Globes." />
-    <link rel="icon" href="assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg" />
-    <title>Bandes-Annonces - L'Œil Critique</title>
+        <meta property="og:title" content="Bandes-Annonces - L'Œil Critique">
+        <meta property="og:description" content="Découvrez les dernières pépites, teasers et exclusivités du septième art. Vibrez au rythme des sorties qui font l’événement.">
+        <meta property="og:image" content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="fr_FR">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:url" content="https://www.l-oeil-critique.com/bande-annonces.html">
+        <link rel="canonical" href="https://www.l-oeil-critique.com/bande-annonces.html">
+        
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/chef_d_oeuvre.css">
-    
-    <style>
+
+
+
+
+
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
+<title>Bandes-Annonces - L'Œil Critique</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+<link href="css/chef_d_oeuvre.css" rel="stylesheet"/>
+<style>
         /* --- BLOC INFO / DISCLAIMER --- */
         .info-disclaimer {
             margin: 2rem auto;
@@ -118,52 +132,44 @@
             }
         }
     </style>
-</head>
+<meta/><meta/><meta/><meta/><meta/><twitter:card></twitter:card><meta/><meta content="Bandes-Annonces - L'Œil Critique" property="og:title"/><meta content="Découvrez les dernières pépites, teasers et exclusivités du septième art. Vibrez au rythme des sorties qui font l’événement." property="og:description"/><meta content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" property="og:image"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.l-oeil-critique.com/bande-annonces.html" property="og:url"/><link href="https://www.l-oeil-critique.com/bande-annonces.html" rel="canonical"/></head>
 <body>
-
 <main>
-    <section class="bande-annonce-container" aria-label="Section des bandes-annonces">
-        <section class="page-intro-section">
-            <div class="intro-content">
-                <h1 class="page-title">Bandes-Annonces</h1>
-                <div class="title-underline"></div>
-                <p class="page-description">
+<section aria-label="Section des bandes-annonces" class="bande-annonce-container">
+<section class="page-intro-section">
+<div class="intro-content">
+<h1 class="page-title">Bandes-Annonces</h1>
+<div class="title-underline"></div>
+<p class="page-description">
                     Découvrez les dernières pépites, teasers et exclusivités du septième art. 
                     Vibrez au rythme des sorties qui font l’événement.
                 </p>
-            </div>
-        </section>
-
-        <div class="info-disclaimer">
-            <span class="info-icon">ℹ️</span> 
-            <p>
+</div>
+</section>
+<div class="info-disclaimer">
+<span class="info-icon">ℹ️</span>
+<p>
                 Le site s'améliore chaque jour pour récupérer le maximum de contenus. 
                 Les mises à jour ne sont pas quotidiennes et certains titres peuvent apparaître en double (VO/VF).
                 Certaines vidéos peuvent devenir indisponibles suite à des restrictions de droits d'auteur ; le site n'a aucun contrôle sur ces mesures externes.
             </p>
-        </div>
-
-        <div class="search-wrapper">
-            <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input type="text" id="trailers-search" placeholder="Rechercher un film..." aria-label="Rechercher">
-            </div>
-        </div>
-
-        <div class="grille-bandes" id="grille-bandes" role="list" aria-live="polite">
-            </div>
-
-        <button id="voir-plus-btn" class="btn-primary" aria-controls="grille-bandes" hidden>
+</div>
+<div class="search-wrapper">
+<div class="search-box">
+<span class="search-icon">🔍</span>
+<input aria-label="Rechercher" id="trailers-search" placeholder="Rechercher un film..." type="text"/>
+</div>
+</div>
+<div aria-live="polite" class="grille-bandes" id="grille-bandes" role="list">
+</div>
+<button aria-controls="grille-bandes" class="btn-primary" hidden="" id="voir-plus-btn">
             Voir plus
         </button>
-
-        <p id="date-maj" class="date-maj" aria-live="polite"></p>
-    </section>
+<p aria-live="polite" class="date-maj" id="date-maj"></p>
+</section>
 </main>
-
 <script src="assets/js/header.js"></script>
 <script src="assets/js/main.js"></script>
-
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('grille-bandes');
@@ -244,8 +250,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 </script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
-
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"></script>
 </body>
 </html>

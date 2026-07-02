@@ -71,7 +71,9 @@ def safe_str(v) -> str:
     return str(v).strip() if v is not None else ""
 
 def movie_key(movie: dict) -> str:
-    return safe_str(movie.get("Name")).lower()
+    name = safe_str(movie.get("Name")).lower()
+    year = movie.get("Year")
+    return f"{name}|{year}" if year is not None else name
 
 def is_valid_movie(m: dict) -> bool:
     return bool(m and safe_str(m.get("Name")))

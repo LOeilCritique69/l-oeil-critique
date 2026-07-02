@@ -80,6 +80,20 @@ jobs:
           python l_oeil_critique/movies/lb.py
 
       # =========================
+      # IMAGE OPTIMIZATION
+      # =========================
+      - name: 🖼️ Optimize images
+        run: |
+          python l_oeil_critique/scripts/optimize_images.py
+
+      # =========================
+      # SITEMAP
+      # =========================
+      - name: 🗺️ Generate sitemap
+        run: |
+          python l_oeil_critique/scripts/sitemap_generator.py
+
+      # =========================
       # DEBUG AFTER
       # =========================
       - name: 🔍 AFTER run state

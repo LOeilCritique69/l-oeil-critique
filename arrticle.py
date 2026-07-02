@@ -1,6 +1,8 @@
 import os
 import json
 import re
+import subprocess
+import sys
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -290,3 +292,7 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(articles_index, f, ensure_ascii=False, indent=2)
 
 print(f"✅ JSON généré : {len(articles_index)} articles indexés.")
+
+seo_script = os.path.join(os.path.dirname(__file__), "..", "seo_injector.py")
+if os.path.exists(seo_script):
+    subprocess.run([sys.executable, seo_script], check=False)

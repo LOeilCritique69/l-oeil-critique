@@ -8516,27 +8516,6 @@
     "vote_average": 5.507,
     "vote_count": 1859
   },
-  "Supergirl_1984": {
-    "adult": false,
-    "backdrop_path": "/qpH0hLbDiYwCQOOS4Od9ZEEaGTc.jpg",
-    "genre_ids": [
-      12,
-      14,
-      28,
-      878
-    ],
-    "id": 9651,
-    "original_language": "en",
-    "original_title": "Supergirl",
-    "overview": "Argonville, une cité kryptonienne qui a été transportée dans \"l'espace du dedans\", un univers de poche, peu après la destruction de Krypton, a perdu sa principale source d’énergie, l’omégaèdre, par la faute de la jeune Kara. Celle-ci traverse la \"chute binaire\" qui mène de l'espace du dedans au grand espace et vient sur la Terre pour récupérer cette boule magique créée par Zaltar et tombée entre-temps aux mains de la sorcière Selena, qui veut utiliser sa puissance pour dominer le monde.  En attendant de pouvoir localiser l'omégaèdre, Kara s'intègre aux humains en s'inscrivant au collège sous le nom de Linda Lee. Peu après, Selena cherche à enlever un jeune homme du nom d'Ethan, afin qu'il tombe amoureux d'elle. C'est alors que Kara se change en Supergirl et le sauve.",
-    "popularity": 2.7657,
-    "poster_path": "/6OfuKKCPFclHOj4SSRRpLzF1lfP.jpg",
-    "release_date": "1984-07-01",
-    "title": "Supergirl",
-    "video": false,
-    "vote_average": 5.274,
-    "vote_count": 657
-  },
   "Apocalypto_2006": {
     "adult": false,
     "backdrop_path": "/nnmbJvYyDS1VkMOCbxSpdBi3WbJ.jpg",
@@ -10766,5 +10745,112 @@
     "video": false,
     "vote_average": 7.216,
     "vote_count": 753
+  },
+  "The Death of Robin Hood_2026": {
+    "adult": false,
+    "backdrop_path": "/lh3BDkmWJh998n4fQcHYcVi7dpm.jpg",
+    "genre_ids": [
+      12,
+      18,
+      53,
+      28
+    ],
+    "id": 1284465,
+    "title": "On l'appelait Robin des Bois",
+    "original_language": "en",
+    "original_title": "The Death of Robin Hood",
+    "overview": "Hanté par son passé après une vie de crimes et de violence, Robin des Bois est laissé pour mort à l’issue d’un combat qu’il pensait être le dernier. Recueilli par une femme mystérieuse, il se voit offrir une ultime chance de rédemption…",
+    "popularity": 37.6792,
+    "poster_path": "/bYaznBVPlQ4C0uTu6wXn68NZFoB.jpg",
+    "release_date": "2026-06-18",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.7,
+    "vote_count": 41
+  },
+  "Disclosure Day_2026": {
+    "adult": false,
+    "backdrop_path": "/s6ly8laenkHWlIBRkLSfIuEMLC6.jpg",
+    "genre_ids": [
+      878,
+      53
+    ],
+    "id": 1275779,
+    "title": "Disclosure Day",
+    "original_language": "en",
+    "original_title": "Disclosure Day",
+    "overview": "Si vous découvriez que nous ne sommes pas seuls, si quelqu'un vous le montrait, vous le prouvait, cela vous effraierait-il ?",
+    "popularity": 647.9174,
+    "poster_path": "/8GRMeKaDFnuzXBzqGiDMzCFDnwQ.jpg",
+    "release_date": "2026-06-10",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.7,
+    "vote_count": 745
+  },
+  "Supergirl_2026": {
+    "adult": false,
+    "backdrop_path": "/54KIfdTEzOliHDKx0OkzYGqAICx.jpg",
+    "genre_ids": [
+      28,
+      12,
+      878
+    ],
+    "id": 1081003,
+    "title": "Supergirl",
+    "original_language": "en",
+    "original_title": "Supergirl",
+    "overview": "Lorsqu’un ennemi inattendu et impitoyable surgit, Kara Zor-El est forcée, malgré elle, de faire équipe avec un compagnon improbable. Ensemble, ils se lancent dans une épopée cosmique où la vengeance et la justice sont en jeu, et où Kara doit affronter ses origines pour trouver sa propre voie en tant qu’héroïne.",
+    "popularity": 270.0264,
+    "poster_path": "/1QV4GubAlUvGX3FjqWWWfQiYkN4.jpg",
+    "release_date": "2026-06-24",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.2,
+    "vote_count": 294
+  },
+  "Bleach: Thousand-Year Blood War - The Calamity_2026": {
+    "adult": false,
+    "backdrop_path": "/fwdosqd1BW1tDlvaF9qhMuERQGY.jpg",
+    "genre_ids": [
+      28,
+      12,
+      16,
+      878
+    ],
+    "id": 1669841,
+    "title": "Bleach: Thousand-Year Blood War - The Calamity",
+    "original_language": "ja",
+    "original_title": "Bleach: Thousand-Year Blood War - The Calamity",
+    "overview": "",
+    "popularity": 11.673,
+    "poster_path": "/9HW5N89FN8hdo0PjbYiYVENBeH1.jpg",
+    "release_date": "2026-06-25",
+    "softcore": false,
+    "video": true,
+    "vote_average": 7.5,
+    "vote_count": 4
+  },
+  "Fantastic Mr. Fox_2009": {
+    "adult": false,
+    "backdrop_path": "/xRxSLhhjPG2D8l0BXi0KdN4IvPt.jpg",
+    "genre_ids": [
+      12,
+      16,
+      35,
+      10751
+    ],
+    "id": 10315,
+    "title": "Fantastic Mr. Fox",
+    "original_language": "en",
+    "original_title": "Fantastic Mr. Fox",
+    "overview": "Mr. Fox est le plus rusé des voleurs de poules. À la naissance de son fils, son épouse lui demande d'arrêter ce métier trop dangereux. Il devient alors journaliste mais s'ennuie terriblement. 12 ans plus tard, lorsque la famille Fox déménage au pied d'un arbre surplombant les fermes de trois éleveurs aussi prospères que méchants, la tentation devient trop forte et Mr. Fox reprend ses anciennes activités. Il va alors entraîner tous les animaux de la forêt dans une guerre acharnée contre les fermiers…",
+    "popularity": 7.5973,
+    "poster_path": "/2l6PJ6ux9b7RqQuQOUg7eL29PLW.jpg",
+    "release_date": "2009-10-14",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.823,
+    "vote_count": 6151
   }
 }
