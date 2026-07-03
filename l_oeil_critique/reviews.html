@@ -1,385 +1,307 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-        <meta property="og:title" content="Reviews – L'Œil Critique">
-        <meta property="og:description" content="Spielberg dépassé par son propre sujet.Sauvé par Emily Blunt et de bonnes scènes d'action, mais plombé par un rythme endormant et une conclusion qui ne tient pa">
-        <meta property="og:image" content="assets/img/reviews/letterboxd-mac-icon.png">
-        <meta property="og:type" content="website">
-        <meta property="og:locale" content="fr_FR">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="og:url" content="https://www.l-oeil-critique.com/reviews.html">
-        <link rel="canonical" href="https://www.l-oeil-critique.com/reviews.html">
-        
+    <meta property="og:title" content="Critiques – L'Œil Critique">
+    <meta property="og:description" content="Toutes les critiques cinéma et séries de L'Œil Critique, classées par catégorie, plus les tier lists de vos univers préférés.">
+    <meta property="og:image" content="assets/img/reviews/letterboxd-mac-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.l-oeil-critique.com/reviews.html">
+    <link rel="canonical" href="https://www.l-oeil-critique.com/reviews.html">
 
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="critiques cinéma, reviews films, avis séries, tier list, analyses cinéma, L'Œil Critique" name="keywords"/>
+    <meta name="description" content="Toutes les critiques cinéma et séries de L'Œil Critique, classées par catégorie, plus les tier lists de vos univers préférés.">
+    <link href="assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
+    <title>Critiques – L'Œil Critique</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+    <link href="css/chef_d_oeuvre.css" rel="stylesheet"/>
+    <link href="css/reviews.css" rel="stylesheet"/>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Critiques – L'Œil Critique", "description": "Toutes les critiques cinéma et séries de L'Œil Critique, classées par catégorie, plus les tier lists de vos univers préférés.", "url": "https://www.l-oeil-critique.com/reviews.html", "hasPart": [{"@type": "WebPage", "name": "Critiques Films", "url": "https://www.l-oeil-critique.com/pages/critique-films.html"}, {"@type": "WebPage", "name": "Critiques Séries", "url": "https://www.l-oeil-critique.com/pages/critique-series.html"}, {"@type": "WebPage", "name": "Tier Lists", "url": "https://www.l-oeil-critique.com/pages/tier-lists.html"}]}</script>
 
+    <style>
+        /* ========================================================================
+           HERO DUO — reviews.html (1 film + 1 série en avant)
+           ======================================================================== */
+        .hero-duo {
+            display: flex;
+            min-height: 34rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+        }
 
+        .hero-duo__panel {
+            position: relative;
+            display: flex;
+            flex: 1;
+            align-items: flex-end;
+            overflow: hidden;
+            padding: 3rem 2.5rem;
+            background-position: center;
+            background-size: cover;
+            color: var(--text-color-light);
+        }
 
+        .hero-duo__panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0.55));
+        }
 
+        .hero-duo__panel + .hero-duo__panel {
+            border-left: 1px solid rgba(201, 162, 74, 0.3);
+        }
 
+        .hero-duo__content {
+            position: relative;
+            z-index: 2;
+            max-width: 480px;
+        }
 
+        .hero-duo__badge {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            padding: 0.3rem 0.7rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #10121a;
+            border-radius: 20px;
+        }
 
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="critiques cinéma, reviews films, avis séries, analyses cinéma, L'Œil Critique" name="keywords"/>
-<link href="assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
-<title>Reviews – L'Œil Critique</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
-<link href="css/chef_d_oeuvre.css" rel="stylesheet"/>
-<link href="css/reviews.css" rel="stylesheet"/>
-<meta/><meta/><meta/><meta/><meta/><twitter:card></twitter:card><meta/><meta content="Reviews – L'Œil Critique" property="og:title"/><meta content="Spielberg dépassé par son propre sujet.Sauvé par Emily Blunt et de bonnes scènes d'action, mais plombé par un rythme endormant et une conclusion qui ne tient pa" property="og:description"/><meta content="assets/img/reviews/letterboxd-mac-icon.png" property="og:image"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.l-oeil-critique.com/reviews.html" property="og:url"/><link href="https://www.l-oeil-critique.com/reviews.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Review", "name": "Reviews – L'Œil Critique", "description": "Spielberg dépassé par son propre sujet.Sauvé par Emily Blunt et de bonnes scènes d'action, mais plombé par un rythme endormant et une conclusion qui ne tient pa", "image": "assets/img/reviews/letterboxd-mac-icon.png", "author": {"@type": "Person", "name": "L’Œil Critique"}, "itemReviewed": {"@type": "Movie", "name": "Reviews – L'Œil Critique"}, "reviewBody": "Spielberg dépassé par son propre sujet.Sauvé par Emily Blunt et de bonnes scènes d'action, mais plombé par un rythme endormant et une conclusion qui ne tient pa", "reviewRating": {"@type": "Rating", "ratingValue": "01", "bestRating": "07"}}</script></head>
+        .hero-duo__panel--film .hero-duo__badge { background: #7fb3ff; }
+        .hero-duo__panel--series .hero-duo__badge { background: #ff9f7f; }
+
+        .hero-duo__title {
+            margin-bottom: 0.75rem;
+            font-family: var(--font-family-title);
+            font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+            line-height: 1.1;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+        }
+
+        .hero-duo__summary {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #f2f2f2;
+            opacity: 0.9;
+        }
+
+        .hero-duo__panel .btn {
+            padding: 0.75rem 1.4rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-duo { flex-direction: column; min-height: auto; }
+            .hero-duo__panel { min-height: 22rem; }
+            .hero-duo__panel + .hero-duo__panel {
+                border-top: 1px solid rgba(201, 162, 74, 0.3);
+                border-left: none;
+            }
+        }
+
+        /* ========================================================================
+           HUB NAVIGATION — reviews.html (Films / Séries / Tier Lists)
+           ======================================================================== */
+        .hub-nav {
+            padding: 4rem 3rem;
+        }
+
+        .hub-nav__intro {
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .hub-nav__title {
+            margin-bottom: 0.5rem;
+            font-family: var(--font-family-title);
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+        }
+
+        .hub-nav__subtitle {
+            font-size: 1rem;
+            color: black;
+            opacity: 0.75;
+        }
+
+        .hub-nav__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hub-nav__card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+            padding: 2rem 1.75rem;
+            overflow: hidden;
+            color: var(--text-color-light);
+            text-decoration: none;
+            background: var(--primary-color);
+            border: 1px solid rgba(201, 162, 74, 0.2);
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hub-nav__card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(201, 162, 74, 0.08), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hub-nav__card:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            border-color: var(--secondary-color);
+            transform: translateY(-6px);
+        }
+
+        .hub-nav__card:hover::before {
+            opacity: 1;
+        }
+
+        .hub-nav__eyebrow {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        .hub-nav__card-title {
+            margin-bottom: 0.5rem;
+            font-family: var(--font-family-title);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .hub-nav__count {
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            opacity: 0.65;
+        }
+
+        .hub-nav__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .hub-nav__cta .arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .hub-nav__card:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .hub-nav__card--films .hub-nav__eyebrow { color: #7fb3ff; }
+        .hub-nav__card--series .hub-nav__eyebrow { color: #ff9f7f; }
+        .hub-nav__card--tierlist .hub-nav__eyebrow { color: var(--secondary-color); }
+
+        @media (max-width: 900px) {
+            .hub-nav__grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .hub-nav { padding: 2.5rem 1.5rem; }
+        }
+    </style>
+</head>
 <body>
-<main>
-<!-- HERO REVIEWS -->
-<section class="hero-section" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55), var(--primary-color)), url('assets/img/reviews/disclosure-day-2026.jpg') center/cover no-repeat;">
-<div class="hero-content">
-<h1>Disclosure Day</h1>
-<p><strong>Spielberg dépassé par son propre sujet.</strong> Sauvé par Emily Blunt et de bonnes scènes d'action, mais plombé par un rythme endormant et une conclusion qui ne tient pas ses promesses.</p>
-<a class="btn" href="articles/reviews/films/disclosure-day-critique.html">Lire la critique</a>
+        <main>
+        <!-- HERO DUO : 1 film + 1 série en avant -->
+        <section class="hero-duo">
+        <div class="hero-duo__panel hero-duo__panel--film" style="background-image: url('assets/img/reviews/disclosure-day-2026.jpg');">
+        <div class="hero-duo__content">
+        <span class="hero-duo__badge">Film</span>
+        <h1 class="hero-duo__title">Disclosure Day</h1>
+        <p class="hero-duo__summary"><strong>Spielberg dépassé par son propre sujet.</strong> Sauvé par Emily Blunt et de bonnes scènes d'action, mais plombé par un rythme endormant et une conclusion qui ne tient pas ses promesses.</p>
+        <a class="btn" href="articles/reviews/films/disclosure-day-critique.html">Lire la critique</a>
+        </div>
+</div>
+        <div class="hero-duo__panel hero-duo__panel--series" style="background-image: url('assets/img/reviews/daredevil-born-again-1741150309.avif');">
+        <div class="hero-duo__content">
+        <span class="hero-duo__badge">Série</span>
+        <h1 class="hero-duo__title">Daredevil: Born Again</h1>
+        <p class="hero-duo__summary"><strong>Une montée en tension irréversible.</strong> Entre Bullseye, White Tiger et la chute de Fisk, la série atteint un niveau de noirceur rarement vu dans le MCU.</p>
+        <a class="btn" href="articles/reviews/series/Daredevil_born_again-critique.html">Lire la critique</a>
+        </div>
 </div>
 </section>
+
+<!-- HUB NAVIGATION : Films / Séries / Tier Lists -->
+<section class="hub-nav container">
+        <div class="hub-nav__intro">
+        <h2 class="hub-nav__title">Explorer les critiques</h2>
+        <p class="hub-nav__subtitle">Films, séries et classements par univers, tout est trié par catégorie.</p>
+        </div>
+        <div class="hub-nav__grid">
+        <a class="hub-nav__card hub-nav__card--films" href="pages/critique-films.html">
+        <div>
+        <span class="hub-nav__eyebrow">Cinéma</span>
+        <h3 class="hub-nav__card-title">Critiques Films</h3>
+        </div>
+        <span class="hub-nav__cta">Voir toutes les critiques <span class="arrow">→</span></span>
+        </a>
+        <a class="hub-nav__card hub-nav__card--series" href="pages/critique-series.html">
+        <div>
+        <span class="hub-nav__eyebrow">Séries</span>
+        <h3 class="hub-nav__card-title">Critiques Séries</h3>
+        </div>
+        <span class="hub-nav__cta">Voir toutes les critiques <span class="arrow">→</span></span>
+        </a>
+        <a class="hub-nav__card hub-nav__card--tierlist" href="pages/tier-lists.html">
+        <div>
+        <span class="hub-nav__eyebrow">Classements</span>
+        <h3 class="hub-nav__card-title">Tier Lists</h3>
+        <p class="hub-nav__count">Harry Potter, Spider-Man...</p>
+        </div>
+        <span class="hub-nav__cta">Voir les tier lists <span class="arrow">→</span></span>
+        </a>
+        </div>
+</section>
+
 <section class="reviews-list" id="reviews">
-<div class="reviews-unified-block container">
-<div class="reviews-unified-content">
-<h2 class="reviews-unified-title">Reviews &amp; suivi de visionnage</h2>
-<div class="reviews-unified-text">
-<p>Ici, pas de format imposé ni de contrainte éditoriale stricte. J'écris uniquement quand une œuvre me marque vraiment, qu'elle soit récente ou ancienne.</p>
-<p>Certaines critiques sont courtes, presque brutes : elles reflètent un ressenti immédiat, sans chercher à sur-analyser.</p>
-<p>En parallèle, une page dédiée rassemble tous les films que je regarde, avec leurs notes issues de Letterboxd. Aucun avis détaillé, uniquement le suivi de visionnage.</p>
-<p>Le tout évolue dans le temps : mes avis comme mon regard changent, et les pages sont régulièrement mises à jour.</p>
-</div>
-<a aria-label="Accéder à la page des films Letterboxd" class="reviews-unified-cta" href="/l_oeil_critique/movies/movies.html">
-<img alt="Accès films Letterboxd" class="reviews-unified-icon" src="assets/img/reviews/letterboxd-mac-icon.png"/>
-</a>
-<div class="reviews-unified-brand">L'ŒIL CRITIQUE</div>
-</div>
-</div>
-<div class="reviews-list__grid">
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/disclosure-day-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche du film Disclosure Day" class="review-card__image" src="assets/img/reviews/disclosure-day-2026.jpg"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Disclosure Day</h3>
-<p class="review-card__meta">Par Yanis • 01/07/2026</p>
-<p class="review-card__summary"><strong>Spielberg dépassé par son propre sujet.</strong> Sauvé par Emily Blunt et de bonnes scènes d'action, mais plombé par un rythme endormant et une conclusion qui ne tient pas ses promesses.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/supergirl-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche du film Supergirl" class="review-card__image" src="assets/img/reviews/supergirl-2026.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Supergirl</h3>
-<p class="review-card__meta">Par Yanis • 30/06/2026</p>
-<p class="review-card__summary"><strong>Une bonne base héroïque, mais une normalité.</strong> Milly Alcock et Lobo portent le film à merveille, mais des personnages secondaires sous-exploités et un méchant trop fade freinent l'ensemble.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/de-gaulle-resistance-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche du film De Gaulle Résistance" class="review-card__image" src="assets/img/reviews/de-gaulle-resistance-2026.jpg"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">De Gaulle : Résistance</h3>
-<p class="review-card__meta">Par Yanis • 24/06/2026</p>
-<p class="review-card__summary"><strong>Une fresque historique solide mais un biopic déséquilibré.</strong> Le film fonctionne mieux comme récit de la France libre que comme portrait profond de De Gaulle.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/obsession-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche du film Obsession" class="review-card__image" src="assets/img/reviews/obsession-2025.jpg"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Obsession</h3>
-<p class="review-card__meta">Par Yanis • 16/06/2026</p>
-<p class="review-card__summary"><strong>Simple, efficace, et ça marque.</strong> Un film d'horreur redoutable dans son ambiance et sa maîtrise visuelle. Honnêtement dans mon top 3 du genre.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/series/Daredevil_born_again-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Daredevil Born Again" class="review-card__image" src="assets/img/reviews/daredevil-born-again-1741150309.avif"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type serie">Série</span>
-<h3 class="review-card__title">Daredevil: Born Again (Saison 2)</h3>
-<p class="review-card__meta">Par Yanis • 10/05/2026</p>
-<p class="review-card__summary"><strong>Une montée en tension irréversible.</strong> Entre Bullseye, White Tiger et la chute de Fisk, la série atteint un niveau de noirceur rarement vu dans le MCU.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/michael-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche du film Michael" class="review-card__image" src="assets/img/reviews/michael-jackson-biopic.jpg"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Michael</h3>
-<p class="review-card__meta">Par Yanis • 10/05/2026</p>
-<p class="review-card__summary"><strong>Le roi sans ses ombres.</strong> Brillant dans ses fulgurances, lacunaire dans ses silences. Un biopic qui assume ce qu'il est : une célébration. Pas une radiographie. Et malgré tout, ça marche.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/series/invinciblesaison4-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Daredevil Born Again" class="review-card__image" src="assets/img/reviews/invincibles2ka.avif"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type serie">Série</span>
-<h3 class="review-card__title">Invincible Saison 4</h3>
-<p class="review-card__meta">Par Yanis • 10/05/2026</p>
-<p class="review-card__summary"><strong>Une saison qui n'a pas peur de faire mal.</strong> Conquest en état de grâce, Thragg qui s'installe, et Mark à bout de souffle, épisode après épisode, la pression monte et ne redescend plus.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/spirited_away-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Daredevil Born Again" class="review-card__image" src="assets/img/reviews/spirited-away.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Spirited Away</h3>
-<p class="review-card__meta">Par Yanis • 10/05/2026</p>
-<p class="review-card__summary"><strong>Une masterclass visuelle et narrative.</strong> Une histoire d'une beauté rare, portée par des personnages inoubliables et une identité visuelle hors du commun. Je dois des excuses au Studio Ghibli.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/series/Agent-Of-Shield-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de AOS" class="review-card__image" src="assets/img/reviews/rr.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type serie">Série</span>
-<h3 class="review-card__title">Agents of S.H.I.E.L.D.</h3>
-<p class="review-card__meta">Par Yanis • 16/03/2026</p>
-<p class="review-card__summary"><strong>Une série Marvel qui dépasse son statut de spin-off.</strong> Malgré des débuts parfois hésitants et des saisons inégales, Agents of S.H.I.E.L.D. finit par devenir une aventure très attachante portée par ses personnages et des arcs narratifs ambitieux !</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/man-of-steel-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Man of Steel" class="review-card__image" src="assets/img/reviews/91033-man-of-steel-henry-cavill-super-heroes-movies-hd-4k-superman.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Man of Steel</h3>
-<p class="review-card__meta">Par Yanis • 08/03/2026</p>
-<p class="review-card__summary"><strong>Une surprise solide.</strong> Malgré un visuel un peu trop gris, le film impressionne par sa puissance et une OST magistrale signée Hans Zimmer.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/good-will-hunting.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Good Will Hunting" class="review-card__image" src="assets/img/reviews/OIP.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Good Will Hunting</h3>
-<p class="review-card__meta">Par Yanis • 01/03/2026</p>
-<p class="review-card__summary"><strong>Un film d'une justesse incroyable</strong>, porté par des interprétations magistrales.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/wuthering-heights-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Wuthering Heights" class="review-card__image" src="assets/img/reviews/Wuthering-Heights.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Wuthering Heights</h3>
-<p class="review-card__meta">Par Yanis • 01/03/2026</p>
-<p class="review-card__summary"><strong>Une réinterprétation viscérale et moderne</strong> d'un classique gothique.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/challengers-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Challengers" class="review-card__image" src="assets/img/reviews/wallpapersden.com_challengers-2024-zendaya-movie_3840x2160.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Challengers</h3>
-<p class="review-card__meta">Par Yanis • 02/01/2026</p>
-<p class="review-card__summary"><strong>Un film tendu, sensuel et intelligent</strong>, qui transforme le sport en champ de bataille émotionnel. Audacieux dans l'intention.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/le_tombeau_des_lucioles.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Grave of the Fireflies" class="review-card__image" src="assets/img/reviews/le_tombeau_des_lucioles_-_8.jpg"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Grave of the Fireflies</h3>
-<p class="review-card__meta">Par Yanis • 12/12/2025</p>
-<p class="review-card__summary"><strong>Un chef-d'œuvre déchirant</strong> où la guerre est racontée à hauteur d'enfant. Une œuvre bouleversante et profondément humaine.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/Whiplash-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Logo de Whiplash" class="review-card__image" src="/l_oeil_critique/assets/img/reviews/whiplash_title.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Whiplash</h3>
-<p class="review-card__meta">Par Yanis • 03/11/2025</p>
-<p class="review-card__summary"><strong>Un duel viscéral entre maître et élève</strong>, où la passion pour la perfection devient une guerre psychologique.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/sinners-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Sinners" class="review-card__image" src="assets/img/reviews/logosinners.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Sinners</h3>
-<p class="review-card__meta">Par Yanis • 27/04/2025</p>
-<p class="review-card__summary"><em>Sinners</em> vous plonge dans un univers où le passé rencontre l'invisible. Une expérience cinématographique incontournable !</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/Thunderbolts-critique.html">
-<div class="review-card__image-wrap">
-<img alt="Logo de Thunderbolts" class="review-card__image" src="assets/img/reviews/thunderbolts_logo.avif"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Thunderbolts</h3>
-<p class="review-card__meta">Par Yanis • 06/05/2025</p>
-<p class="review-card__summary">Une équipe de personnages fascinants qui apporte une nouvelle dimension au MCU, entre lutte intérieure et quête de rédemption.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/critique-robot-sauvage.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Robot Sauvage" class="review-card__image" src="assets/img/reviews/robot sauvage logo.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Robot Sauvage</h3>
-<p class="review-card__meta">Par Yanis • 15/04/2025</p>
-<p class="review-card__summary"><em>Robot Sauvage</em> est une réflexion poignante sur la nature humaine. Porté par des effets spéciaux impressionnants et une narration touchante.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/critique-flow.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Flow" class="review-card__image" src="assets/img/reviews/flow-critique-630x280.jpg.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Flow</h3>
-<p class="review-card__meta">Par Yanis • 20/03/2025</p>
-<p class="review-card__summary"><em>Flow</em> est une fable poétique et sensorielle qui parvient à captiver par la puissance de son animation. Une œuvre contemplative.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/series/daredevil-born-again-les-deux-premiers-episodes.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Daredevil Born Again" class="review-card__image" src="assets/img/reviews/daredevil-born-again-1741150309.avif"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type serie">Série</span>
-<h3 class="review-card__title">Daredevil: Born Again – Épisodes 1 &amp; 2</h3>
-<p class="review-card__meta">Par Yanis • 08/03/2025</p>
-<p class="review-card__summary">Un retour fracassant pour le justicier de Hell's Kitchen, mêlant tragédie et ambitions politiques.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/series/Critique-Friendly-neighorhood-spider-man.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Friendly Neighborhood Spider-Man" class="review-card__image" src="assets/img/reviews/your-friendly-neighborhood-spider-man.avif"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type serie">Série</span>
-<h3 class="review-card__title">Spider-Man: Friendly Neighborhood</h3>
-<p class="review-card__meta">Par Yanis • 26/02/2025</p>
-<p class="review-card__summary">Une série animée captivante qui réinvente l'histoire de Peter Parker avec une approche originale.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/Captain-America-Brave-New-World-un-bon-film-mais-inutile-pour-l-univers-de-Marvel.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Captain America Brave New World" class="review-card__image" src="assets/img/reviews/captain-america-brave-new-world-uebernimmt-anthony-mackie-alias-sam-wilson-erstmals-rolle-neuer-captain-america-425806.webp"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Captain America : Brave New World</h3>
-<p class="review-card__meta">Par Yanis • 16/02/2025</p>
-<p class="review-card__summary">Un bon film d'action avec des scènes impressionnantes, mais qui n'apporte rien de marquant à l'univers du MCU.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-<article class="review-card">
-<a class="review-card__link" href="articles/reviews/films/Sonic-3-le-meilleur-de-sa-trilogie.html">
-<div class="review-card__image-wrap">
-<img alt="Affiche de Sonic 3" class="review-card__image" src="assets/img/reviews/sonic-3-movie-trailer-logo.avif"/>
-</div>
-<div class="review-card__content">
-<span class="review-card__type film">Film</span>
-<h3 class="review-card__title">Sonic 3</h3>
-<p class="review-card__meta">Par Yanis • 22/01/2025</p>
-<p class="review-card__summary">Un film réussi, mais qui aurait pu offrir plus de surprises. L'introduction de Shadow et la qualité des scènes d'action le placent en haut de la saga.</p>
-<span class="review-card__read-more">Lire plus</span>
-</div>
-</a>
-</article>
-</div>
+        <div class="reviews-unified-block container">
+        <div class="reviews-unified-content">
+        <h2 class="reviews-unified-title">Reviews &amp; suivi de visionnage</h2>
+        <div class="reviews-unified-text">
+                <p>Ici, pas de format imposé ni de contrainte éditoriale stricte. J'écris uniquement quand une œuvre me marque vraiment, qu'elle soit récente ou ancienne.</p>
+                <p>Certaines critiques sont courtes, presque brutes : elles reflètent un ressenti immédiat, sans chercher à sur-analyser.</p>
+                <p>En parallèle, une page dédiée rassemble tous les films que je regarde, avec leurs notes issues de Letterboxd. Aucun avis détaillé, uniquement le suivi de visionnage.</p>
+                <p>Le tout évolue dans le temps : mes avis comme mon regard changent, et les pages sont régulièrement mises à jour.</p>
+        </div>
+        <a aria-label="Accéder à la page des films Letterboxd" class="reviews-unified-cta" href="/l_oeil_critique/movies/movies.html">
+        <img alt="Accès films Letterboxd" class="reviews-unified-icon" src="assets/img/reviews/letterboxd-mac-icon.png"/>
+        </a>
+        <div class="reviews-unified-brand">L'ŒIL CRITIQUE</div>
+        </div>
+        </div>
 </section>
 </main>
 <script src="assets/js/main.js"></script>

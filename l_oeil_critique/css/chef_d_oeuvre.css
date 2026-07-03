@@ -1077,38 +1077,124 @@ a.search-link:hover .search-item {
 }
 
 /* ========================================================================
-   Hero block (articles)
+   HERO — bloc article (pages de critique individuelles)
    ======================================================================== */
-.hero-block { height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; background-size: cover; background-position: center; position: relative; padding-bottom: 0; }
-.hero-block__content { z-index: 10; color: #fff; max-width: 90%; padding: 1rem 2rem; }
-.hero-block__title { font-family: var(--font-family-title); font-size: 5rem; margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,0,0,0.9); letter-spacing: 3px; line-height: 1; }
-.hero-block__subtitle { font-size: 1.5rem; margin-bottom: 1.2rem; font-weight: 400; }
-.hero-block__content .btn { margin-bottom: 0; }
+.hero-block {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-block__content {
+  z-index: 10;
+  max-width: 90%;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.hero-block__title {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-family-title);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+}
+
+.hero-block__subtitle {
+  margin-bottom: 1.2rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 400;
+}
+
+.hero-block__content .btn {
+  margin-bottom: 0;
+}
 
 /* ========================================================================
-   Hero section (home)
+   HERO — section listing / accueil (home, reviews...)
    ======================================================================== */
 .hero-section {
+  --hero-bg: url("../assets/img/bigactualités/netflix1.webp");
+
   position: relative;
-  height: 49rem;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--primary-color)),
-              url("../assets/img/bigactualités/netflix1.webp") center 20% / cover no-repeat;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  min-height: 40rem;
   padding: 4rem 3rem;
   color: var(--text-color-light);
-  border-bottom: 2px solid rgba(255,255,255,0.08);
-  box-shadow: inset 0 -60px 120px rgba(0,0,0,0.5);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), var(--primary-color)),
+    var(--hero-bg) center 20% / cover no-repeat;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -60px 120px rgba(0, 0, 0, 0.5);
 }
 
-.hero-content { max-width: 700px; animation: fadeInUp 1.5s ease forwards; }
-.hero-content h1 { font-family: var(--font-family-title); font-size: 3rem; line-height: 1.2; color: var(--secondary-color); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-.hero-content p { font-size: 1.1rem; color: #f2f2f2; margin-bottom: 1.5rem; opacity: 0.9; }
-.hero-content .btn { background-color: var(--secondary-color); color: var(--primary-color); padding: 0.9rem 1.6rem; border-radius: 10px; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.4); transition: all 0.3s ease; }
-.hero-content .btn:hover { transform: translateY(-4px); background-color: var(--accent-color); }
+.hero-content {
+  max-width: 700px;
+  animation: heroFadeInUp 1.5s ease forwards;
+}
 
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-content h1 {
+  margin-bottom: 1rem;
+  font-family: var(--font-family-title);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+}
+
+.hero-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #f2f2f2;
+  opacity: 0.9;
+}
+
+.hero-content .btn {
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  transform: translateY(-4px);
+  background-color: var(--accent-color);
+}
+
+@keyframes heroFadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .hero-block { height: 55vh; }
+  .hero-section {
+    min-height: 28rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .hero-content { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .hero-block__content { padding: 1rem; }
+  .hero-content p { font-size: 1rem; }
+  .hero-content .btn { width: 100%; text-align: center; }
+}
 
 /* =========================
    À LA UNE — VERSION PRO

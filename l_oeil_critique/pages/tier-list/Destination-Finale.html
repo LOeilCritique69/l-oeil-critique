@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta property="og:title" content="Tier List Final Destination – L'Œil Critique">
+    <meta property="og:description" content="Le classement des 6 films Final Destination, du meilleur au pire.">
+    <meta property="og:image" content="../../assets/img/tierlists/final-destination-cover.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.l-oeil-critique.com/reviews/tier-list/Final-Destination.html">
+    <link rel="canonical" href="https://www.l-oeil-critique.com/reviews/tier-list/Final-Destination.html">
+
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="tier list Final Destination, classement Destination Finale, L'Œil Critique" name="keywords"/>
+    <meta name="description" content="Le classement des 6 films Final Destination, du meilleur au pire.">
+
+    <link href="../../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
+
+    <title>Tier List Final Destination – L'Œil Critique</title>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+
+    <link href="../../css/chef_d_oeuvre.css" rel="stylesheet"/>
+    <link href="../../css/reviews.css" rel="stylesheet"/>
+    <link href="../../css/list-pages.css" rel="stylesheet"/>
+
+</head>
+
+<body class="lp-page">
+
+<main>
+
+<div class="list-page-header">
+    <p class="list-page-header__breadcrumb">
+        <a href="../../reviews.html">Critiques</a> /
+        <a href="../tier-lists.html">Tier Lists</a> /
+        <span class="is-current">Final Destination</span>
+    </p>
+
+    <h1 class="list-page-header__title">
+        Tier List Final Destination
+    </h1>
+
+    <p class="list-page-header__subtitle">
+        Les 6 films, du meilleur au pire.
+    </p>
+</div>
+
+<section class="tierlist-page">
+
+<p class="tierlist-page__intro">
+Classement basé sur les notes Letterboxd.
+</p>
+
+<!-- S -->
+<div class="tier-row tier-row--s">
+    <div class="tier-row__label">S</div>
+    <div class="tier-row__items">
+        <div class="tier-item">
+            <img src="../../assets/img/tierlists/final-destination/final-destination-2000.jpg"
+                 alt="Final Destination (2000)">
+        </div>
+    </div>
+</div>
+
+<!-- A -->
+<div class="tier-row tier-row--a">
+    <div class="tier-row__label">A</div>
+    <div class="tier-row__items">
+        <div class="tier-item">
+            <img src="../../assets/img/tierlists/final-destination/final-destination-bloodlines.jpg"
+                 alt="Final Destination Bloodlines (2025)">
+        </div>
+    </div>
+</div>
+
+<!-- B -->
+<div class="tier-row tier-row--b">
+    <div class="tier-row__label">B</div>
+    <div class="tier-row__items">
+        <div class="tier-item">
+            <img src="../../assets/img/tierlists/final-destination/the-final-destination-2009.jpg"
+                 alt="The Final Destination (2009)">
+        </div>
+    </div>
+</div>
+
+<!-- C -->
+<div class="tier-row tier-row--c">
+    <div class="tier-row__label">C</div>
+    <div class="tier-row__items">
+        <div class="tier-item">
+            <img src="../../assets/img/tierlists/final-destination/final-destination-5.jpg"
+                 alt="Final Destination 5 (2011)">
+        </div>
+    </div>
+</div>
+
+<!-- D -->
+<div class="tier-row tier-row--d">
+    <div class="tier-row__label">D</div>
+    <div class="tier-row__items">
+        <div class="tier-item">
+            <img src="../../assets/img/tierlists/final-destination/final-destination-3.jpg"
+                 alt="Final Destination 3 (2006)">
+        </div>
+    </div>
+</div>
+
+<!-- F -->
+<div class="tier-row tier-row--f">
+    <div class="tier-row__label">F</div>
+    <div class="tier-row__items">
+        <div class="tier-item">
+            <img src="../../assets/img/tierlists/final-destination/final-destination-2.jpg"
+                 alt="Final Destination 2 (2003)">
+        </div>
+    </div>
+</div>
+
+</section>
+
+</main>
+
+<div class="lp-modal" id="lpImageModal" aria-hidden="true" role="dialog" aria-label="Agrandissement d'image">
+    <div class="lp-modal__backdrop" data-close="true"></div>
+    <div class="lp-modal__content" role="document">
+        <img class="lp-modal__img" id="lpImageModalImg" src="" alt="">
+        <div class="lp-modal__caption" id="lpImageModalCaption"></div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const modal = document.getElementById('lpImageModal');
+    const modalImg = document.getElementById('lpImageModalImg');
+    const modalCaption = document.getElementById('lpImageModalCaption');
+
+    if (!modal || !modalImg || !modalCaption) return;
+
+    const closeModal = () => {
+        modal.classList.remove('is-active');
+        modal.setAttribute('aria-hidden', 'true');
+        modalImg.src = '';
+        modalImg.alt = '';
+        modalCaption.textContent = '';
+    };
+
+    document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('.tier-item img');
+
+        if (trigger) {
+            event.preventDefault();
+            modalImg.src = trigger.currentSrc || trigger.src;
+            modalImg.alt = trigger.alt || '';
+            modalCaption.textContent = trigger.alt || '';
+            modal.classList.add('is-active');
+            modal.setAttribute('aria-hidden', 'false');
+            return;
+        }
+
+        if (event.target.classList.contains('lp-modal__backdrop') || event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+})();
+</script>
+
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/header.js"></script>
+
+</body>
+</html>

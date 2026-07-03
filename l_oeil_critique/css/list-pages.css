@@ -1,0 +1,420 @@
+/* ============================================================================
+   L'ŒIL CRITIQUE — CSS GLOBAL DES PAGES DE LISTE
+   (hub Critiques, Critiques Films/Séries, Tier Lists index, pages tier-list)
+
+   IMPORTANT :
+   Toutes les couleurs ci-dessous sont des valeurs FIXES, propres à ce fichier
+   (préfixe --lp-). Elles ne dépendent d'AUCUNE variable définie dans
+   chef_d_oeuvre.css : même si le thème global du site change, ces pages
+   garderont toujours exactement ce rendu.
+   ============================================================================ */
+
+:root {
+  --lp-gold: #c9a24a;                 /* accent doré */
+  --lp-gold-soft: rgba(201, 162, 74, 0.18);
+  --lp-gold-border: rgba(201, 162, 74, 0.4);
+  --lp-bg: #0c0d12;                   /* fond très sombre des pages */
+  --lp-bg-card: #16171f;              /* fond des cartes */
+  --lp-text: #ece7db;                 /* texte clair (ivoire chaud) */
+  --lp-text-dim: rgba(236, 231, 219, 0.65);
+  --lp-font-title: 'Bebas Neue', 'Roboto', sans-serif;
+  --lp-font-body: 'Roboto', sans-serif;
+}
+
+/* ============================================================================
+   FOND DE PAGE (pages tier-list uniquement)
+   Ajouter la classe "lp-page" sur <body> des pages hub / listes / tier-lists
+   ============================================================================ */
+body.lp-page {
+  background-color: var(--lp-bg);
+}
+
+/* ============================================================================
+   HUB NAVIGATION — reviews.html (Films / Séries / Tier Lists)
+   ============================================================================ */
+.hub-nav {
+  padding: 4rem 3rem;
+}
+
+.hub-nav__intro {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.hub-nav__title {
+  margin-bottom: 0.5rem;
+  font-family: var(--lp-font-title);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+}
+
+.hub-nav__subtitle {
+  font-size: 1rem;
+  color: var(--lp-text);
+  opacity: 0.75;
+}
+
+.hub-nav__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hub-nav__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  padding: 2rem 1.75rem;
+  overflow: hidden;
+  color: var(--lp-text);
+  text-decoration: none;
+  background: var(--lp-bg-card);
+  border: 1px solid var(--lp-gold-soft);
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hub-nav__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--lp-gold-soft), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hub-nav__card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--lp-gold);
+  transform: translateY(-6px);
+}
+
+.hub-nav__card:hover::before {
+  opacity: 1;
+}
+
+.hub-nav__eyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hub-nav__card-title {
+  margin-bottom: 0.5rem;
+  font-family: var(--lp-font-title);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: var(--lp-text);
+}
+
+.hub-nav__count {
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--lp-text-dim);
+}
+
+.hub-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--lp-gold);
+}
+
+.hub-nav__cta .arrow {
+  transition: transform 0.25s ease;
+}
+
+.hub-nav__card:hover .arrow {
+  transform: translateX(4px);
+}
+
+.hub-nav__card--films .hub-nav__eyebrow { color: #7fb3ff; }
+.hub-nav__card--series .hub-nav__eyebrow { color: #ff9f7f; }
+.hub-nav__card--tierlist .hub-nav__eyebrow { color: var(--lp-gold); }
+
+/* ============================================================================
+   EN-TÊTE DE PAGE DE LISTE
+   critique-films.html / critique-series.html / tier-lists.html / tier-list/*.html
+   ============================================================================ */
+.list-page-header {
+  padding: 3.5rem 3rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--lp-gold-soft);
+}
+
+.list-page-header__breadcrumb {
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--lp-text-dim);
+}
+
+.list-page-header__breadcrumb a {
+  color: var(--lp-gold);
+  text-decoration: none;
+}
+
+.list-page-header__breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.list-page-header__breadcrumb .is-current {
+  color: var(--lp-text-dim);
+}
+
+.list-page-header__title {
+  margin-bottom: 0.5rem;
+  font-family: var(--lp-font-title);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+}
+
+.list-page-header__subtitle {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--lp-text-dim);
+}
+
+/* ============================================================================
+   TIER LISTS — page d'index (tier-lists.html)
+   ============================================================================ */
+.tierlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  gap: 1.75rem;
+}
+
+.tierlist-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--lp-bg-card);
+  border: 1px solid var(--lp-gold-soft);
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tierlist-card:hover {
+  border-color: var(--lp-gold);
+  transform: translateY(-6px);
+}
+
+.tierlist-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+  transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+.tierlist-card:hover .tierlist-card__image {
+  filter: brightness(0.75);
+  transform: scale(1.05);
+}
+
+.tierlist-card__content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+}
+
+.tierlist-card__title {
+  margin-bottom: 0.25rem;
+  font-family: var(--lp-font-title);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.tierlist-card__meta {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+}
+
+.tierlist-card__badge {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--lp-gold);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--lp-gold-border);
+  border-radius: 20px;
+}
+
+/* ============================================================================
+   GABARIT TIER LIST — tier-list/*.html (Harry Potter, Spider-Man, etc.)
+   ============================================================================ */
+.tierlist-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.tierlist-page__intro {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  color: var(--lp-text-dim);
+  text-align: center;
+}
+
+.tier-row {
+  display: flex;
+  align-items: stretch;
+  min-height: 110px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.tier-row__label {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  font-family: var(--lp-font-title);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #10121a;
+}
+
+.tier-row__items {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tier-item-slot {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+
+.tier-item {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.tier-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.tier-item:hover img {
+  transform: scale(1.03);
+}
+
+.lp-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lp-modal.is-active {
+  display: flex;
+}
+
+.lp-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.86);
+}
+
+.lp-modal__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(92vw, 960px);
+  gap: 0.75rem;
+}
+
+.lp-modal__img {
+  max-width: min(88vw, 900px);
+  max-height: min(80vh, 800px);
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+.lp-modal__caption {
+  font-size: 1rem;
+  color: var(--lp-text);
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Couleurs des rangs — valeurs fixes, indépendantes du thème du site */
+.tier-row--s .tier-row__label { background: #e6c15c; }
+.tier-row--a .tier-row__label { background: #d99a4e; }
+.tier-row--b .tier-row__label { background: #d1d15c; }
+.tier-row--c .tier-row__label { background: #7fc17f; }
+.tier-row--d .tier-row__label { background: #7fa8d1; }
+.tier-row--f .tier-row__label { background: #b0b0b0; }
+
+
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+@media (max-width: 900px) {
+  .hub-nav__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hub-nav { padding: 2.5rem 1.5rem; }
+  .list-page-header { padding: 2.5rem 1.5rem 1.5rem; }
+  .tierlist-grid { padding: 1.5rem; }
+  .tier-row { flex-direction: column; min-height: auto; }
+  .tier-row__label { width: 100%; padding: 0.5rem 0; }
+}
