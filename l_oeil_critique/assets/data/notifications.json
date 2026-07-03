@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "text": "L'Œil Critique change de direction : Expérimentation, Direction Artistique, Sincérité. Découvrez pourquoi.",
-    "icon": "‼️",
+    "text": "Nouvelle rubrique : découvrez les Tier Lists de L'Œil Critique avec mes classements de sagas et franchises (Harry Potter, Spider-Man, Transformers, DCAMU, Jurassic, Tolkien...).",
+    "icon": "🏆",
     "unread": true,
-    "url": "/l_oeil_critique/A_propos.html"
+    "url": "/l_oeil_critique/pages/tier-lists.html"
   },
   {
     "id": 2,
-    "text": "Nouvelle page disponible : mes films Letterboxd sont maintenant centralisés dans Reviews (notes sans critique écrite).",
-    "icon": "📚",
+    "text": "Reviews fait peau neuve : retrouvez désormais les critiques de films et de séries, mes notes Letterboxd ainsi que mes Tier Lists de sagas dans une seule page.",
+    "icon": "✨",
     "unread": true,
-    "url": "/l_oeil_critique/movies/movies.html"
+    "url": "/l_oeil_critique/reviews.html"
   },
   {
     "id": 3,
@@ -22,21 +22,21 @@
   },
   {
     "id": 4,
-    "text": "Critique — De Gaulle : Résistance – Une fresque plus qu'un biopic",
+    "text": "Critique — De Gaulle : Résistance – Une fresque plus qu'un biopic.",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/de-gaulle-resistance-critique.html"
   },
   {
     "id": 5,
-    "text": "Critique — Supergirl – Une bonne base héroïque, mais une normalité",
+    "text": "Critique — Supergirl – Une bonne base héroïque, mais une normalité.",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/supergirl-critique.html"
   },
   {
     "id": 6,
-    "text": "Critique — Disclosure Day – Spielberg dépassé par son propre sujet",
+    "text": "Critique — Disclosure Day – Spielberg dépassé par son propre sujet.",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/disclosure-day-critique.html"
