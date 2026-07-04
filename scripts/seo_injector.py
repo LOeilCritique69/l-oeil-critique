@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 
 REPO_ROOT = Path(__file__).resolve().parent
 SITE_URL = "https://www.l-oeil-critique.com"
-DEFAULT_IMAGE = "/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg"
+DEFAULT_IMAGE = "/assets/img/logo_chef_doeuvre_processed_copy.jpg"
 EXCLUDED_DIRS = {
     "assets",
     "css",
@@ -43,8 +43,8 @@ def to_site_url(path: Path) -> str:
     relative = path.relative_to(REPO_ROOT).as_posix()
     if relative == "index.html":
         return SITE_URL + "/"
-    if relative.startswith("l_oeil_critique/"):
-        rel_path = relative[len("l_oeil_critique/"):]
+    if relative.startswith(""):
+        rel_path = relative[len(""):]
         return f"{SITE_URL}/{quote(rel_path)}"
     return f"{SITE_URL}/{quote(relative)}"
 

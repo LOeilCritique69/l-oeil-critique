@@ -38,7 +38,7 @@ def is_public_html(path: Path) -> bool:
     rel = path.relative_to(REPO_ROOT).as_posix()
     if rel == "index.html":
         return True
-    return rel.startswith("l_oeil_critique/")
+    return rel.startswith("")
 
 
 def get_git_mtime(path: Path) -> str:

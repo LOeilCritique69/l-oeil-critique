@@ -33,7 +33,7 @@ def should_process(path: Path) -> bool:
 
 def build_reference_variants(path: Path) -> List[str]:
     relative_path = path.relative_to(REPO_ROOT).as_posix()
-    relative_no_prefix = relative_path.replace("l_oeil_critique/", "", 1)
+    relative_no_prefix = relative_path.replace("", "", 1)
     variants = {
         relative_path,
         "/" + relative_path,

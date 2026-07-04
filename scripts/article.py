@@ -48,14 +48,14 @@ def normalize_image_path(img_src):
     while img_src.startswith("../"):
         img_src = img_src[3:]
 
-    if img_src.startswith("/l_oeil_critique/"):
+    if img_src.startswith("/"):
         return img_src
 
     if "assets/img" in img_src:
         parts = img_src.split("assets/img")[-1]
-        return "/l_oeil_critique/assets/img" + parts
+        return "/assets/img" + parts
 
-    return "/l_oeil_critique/assets/img/" + img_src
+    return "/assets/img/" + img_src
 
 
 # =========================================================
@@ -197,7 +197,7 @@ for type_folder in TYPES:
                 continue
 
             file_path = os.path.join(folder_path, file_name)
-            url_base = f"/l_oeil_critique/articles/{type_folder}/{file_name}"
+            url_base = f"/articles/{type_folder}/{file_name}"
 
             with open(file_path, "r", encoding="utf-8") as f:
                 soup = BeautifulSoup(f, "html.parser")
@@ -241,7 +241,7 @@ for type_folder in TYPES:
                 if file_name.endswith(".html") and file_name != "tendances.html":
                     full_path = os.path.join(root, file_name)
                     relative_path = os.path.relpath(full_path, BASE_DIR)
-                    url_base = f"/l_oeil_critique/articles/{relative_path.replace(os.sep, '/')}"
+                    url_base = f"/articles/{relative_path.replace(os.sep, '/')}"
                     add_review_file(full_path, url_base)
         continue
 
@@ -253,7 +253,7 @@ for type_folder in TYPES:
             continue
 
         file_path = os.path.join(folder_path, file_name)
-        url_base = f"/l_oeil_critique/articles/{type_folder}/{file_name}"
+        url_base = f"/articles/{type_folder}/{file_name}"
 
         with open(file_path, "r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")

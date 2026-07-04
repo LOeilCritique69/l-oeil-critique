@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
     <header>
       <div class="header-content">
         <a href="/index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
-          <img src="/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+          <img src="/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
         </a>
         <h1 class="site-title">
           <a href="/index.html" class="site-title-link">L'Œil Critique</a>
         </h1>
 
         <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-          <a href="/l_oeil_critique/news/Accueil.html">Actualités</a>
-          <a href="/l_oeil_critique/reviews.html">Critiques</a>
-          <a href="/l_oeil_critique/bande-annonces.html">Bandes-Annonces</a>
-          <a href="/l_oeil_critique/A_propos.html">À Propos</a>
+          <a href="/news/Accueil.html">Actualités</a>
+          <a href="/reviews.html">Critiques</a>
+          <a href="/bande-annonces.html">Bandes-Annonces</a>
+          <a href="/A_propos.html">À Propos</a>
         </nav>
 
         <div class="header-actions">
@@ -56,9 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
     <footer>
       <div class="footer-content">
         <div class="footer-links">
-          <a href="/l_oeil_critique/mentions_légales.html">Mentions légales</a>
-          <a href="/l_oeil_critique/politique-de-confidentialité.html">Politique de confidentialité</a>
-          <a href="/l_oeil_critique/contact.html">Contact</a>
+          <a href="/mentions_légales.html">Mentions légales</a>
+          <a href="/politique-de-confidentialité.html">Politique de confidentialité</a>
+          <a href="/contact.html">Contact</a>
         </div>
         <p>&copy; 2026 L'Œil Critique. Tous droits réservés.</p>
       </div>
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadNotifications() {
     const readIds = getReadIds();
-    fetch("/l_oeil_critique/assets/data/notifications.json")
+    fetch("/assets/data/notifications.json")
       .then((r) => (r.ok ? r.json() : []))
       .then((data) => {
         notifications = Array.isArray(data) ? data : [];
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsContainer = document.querySelector("#search-results-container");
   let articlesIndex = [];
 
-  fetch("/l_oeil_critique/assets/data/articles_index.json")
+  fetch("/assets/data/articles_index.json")
     .then((r) => (r.ok ? r.json() : []))
     .then((data) => {
       articlesIndex = Array.isArray(data) ? data : [];

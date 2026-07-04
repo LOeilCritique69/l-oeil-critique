@@ -1120,7 +1120,7 @@ a.search-link:hover .search-item {
    HERO — section listing / accueil (home, reviews...)
    ======================================================================== */
 .hero-section {
-  --hero-bg: url("../assets/img/bigactualités/netflix1.webp");
+  --hero-bg: url("../assets/img/actualites/netflix1.webp");
 
   position: relative;
   display: flex;
