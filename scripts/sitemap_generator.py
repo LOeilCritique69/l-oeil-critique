@@ -64,7 +64,7 @@ def build_url(path: Path) -> str:
 
 def generate_sitemap() -> str:
     urls = []
-    public_roots = [REPO_ROOT / "l_oeil_critique", REPO_ROOT / "index.html"]
+    public_roots = [REPO_ROOT, REPO_ROOT / "index.html"]
     html_files = []
     for root in public_roots:
         if root.is_file():

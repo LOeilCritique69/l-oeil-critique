@@ -2,8 +2,8 @@ import os
 import re
 from pathlib import Path
 
-root = Path(r"d:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\pages")
-asset_root = Path(r"d:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\assets")
+root = Path(r"d:\projet_webs\CHEF D'OEUVRE\pages")
+asset_root = Path(r"d:\projet_webs\CHEF D'OEUVRE\assets")
 
 # Build map of lowercase basename -> candidate webp assets
 webp_assets = {}

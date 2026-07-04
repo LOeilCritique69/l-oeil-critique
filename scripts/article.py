@@ -6,16 +6,15 @@ import sys
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-BASE_DIR = os.path.join("l_oeil_critique", "articles")
-OUTPUT_FILE = os.path.join("l_oeil_critique", "assets", "data", "articles_index.json")
+BASE_DIR = os.path.join("articles")
+OUTPUT_FILE = os.path.join("assets", "data", "articles_index.json")
 
 TYPES = [
     "films",
     "reviews",
     "bande-annonces",
     "series",
-    "actualités",
-    "bigactualités"
+    "actualites"
 ]
 
 articles_index = []
@@ -261,7 +260,7 @@ for type_folder in TYPES:
         title_tag = soup.find("title")
         title = title_tag.get_text(strip=True) if title_tag else file_name.replace(".html", "")
 
-        display_type = "BigActualités" if type_folder == "bigactualités" else type_folder.capitalize()
+        display_type = "Actualites" if type_folder == "actualites" else type_folder.capitalize()
 
         image = normalize_image_path(extract_image(soup))
         date = extract_date(soup)

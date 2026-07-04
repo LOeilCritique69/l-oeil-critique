@@ -10,8 +10,8 @@ from typing import List, Tuple
 
 from PIL import Image, ImageOps
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-IMAGE_DIR = REPO_ROOT / "l_oeil_critique" / "assets" / "img"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+IMAGE_DIR = REPO_ROOT / "assets" / "img"
 MAX_FILE_SIZE = 300 * 1024
 MAX_WIDTH = 1600
 QUALITY = 80

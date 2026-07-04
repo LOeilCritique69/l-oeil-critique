@@ -13,7 +13,7 @@ from urllib.parse import quote
 
 from bs4 import BeautifulSoup
 
-REPO_ROOT = Path(__file__).resolve().parent
+REPO_ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://www.l-oeil-critique.com"
 DEFAULT_IMAGE = "/assets/img/logo_chef_doeuvre_processed_copy.jpg"
 EXCLUDED_DIRS = {
