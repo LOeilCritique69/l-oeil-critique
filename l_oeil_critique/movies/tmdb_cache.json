@@ -10852,5 +10852,27 @@
     "video": false,
     "vote_average": 7.823,
     "vote_count": 6151
+  },
+  "Toy Story 5_2026": {
+    "adult": false,
+    "backdrop_path": "/4D1pdB27uph7J8HQzNf8QvvH9bn.jpg",
+    "genre_ids": [
+      16,
+      10751,
+      35,
+      12
+    ],
+    "id": 1084244,
+    "title": "Toy Story 5",
+    "original_language": "en",
+    "original_title": "Toy Story 5",
+    "overview": "Buzz, Woody, Jessie et le reste de la bande verront leur travail remis en question lorsqu'ils découvriront que ce qui obsède les enfants d'aujourd'hui s’appelle... l'électronique !",
+    "popularity": 527.9757,
+    "poster_path": "/b2bt3UomRX41rHHZmIsSNmXzidU.jpg",
+    "release_date": "2026-06-17",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.428,
+    "vote_count": 437
   }
 }

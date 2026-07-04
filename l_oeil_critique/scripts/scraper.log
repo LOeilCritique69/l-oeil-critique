@@ -5653,3 +5653,22 @@ playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at 
 2026-07-04 00:53:54,400 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-07-04 00:54:28,527 [INFO] Push GitHub FORCE réussi
 2026-07-04 00:54:28,527 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-04 12:47:02,262 [INFO] ==== Début du script bandes-annonces ====
+2026-07-04 12:47:02,285 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-04 12:47:02,286 [INFO] 242 identifiants chargés depuis le log
+2026-07-04 12:47:02,286 [INFO] Démarrage scraping CineHorizons...
+2026-07-04 12:47:11,575 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-04 12:47:11,596 [INFO] 3 blocs détectés (limite 3)
+2026-07-04 12:47:11,596 [INFO] Extraction détails CineHorizons pour Les Misérables
+2026-07-04 12:47:12,147 [INFO] Article ajouté CineHorizons: Les Misérables
+2026-07-04 12:47:12,148 [INFO] Extraction détails CineHorizons pour La Nirvana
+2026-07-04 12:47:12,600 [INFO] Article ajouté CineHorizons: La Nirvana
+2026-07-04 12:47:12,647 [INFO] Scraping CineHorizons terminé
+2026-07-04 12:47:12,658 [INFO] Démarrage scraping TMDb...
+2026-07-04 12:47:12,996 [INFO] 20 films récupérés depuis TMDb
+2026-07-04 12:47:13,296 [INFO] Article ajouté TMDb: L'Odyssée
+2026-07-04 12:47:13,792 [INFO] Scraping TMDb terminé
+2026-07-04 12:47:13,793 [INFO] 3 nouveaux articles détectés
+2026-07-04 12:47:13,795 [INFO] 80 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-07-04 12:47:13,796 [INFO] Sauvegarde du log avec 245 identifiants
+2026-07-04 12:47:13,796 [INFO] Poussée automatique FORCÉE vers GitHub...
