@@ -63,35 +63,35 @@ jobs:
         run: |
           echo "=== BEFORE ==="
           git status
-          ls -R . | head -50
+          ls -R l_oeil_critique || true
 
       # =========================
       # SCRAPER
       # =========================
       - name: 🎬 Run trailers scraper
         run: |
-          python scripts/scraper_bandes_annonces.py
+          python l_oeil_critique/scripts/scraper_bandes_annonces.py
 
       # =========================
       # LETTERBOXD
       # =========================
       - name: 🎞️ Run Letterboxd RSS
         run: |
-          python scripts/movies_lb.py
+          python l_oeil_critique/movies/lb.py
 
       # =========================
       # IMAGE OPTIMIZATION
       # =========================
       - name: 🖼️ Optimize images
         run: |
-          python scripts/optimize_images.py
+          python l_oeil_critique/scripts/optimize_images.py
 
       # =========================
       # SITEMAP
       # =========================
       - name: 🗺️ Generate sitemap
         run: |
-          python scripts/sitemap_generator.py
+          python l_oeil_critique/scripts/sitemap_generator.py
 
       # =========================
       # DEBUG AFTER
