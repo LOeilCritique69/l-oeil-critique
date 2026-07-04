@@ -5710,3 +5710,15 @@ playwright._impl._errors.Error: BrowserType.launch: Executable doesn't exist at 
 2026-07-04 22:09:05,151 [INFO] Scraping TMDb terminé
 2026-07-04 22:09:05,152 [INFO] 0 nouveaux articles détectés
 2026-07-04 22:09:05,152 [INFO] Aucun nouvel article à ajouter
+2026-07-04 22:50:18,686 [INFO] ==== Début du script bandes-annonces ====
+2026-07-04 22:50:18,686 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-04 22:50:18,687 [INFO] 245 identifiants chargés depuis le log
+2026-07-04 22:50:18,687 [INFO] Démarrage scraping CineHorizons...
+2026-07-04 22:50:22,559 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-04 22:50:22,577 [INFO] 3 blocs détectés (limite 3)
+2026-07-04 22:50:22,612 [INFO] Scraping CineHorizons terminé
+2026-07-04 22:50:22,624 [INFO] Démarrage scraping TMDb...
+2026-07-04 22:50:22,855 [INFO] 20 films récupérés depuis TMDb
+2026-07-04 22:50:23,119 [INFO] Scraping TMDb terminé
+2026-07-04 22:50:23,120 [INFO] 0 nouveaux articles détectés
+2026-07-04 22:50:23,121 [INFO] Aucun nouvel article à ajouter
