@@ -418,56 +418,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // =========================
-  // ACTIVE LINK FIX (ROBUSTE & ISOLÉ)
+  // ACTIVE LINK FIX (ROBUSTE & ISOLÉ — basé sur le chemin complet)
   // =========================
 
   console.log("[ACTIVE LINK] init");
 
-  const normalizeFile = (path) =>
-    (path || "")
-      .split("?")[0]
-      .split("#")[0]
-      .split("/")
-      .pop()
-      .toLowerCase()
-      .replace("actualités", "actualites")
-      .replace("a_propos.html", "a_propos.html");
+  // Normalise un chemin (URL ou attribut href) : minuscules, sans accents,
+  // sans query/hash, résolu par rapport à l'URL courante.
+  const normalizePath = (path) => {
+    if (!path) return "";
+    try {
+      const url = new URL(path, window.location.origin + window.location.pathname);
+      return decodeURIComponent(url.pathname)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, ""); // enlève les accents (é -> e, etc.)
+    } catch (e) {
+      return (path || "").toLowerCase();
+    }
+  };
 
-  const currentFile = normalizeFile(window.location.pathname);
-  console.log("[ACTIVE LINK] currentFile :", currentFile);
+  const currentPath = normalizePath(window.location.pathname);
+  console.log("[ACTIVE LINK] currentPath :", currentPath);
 
-  const newsGroup = new Set([
-    "actualites.html",
-    "films.html",
-    "series.html"
-  ]);
+  // Chaque groupe = un lien de nav (identifié par un mot-clé dans son texte)
+  // + la liste des motifs de chemin qui doivent l'activer.
+  const NAV_GROUPS = [
+    {
+      keyword: "actual",
+      patterns: [
+        "/news/",
+        "/articles/films/",
+        "/articles/series/",
+        "/articles/bigactualites/"
+      ]
+    },
+    {
+      keyword: "critique",
+      patterns: [
+        "/reviews.html",
+        "/pages/critique-films.html",
+        "/pages/critique-series.html",
+        "/pages/tier-list", // couvre tier-lists.html ET tier-list/*.html
+        "/articles/reviews/"
+      ]
+    },
+    {
+      keyword: "bande-annonce",
+      patterns: [
+        "/bande-annonces.html",
+        "/bande_annonces_blocs.html"
+      ]
+    },
+    {
+      keyword: "propos",
+      patterns: ["/a_propos.html"]
+    }
+  ];
+
+  function matchesGroup(path, group) {
+    return group.patterns.some((p) => path.includes(p));
+  }
 
   const links = document.querySelectorAll(".main-nav a");
   console.log("[ACTIVE LINK] links count :", links.length);
 
   links.forEach((a) => {
-    const hrefFile = normalizeFile(a.getAttribute("href"));
-    let isActive = false;
+    const hrefPath = normalizePath(a.getAttribute("href"));
+    const linkText = a.textContent.toLowerCase();
 
-    if (hrefFile === currentFile) {
-      isActive = true;
-    }
+    // 1. Match direct : la page courante EST le lien lui-même
+    let isActive = hrefPath === currentPath;
 
-    const currentInNews = newsGroup.has(currentFile);
-    const linkIsNewsRoot =
-      hrefFile === "accueil.html" &&
-      a.textContent.toLowerCase().includes("actual");
-
-    if (currentInNews && linkIsNewsRoot) {
-      isActive = true;
+    // 2. Match par groupe : la page courante appartient à la même
+    //    rubrique que ce lien (ex : un article d'actu -> lien "Actualités")
+    if (!isActive) {
+      const group = NAV_GROUPS.find((g) => linkText.includes(g.keyword));
+      if (group && matchesGroup(currentPath, group)) {
+        isActive = true;
+      }
     }
 
     a.classList.remove("active");
     if (isActive) {
       a.classList.add("active");
-      console.log(`[ACTIVE] ${hrefFile}`);
+      console.log(`[ACTIVE] ${hrefPath || linkText}`);
     } else {
-      console.log(`[SKIP] ${hrefFile}`);
+      console.log(`[SKIP] ${hrefPath || linkText}`);
     }
   });
 });

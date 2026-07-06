@@ -374,7 +374,7 @@ header {
   transition: height 0.25s ease, background 0.25s ease;
 }
 
-header.scrolled { height: var(--header-h-scrolled); background: var(--ink); }
+header.scrolled { height: var(--header-h-scrolled);}
 header.menu-open {
   backdrop-filter: none;
 }

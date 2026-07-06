@@ -1,0 +1,13 @@
+date,character,day,result,exact,partial,score,weighted_score,screenshot
+2026-04-11,Tom Holland,101,False,4,2,4,5.0,marveldle/images/day_101.png
+2026-04-11,Andrew Garfield,101,False,4,2,4,5.0,marveldle/images_andrew/day_101.png
+2026-04-11,Tobey Maguire,101,False,4,2,4,5.0,marveldle/images_tobey/day_101.png
+2026-05-24,Tom Holland,143,False,6,0,6,6.0,marveldle/images/day_143.png
+2026-05-24,Andrew Garfield,143,True,7,0,7,7.0,marveldle/images_andrew/day_143.png
+2026-05-24,Tobey Maguire,143,True,7,0,7,7.0,marveldle/images_tobey/day_143.png
+2026-05-24,Tom Holland,143,False,6,0,6,6.0,marveldle/images/day_143.png
+2026-05-24,Andrew Garfield,143,True,7,0,7,7.0,marveldle/images_andrew/day_143.png
+2026-05-24,Tobey Maguire,143,True,7,0,7,7.0,marveldle/images_tobey/day_143.png
+2026-05-24,Tom Holland,143,False,6,0,6,6.0,marveldle/images/day_143.png
+2026-05-24,Andrew Garfield,143,True,7,0,7,7.0,marveldle/images_andrew/day_143.png
+2026-05-24,Tobey Maguire,143,False,7,0,7,7.0,marveldle/images_tobey/day_143.png

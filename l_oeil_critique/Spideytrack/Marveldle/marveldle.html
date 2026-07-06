@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="spidey.png">
+  <title>SpideyTrack</title>
+  <link rel="stylesheet" href="/l_oeil_critique/css/chef_d_oeuvre.css">
+  <link rel="stylesheet" href="marveldle.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ════ LOADING SCREEN ════ -->
+<div id="loading-screen">
+  <div class="loader-logo">
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="22" cy="25" rx="7" ry="8.5" fill="#e8192c"/>
+      <ellipse cx="22" cy="16" rx="5" ry="5" fill="#e8192c"/>
+      <line x1="15" y1="20" x2="2"  y2="14" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="15" y1="24" x2="1"  y2="24" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="15" y1="28" x2="2"  y2="35" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="29" y1="20" x2="42" y2="14" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="29" y1="24" x2="43" y2="24" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="29" y1="28" x2="42" y2="35" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="22" y1="11" x2="22" y2="4" stroke="#e8192c" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="19.5" cy="15" r="1.5" fill="#e8edf5"/>
+      <circle cx="24.5" cy="15" r="1.5" fill="#e8edf5"/>
+    </svg>
+    <div class="loader-title">Spidey<span>Track</span></div>
+  </div>
+  <div class="loader-sub">À la recherche des Trois Spideys</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar" id="loader-bar"></div>
+  </div>
+  <div class="loader-status" id="loader-status">Initialisation…</div>
+  <div class="loader-steps">
+    <div class="loader-step" id="step-tom"><div class="dot"></div>Tom Holland</div>
+    <div class="loader-step" id="step-andrew"><div class="dot"></div>Andrew Garfield</div>
+    <div class="loader-step" id="step-tobey"><div class="dot"></div>Tobey Maguire</div>
+    <div class="loader-step" id="step-img"><div class="dot"></div>Images</div>
+  </div>
+</div>
+
+<!-- ════ APP ════ -->
+<div id="app-wrapper">
+
+<!-- ════ HERO AUJOURD'HUI ════ -->
+<section class="today-hero" id="today-hero">
+  <div class="today-hero-label">
+    <span class="today-hero-dot"></span>
+    Aujourd'hui
+  </div>
+  <div class="today-cards-row" id="today-cards-row">
+    <!-- rempli dynamiquement -->
+  </div>
+</section>
+
+<!-- ════ DASHBOARD STATS ════ -->
+<section class="dashboard" id="dashboard">
+  <div class="dash-global">
+    <div class="dash-stat" id="dash-total">
+      <div class="dash-val">—</div>
+      <div class="dash-lbl">Jours joués</div>
+    </div>
+    <div class="dash-stat">
+      <div class="dash-val green" id="dash-wins">—</div>
+      <div class="dash-lbl">Spider-Man ✓</div>
+    </div>
+    <div class="dash-stat">
+      <div class="dash-val red" id="dash-losses">—</div>
+      <div class="dash-lbl">Aucun trouvé</div>
+    </div>
+    <div class="dash-stat">
+      <div class="dash-val gold" id="dash-winrate">—</div>
+      <div class="dash-lbl">Taux de succès</div>
+    </div>
+  </div>
+
+  <div class="dash-persos">
+    <div class="dash-perso section-tom" id="dash-tom">
+      <div class="dash-perso-name">Tom Holland</div>
+      <div class="dash-perso-row">
+        <div class="dp-stat"><div class="dp-val" id="dp-tom-wins">—</div><div class="dp-lbl">Wins</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-tom-streak">—</div><div class="dp-lbl">Streak</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-tom-avg">—</div><div class="dp-lbl">Score moy.</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-tom-best">—</div><div class="dp-lbl">Best streak</div></div>
+      </div>
+      <div class="dp-bar-wrap">
+        <div class="dp-bar" id="dp-tom-bar" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="dash-perso section-andrew" id="dash-andrew">
+      <div class="dash-perso-name">Andrew Garfield</div>
+      <div class="dash-perso-row">
+        <div class="dp-stat"><div class="dp-val" id="dp-andrew-wins">—</div><div class="dp-lbl">Wins</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-andrew-streak">—</div><div class="dp-lbl">Streak</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-andrew-avg">—</div><div class="dp-lbl">Score moy.</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-andrew-best">—</div><div class="dp-lbl">Best streak</div></div>
+      </div>
+      <div class="dp-bar-wrap">
+        <div class="dp-bar" id="dp-andrew-bar" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="dash-perso section-tobey" id="dash-tobey">
+      <div class="dash-perso-name">Tobey Maguire</div>
+      <div class="dash-perso-row">
+        <div class="dp-stat"><div class="dp-val" id="dp-tobey-wins">—</div><div class="dp-lbl">Wins</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-tobey-streak">—</div><div class="dp-lbl">Streak</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-tobey-avg">—</div><div class="dp-lbl">Score moy.</div></div>
+        <div class="dp-stat"><div class="dp-val" id="dp-tobey-best">—</div><div class="dp-lbl">Best streak</div></div>
+      </div>
+      <div class="dp-bar-wrap">
+        <div class="dp-bar" id="dp-tobey-bar" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- TOP 5 -->
+  <div class="top3-wrap">
+    <div class="section-header">
+      <div class="section-label">Top 5 — Meilleurs guess</div>
+      <div class="section-count">Classement pondéré (exacts + ½ partiels)</div>
+    </div>
+    <div class="top3-grid" id="top3-container"></div>
+  </div>
+
+  <!-- GRAPHIQUES -->
+  <div class="charts-wrap">
+    <div class="section-header">
+      <div class="section-label">Progression</div>
+      <div class="section-count">Score par partie</div>
+    </div>
+    <div class="charts-tabs">
+      <button class="chart-tab active" onclick="switchChart('tom',this)">Tom Holland</button>
+      <button class="chart-tab" onclick="switchChart('andrew',this)">Andrew Garfield</button>
+      <button class="chart-tab" onclick="switchChart('tobey',this)">Tobey Maguire</button>
+      <button class="chart-tab" onclick="switchChart('compare',this)">Comparatif</button>
+    </div>
+    <div class="chart-container"><canvas id="main-chart"></canvas></div>
+  </div>
+
+  <!-- HISTORIQUE FILTRABLE -->
+  <div class="history-wrap">
+    <div class="section-header">
+      <div class="section-label">Historique</div>
+    </div>
+    <div class="history-controls">
+      <div class="hc-filters">
+        <button class="hc-btn active" data-char="all">Tous</button>
+        <button class="hc-btn" data-char="tom" style="--btn-color:var(--tom)">Tom</button>
+        <button class="hc-btn" data-char="andrew" style="--btn-color:var(--andrew)">Andrew</button>
+        <button class="hc-btn" data-char="tobey" style="--btn-color:var(--tobey)">Tobey</button>
+      </div>
+      <div class="hc-filters">
+        <button class="hc-btn active" data-result="all">Tous résultats</button>
+        <button class="hc-btn" data-result="true" style="--btn-color:var(--yes)">✓ Trouvé</button>
+        <button class="hc-btn" data-result="false" style="--btn-color:var(--red)">✗ Pas lui</button>
+      </div>
+      <input class="hc-search" id="hc-search" type="text" placeholder="Rechercher un jour…">
+    </div>
+    <div class="history-grid" id="history-grid"></div>
+    <div class="history-empty" id="history-empty" style="display:none">Aucun résultat</div>
+  </div>
+
+  <!-- TOM HOLLAND -->
+  <div class="spidey-section section-tom">
+    <div class="spidey-section-header">
+      <div class="spidey-number">01</div>
+      <div class="spidey-info">
+        <div class="spidey-name">Tom Holland</div>
+        <div class="spidey-sub">Spider-Man · MCU · Avengers</div>
+      </div>
+      <div class="spidey-stats">
+        <span class="spidey-stat" style="color:var(--tom)" id="tom-yes">—</span>
+        <span class="spidey-stat-label">fois trouvé</span>
+      </div>
+    </div>
+    <div class="cards-grid-wrap">
+      <button class="scroll-btn scroll-btn-left" onclick="scrollGrid('grid-tom',-1)">&#8249;</button>
+      <div class="cards-grid" id="grid-tom"></div>
+      <button class="scroll-btn scroll-btn-right" onclick="scrollGrid('grid-tom',1)">&#8250;</button>
+    </div>
+  </div>
+
+  <!-- ANDREW GARFIELD -->
+  <div class="spidey-section section-andrew">
+    <div class="spidey-section-header">
+      <div class="spidey-number">02</div>
+      <div class="spidey-info">
+        <div class="spidey-name">Andrew Garfield</div>
+        <div class="spidey-sub">Rageful Vigilante · TASM · Sony</div>
+      </div>
+      <div class="spidey-stats">
+        <span class="spidey-stat" style="color:var(--andrew)" id="andrew-yes">—</span>
+        <span class="spidey-stat-label">fois trouvé</span>
+      </div>
+    </div>
+    <div class="cards-grid-wrap">
+      <button class="scroll-btn scroll-btn-left" onclick="scrollGrid('grid-andrew',-1)">&#8249;</button>
+      <div class="cards-grid" id="grid-andrew"></div>
+      <button class="scroll-btn scroll-btn-right" onclick="scrollGrid('grid-andrew',1)">&#8250;</button>
+    </div>
+  </div>
+
+  <!-- TOBEY MAGUIRE -->
+  <div class="spidey-section section-tobey">
+    <div class="spidey-section-header">
+      <div class="spidey-number">03</div>
+      <div class="spidey-info">
+        <div class="spidey-name">Tobey Maguire</div>
+        <div class="spidey-sub">Organic Webbing · Raimi Trilogy</div>
+      </div>
+      <div class="spidey-stats">
+        <span class="spidey-stat" style="color:var(--tobey)" id="tobey-yes">—</span>
+        <span class="spidey-stat-label">fois trouvé</span>
+      </div>
+    </div>
+    <div class="cards-grid-wrap">
+      <button class="scroll-btn scroll-btn-left" onclick="scrollGrid('grid-tobey',-1)">&#8249;</button>
+      <div class="cards-grid" id="grid-tobey"></div>
+      <button class="scroll-btn scroll-btn-right" onclick="scrollGrid('grid-tobey',1)">&#8250;</button>
+    </div>
+  </div>
+
+</main>
+
+<div id="lightbox">
+  <button id="lightbox-close">Fermer ✕</button>
+  <img id="lightbox-img" src="" alt="Screenshot">
+</div>
+
+
+</div>
+
+<!-- DISCLAIMER -->
+<div id="disclaimer-overlay">
+  <div id="disclaimer-box">
+    <button id="disclaimer-close">✕</button>
+    <div class="disclaimer-title">À propos du site</div>
+    <div class="disclaimer-text">
+      Ce site suit l'apparition des 3 Spider-Men sur
+      <a href="https://marveldle.com/menu" target="_blank">Marveldle</a> :
+      Tom Holland, Andrew Garfield et Tobey Maguire.
+      <br><br>
+      SpideyTrack est un projet indépendant non officiel.<br>
+      Tous les droits relatifs aux personnages appartiennent à Marvel et Disney.
+      <br><br>
+      Aucune publicité ni monétisation. Divertissement uniquement.
+    </div>
+    <button id="disclaimer-ok">Compris</button>
+  </div>
+</div>
+
+<!-- VICTOIRE -->
+<canvas id="victory-canvas"></canvas>
+<div id="victory-overlay">
+  <div id="victory-box">
+    <div id="victory-spider">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="40" cy="44" rx="14" ry="16" fill="#e8192c"/>
+        <ellipse cx="40" cy="28" rx="10" ry="10" fill="#e8192c"/>
+        <line x1="26" y1="38" x2="4"  y2="28" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="26" y1="44" x2="2"  y2="44" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="26" y1="50" x2="4"  y2="62" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="54" y1="38" x2="76" y2="28" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="54" y1="44" x2="78" y2="44" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="54" y1="50" x2="76" y2="62" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="18" x2="40" y2="6" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="35" cy="26" r="3" fill="#e8edf5"/>
+        <circle cx="45" cy="26" r="3" fill="#e8edf5"/>
+      </svg>
+    </div>
+    <div id="victory-title">SPIDER-MAN !</div>
+    <div id="victory-sub" style="white-space:pre-line">C'est lui aujourd'hui !</div>
+    <button id="victory-close">Continuer →</button>
+  </div>
+</div>
+
+<script src="/l_oeil_critique/assets/js/main.js"></script>
+<script src="/l_oeil_critique/assets/js/header.js"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"></script>
+
+<script>
+// ============================================================
+// CONFIG
+// ============================================================
+const CHAR_STATS     = {};
+const MANUAL_RESULTS = {};
+
+const CHAR_CONFIG = {
+  tom:    { results: 'marveldle/results.json',        images: 'marveldle/images',        color: '#e8192c', label: 'Tom Holland' },
+  andrew: { results: 'marveldle/results_andrew.json', images: 'marveldle/images_andrew', color: '#1d6fe8', label: 'Andrew Garfield' },
+  tobey:  { results: 'marveldle/results_tobey.json',  images: 'marveldle/images_tobey',  color: '#7c3aed', label: 'Tobey Maguire' },
+};
+const CHAR_COLORS = { tom: '#e8192c', andrew: '#1d6fe8', tobey: '#7c3aed' };
+const CHAR_KEYS   = ['tom', 'andrew', 'tobey'];
+
+// ============================================================
+// LOADER
+// ============================================================
+const loaderBar    = document.getElementById('loader-bar');
+const loaderStatus = document.getElementById('loader-status');
+function setProgress(pct, label) { loaderBar.style.width = pct + '%'; if (label) loaderStatus.textContent = label; }
+function stepActive(id) { document.getElementById(id).classList.add('active'); }
+function stepDone(id)   { const el = document.getElementById(id); el.classList.remove('active'); el.classList.add('done'); }
+function hideLoader() {
+  const screen = document.getElementById('loading-screen');
+  screen.classList.add('hidden');
+  document.getElementById('app-wrapper').classList.add('visible');
+  setTimeout(() => screen.remove(), 700);
+}
+
+// ============================================================
+// FETCH
+// ============================================================
+async function fetchJson(url) {
+  try { const r = await fetch(url); if (r.ok) return await r.json(); } catch(_) {}
+  return {};
+}
+
+async function loadOneChar(key, manualResults, onDone) {
+  const cfg      = CHAR_CONFIG[key];
+  const jsonData = await fetchJson(cfg.results);
+  const toCheck  = [...new Set([
+    ...Object.keys(jsonData).map(Number),
+    ...(manualResults ? Object.keys(manualResults).map(Number) : []),
+  ])];
+
+  const foundImages = new Set();
+  await Promise.all(toCheck.map(async n => {
+    try {
+      const r = await fetch(`${cfg.images}/day_${String(n).padStart(3,'0')}.png`, { method: 'HEAD' });
+      if (r.ok) foundImages.add(n);
+    } catch(_) {}
+  }));
+
+  const allDays = new Map();
+  if (manualResults) {
+    for (const [k, result] of Object.entries(manualResults)) {
+      const n = parseInt(k);
+      allDays.set(n, { day:n, date:null, result, char:key,
+        screenshot: foundImages.has(n) ? `${cfg.images}/day_${String(n).padStart(3,'0')}.png` : null,
+        today:false, score:0, exact:0, partial:0 });
+    }
+  }
+
+  const d        = new Date();
+  const todayStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
+  for (const [k, val] of Object.entries(jsonData)) {
+    const n = parseInt(k);
+    allDays.set(n, {
+      day: n, date: val.date, result: val.result, char: key,
+      screenshot: foundImages.has(n) ? `${cfg.images}/day_${String(n).padStart(3,'0')}.png` : null,
+      today: val.date === todayStr,
+      score: val.score||0, exact: val.exact||0, partial: val.partial||0,
+      weighted: val.weighted_score || val.score || 0,
+    });
+  }
+
+  const refEntries = Object.entries(jsonData);
+  if (refEntries.length > 0) {
+    const refDay  = Math.max(...refEntries.map(([k]) => parseInt(k)));
+    const [ry,rm,rd] = jsonData[String(refDay)].date.split('-').map(Number);
+    const refDate = new Date(ry, rm-1, rd);
+    allDays.forEach((entry, n) => {
+      if (!entry.date) {
+        const dd = new Date(refDate);
+        dd.setDate(dd.getDate() - (refDay - n));
+        entry.date = `${dd.getFullYear()}-${String(dd.getMonth()+1).padStart(2,'0')}-${String(dd.getDate()).padStart(2,'0')}`;
+      }
+    });
+  }
+
+  if (onDone) onDone();
+  return [...allDays.values()];
+}
+
+async function loadData() {
+  setProgress(5, 'Connexion aux données…');
+  stepActive('step-tom');
+  const tom    = await loadOneChar('tom',    MANUAL_RESULTS, () => { stepDone('step-tom');    setProgress(30,'Tom Holland chargé…');     stepActive('step-andrew'); });
+  const andrew = await loadOneChar('andrew', null,           () => { stepDone('step-andrew'); setProgress(55,'Andrew Garfield chargé…'); stepActive('step-tobey'); });
+  const tobey  = await loadOneChar('tobey',  null,           () => { stepDone('step-tobey');  setProgress(78,'Tobey Maguire chargé…');   stepActive('step-img'); });
+  setProgress(92, 'Rendu…');
+  return { tom, andrew, tobey };
+}
+
+// ============================================================
+// TODAY HERO
+// ============================================================
+function renderTodayHero(data) {
+  const row    = document.getElementById('today-cards-row');
+  const d      = new Date();
+  const todayStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  let anyToday = false;
+  let anyWin   = false;
+
+  CHAR_KEYS.forEach(key => {
+    const entry = data[key].find(x => x.today);
+    if (!entry) return;
+    anyToday = true;
+    if (entry.result === true) anyWin = true;
+    const cfg  = CHAR_CONFIG[key];
+    const card = document.createElement('div');
+    card.className = `today-card-hero tc-${key}`;
+
+    const resultHtml = entry.result === true
+      ? `<div class="tc-result win">✓ C'est lui !</div>`
+      : entry.result === false
+        ? `<div class="tc-result lose">✗ Pas lui</div>`
+        : `<div class="tc-result pending">— En attente</div>`;
+
+    const scoreBar = entry.score > 0
+      ? `<div class="tc-score-wrap">
+           <div class="tc-score-bar" style="width:${entry.score/7*100}%;background:${cfg.color}"></div>
+         </div>
+         <div class="tc-score-txt">${entry.exact}/7 exacts${entry.partial > 0 ? ` · ${entry.partial}/7 partiels` : ''}</div>`
+      : '';
+
+    const imgHtml = entry.screenshot
+      ? `<div class="tc-img" onclick="openLightbox('${entry.screenshot}')">
+           <img src="${entry.screenshot}" alt="${cfg.label}">
+           <div class="tc-img-zoom">🔍</div>
+         </div>`
+      : `<div class="tc-img tc-img-empty"><span>Pas d'image</span></div>`;
+
+    card.innerHTML = `
+      <div class="tc-header" style="border-top-color:${cfg.color}">
+        <div class="tc-name" style="color:${cfg.color}">${cfg.label}</div>
+        <div class="tc-day">Jour ${entry.day}</div>
+      </div>
+      ${imgHtml}
+      <div class="tc-body">
+        ${resultHtml}
+        ${scoreBar}
+      </div>`;
+    row.appendChild(card);
+  });
+
+  if (!anyToday) {
+    document.getElementById('today-hero').style.display = 'none';
+    return;
+  }
+}
+
+// ============================================================
+// DASHBOARD STATS
+// ============================================================
+function renderDashboard(data) {
+  const total  = Math.max(data.tom.length, data.andrew.length, data.tobey.length);
+  const allWins = CHAR_KEYS.reduce((s,k) => s + data[k].filter(x => x.result===true).length, 0);
+  const losses  = data.tom.filter(x => x.result===false).length;
+  const winRate = total > 0 ? Math.round(data.tom.filter(x => x.result===true).length / total * 100) : 0;
+
+  document.getElementById('dash-total').querySelector('.dash-val').textContent = total;
+  document.getElementById('dash-wins').textContent   = allWins;
+  document.getElementById('dash-losses').textContent = losses;
+  document.getElementById('dash-winrate').textContent = winRate + '%';
+
+  // Persos
+  CHAR_KEYS.forEach(key => {
+    const arr      = data[key];
+    const wins     = arr.filter(x => x.result===true).length;
+    const tot      = arr.length;
+    const wr       = tot > 0 ? (wins/tot*100).toFixed(1) : 0;
+    const avgScore = arr.filter(x=>x.score>0).length > 0
+      ? (arr.reduce((s,x)=>s+x.score,0)/arr.filter(x=>x.score>0).length).toFixed(1)
+      : '0.0';
+
+    // Streak
+    const sorted = [...arr].sort((a,b)=>b.day-a.day);
+    let streak = 0;
+    for (const e of sorted) { if (e.result===true) streak++; else break; }
+    let bestStreak = 0, cur = 0;
+    for (const e of [...arr].sort((a,b)=>a.day-b.day)) {
+      if (e.result===true) { cur++; bestStreak = Math.max(bestStreak,cur); } else cur=0;
+    }
+
+    document.getElementById(`dp-${key}-wins`).textContent   = wins;
+    document.getElementById(`dp-${key}-streak`).textContent = streak + (streak>0?'🔥':'');
+    document.getElementById(`dp-${key}-avg`).textContent    = avgScore;
+    document.getElementById(`dp-${key}-best`).textContent   = bestStreak;
+
+    const bar = document.getElementById(`dp-${key}-bar`);
+    bar.style.width      = wr + '%';
+    bar.style.background = CHAR_COLORS[key];
+
+    // Wins count in header
+    const el = document.getElementById(key+'-yes');
+    if (el) el.textContent = wins;
+  });
+}
+
+// ============================================================
+// TOP 5
+// ============================================================
+function buildTop5(data) {
+  const byDay = new Map();
+  CHAR_KEYS.forEach(key => {
+    data[key].forEach(d => {
+      const exact   = d.exact   ?? d.score ?? 0;
+      const partial = d.partial ?? 0;
+      const w       = exact + partial * 0.5;
+      if (!d.screenshot || w === 0) return;
+      const existing = byDay.get(d.day);
+      if (!existing || w > existing.w || (w===existing.w && exact>existing.score)) {
+        let caption = `Jour ${d.day} · ${CHAR_CONFIG[key].label} · ${exact}/7 exacts`;
+        if (partial > 0) caption += `, ${partial}/7 partiels`;
+        byDay.set(d.day, { screenshot:d.screenshot, caption, day:d.day, score:exact, partial, w });
+      }
+    });
+  });
+  return [...byDay.values()].sort((a,b)=>b.w-a.w||b.score-a.score||a.day-b.day).slice(0,5);
+}
+
+function renderTop3(items) {
+  const container = document.getElementById('top3-container');
+  if (!container || !items?.length) return;
+  container.innerHTML = '';
+  const medals = ['🥇','🥈','🥉','#4','#5'];
+  items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'top3-card';
+    card.innerHTML = `
+      <div class="top3-rank" ${i>=3?'style="font-size:.65rem;top:8px;left:8px;opacity:.5;"':''}>${medals[i]}</div>
+      <div class="top3-img"><img src="${item.screenshot}" loading="lazy"></div>
+      <div class="top3-body">
+        <div class="top3-day">Jour ${item.day}</div>
+        <div class="top3-note">${item.caption}</div>
+      </div>`;
+    card.querySelector('.top3-img').addEventListener('click', () => openLightbox(item.screenshot));
+    container.appendChild(card);
+  });
+}
+
+// ============================================================
+// HISTORIQUE FILTRABLE
+// ============================================================
+let allHistory = [];
+let filterChar   = 'all';
+let filterResult = 'all';
+let filterSearch = '';
+
+function buildAllHistory(data) {
+  allHistory = [];
+  CHAR_KEYS.forEach(key => {
+    data[key].forEach(d => allHistory.push({ ...d, char: key }));
+  });
+  allHistory.sort((a,b) => b.day - a.day || a.char.localeCompare(b.char));
+}
+
+function applyHistoryFilters() {
+  const grid  = document.getElementById('history-grid');
+  const empty = document.getElementById('history-empty');
+  const search = filterSearch.toLowerCase().trim();
+
+  const filtered = allHistory.filter(d => {
+    if (filterChar !== 'all' && d.char !== filterChar) return false;
+    if (filterResult !== 'all' && String(d.result) !== filterResult) return false;
+    if (search) {
+      const haystack = `jour ${d.day} ${CHAR_CONFIG[d.char].label} ${d.date||''}`.toLowerCase();
+      if (!haystack.includes(search)) return false;
+    }
+    return true;
+  });
+
+  grid.innerHTML = '';
+  if (!filtered.length) { empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+
+  filtered.slice(0, 60).forEach(d => {
+    const cfg  = CHAR_CONFIG[d.char];
+    const card = document.createElement('div');
+    card.className = 'hcard hcard-' + d.char;
+    const badge = d.result===true
+      ? `<span class="badge yes">✓ C'est lui</span>`
+      : d.result===false ? `<span class="badge no">✗ Pas lui</span>`
+      : `<span class="badge archive">—</span>`;
+    const bar = d.score > 0
+      ? `<div class="hcard-bar-wrap"><div class="hcard-bar" style="width:${d.score/7*100}%;background:${cfg.color}"></div></div>`
+      : '';
+    card.innerHTML = `
+      <div class="hcard-header" style="border-left-color:${cfg.color}">
+        <span class="hcard-day">${d.day}</span>
+        <span class="hcard-char" style="color:${cfg.color}">${cfg.label.split(' ')[0]}</span>
+      </div>
+      <div class="hcard-body">
+        <div class="hcard-date">${d.date ? formatDate(d.date) : '—'}</div>
+        ${badge}
+        ${bar}
+      </div>`;
+    if (d.screenshot) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => openLightbox(d.screenshot));
+    }
+    grid.appendChild(card);
+  });
+
+  if (filtered.length > 60) {
+    const more = document.createElement('div');
+    more.className = 'history-more';
+    more.textContent = `+ ${filtered.length - 60} résultats supplémentaires — affinez le filtre`;
+    grid.appendChild(more);
+  }
+}
+
+function initHistoryControls() {
+  document.querySelectorAll('[data-char]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-char]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterChar = btn.dataset.char;
+      applyHistoryFilters();
+    });
+  });
+  document.querySelectorAll('[data-result]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-result]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterResult = btn.dataset.result;
+      applyHistoryFilters();
+    });
+  });
+  document.getElementById('hc-search').addEventListener('input', e => {
+    filterSearch = e.target.value;
+    applyHistoryFilters();
+  });
+}
+
+// ============================================================
+// GRILLES PAR PERSO
+// ============================================================
+function renderGrid(entries, charKey, gridId) {
+  const grid   = document.getElementById(gridId);
+  const sorted = [...entries].sort((a,b) => b.day - a.day);
+  grid.innerHTML = '';
+  sorted.forEach(d => {
+    const card = document.createElement('div');
+    card.className = 'card' + (d.today ? ' today-card' : '');
+    const badge = d.result===true  ? `<span class="badge yes">✓ C'est lui</span>`
+                : d.result===false ? `<span class="badge no">✗ Pas lui</span>`
+                :                    `<span class="badge archive">— Archive</span>`;
+    const img = d.screenshot
+      ? `<div class="card-img" data-src="${d.screenshot}"><img src="${d.screenshot}" alt="Day ${d.day}" loading="lazy"></div>`
+      : `<div class="card-img"><span class="card-img-empty">No image</span></div>`;
+    const bar = d.score > 0
+      ? `<div style="margin-top:4px;height:2px;background:rgba(255,255,255,.06);border-radius:1px"><div style="height:100%;width:${d.score/7*100}%;background:${CHAR_COLORS[charKey]};border-radius:1px"></div></div>`
+      : '';
+    card.innerHTML = `${img}<div class="card-body">
+      <div class="card-top"><div class="card-day">${d.day}</div>${d.today?'<span class="today-tag">Today</span>':''}</div>
+      <div class="card-date">${d.date ? formatDate(d.date) : '—'}</div>
+      ${badge}${bar}
+    </div>`;
+    grid.appendChild(card);
+  });
+  grid.querySelectorAll('.card-img[data-src]').forEach(el => {
+    el.addEventListener('click', () => openLightbox(el.dataset.src));
+  });
+}
+
+// ============================================================
+// GRAPHIQUES
+// ============================================================
+let mainChart = null;
+let globalData = null;
+
+function switchChart(key, btn) {
+  document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (globalData) renderMainChart(key);
+}
+
+function renderMainChart(key) {
+  const ctx = document.getElementById('main-chart').getContext('2d');
+  if (mainChart) { mainChart.destroy(); mainChart = null; }
+  const textColor = 'rgba(136,146,164,.55)';
+  const gridColor = 'rgba(255,255,255,.04)';
+
+  if (key === 'compare') {
+    mainChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: CHAR_KEYS.map(k => {
+          const sorted = [...globalData[k]].sort((a,b)=>a.day-b.day);
+          return {
+            label: CHAR_CONFIG[k].label,
+            data: sorted.map(d => ({ x:d.day, y:d.score||0 })),
+            borderColor: CHAR_COLORS[k], backgroundColor: 'transparent',
+            borderWidth: 1.5, pointRadius: 2, tension: 0.3,
+          };
+        }),
+      },
+      options: chartOpts(textColor, gridColor, true),
+    });
+  } else {
+    const sorted = [...globalData[key]].sort((a,b)=>a.day-b.day);
+    const c      = CHAR_COLORS[key];
+    mainChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: sorted.map(d => `J${d.day}`),
+        datasets: [
+          {
+            type: 'bar', label: 'Score exacts',
+            data: sorted.map(d => d.score||0),
+            backgroundColor: sorted.map(d => d.result===true ? c : (d.score>=4 ? c+'99' : c+'33')),
+            borderWidth: 0,
+          },
+          {
+            type: 'line', label: 'Tendance (moy. 7j)',
+            data: movingAvg(sorted.map(d => d.score||0), 7),
+            borderColor: c, backgroundColor: 'transparent',
+            borderWidth: 2, borderDash: [4,3], pointRadius: 0, tension: 0.4,
+          },
+        ],
+      },
+      options: chartOpts(textColor, gridColor, false),
+    });
+  }
+}
+
+function movingAvg(data, w) {
+  return data.map((_,i) => {
+    const sl = data.slice(Math.max(0,i-w+1), i+1);
+    return +(sl.reduce((s,v)=>s+v,0)/sl.length).toFixed(2);
+  });
+}
+
+function chartOpts(textColor, gridColor, scatter) {
+  return {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: textColor, font:{ family:'monospace', size:11 }, boxWidth:10 } },
+      tooltip: { backgroundColor:'rgba(8,11,16,.95)', titleFont:{ family:'monospace',size:11 }, bodyFont:{ family:'monospace',size:11 } },
+    },
+    scales: {
+      x: { ticks:{ color:textColor, font:{ family:'monospace',size:9 }, maxTicksLimit:20 }, grid:{ color:gridColor }, type: scatter?'linear':'category' },
+      y: { min:0, max:7, ticks:{ color:textColor, font:{ family:'monospace',size:10 }, stepSize:1 }, grid:{ color:gridColor } },
+    },
+  };
+}
+
+// ============================================================
+// UTILITAIRES
+// ============================================================
+function formatDate(iso) {
+  const [y,m,d] = iso.split('-');
+  const months = ['jan','fév','mar','avr','mai','juin','juil','aoû','sep','oct','nov','déc'];
+  return `${parseInt(d)} ${months[parseInt(m)-1]} ${y}`;
+}
+function openLightbox(src) { document.getElementById('lightbox-img').src=src; document.getElementById('lightbox').classList.add('open'); }
+function closeLightbox()   { document.getElementById('lightbox').classList.remove('open'); document.getElementById('lightbox-img').src=''; }
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target===document.getElementById('lightbox')) closeLightbox(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+function scrollGrid(id, dir) { document.getElementById(id).scrollBy({ left: dir*500, behavior:'smooth' }); }
+
+// ============================================================
+// VICTOIRE
+// ============================================================
+function triggerVictory(data) {
+  const names   = { tom:'Tom Holland', andrew:'Andrew Garfield', tobey:'Tobey Maguire' };
+  const winners = CHAR_KEYS.filter(k => data[k]?.find(d => d.today && d.result===true)).map(k => names[k]);
+  if (!winners.length) return;
+  document.getElementById('victory-sub').textContent = winners.join('\n');
+  startParticles();
+  setTimeout(() => document.getElementById('victory-overlay').classList.add('open'), 600);
+  document.getElementById('victory-close').addEventListener('click', () => {
+    document.getElementById('victory-overlay').classList.remove('open');
+    stopParticles();
+  });
+}
+let animFrame = null;
+function startParticles() {
+  const canvas=document.getElementById('victory-canvas'), ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resize();
+  window.addEventListener('resize',resize);
+  const colors=['#e8192c','#1d6fe8','#e8edf5','#c8962a','#7c3aed','#ff2d42'];
+  const P=[];
+  for(let i=0;i<200;i++) P.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,vx:(Math.random()-.5)*4,vy:Math.random()*4+2,size:Math.random()*8+3,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*360,vrot:(Math.random()-.5)*8,shape:Math.random()>.4?'rect':'web',alpha:1});
+  function web(ctx,x,y,s){ctx.beginPath();for(let a=0;a<6;a++){const ag=(a/6)*Math.PI*2;ctx.moveTo(x,y);ctx.lineTo(x+Math.cos(ag)*s,y+Math.sin(ag)*s);}for(let r=.33;r<=1;r+=.33){ctx.moveTo(x+Math.cos(0)*s*r,y+Math.sin(0)*s*r);for(let a=1;a<=6;a++){const ag=(a/6)*Math.PI*2;ctx.lineTo(x+Math.cos(ag)*s*r,y+Math.sin(ag)*s*r);}}ctx.strokeStyle=ctx.fillStyle;ctx.lineWidth=1;ctx.stroke();}
+  function loop(){ctx.clearRect(0,0,canvas.width,canvas.height);let alive=false;P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;p.vy+=.08;if(p.y<canvas.height+20)alive=true;if(p.y>canvas.height*.7)p.alpha=Math.max(0,1-(p.y-canvas.height*.7)/(canvas.height*.3));ctx.save();ctx.globalAlpha=p.alpha;ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.color;if(p.shape==='rect')ctx.fillRect(-p.size/2,-p.size/4,p.size,p.size/2);else web(ctx,0,0,p.size);ctx.restore();});if(alive)animFrame=requestAnimationFrame(loop);else ctx.clearRect(0,0,canvas.width,canvas.height);}
+  loop();
+}
+function stopParticles(){if(animFrame)cancelAnimationFrame(animFrame);const c=document.getElementById('victory-canvas');c.getContext('2d').clearRect(0,0,c.width,c.height);}
+
+// ============================================================
+// DISCLAIMER
+// ============================================================
+function initDisclaimer(){
+  const o=document.getElementById('disclaimer-overlay');
+  const close=()=>{o.classList.remove('open');try{localStorage.setItem('disclaimer_seen','true');}catch(e){}};
+  let seen=false;try{seen=!!localStorage.getItem('disclaimer_seen');}catch(e){}
+  if(!seen)setTimeout(()=>o.classList.add('open'),1200);
+  document.getElementById('disclaimer-close').addEventListener('click',close);
+  document.getElementById('disclaimer-ok').addEventListener('click',close);
+  o.addEventListener('click',e=>{if(e.target===o)close();});
+}
+initDisclaimer();
+
+// ============================================================
+// INIT
+// ============================================================
+loadData().then(data => {
+  globalData = data;
+  renderTodayHero(data);
+  renderDashboard(data);
+  renderTop3(buildTop5(data));
+  buildAllHistory(data);
+  applyHistoryFilters();
+  initHistoryControls();
+  renderGrid(data.tom,    'tom',    'grid-tom');
+  renderGrid(data.andrew, 'andrew', 'grid-andrew');
+  renderGrid(data.tobey,  'tobey',  'grid-tobey');
+  setProgress(96, 'Graphiques…');
+  renderMainChart('tom');
+  setProgress(100, 'Prêt !');
+  stepDone('step-img');
+  setTimeout(() => { hideLoader(); triggerVictory(data); }, 450);
+});
+</script>
+</body>
+</html>
