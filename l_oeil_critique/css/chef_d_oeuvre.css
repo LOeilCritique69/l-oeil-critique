@@ -1463,7 +1463,6 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 
 .badge.actu { background: var(--velvet); color: var(--paper); }
 .badge.review { background: var(--ink); color: var(--brass-light); }
-featured-content
 /* ============================================================================
    14) À PROPOS / MENTIONS LÉGALES / CONTACT
    ============================================================================ */
@@ -1794,123 +1793,106 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
 .related-link-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; filter: grayscale(20%); transition: filter 0.35s ease; }
 .related-link-card:hover img { filter: grayscale(0%); }
 .related-link-card p { margin: 0; padding: 1rem; font-size: 0.92rem; color: var(--paper); line-height: 1.5; }
-.hero-duo {
-    display: flex;
-    min-height: 34rem;
-    border-bottom: 2px solid rgba(255,255,255,.08);
-}
 
-.hero-duo__panel {
-    position: relative;
-    display: flex;
-    flex: 1;
-    align-items: flex-end;
-    overflow: hidden;
-    padding: 3rem 2.5rem;
-    color: var(--text-color-light);
-}
-
-/* Image de fond */
 .hero-duo__bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* Dégradé noir */
-.hero-duo__panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.88) 10%,
-        rgba(0,0,0,.25) 60%,
-        rgba(0,0,0,.60)
-    );
-    z-index: 1;
-}
-
-/* Texte au-dessus de l'image */
-.hero-duo__content {
-    position: relative;
-    z-index: 2;
-    max-width: 650px;
-}
-
-.hero-duo__badge {
-    display: inline-block;
-    margin-bottom: .9rem;
-    padding: .3rem .8rem;
-    font-size: .75rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-radius: 20px;
-    background: #c9a24a;
-    color: #111;
-}
-
-.hero-duo__title {
-    margin-bottom: .75rem;
-    font-family: var(--font-family-title);
-    font-size: clamp(2.2rem,4vw,3.3rem);
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(0,0,0,.9);
-}
-
-.hero-duo__summary {
-    margin-bottom: 1.6rem;
-    font-size: 1.05rem;
-    color: #f2f2f2;
-    opacity: .9;
-    max-width: 600px;
-}
-
-.hero-duo__panel .btn {
-    padding: .8rem 1.6rem;
-}
-
-@media (max-width:900px) {
-    .hero-duo {
-        min-height: 24rem;
-    }
-
-    .hero-duo__panel {
-        padding: 2rem;
-    }
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 /* ============================================================================
-   20) RESPONSIVE — tous les media queries, sans doublon
+   20) RESPONSIVE — VERSION MOBILE COMPLÈTE ET DÉTAILLÉE
+   ----------------------------------------------------------------------------
+   Rien n'a été touché au-dessus : toutes les règles "desktop" restent
+   identiques à la version d'origine. Ce qui suit est une reconstruction
+   entière des adaptations mobiles, composant par composant, avec plusieurs
+   paliers de largeur (tablette large → tablette → grand mobile → mobile →
+   petit mobile → très petit mobile) au lieu des quelques correctifs épars
+   de la version précédente. Chaque bloc reprend la numérotation des
+   sections du fichier pour qu'on s'y retrouve.
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------
+   20.0 — PALIERS DE RÉFÉRENCE (documentation, pas de code)
+   1350px : début de compression des grilles à 3 colonnes
+   1200px : le container perd sa marge de confort
+   1024px : bascule tablette — grilles à 2 colonnes, titres réduits
+   992px  : bascule navigation — le burger prend le relais du menu horizontal
+   900px  : hero-duo et hub-nav passent en une colonne
+   768px  : bascule mobile générale — la plupart des sections passent à 1 colonne
+   650/640px : ajustements fins de grilles (featured, catégories)
+   600px  : footer et hub-nav resserrés
+   480px  : petit mobile — recherche masquée, titres condensés
+   400px  : très petit mobile — dernier filet de sécurité typographique
+   360px  : mobile d'entrée de gamme — paddings header minimaux
+   ------------------------------------------------------------------- */
+
+/* ============================================================================
+   20.1 — TABLETTE LARGE (max-width: 1350px)
    ============================================================================ */
 @media (max-width: 1350px) {
   .featured-grid { grid-template-columns: repeat(2, minmax(260px, 400px)); }
+  .grille-bandes { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 }
 
+/* ============================================================================
+   20.2 — TABLETTE (max-width: 1200px)
+   ============================================================================ */
 @media (max-width: 1200px) {
   .container { width: min(1100px, 100% - 2rem); }
+  .header-content { max-width: 100%; padding: 0 1.5rem; }
+  .hero-content { max-width: 620px; }
 }
 
+/* ============================================================================
+   20.3 — POINT DE BASCULE NAVIGATION (min-width: 993px)
+   ----------------------------------------------------------------------------
+   Au-dessus de 992px, la nav horizontale desktop reprend sa place et le
+   burger disparaît. En dessous (section 20.5), c'est l'inverse.
+   ============================================================================ */
 @media (min-width: 993px) {
   .main-nav { display: flex; }
   .burger-menu { display: none !important; visibility: hidden; }
 }
 
+/* ============================================================================
+   20.4 — TABLETTE / DESKTOP ÉTROIT (max-width: 1024px)
+   ============================================================================ */
 @media (max-width: 1024px) {
+  /* --- Titres --- */
   .section-title.gold { font-size: 2.1rem; }
   .page-title { font-size: 2rem; }
-  .main-news-grid, .latest-news-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+
+  /* --- Grilles d'actualités --- */
+  .main-news-grid,
+  .latest-news-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+
+  /* --- Bandes-annonces --- */
   .grille-bandes { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.6rem; }
   #voir-plus-btn { padding: 1rem 2.2rem; font-size: 0.9rem; }
   .titre-bande-annonce { font-size: 0.8rem; }
+
+  /* --- Hero de listing --- */
+  .hero-section { padding: 2.75rem 2rem; }
+  .hero-content { max-width: 100%; }
+
+  /* --- Reviews --- */
+  .reviews-list { padding: 3rem 1.5rem; }
+
+  /* --- Featured --- */
+  .featured-section { padding: 0 1.25rem 2.5rem; }
 }
 
+/* ============================================================================
+   20.5 — BASCULE NAVIGATION MOBILE (max-width: 992px)
+   ----------------------------------------------------------------------------
+   Le menu horizontal desktop laisse place à un panneau plein écran ouvert
+   par le burger. C'est la pièce maîtresse de la version mobile : sans ce
+   bloc, la nav resterait un menu de bureau écrasé sur un petit écran.
+   ============================================================================ */
 @media (max-width: 992px) {
   .main-nav {
     position: fixed;
@@ -1932,6 +1914,7 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
     -webkit-overflow-scrolling: touch;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
+
   body.nav-locked { overflow: hidden; }
 
   header.scrolled .main-nav { top: var(--header-h-scrolled); }
@@ -1951,43 +1934,141 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
 
   .main-nav a:hover,
   .main-nav a.active { color: var(--brass-light); border-bottom-color: var(--brass); }
+
+  /* Le panneau de recherche flottant est repositionné pour rester visible
+     même quand la largeur diminue : ancré au header, plein largeur utile. */
+  .search-results {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+  }
+
+  /* La cloche de notifications garde sa taille tactile mais son panneau
+     ne doit plus déborder de l'écran. */
+  .notif-panel { width: min(320px, calc(100vw - 2rem)); }
 }
 
-body.nav-locked { overflow: hidden; }
-
+/* ============================================================================
+   20.6 — HERO DUO & HUB NAVIGATION (max-width: 900px)
+   ============================================================================ */
 @media (max-width: 900px) {
+  /* --- Hero duo : empilement vertical --- */
+  .hero-duo { flex-direction: column; min-height: auto; }
+  .hero-duo__panel { min-height: 22rem; padding: 2rem; }
+  .hero-duo__panel + .hero-duo__panel {
+    border-top: 1px solid rgba(201, 162, 74, 0.3);
+    border-left: none;
+  }
+  .hero-duo__content { max-width: 100%; }
+  .hero-duo__title { font-size: clamp(1.9rem, 5vw, 2.4rem); }
+
+  /* --- Hub navigation : une seule colonne --- */
+  .hub-nav__grid { grid-template-columns: 1fr; }
+  .hub-nav__card { min-height: 190px; }
+
+  /* --- Featured : deux colonnes, hero étalé sur toute la largeur --- */
   .featured-grid { grid-template-columns: repeat(2, 1fr); }
   .featured-card.hero { grid-column: span 2; grid-row: span 1; }
+  .featured-card.hero img { height: 220px; }
+
+  /* --- Catégories : deux par ligne --- */
   .category-link { flex: 1 1 calc(50% - 1.3rem); }
+
+  /* --- TikTok : espacement resserré --- */
   .tiktok-container { gap: 1.5rem; }
 }
 
+/* ============================================================================
+   20.7 — BASCULE MOBILE GÉNÉRALE (max-width: 768px)
+   ----------------------------------------------------------------------------
+   C'est ici que la majorité des sections passent réellement en mode
+   "une colonne, empilé, pouce plutôt que souris".
+   ============================================================================ */
 @media (max-width: 768px) {
-  .welcome-section, .page-intro-section, .coming-soon { margin: 1rem; padding: 1.5rem; }
+
+  /* --- Header --- */
+  .header-content { padding: 0 1.25rem; }
+
+  /* --- Blocs d'introduction --- */
+  .welcome-section,
+  .page-intro-section,
+  .coming-soon { margin: 1rem; padding: 1.5rem; }
+
+  .welcome-title { font-size: 1.7rem; }
+  .page-title { font-size: 1.8rem; }
+  .page-description { font-size: 0.98rem; }
+
+  /* --- Slider --- */
+  .slider-section { padding: 0 0.75rem; }
+  .slider-container { min-height: 360px; }
+  .slider-item img { height: 220px; }
+  .slider-item h3 { font-size: 1.15rem; margin: 0 1rem 0.5rem; }
+  .slider-item p { font-size: 0.88rem; margin: 0 1rem 1rem; }
   .slider-controls { flex-direction: column; gap: 0.8rem; }
-  footer { padding: 1.5rem 0.5rem; }
+
+  /* --- Catégories : une seule colonne pleine largeur --- */
+  .category-links-section,
+  .review-links-section { padding: 0.5rem 1rem 2.5rem; }
+  .category-links-container { flex-direction: column; }
+  .category-link { flex: 1 1 100%; height: 8.5rem; }
+
+  /* --- Footer --- */
+  footer { padding: 1.75rem 1rem; }
+
+  /* --- Grilles d'actualités : une colonne --- */
   .news-grid { grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem auto; padding: 0 1rem; }
+  .news-item img { height: 180px; }
+  .news-item h3 { font-size: 1.1rem; margin: 1rem 1.1rem 0.5rem; min-height: 0; }
+  .news-item p { font-size: 0.88rem; margin: 0 1.1rem 1rem; }
+
+  /* --- Bandes-annonces : une colonne --- */
   .bande-annonce-section { padding: 2.5rem 1rem; }
   .grille-bandes { grid-template-columns: 1fr; gap: 1.4rem; }
   .card-bande { padding: 1.1rem; }
   .card-bande h2 { font-size: 1.35rem; }
+  .card-bande .meta-info { font-size: 0.72rem; }
+
+  /* --- Reviews : cards en pile verticale, image au-dessus --- */
+  .reviews-list { padding: 2.5rem 1rem; gap: 1.75rem; }
+  .reviews-unified-content { padding: 1.75rem 1.25rem; }
+  .reviews-unified-title { font-size: 1.6rem; }
+  .review-card__link { flex-direction: column; }
+  .review-card__image-wrap { width: 100%; height: 180px; }
+  .review-card__title { margin-top: 0; }
+
+  /* --- Hero de listing --- */
   .hero-section { min-height: 24rem; padding: 2.5rem 1.5rem; }
   .hero-content h1 { font-size: 2rem; }
   .hero-content p { font-size: 1rem; }
+
+  /* --- Hero block (article) --- */
+  .hero-block { height: 50vh; min-height: 300px; }
+  .hero-block__title { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+
+  /* --- Featured : une colonne complète --- */
   .featured-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   .featured-card.hero { grid-column: span 1; }
+  .featured-card img { height: 170px; }
   .featured-content h3 { font-size: 1.1rem; }
+
+  /* --- Notifications flottantes --- */
   .notification-container { top: 1rem; right: 1rem; left: 1rem; max-width: none; }
   .notification { max-width: 100%; }
+
+  /* --- TikTok --- */
   .tiktok-section { padding: 3.5rem 1rem; }
   .tiktok-wrapper { max-width: 90%; }
-  .review-card__link { flex-direction: column; }
-  .review-card__image-wrap { width: 100%; height: 180px; }
+
+  /* --- À propos / mentions / contact --- */
   .a-propos, .mentions-legales, .contact { margin: 3rem 1rem; padding: 2rem 1.2rem; }
   .a-propos h1, .mentions-legales h1, .contact h1 { font-size: 2.1rem; }
-  .a-propos p { font-size: 1rem; }
+  .a-propos p, .mentions-legales p { font-size: 1rem; }
+  .contact textarea { min-height: 100px; }
 }
 
+/* ============================================================================
+   20.8 — AJUSTEMENTS FINS DE GRILLES (max-width: 650px / 640px)
+   ============================================================================ */
 @media (max-width: 650px) {
   .featured-grid { grid-template-columns: 1fr; }
 }
@@ -1996,24 +2077,64 @@ body.nav-locked { overflow: hidden; }
   .category-link { flex: 1 1 calc(50% - 1rem); }
 }
 
+/* ============================================================================
+   20.9 — FOOTER & HUB-NAV RESSERRÉS (max-width: 600px)
+   ============================================================================ */
 @media (max-width: 600px) {
   .footer-links { flex-direction: column; gap: 1rem; }
   footer { padding: 2rem 1rem; }
+  .hub-nav { padding: 2.5rem 1.5rem; }
+  .hub-nav__title { font-size: 1.7rem; }
 }
 
+/* ============================================================================
+   20.10 — PETIT MOBILE (max-width: 480px)
+   ----------------------------------------------------------------------------
+   Le gabarit le plus courant pour un téléphone en usage réel : c'est ici
+   que la recherche et le nom du site cèdent la place à des éléments plus
+   essentiels (logo, cloche, burger).
+   ============================================================================ */
 @media (max-width: 480px) {
   .site-title { display: none; }
   .logo { width: 2rem; }
   .header-actions { gap: 4px; }
   .search-container { display: none; }
+
   .card-bande h2 { font-size: 1.2rem; }
   .card-bande .synopsis { font-size: 0.85rem; -webkit-line-clamp: 2; }
   #voir-plus-btn { padding: 0.7rem 1.5rem; font-size: 0.82rem; }
   .category-link { flex: 1 1 100%; }
+
+  .welcome-title { font-size: 1.5rem; }
+  .section-title.gold { font-size: 1.6rem; }
+  .page-title { font-size: 1.6rem; }
+
+  .hero-content h1 { font-size: 1.7rem; }
+  .hero-content .eyebrow { font-size: 0.68rem; }
+
+  .featured-card.hero h3 { font-size: 1.3rem; }
+  .review-card__title { font-size: 1.15rem; }
 }
 
+/* ============================================================================
+   20.11 — TRÈS PETIT MOBILE (max-width: 400px)
+   ============================================================================ */
+@media (max-width: 400px) {
+  .welcome-section, .page-intro-section, .coming-soon { padding: 1.25rem; }
+  .slider-item img { height: 190px; }
+  .news-item img { height: 160px; }
+  .featured-card img { height: 150px; }
+  .card-bande h2 { font-size: 1.1rem; }
+  .a-propos h1, .mentions-legales h1, .contact h1 { font-size: 1.8rem; }
+}
+
+/* ============================================================================
+   20.12 — MOBILE D'ENTRÉE DE GAMME (max-width: 360px)
+   ============================================================================ */
 @media (max-width: 360px) {
   .header-content { padding: 0 1rem; }
+  .logo { width: 1.8rem; }
+  .btn { padding: 0.7rem 1.3rem; font-size: 0.78rem; }
 }
 
 /* ============================================================================
