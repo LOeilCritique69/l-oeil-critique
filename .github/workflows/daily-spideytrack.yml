@@ -1,0 +1,121 @@
+name: 🕷️ SpideyTrack — Daily Guess
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Ignorer le garde-fou 'déjà joué aujourd'hui'"
+        type: boolean
+        default: false
+
+concurrency:
+  group: spideytrack-update
+  cancel-in-progress: false
+
+jobs:
+  daily-guess:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write
+
+    steps:
+
+      # =========================
+      # CHECKOUT
+      # =========================
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN_2 }}
+          fetch-depth: 0
+
+      # =========================
+      # PYTHON
+      # =========================
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # =========================
+      # INSTALL DEPENDENCIES
+      # =========================
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+
+      # =========================
+      # PLAYWRIGHT
+      # =========================
+      - name: 🎭 Install Playwright
+        run: |
+          python -m playwright install --with-deps chromium
+
+      # =========================
+      # RUN
+      # =========================
+      - name: 🕸️ Run daily guess
+        run: >
+          python l_oeil_critique/Spideytrack/tweet.py
+          ${{ inputs.force && '--force' || '' }}
+
+      # =========================
+      # DETECT CHANGES
+      # =========================
+      - name: 📊 Detect changes
+        id: changes
+        run: |
+          if [[ -n "$(git status --porcelain -- l_oeil_critique/Spideytrack/marveldle/)" ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            git status --short -- l_oeil_critique/Spideytrack/marveldle/
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "NO CHANGES"
+          fi
+
+      # =========================
+      # GIT CONFIG
+      # =========================
+      - name: 🔧 Git config
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # =========================
+      # COMMIT
+      # ------------------------------------------------------------------
+      # IMPORTANT : liste explicite (pas de wildcard `git add .`), scopée
+      # au dossier Spideytrack. Le bug de l'ancien SpideyTrack venait de
+      # fichiers de données jamais ajoutés ici (donc jamais commit, donc
+      # figés) — chaque fichier que tweet.py peut modifier doit apparaître
+      # explicitement ci-dessous.
+      # =========================
+      - name: 🔁 Commit & push
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git add l_oeil_critique/Spideytrack/marveldle/state.json
+          git add l_oeil_critique/Spideytrack/marveldle/database.json
+          git add l_oeil_critique/Spideytrack/marveldle/images/
+          git add l_oeil_critique/Spideytrack/marveldle/images_andrew/
+          git add l_oeil_critique/Spideytrack/marveldle/images_tobey/
+          DAY=$(python3 -c "import json;print(json.load(open('l_oeil_critique/Spideytrack/marveldle/state.json'))['current_day']-1)")
+          git commit -m "🕷️ SpideyTrack — Day $DAY (#${{ github.run_number }})"
+          git pull --rebase origin main
+          git push origin main
+
+      # =========================
+      # SUMMARY
+      # =========================
+      - name: 🧾 Summary
+        if: always()
+        run: |
+          echo "## Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Changes: ${{ steps.changes.outputs.changes }}" >> $GITHUB_STEP_SUMMARY

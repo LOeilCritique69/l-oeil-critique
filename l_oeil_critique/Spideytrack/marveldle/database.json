@@ -1,0 +1,5436 @@
+{
+  "meta": {
+    "version": 2,
+    "generated_by": "tweet.py (migration)",
+    "characters": {
+      "tom": "Tom Holland",
+      "andrew": "Andrew Garfield",
+      "tobey": "Tobey Maguire"
+    }
+  },
+  "days": {
+    "1": {
+      "date": "2026-01-01",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_001.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_001.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_001.png"
+        }
+      }
+    },
+    "2": {
+      "date": "2026-01-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_002.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_002.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_002.png"
+        }
+      }
+    },
+    "3": {
+      "date": "2026-01-03",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_003.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_003.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_003.png"
+        }
+      }
+    },
+    "4": {
+      "date": "2026-01-04",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_004.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_004.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_004.png"
+        }
+      }
+    },
+    "5": {
+      "date": "2026-01-05",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_005.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_005.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_005.png"
+        }
+      }
+    },
+    "6": {
+      "date": "2026-01-06",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_006.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_006.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_006.png"
+        }
+      }
+    },
+    "7": {
+      "date": "2026-01-07",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_007.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_007.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_007.png"
+        }
+      }
+    },
+    "8": {
+      "date": "2026-01-08",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_008.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_008.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_008.png"
+        }
+      }
+    },
+    "9": {
+      "date": "2026-01-09",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images/day_009.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_009.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_009.png"
+        }
+      }
+    },
+    "10": {
+      "date": "2026-01-10",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_010.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_010.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_010.png"
+        }
+      }
+    },
+    "11": {
+      "date": "2026-01-11",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_011.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_011.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_011.png"
+        }
+      }
+    },
+    "12": {
+      "date": "2026-01-12",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_012.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_012.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_012.png"
+        }
+      }
+    },
+    "13": {
+      "date": "2026-01-13",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_013.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_013.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_013.png"
+        }
+      }
+    },
+    "14": {
+      "date": "2026-01-14",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_014.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_014.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_014.png"
+        }
+      }
+    },
+    "15": {
+      "date": "2026-01-15",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_015.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_015.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_015.png"
+        }
+      }
+    },
+    "16": {
+      "date": "2026-01-16",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_016.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_016.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_016.png"
+        }
+      }
+    },
+    "17": {
+      "date": "2026-01-17",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 6,
+          "partial": 0,
+          "score": 6,
+          "weighted": 6,
+          "screenshot": "marveldle/images/day_017.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_017.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_017.png"
+        }
+      }
+    },
+    "18": {
+      "date": "2026-01-18",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_018.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_018.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_018.png"
+        }
+      }
+    },
+    "19": {
+      "date": "2026-01-19",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_019.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_019.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_019.png"
+        }
+      }
+    },
+    "20": {
+      "date": "2026-01-20",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images/day_020.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_020.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_020.png"
+        }
+      }
+    },
+    "21": {
+      "date": "2026-01-21",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_021.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_021.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_021.png"
+        }
+      }
+    },
+    "22": {
+      "date": "2026-01-22",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_022.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_022.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_022.png"
+        }
+      }
+    },
+    "23": {
+      "date": "2026-01-23",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_023.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_023.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_023.png"
+        }
+      }
+    },
+    "24": {
+      "date": "2026-01-24",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 3,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_024.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_024.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_024.png"
+        }
+      }
+    },
+    "25": {
+      "date": "2026-01-25",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_025.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_025.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_025.png"
+        }
+      }
+    },
+    "26": {
+      "date": "2026-01-26",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_026.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_026.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_026.png"
+        }
+      }
+    },
+    "27": {
+      "date": "2026-01-27",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_027.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_027.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_027.png"
+        }
+      }
+    },
+    "28": {
+      "date": "2026-01-28",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_028.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_028.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_028.png"
+        }
+      }
+    },
+    "29": {
+      "date": "2026-01-29",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_029.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_029.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_029.png"
+        }
+      }
+    },
+    "30": {
+      "date": "2026-01-30",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_030.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_030.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_030.png"
+        }
+      }
+    },
+    "31": {
+      "date": "2026-01-31",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_031.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_031.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_031.png"
+        }
+      }
+    },
+    "32": {
+      "date": "2026-02-01",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_032.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_032.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_032.png"
+        }
+      }
+    },
+    "33": {
+      "date": "2026-02-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_033.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_033.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_033.png"
+        }
+      }
+    },
+    "34": {
+      "date": "2026-02-03",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_034.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_034.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_034.png"
+        }
+      }
+    },
+    "35": {
+      "date": "2026-02-04",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_035.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_035.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_035.png"
+        }
+      }
+    },
+    "36": {
+      "date": "2026-02-05",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_036.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_036.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_036.png"
+        }
+      }
+    },
+    "37": {
+      "date": "2026-02-06",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 0,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_037.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_037.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_037.png"
+        }
+      }
+    },
+    "38": {
+      "date": "2026-02-07",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images/day_038.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_038.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_038.png"
+        }
+      }
+    },
+    "39": {
+      "date": "2026-02-08",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_039.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_039.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_039.png"
+        }
+      }
+    },
+    "40": {
+      "date": "2026-02-09",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_040.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_040.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_040.png"
+        }
+      }
+    },
+    "41": {
+      "date": "2026-02-10",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_041.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_041.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_041.png"
+        }
+      }
+    },
+    "42": {
+      "date": "2026-02-11",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_042.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_042.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_042.png"
+        }
+      }
+    },
+    "43": {
+      "date": "2026-02-12",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_043.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 2,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_043.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 2,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_043.png"
+        }
+      }
+    },
+    "44": {
+      "date": "2026-02-13",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_044.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_044.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_044.png"
+        }
+      }
+    },
+    "45": {
+      "date": "2026-02-14",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_045.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_045.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_045.png"
+        }
+      }
+    },
+    "46": {
+      "date": "2026-02-15",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_046.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_046.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_046.png"
+        }
+      }
+    },
+    "47": {
+      "date": "2026-02-16",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_047.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_047.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_047.png"
+        }
+      }
+    },
+    "48": {
+      "date": "2026-02-17",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_048.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_048.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_048.png"
+        }
+      }
+    },
+    "49": {
+      "date": "2026-02-18",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_049.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_049.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_049.png"
+        }
+      }
+    },
+    "50": {
+      "date": "2026-02-19",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_050.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_050.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_050.png"
+        }
+      }
+    },
+    "51": {
+      "date": "2026-02-20",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_051.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_051.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_051.png"
+        }
+      }
+    },
+    "52": {
+      "date": "2026-02-21",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_052.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_052.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_052.png"
+        }
+      }
+    },
+    "53": {
+      "date": "2026-02-22",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 0,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_053.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_053.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_053.png"
+        }
+      }
+    },
+    "54": {
+      "date": "2026-02-23",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_054.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_054.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_054.png"
+        }
+      }
+    },
+    "55": {
+      "date": "2026-02-24",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_055.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_055.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_055.png"
+        }
+      }
+    },
+    "56": {
+      "date": "2026-02-25",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_056.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_056.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_056.png"
+        }
+      }
+    },
+    "57": {
+      "date": "2026-02-26",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_057.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_057.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_057.png"
+        }
+      }
+    },
+    "58": {
+      "date": "2026-02-27",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_058.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_058.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_058.png"
+        }
+      }
+    },
+    "59": {
+      "date": "2026-02-28",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_059.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_059.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_059.png"
+        }
+      }
+    },
+    "60": {
+      "date": "2026-03-01",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_060.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_060.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_060.png"
+        }
+      }
+    },
+    "61": {
+      "date": "2026-03-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_061.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_061.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_061.png"
+        }
+      }
+    },
+    "62": {
+      "date": "2026-03-03",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_062.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_062.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_062.png"
+        }
+      }
+    },
+    "63": {
+      "date": "2026-03-04",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_063.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_063.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_063.png"
+        }
+      }
+    },
+    "64": {
+      "date": "2026-03-05",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_064.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_064.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_064.png"
+        }
+      }
+    },
+    "65": {
+      "date": "2026-03-06",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_065.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_065.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_065.png"
+        }
+      }
+    },
+    "66": {
+      "date": "2026-03-07",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_066.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_066.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_066.png"
+        }
+      }
+    },
+    "67": {
+      "date": "2026-03-08",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_067.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_067.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_067.png"
+        }
+      }
+    },
+    "68": {
+      "date": "2026-03-09",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_068.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_068.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_068.png"
+        }
+      }
+    },
+    "69": {
+      "date": "2026-03-10",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_069.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_069.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_069.png"
+        }
+      }
+    },
+    "70": {
+      "date": "2026-03-11",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_070.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_070.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_070.png"
+        }
+      }
+    },
+    "71": {
+      "date": "2026-03-12",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_071.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_071.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_071.png"
+        }
+      }
+    },
+    "72": {
+      "date": "2026-03-13",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_072.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_072.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_072.png"
+        }
+      }
+    },
+    "73": {
+      "date": "2026-03-14",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images/day_073.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_073.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_073.png"
+        }
+      }
+    },
+    "74": {
+      "date": "2026-03-15",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_074.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_074.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_074.png"
+        }
+      }
+    },
+    "75": {
+      "date": "2026-03-16",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_075.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_075.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_075.png"
+        }
+      }
+    },
+    "76": {
+      "date": "2026-03-17",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_076.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_076.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_076.png"
+        }
+      }
+    },
+    "77": {
+      "date": "2026-03-18",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_077.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_077.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_077.png"
+        }
+      }
+    },
+    "78": {
+      "date": "2026-03-19",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_078.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_078.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_078.png"
+        }
+      }
+    },
+    "79": {
+      "date": "2026-03-20",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_079.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_079.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_079.png"
+        }
+      }
+    },
+    "80": {
+      "date": "2026-03-21",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_080.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_080.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_080.png"
+        }
+      }
+    },
+    "81": {
+      "date": "2026-03-22",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images/day_081.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_081.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_081.png"
+        }
+      }
+    },
+    "82": {
+      "date": "2026-03-23",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_082.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_082.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_082.png"
+        }
+      }
+    },
+    "83": {
+      "date": "2026-03-24",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_083.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_083.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_083.png"
+        }
+      }
+    },
+    "84": {
+      "date": "2026-03-25",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_084.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_084.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_084.png"
+        }
+      }
+    },
+    "85": {
+      "date": "2026-03-26",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images/day_085.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_andrew/day_085.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5,
+          "screenshot": "marveldle/images_tobey/day_085.png"
+        }
+      }
+    },
+    "86": {
+      "date": "2026-03-27",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_086.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_086.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_086.png"
+        }
+      }
+    },
+    "87": {
+      "date": "2026-03-28",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images/day_087.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_andrew/day_087.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1,
+          "screenshot": "marveldle/images_tobey/day_087.png"
+        }
+      }
+    },
+    "88": {
+      "date": "2026-03-29",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_088.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_088.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_088.png"
+        }
+      }
+    },
+    "89": {
+      "date": "2026-03-30",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_089.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_089.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_089.png"
+        }
+      }
+    },
+    "90": {
+      "date": "2026-03-31",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_090.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_090.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_090.png"
+        }
+      }
+    },
+    "91": {
+      "date": "2026-04-01",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_091.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_091.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_091.png"
+        }
+      }
+    },
+    "92": {
+      "date": "2026-04-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_092.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_092.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_092.png"
+        }
+      }
+    },
+    "93": {
+      "date": "2026-04-03",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_093.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_093.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_093.png"
+        }
+      }
+    },
+    "94": {
+      "date": "2026-04-04",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_094.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_094.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_094.png"
+        }
+      }
+    },
+    "95": {
+      "date": "2026-04-05",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_095.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_095.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_095.png"
+        }
+      }
+    },
+    "96": {
+      "date": "2026-04-06",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_096.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_096.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_096.png"
+        }
+      }
+    },
+    "97": {
+      "date": "2026-04-07",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_097.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_097.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_097.png"
+        }
+      }
+    },
+    "98": {
+      "date": "2026-04-08",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 0,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_098.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_andrew/day_098.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4,
+          "screenshot": "marveldle/images_tobey/day_098.png"
+        }
+      }
+    },
+    "99": {
+      "date": "2026-04-09",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images/day_099.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_andrew/day_099.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2,
+          "screenshot": "marveldle/images_tobey/day_099.png"
+        }
+      }
+    },
+    "100": {
+      "date": "2026-04-10",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images/day_100.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_andrew/day_100.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3,
+          "screenshot": "marveldle/images_tobey/day_100.png"
+        }
+      }
+    },
+    "101": {
+      "date": "2026-04-11",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images/day_101.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_101.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_101.png"
+        }
+      }
+    },
+    "102": {
+      "date": "2026-04-12",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_102.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_102.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_102.png"
+        }
+      }
+    },
+    "103": {
+      "date": "2026-04-13",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images/day_103.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_103.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_103.png"
+        }
+      }
+    },
+    "104": {
+      "date": "2026-04-14",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 0,
+          "score": 1,
+          "weighted": 1.0,
+          "screenshot": "marveldle/images/day_104.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_104.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_104.png"
+        }
+      }
+    },
+    "105": {
+      "date": "2026-04-15",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 3,
+          "score": 2,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_105.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 3,
+          "score": 2,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_105.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 3,
+          "score": 2,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_105.png"
+        }
+      }
+    },
+    "106": {
+      "date": "2026-04-16",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_106.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_106.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_106.png"
+        }
+      }
+    },
+    "107": {
+      "date": "2026-04-17",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images/day_107.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_andrew/day_107.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_tobey/day_107.png"
+        }
+      }
+    },
+    "108": {
+      "date": "2026-04-18",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_108.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_108.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_108.png"
+        }
+      }
+    },
+    "109": {
+      "date": "2026-04-19",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 0,
+          "partial": 1,
+          "score": 0,
+          "weighted": 0.5,
+          "screenshot": "marveldle/images/day_109.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_andrew/day_109.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_tobey/day_109.png"
+        }
+      }
+    },
+    "110": {
+      "date": "2026-04-20",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_110.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_andrew/day_110.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_tobey/day_110.png"
+        }
+      }
+    },
+    "111": {
+      "date": "2026-04-21",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_111.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_111.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_111.png"
+        }
+      }
+    },
+    "112": {
+      "date": "2026-04-22",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images/day_112.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_andrew/day_112.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_tobey/day_112.png"
+        }
+      }
+    },
+    "113": {
+      "date": "2026-04-23",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 3,
+          "score": 3,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images/day_113.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_113.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_113.png"
+        }
+      }
+    },
+    "114": {
+      "date": "2026-04-24",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 0,
+          "score": 1,
+          "weighted": 1.0,
+          "screenshot": "marveldle/images/day_114.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 0,
+          "score": 1,
+          "weighted": 1.0,
+          "screenshot": "marveldle/images_andrew/day_114.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 0,
+          "score": 1,
+          "weighted": 1.0,
+          "screenshot": "marveldle/images_tobey/day_114.png"
+        }
+      }
+    },
+    "115": {
+      "date": "2026-04-25",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_115.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_115.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_115.png"
+        }
+      }
+    },
+    "116": {
+      "date": "2026-04-26",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 0,
+          "score": 1,
+          "weighted": 1.0,
+          "screenshot": "marveldle/images/day_116.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_116.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_116.png"
+        }
+      }
+    },
+    "117": {
+      "date": "2026-04-27",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_117.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 0,
+          "score": 3,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_117.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 0,
+          "score": 3,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_117.png"
+        }
+      }
+    },
+    "118": {
+      "date": "2026-04-28",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_118.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_118.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_118.png"
+        }
+      }
+    },
+    "119": {
+      "date": "2026-04-30",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 5,
+          "partial": 2,
+          "score": 5,
+          "weighted": 6.0,
+          "screenshot": "marveldle/images/day_119.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_andrew/day_119.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_tobey/day_119.png"
+        }
+      }
+    },
+    "120": {
+      "date": "2026-05-01",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_120.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_120.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_120.png"
+        }
+      }
+    },
+    "121": {
+      "date": "2026-05-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 3,
+          "score": 3,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images/day_121.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_121.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_121.png"
+        }
+      }
+    },
+    "122": {
+      "date": "2026-05-03",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_122.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_122.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_122.png"
+        }
+      }
+    },
+    "123": {
+      "date": "2026-05-04",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_123.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_123.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_123.png"
+        }
+      }
+    },
+    "124": {
+      "date": "2026-05-05",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_124.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_124.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_124.png"
+        }
+      }
+    },
+    "125": {
+      "date": "2026-05-06",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_125.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_125.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_125.png"
+        }
+      }
+    },
+    "126": {
+      "date": "2026-05-07",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_126.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_126.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_126.png"
+        }
+      }
+    },
+    "127": {
+      "date": "2026-05-08",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_127.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_127.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_127.png"
+        }
+      }
+    },
+    "128": {
+      "date": "2026-05-09",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 3,
+          "score": 2,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_128.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_128.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_128.png"
+        }
+      }
+    },
+    "129": {
+      "date": "2026-05-10",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_129.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_129.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_129.png"
+        }
+      }
+    },
+    "130": {
+      "date": "2026-05-11",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images/day_130.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_andrew/day_130.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_tobey/day_130.png"
+        }
+      }
+    },
+    "131": {
+      "date": "2026-05-12",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_131.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_131.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_131.png"
+        }
+      }
+    },
+    "132": {
+      "date": "2026-05-13",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_132.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_132.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_132.png"
+        }
+      }
+    },
+    "133": {
+      "date": "2026-05-14",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images/day_133.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_133.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_133.png"
+        }
+      }
+    },
+    "134": {
+      "date": "2026-05-15",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_134.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_134.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_134.png"
+        }
+      }
+    },
+    "135": {
+      "date": "2026-05-16",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_135.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_135.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_135.png"
+        }
+      }
+    },
+    "136": {
+      "date": "2026-05-17",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_136.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_136.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_136.png"
+        }
+      }
+    },
+    "137": {
+      "date": "2026-05-18",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_137.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_137.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_137.png"
+        }
+      }
+    },
+    "138": {
+      "date": "2026-05-19",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_138.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_138.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_138.png"
+        }
+      }
+    },
+    "139": {
+      "date": "2026-05-20",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_139.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_139.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_139.png"
+        }
+      }
+    },
+    "140": {
+      "date": "2026-05-21",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images/day_140.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_andrew/day_140.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_tobey/day_140.png"
+        }
+      }
+    },
+    "141": {
+      "date": "2026-05-22",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 0,
+          "partial": 1,
+          "score": 0,
+          "weighted": 0.5,
+          "screenshot": "marveldle/images/day_141.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 0,
+          "partial": 1,
+          "score": 0,
+          "weighted": 0.5,
+          "screenshot": "marveldle/images_andrew/day_141.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 0,
+          "partial": 1,
+          "score": 0,
+          "weighted": 0.5,
+          "screenshot": "marveldle/images_tobey/day_141.png"
+        }
+      }
+    },
+    "142": {
+      "date": "2026-05-23",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_142.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 0,
+          "score": 3,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_142.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 0,
+          "score": 3,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_142.png"
+        }
+      }
+    },
+    "143": {
+      "date": "2026-05-24",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 6,
+          "partial": 0,
+          "score": 6,
+          "weighted": 6.0,
+          "screenshot": "marveldle/images/day_143.png"
+        },
+        "andrew": {
+          "result": true,
+          "exact": 7,
+          "partial": 0,
+          "score": 7,
+          "weighted": 7.0,
+          "screenshot": "marveldle/images_andrew/day_143.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 7,
+          "partial": 0,
+          "score": 7,
+          "weighted": 7.0,
+          "screenshot": "marveldle/images_tobey/day_143.png"
+        }
+      }
+    },
+    "144": {
+      "date": "2026-05-25",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_144.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_144.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_144.png"
+        }
+      }
+    },
+    "145": {
+      "date": "2026-05-26",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_145.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_145.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_145.png"
+        }
+      }
+    },
+    "146": {
+      "date": "2026-05-27",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images/day_146.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_andrew/day_146.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_tobey/day_146.png"
+        }
+      }
+    },
+    "147": {
+      "date": "2026-05-28",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_147.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_147.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_147.png"
+        }
+      }
+    },
+    "148": {
+      "date": "2026-05-29",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_148.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_148.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_148.png"
+        }
+      }
+    },
+    "149": {
+      "date": "2026-05-30",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_149.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_149.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_149.png"
+        }
+      }
+    },
+    "150": {
+      "date": "2026-05-31",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_150.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_andrew/day_150.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_tobey/day_150.png"
+        }
+      }
+    },
+    "151": {
+      "date": "2026-06-01",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_151.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_151.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_151.png"
+        }
+      }
+    },
+    "152": {
+      "date": "2026-06-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 3,
+          "score": 4,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images/day_152.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_152.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_152.png"
+        }
+      }
+    },
+    "153": {
+      "date": "2026-06-03",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images/day_153.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_andrew/day_153.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_tobey/day_153.png"
+        }
+      }
+    },
+    "154": {
+      "date": "2026-06-04",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_154.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_154.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_154.png"
+        }
+      }
+    },
+    "155": {
+      "date": "2026-06-05",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_155.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_155.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_155.png"
+        }
+      }
+    },
+    "156": {
+      "date": "2026-06-06",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images/day_156.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_andrew/day_156.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_tobey/day_156.png"
+        }
+      }
+    },
+    "157": {
+      "date": "2026-06-07",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_157.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_andrew/day_157.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_tobey/day_157.png"
+        }
+      }
+    },
+    "158": {
+      "date": "2026-06-08",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_158.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_158.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_158.png"
+        }
+      }
+    },
+    "159": {
+      "date": "2026-06-09",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_159.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_159.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_159.png"
+        }
+      }
+    },
+    "160": {
+      "date": "2026-06-10",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_160.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_160.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_160.png"
+        }
+      }
+    },
+    "161": {
+      "date": "2026-06-11",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_161.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_161.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_161.png"
+        }
+      }
+    },
+    "162": {
+      "date": "2026-06-12",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images/day_162.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_162.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_162.png"
+        }
+      }
+    },
+    "163": {
+      "date": "2026-06-13",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_163.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_163.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_163.png"
+        }
+      }
+    },
+    "164": {
+      "date": "2026-06-14",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_164.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_164.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_164.png"
+        }
+      }
+    },
+    "165": {
+      "date": "2026-06-15",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images/day_165.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_andrew/day_165.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_tobey/day_165.png"
+        }
+      }
+    },
+    "166": {
+      "date": "2026-06-16",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_166.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_166.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_166.png"
+        }
+      }
+    },
+    "167": {
+      "date": "2026-06-17",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_167.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_167.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_167.png"
+        }
+      }
+    },
+    "168": {
+      "date": "2026-06-18",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_168.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_andrew/day_168.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 1,
+          "score": 4,
+          "weighted": 4.5,
+          "screenshot": "marveldle/images_tobey/day_168.png"
+        }
+      }
+    },
+    "169": {
+      "date": "2026-06-19",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 0,
+          "score": 4,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_169.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_169.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 0,
+          "score": 5,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_169.png"
+        }
+      }
+    },
+    "170": {
+      "date": "2026-06-20",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_170.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_170.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_170.png"
+        }
+      }
+    },
+    "171": {
+      "date": "2026-06-21",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_171.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_171.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_171.png"
+        }
+      }
+    },
+    "172": {
+      "date": "2026-06-22",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_172.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_172.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_172.png"
+        }
+      }
+    },
+    "173": {
+      "date": "2026-06-23",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 2,
+          "score": 1,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_173.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_173.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_173.png"
+        }
+      }
+    },
+    "174": {
+      "date": "2026-06-24",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_174.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_174.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_174.png"
+        }
+      }
+    },
+    "175": {
+      "date": "2026-06-25",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_175.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_175.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_175.png"
+        }
+      }
+    },
+    "176": {
+      "date": "2026-06-26",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images/day_176.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_176.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_176.png"
+        }
+      }
+    },
+    "177": {
+      "date": "2026-06-27",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_177.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_177.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_177.png"
+        }
+      }
+    },
+    "178": {
+      "date": "2026-06-28",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_178.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_178.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_178.png"
+        }
+      }
+    },
+    "179": {
+      "date": "2026-06-29",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images/day_179.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_179.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_179.png"
+        }
+      }
+    },
+    "180": {
+      "date": "2026-06-30",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images/day_180.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_andrew/day_180.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images_tobey/day_180.png"
+        }
+      }
+    },
+    "181": {
+      "date": "2026-07-01",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_181.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_andrew/day_181.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 3,
+          "partial": 1,
+          "score": 3,
+          "weighted": 3.5,
+          "screenshot": "marveldle/images_tobey/day_181.png"
+        }
+      }
+    },
+    "182": {
+      "date": "2026-07-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images/day_182.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_andrew/day_182.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 0,
+          "score": 2,
+          "weighted": 2.0,
+          "screenshot": "marveldle/images_tobey/day_182.png"
+        }
+      }
+    },
+    "183": {
+      "date": "2026-07-03",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images/day_183.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_andrew/day_183.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 5,
+          "partial": 1,
+          "score": 5,
+          "weighted": 5.5,
+          "screenshot": "marveldle/images_tobey/day_183.png"
+        }
+      }
+    },
+    "184": {
+      "date": "2026-07-04",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images/day_184.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_andrew/day_184.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 2,
+          "score": 2,
+          "weighted": 3.0,
+          "screenshot": "marveldle/images_tobey/day_184.png"
+        }
+      }
+    },
+    "185": {
+      "date": "2026-07-05",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_185.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_185.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_185.png"
+        }
+      }
+    },
+    "186": {
+      "date": "2026-07-06",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images/day_186.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_andrew/day_186.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 1,
+          "partial": 1,
+          "score": 1,
+          "weighted": 1.5,
+          "screenshot": "marveldle/images_tobey/day_186.png"
+        }
+      }
+    },
+    "187": {
+      "date": "2026-07-07",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images/day_187.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_andrew/day_187.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 2,
+          "partial": 1,
+          "score": 2,
+          "weighted": 2.5,
+          "screenshot": "marveldle/images_tobey/day_187.png"
+        }
+      }
+    }
+  }
+}

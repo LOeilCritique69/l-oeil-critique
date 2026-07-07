@@ -10874,5 +10874,28 @@
     "video": false,
     "vote_average": 7.428,
     "vote_count": 437
+  },
+  "Minions & Monsters_2026": {
+    "adult": false,
+    "backdrop_path": "/xMoXsOgF0hBP7iVj7ZPIrFtTeL3.jpg",
+    "genre_ids": [
+      12,
+      16,
+      35,
+      10751,
+      14
+    ],
+    "id": 1315772,
+    "title": "Des Minions et des monstres",
+    "original_language": "en",
+    "original_title": "Minions & Monsters",
+    "overview": "L’histoire turbulente, absurde et évidemment vraie des Minions et la manière dont ils ont conquis Hollywood, sont devenus de véritables stars de cinéma, ont tout perdu, ont libéré des monstres dans notre monde, puis ont tenté de sauver la planète du chaos qu’ils avaient créé.",
+    "popularity": 196.483,
+    "poster_path": "/jMOf0SSthlNp5uXhEXz4e3tqDX5.jpg",
+    "release_date": "2026-06-24",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.435,
+    "vote_count": 116
   }
 }

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SpideyTrack — suivi quotidien des 3 Spider-Men (Tom Holland, Andrew Garfield, Tobey Maguire) sur Marveldle.">
+  <meta property="og:title" content="SpideyTrack - L'Œil Critique">
+  <meta property="og:description" content="Suivi quotidien des 3 Spider-Men sur Marveldle.">
+  <meta property="og:image" content="/l_oeil_critique/Spideytrack/spidey.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="canonical" href="https://www.l-oeil-critique.com/l_oeil_critique/Spideytrack/marveldle.html">
+  <title>SpideyTrack - L'Œil Critique</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="spidey.png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/l_oeil_critique/css/chef_d_oeuvre.css">
+  <link rel="stylesheet" href="marveldle.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ════ LOADING SCREEN ════ -->
+<div id="loading-screen">
+  <div class="loader-logo">
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="22" cy="25" rx="7" ry="8.5" fill="#e8192c"/>
+      <ellipse cx="22" cy="16" rx="5" ry="5" fill="#e8192c"/>
+      <line x1="15" y1="20" x2="2"  y2="14" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="15" y1="24" x2="1"  y2="24" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="15" y1="28" x2="2"  y2="35" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="29" y1="20" x2="42" y2="14" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="29" y1="24" x2="43" y2="24" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="29" y1="28" x2="42" y2="35" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="22" y1="11" x2="22" y2="4" stroke="#e8192c" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="19.5" cy="15" r="1.5" fill="#e8edf5"/>
+      <circle cx="24.5" cy="15" r="1.5" fill="#e8edf5"/>
+    </svg>
+    <div class="loader-title">Spidey<span>Track</span></div>
+  </div>
+  <div class="loader-sub">À la recherche des Trois Spideys</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar" id="loader-bar"></div>
+  </div>
+  <div class="loader-status" id="loader-status">Initialisation…</div>
+</div>
+
+<!-- ════ APP ════ -->
+<div id="app-wrapper">
+
+<!-- ════ HERO AUJOURD'HUI ════ -->
+<section class="today-hero" id="today-hero">
+  <div class="today-hero-label">
+    <span class="today-hero-dot"></span>
+    Aujourd'hui — <span id="today-day-label">Jour —</span>
+  </div>
+  <div class="today-cards-row" id="today-cards-row">
+    <!-- rempli dynamiquement -->
+  </div>
+</section>
+
+<!-- ════ DASHBOARD — allégé ════ -->
+<section class="dashboard" id="dashboard">
+  <div class="dash-global">
+    <div class="dash-stat">
+      <div class="dash-val" id="dash-total">—</div>
+      <div class="dash-lbl">Jours joués</div>
+    </div>
+    <div class="dash-stat">
+      <div class="dash-val gold" id="dash-winrate">—</div>
+      <div class="dash-lbl">Taux de succès global</div>
+    </div>
+    <div class="dash-stat">
+      <div class="dash-val" id="dash-beststreak">—</div>
+      <div class="dash-lbl">Meilleur streak actuel</div>
+    </div>
+  </div>
+
+  <div class="dash-persos" id="dash-persos">
+    <!-- une ligne compacte par personnage, remplie dynamiquement -->
+  </div>
+</section>
+
+<main>
+
+  <!-- TOP 5 -->
+  <div class="top3-wrap">
+    <div class="section-header">
+      <div class="section-label">Top 5 — Meilleurs guess</div>
+      <div class="section-count">Classement pondéré (exacts + ½ partiels)</div>
+    </div>
+    <div class="top3-grid" id="top3-container"></div>
+  </div>
+
+  <!-- GRAPHIQUES -->
+  <div class="charts-wrap">
+    <div class="section-header">
+      <div class="section-label">Progression</div>
+      <div class="section-count">Score par partie</div>
+    </div>
+    <div class="charts-tabs">
+      <button class="chart-tab active" onclick="switchChart('tom',this)">Tom Holland</button>
+      <button class="chart-tab" onclick="switchChart('andrew',this)">Andrew Garfield</button>
+      <button class="chart-tab" onclick="switchChart('tobey',this)">Tobey Maguire</button>
+      <button class="chart-tab" onclick="switchChart('compare',this)">Comparatif</button>
+    </div>
+    <div class="chart-container"><canvas id="main-chart"></canvas></div>
+  </div>
+
+  <!-- BASE DE DONNÉES -->
+  <div class="db-wrap">
+    <div class="section-header">
+      <div class="section-label">Base de données</div>
+      <div class="section-count" id="db-count">— entrées</div>
+    </div>
+
+    <div class="db-controls">
+      <div class="db-filters">
+        <button class="hc-btn active" data-result="all">Tous</button>
+        <button class="hc-btn" data-result="true" style="--btn-color:var(--yes)">✓ Trouvé (au moins un)</button>
+        <button class="hc-btn" data-result="false" style="--btn-color:var(--red)">✗ Aucun trouvé</button>
+      </div>
+      <input class="hc-search" id="db-search" type="text" placeholder="Rechercher un jour ou une date…">
+    </div>
+
+    <div class="db-table-wrap">
+      <table class="db-table" id="db-table">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="day">Jour <span class="sort-arrow"></span></th>
+            <th class="sortable" data-sort="date">Date <span class="sort-arrow"></span></th>
+            <th style="color:var(--tom)">Tom</th>
+            <th style="color:var(--andrew)">Andrew</th>
+            <th style="color:var(--tobey)">Tobey</th>
+            <th class="sortable" data-sort="weighted">Total <span class="sort-arrow"></span></th>
+          </tr>
+        </thead>
+        <tbody id="db-tbody"></tbody>
+      </table>
+      <div class="db-empty" id="db-empty" style="display:none">Aucun résultat</div>
+    </div>
+    <div class="db-pager" id="db-pager"></div>
+  </div>
+
+</main>
+
+<div id="lightbox">
+  <button id="lightbox-close">Fermer ✕</button>
+  <img id="lightbox-img" src="" alt="Screenshot">
+</div>
+
+<div class="spidey-credits">
+  <div class="spidey-credits-container">
+    <div class="footer-brand">
+      <div class="footer-title">Spidey<span>Track</span></div>
+      <div class="footer-desc">Tracker non officiel dédié aux Spider-Men sur Marveldle. Projet indépendant, sans publicité.</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://marveldle.com/menu" target="_blank">→ Marveldle</a>
+    </div>
+  </div>
+  <div class="spidey-credits-bottom">
+    Tous les droits des personnages appartiennent à Marvel et Disney · SpideyTrack n'est pas affilié à Marveldle
+  </div>
+</div>
+
+</div>
+
+<!-- DISCLAIMER -->
+<div id="disclaimer-overlay">
+  <div id="disclaimer-box">
+    <button id="disclaimer-close">✕</button>
+    <div class="disclaimer-title">À propos du site</div>
+    <div class="disclaimer-text">
+      Ce site suit l'apparition des 3 Spider-Men sur
+      <a href="https://marveldle.com/menu" target="_blank">Marveldle</a> :
+      Tom Holland, Andrew Garfield et Tobey Maguire.
+      <br><br>
+      SpideyTrack est un projet indépendant non officiel.<br>
+      Tous les droits relatifs aux personnages appartiennent à Marvel et Disney.
+      <br><br>
+      Aucune publicité ni monétisation. Divertissement uniquement.
+    </div>
+    <button id="disclaimer-ok">Compris</button>
+  </div>
+</div>
+
+<!-- VICTOIRE -->
+<canvas id="victory-canvas"></canvas>
+<div id="victory-overlay">
+  <div id="victory-box">
+    <div id="victory-spider">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="40" cy="44" rx="14" ry="16" fill="#e8192c"/>
+        <ellipse cx="40" cy="28" rx="10" ry="10" fill="#e8192c"/>
+        <line x1="26" y1="38" x2="4"  y2="28" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="26" y1="44" x2="2"  y2="44" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="26" y1="50" x2="4"  y2="62" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="54" y1="38" x2="76" y2="28" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="54" y1="44" x2="78" y2="44" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="54" y1="50" x2="76" y2="62" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="18" x2="40" y2="6" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="35" cy="26" r="3" fill="#e8edf5"/>
+        <circle cx="45" cy="26" r="3" fill="#e8edf5"/>
+      </svg>
+    </div>
+    <div id="victory-title">SPIDER-MAN !</div>
+    <div id="victory-sub" style="white-space:pre-line">C'est lui aujourd'hui !</div>
+    <button id="victory-close">Continuer →</button>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// CONFIG
+// ============================================================
+const CHAR_CONFIG = {
+  tom:    { label: 'Tom Holland',     color: '#e8192c' },
+  andrew: { label: 'Andrew Garfield', color: '#1d6fe8' },
+  tobey:  { label: 'Tobey Maguire',   color: '#7c3aed' },
+};
+const CHAR_KEYS = ['tom', 'andrew', 'tobey'];
+const DB_URL = 'marveldle/database.json';
+
+// ============================================================
+// LOADER
+// ============================================================
+const loaderBar    = document.getElementById('loader-bar');
+const loaderStatus = document.getElementById('loader-status');
+function setProgress(pct, label) { loaderBar.style.width = pct + '%'; if (label) loaderStatus.textContent = label; }
+function hideLoader() {
+  const screen = document.getElementById('loading-screen');
+  screen.classList.add('hidden');
+  document.getElementById('app-wrapper').classList.add('visible');
+  setTimeout(() => screen.remove(), 700);
+}
+
+// ============================================================
+// CHARGEMENT — une seule source : database.json
+// ============================================================
+function todayISO() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+async function loadDatabase() {
+  setProgress(20, 'Chargement de la base…');
+  let raw = {};
+  try {
+    const r = await fetch(DB_URL);
+    if (r.ok) raw = await r.json();
+  } catch (_) { /* base absente ou injoignable : on affiche un état vide */ }
+  setProgress(60, 'Analyse des données…');
+
+  const days = raw.days || {};
+  // Liste triée décroissante (jour le plus récent en premier) — plus pratique
+  // à la fois pour la table et pour repérer "aujourd'hui".
+  const rows = Object.entries(days)
+    .map(([day, entry]) => ({ day: parseInt(day, 10), date: entry.date, chars: entry.chars || {} }))
+    .sort((a, b) => b.day - a.day);
+
+  setProgress(85, 'Rendu…');
+  return rows;
+}
+
+// ============================================================
+// TODAY HERO
+// ============================================================
+function renderTodayHero(rows) {
+  const row   = document.getElementById('today-cards-row');
+  const label = document.getElementById('today-day-label');
+  const today = todayISO();
+  const entry = rows.find(r => r.date === today);
+
+  if (!entry) {
+    document.getElementById('today-hero').style.display = 'none';
+    return;
+  }
+  label.textContent = `Jour ${entry.day}`;
+
+  CHAR_KEYS.forEach(key => {
+    const c = entry.chars[key];
+    if (!c) return;
+    const cfg  = CHAR_CONFIG[key];
+    const card = document.createElement('div');
+    card.className = `today-card-hero tc-${key}`;
+
+    const resultHtml = c.result === true
+      ? `<div class="tc-result win">✓ C'est lui !</div>`
+      : c.result === false
+        ? `<div class="tc-result lose">✗ Pas lui</div>`
+        : `<div class="tc-result pending">— En attente</div>`;
+
+    const scoreBar = c.exact > 0
+      ? `<div class="tc-score-wrap"><div class="tc-score-bar" style="width:${c.exact/7*100}%;background:${cfg.color}"></div></div>
+         <div class="tc-score-txt">${c.exact}/7 exacts${c.partial > 0 ? ` · ${c.partial}/7 partiels` : ''}</div>`
+      : '';
+
+    const imgHtml = c.screenshot
+      ? `<div class="tc-img" onclick="openLightbox('${c.screenshot}')"><img src="${c.screenshot}" alt="${cfg.label}"><div class="tc-img-zoom">🔍</div></div>`
+      : `<div class="tc-img tc-img-empty"><span>Pas d'image</span></div>`;
+
+    card.innerHTML = `
+      <div class="tc-header" style="border-top-color:${cfg.color}">
+        <div class="tc-name" style="color:${cfg.color}">${cfg.label}</div>
+      </div>
+      ${imgHtml}
+      <div class="tc-body">${resultHtml}${scoreBar}</div>`;
+    row.appendChild(card);
+  });
+}
+
+// ============================================================
+// DASHBOARD — allégé (3 stats globales + 1 ligne compacte / perso)
+// ============================================================
+function renderDashboard(rows) {
+  const total = rows.length;
+  let winsAny = 0;
+  CHAR_KEYS.forEach(() => {});
+  rows.forEach(r => {
+    const anyWin = CHAR_KEYS.some(k => r.chars[k]?.result === true);
+    if (anyWin) winsAny++;
+  });
+  const winRate = total ? Math.round(winsAny / total * 100) : 0;
+
+  document.getElementById('dash-total').textContent   = total;
+  document.getElementById('dash-winrate').textContent = winRate + '%';
+
+  const persosWrap = document.getElementById('dash-persos');
+  persosWrap.innerHTML = '';
+  let bestOfAll = 0;
+
+  CHAR_KEYS.forEach(key => {
+    const cfg = CHAR_CONFIG[key];
+    const sortedAsc = [...rows].sort((a,b) => a.day - b.day);
+    let wins = 0, played = 0, cur = 0, streak = 0;
+    sortedAsc.forEach(r => {
+      const c = r.chars[key];
+      if (!c) return;
+      played++;
+      if (c.result === true) { wins++; cur++; } else { cur = 0; }
+    });
+    // streak courant = calculé depuis le jour le plus récent
+    for (const r of rows) {
+      const c = r.chars[key];
+      if (!c) continue;
+      if (c.result === true) streak++; else break;
+    }
+    bestOfAll = Math.max(bestOfAll, streak);
+    const rate = played ? Math.round(wins/played*100) : 0;
+
+    const line = document.createElement('div');
+    line.className = 'dash-perso-line';
+    line.innerHTML = `
+      <span class="dpl-name" style="color:${cfg.color}">${cfg.label}</span>
+      <span class="dpl-bar-wrap"><span class="dpl-bar" style="width:${rate}%;background:${cfg.color}"></span></span>
+      <span class="dpl-stat">${wins}/${played}</span>
+      <span class="dpl-stat">${streak > 0 ? streak + ' 🔥' : '—'}</span>`;
+    persosWrap.appendChild(line);
+  });
+
+  document.getElementById('dash-beststreak').textContent = bestOfAll > 0 ? bestOfAll : '—';
+}
+
+// ============================================================
+// TOP 5
+// ============================================================
+function buildTop5(rows) {
+  const items = [];
+  rows.forEach(r => {
+    CHAR_KEYS.forEach(key => {
+      const c = r.chars[key];
+      if (!c || !c.screenshot || (c.weighted || 0) === 0) return;
+      items.push({
+        screenshot: c.screenshot, day: r.day, key,
+        exact: c.exact || 0, partial: c.partial || 0, w: c.weighted || 0,
+      });
+    });
+  });
+  return items.sort((a,b) => b.w - a.w || b.exact - a.exact || a.day - b.day).slice(0, 5);
+}
+
+function renderTop5(items) {
+  const container = document.getElementById('top3-container');
+  container.innerHTML = '';
+  if (!items.length) return;
+  const medals = ['🥇','🥈','🥉','#4','#5'];
+  items.forEach((item, i) => {
+    const cfg = CHAR_CONFIG[item.key];
+    let caption = `Jour ${item.day} · ${cfg.label} · ${item.exact}/7 exacts`;
+    if (item.partial > 0) caption += `, ${item.partial}/7 partiels`;
+    const card = document.createElement('div');
+    card.className = 'top3-card';
+    card.innerHTML = `
+      <div class="top3-rank">${medals[i]}</div>
+      <div class="top3-img"><img src="${item.screenshot}" loading="lazy"></div>
+      <div class="top3-body">
+        <div class="top3-day">Jour ${item.day}</div>
+        <div class="top3-note">${caption}</div>
+      </div>`;
+    card.querySelector('.top3-img').addEventListener('click', () => openLightbox(item.screenshot));
+    container.appendChild(card);
+  });
+}
+
+// ============================================================
+// GRAPHIQUES
+// ============================================================
+let mainChart = null;
+let allRows = [];
+
+function switchChart(key, btn) {
+  document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  try { renderMainChart(key); } catch (e) { console.error('Chart.js indisponible :', e); }
+}
+
+function renderMainChart(key) {
+  if (typeof Chart === 'undefined') { console.warn('Chart.js non chargé — graphique ignoré.'); return; }
+  const ctx = document.getElementById('main-chart').getContext('2d');
+  if (mainChart) { mainChart.destroy(); mainChart = null; }
+  const textColor = 'rgba(136,146,164,.55)';
+  const gridColor = 'rgba(255,255,255,.04)';
+  const sortedAsc = [...allRows].sort((a,b) => a.day - b.day);
+
+  if (key === 'compare') {
+    mainChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: CHAR_KEYS.map(k => ({
+          label: CHAR_CONFIG[k].label,
+          data: sortedAsc.filter(r => r.chars[k]).map(r => ({ x: r.day, y: r.chars[k].exact || 0 })),
+          borderColor: CHAR_CONFIG[k].color, backgroundColor: 'transparent',
+          borderWidth: 1.5, pointRadius: 2, tension: 0.3,
+        })),
+      },
+      options: chartOpts(textColor, gridColor, true),
+    });
+  } else {
+    const filtered = sortedAsc.filter(r => r.chars[key]);
+    const c = CHAR_CONFIG[key].color;
+    mainChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: filtered.map(r => `J${r.day}`),
+        datasets: [
+          {
+            type: 'bar', label: 'Score exacts',
+            data: filtered.map(r => r.chars[key].exact || 0),
+            backgroundColor: filtered.map(r => r.chars[key].result === true ? c : (r.chars[key].exact >= 4 ? c+'99' : c+'33')),
+            borderWidth: 0,
+          },
+          {
+            type: 'line', label: 'Tendance (moy. 7j)',
+            data: movingAvg(filtered.map(r => r.chars[key].exact || 0), 7),
+            borderColor: c, backgroundColor: 'transparent',
+            borderWidth: 2, borderDash: [4,3], pointRadius: 0, tension: 0.4,
+          },
+        ],
+      },
+      options: chartOpts(textColor, gridColor, false),
+    });
+  }
+}
+
+function movingAvg(data, w) {
+  return data.map((_, i) => {
+    const sl = data.slice(Math.max(0, i-w+1), i+1);
+    return +(sl.reduce((s,v) => s+v, 0) / sl.length).toFixed(2);
+  });
+}
+
+function chartOpts(textColor, gridColor, scatter) {
+  return {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: textColor, font:{ family:'monospace', size:11 }, boxWidth:10 } },
+      tooltip: { backgroundColor:'rgba(8,11,16,.95)', titleFont:{ family:'monospace',size:11 }, bodyFont:{ family:'monospace',size:11 } },
+    },
+    scales: {
+      x: { ticks:{ color:textColor, font:{ family:'monospace',size:9 }, maxTicksLimit:20 }, grid:{ color:gridColor }, type: scatter?'linear':'category' },
+      y: { min:0, max:7, ticks:{ color:textColor, font:{ family:'monospace',size:10 }, stepSize:1 }, grid:{ color:gridColor } },
+    },
+  };
+}
+
+// ============================================================
+// BASE DE DONNÉES — table triable / filtrable / paginée
+// ============================================================
+let dbFilterResult = 'all';
+let dbSearch = '';
+let dbSort = { key: 'day', dir: 'desc' };
+let dbPage = 1;
+const DB_PAGE_SIZE = 25;
+
+function formatDate(iso) {
+  if (!iso) return '—';
+  const [y,m,d] = iso.split('-');
+  const months = ['jan','fév','mar','avr','mai','juin','juil','aoû','sep','oct','nov','déc'];
+  return `${parseInt(d)} ${months[parseInt(m)-1]} ${y}`;
+}
+
+function rowWeighted(r) {
+  return CHAR_KEYS.reduce((s,k) => s + (r.chars[k]?.weighted || 0), 0);
+}
+
+function cellHtml(r, key) {
+  const c = r.chars[key];
+  if (!c) return '<span class="db-cell-empty">—</span>';
+  const icon = c.result === true ? '✓' : '✗';
+  const cls  = c.result === true ? 'db-icon-yes' : 'db-icon-no';
+  const score = `${c.exact ?? 0}/7`;
+  const clickable = c.screenshot ? ` onclick="openLightbox('${c.screenshot}')" style="cursor:pointer"` : '';
+  return `<span class="db-cell ${cls}"${clickable}><span class="db-cell-icon">${icon}</span><span class="db-cell-score">${score}</span></span>`;
+}
+
+function applyDbFilters() {
+  dbPage = 1;
+  renderDbTable();
+}
+
+function renderDbTable() {
+  const tbody = document.getElementById('db-tbody');
+  const empty = document.getElementById('db-empty');
+  const search = dbSearch.toLowerCase().trim();
+
+  let filtered = allRows.filter(r => {
+    if (dbFilterResult !== 'all') {
+      const anyWin = CHAR_KEYS.some(k => r.chars[k]?.result === true);
+      if (String(anyWin) !== dbFilterResult) return false;
+    }
+    if (search) {
+      const haystack = `jour ${r.day} ${r.date || ''} ${formatDate(r.date)}`.toLowerCase();
+      if (!haystack.includes(search)) return false;
+    }
+    return true;
+  });
+
+  filtered.sort((a, b) => {
+    let va, vb;
+    if (dbSort.key === 'day') { va = a.day; vb = b.day; }
+    else if (dbSort.key === 'date') { va = a.date || ''; vb = b.date || ''; }
+    else { va = rowWeighted(a); vb = rowWeighted(b); }
+    const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+    return dbSort.dir === 'asc' ? cmp : -cmp;
+  });
+
+  document.getElementById('db-count').textContent = `${filtered.length} entrées`;
+
+  if (!filtered.length) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    document.getElementById('db-pager').innerHTML = '';
+    return;
+  }
+  empty.style.display = 'none';
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / DB_PAGE_SIZE));
+  dbPage = Math.min(dbPage, totalPages);
+  const start = (dbPage - 1) * DB_PAGE_SIZE;
+  const pageRows = filtered.slice(start, start + DB_PAGE_SIZE);
+
+  tbody.innerHTML = pageRows.map(r => `
+    <tr>
+      <td class="db-day">${r.day}</td>
+      <td class="db-date">${formatDate(r.date)}</td>
+      <td>${cellHtml(r, 'tom')}</td>
+      <td>${cellHtml(r, 'andrew')}</td>
+      <td>${cellHtml(r, 'tobey')}</td>
+      <td class="db-total">${rowWeighted(r).toFixed(1)}/21</td>
+    </tr>`).join('');
+
+  renderPager(totalPages);
+}
+
+function renderPager(totalPages) {
+  const pager = document.getElementById('db-pager');
+  if (totalPages <= 1) { pager.innerHTML = ''; return; }
+  let html = `<button class="pager-btn" ${dbPage<=1?'disabled':''} data-page="${dbPage-1}">‹ Préc.</button>`;
+  html += `<span class="pager-info">Page ${dbPage} / ${totalPages}</span>`;
+  html += `<button class="pager-btn" ${dbPage>=totalPages?'disabled':''} data-page="${dbPage+1}">Suiv. ›</button>`;
+  pager.innerHTML = html;
+  pager.querySelectorAll('[data-page]').forEach(btn => {
+    btn.addEventListener('click', () => { dbPage = parseInt(btn.dataset.page, 10); renderDbTable(); });
+  });
+}
+
+function initDbControls() {
+  document.querySelectorAll('.db-filters [data-result]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.db-filters [data-result]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      dbFilterResult = btn.dataset.result;
+      applyDbFilters();
+    });
+  });
+  document.getElementById('db-search').addEventListener('input', e => {
+    dbSearch = e.target.value;
+    applyDbFilters();
+  });
+  document.querySelectorAll('.db-table th.sortable').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      if (dbSort.key === key) dbSort.dir = dbSort.dir === 'asc' ? 'desc' : 'asc';
+      else dbSort = { key, dir: 'desc' };
+      document.querySelectorAll('.db-table th.sortable').forEach(t => t.classList.remove('sort-asc','sort-desc'));
+      th.classList.add(dbSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
+      renderDbTable();
+    });
+  });
+}
+
+// ============================================================
+// UTILITAIRES
+// ============================================================
+function openLightbox(src) { document.getElementById('lightbox-img').src=src; document.getElementById('lightbox').classList.add('open'); }
+function closeLightbox()   { document.getElementById('lightbox').classList.remove('open'); document.getElementById('lightbox-img').src=''; }
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target===document.getElementById('lightbox')) closeLightbox(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+// ============================================================
+// VICTOIRE
+// ============================================================
+function triggerVictory(rows) {
+  const today = todayISO();
+  const entry = rows.find(r => r.date === today);
+  if (!entry) return;
+  const winners = CHAR_KEYS.filter(k => entry.chars[k]?.result === true).map(k => CHAR_CONFIG[k].label);
+  if (!winners.length) return;
+  document.getElementById('victory-sub').textContent = winners.join('\n');
+  startParticles();
+  setTimeout(() => document.getElementById('victory-overlay').classList.add('open'), 600);
+  document.getElementById('victory-close').addEventListener('click', () => {
+    document.getElementById('victory-overlay').classList.remove('open');
+    stopParticles();
+  });
+}
+let animFrame = null;
+function startParticles() {
+  const canvas=document.getElementById('victory-canvas'), ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resize();
+  window.addEventListener('resize',resize);
+  const colors=['#e8192c','#1d6fe8','#e8edf5','#c8962a','#7c3aed','#ff2d42'];
+  const P=[];
+  for(let i=0;i<200;i++) P.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,vx:(Math.random()-.5)*4,vy:Math.random()*4+2,size:Math.random()*8+3,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*360,vrot:(Math.random()-.5)*8,shape:Math.random()>.4?'rect':'web',alpha:1});
+  function web(ctx,x,y,s){ctx.beginPath();for(let a=0;a<6;a++){const ag=(a/6)*Math.PI*2;ctx.moveTo(x,y);ctx.lineTo(x+Math.cos(ag)*s,y+Math.sin(ag)*s);}for(let r=.33;r<=1;r+=.33){ctx.moveTo(x+Math.cos(0)*s*r,y+Math.sin(0)*s*r);for(let a=1;a<=6;a++){const ag=(a/6)*Math.PI*2;ctx.lineTo(x+Math.cos(ag)*s*r,y+Math.sin(ag)*s*r);}}ctx.strokeStyle=ctx.fillStyle;ctx.lineWidth=1;ctx.stroke();}
+  function loop(){ctx.clearRect(0,0,canvas.width,canvas.height);let alive=false;P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;p.vy+=.08;if(p.y<canvas.height+20)alive=true;if(p.y>canvas.height*.7)p.alpha=Math.max(0,1-(p.y-canvas.height*.7)/(canvas.height*.3));ctx.save();ctx.globalAlpha=p.alpha;ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.color;if(p.shape==='rect')ctx.fillRect(-p.size/2,-p.size/4,p.size,p.size/2);else web(ctx,0,0,p.size);ctx.restore();});if(alive)animFrame=requestAnimationFrame(loop);else ctx.clearRect(0,0,canvas.width,canvas.height);}
+  loop();
+}
+function stopParticles(){if(animFrame)cancelAnimationFrame(animFrame);const c=document.getElementById('victory-canvas');c.getContext('2d').clearRect(0,0,c.width,c.height);}
+
+// ============================================================
+// DISCLAIMER
+// ============================================================
+function initDisclaimer(){
+  const o=document.getElementById('disclaimer-overlay');
+  const close=()=>{o.classList.remove('open');try{localStorage.setItem('disclaimer_seen','true');}catch(e){}};
+  let seen=false;try{seen=!!localStorage.getItem('disclaimer_seen');}catch(e){}
+  if(!seen)setTimeout(()=>o.classList.add('open'),1200);
+  document.getElementById('disclaimer-close').addEventListener('click',close);
+  document.getElementById('disclaimer-ok').addEventListener('click',close);
+  o.addEventListener('click',e=>{if(e.target===o)close();});
+}
+initDisclaimer();
+
+// ============================================================
+// INIT
+// ============================================================
+loadDatabase().then(rows => {
+  allRows = rows;
+  renderTodayHero(rows);
+  renderDashboard(rows);
+  renderTop5(buildTop5(rows));
+  initDbControls();
+  renderDbTable();
+  setProgress(96, 'Graphiques…');
+  try { renderMainChart('tom'); } catch (e) { console.error('Chart.js indisponible :', e); }
+  setProgress(100, 'Prêt !');
+  setTimeout(() => { hideLoader(); triggerVictory(rows); }, 450);
+});
+</script>
+<script src="/l_oeil_critique/assets/js/main.js"></script>
+<script src="/l_oeil_critique/assets/js/header.js"></script>
+</body>
+</html>

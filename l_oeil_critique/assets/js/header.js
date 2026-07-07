@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="/l_oeil_critique/news/Accueil.html">Actualités</a>
           <a href="/l_oeil_critique/reviews.html">Critiques</a>
           <a href="/l_oeil_critique/bande-annonces.html">Bandes-Annonces</a>
+          <a href="/l_oeil_critique/extras.html">Extras</a>
           <a href="/l_oeil_critique/A_propos.html">À Propos</a>
         </nav>
 
@@ -468,6 +469,14 @@ document.addEventListener("DOMContentLoaded", () => {
       patterns: [
         "/bande-annonces.html",
         "/bande_annonces_blocs.html"
+      ]
+    },
+    {
+      keyword: "extras",
+      patterns: [
+        "/extras.html",
+        "/devine-le-film.html",
+        "/spideytrack/"
       ]
     },
     {
