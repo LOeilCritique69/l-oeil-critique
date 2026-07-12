@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://l-oeil-critique.netlify.app/</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-07</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/A_propos.html</loc>
@@ -173,6 +173,10 @@
     <lastmod>2026-07-04</lastmod>
   </url>
   <url>
+    <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/articles/reviews/films/Evil-Dead-Burn-critique.html</loc>
+    <lastmod>2026-07-12</lastmod>
+  </url>
+  <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/articles/reviews/films/good-will-hunting.html</loc>
     <lastmod>2026-07-04</lastmod>
   </url>
@@ -286,7 +290,7 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/bande_annonces_blocs.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/contact.html</loc>
@@ -295,6 +299,10 @@
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/devine-le-film.html</loc>
     <lastmod>2026-07-04</lastmod>
+  </url>
+  <url>
+    <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/extras.html</loc>
+    <lastmod>2026-07-07</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/mentions_légales.html</loc>
@@ -318,7 +326,7 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/critique-films.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/critique-series.html</loc>
@@ -370,6 +378,10 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/reviews.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-12</lastmod>
+  </url>
+  <url>
+    <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/Spideytrack/marveldle.html</loc>
+    <lastmod>2026-07-07</lastmod>
   </url>
 </urlset>

@@ -1,216 +1,208 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SpideyTrack — suivi quotidien des 3 Spider-Men (Tom Holland, Andrew Garfield, Tobey Maguire) sur Marveldle.">
-  <meta property="og:title" content="SpideyTrack - L'Œil Critique">
-  <meta property="og:description" content="Suivi quotidien des 3 Spider-Men sur Marveldle.">
-  <meta property="og:image" content="/l_oeil_critique/Spideytrack/spidey.png">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <link rel="canonical" href="https://www.l-oeil-critique.com/l_oeil_critique/Spideytrack/marveldle.html">
-  <title>SpideyTrack - L'Œil Critique</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="spidey.png">
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/l_oeil_critique/css/chef_d_oeuvre.css">
-  <link rel="stylesheet" href="marveldle.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-</head>
-<body>
+        <meta property="og:title" content="SpideyTrack - L'Œil Critique">
+        <meta property="og:description" content="Découvrez les dernières critiques cinéma et séries sur L’Œil Critique.">
+        <meta property="og:image" content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="fr_FR">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:url" content="https://www.l-oeil-critique.com/Spideytrack/marveldle.html">
+        <link rel="canonical" href="https://www.l-oeil-critique.com/Spideytrack/marveldle.html">
+        
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
+
+
+
+
+
+
+<title>SpideyTrack - L'Œil Critique</title>
+<link href="spidey.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Oswald:wght@300;400;500;700&amp;family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="/l_oeil_critique/css/chef_d_oeuvre.css" rel="stylesheet"/>
+<link href="marveldle.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<meta content="SpideyTrack - L'Œil Critique" property="og:title"/><meta content="Découvrez les dernières critiques cinéma et séries sur L’Œil Critique." property="og:description"/><meta content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" property="og:image"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.l-oeil-critique.com/Spideytrack/marveldle.html" property="og:url"/><link href="https://www.l-oeil-critique.com/Spideytrack/marveldle.html" rel="canonical"/></head>
+<body>
 <!-- ════ LOADING SCREEN ════ -->
 <div id="loading-screen">
-  <div class="loader-logo">
-    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="22" cy="25" rx="7" ry="8.5" fill="#e8192c"/>
-      <ellipse cx="22" cy="16" rx="5" ry="5" fill="#e8192c"/>
-      <line x1="15" y1="20" x2="2"  y2="14" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="15" y1="24" x2="1"  y2="24" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="15" y1="28" x2="2"  y2="35" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="29" y1="20" x2="42" y2="14" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="29" y1="24" x2="43" y2="24" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="29" y1="28" x2="42" y2="35" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="22" y1="11" x2="22" y2="4" stroke="#e8192c" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="19.5" cy="15" r="1.5" fill="#e8edf5"/>
-      <circle cx="24.5" cy="15" r="1.5" fill="#e8edf5"/>
-    </svg>
-    <div class="loader-title">Spidey<span>Track</span></div>
-  </div>
-  <div class="loader-sub">À la recherche des Trois Spideys</div>
-  <div class="loader-bar-wrap">
-    <div class="loader-bar" id="loader-bar"></div>
-  </div>
-  <div class="loader-status" id="loader-status">Initialisation…</div>
+<div class="loader-logo">
+<svg fill="none" height="44" viewbox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="22" cy="25" fill="#e8192c" rx="7" ry="8.5"></ellipse>
+<ellipse cx="22" cy="16" fill="#e8192c" rx="5" ry="5"></ellipse>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="15" x2="2" y1="20" y2="14"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="15" x2="1" y1="24" y2="24"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="15" x2="2" y1="28" y2="35"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="29" x2="42" y1="20" y2="14"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="29" x2="43" y1="24" y2="24"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="29" x2="42" y1="28" y2="35"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2" x1="22" x2="22" y1="11" y2="4"></line>
+<circle cx="19.5" cy="15" fill="#e8edf5" r="1.5"></circle>
+<circle cx="24.5" cy="15" fill="#e8edf5" r="1.5"></circle>
+</svg>
+<div class="loader-title">Spidey<span>Track</span></div>
 </div>
-
+<div class="loader-sub">À la recherche des Trois Spideys</div>
+<div class="loader-bar-wrap">
+<div class="loader-bar" id="loader-bar"></div>
+</div>
+<div class="loader-status" id="loader-status">Initialisation…</div>
+</div>
 <!-- ════ APP ════ -->
 <div id="app-wrapper">
-
 <!-- ════ HERO AUJOURD'HUI ════ -->
 <section class="today-hero" id="today-hero">
-  <div class="today-hero-label">
-    <span class="today-hero-dot"></span>
+<div class="today-hero-label">
+<span class="today-hero-dot"></span>
     Aujourd'hui — <span id="today-day-label">Jour —</span>
-  </div>
-  <div class="today-cards-row" id="today-cards-row">
-    <!-- rempli dynamiquement -->
-  </div>
+</div>
+<div class="today-cards-row" id="today-cards-row">
+<!-- rempli dynamiquement -->
+</div>
 </section>
-
 <!-- ════ DASHBOARD — allégé ════ -->
 <section class="dashboard" id="dashboard">
-  <div class="dash-global">
-    <div class="dash-stat">
-      <div class="dash-val" id="dash-total">—</div>
-      <div class="dash-lbl">Jours joués</div>
-    </div>
-    <div class="dash-stat">
-      <div class="dash-val gold" id="dash-winrate">—</div>
-      <div class="dash-lbl">Taux de succès global</div>
-    </div>
-    <div class="dash-stat">
-      <div class="dash-val" id="dash-beststreak">—</div>
-      <div class="dash-lbl">Meilleur streak actuel</div>
-    </div>
-  </div>
-
-  <div class="dash-persos" id="dash-persos">
-    <!-- une ligne compacte par personnage, remplie dynamiquement -->
-  </div>
-</section>
-
-<main>
-
-  <!-- TOP 5 -->
-  <div class="top3-wrap">
-    <div class="section-header">
-      <div class="section-label">Top 5 — Meilleurs guess</div>
-      <div class="section-count">Classement pondéré (exacts + ½ partiels)</div>
-    </div>
-    <div class="top3-grid" id="top3-container"></div>
-  </div>
-
-  <!-- GRAPHIQUES -->
-  <div class="charts-wrap">
-    <div class="section-header">
-      <div class="section-label">Progression</div>
-      <div class="section-count">Score par partie</div>
-    </div>
-    <div class="charts-tabs">
-      <button class="chart-tab active" onclick="switchChart('tom',this)">Tom Holland</button>
-      <button class="chart-tab" onclick="switchChart('andrew',this)">Andrew Garfield</button>
-      <button class="chart-tab" onclick="switchChart('tobey',this)">Tobey Maguire</button>
-      <button class="chart-tab" onclick="switchChart('compare',this)">Comparatif</button>
-    </div>
-    <div class="chart-container"><canvas id="main-chart"></canvas></div>
-  </div>
-
-  <!-- BASE DE DONNÉES -->
-  <div class="db-wrap">
-    <div class="section-header">
-      <div class="section-label">Base de données</div>
-      <div class="section-count" id="db-count">— entrées</div>
-    </div>
-
-    <div class="db-controls">
-      <div class="db-filters">
-        <button class="hc-btn active" data-result="all">Tous</button>
-        <button class="hc-btn" data-result="true" style="--btn-color:var(--yes)">✓ Trouvé (au moins un)</button>
-        <button class="hc-btn" data-result="false" style="--btn-color:var(--red)">✗ Aucun trouvé</button>
-      </div>
-      <input class="hc-search" id="db-search" type="text" placeholder="Rechercher un jour ou une date…">
-    </div>
-
-    <div class="db-table-wrap">
-      <table class="db-table" id="db-table">
-        <thead>
-          <tr>
-            <th class="sortable" data-sort="day">Jour <span class="sort-arrow"></span></th>
-            <th class="sortable" data-sort="date">Date <span class="sort-arrow"></span></th>
-            <th style="color:var(--tom)">Tom</th>
-            <th style="color:var(--andrew)">Andrew</th>
-            <th style="color:var(--tobey)">Tobey</th>
-            <th class="sortable" data-sort="weighted">Total <span class="sort-arrow"></span></th>
-          </tr>
-        </thead>
-        <tbody id="db-tbody"></tbody>
-      </table>
-      <div class="db-empty" id="db-empty" style="display:none">Aucun résultat</div>
-    </div>
-    <div class="db-pager" id="db-pager"></div>
-  </div>
-
-</main>
-
-<div id="lightbox">
-  <button id="lightbox-close">Fermer ✕</button>
-  <img id="lightbox-img" src="" alt="Screenshot">
+<div class="dash-global">
+<div class="dash-stat">
+<div class="dash-val" id="dash-total">—</div>
+<div class="dash-lbl">Jours joués</div>
 </div>
-
+<div class="dash-stat">
+<div class="dash-val gold" id="dash-winrate">—</div>
+<div class="dash-lbl">Taux de succès global</div>
+</div>
+<div class="dash-stat">
+<div class="dash-val" id="dash-beststreak">—</div>
+<div class="dash-lbl">Meilleur streak actuel</div>
+</div>
+</div>
+<div class="dash-persos" id="dash-persos">
+<!-- une ligne compacte par personnage, remplie dynamiquement -->
+</div>
+</section>
+<main>
+<!-- TOP 5 -->
+<div class="top3-wrap">
+<div class="section-header">
+<div class="section-label">Top 5 — Meilleurs guess</div>
+<div class="section-count">Classement pondéré (exacts + ½ partiels)</div>
+</div>
+<div class="top3-grid" id="top3-container"></div>
+</div>
+<!-- GRAPHIQUES -->
+<div class="charts-wrap">
+<div class="section-header">
+<div class="section-label">Progression</div>
+<div class="section-count">Score par partie</div>
+</div>
+<div class="charts-tabs">
+<button class="chart-tab active" onclick="switchChart('tom',this)">Tom Holland</button>
+<button class="chart-tab" onclick="switchChart('andrew',this)">Andrew Garfield</button>
+<button class="chart-tab" onclick="switchChart('tobey',this)">Tobey Maguire</button>
+<button class="chart-tab" onclick="switchChart('compare',this)">Comparatif</button>
+</div>
+<div class="chart-container"><canvas id="main-chart"></canvas></div>
+</div>
+<!-- BASE DE DONNÉES -->
+<div class="db-wrap">
+<div class="section-header">
+<div class="section-label">Base de données</div>
+<div class="section-count" id="db-count">— entrées</div>
+</div>
+<div class="db-controls">
+<div class="db-filters">
+<button class="hc-btn active" data-result="all">Tous</button>
+<button class="hc-btn" data-result="true" style="--btn-color:var(--yes)">✓ Trouvé (au moins un)</button>
+<button class="hc-btn" data-result="false" style="--btn-color:var(--red)">✗ Aucun trouvé</button>
+</div>
+<input class="hc-search" id="db-search" placeholder="Rechercher un jour ou une date…" type="text"/>
+</div>
+<div class="db-table-wrap">
+<table class="db-table" id="db-table">
+<thead>
+<tr>
+<th class="sortable" data-sort="day">Jour <span class="sort-arrow"></span></th>
+<th class="sortable" data-sort="date">Date <span class="sort-arrow"></span></th>
+<th style="color:var(--tom)">Tom</th>
+<th style="color:var(--andrew)">Andrew</th>
+<th style="color:var(--tobey)">Tobey</th>
+<th class="sortable" data-sort="weighted">Total <span class="sort-arrow"></span></th>
+</tr>
+</thead>
+<tbody id="db-tbody"></tbody>
+</table>
+<div class="db-empty" id="db-empty" style="display:none">Aucun résultat</div>
+</div>
+<div class="db-pager" id="db-pager"></div>
+</div>
+</main>
+<div id="lightbox">
+<button id="lightbox-close">Fermer ✕</button>
+<img alt="Screenshot" id="lightbox-img" src=""/>
+</div>
 <div class="spidey-credits">
-  <div class="spidey-credits-container">
-    <div class="footer-brand">
-      <div class="footer-title">Spidey<span>Track</span></div>
-      <div class="footer-desc">Tracker non officiel dédié aux Spider-Men sur Marveldle. Projet indépendant, sans publicité.</div>
-    </div>
-    <div class="footer-links">
-      <a href="https://marveldle.com/menu" target="_blank">→ Marveldle</a>
-    </div>
-  </div>
-  <div class="spidey-credits-bottom">
+<div class="spidey-credits-container">
+<div class="footer-brand">
+<div class="footer-title">Spidey<span>Track</span></div>
+<div class="footer-desc">Tracker non officiel dédié aux Spider-Men sur Marveldle. Projet indépendant, sans publicité.</div>
+</div>
+<div class="footer-links">
+<a href="https://marveldle.com/menu" target="_blank">→ Marveldle</a>
+</div>
+</div>
+<div class="spidey-credits-bottom">
     Tous les droits des personnages appartiennent à Marvel et Disney · SpideyTrack n'est pas affilié à Marveldle
   </div>
 </div>
-
 </div>
-
 <!-- DISCLAIMER -->
 <div id="disclaimer-overlay">
-  <div id="disclaimer-box">
-    <button id="disclaimer-close">✕</button>
-    <div class="disclaimer-title">À propos du site</div>
-    <div class="disclaimer-text">
+<div id="disclaimer-box">
+<button id="disclaimer-close">✕</button>
+<div class="disclaimer-title">À propos du site</div>
+<div class="disclaimer-text">
       Ce site suit l'apparition des 3 Spider-Men sur
       <a href="https://marveldle.com/menu" target="_blank">Marveldle</a> :
       Tom Holland, Andrew Garfield et Tobey Maguire.
-      <br><br>
-      SpideyTrack est un projet indépendant non officiel.<br>
+      <br/><br/>
+      SpideyTrack est un projet indépendant non officiel.<br/>
       Tous les droits relatifs aux personnages appartiennent à Marvel et Disney.
-      <br><br>
+      <br/><br/>
       Aucune publicité ni monétisation. Divertissement uniquement.
     </div>
-    <button id="disclaimer-ok">Compris</button>
-  </div>
+<button id="disclaimer-ok">Compris</button>
 </div>
-
+</div>
 <!-- VICTOIRE -->
 <canvas id="victory-canvas"></canvas>
 <div id="victory-overlay">
-  <div id="victory-box">
-    <div id="victory-spider">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="40" cy="44" rx="14" ry="16" fill="#e8192c"/>
-        <ellipse cx="40" cy="28" rx="10" ry="10" fill="#e8192c"/>
-        <line x1="26" y1="38" x2="4"  y2="28" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="26" y1="44" x2="2"  y2="44" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="26" y1="50" x2="4"  y2="62" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="54" y1="38" x2="76" y2="28" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="54" y1="44" x2="78" y2="44" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="54" y1="50" x2="76" y2="62" stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="40" y1="18" x2="40" y2="6" stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="35" cy="26" r="3" fill="#e8edf5"/>
-        <circle cx="45" cy="26" r="3" fill="#e8edf5"/>
-      </svg>
-    </div>
-    <div id="victory-title">SPIDER-MAN !</div>
-    <div id="victory-sub" style="white-space:pre-line">C'est lui aujourd'hui !</div>
-    <button id="victory-close">Continuer →</button>
-  </div>
+<div id="victory-box">
+<div id="victory-spider">
+<svg fill="none" viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="40" cy="44" fill="#e8192c" rx="14" ry="16"></ellipse>
+<ellipse cx="40" cy="28" fill="#e8192c" rx="10" ry="10"></ellipse>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="26" x2="4" y1="38" y2="28"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="26" x2="2" y1="44" y2="44"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="26" x2="4" y1="50" y2="62"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="54" x2="76" y1="38" y2="28"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="54" x2="78" y1="44" y2="44"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="54" x2="76" y1="50" y2="62"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="40" x2="40" y1="18" y2="6"></line>
+<circle cx="35" cy="26" fill="#e8edf5" r="3"></circle>
+<circle cx="45" cy="26" fill="#e8edf5" r="3"></circle>
+</svg>
 </div>
-
+<div id="victory-title">SPIDER-MAN !</div>
+<div id="victory-sub" style="white-space:pre-line">C'est lui aujourd'hui !</div>
+<button id="victory-close">Continuer →</button>
+</div>
+</div>
 <script>
 // ============================================================
 // CONFIG
