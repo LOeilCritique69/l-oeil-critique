@@ -5496,5 +5496,35 @@
     "poster_path": "/jMOf0SSthlNp5uXhEXz4e3tqDX5.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/jMOf0SSthlNp5uXhEXz4e3tqDX5.jpg",
     "tmdb_id": 1315772
+  },
+  {
+    "Name": "Evil Dead Burn",
+    "Year": 2026,
+    "Date": "2026-07-12",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/evil-dead-burn/",
+    "poster_path": "/twkjKuOf4hVAmXxOwpyRy682VZR.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/twkjKuOf4hVAmXxOwpyRy682VZR.jpg",
+    "tmdb_id": 1212763
+  },
+  {
+    "Name": "Evil Dead Rise",
+    "Year": 2023,
+    "Date": "2026-07-11",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/evil-dead-rise/",
+    "poster_path": "/n9xIr60snZnhlzvUaFcmyAhKNgk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/n9xIr60snZnhlzvUaFcmyAhKNgk.jpg",
+    "tmdb_id": 713704
+  },
+  {
+    "Name": "Evil Dead",
+    "Year": 2013,
+    "Date": "2026-07-07",
+    "Rating": 1.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/evil-dead/",
+    "poster_path": "/bntAvXObNU0cmLLWwHB61DtQZWk.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bntAvXObNU0cmLLWwHB61DtQZWk.jpg",
+    "tmdb_id": 109428
   }
 ]

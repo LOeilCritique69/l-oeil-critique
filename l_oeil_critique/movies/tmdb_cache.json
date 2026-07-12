@@ -10897,5 +10897,64 @@
     "video": false,
     "vote_average": 6.435,
     "vote_count": 116
+  },
+  "Evil Dead Burn_2026": {
+    "adult": false,
+    "backdrop_path": "/A5Tz6ogGt4VV8NESG9oWVct5bo1.jpg",
+    "genre_ids": [
+      27,
+      53
+    ],
+    "id": 1212763,
+    "title": "Evil Dead Burn",
+    "original_language": "en",
+    "original_title": "Evil Dead Burn",
+    "overview": "Après l’enterrement de son mari, Alice se rend dans la maison isolée de sa belle-famille pour partager un dernier repas à sa mémoire. Mais la réunion familiale bascule dans l’horreur lorsque ses proches se transforment, l’un après l’autre, en créatures démoniaques. Confrontée à cet enfer, Alice découvre que les vœux prononcés autrefois continuent de la lier à son mari… bien au-delà de la mort.",
+    "popularity": 121.8415,
+    "poster_path": "/twkjKuOf4hVAmXxOwpyRy682VZR.jpg",
+    "release_date": "2026-07-07",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.1,
+    "vote_count": 84
+  },
+  "Evil Dead Rise_2023": {
+    "adult": false,
+    "backdrop_path": "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
+    "genre_ids": [
+      27,
+      53
+    ],
+    "id": 713704,
+    "title": "Evil Dead Rise",
+    "original_language": "en",
+    "original_title": "Evil Dead Rise",
+    "overview": "Alors que Beth n’a pas vu sa grande sœur Ellie depuis longtemps, elle vient lui rendre visite à Los Angeles où elle élève, seule, ses trois enfants. Mais leurs retrouvailles tournent au cauchemar, quand ils découvrent un mystérieux livre dans le sous-sol de l’immeuble, dont la lecture libère des démons qui prennent possession des vivants...",
+    "popularity": 31.2028,
+    "poster_path": "/n9xIr60snZnhlzvUaFcmyAhKNgk.jpg",
+    "release_date": "2023-04-12",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.943,
+    "vote_count": 3762
+  },
+  "Evil Dead_2013": {
+    "adult": false,
+    "backdrop_path": "/6RDgtEBzjuF7W25DVziXRABchpX.jpg",
+    "genre_ids": [
+      27
+    ],
+    "id": 109428,
+    "title": "Evil Dead",
+    "original_language": "en",
+    "original_title": "Evil Dead",
+    "overview": "Mia a déjà connu pas mal de galères dans sa vie, et elle est décidée à en finir une bonne fois pour toutes avec ses addictions. Pour réussir à se sevrer de tout, elle demande à son frère David, sa petite amie Natalie et deux amis d’enfance, Olivia et Eric, de l’accompagner dans la cabane familiale perdue au fond des bois. Dans la cabane isolée, les jeunes gens découvrent un étrange autel, et surtout un livre très ancien, dont Eric commet l’erreur de lire un passage à haute voix. Les plus épouvantables des forces vont se déchaîner sur eux…",
+    "popularity": 25.6685,
+    "poster_path": "/bntAvXObNU0cmLLWwHB61DtQZWk.jpg",
+    "release_date": "2013-04-05",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.615,
+    "vote_count": 5110
   }
 }
