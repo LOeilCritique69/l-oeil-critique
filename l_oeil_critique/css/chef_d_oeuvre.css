@@ -34,6 +34,17 @@
    19. Liens associés (related links)
    20. Responsive (tous les media queries, sans doublon)
    21. Impression
+
+   CHANGELOG
+   - Correctif : 4 variables utilisées mais jamais déclarées dans :root
+     (--secondary-color, --text-color-light, --text-color-dark,
+     --font-family-title, restes de l'ancien système de tokens avant la
+     refonte "Iris") ont été remplacées par les tokens réels du fichier,
+     en respectant la convention déjà en place : accents brass sur fond
+     sombre (header, footer), accents velvet sur fond clair (paper).
+   - Correctif : .hub-nav__card affichait du texte clair sur un fond clair
+     (texte quasi invisible) — recoloré en --ink, fond passé en --paper-2
+     pour rester dans la palette chaude plutôt qu'un gris neutre.
    ============================================================================ */
 
 /* ============================================================================
@@ -265,37 +276,81 @@ em { font-style: italic; }
 .p-6 { padding: var(--space-6) !important; }
 
 /* ============================================================================
-   5) BOUTONS
+   5) BOUTONS — effet diaphragme
+   Écho du repère "aperture-mark" des séparateurs de section : au survol,
+   le bouton s'ouvre depuis son centre comme un obturateur qui laisse
+   entrer la lumière, plutôt qu'un simple fondu de couleur.
    ============================================================================ */
+
 .btn {
+  position: relative;
   display: inline-block;
   padding: 0.85rem 1.8rem;
   border: 1px solid var(--ink);
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.85rem;
+  font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   background-color: transparent;
   color: var(--ink);
-  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) var(--ease-out);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    transform var(--transition-speed) var(--ease-out);
 }
 
-.btn:hover { background-color: var(--ink); color: var(--paper); transform: translateY(-2px); }
+/* le "diaphragme" : un point qui s'agrandit depuis le centre au survol */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin: -0.2rem 0 0 -0.2rem;
+  border-radius: 50%;
+  background-color: var(--ink);
+  transform: scale(0);
+  transition: transform calc(var(--transition-speed) * 1.8) var(--ease-out);
+  z-index: -1;
+}
+
+.btn:hover {
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.btn:hover::before { transform: scale(60); }
+
 .btn:active { transform: translateY(0); }
 
+.btn:focus-visible {
+  outline: 2px solid var(--velvet);
+  outline-offset: 3px;
+}
+
 .btn--primary {
-  background-color: var(--velvet);
   border-color: var(--velvet);
+  background-color: var(--velvet);
   color: var(--paper);
 }
 
+.btn--primary::before { background-color: var(--velvet-dark); }
+
 .btn--primary:hover {
-  background-color: var(--velvet-dark);
   border-color: var(--velvet-dark);
   color: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn::before { transition: none; }
+  .btn:hover::before { transform: scale(1); opacity: 0; }
 }
 
 /* ============================================================================
@@ -662,7 +717,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   width: 100%;
   height: 2px;
   border-radius: 4px;
-  background-color: var(--secondary-color);
+  background-color: var(--brass-light);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -1211,7 +1266,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   padding: 3rem 2.5rem;
   background-position: center;
   background-size: cover;
-  color: var(--text-color-light);
+  color: var(--paper);
 }
 
 .hero-duo__panel::before {
@@ -1239,7 +1294,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #10121a;
+  color: var(--ink);
   border-radius: 20px;
 }
 
@@ -1248,7 +1303,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 
 .hero-duo__title {
   margin-bottom: 0.75rem;
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   line-height: 1.1;
   letter-spacing: 1px;
@@ -1293,17 +1348,16 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 
 .hub-nav__title {
   margin-bottom: 0.5rem;
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: 2rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--secondary-color);
+  color: var(--velvet);
 }
 
 .hub-nav__subtitle {
   font-size: 1rem;
-  color: var(--text-color-dark);
-  opacity: 0.75;
+  color: var(--paper-soft);
 }
 
 .hub-nav__grid {
@@ -1322,9 +1376,9 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   min-height: 220px;
   padding: 2rem 1.75rem;
   overflow: hidden;
-  color: var(--text-color-light);
+  color: var(--ink);
   text-decoration: none;
-  background: rgb(241, 239, 239);
+  background: var(--paper-2);
   border: 1px solid rgba(201, 162, 74, 0.2);
   border-radius: 12px;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1341,7 +1395,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 
 .hub-nav__card:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  border-color: var(--secondary-color);
+  border-color: var(--brass);
   transform: translateY(-6px);
 }
 
@@ -1358,7 +1412,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 
 .hub-nav__card-title {
   margin-bottom: 0.5rem;
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: 1.8rem;
   letter-spacing: 1px;
 }
@@ -1375,15 +1429,15 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   gap: 0.4rem;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--velvet);
 }
 
 .hub-nav__cta .arrow { transition: transform 0.25s ease; }
 .hub-nav__card:hover .arrow { transform: translateX(4px); }
 
-.hub-nav__card--films .hub-nav__eyebrow { color: #7fb3ff; }
-.hub-nav__card--series .hub-nav__eyebrow { color: #ff9f7f; }
-.hub-nav__card--tierlist .hub-nav__eyebrow { color: var(--secondary-color); }
+.hub-nav__card--films .hub-nav__eyebrow { color: #2f6fd1; }
+.hub-nav__card--series .hub-nav__eyebrow { color: #d1622f; }
+.hub-nav__card--tierlist .hub-nav__eyebrow { color: var(--velvet); }
 
 @media (max-width: 900px) {
   .hub-nav__grid { grid-template-columns: 1fr; }
