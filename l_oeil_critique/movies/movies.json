@@ -5526,5 +5526,15 @@
     "poster_path": "/bntAvXObNU0cmLLWwHB61DtQZWk.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/bntAvXObNU0cmLLWwHB61DtQZWk.jpg",
     "tmdb_id": 109428
+  },
+  {
+    "Name": "Moana",
+    "Year": 2026,
+    "Date": "2026-07-14",
+    "Rating": 1.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/moana/",
+    "poster_path": "/fN4YJFr6d1Zx2fNBlzGLyShO6sc.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fN4YJFr6d1Zx2fNBlzGLyShO6sc.jpg",
+    "tmdb_id": 1108427
   }
 ]

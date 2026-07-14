@@ -10956,5 +10956,27 @@
     "video": false,
     "vote_average": 6.615,
     "vote_count": 5110
+  },
+  "Moana_2026": {
+    "adult": false,
+    "backdrop_path": "/c6U1Te0p0FK0BOB43hiwGlBKiVY.jpg",
+    "genre_ids": [
+      10751,
+      14,
+      35,
+      12
+    ],
+    "id": 1108427,
+    "title": "Vaiana, la légende du bout du monde",
+    "original_language": "en",
+    "original_title": "Moana",
+    "overview": "Dans l'ancienne Polynésie, lorsqu'une terrible malédiction lancée par Maui atteint l'île d'un chef impétueux, sa fille obstinée répond à l'appel de l'océan et part à la recherche du demi-dieu pour rétablir la situation. Live-Action du film Vaiana, la Légende du bout du monde de Disney en 2016.",
+    "popularity": 414.1398,
+    "poster_path": "/fN4YJFr6d1Zx2fNBlzGLyShO6sc.jpg",
+    "release_date": "2026-07-08",
+    "softcore": false,
+    "video": false,
+    "vote_average": 5.5,
+    "vote_count": 78
   }
 }
