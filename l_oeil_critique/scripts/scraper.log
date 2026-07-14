@@ -5922,3 +5922,20 @@ Call log:
 2026-07-14 02:45:03,034 [INFO] Scraping TMDb terminé
 2026-07-14 02:45:03,035 [INFO] 0 nouveaux articles détectés
 2026-07-14 02:45:03,035 [INFO] Aucun nouvel article à ajouter
+2026-07-14 05:34:45,701 [INFO] ==== Début du script bandes-annonces ====
+2026-07-14 05:34:45,701 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-14 05:34:45,701 [INFO] 251 identifiants chargés depuis le log
+2026-07-14 05:34:45,701 [INFO] Démarrage scraping CineHorizons...
+2026-07-14 05:34:48,130 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-14 05:34:48,181 [INFO] 3 blocs détectés (limite 3)
+2026-07-14 05:34:48,218 [INFO] Scraping CineHorizons terminé
+2026-07-14 05:34:48,228 [INFO] Démarrage scraping TMDb...
+2026-07-14 05:34:48,416 [INFO] 20 films récupérés depuis TMDb
+2026-07-14 05:34:48,465 [INFO] Article ajouté TMDb: 2001 : L'Odyssée de l'espace
+2026-07-14 05:34:48,509 [INFO] Scraping TMDb terminé
+2026-07-14 05:34:48,510 [INFO] 1 nouveaux articles détectés
+2026-07-14 05:34:48,514 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-07-14 05:34:48,514 [INFO] Sauvegarde du log avec 252 identifiants
+2026-07-14 05:34:48,514 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-14 05:34:48,532 [INFO] Rien à commiter, le répertoire est propre.
+2026-07-14 05:34:48,532 [INFO] ==== Fin du script bandes-annonces ====
