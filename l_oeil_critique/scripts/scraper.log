@@ -6089,3 +6089,20 @@ Call log:
 2026-07-15 08:20:15,223 [INFO] Scraping TMDb terminé
 2026-07-15 08:20:15,224 [INFO] 0 nouveaux articles détectés
 2026-07-15 08:20:15,224 [INFO] Aucun nouvel article à ajouter
+2026-07-15 10:53:44,169 [INFO] ==== Début du script bandes-annonces ====
+2026-07-15 10:53:44,169 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-15 10:53:44,169 [INFO] 254 identifiants chargés depuis le log
+2026-07-15 10:53:44,169 [INFO] Démarrage scraping CineHorizons...
+2026-07-15 10:53:47,202 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-15 10:53:47,248 [INFO] 3 blocs détectés (limite 3)
+2026-07-15 10:53:47,285 [INFO] Scraping CineHorizons terminé
+2026-07-15 10:53:47,298 [INFO] Démarrage scraping TMDb...
+2026-07-15 10:53:47,436 [INFO] 20 films récupérés depuis TMDb
+2026-07-15 10:53:47,619 [INFO] Article ajouté TMDb: The Flash
+2026-07-15 10:53:47,701 [INFO] Scraping TMDb terminé
+2026-07-15 10:53:47,702 [INFO] 1 nouveaux articles détectés
+2026-07-15 10:53:47,705 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-07-15 10:53:47,705 [INFO] Sauvegarde du log avec 255 identifiants
+2026-07-15 10:53:47,706 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-15 10:53:47,726 [INFO] Rien à commiter, le répertoire est propre.
+2026-07-15 10:53:47,726 [INFO] ==== Fin du script bandes-annonces ====
