@@ -10978,5 +10978,26 @@
     "video": false,
     "vote_average": 5.5,
     "vote_count": 78
+  },
+  "The Odyssey_2026": {
+    "adult": false,
+    "backdrop_path": "/r57L2UBLPKcHdZQYg8tagv9XqK2.jpg",
+    "genre_ids": [
+      12,
+      28,
+      14
+    ],
+    "id": 1368337,
+    "title": "L'Odyssée",
+    "original_language": "en",
+    "original_title": "The Odyssey",
+    "overview": "Vingt ans après son départ pour la guerre de Troie, le roi Ulysse rentre enfin à Ithaque, mais son voyage est parsemé d'aventures et d'épreuves.",
+    "popularity": 169.2124,
+    "poster_path": "/xJ97RenWOB8DBBwZryjUQTDdH73.jpg",
+    "release_date": "2026-07-15",
+    "softcore": false,
+    "video": false,
+    "vote_average": 5.89,
+    "vote_count": 59
   }
 }

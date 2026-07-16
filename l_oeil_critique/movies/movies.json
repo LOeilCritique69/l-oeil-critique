@@ -5536,5 +5536,15 @@
     "poster_path": "/fN4YJFr6d1Zx2fNBlzGLyShO6sc.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/fN4YJFr6d1Zx2fNBlzGLyShO6sc.jpg",
     "tmdb_id": 1108427
+  },
+  {
+    "Name": "The Odyssey",
+    "Year": 2026,
+    "Date": "2026-07-15",
+    "Rating": 4.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-odyssey-2026/",
+    "poster_path": "/xJ97RenWOB8DBBwZryjUQTDdH73.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xJ97RenWOB8DBBwZryjUQTDdH73.jpg",
+    "tmdb_id": 1368337
   }
 ]
