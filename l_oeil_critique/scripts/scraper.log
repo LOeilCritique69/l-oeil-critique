@@ -6178,3 +6178,21 @@ Call log:
 2026-07-16 00:01:44,547 [INFO] Scraping TMDb terminé
 2026-07-16 00:01:44,548 [INFO] 0 nouveaux articles détectés
 2026-07-16 00:01:44,548 [INFO] Aucun nouvel article à ajouter
+2026-07-16 04:11:12,369 [INFO] ==== Début du script bandes-annonces ====
+2026-07-16 04:11:12,369 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-16 04:11:12,369 [INFO] 255 identifiants chargés depuis le log
+2026-07-16 04:11:12,369 [INFO] Démarrage scraping CineHorizons...
+2026-07-16 04:11:15,018 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-16 04:11:15,063 [INFO] 3 blocs détectés (limite 3)
+2026-07-16 04:11:15,064 [INFO] Extraction détails CineHorizons pour Si tu penses bien
+2026-07-16 04:11:15,864 [INFO] Article ajouté CineHorizons: Si tu penses bien
+2026-07-16 04:11:15,903 [INFO] Scraping CineHorizons terminé
+2026-07-16 04:11:15,916 [INFO] Démarrage scraping TMDb...
+2026-07-16 04:11:16,046 [INFO] 20 films récupérés depuis TMDb
+2026-07-16 04:11:16,144 [INFO] Scraping TMDb terminé
+2026-07-16 04:11:16,145 [INFO] 1 nouveaux articles détectés
+2026-07-16 04:11:16,149 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-07-16 04:11:16,149 [INFO] Sauvegarde du log avec 256 identifiants
+2026-07-16 04:11:16,150 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-16 04:11:16,169 [INFO] Rien à commiter, le répertoire est propre.
+2026-07-16 04:11:16,169 [INFO] ==== Fin du script bandes-annonces ====
