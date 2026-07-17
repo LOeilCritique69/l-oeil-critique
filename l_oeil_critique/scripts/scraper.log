@@ -6311,3 +6311,15 @@ Call log:
 2026-07-17 04:09:55,744 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-07-17 04:09:55,761 [INFO] Rien à commiter, le répertoire est propre.
 2026-07-17 04:09:55,761 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-17 07:20:06,406 [INFO] ==== Début du script bandes-annonces ====
+2026-07-17 07:20:06,406 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-17 07:20:06,406 [INFO] 257 identifiants chargés depuis le log
+2026-07-17 07:20:06,407 [INFO] Démarrage scraping CineHorizons...
+2026-07-17 07:20:08,844 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-17 07:20:08,877 [INFO] 3 blocs détectés (limite 3)
+2026-07-17 07:20:08,910 [INFO] Scraping CineHorizons terminé
+2026-07-17 07:20:08,923 [INFO] Démarrage scraping TMDb...
+2026-07-17 07:20:09,017 [INFO] 20 films récupérés depuis TMDb
+2026-07-17 07:20:09,130 [INFO] Scraping TMDb terminé
+2026-07-17 07:20:09,131 [INFO] 0 nouveaux articles détectés
+2026-07-17 07:20:09,131 [INFO] Aucun nouvel article à ajouter
