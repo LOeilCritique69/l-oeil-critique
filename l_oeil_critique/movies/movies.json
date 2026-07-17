@@ -5546,5 +5546,15 @@
     "poster_path": "/xJ97RenWOB8DBBwZryjUQTDdH73.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/xJ97RenWOB8DBBwZryjUQTDdH73.jpg",
     "tmdb_id": 1368337
+  },
+  {
+    "Name": "Exit 8",
+    "Year": 2025,
+    "Date": "2026-07-17",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/exit-8/",
+    "poster_path": "/hJ9qCQ3Dx9vwet09Lbqs8eZTd8e.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/hJ9qCQ3Dx9vwet09Lbqs8eZTd8e.jpg",
+    "tmdb_id": 1408208
   }
 ]

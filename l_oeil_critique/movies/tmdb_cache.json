@@ -10999,5 +10999,25 @@
     "video": false,
     "vote_average": 5.89,
     "vote_count": 59
+  },
+  "Exit 8_2025": {
+    "adult": false,
+    "backdrop_path": "/3cVrg7tzSf5AgEecYWDOSAzXAeX.jpg",
+    "genre_ids": [
+      27,
+      9648
+    ],
+    "id": 1408208,
+    "title": "Exit 8",
+    "original_language": "ja",
+    "original_title": "８番出口",
+    "overview": "Un homme piégé dans un couloir de métro cherche la sortie numéro 8. Pour la trouver, il faut traquer les anomalies. S’il en voit une, il fait demi-tour. S’il n’en voit aucune, il continue. Mais s’il se trompe, il est renvoyé à son point de départ. Parviendra-t-il à sortir de ce couloir sans fin ?",
+    "popularity": 13.4874,
+    "poster_path": "/hJ9qCQ3Dx9vwet09Lbqs8eZTd8e.jpg",
+    "release_date": "2025-08-28",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.962,
+    "vote_count": 594
   }
 }
