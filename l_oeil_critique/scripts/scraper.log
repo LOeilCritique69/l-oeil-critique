@@ -6509,3 +6509,15 @@ Call log:
 2026-07-18 13:22:53,765 [INFO] Scraping TMDb terminé
 2026-07-18 13:22:53,766 [INFO] 0 nouveaux articles détectés
 2026-07-18 13:22:53,767 [INFO] Aucun nouvel article à ajouter
+2026-07-18 14:57:21,623 [INFO] ==== Début du script bandes-annonces ====
+2026-07-18 14:57:21,623 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-18 14:57:21,623 [INFO] 258 identifiants chargés depuis le log
+2026-07-18 14:57:21,623 [INFO] Démarrage scraping CineHorizons...
+2026-07-18 14:57:24,840 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-18 14:57:24,877 [INFO] 3 blocs détectés (limite 3)
+2026-07-18 14:57:24,910 [INFO] Scraping CineHorizons terminé
+2026-07-18 14:57:24,920 [INFO] Démarrage scraping TMDb...
+2026-07-18 14:57:25,203 [INFO] 20 films récupérés depuis TMDb
+2026-07-18 14:57:25,592 [INFO] Scraping TMDb terminé
+2026-07-18 14:57:25,593 [INFO] 0 nouveaux articles détectés
+2026-07-18 14:57:25,594 [INFO] Aucun nouvel article à ajouter
