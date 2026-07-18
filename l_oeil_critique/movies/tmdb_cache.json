@@ -11019,5 +11019,24 @@
     "video": false,
     "vote_average": 6.962,
     "vote_count": 594
+  },
+  "The Hero of Friedrichstrasse Station_2025": {
+    "adult": false,
+    "backdrop_path": "/fLe2B91439XfKNqbNchQklDvhju.jpg",
+    "genre_ids": [
+      35
+    ],
+    "id": 1248217,
+    "title": "Le Héros de Berlin",
+    "original_language": "de",
+    "original_title": "Der Held vom Bahnhof Friedrichstraße",
+    "overview": "Micha Hartung, propriétaire d'un vidéoclub berlinois au bord de la faillite, voit sa vie basculer : à l'occasion du 30e anniversaire de la chute du mur de Berlin un journaliste le présente comme le cerveau d'une évasion massive historique de la RDA. Devenu un héros malgré lui, il se retrouve pris dans un engrenage de semi-vérités et de mensonges éhontés.",
+    "popularity": 1.7585,
+    "poster_path": "/gmPute26B4JnsQNMZdgyWAfYfYj.jpg",
+    "release_date": "2025-12-11",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.643,
+    "vote_count": 14
   }
 }
