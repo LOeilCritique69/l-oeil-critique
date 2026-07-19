@@ -6742,3 +6742,20 @@ Call log:
 2026-07-19 21:56:57,740 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-07-19 21:56:57,759 [INFO] Rien à commiter, le répertoire est propre.
 2026-07-19 21:56:57,759 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-19 22:58:26,282 [INFO] ==== Début du script bandes-annonces ====
+2026-07-19 22:58:26,282 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-19 22:58:26,282 [INFO] 259 identifiants chargés depuis le log
+2026-07-19 22:58:26,282 [INFO] Démarrage scraping CineHorizons...
+2026-07-19 22:58:28,654 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-19 22:58:28,696 [INFO] 3 blocs détectés (limite 3)
+2026-07-19 22:58:28,732 [INFO] Scraping CineHorizons terminé
+2026-07-19 22:58:28,743 [INFO] Démarrage scraping TMDb...
+2026-07-19 22:58:28,797 [INFO] 20 films récupérés depuis TMDb
+2026-07-19 22:58:28,861 [INFO] Article ajouté TMDb: Rise Roar Revolt (RRR)
+2026-07-19 22:58:28,868 [INFO] Scraping TMDb terminé
+2026-07-19 22:58:28,869 [INFO] 1 nouveaux articles détectés
+2026-07-19 22:58:28,872 [INFO] 80 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-07-19 22:58:28,873 [INFO] Sauvegarde du log avec 260 identifiants
+2026-07-19 22:58:28,873 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-19 22:58:28,892 [INFO] Rien à commiter, le répertoire est propre.
+2026-07-19 22:58:28,892 [INFO] ==== Fin du script bandes-annonces ====
