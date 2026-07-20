@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta property="og:title" content="Avengers : Doomsday – L'Avengers de trop ? Notre analyse du premier trailer">
+    <meta property="og:description" content="Publié le 21 juillet 2026 par Yanis">
+    <meta property="og:image" content="../../assets/img/films/avengers_doomsday/doom-poster.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.l-oeil-critique.com/articles/films/Avengers-doomsday-trailer.html">
+    <link rel="canonical" href="https://www.l-oeil-critique.com/articles/films/Avengers-doomsday-trailer.html">
+
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Avengers Doomsday, trailer Avengers Doomsday, MCU, Doctor Doom, X-Men, Fantastic Four, Marvel news" name="keywords"/>
+    <link href="../../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
+    <title>Avengers : Doomsday – L'Avengers de trop ? Notre analyse du premier trailer</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+    <!-- Ces deux liens pointent vers les feuilles de style globales du site.
+         Sur le site en ligne, elles définissent déjà les tokens Iris (:root)
+         et les règles ci-dessous en double assurent que la page reste
+         lisible même si ces fichiers ne sont pas accessibles (aperçu local,
+         changement d'arborescence, etc.) -->
+    <link href="../../css/chef_d_oeuvre.css" rel="stylesheet"/>
+    <link href="../../css/createblog.css" rel="stylesheet">
+
+    <style>
+        /* ================================================================
+           CSS AUTONOME — feuille "Iris" complète pour cet article
+           (tokens + mise en page + composants), afin que la page reste
+           correcte même sans chef_d_oeuvre.css / createblog.css externes.
+           ================================================================ */
+
+        :root {
+            /* Palette encre / parchemin / velours / laiton */
+            --ink: #1c1712;
+            --ink-soft: #4a4038;
+            --paper: #faf6ec;
+            --paper-2: #f1e9d8;
+            --paper-soft: #857a68;
+            --velvet: #8a2530;
+            --brass: #c9a24a;
+            --brass-light: #e8cd8a;
+
+            --line-on-paper: rgba(28, 23, 18, 0.12);
+            --line-on-paper-strong: rgba(28, 23, 18, 0.28);
+            --line-on-ink: rgba(250, 246, 236, 0.18);
+
+            /* Typographie */
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+            --line-height-base: 1.75;
+            --line-height-tight: 1.15;
+
+            /* Échelle d'espacement */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 48px;
+
+            --radius: 4px;
+            --transition-speed: 0.3s;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: var(--paper-2);
+            font-family: var(--font-body);
+            color: var(--ink);
+            margin: 0;
+        }
+
+        /* ---------- 1) Layout principal ---------- */
+        .container {
+            display: flex;
+            gap: var(--space-8);
+            max-width: 1200px;
+            margin: var(--space-8) auto;
+            padding: 0 var(--space-4);
+            flex-grow: 1;
+            animation: article-fade-up 0.8s var(--ease-out);
+        }
+
+        @keyframes article-fade-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-content {
+            flex: 3;
+            min-width: 0;
+            background-color: var(--paper);
+            padding: var(--space-8);
+            border: 1px solid var(--line-on-paper);
+            transition: border-color var(--transition-speed) ease;
+        }
+
+        .main-content:hover {
+            border-color: var(--line-on-paper-strong);
+        }
+
+        /* ---------- 2) Sidebar & widgets ---------- */
+        .sidebar {
+            flex: 1;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+            position: sticky;
+            top: var(--space-8);
+            align-self: start;
+        }
+
+        .sidebar .widget {
+            background: var(--paper);
+            padding: var(--space-5);
+            border: 1px solid var(--line-on-paper);
+            transition: border-color var(--transition-speed) ease;
+        }
+
+        .sidebar .widget:hover {
+            border-color: var(--brass);
+        }
+
+        @media (max-width: 900px) {
+            .sidebar {
+                position: static;
+            }
+        }
+
+        .sidebar .widget img {
+            width: 100%;
+            margin-top: var(--space-4);
+            filter: grayscale(15%) contrast(1.05);
+            transition: filter 0.4s ease;
+        }
+
+        .sidebar .widget:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* ---------- 3) Typographie d'article ---------- */
+        .article-title {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: var(--line-height-tight);
+            text-align: center;
+            color: var(--ink);
+            margin: 0 0 var(--space-4);
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--paper-soft);
+            margin: 0 0 var(--space-5);
+            border-bottom: 1px solid var(--line-on-paper);
+            padding-bottom: var(--space-4);
+        }
+
+        .article-content p {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: var(--line-height-base);
+            color: var(--ink);
+            margin: 0 0 var(--space-6);
+        }
+
+        .article-content strong { color: var(--ink); }
+        .article-content em { color: var(--ink-soft); }
+
+        .article-content a {
+            color: var(--velvet);
+            text-decoration: none;
+            border-bottom: 1px solid var(--brass);
+            transition: color var(--transition-speed) ease;
+        }
+        .article-content a:hover { color: var(--brass); }
+
+        /* Sous-titres personnages / sections (h3) */
+        .article-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.7rem;
+            letter-spacing: 1px;
+            margin: 35px 0 10px 0;
+            padding-left: 12px;
+            border-left: 4px solid var(--velvet);
+            color: var(--ink);
+            text-transform: uppercase;
+        }
+        .article-content h3 + p { margin-top: 5px; }
+
+        /* ---------- 4) Titres de section (h2) + motif diaphragme ---------- */
+        .article-content h2 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--ink);
+            margin: var(--space-10) 0 var(--space-4);
+        }
+
+        .article-content h2::before {
+            content: "";
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+            -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+                    mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+        }
+
+        /* ---------- Sommaire / table des matières ---------- */
+        .article-toc {
+            border-left: 5px solid var(--velvet);
+            background-color: var(--paper-2);
+            padding: 20px 25px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .article-toc h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            margin: 0 0 15px;
+            padding-left: 0;
+            border-left: none;
+            color: var(--velvet);
+            letter-spacing: 1px;
+        }
+
+        .article-toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .article-toc ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .article-toc ul li::before {
+            content: "•";
+            color: var(--velvet);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .article-toc ul li a {
+            text-decoration: none;
+            border-bottom: none;
+            color: var(--ink);
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        .article-toc ul li a:hover {
+            color: var(--velvet);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        /* ---------- 5) Médias ---------- */
+        .article-image img {
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(15%) contrast(1.05);
+            margin-bottom: var(--space-2);
+            transition: filter 0.4s ease;
+        }
+
+        .article-image:hover img { filter: grayscale(0%); }
+
+        .article-content img.image2 {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            filter: grayscale(15%) contrast(1.05);
+            margin: var(--space-2) 0 var(--space-6);
+            transition: filter 0.4s ease;
+        }
+        .article-content img.image2:hover { filter: grayscale(0%); }
+
+        .titre-sous-image {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-style: italic;
+            font-size: 0.82rem;
+            color: var(--paper-soft);
+            margin-bottom: var(--space-8);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border: 1px solid var(--line-on-ink);
+            margin: var(--space-8) 0;
+            background-color: var(--ink);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ---------- 6) Encarts ---------- */
+        blockquote {
+            position: relative;
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.25rem;
+            background-color: var(--paper-2);
+            padding: var(--space-6) var(--space-6) var(--space-6) var(--space-8);
+            border-left: 3px solid var(--velvet);
+            margin: var(--space-8) 0;
+            color: var(--ink);
+        }
+
+        .spoiler-warning {
+            background: rgba(201, 162, 74, 0.08);
+            border: 1px dashed var(--line-on-paper-strong);
+            border-left: 3px solid var(--brass);
+            color: var(--ink);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            padding: var(--space-4);
+            margin-bottom: var(--space-6);
+            text-align: center;
+        }
+
+        .note-importante {
+            background: rgba(184, 50, 58, 0.06);
+            border-left: 3px solid var(--velvet);
+            color: var(--ink);
+            padding: var(--space-4) var(--space-5);
+            margin: var(--space-6) 0;
+            font-weight: 600;
+        }
+
+        .qa .qa-block {
+            background-color: var(--paper-2);
+            border-left: 3px solid var(--brass);
+            padding: var(--space-5);
+            margin-bottom: var(--space-5);
+        }
+
+        .qa .question {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--velvet);
+            margin-bottom: 0.6rem;
+        }
+
+        .qa .question::before {
+            content: "Q — ";
+            color: var(--brass);
+        }
+
+        /* Encart de conclusion "highlight-block" */
+        .article-content .highlight-block {
+            position: relative;
+            background-color: var(--paper-2);
+            border: 1px solid var(--line-on-paper-strong);
+            border-left: 3px solid var(--brass);
+            padding: var(--space-6);
+            margin: var(--space-10) 0 var(--space-6);
+        }
+        .article-content .highlight-block p { margin-bottom: var(--space-3); }
+        .article-content .highlight-block p:last-child { margin-bottom: 0; }
+        .article-content .highlight-block a {
+            color: var(--velvet);
+            font-weight: 600;
+            border-bottom: 1px solid var(--brass);
+        }
+        .article-content .highlight-block a:hover { color: var(--brass); }
+
+        /* Listes à puces dans le corps d'article (hors sommaire) */
+        .article-content ul:not(.article-toc ul) {
+            list-style: none;
+            padding-left: 0;
+            margin: 0 0 var(--space-6) 0;
+        }
+        .article-content ul:not(.article-toc ul) li {
+            position: relative;
+            padding-left: var(--space-5);
+            margin-bottom: var(--space-3);
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: var(--line-height-base);
+            color: var(--ink);
+        }
+        .article-content ul:not(.article-toc ul) li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--brass);
+        }
+
+        /* ---------- 7) Widget "Tendances" ---------- */
+        .sidebar .widget:has(#tendances-list) {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .titre-tendances {
+            background-color: var(--ink);
+            color: var(--brass-light);
+            padding: var(--space-4) var(--space-5);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.22em;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        #tendances-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            counter-reset: tendance-counter;
+        }
+
+        #tendances-list li {
+            counter-increment: tendance-counter;
+            position: relative;
+            border-bottom: 1px solid var(--line-on-paper);
+            padding: var(--space-3) var(--space-5) var(--space-3) calc(var(--space-5) + 30px);
+            transition: background-color 0.2s ease;
+        }
+
+        #tendances-list li::before {
+            content: counter(tendance-counter, decimal-leading-zero);
+            position: absolute;
+            left: var(--space-5);
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--brass);
+        }
+
+        #tendances-list li:last-child { border-bottom: none; }
+
+        #tendances-list li:hover { background-color: var(--paper-2); }
+
+        #tendances-list a {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--ink);
+            border-bottom: none;
+            line-height: 1.4;
+        }
+
+        #tendances-list li:hover a { color: var(--velvet); }
+
+        /* ---------- 9) Responsive ---------- */
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .sidebar { flex-direction: row; flex-wrap: wrap; }
+            .sidebar .widget { flex: 1 1 260px; }
+        }
+
+        @media (max-width: 768px) {
+            .main-content { padding: var(--space-6) var(--space-4); }
+            .article-title { font-size: 1.9rem; }
+            .article-content h2 { font-size: 1.6rem; }
+            .article-content h3 { font-size: 1.4rem; margin-top: 25px; }
+            .sidebar { flex-direction: column; }
+            .article-toc { padding: 15px 20px; margin-bottom: 30px; }
+            .article-toc h3 { font-size: 1.4rem; }
+        }
+
+        @media (max-width: 480px) {
+            .article-meta { flex-direction: column; gap: var(--space-1); }
+            blockquote { padding: var(--space-5); border-left-width: 2px; }
+            .article-content .highlight-block { padding: var(--space-5); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .container { animation: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="main-content">
+<h2 class="article-title">Avengers : Doomsday – L'Avengers de trop ?</h2>
+<p class="article-meta">Publié le 21 juillet 2026 par Yanis</p>
+
+<div class="article-image">
+<img alt="Avengers Doomsday trailer" src="../../assets/img/films/avengers_doomsday/doom-poster.jpg"/>
+</div>
+
+<div class="article-content">
+
+<!-- Introduction -->
+<p>Marvel Studios a enfin dévoilé le premier trailer complet d'<strong>Avengers : Doomsday</strong>, réalisé par <strong>Anthony et Joe Russo</strong>. Après des mois de teasing, de rumeurs et de comptes à rebours, le studio lève enfin le voile sur ce qui s'annonce comme l'un des événements les plus attendus du <strong>MCU</strong>. Rendez-vous est pris le <strong>16 décembre 2026</strong> en salles.</p>
+<p>Globalement, le trailer est propre sur tous les aspects. Mais entre l'enthousiasme et les quelques réserves, il y a beaucoup à dire sur cette bande-annonce. Voici notre analyse à chaud.</p>
+
+<!-- Bloc Sommaire -->
+<div class="article-toc">
+<h3>Sommaire de l'article</h3>
+<ul>
+<li><a href="#affiche">Une affiche qui sort des codes Marvel</a></li>
+<li><a href="#impressions">Premières impressions : du beau spectacle</a></li>
+<li><a href="#thor-doom">Thor contre Doom : un manque d'impact visuel</a></li>
+<li><a href="#xavier">L'école de Xavier détruite : X-Men, Fantastic Four et Avengers réunis dans le chaos</a></li>
+<li><a href="#attachement">Le vrai défi du film : l'attachement aux personnages</a></li>
+<li><a href="#doom">Doom, déjà une figure imposante</a></li>
+<li><a href="#incursions">Les incursions : une menace multiversale inquiétante</a></li>
+<li><a href="#retrouvailles">Thor et Captain America : des retrouvailles chargées d'émotion</a></li>
+<li><a href="#conclusion-perso">Conclusion : rendez-vous le 16 décembre</a></li>
+</ul>
+</div>
+
+<!-- Affiche -->
+<h2 id="affiche">Une affiche qui sort des codes Marvel</h2>
+<p>Avant même de parler du trailer, il faut s'arrêter sur l'affiche officielle du film. Doom y est représenté posant devant une œuvre d'art figurant une femme et un enfant, dans une composition presque picturale, loin du montage habituel de héros en pose menaçante qu'on a l'habitude de voir chez Marvel.</p>
+<p>C'est une image sublime et assez rare de la part du studio. Ce choix renforce l'ambiguïté du personnage : un conquérant égocentrique, mais mis en scène ici presque comme une figure tragique ou protectrice, entre le tyran et l'être qui s'ignore. Une manière élégante d'annoncer, avant même la première image du trailer, que ce Doom-là ne sera pas un simple grand méchant caricatural.</p>
+<img alt="Affiche officielle d'Avengers Doomsday, Doom devant une œuvre d'art" class="image2" src="../../assets/img/films/avengers_doomsday/doom-poster-artwork.jpg"/>
+
+<!-- Premières impressions -->
+<h2 id="impressions">Premières impressions : du beau spectacle</h2>
+<p>Je suis hype par les événements que propose ce trailer. Visuellement, c'est propre : les couleurs sont bonnes, les plans sont bons. On sent que Marvel a mis les moyens pour faire de cette bande-annonce un véritable événement.</p>
+<p>Cela dit, il reste quelques problèmes de mise en scène à régler, notamment sur certains plans d'action qui manquent de puissance visuelle.</p>
+
+<div class="video-container">
+<iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/b4JJHkUZsjE?si=ox66uCfs8cpxZ8wk" title="Trailer Avengers Doomsday" width="560"></iframe>
+</div>
+
+<!-- Thor vs Doom -->
+<h2 id="thor-doom">Thor contre Doom : un manque d'impact visuel</h2>
+<p>Le principal reproche que je ferais concerne l'attaque de <strong>Thor</strong> sur <strong>Doom</strong> : elle n'est pas assez puissante visuellement. Quand Doom l'arrête avec deux doigts seulement, l'impact ne se ressent pas. On ne perçoit pas la force que Thor est censé mettre dans son coup.</p>
+<p>Je comprends que ce soit volontaire, pour montrer la supériorité écrasante de Doom face au dieu du Tonnerre. Mais il aurait fallu, à minima, montrer l'effet de cette attaque sur l'environnement pour faire ressentir sa puissance, même si elle est stoppée net.</p>
+<img alt="Doom arrête l'attaque de Thor avec deux doigts" class="image2" src="../../assets/img/films/avengers_doomsday/thor-vs-doom.jpg"/>
+
+<!-- X-Men / FF / Avengers -->
+<h2 id="xavier">L'école de Xavier détruite : X-Men, Fantastic Four et Avengers réunis dans le chaos</h2>
+<p>Le trailer montre l'<strong>école de Xavier</strong> détruite par les combats qui opposent les X-Men, les 4 Fantastiques et les Avengers. Plusieurs affrontements semblent particulièrement intéressants :</p>
+<ul>
+<li><strong>Mystique contre Yelena</strong>, avec Mystique qui se transforme en Yelena pour le combat.</li>
+<li><strong>Gambit contre Shang-Chi</strong>.</li>
+<li>Et sans doute un <strong>Cyclope contre Doom</strong>, même si cet affrontement n'est pas encore montré dans le trailer.</li>
+</ul>
+<p>Ces face-à-face promettent des combats variés et surtout un vrai mélange des générations de héros Marvel, entre les vétérans X-Men et les figures plus récentes du MCU.</p>
+<img alt="École de Xavier détruite dans Avengers Doomsday" class="image2" src="../../assets/img/films/avengers_doomsday/xavier-school-destroyed.jpg"/>
+
+<!-- Attachement -->
+<h2 id="attachement">Le vrai défi du film : l'attachement aux personnages</h2>
+<p>Le souci, c'est qu'<strong>Avengers : Doomsday</strong> ne donne pas vraiment de sensation de conclusion, car seuls quelques films de la saga du Multivers ont réellement teasé Doomsday. Ce sera sûrement l'un des gros défauts du film : un manque d'attachement.</p>
+<p>Les 4 Fantastiques, on ne les a vus qu'une seule fois, il y a un an. Les X-Men, ça fait 20 ans, donc ça joue sur une forme de nostalgie puisqu'on a grandi avec ces personnages. Les Avengers, ce sont des figures plus jeunes, mais qu'on n'a pas vues plus de deux fois en sept ans. C'est forcément un défaut de base : le film part sur une fondation fragile en matière d'attachement émotionnel.</p>
+
+<!-- Doom -->
+<h2 id="doom">Doom, déjà une figure imposante</h2>
+<p>Pour Doom, je comprends qu'il puisse apparaître de nulle part et exposer d'emblée ses convictions de conquérant égocentrique. Et je pense que Doom sera réussi.</p>
+<p>Dans le trailer, il s'impose déjà comme une figure importante et puissante, capable de tenir tête à des personnages aussi établis que Thor sans effort apparent.</p>
+<p>Personnellement, je comprends que certains puissent être hype par cette bande-annonce, comme moi, tandis que d'autres la trouveront décevante. Mais il faut garder à l'esprit que ce film va servir de tremplin à <strong>Secret Wars</strong> et va conclure une saga de plus de 20 ans. Les deux films préparent le reboot et une toute nouvelle version du MCU axée sur les Mutants.</p>
+<img alt="Doctor Doom s'impose dans le trailer" class="image2" src="../../assets/img/films/avengers_doomsday/doom-reveal.jpg"/>
+
+<!-- Incursions -->
+<h2 id="incursions">Les incursions : une menace multiversale inquiétante</h2>
+<p>Dans le trailer, les <strong>incursions</strong> sont vraiment inquiétantes. Visuellement, c'est dangereux, on le voit dès le début de la bande-annonce. On sent que c'est une menace qui pèse lourdement sur les héros des différentes Terres.</p>
+<img alt="Une incursion menace la Terre dans Avengers Doomsday" class="image2" src="../../assets/img/films/avengers_doomsday/incursion.jpg"/>
+
+<!-- Retrouvailles -->
+<h2 id="retrouvailles">Thor et Captain America : des retrouvailles chargées d'émotion</h2>
+<p><em>« Les araignées ont trois cycles de vie. Entre deux cycles, elles sont vulnérables aux menaces. Et pour celles qui survivent… c'est une sorte de renaissance. »</em></p>
+<p>Thor et Captain America se réunissent dans un vaisseau, et Thor n'en croit pas ses yeux : il teste Steve avec Mjolnir pour savoir s'il s'agit bien du vrai Captain America. C'est une très bonne idée d'écriture.</p>
+<img alt="Thor teste Captain America avec Mjolnir" class="image2" src="../../assets/img/films/avengers_doomsday/thor-cap-reunion.jpg"/>
+<p>Ils reviendront ensuite sur Terre pour avertir les autres héros du danger qui approche, dont <strong>Bucky</strong> et <strong>Sam</strong>. Et leurs visages, à ce moment-là, en disent long :</p>
+<ul>
+<li><strong>Ant-Man</strong> est choqué, sans voix, fixé sur Steve comme quelqu'un qui revoit un ancien partenaire.</li>
+<li><strong>Bucky</strong> n'est pas impressionné et reste neutre.</li>
+<li><strong>Captain America (Sam)</strong>, lui, a une expression différente : il se pose des questions mais semble heureux de revoir Steve.</li>
+</ul>
+<p>Les trois réagissent différemment face à cette même situation, ce qui donne une vraie richesse émotionnelle à cette scène de retrouvailles.</p>
+
+<!-- Conclusion -->
+<h2 id="conclusion-perso">Conclusion : rendez-vous le 16 décembre</h2>
+<p>Je reste globalement hype par <strong>Avengers : Doomsday</strong> suite à ces images. Et visuellement, ça fait du bien de voir de vraies images plutôt que des textes descriptifs ou des vidéos IA fake.</p>
+
+<div class="highlight-block">
+<p><strong>Les attentes sont désormais immenses. Marvel parviendra-t-il à recréer la magie d'Infinity War et Endgame ? Réponse dans un peu plus de cinq mois.</strong></p>
+<p>➡️ <strong>À lire aussi :</strong> <a href="Spider-man-BND-trailer.html">Spider-Man : Brand New Day – Marvel prépare la renaissance de Peter Parker</a></p>
+</div>
+
+</div> <!-- article-content -->
+</div> <!-- main-content -->
+
+<!-- Sidebar -->
+<aside class="sidebar">
+<div class="widget">
+<h3 class="titre-tendances">Tendances</h3>
+<ul id="tendances-list"></ul>
+</div>
+</aside>
+</div> <!-- container -->
+
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/header.js"></script>
+<script>
+fetch('tendances.html')
+.then(response => {
+if (!response.ok) {
+throw new Error('Network response was not ok ' + response.statusText);
+}
+return response.text();
+})
+.then(data => {
+document.querySelector('.sidebar .widget ul').innerHTML = data;
+})
+.catch(error => console.error('Erreur lors du chargement des tendances :', error));
+</script>
+</body>
+</html>

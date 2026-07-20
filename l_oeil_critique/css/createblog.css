@@ -1,261 +1,579 @@
-/* ========================================================================
-   L’ŒIL CRITIQUE — ARCHITECTURE FUSIONNÉE (MAGAZINE + SIDEBAR)
-   ======================================================================== */
+/* ============================================================================
+   L'ŒIL CRITIQUE — CREAATBLOG (page article + sidebar) — Refonte "Iris"
+   ----------------------------------------------------------------------------
+   Ce fichier s'aligne sur la feuille de style globale "Iris" (motif du
+   diaphragme, palette encre / parchemin / velours / laiton, serif éditorial
+   Fraunces + sans-serif Inter + mono IBM Plex Mono pour les métadonnées).
 
-/* --- 1. CONFIGURATION & DESIGN TOKENS --- */
-:root {
-    --primary-color: #2e3440;
-    --secondary-color: #f2cd86;
-    --accent-color: #ffd27f;
-    
-    --bg-body: #ece7df;
-    --bg-card: #ffffff;
-    --bg-subtle: #f8f9fb;
-    
-    --text-main: #333333;
-    --text-muted: #666666;
-    --border-color: #eeeeee;
-    
-    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
-    --shadow-lg: 0 8px 25px rgba(0,0,0,0.2);
-    
-    --border-radius-base: 12px;
-    --transition-speed: 0.35s;
-}
+   Il part du principe que :root d'Iris est déjà chargé (mêmes tokens que
+   le fichier global : --ink, --paper, --velvet, --brass, --font-display,
+   --font-mono, --space-*, --shadow-*, etc.). Aucun nouveau token de couleur
+   n'est introduit ici — uniquement des alias locaux pour la mise en page
+   propre à l'article.
 
-/* --- 2. DARK MODE DYNAMIQUE --- */
-body.dark-mode {
-    --bg-body: #0f172a;
-    --bg-card: #1e293b;
-    --bg-subtle: #0f172a;
-    --text-main: #f1f5f9;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
-    --primary-color: #f2cd86;
-}
+   CHANGELOG (vs. ancienne version "magazine")
+   - Les anciennes variables --primary-color, --secondary-color,
+     --accent-color, --bg-body/card/subtle, --text-main/muted,
+     --border-color, --border-radius-base n'existaient dans aucun :root
+     du site : remplacées par les tokens Iris réels (--ink, --brass,
+     --velvet, --paper, --paper-2, --paper-soft, --line-on-paper, --radius).
+   - --font-family-title n'était pas déclarée : remplacée par --font-display.
+   - Le mode sombre par bascule globale (body.dark-mode) est abandonné :
+     Iris ne fonctionne pas en thème inversable, mais en zones de contraste
+     fixes (encre pour les surfaces "habillées", parchemin pour la lecture).
+     Le widget "Tendances" et les encarts profitent de cette logique.
+   - Les ombres portées généreuses (--shadow-lg partout) sont remplacées par
+     des bordures fines (--line-on-paper) : "Iris préfère la ligne au
+     relief". Les ombres ne restent qu'au survol, avec parcimonie.
+   - Le motif diaphragme (aperture-mark) est repris en filigrane derrière
+     les titres de section et en séparateur avant la conclusion.
 
-/* --- 3. ANIMATIONS --- */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
+   AJOUTS (article Avengers Doomsday)
+   - .article-content h3 : sous-titres personnages, bordure gauche en
+     --velvet (remplace l'ancienne var --color-red inexistante dans Iris).
+   - .article-content img.image2 : images intercalées dans le corps de
+     l'article (même traitement grayscale/hover que .article-image).
+   - .article-content ul (hors .article-toc) : listes à puces personnalisées
+     (puce ronde en --brass) au lieu des puces par défaut du navigateur.
+   - .article-content .highlight-block : encart de conclusion, même logique
+     que .conclusion mais utilisable en plein milieu du corps d'article.
 
-/* --- 4. LAYOUT PRINCIPAL --- */
+   SOMMAIRE
+   1. Layout principal (container, colonne article, sidebar)
+   2. Widgets de sidebar
+   3. Typographie d'article (titre, méta, corps)
+   4. Titres de section (h2) + motif diaphragme
+   4bis. Sous-titres (h3) + sommaire (article-toc)
+   5. Médias (image d'illustration, images intercalées, légende, vidéo)
+   6. Encarts (citation, avertissement spoiler, note importante, Q&A, highlight-block)
+   7. Widget "Tendances"
+   8. Conclusion
+   9. Responsive
+   ============================================================================ */
+
+/* ============================================================================
+   1) LAYOUT PRINCIPAL
+   ============================================================================ */
 .container {
-    display: flex;
-    gap: var(--space-8);
-    max-width: 1200px;
-    margin: var(--space-8) auto;
-    padding: 0 var(--space-4);
-    flex-grow: 1;
-    animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  gap: var(--space-8);
+  max-width: 1200px;
+  margin: var(--space-8) auto;
+  padding: 0 var(--space-4);
+  flex-grow: 1;
+  animation: article-fade-up 0.8s var(--ease-out);
+}
+
+@keyframes article-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .main-content {
-    flex: 3;
-    background-color: var(--bg-card);
-    padding: var(--space-8);
-    border-radius: var(--border-radius-base);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    transition: box-shadow var(--transition-speed) ease;
+  flex: 3;
+  min-width: 0;
+  background-color: var(--paper);
+  padding: var(--space-8);
+  border: 1px solid var(--line-on-paper);
+  transition: border-color var(--transition-speed) ease;
 }
 
 .main-content:hover {
-    box-shadow: var(--shadow-lg);
+  border-color: var(--line-on-paper-strong);
 }
 
-/* --- 5. SIDEBAR & WIDGETS --- */
+/* ============================================================================
+   2) SIDEBAR & WIDGETS
+   ============================================================================ */
 .sidebar {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  position: sticky;
+  top: var(--space-8);
+  align-self: start;
 }
 
 .sidebar .widget {
-    background: var(--bg-card);
-    padding: var(--space-5);
-    border-radius: var(--border-radius-base);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--paper);
+  padding: var(--space-5);
+  border: 1px solid var(--line-on-paper);
+  transition: border-color var(--transition-speed) ease;
 }
 
 .sidebar .widget:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+  border-color: var(--brass);
 }
 
 .sidebar .widget img {
-    width: 100%;
-    border-radius: var(--border-radius-base);
-    margin-top: var(--space-4);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  margin-top: var(--space-4);
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.4s ease;
 }
 
-/* --- 6. TYPOGRAPHIE D'ARTICLE --- */
+.sidebar .widget:hover img {
+  filter: grayscale(0%);
+}
+
+/* ============================================================================
+   3) TYPOGRAPHIE D'ARTICLE
+   ============================================================================ */
 .article-title {
-    font-family: var(--font-family-title);
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: var(--space-4);
-    letter-spacing: 1px;
-    line-height: 1.1;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  color: var(--ink);
+  margin-bottom: var(--space-4);
 }
 
 .article-meta {
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: var(--space-5);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: var(--space-4);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--paper-soft);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--line-on-paper);
+  padding-bottom: var(--space-4);
 }
 
 .article-content p {
-    font-size: 1.15rem;
-    line-height: 1.85;
-    color: var(--text-main);
-    margin-bottom: var(--space-6);
-    text-align: justify;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: var(--line-height-base);
+  color: var(--ink);
+  margin-bottom: var(--space-6);
 }
 
-h2 {
-    font-size: 2.2rem;
-    font-family: var(--font-family-title);
-    color: var(--primary-color);
-    border-left: 6px solid var(--secondary-color);
-    padding-left: var(--space-4);
-    margin: var(--space-10) 0 var(--space-4);
+.article-content strong {
+  color: var(--ink);
 }
 
-/* --- 7. MÉDIAS --- */
+.article-content em {
+  color: var(--ink);
+}
+
+.article-content a {
+  color: var(--velvet);
+  text-decoration: none;
+  border-bottom: 1px solid var(--brass);
+  transition: color var(--transition-speed) ease;
+}
+
+.article-content a:hover {
+  color: var(--brass);
+}
+
+/* ============================================================================
+   4) TITRES DE SECTION (h2) + MOTIF DIAPHRAGME
+   ----------------------------------------------------------------------------
+   Chaque intertitre d'article reprend, en version réduite, le repère
+   d'ouverture d'objectif utilisé ailleurs sur le site (section-divider,
+   hero-section::before) — ici comme un simple ornement discret à gauche
+   du texte plutôt qu'une bordure pleine.
+   ============================================================================ */
+.article-content h2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--ink);
+  margin: var(--space-10) 0 var(--space-4);
+}
+
+.article-content h2::before {
+  content: "";
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+}
+
+/* ============================================================================
+   4bis) SOUS-TITRES (h3) + SOMMAIRE (article-toc)
+   ============================================================================ */
+.article-content h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  margin: 35px 0 10px 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--velvet);
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.article-content h3 + p {
+  margin-top: 5px;
+}
+
+.article-toc {
+  border-left: 5px solid var(--velvet);
+  background-color: var(--paper-2);
+  padding: 20px 25px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.article-toc h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin: 0 0 15px;
+  padding-left: 0;
+  border-left: none;
+  color: var(--velvet);
+  letter-spacing: 1px;
+}
+
+.article-toc ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.article-toc ul li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.article-toc ul li::before {
+  content: "•";
+  color: var(--velvet);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.article-toc ul li a {
+  text-decoration: none;
+  border-bottom: none;
+  color: var(--ink);
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.article-toc ul li a:hover {
+  color: var(--velvet);
+  transform: translateX(5px);
+  display: inline-block;
+}
+
+/* ============================================================================
+   5) MÉDIAS
+   ============================================================================ */
 .article-image img {
-    width: 100%;
-    height: auto;
-    max-height: 550px;
-    object-fit: cover;
-    border-radius: var(--border-radius-base);
-    margin-bottom: var(--space-2);
-    box-shadow: var(--shadow-lg);
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+  margin-bottom: var(--space-2);
+  transition: filter 0.4s ease;
+}
+
+.article-image:hover img {
+  filter: grayscale(0%);
+}
+
+/* Images intercalées dans le corps de l'article */
+.article-content img.image2 {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+  margin: var(--space-2) 0 var(--space-6);
+  transition: filter 0.4s ease;
+}
+
+.article-content img.image2:hover {
+  filter: grayscale(0%);
 }
 
 .titre-sous-image {
-    text-align: center;
-    font-style: italic;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-bottom: var(--space-8);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--paper-soft);
+  margin-bottom: var(--space-8);
 }
 
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    border-radius: var(--border-radius-base);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    margin: var(--space-8) 0;
-    background-color: #000;
-}
-.video-container iframe {
-    position: absolute;
-    inset: 0; width: 100%; height: 100%; border: none;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-on-ink);
+  margin: var(--space-8) 0;
+  background-color: var(--ink);
 }
 
-/* --- 8. ENCARTS & Q&A --- */
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================================================
+   6) ENCARTS & Q&A
+   ============================================================================ */
 blockquote {
-    font-family: 'Georgia', serif;
-    font-size: 1.3rem;
-    font-style: italic;
-    background-color: var(--bg-subtle);
-    padding: var(--space-6);
-    border-left: 6px solid var(--accent-color);
-    border-radius: 4px;
-    margin: var(--space-8) 0;
-    color: var(--text-main);
+  position: relative;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  background-color: var(--paper-2);
+  padding: var(--space-6) var(--space-6) var(--space-6) var(--space-8);
+  border-left: 3px solid var(--velvet);
+  margin: var(--space-8) 0;
+  color: var(--ink);
 }
 
 .spoiler-warning {
-    background: rgba(255, 165, 0, 0.1);
-    border: 1px dashed var(--accent-color);
-    border-left: 5px solid var(--accent-color);
-    color: var(--text-main);
-    padding: var(--space-4);
-    border-radius: var(--border-radius-base);
-    margin-bottom: var(--space-6);
-    font-weight: 700;
-    text-align: center;
+  background: rgba(201, 162, 74, 0.08);
+  border: 1px dashed var(--line-on-paper-strong);
+  border-left: 3px solid var(--brass);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+  text-align: center;
 }
 
 .note-importante {
-    background: rgba(231, 76, 60, 0.1);
-    border-left: 5px solid #e74c3c;
-    color: var(--text-main);
-    padding: var(--space-4);
-    border-radius: var(--border-radius-base);
-    margin: var(--space-6) 0;
-    font-weight: 600;
+  background: rgba(184, 50, 58, 0.06);
+  border-left: 3px solid var(--velvet);
+  color: var(--ink);
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-6) 0;
+  font-weight: 600;
 }
 
 .qa .qa-block {
-    background-color: var(--bg-subtle);
-    border-radius: var(--border-radius-base);
-    box-shadow: var(--shadow-sm);
-    border-left: 4px solid var(--secondary-color);
-    padding: var(--space-5);
-    margin-bottom: var(--space-5);
+  background-color: var(--paper-2);
+  border-left: 3px solid var(--brass);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
 }
 
 .qa .question {
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--velvet);
+  margin-bottom: 0.6rem;
 }
 
-/* --- 9. TENDANCES (SIDEBAR) --- */
+.qa .question::before {
+  content: "Q — ";
+  color: var(--brass);
+}
+
+/* Listes à puces dans le corps d'article (hors sommaire) */
+.article-content ul:not(.article-toc ul) {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 var(--space-6) 0;
+}
+
+.article-content ul:not(.article-toc ul) li {
+  position: relative;
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: var(--line-height-base);
+  color: var(--ink);
+}
+
+.article-content ul:not(.article-toc ul) li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--brass);
+}
+
+/* Encart de conclusion utilisable en plein corps d'article */
+.article-content .highlight-block {
+  position: relative;
+  background-color: var(--paper-2);
+  border: 1px solid var(--line-on-paper-strong);
+  border-left: 3px solid var(--brass);
+  padding: var(--space-6);
+  margin: var(--space-10) 0 var(--space-6);
+}
+
+.article-content .highlight-block p {
+  margin-bottom: var(--space-3);
+}
+
+.article-content .highlight-block p:last-child {
+  margin-bottom: 0;
+}
+
+.article-content .highlight-block a {
+  color: var(--velvet);
+  font-weight: 600;
+  border-bottom: 1px solid var(--brass);
+}
+
+.article-content .highlight-block a:hover {
+  color: var(--brass);
+}
+
+/* ============================================================================
+   7) WIDGET "TENDANCES"
+   ----------------------------------------------------------------------------
+   Refonte en carte : bandeau encre plein cadre (au lieu d'un titre inséré
+   dans le padding du widget) + liste numérotée (compteur CSS) en laiton,
+   plus lisible qu'une simple puce.
+   ============================================================================ */
+.sidebar .widget:has(#tendances-list) {
+  padding: 0;
+  overflow: hidden;
+}
+
 .titre-tendances {
-    background-color: var(--secondary-color);
-    color: #2e3440;
-    padding: var(--space-4);
-    border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-    font-weight: 800;
-    text-align: center;
-    text-transform: uppercase;
+  background-color: var(--ink);
+  color: var(--brass-light);
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#tendances-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: tendance-counter;
 }
 
 #tendances-list li {
-    list-style: none;
-    border-bottom: 1px solid var(--border-color);
-    padding: var(--space-3) var(--space-2);
-    transition: all 0.2s;
+  counter-increment: tendance-counter;
+  position: relative;
+  border-bottom: 1px solid var(--line-on-paper);
+  padding: var(--space-3) var(--space-5) var(--space-3) calc(var(--space-5) + 30px);
+  transition: background-color 0.2s ease;
+}
+
+#tendances-list li::before {
+  content: counter(tendance-counter, decimal-leading-zero);
+  position: absolute;
+  left: var(--space-5);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+#tendances-list li:last-child {
+  border-bottom: none;
 }
 
 #tendances-list li:hover {
-    background-color: var(--bg-subtle);
-    padding-left: 15px;
+  background-color: var(--paper-2);
 }
 
 #tendances-list a {
-    text-decoration: none;
-    color: var(--text-main);
-    font-weight: 600;
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: none;
+  line-height: 1.4;
 }
 
-/* --- 10. CONCLUSION & RESPONSIVE --- */
+#tendances-list li:hover a {
+  color: var(--velvet);
+}
+
+/* ============================================================================
+   8) CONCLUSION
+   ============================================================================ */
 .conclusion {
-    background-color: var(--bg-subtle);
-    padding: var(--space-6);
-    border-left: 5px solid var(--accent-color);
-    border-radius: var(--border-radius-base);
-    margin-top: var(--space-8);
+  position: relative;
+  background-color: var(--paper-2);
+  border-left: 3px solid var(--brass);
+  padding: var(--space-6);
+  margin-top: var(--space-10);
 }
 
-@media(max-width:768px){
-    .container { flex-direction: column; }
-    .main-content { padding: 30px 20px; }
-    .sidebar { grid-template-columns: 1fr; gap: 20px; }
+.conclusion::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto var(--space-4);
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+  opacity: 0.6;
+}
+
+/* ============================================================================
+   9) RESPONSIVE
+   ============================================================================ */
+@media (max-width: 900px) {
+  .container { flex-direction: column; }
+  .sidebar { flex-direction: row; flex-wrap: wrap; }
+  .sidebar .widget { flex: 1 1 260px; }
+}
+
+@media (max-width: 768px) {
+  .main-content { padding: var(--space-6) var(--space-4); }
+  .article-title { font-size: 1.9rem; }
+  .article-content h2 { font-size: 1.6rem; }
+  .article-content h3 { font-size: 1.4rem; margin-top: 25px; }
+  .sidebar { flex-direction: column; }
+  .article-toc { padding: 15px 20px; margin-bottom: 30px; }
+  .article-toc h3 { font-size: 1.4rem; }
+}
+
+@media (max-width: 480px) {
+  .article-meta { flex-direction: column; gap: var(--space-1); }
+  blockquote { padding: var(--space-5); border-left-width: 2px; }
+  .article-content .highlight-block { padding: var(--space-5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container { animation: none; }
 }

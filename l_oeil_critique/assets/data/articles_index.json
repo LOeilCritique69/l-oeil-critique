@@ -1,5 +1,16 @@
 [
   {
+    "title": "Avengers : Doomsday – L'Avengers de trop ? Notre analyse du premier trailer",
+    "type": "Films",
+    "url": "/l_oeil_critique/articles/films/Doomsday-trailer.html",
+    "image": "/l_oeil_critique/assets/img/films/avengers_doomsday/doom-poster.jpg",
+    "date": "2026-07-21",
+    "description": "",
+    "author": "Yanis",
+    "rating": null,
+    "id": 1
+  },
+  {
     "title": "L'Œil Critique | L'Odyssée – Nolan livre son épopée la plus grande, freinée par une fin trop pressée",
     "type": "Review",
     "url": "/l_oeil_critique/articles/reviews/films/odyssey-critique.html",
@@ -8,7 +19,7 @@
     "description": "",
     "author": null,
     "rating": "4",
-    "id": 1
+    "id": 2
   },
   {
     "title": "L'Œil Critique | Evil Dead Burn – Le meilleur des trois, mais toujours prisonnier du moule",
@@ -19,7 +30,7 @@
     "description": "",
     "author": null,
     "rating": "3/5",
-    "id": 2
+    "id": 3
   },
   {
     "title": "L'Œil Critique | Disclosure Day – Spielberg dépassé par son propre sujet",
@@ -30,7 +41,7 @@
     "description": "",
     "author": null,
     "rating": "2",
-    "id": 3
+    "id": 4
   },
   {
     "title": "L'Œil Critique | Supergirl – Une bonne base héroïque, mais une normalité",
@@ -41,7 +52,7 @@
     "description": "",
     "author": null,
     "rating": "3/5",
-    "id": 4
+    "id": 5
   },
   {
     "title": "L'Œil Critique | De Gaulle : Résistance – Une fresque plus qu’un biopic",
@@ -52,7 +63,7 @@
     "description": "",
     "author": null,
     "rating": "3/5",
-    "id": 5
+    "id": 6
   },
   {
     "title": "L'Œil Critique | Obsession – Simple, efficace, et ça marque",
@@ -63,7 +74,7 @@
     "description": "",
     "author": null,
     "rating": "4/5",
-    "id": 6
+    "id": 7
   },
   {
     "title": "L'Œil Critique | Michael – Le roi sans ses ombres",
@@ -74,7 +85,7 @@
     "description": "",
     "author": null,
     "rating": "3",
-    "id": 7
+    "id": 8
   },
   {
     "title": "L'Œil Critique | Le Voyage de Chihiro – Mea culpa envers Ghibli",
@@ -85,7 +96,7 @@
     "description": "",
     "author": null,
     "rating": "4/5",
-    "id": 8
+    "id": 9
   },
   {
     "title": "L'Œil Critique | Daredevil: Born Again Saison 2 – Le Diable face au Maire",
@@ -96,7 +107,7 @@
     "description": "",
     "author": null,
     "rating": "3",
-    "id": 9
+    "id": 10
   },
   {
     "title": "L'Œil Critique | Invincible Saison 4",
@@ -107,7 +118,7 @@
     "description": "",
     "author": null,
     "rating": "3/5",
-    "id": 10
+    "id": 11
   },
   {
     "title": "Spider-Man : Brand New Day – Marvel prépare la renaissance de Peter Parker",
@@ -118,7 +129,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 11
+    "id": 12
   },
   {
     "title": "L’Œil Critique | Agents of S.H.I.E.L.D. – Plus que des héros, une famille",
@@ -129,7 +140,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 12
+    "id": 13
   },
   {
     "title": "Oscars 2026 : Une année exceptionnelle du cinéma",
@@ -140,7 +151,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 13
+    "id": 14
   },
   {
     "title": "L’Œil Critique | Man of Steel – L'aura et l'acier",
@@ -151,7 +162,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 14
+    "id": 15
   },
   {
     "title": "L’Œil Critique | Good Will Hunting – La libération par l'émotion",
@@ -162,7 +173,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 15
+    "id": 16
   },
   {
     "title": "L’Œil Critique | \"Wuthering Heights\" – La fureur des sentiments",
@@ -173,7 +184,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 16
+    "id": 17
   },
   {
     "title": "L’Œil Critique | Challengers – Le match se joue hors du court",
@@ -184,7 +195,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 17
+    "id": 18
   },
   {
     "title": "Netflix vs Paramount : la guerre historique pour Warner Bros.",
@@ -195,7 +206,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 18
+    "id": 19
   },
   {
     "title": "L’Œil Critique | Grave of the Fireflies – Une lettre d'excuse au Studio Ghibli",
@@ -206,7 +217,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 19
+    "id": 20
   },
   {
     "title": "L’Œil Critique | Whiplash ,  L’obsession comme art du sacrifice",
@@ -217,7 +228,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 20
+    "id": 21
   },
   {
     "title": "L'Œil Critique | Thunderbolts",
@@ -228,7 +239,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 21
+    "id": 22
   },
   {
     "title": "Donald Trump contre le cinéma !",
@@ -239,7 +250,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 22
+    "id": 23
   },
   {
     "title": "L'Œil Critique | Sinners, un thriller surnaturel qui captive et surprend",
@@ -250,7 +261,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 23
+    "id": 24
   },
   {
     "title": "Hunger Games 6 : Sunrise on the Reaping - Préquel sur Haymitch Abernathy",
@@ -261,7 +272,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 24
+    "id": 25
   },
   {
     "title": "Mission Impossible 8",
@@ -272,7 +283,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 25
+    "id": 26
   },
   {
     "title": "Le retour de 'Malcolm' sur Disney+",
@@ -283,7 +294,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 26
+    "id": 27
   },
   {
     "title": "Mercredi Saison 2 : Mystères et cadavres à Nevermore",
@@ -294,7 +305,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 27
+    "id": 28
   },
   {
     "title": "L'Œil Critique | Robot Sauvage, l'âme d'une machine",
@@ -305,7 +316,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 28
+    "id": 29
   },
   {
     "title": "Avengers : Doomsday - Marvel frappe fort avec un casting monumental",
@@ -316,7 +327,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 29
+    "id": 30
   },
   {
     "title": "CinemaCon 2025 : Annonces, Planning et Révélations à Attendre",
@@ -327,7 +338,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 30
+    "id": 31
   },
   {
     "title": "L'Œil Critique | Flow (2024)",
@@ -338,7 +349,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 31
+    "id": 32
   },
   {
     "title": "Mortal Combat",
@@ -349,7 +360,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 32
+    "id": 33
   },
   {
     "title": "SAW 11 annulé ?",
@@ -360,7 +371,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 33
+    "id": 34
   },
   {
     "title": "God of War : La série Amazon revient après un développement chaotique",
@@ -371,7 +382,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 34
+    "id": 35
   },
   {
     "title": "Sadie Sink Rejoint le casting de SM4 !",
@@ -382,7 +393,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 35
+    "id": 36
   },
   {
     "title": "L'Œil Critique | Daredevil: Born Again - Épisodes 1 et 2",
@@ -393,7 +404,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 36
+    "id": 37
   },
   {
     "title": "Marvel est victime d'une grosse fuite !",
@@ -404,7 +415,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 37
+    "id": 38
   },
   {
     "title": "Oscar 2025 Gagnants",
@@ -415,7 +426,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 38
+    "id": 39
   },
   {
     "title": "César 2025 : Les Gagnants révélés !",
@@ -426,7 +437,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 39
+    "id": 40
   },
   {
     "title": "RAVAGE",
@@ -437,7 +448,7 @@
     "description": "",
     "author": "L'Œil Critique",
     "rating": null,
-    "id": 40
+    "id": 41
   },
   {
     "title": "Shrek 5 trailer assez decevant !",
@@ -448,7 +459,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 41
+    "id": 42
   },
   {
     "title": "Marvel Restructuration",
@@ -459,7 +470,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 42
+    "id": 43
   },
   {
     "title": "Oscar Nominations",
@@ -470,7 +481,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 43
+    "id": 44
   },
   {
     "title": "SAG AWARDS 2025",
@@ -481,7 +492,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 44
+    "id": 45
   },
   {
     "title": "John Wick 5 : Tout ce que l’on sait sur la suite",
@@ -492,7 +503,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 45
+    "id": 46
   },
   {
     "title": "Daredevil: Born Again - Casting, Synopsis et Rumeurs",
@@ -503,7 +514,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 46
+    "id": 47
   },
   {
     "title": "Le prochain film de Spielberg sur les OVNIs repoussé !",
@@ -514,7 +525,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 47
+    "id": 48
   },
   {
     "title": "Une première image du nouveau film de Christopher Nolan, The Odyssey !",
@@ -525,7 +536,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 48
+    "id": 49
   },
   {
     "title": "L'Œil Critique | Captain America: Brave New World, un pas vers Secret Wars, mais un faux départ ?",
@@ -536,7 +547,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 49
+    "id": 50
   },
   {
     "title": "Sauron de retour dans Les Anneaux de Pouvoir Saison 3 ?",
@@ -547,7 +558,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 50
+    "id": 51
   },
   {
     "title": "Avatar 3 : Fire and Ash - Date de sortie, casting, et informations",
@@ -558,7 +569,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 51
+    "id": 52
   },
   {
     "title": "Thunderbolts : la bande-annonce dévoile un ennemi inattendu",
@@ -569,7 +580,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 52
+    "id": 53
   },
   {
     "title": "One Piece Saison 2 - Netflix",
@@ -580,7 +591,7 @@
     "description": "",
     "author": null,
     "rating": null,
-    "id": 53
+    "id": 54
   },
   {
     "title": "The Last of Us Saison 2 : Tout ce qu'il faut savoir",
@@ -591,7 +602,7 @@
     "description": "",
     "author": "[Ton Nom]",
     "rating": null,
-    "id": 54
+    "id": 55
   },
   {
     "title": "Peaky Blinders, film",
@@ -602,7 +613,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 55
+    "id": 56
   },
   {
     "title": "Jurassic World : Renaissance – Un renouveau prometteur pour la saga",
@@ -613,7 +624,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 56
+    "id": 57
   },
   {
     "title": "Les 4 Fantastiques se dévoilent dans ce premier teaser !",
@@ -624,7 +635,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 57
+    "id": 58
   },
   {
     "title": "Captain America 4 : Brave New World – Date, casting et infos",
@@ -635,7 +646,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 58
+    "id": 59
   },
   {
     "title": "L'Œil Critique | Friendly Neighborhood Spider-Man",
@@ -646,7 +657,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 59
+    "id": 60
   },
   {
     "title": "L'Œil Critique | Sonic 3",
@@ -657,7 +668,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 60
+    "id": 61
   },
   {
     "title": "Superman-le-nouveau-film-de-James-Gunn",
@@ -668,7 +679,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 61
+    "id": 62
   },
   {
     "title": "Les plus grosses annonces de Sony lors du CinemaCon",
@@ -679,7 +690,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 62
+    "id": 63
   },
   {
     "title": "bref.2 (2025) : Le grand retour français d'une série culte après 13 ans",
@@ -690,7 +701,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 63
+    "id": 64
   },
   {
     "title": "Stranger Things Saison 5 : Résumé, Casting et Ce Qu'On Attends de la Dernière Saison",
@@ -701,7 +712,7 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 64
+    "id": 65
   },
   {
     "title": "Rumeurs MCU : Q&A d'Alex Perez (Octobre) — Traduction",
@@ -712,6 +723,6 @@
     "description": "",
     "author": "Yanis",
     "rating": null,
-    "id": 65
+    "id": 66
   }
 ]
