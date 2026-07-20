@@ -11038,5 +11038,25 @@
     "video": false,
     "vote_average": 6.643,
     "vote_count": 14
+  },
+  "Passenger_2026": {
+    "adult": false,
+    "backdrop_path": "/3pDfu71mrzSuFYyIfnKEjt8z4BC.jpg",
+    "genre_ids": [
+      27,
+      53
+    ],
+    "id": 1368314,
+    "title": "Passenger",
+    "original_language": "en",
+    "original_title": "Passenger",
+    "overview": "Après s’être arrêté sur la scène d’un terrible accident sur une autoroute isolée, un jeune couple se rend compte qu’ils ne sont pas seuls. Une présence démoniaque connue sous le nom de Passager s’est jointe au voyage, transformant leur virée en van en cauchemar dont ils ne peuvent pas fuir.",
+    "popularity": 190.3619,
+    "poster_path": "/8MNddEYoreFL2S3n257uwsYiKf6.jpg",
+    "release_date": "2026-05-20",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.22,
+    "vote_count": 501
   }
 }
