@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://l-oeil-critique.netlify.app/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-21</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/A_propos.html</loc>
@@ -75,6 +75,10 @@
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/articles/films/Des-nouvelles-infos-sur-le-film-Peaky-Blinders.html</loc>
     <lastmod>2026-07-12</lastmod>
+  </url>
+  <url>
+    <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/articles/films/Doomsday-trailer.html</loc>
+    <lastmod>2026-07-21</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/articles/films/John-wick-5-ce-qu-on-sait-sur-la-suite.html</loc>
@@ -326,7 +330,7 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/news/films.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-21</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/news/series.html</loc>
