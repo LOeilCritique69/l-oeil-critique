@@ -15,30 +15,23 @@
   },
   {
     "id": 3,
-    "text": "Critique — Obsession - Simple, efficace, et ça marque.",
-    "icon": "🎬",
-    "unread": true,
-    "url": "/l_oeil_critique/articles/reviews/films/obsession-critique.html"
-  },
-  {
-    "id": 4,
-    "text": "Critique — De Gaulle : Résistance – Une fresque plus qu'un biopic.",
-    "icon": "🎬",
-    "unread": true,
-    "url": "/l_oeil_critique/articles/reviews/films/de-gaulle-resistance-critique.html"
-  },
-  {
-    "id": 5,
     "text": "Critique — Supergirl – Une bonne base héroïque, mais une normalité.",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/supergirl-critique.html"
   },
   {
-    "id": 6,
+    "id": 4,
     "text": "Critique — Disclosure Day – Spielberg dépassé par son propre sujet.",
     "icon": "🎬",
     "unread": true,
     "url": "/l_oeil_critique/articles/reviews/films/disclosure-day-critique.html"
+  },
+  {
+    "id": 5,
+    "text": "Avengers : Doomsday – L'Avengers de trop ? Notre analyse du premier trailer",
+    "icon": "📜",
+    "unread": true,
+    "url": "/l_oeil_critique/articles/films/doomsday-trailer.html"
   }
 ]

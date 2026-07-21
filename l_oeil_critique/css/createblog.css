@@ -1,79 +1,64 @@
 /* ============================================================================
-   L'ŒIL CRITIQUE — CREAATBLOG (page article + sidebar) — Refonte "Iris"
+   L'ŒIL CRITIQUE — ARTICLE + SIDEBAR — "Table Lumineuse" (variante Iris)
    ----------------------------------------------------------------------------
-   Ce fichier s'aligne sur la feuille de style globale "Iris" (motif du
-   diaphragme, palette encre / parchemin / velours / laiton, serif éditorial
-   Fraunces + sans-serif Inter + mono IBM Plex Mono pour les métadonnées).
+   Ce fichier est un COMPAGNON de chef_d_oeuvre.css (feuille globale "Iris"),
+   à charger APRÈS elle. Il ne redéclare aucun token : il consomme --ink,
+   --paper, --paper-2, --velvet, --brass, --font-display, --font-body,
+   --font-mono, --space-*, --line-on-paper, --line-on-ink, --ease-out, etc.
+   directement. Aucune police ni couleur nouvelle n'est introduite.
 
-   Il part du principe que :root d'Iris est déjà chargé (mêmes tokens que
-   le fichier global : --ink, --paper, --velvet, --brass, --font-display,
-   --font-mono, --space-*, --shadow-*, etc.). Aucun nouveau token de couleur
-   n'est introduit ici — uniquement des alias locaux pour la mise en page
-   propre à l'article.
+   Concept, inchangé : le corps de l'article est une pellicule posée sur une
+   table lumineuse (--paper), la sidebar est la chambre noire qui l'entoure
+   (--ink, comme le header/footer/hero déjà en --ink). L'accent laiton
+   (--brass) porte les marques "au crayon gras" d'un monteur qui sélectionne
+   un tirage ; l'accent velours (--velvet) reste l'accent d'attention déjà
+   utilisé sur les CTA et badges du site.
 
-   CHANGELOG (vs. ancienne version "magazine")
-   - Les anciennes variables --primary-color, --secondary-color,
-     --accent-color, --bg-body/card/subtle, --text-main/muted,
-     --border-color, --border-radius-base n'existaient dans aucun :root
-     du site : remplacées par les tokens Iris réels (--ink, --brass,
-     --velvet, --paper, --paper-2, --paper-soft, --line-on-paper, --radius).
-   - --font-family-title n'était pas déclarée : remplacée par --font-display.
-   - Le mode sombre par bascule globale (body.dark-mode) est abandonné :
-     Iris ne fonctionne pas en thème inversable, mais en zones de contraste
-     fixes (encre pour les surfaces "habillées", parchemin pour la lecture).
-     Le widget "Tendances" et les encarts profitent de cette logique.
-   - Les ombres portées généreuses (--shadow-lg partout) sont remplacées par
-     des bordures fines (--line-on-paper) : "Iris préfère la ligne au
-     relief". Les ombres ne restent qu'au survol, avec parcimonie.
-   - Le motif diaphragme (aperture-mark) est repris en filigrane derrière
-     les titres de section et en séparateur avant la conclusion.
-
-   AJOUTS (article Avengers Doomsday)
-   - .article-content h3 : sous-titres personnages, bordure gauche en
-     --velvet (remplace l'ancienne var --color-red inexistante dans Iris).
-   - .article-content img.image2 : images intercalées dans le corps de
-     l'article (même traitement grayscale/hover que .article-image).
-   - .article-content ul (hors .article-toc) : listes à puces personnalisées
-     (puce ronde en --brass) au lieu des puces par défaut du navigateur.
-   - .article-content .highlight-block : encart de conclusion, même logique
-     que .conclusion mais utilisable en plein milieu du corps d'article.
+   IMPORTANT — changement de classe :
+   Le wrapper de page passe de `.container` à `.article-layout` pour ne plus
+   entrer en collision avec l'utilitaire `.container` (centrage) déjà défini
+   dans la feuille globale et utilisé ailleurs sur le site. Mettre à jour le
+   HTML des pages d'article en conséquence :
+     <div class="article-layout">
+       <main class="main-content">…</main>
+       <aside class="sidebar">…</aside>
+     </div>
 
    SOMMAIRE
-   1. Layout principal (container, colonne article, sidebar)
-   2. Widgets de sidebar
+   1. Layout principal (article-layout, main-content, sidebar)
+   2. Widgets de sidebar (génériques)
    3. Typographie d'article (titre, méta, corps)
-   4. Titres de section (h2) + motif diaphragme
-   4bis. Sous-titres (h3) + sommaire (article-toc)
-   5. Médias (image d'illustration, images intercalées, légende, vidéo)
-   6. Encarts (citation, avertissement spoiler, note importante, Q&A, highlight-block)
-   7. Widget "Tendances"
-   8. Conclusion
-   9. Responsive
+   4. Titres de section (h2) — motif diaphragme, à l'échelle de l'article
+   5. Sous-titres (h3) + sommaire (article-toc)
+   6. Médias (illustration, images intercalées, légende, vidéo)
+   7. Encarts (citation, spoiler, note importante, Q&A, highlight-block)
+   8. Widget "Tendances"
+   9. Conclusion
+   10. Responsive
    ============================================================================ */
 
 /* ============================================================================
    1) LAYOUT PRINCIPAL
    ============================================================================ */
-.container {
+.article-layout {
   display: flex;
   gap: var(--space-8);
   max-width: 1200px;
   margin: var(--space-8) auto;
   padding: 0 var(--space-4);
   flex-grow: 1;
-  animation: article-fade-up 0.8s var(--ease-out);
+  animation: heroFadeInUp 0.9s var(--ease-out); /* keyframe déjà déclarée dans la feuille globale */
 }
 
-@keyframes article-fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
+/* La colonne article : la table lumineuse, encadrée de perforations de
+   pellicule — écho discret du motif diaphragme déjà utilisé ailleurs,
+   décliné ici en frise plutôt qu'en cercle. */
 .main-content {
+  position: relative;
   flex: 3;
   min-width: 0;
   background-color: var(--paper);
-  padding: var(--space-8);
+  padding: var(--space-8) var(--space-8) var(--space-10);
   border: 1px solid var(--line-on-paper);
   transition: border-color var(--transition-speed) ease;
 }
@@ -82,8 +67,26 @@
   border-color: var(--line-on-paper-strong);
 }
 
+.main-content::before,
+.main-content::after {
+  content: "";
+  display: block;
+  height: 8px;
+  margin: 0 calc(-1 * var(--space-8)) var(--space-6);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0 8px,
+    transparent 8px 20px
+  );
+  opacity: 0.9;
+}
+
+.main-content::after {
+  margin: var(--space-8) calc(-1 * var(--space-8)) 0;
+}
+
 /* ============================================================================
-   2) SIDEBAR & WIDGETS
+   2) SIDEBAR & WIDGETS — la chambre noire
    ============================================================================ */
 .sidebar {
   flex: 1;
@@ -97,9 +100,9 @@
 }
 
 .sidebar .widget {
-  background: var(--paper);
+  background: var(--ink-2);
   padding: var(--space-5);
-  border: 1px solid var(--line-on-paper);
+  border: 1px solid var(--line-on-ink);
   transition: border-color var(--transition-speed) ease;
 }
 
@@ -155,7 +158,7 @@
 }
 
 .article-content strong {
-  color: var(--ink);
+  color: var(--velvet);
 }
 
 .article-content em {
@@ -170,16 +173,11 @@
 }
 
 .article-content a:hover {
-  color: var(--brass);
+  color: var(--velvet-dark);
 }
 
 /* ============================================================================
-   4) TITRES DE SECTION (h2) + MOTIF DIAPHRAGME
-   ----------------------------------------------------------------------------
-   Chaque intertitre d'article reprend, en version réduite, le repère
-   d'ouverture d'objectif utilisé ailleurs sur le site (section-divider,
-   hero-section::before) — ici comme un simple ornement discret à gauche
-   du texte plutôt qu'une bordure pleine.
+   4) TITRES DE SECTION (h2) — motif diaphragme, à l'échelle de l'article
    ============================================================================ */
 .article-content h2 {
   position: relative;
@@ -190,7 +188,7 @@
   font-weight: 600;
   font-size: 2rem;
   color: var(--ink);
-  margin: var(--space-10) 0 var(--space-4);
+  margin: var(--space-12) 0 var(--space-4);
 }
 
 .article-content h2::before {
@@ -205,62 +203,83 @@
 }
 
 /* ============================================================================
-   4bis) SOUS-TITRES (h3) + SOMMAIRE (article-toc)
+   5) SOUS-TITRES (h3) + SOMMAIRE (article-toc)
    ============================================================================ */
 .article-content h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.7rem;
-  letter-spacing: 1px;
-  margin: 35px 0 10px 0;
-  padding-left: 12px;
-  border-left: 4px solid var(--velvet);
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
   color: var(--ink);
-  text-transform: uppercase;
-}
-.article-content h3 + p {
-  margin-top: 5px;
+  margin: 2.2rem 0 0.6rem;
 }
 
+.article-content h3::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: -4px;
+  height: 6px;
+  background: var(--brass);
+  opacity: 0.55;
+  transform: skewX(-8deg) rotate(-0.4deg);
+  z-index: -1;
+}
+
+.article-content h3 + p {
+  margin-top: 0.4rem;
+}
+
+/* Le sommaire devient une feuille de plan de tournage : chaque entrée porte
+   un repère "PL.01" (plan 1) en mono, comme une liste de plans à monter. */
 .article-toc {
-  border-left: 5px solid var(--velvet);
   background-color: var(--paper-2);
-  padding: 20px 25px;
-  margin-bottom: 40px;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  border: 1px solid var(--line-on-paper);
+  border-left: 4px solid var(--velvet);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
 .article-toc h3 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-size: 1.6rem;
-  margin: 0 0 15px;
-  padding-left: 0;
-  border-left: none;
   color: var(--velvet);
-  letter-spacing: 1px;
+  margin: 0 0 var(--space-4);
+}
+
+.article-toc h3::after {
+  content: none;
 }
 
 .article-toc ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
+  counter-reset: plan-counter;
 }
 
 .article-toc ul li {
-  margin-bottom: 8px;
+  counter-increment: plan-counter;
   position: relative;
-  padding-left: 15px;
+  padding-left: 3.4rem;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-body);
+  color: var(--ink);
 }
 
 .article-toc ul li::before {
-  content: "•";
-  color: var(--velvet);
+  content: "PL." counter(plan-counter, decimal-leading-zero);
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 1.2rem;
-  line-height: 1;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--paper-soft);
 }
 
 .article-toc ul li a {
@@ -268,25 +287,31 @@
   border-bottom: none;
   color: var(--ink);
   font-weight: 500;
-  transition: all 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-block;
 }
 
 .article-toc ul li a:hover {
   color: var(--velvet);
-  transform: translateX(5px);
-  display: inline-block;
+  transform: translateX(4px);
 }
 
 /* ============================================================================
-   5) MÉDIAS
+   6) MÉDIAS
    ============================================================================ */
+.article-image {
+  background: var(--paper-2);
+  padding: var(--space-2);
+  border: 1px solid var(--line-on-paper);
+}
+
 .article-image img {
+  display: block;
   width: 100%;
   height: auto;
   max-height: 550px;
   object-fit: cover;
   filter: grayscale(15%) contrast(1.05);
-  margin-bottom: var(--space-2);
   transition: filter 0.4s ease;
 }
 
@@ -294,14 +319,17 @@
   filter: grayscale(0%);
 }
 
-/* Images intercalées dans le corps de l'article */
 .article-content img.image2 {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
   filter: grayscale(15%) contrast(1.05);
-  margin: var(--space-2) 0 var(--space-6);
+  margin: var(--space-2) 0;
+  border: 1px solid var(--line-on-paper);
+  padding: var(--space-2);
+  background: var(--paper-2);
+  box-sizing: border-box;
   transition: filter 0.4s ease;
 }
 
@@ -315,7 +343,7 @@
   font-style: italic;
   font-size: 0.82rem;
   color: var(--paper-soft);
-  margin-bottom: var(--space-8);
+  margin: var(--space-2) 0 var(--space-8);
 }
 
 .video-container {
@@ -337,9 +365,11 @@
 }
 
 /* ============================================================================
-   6) ENCARTS & Q&A
+   7) ENCARTS & Q&A
    ============================================================================ */
-blockquote {
+/* Citation : une note de marge, légèrement inclinée, épinglée au laiton
+   comme sur le bord d'une planche-contact. */
+.article-content blockquote {
   position: relative;
   font-family: var(--font-display);
   font-style: italic;
@@ -347,8 +377,20 @@ blockquote {
   background-color: var(--paper-2);
   padding: var(--space-6) var(--space-6) var(--space-6) var(--space-8);
   border-left: 3px solid var(--velvet);
-  margin: var(--space-8) 0;
+  margin: var(--space-8) var(--space-2);
   color: var(--ink);
+  transform: rotate(-0.35deg);
+}
+
+.article-content blockquote::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 24px;
+  width: 26px;
+  height: 12px;
+  background: rgba(201, 162, 74, 0.55); /* --brass en transparence */
+  transform: rotate(-4deg);
 }
 
 .spoiler-warning {
@@ -395,7 +437,8 @@ blockquote {
   color: var(--brass);
 }
 
-/* Listes à puces dans le corps d'article (hors sommaire) */
+/* Listes du corps d'article (hors sommaire) : un trait au crayon gras
+   plutôt qu'une puce neutre. */
 .article-content ul:not(.article-toc ul) {
   list-style: none;
   padding-left: 0;
@@ -404,7 +447,7 @@ blockquote {
 
 .article-content ul:not(.article-toc ul) li {
   position: relative;
-  padding-left: var(--space-5);
+  padding-left: var(--space-6);
   margin-bottom: var(--space-3);
   font-family: var(--font-body);
   font-size: 1.1rem;
@@ -416,25 +459,32 @@ blockquote {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.6em;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+  top: 0.7em;
+  width: 16px;
+  height: 4px;
   background-color: var(--brass);
+  transform: skewX(-15deg);
 }
 
-/* Encart de conclusion utilisable en plein corps d'article */
 .article-content .highlight-block {
   position: relative;
   background-color: var(--paper-2);
-  border: 1px solid var(--line-on-paper-strong);
-  border-left: 3px solid var(--brass);
+  border: 2px solid var(--brass);
   padding: var(--space-6);
-  margin: var(--space-10) 0 var(--space-6);
+  margin: var(--space-10) var(--space-2) var(--space-6);
 }
 
-.article-content .highlight-block p {
-  margin-bottom: var(--space-3);
+.article-content .highlight-block::before {
+  content: "À RETENIR";
+  position: absolute;
+  top: -0.7em;
+  left: var(--space-5);
+  background: var(--paper);
+  padding: 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--velvet);
 }
 
 .article-content .highlight-block p:last-child {
@@ -448,15 +498,11 @@ blockquote {
 }
 
 .article-content .highlight-block a:hover {
-  color: var(--brass);
+  color: var(--velvet-dark);
 }
 
 /* ============================================================================
-   7) WIDGET "TENDANCES"
-   ----------------------------------------------------------------------------
-   Refonte en carte : bandeau encre plein cadre (au lieu d'un titre inséré
-   dans le padding du widget) + liste numérotée (compteur CSS) en laiton,
-   plus lisible qu'une simple puce.
+   8) WIDGET "TENDANCES" — marques au crayon gras
    ============================================================================ */
 .sidebar .widget:has(#tendances-list) {
   padding: 0;
@@ -464,8 +510,8 @@ blockquote {
 }
 
 .titre-tendances {
-  background-color: var(--ink);
-  color: var(--brass-light);
+  background-color: var(--velvet);
+  color: var(--paper);
   padding: var(--space-4) var(--space-5);
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -480,27 +526,11 @@ blockquote {
   list-style: none;
   margin: 0;
   padding: 0;
-  counter-reset: tendance-counter;
 }
 
 #tendances-list li {
-  counter-increment: tendance-counter;
-  position: relative;
-  border-bottom: 1px solid var(--line-on-paper);
-  padding: var(--space-3) var(--space-5) var(--space-3) calc(var(--space-5) + 30px);
+  border-bottom: 1px solid var(--line-on-ink);
   transition: background-color 0.2s ease;
-}
-
-#tendances-list li::before {
-  content: counter(tendance-counter, decimal-leading-zero);
-  position: absolute;
-  left: var(--space-5);
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--brass);
 }
 
 #tendances-list li:last-child {
@@ -508,72 +538,107 @@ blockquote {
 }
 
 #tendances-list li:hover {
-  background-color: var(--paper-2);
+  background-color: rgba(201, 162, 74, 0.08);
 }
 
+/* Le lien porte la miniature + le titre côte à côte. La miniature est
+   "entourée" au crayon gras — même geste que le monteur qui cercle le
+   tirage qu'il retient sur une planche-contact, mais appliqué à l'image
+   elle-même plutôt qu'à une puce à part. */
 #tendances-list a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--paper);
   text-decoration: none;
   border-bottom: none;
   line-height: 1.4;
 }
 
+#tendances-list a img {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border: 2px solid var(--brass);
+  border-radius: 48% 52% 51% 49% / 52% 48% 53% 47%;
+  filter: grayscale(20%) contrast(1.05);
+  transition: filter 0.3s ease;
+}
+
+#tendances-list li:hover a img {
+  filter: grayscale(0%);
+}
+
 #tendances-list li:hover a {
-  color: var(--velvet);
+  color: var(--brass-light);
 }
 
 /* ============================================================================
-   8) CONCLUSION
+   9) CONCLUSION
    ============================================================================ */
 .conclusion {
   position: relative;
   background-color: var(--paper-2);
-  border-left: 3px solid var(--brass);
-  padding: var(--space-6);
+  border: 1px solid var(--line-on-paper);
+  padding: var(--space-8) var(--space-6) var(--space-6);
   margin-top: var(--space-10);
 }
 
 .conclusion::before {
   content: "";
+  position: absolute;
+  top: -14px;
+  left: 32px;
+  width: 54px;
+  height: 22px;
+  background: rgba(201, 162, 74, 0.5);
+  transform: rotate(-3deg);
+}
+
+.conclusion::after {
+  content: "";
   display: block;
-  width: 44px;
-  height: 44px;
-  margin: 0 auto var(--space-4);
-  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
-  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
-          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
-  opacity: 0.6;
+  height: 8px;
+  margin: 0 calc(-1 * var(--space-6)) var(--space-5);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--velvet-dark) 0 6px,
+    transparent 6px 16px
+  );
+  opacity: 0.35;
 }
 
 /* ============================================================================
-   9) RESPONSIVE
+   10) RESPONSIVE
    ============================================================================ */
 @media (max-width: 900px) {
-  .container { flex-direction: column; }
-  .sidebar { flex-direction: row; flex-wrap: wrap; }
+  .article-layout { flex-direction: column; }
+  .sidebar { flex-direction: row; flex-wrap: wrap; position: static; }
   .sidebar .widget { flex: 1 1 260px; }
 }
 
 @media (max-width: 768px) {
-  .main-content { padding: var(--space-6) var(--space-4); }
+  .main-content { padding: var(--space-6) var(--space-5) var(--space-8); }
+  .main-content::before,
+  .main-content::after { margin-left: calc(-1 * var(--space-5)); margin-right: calc(-1 * var(--space-5)); }
   .article-title { font-size: 1.9rem; }
   .article-content h2 { font-size: 1.6rem; }
-  .article-content h3 { font-size: 1.4rem; margin-top: 25px; }
+  .article-content h3 { font-size: 1.4rem; }
   .sidebar { flex-direction: column; }
-  .article-toc { padding: 15px 20px; margin-bottom: 30px; }
-  .article-toc h3 { font-size: 1.4rem; }
+  .article-toc { padding: var(--space-4) var(--space-5); margin-bottom: var(--space-6); }
 }
 
 @media (max-width: 480px) {
   .article-meta { flex-direction: column; gap: var(--space-1); }
-  blockquote { padding: var(--space-5); border-left-width: 2px; }
+  .article-content blockquote { padding: var(--space-5); border-left-width: 2px; transform: none; }
   .article-content .highlight-block { padding: var(--space-5); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .container { animation: none; }
+  .article-layout { animation: none; }
 }
