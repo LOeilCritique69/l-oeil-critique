@@ -2,9 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-Script d'automatisation pour récupérer les bandes-annonces depuis CineHorizons et TMDb,
+Script d'automatisation pour récupérer les bandes-annonces depuis CineHorizons, TMDb et Allociné,
 les fusionner dans un bloc HTML standardisé, puis pousser automatiquement sur GitHub.
-Logs détaillés ajoutés pour suivi complet.
+
+v2 : le script explore désormais PLUSIEURS PAGES par source (au lieu de se limiter aux 3
+premiers films) et s'arrête automatiquement dès qu'il retombe sur des films déjà connus,
+afin de ne rater aucune nouvelle bande-annonce sans pour autant re-scraper tout l'historique
+à chaque exécution. Ajout d'une 3e source : Allociné.
+
+Logs détaillés conservés pour suivi complet.
 """
 
 import os
@@ -14,7 +20,7 @@ import logging
 import subprocess
 from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
 from urllib.parse import urljoin
 from contextlib import contextmanager
 
@@ -33,14 +39,22 @@ LOG_FILE = SCRIPT_DIR / "bande_annonces_log.json"
 OUTPUT_FILE = ROOT_DIR / "bande_annonces_blocs.html"
 
 LIST_CINE_URL = "https://www.cinehorizons.net/bandes-annonces-prochains-films"
+LIST_ALLOCINE_URL = "https://www.allocine.fr/video/bandes-annonces/plus-recentes/"
 
 TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa"
-TMDB_UPCOMING_URL = "https://api.themoviedb.org/3/movie/upcoming"
+TMDB_BASE_URL = "https://api.themoviedb.org/3"
+# Plusieurs listes TMDb interrogées pour élargir la base (au lieu du seul "upcoming")
+TMDB_ENDPOINTS = ["upcoming", "now_playing"]
 
-MAX_BANDES_CINE = 3
-MAX_BANDES_TMDB = 3
 MAX_SYNOPSIS_LEN = 500
 MAX_CARDS_FILE = 100
+
+# --- Garde-fous anti-boucle infinie / anti-surcharge des sites ---
+# (le script s'arrête AVANT ces limites dès qu'une page ne contient plus de nouveauté ;
+# ces valeurs ne servent qu'à protéger un premier run sur un log vide)
+MAX_PAGES_CINE = 15        # 12 films/page environ -> jusqu'à ~180 films explorés si besoin
+MAX_PAGES_ALLOCINE = 15    # 25 films/page environ -> jusqu'à ~375 films explorés si besoin
+MAX_PAGES_TMDB = 5         # 20 films/page -> jusqu'à 100 films par endpoint
 
 REQUEST_TIMEOUT = 10
 PAGE_TIMEOUT = 15000
@@ -64,13 +78,11 @@ logger = logging.getLogger(__name__)
 # ------------------------------
 
 def clean_text(text: str) -> str:
-    logger.debug("Nettoyage du texte...")
     if not text:
         return ""
     return ' '.join(text.strip().split())
 
 def summarize_synopsis(synopsis: str, max_len: int = MAX_SYNOPSIS_LEN) -> str:
-    logger.debug("Résumé du synopsis...")
     synopsis = clean_text(synopsis)
     if len(synopsis) <= max_len:
         return synopsis
@@ -159,23 +171,36 @@ def extract_cinehorizons_detail(page, detail_url, titre):
     iframe_html = f'<iframe width="560" height="315" src="{iframe["src"]}" frameborder="0" allowfullscreen></iframe>' if iframe and iframe.get("src") else ""
     return {"date_sortie": date_sortie, "synopsis": synopsis, "iframe_html": iframe_html}
 
-def scrape_cinehorizons(log):
+def scrape_cinehorizons(log, page) -> Tuple[List[str], List[str]]:
+    """
+    Parcourt les pages de la liste CineHorizons (triée par date d'ajout décroissante).
+    S'arrête dès qu'une page entière ne contient plus aucun film inconnu du log,
+    ou après MAX_PAGES_CINE pages par sécurité.
+    """
     logger.info("Démarrage scraping CineHorizons...")
     articles, ids = [], []
     date_ajout = datetime.now().strftime("%d %B %Y")
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto(LIST_CINE_URL)
-        logger.info(f"Page CineHorizons chargée: {LIST_CINE_URL}")
-        soup = BeautifulSoup(page.content(), "html.parser")
-        blocs = soup.select(".view-content .views-row")[:MAX_BANDES_CINE]
-        logger.info(f"{len(blocs)} blocs détectés (limite {MAX_BANDES_CINE})")
+    for page_index in range(MAX_PAGES_CINE):
+        list_url = LIST_CINE_URL if page_index == 0 else f"{LIST_CINE_URL}?page={page_index}"
+        try:
+            page.goto(list_url, timeout=PAGE_TIMEOUT)
+        except Exception as e:
+            logger.warning(f"Erreur chargement page liste CineHorizons ({list_url}): {e}")
+            break
 
+        logger.info(f"Page CineHorizons chargée: {list_url}")
+        soup = BeautifulSoup(page.content(), "html.parser")
+        blocs = soup.select(".view-content .views-row")
+        if not blocs:
+            logger.info("Plus aucun bloc trouvé, fin de pagination CineHorizons")
+            break
+        logger.info(f"{len(blocs)} blocs détectés sur la page {page_index + 1}")
+
+        nouveaux_sur_cette_page = 0
         for bloc in blocs:
             link = bloc.select_one('h3[itemprop="name"] a[href]')
-            if not link: 
+            if not link:
                 logger.debug("Bloc sans lien trouvé, ignoré")
                 continue
             titre = clean_text(link.text)
@@ -191,9 +216,118 @@ def scrape_cinehorizons(log):
             article_html = generate_article_html(titre, details["date_sortie"], details["synopsis"], details["iframe_html"], date_ajout, True)
             articles.append(article_html)
             ids.append(identifiant)
+            nouveaux_sur_cette_page += 1
             logger.info(f"Article ajouté CineHorizons: {titre}")
-        browser.close()
-        logger.info("Scraping CineHorizons terminé")
+
+        if nouveaux_sur_cette_page == 0:
+            logger.info("Aucune nouveauté sur cette page, on arrête la pagination CineHorizons")
+            break
+
+    logger.info("Scraping CineHorizons terminé")
+    return articles, ids
+
+# ------------------------------
+# SCRAPER ALLOCINÉ
+# ------------------------------
+
+ALLOCINE_LINK_RE = re.compile(r"player_gen_cmedia=(\d+)&cfilm=(\d+)")
+
+def extract_allocine_detail(page, cfilm, cmedia):
+    """
+    Va chercher le titre propre, le synopsis et la date de sortie sur la fiche film,
+    puis construit l'iframe du lecteur Allociné (player.allocine.fr).
+    """
+    detail_url = f"https://www.allocine.fr/film/fichefilm_gen_cfilm={cfilm}.html"
+    try:
+        page.goto(detail_url, timeout=PAGE_TIMEOUT)
+        page.wait_for_selector('meta[property="og:title"]', timeout=8000, state="attached")
+    except Exception as e:
+        logger.warning(f"Erreur chargement fiche Allociné cfilm={cfilm}: {e}")
+        return None
+
+    detail = BeautifulSoup(page.content(), "html.parser")
+
+    titre_tag = detail.select_one('meta[property="og:title"]')
+    titre = clean_text(titre_tag["content"]) if titre_tag and titre_tag.get("content") else None
+    if not titre:
+        logger.warning(f"Titre introuvable pour cfilm={cfilm}, ignoré")
+        return None
+
+    desc_tag = detail.select_one('meta[property="og:description"]')
+    synopsis = summarize_synopsis(desc_tag["content"]) if desc_tag and desc_tag.get("content") else "Pas de synopsis"
+
+    # La date de sortie apparaît en texte libre du type "15 juillet 2026 en salle"
+    date_match = re.search(r"(\d{1,2}\s+[A-Za-zéûîôâ]+\s+\d{4})\s+en\s+salle", detail.get_text(" ", strip=True))
+    date_sortie = clean_text(date_match.group(1)) if date_match else "Date inconnue"
+
+    iframe_html = (
+        f'<iframe width="560" height="315" src="https://player.allocine.fr/{cmedia}.html" '
+        f'frameborder="0" allowfullscreen></iframe>'
+    )
+    return {"titre": titre, "date_sortie": date_sortie, "synopsis": synopsis, "iframe_html": iframe_html}
+
+def scrape_allocine(log, page) -> Tuple[List[str], List[str]]:
+    """
+    Parcourt les pages "Les plus récentes" d'Allociné (triées par date d'ajout décroissante).
+    S'arrête dès qu'une page entière ne contient plus aucune vidéo inconnue du log,
+    ou après MAX_PAGES_ALLOCINE pages par sécurité.
+    """
+    logger.info("Démarrage scraping Allociné...")
+    articles, ids = [], []
+    date_ajout = datetime.now().strftime("%d %B %Y")
+
+    for page_index in range(1, MAX_PAGES_ALLOCINE + 1):
+        list_url = LIST_ALLOCINE_URL if page_index == 1 else f"{LIST_ALLOCINE_URL}?page={page_index}"
+        try:
+            page.goto(list_url, timeout=PAGE_TIMEOUT)
+            page.wait_for_selector('a[href*="player_gen_cmedia"]', timeout=8000)
+        except Exception as e:
+            logger.warning(f"Erreur chargement page liste Allociné ({list_url}): {e}")
+            break
+
+        logger.info(f"Page Allociné chargée: {list_url}")
+        soup = BeautifulSoup(page.content(), "html.parser")
+        liens = soup.select('a[href*="player_gen_cmedia"]')
+        if not liens:
+            logger.info("Plus aucune vidéo trouvée, fin de pagination Allociné")
+            break
+
+        # dédoublonnage des (cmedia, cfilm) rencontrés sur la page (même vidéo peut être liée 2x : image + titre)
+        vus_sur_page = set()
+        nouveaux_sur_cette_page = 0
+
+        for lien in liens:
+            match = ALLOCINE_LINK_RE.search(lien.get("href", ""))
+            if not match:
+                continue
+            cmedia, cfilm = match.group(1), match.group(2)
+            if (cmedia, cfilm) in vus_sur_page:
+                continue
+            vus_sur_page.add((cmedia, cfilm))
+
+            identifiant = f"allocine::{cfilm}::{cmedia}"
+            if identifiant in log:
+                logger.debug(f"cfilm={cfilm}/cmedia={cmedia} déjà présent dans le log, ignoré")
+                continue
+
+            details = extract_allocine_detail(page, cfilm, cmedia)
+            if not details:
+                continue
+
+            article_html = generate_article_html(
+                details["titre"], details["date_sortie"], details["synopsis"],
+                details["iframe_html"], date_ajout, True
+            )
+            articles.append(article_html)
+            ids.append(identifiant)
+            nouveaux_sur_cette_page += 1
+            logger.info(f"Article ajouté Allociné: {details['titre']}")
+
+        if nouveaux_sur_cette_page == 0:
+            logger.info("Aucune nouveauté sur cette page, on arrête la pagination Allociné")
+            break
+
+    logger.info("Scraping Allociné terminé")
     return articles, ids
 
 # ------------------------------
@@ -203,40 +337,80 @@ def scrape_cinehorizons(log):
 def fetch_tmdb_trailer(session, movie_id):
     logger.debug(f"Récupération trailer TMDb film ID={movie_id}")
     try:
-        r = session.get(f"https://api.themoviedb.org/3/movie/{movie_id}/videos", params={"api_key": TMDB_API_KEY,"language":"fr-FR"})
+        r = session.get(
+            f"{TMDB_BASE_URL}/movie/{movie_id}/videos",
+            params={"api_key": TMDB_API_KEY, "language": "fr-FR"},
+            timeout=REQUEST_TIMEOUT,
+        )
         videos = r.json().get("results", [])
-        trailer = next((v for v in videos if v.get("type")=="Trailer" and v.get("site")=="YouTube"), None)
+        trailer = next((v for v in videos if v.get("type") == "Trailer" and v.get("site") == "YouTube"), None)
+        if not trailer:
+            # à défaut de bande-annonce FR, on retente en VO
+            r = session.get(
+                f"{TMDB_BASE_URL}/movie/{movie_id}/videos",
+                params={"api_key": TMDB_API_KEY},
+                timeout=REQUEST_TIMEOUT,
+            )
+            videos = r.json().get("results", [])
+            trailer = next((v for v in videos if v.get("type") == "Trailer" and v.get("site") == "YouTube"), None)
         return trailer.get("key") if trailer else None
     except Exception as e:
         logger.warning(f"Erreur récupération trailer TMDb: {e}")
         return None
 
-def scrape_tmdb(log):
+def scrape_tmdb(log) -> Tuple[List[str], List[str]]:
+    """
+    Interroge plusieurs listes TMDb (upcoming, now_playing) sur plusieurs pages.
+    Le dédoublonnage se fait désormais sur l'ID TMDb du film (et non plus sur
+    l'ID de la vidéo YouTube), pour éviter qu'un même film ne soit réintroduit
+    plusieurs fois simplement parce qu'une bande-annonce différente est remontée.
+    """
     logger.info("Démarrage scraping TMDb...")
     articles, ids = [], []
     date_ajout = datetime.now().strftime("%d %B %Y")
+
     with get_requests_session() as session:
-        r = session.get(TMDB_UPCOMING_URL, params={"api_key": TMDB_API_KEY, "language":"fr-FR","region":"FR"})
-        movies = r.json().get("results", [])
-        logger.info(f"{len(movies)} films récupérés depuis TMDb")
-        for movie in movies[:MAX_BANDES_TMDB*2]:
-            if len(articles)>=MAX_BANDES_TMDB: break
-            titre = movie.get("title")
-            movie_id = movie.get("id")
-            video_id = fetch_tmdb_trailer(session, movie_id)
-            if not video_id:
-                logger.debug(f"{titre} sans trailer, ignoré")
-                continue
-            identifiant = f"tmdb::{titre}::{video_id}"
-            if identifiant in log:
-                logger.debug(f"{titre} déjà dans le log, ignoré")
-                continue
-            iframe_html = f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>'
-            synopsis = summarize_synopsis(movie.get("overview",""))
-            article_html = generate_article_html(titre, format_date(movie.get("release_date")), synopsis, iframe_html, date_ajout, True)
-            articles.append(article_html)
-            ids.append(identifiant)
-            logger.info(f"Article ajouté TMDb: {titre}")
+        for endpoint in TMDB_ENDPOINTS:
+            for page_num in range(1, MAX_PAGES_TMDB + 1):
+                try:
+                    r = session.get(
+                        f"{TMDB_BASE_URL}/movie/{endpoint}",
+                        params={"api_key": TMDB_API_KEY, "language": "fr-FR", "region": "FR", "page": page_num},
+                        timeout=REQUEST_TIMEOUT,
+                    )
+                    data = r.json()
+                except Exception as e:
+                    logger.warning(f"Erreur requête TMDb ({endpoint}, page {page_num}): {e}")
+                    break
+
+                movies = data.get("results", [])
+                total_pages = data.get("total_pages", 1)
+                if not movies:
+                    logger.info(f"TMDb {endpoint} page {page_num}: aucun film, arrêt de cet endpoint")
+                    break
+                logger.info(f"{len(movies)} films récupérés depuis TMDb ({endpoint}, page {page_num}/{total_pages})")
+
+                for movie in movies:
+                    titre = movie.get("title")
+                    movie_id = movie.get("id")
+                    identifiant = f"tmdb::id::{movie_id}"
+                    if identifiant in log:
+                        logger.debug(f"{titre} (id={movie_id}) déjà dans le log, ignoré")
+                        continue
+                    video_id = fetch_tmdb_trailer(session, movie_id)
+                    if not video_id:
+                        logger.debug(f"{titre} sans trailer, ignoré")
+                        continue
+                    iframe_html = f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>'
+                    synopsis = summarize_synopsis(movie.get("overview", ""))
+                    article_html = generate_article_html(titre, format_date(movie.get("release_date")), synopsis, iframe_html, date_ajout, True)
+                    articles.append(article_html)
+                    ids.append(identifiant)
+                    logger.info(f"Article ajouté TMDb ({endpoint}): {titre}")
+
+                if page_num >= total_pages:
+                    break
+
     logger.info("Scraping TMDb terminé")
     return articles, ids
 
@@ -262,20 +436,17 @@ def push_to_github():
     try:
         repo_root = SCRIPT_DIR.parent.parent
         os.chdir(repo_root)
-        
-        # Prépare les fichiers
+
         subprocess.run(["git", "add", "."], check=True)
-        
-        # Commit (on ignore l'erreur si rien n'a changé avec un try/except local ou en vérifiant le status)
+
         try:
             subprocess.run(["git", "commit", "-m", "MAJ automatique bandes annonces"], check=True)
         except subprocess.CalledProcessError:
             logger.info("Rien à commiter, le répertoire est propre.")
             return True
 
-        # LE PUSH FORCÉ : On ajoute "-f"
         subprocess.run(["git", "push", "-f", "origin", "main"], check=True)
-        
+
         logger.info("Push GitHub FORCE réussi")
         return True
     except Exception as e:
@@ -289,11 +460,24 @@ def push_to_github():
 def main():
     logger.info("==== Début du script bandes-annonces ====")
     log = load_log()
-    cine_articles, cine_ids = scrape_cinehorizons(log)
+
+    cine_articles, cine_ids = [], []
+    allocine_articles, allocine_ids = [], []
+
+    # Un seul navigateur Playwright partagé pour CineHorizons + Allociné
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+
+        cine_articles, cine_ids = scrape_cinehorizons(log, page)
+        allocine_articles, allocine_ids = scrape_allocine(log, page)
+
+        browser.close()
+
     tmdb_articles, tmdb_ids = scrape_tmdb(log)
 
-    nouveaux_articles = cine_articles + tmdb_articles
-    nouveaux_ids = cine_ids + tmdb_ids
+    nouveaux_articles = cine_articles + allocine_articles + tmdb_articles
+    nouveaux_ids = cine_ids + allocine_ids + tmdb_ids
     logger.info(f"{len(nouveaux_articles)} nouveaux articles détectés")
 
     if not nouveaux_articles:
@@ -308,7 +492,7 @@ def main():
     articles_finaux = []
 
     for i, article in enumerate(all_articles):
-        if i>=6: 
+        if i >= 6:
             article = remove_badge_from_article(article)
         articles_finaux.append(article)
 

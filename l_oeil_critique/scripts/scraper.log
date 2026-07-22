@@ -7011,3 +7011,552 @@ Call log:
 2026-07-22 10:28:44,521 [INFO] Scraping TMDb terminé
 2026-07-22 10:28:44,522 [INFO] 0 nouveaux articles détectés
 2026-07-22 10:28:44,523 [INFO] Aucun nouvel article à ajouter
+2026-07-22 12:51:31,200 [INFO] ==== Début du script bandes-annonces ====
+2026-07-22 12:51:31,200 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-22 12:51:31,221 [INFO] 265 identifiants chargés depuis le log
+2026-07-22 12:51:37,164 [INFO] Démarrage scraping CineHorizons...
+2026-07-22 12:51:40,753 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-22 12:51:40,774 [INFO] 10 blocs détectés sur la page 1
+2026-07-22 12:51:40,776 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-22 12:51:40,776 [INFO] Scraping CineHorizons terminé
+2026-07-22 12:51:40,776 [INFO] Démarrage scraping Allociné...
+2026-07-22 12:51:41,073 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-22 12:51:49,298 [WARNING] Erreur chargement fiche Allociné cfilm=1000037046: Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("meta[property=\"og:title\"]") to be visible
+    20 × locator resolved to hidden <meta property="og:title" content="De la Comédie-Française"/>
+
+2026-07-22 12:51:57,716 [WARNING] Erreur chargement fiche Allociné cfilm=1000030390: Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("meta[property=\"og:title\"]") to be visible
+    21 × locator resolved to hidden <meta property="og:title" content="Microstar"/>
+
+2026-07-22 12:52:05,929 [WARNING] Erreur chargement fiche Allociné cfilm=328440: Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("meta[property=\"og:title\"]") to be visible
+    21 × locator resolved to hidden <meta property="og:title" content="Nightborn"/>
+
+2026-07-22 12:52:07,543 [WARNING] Interruption utilisateur
+2026-07-22 12:52:07,550 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-07-22 12:52:54,074 [INFO] ==== Début du script bandes-annonces ====
+2026-07-22 12:52:54,074 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-22 12:52:54,075 [INFO] 265 identifiants chargés depuis le log
+2026-07-22 12:52:54,517 [INFO] Démarrage scraping CineHorizons...
+2026-07-22 12:52:55,292 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-22 12:52:55,308 [INFO] 10 blocs détectés sur la page 1
+2026-07-22 12:52:55,309 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-22 12:52:55,310 [INFO] Scraping CineHorizons terminé
+2026-07-22 12:52:55,310 [INFO] Démarrage scraping Allociné...
+2026-07-22 12:52:56,284 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-22 12:52:56,785 [INFO] Article ajouté Allociné: De la Comédie-Française
+2026-07-22 12:52:57,032 [INFO] Article ajouté Allociné: Microstar
+2026-07-22 12:52:57,277 [INFO] Article ajouté Allociné: Nightborn
+2026-07-22 12:52:57,506 [INFO] Article ajouté Allociné: Les Vacances de Golo & Ritchie
+2026-07-22 12:52:57,756 [INFO] Article ajouté Allociné: La Dernière séance
+2026-07-22 12:52:58,014 [INFO] Article ajouté Allociné: La Fille dans les nuages
+2026-07-22 12:52:58,260 [INFO] Article ajouté Allociné: L'Odyssée
+2026-07-22 12:52:58,510 [INFO] Article ajouté Allociné: Kayara, Princesse inca
+2026-07-22 12:52:58,764 [INFO] Article ajouté Allociné: La Bataille de Gaulle - Partie 2 : J’écris ton nom
+2026-07-22 12:52:59,011 [INFO] Article ajouté Allociné: Le Passage
+2026-07-22 12:52:59,251 [INFO] Article ajouté Allociné: Hanami
+2026-07-22 12:52:59,487 [INFO] Article ajouté Allociné: André Is An Idiot
+2026-07-22 12:52:59,744 [INFO] Article ajouté Allociné: L'Aventure rêvée
+2026-07-22 12:52:59,959 [INFO] Article ajouté Allociné: Les Madeleines
+2026-07-22 12:53:00,215 [INFO] Article ajouté Allociné: The Last Viking
+2026-07-22 12:53:00,454 [INFO] Article ajouté Allociné: Cap Farewell
+2026-07-22 12:53:00,688 [INFO] Article ajouté Allociné: Dry Leaf
+2026-07-22 12:53:00,935 [INFO] Article ajouté Allociné: Vaiana, la légende du bout du monde
+2026-07-22 12:53:01,206 [INFO] Article ajouté Allociné: L’Écologie des sentiments
+2026-07-22 12:53:01,453 [INFO] Article ajouté Allociné: Le Héros de Berlin
+2026-07-22 12:53:01,689 [INFO] Article ajouté Allociné: Ghost Elephants
+2026-07-22 12:53:01,924 [INFO] Article ajouté Allociné: Permis de détruire
+2026-07-22 12:53:02,146 [INFO] Article ajouté Allociné: My Summer With Irene
+2026-07-22 12:53:02,368 [INFO] Article ajouté Allociné: Anesthesia
+2026-07-22 12:53:02,616 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:53:04,546 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-07-22 12:53:04,992 [INFO] Article ajouté Allociné: Le Dernier vrai samouraï
+2026-07-22 12:53:05,442 [INFO] Article ajouté Allociné: La Chaleur
+2026-07-22 12:53:05,782 [INFO] Article ajouté Allociné: Enfants de Palestine – Deux histoires de Cisjordanie
+2026-07-22 12:53:07,100 [INFO] Article ajouté Allociné: Nos victoires fragiles
+2026-07-22 12:53:07,352 [INFO] Article ajouté Allociné: Le premier rôle
+2026-07-22 12:53:07,589 [INFO] Article ajouté Allociné: Blue Heron
+2026-07-22 12:53:07,800 [INFO] Article ajouté Allociné: Soleils Atikamekw
+2026-07-22 12:53:08,042 [INFO] Article ajouté Allociné: Maspalomas
+2026-07-22 12:53:08,317 [INFO] Article ajouté Allociné: Backrooms
+2026-07-22 12:53:08,594 [INFO] Article ajouté Allociné: In Waves
+2026-07-22 12:53:08,838 [INFO] Article ajouté Allociné: Seule la vie
+2026-07-22 12:53:09,065 [INFO] Article ajouté Allociné: Le Berger et les ours
+2026-07-22 12:53:09,304 [INFO] Article ajouté Allociné: The Fin
+2026-07-22 12:53:09,559 [INFO] Article ajouté Allociné: The Christophers
+2026-07-22 12:53:09,788 [INFO] Article ajouté Allociné: Notre histoire - Chroniques du Caire
+2026-07-22 12:53:10,026 [INFO] Article ajouté Allociné: Gorgonà
+2026-07-22 12:53:10,275 [INFO] Article ajouté Allociné: Comète
+2026-07-22 12:53:10,479 [INFO] Article ajouté Allociné: Autour de Lucio
+2026-07-22 12:53:10,726 [INFO] Article ajouté Allociné: Saccharine
+2026-07-22 12:53:10,999 [INFO] Article ajouté Allociné: Le Vertige
+2026-07-22 12:53:11,260 [INFO] Article ajouté Allociné: Une année italienne
+2026-07-22 12:53:11,517 [INFO] Article ajouté Allociné: Les Caprices de l’Enfant Roi
+2026-07-22 12:53:11,733 [INFO] Article ajouté Allociné: Trente
+2026-07-22 12:53:11,982 [INFO] Article ajouté Allociné: Tout va super
+2026-07-22 12:53:12,180 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:53:12,351 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-07-22 12:53:12,631 [INFO] Article ajouté Allociné: Noise
+2026-07-22 12:53:12,851 [INFO] Article ajouté Allociné: Maximilien Kolbe
+2026-07-22 12:53:13,061 [INFO] Article ajouté Allociné: Mirage
+2026-07-22 12:53:13,307 [INFO] Article ajouté Allociné: Bouchra
+2026-07-22 12:53:14,838 [INFO] Article ajouté Allociné: L'Athlète
+2026-07-22 12:53:15,248 [INFO] Article ajouté Allociné: Entroncamento
+2026-07-22 12:53:15,673 [INFO] Article ajouté Allociné: Sur la route d'Omaha
+2026-07-22 12:53:16,088 [INFO] Article ajouté Allociné: Deviens Génial
+2026-07-22 12:53:16,506 [INFO] Article ajouté Allociné: Seuls les rebelles
+2026-07-22 12:53:16,912 [INFO] Article ajouté Allociné: Fils de personne
+2026-07-22 12:53:17,307 [INFO] Article ajouté Allociné: The Giaccomo
+2026-07-22 12:53:17,737 [INFO] Article ajouté Allociné: Des Minions et des monstres
+2026-07-22 12:53:18,163 [INFO] Article ajouté Allociné: L'Affaire Zanetti
+2026-07-22 12:53:18,583 [INFO] Article ajouté Allociné: Shana
+2026-07-22 12:53:19,010 [INFO] Article ajouté Allociné: Un champ de fraises pour l’éternité
+2026-07-22 12:53:19,396 [INFO] Article ajouté Allociné: Anna et les enfants
+2026-07-22 12:53:19,923 [INFO] Article ajouté Allociné: Evil Dead Burn
+2026-07-22 12:53:20,510 [INFO] Article ajouté Allociné: Charli XCX: Alone Together
+2026-07-22 12:53:20,734 [INFO] Article ajouté Allociné: Le Pont
+2026-07-22 12:53:22,129 [INFO] Article ajouté Allociné: Le Coyote
+2026-07-22 12:53:22,317 [INFO] Article ajouté Allociné: 11 rue Denver
+2026-07-22 12:53:22,540 [INFO] Article ajouté Allociné: La Tsigane, sur la route avec Tamèrantong !
+2026-07-22 12:53:22,785 [INFO] Article ajouté Allociné: L’Étrangère
+2026-07-22 12:53:23,024 [INFO] Article ajouté Allociné: Les Parfait(s) : arnaques en famille
+2026-07-22 12:53:23,217 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:53:23,382 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-07-22 12:53:24,631 [INFO] Article ajouté Allociné: Yvon
+2026-07-22 12:53:24,892 [INFO] Article ajouté Allociné: L'Illusion de Yakushima
+2026-07-22 12:53:25,139 [INFO] Article ajouté Allociné: Planète Sanseverino
+2026-07-22 12:53:25,360 [INFO] Article ajouté Allociné: Morte e Vida Madalena
+2026-07-22 12:53:25,609 [INFO] Article ajouté Allociné: Colony
+2026-07-22 12:53:25,838 [INFO] Article ajouté Allociné: Le Viol (le cas Anders)
+2026-07-22 12:53:26,076 [INFO] Article ajouté Allociné: D’un monde à l’autre
+2026-07-22 12:53:26,346 [INFO] Article ajouté Allociné: Jim Queen
+2026-07-22 12:53:26,590 [INFO] Article ajouté Allociné: Bait
+2026-07-22 12:53:26,819 [INFO] Article ajouté Allociné: Toutes mes soeurs
+2026-07-22 12:53:27,055 [INFO] Article ajouté Allociné: Yu-Gi-Oh! The Dark Side Of Dimensions
+2026-07-22 12:53:27,311 [INFO] Article ajouté Allociné: The Furious
+2026-07-22 12:53:27,549 [INFO] Article ajouté Allociné: Au bord du monde
+2026-07-22 12:53:27,812 [INFO] Article ajouté Allociné: La Bataille de Gaulle - partie 1 : L'Âge de Fer
+2026-07-22 12:53:28,044 [INFO] Article ajouté Allociné: Charlie et les kangourous
+2026-07-22 12:53:28,306 [INFO] Article ajouté Allociné: Ulysse
+2026-07-22 12:53:28,526 [INFO] Article ajouté Allociné: Une si longue lettre
+2026-07-22 12:53:28,754 [INFO] Article ajouté Allociné: Entre ciel et terre
+2026-07-22 12:53:29,015 [INFO] Article ajouté Allociné: Embarquement immédiat
+2026-07-22 12:53:29,284 [INFO] Article ajouté Allociné: La Vénus électrique
+2026-07-22 12:53:29,500 [INFO] Article ajouté Allociné: Vous n’êtes pas Ivan Gallatin
+2026-07-22 12:53:29,806 [INFO] Article ajouté Allociné: Autofiction
+2026-07-22 12:53:30,161 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:53:30,529 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-07-22 12:53:31,008 [INFO] Article ajouté Allociné: Un lugar mas grande
+2026-07-22 12:53:31,457 [INFO] Article ajouté Allociné: Star Wars: The Mandalorian and Grogu
+2026-07-22 12:53:31,909 [INFO] Article ajouté Allociné: D'où vient le vent
+2026-07-22 12:53:32,344 [INFO] Article ajouté Allociné: La Petite graine
+2026-07-22 12:53:32,730 [INFO] Article ajouté Allociné: Loin de moi la colère
+2026-07-22 12:53:33,208 [INFO] Article ajouté Allociné: L’Abandon
+2026-07-22 12:53:34,500 [INFO] Article ajouté Allociné: Do You Love Me
+2026-07-22 12:53:34,967 [INFO] Article ajouté Allociné: Histoires parallèles
+2026-07-22 12:53:35,415 [INFO] Article ajouté Allociné: Mata
+2026-07-22 12:53:35,887 [INFO] Article ajouté Allociné: Les Goûteuses d'Hitler
+2026-07-22 12:53:36,272 [INFO] Article ajouté Allociné: Holy Destructors
+2026-07-22 12:53:36,683 [INFO] Article ajouté Allociné: Ma famille chérie
+2026-07-22 12:53:37,079 [INFO] Article ajouté Allociné: Passenger
+2026-07-22 12:53:37,560 [INFO] Article ajouté Allociné: L'Objet du délit
+2026-07-22 12:53:37,952 [INFO] Article ajouté Allociné: ETTY : Partie 1
+2026-07-22 12:53:38,228 [INFO] Article ajouté Allociné: L’Être Aimé
+2026-07-22 12:53:38,448 [INFO] Article ajouté Allociné: Ressacs, une histoire touarègue
+2026-07-22 12:53:38,664 [INFO] Article ajouté Allociné: Moi, quand je me réincarne en Slime, le film : les larmes de la mer azur
+2026-07-22 12:53:38,970 [INFO] Article ajouté Allociné: Alice au pays des colons
+2026-07-22 12:53:39,205 [INFO] Article ajouté Allociné: Polvo serán
+2026-07-22 12:53:39,454 [INFO] Article ajouté Allociné: Cocotte
+2026-07-22 12:53:39,702 [INFO] Article ajouté Allociné: Élise sous emprise
+2026-07-22 12:53:39,940 [INFO] Article ajouté Allociné: Cinque secondi
+2026-07-22 12:53:40,182 [INFO] Article ajouté Allociné: Cosmos
+2026-07-22 12:53:40,384 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:53:40,554 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-07-22 12:53:40,863 [INFO] Article ajouté Allociné: Iron Maiden: Burning Ambition
+2026-07-22 12:53:41,080 [INFO] Article ajouté Allociné: La Grande extase du sculpteur sur bois Steiner
+2026-07-22 12:53:41,307 [INFO] Article ajouté Allociné: La Maison dorée (Ennafoura)
+2026-07-22 12:53:41,632 [INFO] Article ajouté Allociné: Le Garçon qui faisait danser les collines
+2026-07-22 12:53:41,947 [INFO] Article ajouté Allociné: Father
+2026-07-22 12:53:42,253 [INFO] Article ajouté Allociné: Hokum
+2026-07-22 12:53:42,546 [INFO] Article ajouté Allociné: Le Dernier Souffle d'un Yakuza
+2026-07-22 12:53:42,860 [INFO] Article ajouté Allociné: All You Need Is Kill
+2026-07-22 12:53:43,184 [INFO] Article ajouté Allociné: Obsession
+2026-07-22 12:53:43,514 [INFO] Article ajouté Allociné: Michael
+2026-07-22 12:53:43,821 [INFO] Article ajouté Allociné: ChaO
+2026-07-22 12:53:44,132 [INFO] Article ajouté Allociné: Le Diable s'habille en Prada 2
+2026-07-22 12:53:44,447 [INFO] Article ajouté Allociné: Die My Love
+2026-07-22 12:53:44,725 [INFO] Article ajouté Allociné: Nouveaux copains à Puffin Rock
+2026-07-22 12:53:45,039 [INFO] Article ajouté Allociné: Collapse (Face à Gaza)
+2026-07-22 12:53:45,292 [INFO] Article ajouté Allociné: Pulsation
+2026-07-22 12:53:45,579 [INFO] Article ajouté Allociné: La Nièvre du samedi soir
+2026-07-22 12:53:45,874 [INFO] Article ajouté Allociné: The World of Love
+2026-07-22 12:53:46,692 [INFO] Article ajouté Allociné: didy
+2026-07-22 12:53:46,978 [INFO] Article ajouté Allociné: Sauvons les meubles
+2026-07-22 12:53:48,253 [INFO] Article ajouté Allociné: Garanti 100% Kréol
+2026-07-22 12:53:49,434 [INFO] Article ajouté Allociné: Esprit Libre, une autre viticulture est possible
+2026-07-22 12:53:49,672 [INFO] Article ajouté Allociné: Truly Naked
+2026-07-22 12:53:49,879 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:53:50,052 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-07-22 12:53:50,319 [INFO] Article ajouté Allociné: L’Enfant bélier
+2026-07-22 12:53:50,578 [INFO] Article ajouté Allociné: Supergirl
+2026-07-22 12:53:50,843 [INFO] Article ajouté Allociné: C’est quoi l’amour ?
+2026-07-22 12:53:51,061 [INFO] Article ajouté Allociné: Flana
+2026-07-22 12:53:51,307 [INFO] Article ajouté Allociné: The Criminals
+2026-07-22 12:53:51,564 [INFO] Article ajouté Allociné: Pour le plaisir
+2026-07-22 12:53:52,517 [INFO] Article ajouté Allociné: Dans la chambre du sultan
+2026-07-22 12:53:52,810 [INFO] Article ajouté Allociné: On l'appelait Robin des Bois
+2026-07-22 12:53:54,097 [INFO] Article ajouté Allociné: The Legend of Hei II
+2026-07-22 12:53:54,371 [INFO] Article ajouté Allociné: Le Virtuose
+2026-07-22 12:53:54,647 [INFO] Article ajouté Allociné: Mi Amor
+2026-07-22 12:53:54,940 [INFO] Article ajouté Allociné: Morlaix
+2026-07-22 12:53:55,217 [INFO] Article ajouté Allociné: Mon grand frère et moi
+2026-07-22 12:53:56,813 [INFO] Article ajouté Allociné: Le 13e Round
+2026-07-22 12:53:57,080 [INFO] Article ajouté Allociné: La Poupée
+2026-07-22 12:53:57,336 [INFO] Article ajouté Allociné: Junk World
+2026-07-22 12:53:57,572 [INFO] Article ajouté Allociné: Dolly
+2026-07-22 12:53:58,973 [INFO] Article ajouté Allociné: Ginza Cosmetics
+2026-07-22 12:53:59,216 [INFO] Article ajouté Allociné: Elfie et les Super Elfkins
+2026-07-22 12:53:59,470 [INFO] Article ajouté Allociné: Une fille en or
+2026-07-22 12:53:59,717 [INFO] Article ajouté Allociné: En nous
+2026-07-22 12:53:59,962 [INFO] Article ajouté Allociné: À voix basse
+2026-07-22 12:54:00,185 [INFO] Article ajouté Allociné: Dhurandhar
+2026-07-22 12:54:00,441 [INFO] Article ajouté Allociné: Miss Mermaid
+2026-07-22 12:54:00,642 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:01,555 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-07-22 12:54:01,822 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:02,050 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:02,303 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:02,769 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:03,223 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:03,508 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:04,168 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:04,448 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:04,717 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:05,000 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:05,946 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:06,205 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:06,468 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:06,726 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:06,990 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:07,260 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:07,516 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:07,773 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:08,050 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:08,307 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:08,775 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:09,044 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:09,309 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:09,593 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:09,836 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:10,518 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-07-22 12:54:10,767 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:10,992 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:11,242 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:11,559 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:11,809 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:12,076 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:12,287 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:12,496 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:12,754 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:12,999 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:13,221 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:13,451 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:13,709 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:13,962 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:14,216 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:14,466 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:14,702 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:14,952 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:15,224 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:15,486 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:15,688 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:15,952 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:16,171 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:16,400 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:16,645 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:17,258 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-07-22 12:54:17,500 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:17,702 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:17,929 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:18,147 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:18,367 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:18,620 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:18,840 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:19,064 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:19,302 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:19,562 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:19,788 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:20,016 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:20,411 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:20,641 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:20,871 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:21,146 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:21,422 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:21,653 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:21,894 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:22,115 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:22,321 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:22,555 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:22,771 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:23,000 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:23,214 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:23,880 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-07-22 12:54:24,123 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:24,325 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:24,537 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:24,765 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:24,987 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:25,243 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:25,462 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:25,684 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:25,918 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:26,163 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:26,380 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:26,618 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:26,858 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:27,092 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:27,326 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:27,547 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:27,760 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:27,987 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:28,283 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:28,515 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:28,713 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:28,940 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:29,166 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:29,399 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:29,622 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:30,230 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-07-22 12:54:30,469 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:30,722 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:31,000 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:31,249 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:31,483 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:31,742 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:31,969 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:32,194 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:32,441 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:32,907 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:33,137 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:33,387 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:33,619 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:33,858 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:34,084 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:34,306 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:34,518 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:34,753 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:34,996 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:35,223 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:35,425 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:35,657 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:35,881 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:36,109 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:36,333 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:36,999 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-07-22 12:54:37,265 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:37,485 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:37,733 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:37,958 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:38,200 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:38,445 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:38,671 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:38,897 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:39,134 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:39,379 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:39,597 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:39,842 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:40,080 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:40,357 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:40,633 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:40,892 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:41,124 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:41,367 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:41,608 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:41,843 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:42,048 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:42,274 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:42,499 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:42,734 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:42,948 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:43,551 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-07-22 12:54:43,791 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:43,995 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:44,213 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:44,435 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:44,659 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:44,915 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:45,138 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:45,358 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:45,592 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:45,848 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:46,068 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:46,301 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:46,536 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:46,779 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:47,017 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:47,246 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:47,461 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:47,690 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:47,937 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:48,164 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:48,360 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:48,585 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:48,804 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:49,053 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:49,269 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:49,883 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-07-22 12:54:50,197 [INFO] Article ajouté Allociné: L'Arnaqueuse
+2026-07-22 12:54:50,444 [INFO] Article ajouté Allociné: Bisons
+2026-07-22 12:54:50,656 [INFO] Article ajouté Allociné: La Baleine et le musicien
+2026-07-22 12:54:50,871 [INFO] Article ajouté Allociné: Wedding Nightmare : deuxième partie
+2026-07-22 12:54:51,091 [INFO] Article ajouté Allociné: La Fille du Konbini
+2026-07-22 12:54:51,342 [INFO] Article ajouté Allociné: Juste une illusion
+2026-07-22 12:54:51,560 [INFO] Article ajouté Allociné: Holding Liat
+2026-07-22 12:54:51,782 [INFO] Article ajouté Allociné: Bagarre
+2026-07-22 12:54:52,009 [INFO] Article ajouté Allociné: Sorda
+2026-07-22 12:54:52,250 [INFO] Article ajouté Allociné: Disclosure Day
+2026-07-22 12:54:52,461 [INFO] Article ajouté Allociné: Lupin the IIIrd the Movie: la lignée immortelle
+2026-07-22 12:54:52,690 [INFO] Article ajouté Allociné: Sauvage
+2026-07-22 12:54:52,922 [INFO] Article ajouté Allociné: Good Luck Have Fun Don't Die
+2026-07-22 12:54:53,155 [INFO] Article ajouté Allociné: Vivaldi et moi
+2026-07-22 12:54:53,376 [INFO] Article ajouté Allociné: Affection Affection
+2026-07-22 12:54:53,593 [INFO] Article ajouté Allociné: Soumsoum, la nuit des astres
+2026-07-22 12:54:53,800 [INFO] Article ajouté Allociné: Les Beaux Jours
+2026-07-22 12:54:54,025 [INFO] Article ajouté Allociné: The Mad Dog Of Europe
+2026-07-22 12:54:54,269 [INFO] Article ajouté Allociné: Plus fort que moi
+2026-07-22 12:54:54,498 [INFO] Article ajouté Allociné: Hayat
+2026-07-22 12:54:54,693 [INFO] Article ajouté Allociné: Youth
+2026-07-22 12:54:54,926 [INFO] Article ajouté Allociné: Les Fleurs du manguier
+2026-07-22 12:54:55,153 [INFO] Article ajouté Allociné: Gavagai, et autres malentendus
+2026-07-22 12:54:55,398 [INFO] Article ajouté Allociné: Dao
+2026-07-22 12:54:55,615 [INFO] Article ajouté Allociné: Spider-Man: Brand New Day
+2026-07-22 12:54:55,615 [INFO] Scraping Allociné terminé
+2026-07-22 12:54:55,687 [INFO] Démarrage scraping TMDb...
+2026-07-22 12:54:56,043 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/2)
+2026-07-22 12:54:56,180 [INFO] Article ajouté TMDb (upcoming): Spider-Man: Brand New Day
+2026-07-22 12:54:56,303 [INFO] Article ajouté TMDb (upcoming): undertone
+2026-07-22 12:54:56,425 [INFO] Article ajouté TMDb (upcoming): La fin d’Oak Street
+2026-07-22 12:54:56,670 [INFO] Article ajouté TMDb (upcoming): Ice Cream Man
+2026-07-22 12:54:56,795 [INFO] Article ajouté TMDb (upcoming): La Pat’ Patrouille : Le film mission Dino
+2026-07-22 12:54:56,917 [INFO] Article ajouté TMDb (upcoming): Rise Roar Revolt (RRR)
+2026-07-22 12:54:57,074 [INFO] Article ajouté TMDb (upcoming): Lawrence d'Arabie
+2026-07-22 12:54:57,196 [INFO] Article ajouté TMDb (upcoming): Mutiny
+2026-07-22 12:54:57,316 [INFO] Article ajouté TMDb (upcoming): Toi, Moi et la Toscane
+2026-07-22 12:54:57,439 [INFO] Article ajouté TMDb (upcoming): Insidious : L'Invasion du Lointain
+2026-07-22 12:54:57,561 [INFO] Article ajouté TMDb (upcoming): I Want Your Sex
+2026-07-22 12:54:57,931 [INFO] Article ajouté TMDb (upcoming): Fjord
+2026-07-22 12:54:58,056 [INFO] Article ajouté TMDb (upcoming): Soudain
+2026-07-22 12:54:58,181 [INFO] Article ajouté TMDb (upcoming): The ugly
+2026-07-22 12:54:58,573 [INFO] Article ajouté TMDb (upcoming): Bombonera
+2026-07-22 12:54:58,978 [INFO] Article ajouté TMDb (upcoming): Girl
+2026-07-22 12:54:59,138 [INFO] Article ajouté TMDb (upcoming): La Nirvana
+2026-07-22 12:54:59,259 [INFO] 19 films récupérés depuis TMDb (upcoming, page 2/2)
+2026-07-22 12:54:59,382 [INFO] Article ajouté TMDb (upcoming): Une affaire turque
+2026-07-22 12:54:59,508 [INFO] Article ajouté TMDb (upcoming): Marius et le royaume des mers
+2026-07-22 12:54:59,761 [INFO] Article ajouté TMDb (upcoming): Oklahoma Honey
+2026-07-22 12:54:59,884 [INFO] Article ajouté TMDb (upcoming): Les Gendarmes
+2026-07-22 12:55:00,261 [INFO] Article ajouté TMDb (upcoming): Tombé du ciel
+2026-07-22 12:55:00,532 [INFO] Article ajouté TMDb (upcoming): Réveil dans la terreur
+2026-07-22 12:55:00,658 [INFO] Article ajouté TMDb (upcoming): Kyma, l'onde mystérieuse
+2026-07-22 12:55:01,029 [INFO] Article ajouté TMDb (upcoming): Les Silences de Riyad
+2026-07-22 12:55:01,649 [INFO] Article ajouté TMDb (upcoming): Paradise
+2026-07-22 12:55:01,779 [INFO] Article ajouté TMDb (upcoming): Des Fleurs pour Tokyo
+2026-07-22 12:55:02,073 [INFO] Article ajouté TMDb (upcoming): La Providence et la Guitare
+2026-07-22 12:55:02,456 [INFO] Article ajouté TMDb (upcoming): Le Triangle d'or
+2026-07-22 12:55:02,749 [INFO] Article ajouté TMDb (upcoming): La Fille Condor
+2026-07-22 12:55:02,995 [INFO] Article ajouté TMDb (upcoming): Tommy Guns
+2026-07-22 12:55:03,115 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/11)
+2026-07-22 12:55:03,239 [INFO] Article ajouté TMDb (now_playing): L'Odyssée
+2026-07-22 12:55:03,359 [INFO] Article ajouté TMDb (now_playing): Vaiana, la légende du bout du monde
+2026-07-22 12:55:03,481 [INFO] Article ajouté TMDb (now_playing): Backrooms
+2026-07-22 12:55:03,603 [INFO] Article ajouté TMDb (now_playing): Des Minions et des monstres
+2026-07-22 12:55:03,725 [INFO] Article ajouté TMDb (now_playing): Supergirl
+2026-07-22 12:55:03,847 [INFO] Article ajouté TMDb (now_playing): Toy Story 5
+2026-07-22 12:55:03,875 [INFO] Article ajouté TMDb (now_playing): Spider-Man: Brand New Day
+2026-07-22 12:55:03,996 [INFO] Article ajouté TMDb (now_playing): Evil Dead Burn
+2026-07-22 12:55:04,238 [INFO] Article ajouté TMDb (now_playing): On l'appelait Robin des Bois
+2026-07-22 12:55:04,359 [INFO] Article ajouté TMDb (now_playing): Alien, le huitième passager
+2026-07-22 12:55:04,481 [INFO] Article ajouté TMDb (now_playing): 2001 : L'Odyssée de l'espace
+2026-07-22 12:55:04,604 [INFO] Article ajouté TMDb (now_playing): Blade Runner
+2026-07-22 12:55:04,725 [INFO] Article ajouté TMDb (now_playing): Kill Bill : The Whole Bloody Affair
+2026-07-22 12:55:05,092 [INFO] Article ajouté TMDb (now_playing): La Planète des singes
+2026-07-22 12:55:05,101 [INFO] Article ajouté TMDb (now_playing): Rise Roar Revolt (RRR)
+2026-07-22 12:55:05,129 [INFO] Article ajouté TMDb (now_playing): Lawrence d'Arabie
+2026-07-22 12:55:05,252 [INFO] Article ajouté TMDb (now_playing): La Mouche
+2026-07-22 12:55:05,376 [INFO] Article ajouté TMDb (now_playing): La Légende de Baahubali – L’épopée
+2026-07-22 12:55:05,501 [INFO] Article ajouté TMDb (now_playing): Dune
+2026-07-22 12:55:05,621 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/11)
+2026-07-22 12:55:05,745 [INFO] Article ajouté TMDb (now_playing): Bienvenue à Gattaca
+2026-07-22 12:55:05,988 [INFO] Article ajouté TMDb (now_playing): The Last Viking
+2026-07-22 12:55:06,015 [INFO] Article ajouté TMDb (now_playing): I Want Your Sex
+2026-07-22 12:55:06,136 [INFO] Article ajouté TMDb (now_playing): La Bataille de Gaulle : J’écris ton nom
+2026-07-22 12:55:06,382 [INFO] Article ajouté TMDb (now_playing): Nightborn
+2026-07-22 12:55:06,505 [INFO] Article ajouté TMDb (now_playing): Jim Queen
+2026-07-22 12:55:06,625 [INFO] Article ajouté TMDb (now_playing): Kayara, Princesse Inca
+2026-07-22 12:55:06,992 [INFO] Article ajouté TMDb (now_playing): Soleil vert
+2026-07-22 12:55:07,121 [INFO] Article ajouté TMDb (now_playing): La chaleur
+2026-07-22 12:55:07,365 [INFO] Article ajouté TMDb (now_playing): Angel Guts - Red classroom
+2026-07-22 12:55:07,489 [INFO] Article ajouté TMDb (now_playing): PlayTime
+2026-07-22 12:55:07,611 [INFO] Article ajouté TMDb (now_playing): Deviens génial
+2026-07-22 12:55:07,859 [INFO] Article ajouté TMDb (now_playing): Le Jour où la Terre s'arrêta
+2026-07-22 12:55:07,982 [INFO] Article ajouté TMDb (now_playing): La Légende de Baahubali : 1ère Partie
+2026-07-22 12:55:08,232 [INFO] Article ajouté TMDb (now_playing): Solaris
+2026-07-22 12:55:08,610 [INFO] Article ajouté TMDb (now_playing): Noise
+2026-07-22 12:55:08,736 [INFO] Article ajouté TMDb (now_playing): Comète
+2026-07-22 12:55:08,859 [INFO] Article ajouté TMDb (now_playing): La Légende de Baahubali : 2ème Partie
+2026-07-22 12:55:08,983 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/11)
+2026-07-22 12:55:09,224 [INFO] Article ajouté TMDb (now_playing): Crocodile Dundee II
+2026-07-22 12:55:09,348 [INFO] Article ajouté TMDb (now_playing): Brazil
+2026-07-22 12:55:09,592 [INFO] Article ajouté TMDb (now_playing): Notre Histoire - Chronique du Caire
+2026-07-22 12:55:09,714 [INFO] Article ajouté TMDb (now_playing): Miss Mermaid
+2026-07-22 12:55:09,959 [INFO] Article ajouté TMDb (now_playing): Planète interdite
+2026-07-22 12:55:10,226 [INFO] Article ajouté TMDb (now_playing): Kwaïdan
+2026-07-22 12:55:10,346 [INFO] Article ajouté TMDb (now_playing): Seule la vie
+2026-07-22 12:55:10,714 [INFO] Article ajouté TMDb (now_playing): Le Cuirassé Potemkine
+2026-07-22 12:55:10,836 [INFO] Article ajouté TMDb (now_playing): Shana
+2026-07-22 12:55:10,959 [INFO] Article ajouté TMDb (now_playing): Eruption
+2026-07-22 12:55:11,203 [INFO] Article ajouté TMDb (now_playing): Blue Heron
+2026-07-22 12:55:11,325 [INFO] Article ajouté TMDb (now_playing): D'où vient le vent
+2026-07-22 12:55:11,355 [INFO] Article ajouté TMDb (now_playing): The ugly
+2026-07-22 12:55:11,843 [INFO] Article ajouté TMDb (now_playing): The Fin
+2026-07-22 12:55:11,967 [INFO] Article ajouté TMDb (now_playing): Dry Leaf
+2026-07-22 12:55:12,091 [INFO] Article ajouté TMDb (now_playing): Les Parfait(s) : Arnaques en Famille
+2026-07-22 12:55:12,213 [INFO] Article ajouté TMDb (now_playing): Les Vacances de monsieur Hulot
+2026-07-22 12:55:12,455 [INFO] Article ajouté TMDb (now_playing): Sur la route d’Omaha
+2026-07-22 12:55:12,576 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/11)
+2026-07-22 12:55:13,071 [INFO] Article ajouté TMDb (now_playing): Please
+2026-07-22 12:55:13,441 [INFO] Article ajouté TMDb (now_playing): In Waves
+2026-07-22 12:55:13,563 [INFO] Article ajouté TMDb (now_playing): Le Passage
+2026-07-22 12:55:14,127 [INFO] Article ajouté TMDb (now_playing): André Is an Idiot
+2026-07-22 12:55:14,448 [INFO] Article ajouté TMDb (now_playing): Love Hotel
+2026-07-22 12:55:14,573 [INFO] Article ajouté TMDb (now_playing): Permis de détruire
+2026-07-22 12:55:14,696 [INFO] Article ajouté TMDb (now_playing): Mon oncle
+2026-07-22 12:55:14,815 [INFO] Article ajouté TMDb (now_playing): Les caprices de l’enfant Roi
+2026-07-22 12:55:14,940 [INFO] Article ajouté TMDb (now_playing): L’aventure rêvée
+2026-07-22 12:55:15,061 [INFO] Article ajouté TMDb (now_playing): Maspalomas
+2026-07-22 12:55:15,184 [INFO] Article ajouté TMDb (now_playing): L'Illusion de Yakushima
+2026-07-22 12:55:15,306 [INFO] Article ajouté TMDb (now_playing): Charlie et les Kangourous
+2026-07-22 12:55:16,529 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/11)
+2026-07-22 12:55:16,897 [INFO] Article ajouté TMDb (now_playing): Ulysse
+2026-07-22 12:55:17,317 [INFO] Article ajouté TMDb (now_playing): Trafic
+2026-07-22 12:55:17,564 [INFO] Article ajouté TMDb (now_playing): Nuits félines à Shinjuku
+2026-07-22 12:55:17,811 [INFO] Article ajouté TMDb (now_playing): Seuls les rebelles
+2026-07-22 12:55:18,245 [INFO] Article ajouté TMDb (now_playing): Entroncamento
+2026-07-22 12:55:18,491 [INFO] Article ajouté TMDb (now_playing): Riz amer
+2026-07-22 12:55:18,617 [INFO] Article ajouté TMDb (now_playing): The Black House
+2026-07-22 12:55:18,870 [INFO] Article ajouté TMDb (now_playing): Eega, la mouche vengeresse
+2026-07-22 12:55:19,498 [INFO] Article ajouté TMDb (now_playing): L'écologie des sentiments
+2026-07-22 12:55:19,772 [INFO] Article ajouté TMDb (now_playing): L'Enfer des Jeunes Filles
+2026-07-22 12:55:19,975 [INFO] Article ajouté TMDb (now_playing): La Dernière séance
+2026-07-22 12:55:20,112 [INFO] Article ajouté TMDb (now_playing): Rejouer Dreyfus
+2026-07-22 12:55:20,414 [INFO] Scraping TMDb terminé
+2026-07-22 12:55:20,415 [INFO] 482 nouveaux articles détectés
+2026-07-22 12:55:20,421 [INFO] 100 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-07-22 12:55:20,421 [INFO] Sauvegarde du log avec 747 identifiants
+2026-07-22 12:55:20,422 [INFO] Poussée automatique FORCÉE vers GitHub...
