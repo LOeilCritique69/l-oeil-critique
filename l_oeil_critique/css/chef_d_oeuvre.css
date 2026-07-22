@@ -45,6 +45,10 @@
    - Correctif : .hub-nav__card affichait du texte clair sur un fond clair
      (texte quasi invisible) — recoloré en --ink, fond passé en --paper-2
      pour rester dans la palette chaude plutôt qu'un gris neutre.
+   - Ajout : miniatures cliquables pour les bandes-annonces (lazy-load
+     vidéo) dans la section 10, avec les tokens du design system (au lieu
+     du bloc de couleurs ad-hoc doré/noir qui trainait en inline dans
+     bande-annonces.html et qui ne suivait pas la charte Iris).
    ============================================================================ */
 
 /* ============================================================================
@@ -1025,6 +1029,72 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 
 .video-responsive { width: 100%; aspect-ratio: 16 / 9; margin-bottom: 1.4rem; background: #000; }
 .video-responsive iframe { width: 100%; height: 100%; border: none; }
+
+/* --- Miniatures cliquables (lazy-load vidéo) ---
+   Tant qu'aucune vidéo n'est lancée, .video-responsive contient une image
+   (.video-thumb) ou un fond de repli (.video-thumb-fallback) + un bouton
+   .play-button ajoutés par le JS de bande-annonces.html. Le vrai <iframe>
+   n'est injecté qu'au clic, ce qui évite de charger 10+ lecteurs vidéo
+   d'un coup (gros gain de RAM). */
+.video-responsive {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.video-responsive .video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.35s ease;
+}
+
+.video-responsive:hover .video-thumb { filter: grayscale(0%); }
+
+.video-responsive .video-thumb-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--ink), var(--ink-2));
+}
+
+.video-responsive .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(18, 20, 26, 0.72);
+  border: 2px solid var(--brass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease-out), background 0.3s ease, border-color 0.3s ease;
+  pointer-events: none;
+}
+
+.video-responsive .play-button::after {
+  content: "";
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--brass-light);
+  margin-left: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.video-responsive:hover .play-button {
+  background: var(--velvet);
+  border-color: var(--velvet-dark);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-responsive:hover .play-button::after { border-color: transparent transparent transparent var(--paper); }
 
 .card-bande h2 { margin-bottom: 0.5rem; font-family: var(--font-display); font-size: 1.55rem; color: var(--ink); }
 .card-bande .meta-info { display: flex; justify-content: space-between; margin-bottom: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--paper-soft); }
@@ -2168,6 +2238,9 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
 
   .featured-card.hero h3 { font-size: 1.3rem; }
   .review-card__title { font-size: 1.15rem; }
+
+  .video-responsive .play-button { width: 52px; height: 52px; }
+  .video-responsive .play-button::after { border-width: 10px 0 10px 16px; }
 }
 
 /* ============================================================================

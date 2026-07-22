@@ -486,6 +486,28 @@ def push_to_github():
         return False
 
 # ------------------------------
+# MÉLANGE DES SOURCES
+# ------------------------------
+
+def interleave_sources(*sources):
+    """
+    Mélange plusieurs sources (chacune sous forme (articles, ids)) en alternance
+    round-robin, au lieu de les empiler bloc par bloc (tout CineHorizons, puis tout
+    Allociné, puis tout TMDb...). Ça évite qu'une seule source ne domine tout le haut
+    de la grille quand elle a beaucoup plus de nouveautés qu'une autre.
+    """
+    paired_lists = [list(zip(articles, ids)) for articles, ids in sources]
+    result_articles, result_ids = [], []
+    max_len = max((len(p) for p in paired_lists), default=0)
+    for idx in range(max_len):
+        for p in paired_lists:
+            if idx < len(p):
+                article, identifiant = p[idx]
+                result_articles.append(article)
+                result_ids.append(identifiant)
+    return result_articles, result_ids
+
+# ------------------------------
 # MAIN
 # ------------------------------
 
@@ -510,8 +532,12 @@ def main():
 
     tmdb_articles, tmdb_ids = scrape_tmdb(log)
 
-    nouveaux_articles = cine_articles + allocine_articles + allocine_series_articles + tmdb_articles
-    nouveaux_ids = cine_ids + allocine_ids + allocine_series_ids + tmdb_ids
+    nouveaux_articles, nouveaux_ids = interleave_sources(
+        (cine_articles, cine_ids),
+        (allocine_articles, allocine_ids),
+        (allocine_series_articles, allocine_series_ids),
+        (tmdb_articles, tmdb_ids),
+    )
     logger.info(f"{len(nouveaux_articles)} nouveaux articles détectés")
 
     if not nouveaux_articles:
