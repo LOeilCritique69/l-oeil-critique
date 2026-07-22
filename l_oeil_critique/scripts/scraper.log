@@ -7560,3 +7560,129 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-07-22 12:55:20,421 [INFO] 100 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-07-22 12:55:20,421 [INFO] Sauvegarde du log avec 747 identifiants
 2026-07-22 12:55:20,422 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-22 12:55:24,746 [INFO] Push GitHub FORCE réussi
+2026-07-22 12:55:24,747 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-22 13:11:41,639 [INFO] ==== Début du script bandes-annonces ====
+2026-07-22 13:11:41,639 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-22 13:11:41,649 [INFO] 747 identifiants chargés depuis le log
+2026-07-22 13:11:42,117 [INFO] Démarrage scraping CineHorizons...
+2026-07-22 13:11:45,587 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-22 13:11:45,605 [INFO] 10 blocs détectés sur la page 1
+2026-07-22 13:11:45,606 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-22 13:11:45,606 [INFO] Scraping CineHorizons terminé
+2026-07-22 13:11:45,606 [INFO] Démarrage scraping Allociné (films)...
+2026-07-22 13:11:45,890 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-22 13:11:45,916 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-22 13:11:45,916 [INFO] Scraping Allociné (films) terminé
+2026-07-22 13:11:45,916 [INFO] Démarrage scraping Allociné (séries)...
+2026-07-22 13:11:46,355 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/
+2026-07-22 13:11:46,862 [INFO] Article ajouté Allociné (serie): Furious (série)
+2026-07-22 13:11:47,089 [INFO] Article ajouté Allociné (serie): Harry Potter à l'école des sorciers (série)
+2026-07-22 13:11:47,315 [INFO] Article ajouté Allociné (serie): The Shards (série)
+2026-07-22 13:11:47,538 [INFO] Article ajouté Allociné (serie): The Five-Star Weekend (série)
+2026-07-22 13:11:47,756 [INFO] Article ajouté Allociné (serie): Stuart Fails To Save The Universe (série)
+2026-07-22 13:11:47,970 [INFO] Article ajouté Allociné (serie): Pompéi : Tom Hiddleston remonte le temps (série)
+2026-07-22 13:11:48,187 [INFO] Article ajouté Allociné (serie): Crystal Lake (série)
+2026-07-22 13:11:48,408 [INFO] Article ajouté Allociné (serie): Lanterns (série)
+2026-07-22 13:11:48,622 [INFO] Article ajouté Allociné (serie): Power: Origins (série)
+2026-07-22 13:11:48,842 [INFO] Article ajouté Allociné (serie): Sterling Point (série)
+2026-07-22 13:11:49,063 [INFO] Article ajouté Allociné (serie): Paolo (série)
+2026-07-22 13:11:49,279 [INFO] Article ajouté Allociné (serie): Fightland (série)
+2026-07-22 13:11:49,491 [INFO] Article ajouté Allociné (serie): The Savant (série)
+2026-07-22 13:11:49,707 [INFO] Article ajouté Allociné (serie): À l'est d'Éden (série)
+2026-07-22 13:11:49,923 [INFO] Article ajouté Allociné (serie): Star Wars: Visions Présente - Le Neuvième Jedi (série)
+2026-07-22 13:11:50,142 [INFO] Article ajouté Allociné (serie): Alley Cats (série)
+2026-07-22 13:11:50,358 [INFO] Article ajouté Allociné (serie): Camarades (série)
+2026-07-22 13:11:50,571 [INFO] Article ajouté Allociné (serie): Scooby-Doo: Origins (série)
+2026-07-22 13:11:50,796 [INFO] Article ajouté Allociné (serie): Justice League : The Snyder Cut (série)
+2026-07-22 13:11:51,018 [INFO] Article ajouté Allociné (serie): Baywatch (série)
+2026-07-22 13:11:51,262 [INFO] Article ajouté Allociné (serie): Vought Rising (série)
+2026-07-22 13:11:51,488 [INFO] Article ajouté Allociné (serie): Made in Korea (série)
+2026-07-22 13:11:53,084 [INFO] Article ajouté Allociné (serie): America's Sweethearts : Les cheerleaders des Dallas Cowboys (série)
+2026-07-22 13:11:54,008 [INFO] Article ajouté Allociné (serie): A Different World (série)
+2026-07-22 13:11:54,519 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/?page=2
+2026-07-22 13:11:54,739 [INFO] Article ajouté Allociné (serie): Mère indigne (série)
+2026-07-22 13:11:54,960 [INFO] Article ajouté Allociné (serie): Waiting for the Out (série)
+2026-07-22 13:11:55,172 [INFO] Article ajouté Allociné (serie): Faraway Downs (série)
+2026-07-22 13:11:55,568 [INFO] Article ajouté Allociné (serie): The Case (série)
+2026-07-22 13:11:56,497 [INFO] Article ajouté Allociné (serie): The One Piece (série)
+2026-07-22 13:11:56,709 [INFO] Article ajouté Allociné (serie): Fear (série)
+2026-07-22 13:11:56,963 [INFO] Article ajouté Allociné (serie): Industry (série)
+2026-07-22 13:11:58,135 [INFO] Article ajouté Allociné (serie): Dreamland (série)
+2026-07-22 13:12:01,079 [INFO] Article ajouté Allociné (serie): The Jetty (série)
+2026-07-22 13:12:02,151 [INFO] Article ajouté Allociné (serie): Vampire Chronicles (série)
+2026-07-22 13:12:02,370 [INFO] Article ajouté Allociné (serie): Neuf Mecs (série)
+2026-07-22 13:12:03,458 [INFO] Article ajouté Allociné (serie): Tommy & Tuppence (série)
+2026-07-22 13:12:04,763 [INFO] Article ajouté Allociné (serie): The Greatest (série)
+2026-07-22 13:12:06,215 [INFO] Article ajouté Allociné (serie): Les Aventures de The Chosen (série)
+2026-07-22 13:12:06,428 [INFO] Article ajouté Allociné (serie): Marriage (série)
+2026-07-22 13:12:06,646 [INFO] Article ajouté Allociné (serie): Du sable nous renaîtrons (série)
+2026-07-22 13:12:08,401 [INFO] Article ajouté Allociné (serie): Parallel Me (série)
+2026-07-22 13:12:09,330 [INFO] Article ajouté Allociné (serie): The Man Will Burn (série)
+2026-07-22 13:12:09,544 [INFO] Article ajouté Allociné (serie): My Brilliant Career (série)
+2026-07-22 13:12:09,757 [INFO] Article ajouté Allociné (serie): Clipped (série)
+2026-07-22 13:12:13,561 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/?page=3
+2026-07-22 13:12:16,925 [INFO] Article ajouté Allociné (serie): Am I Being Unreasonable? (série)
+2026-07-22 13:12:18,401 [INFO] Article ajouté Allociné (serie): The Sixth Commandment (série)
+2026-07-22 13:12:19,759 [INFO] Article ajouté Allociné (serie): Here U Are (série)
+2026-07-22 13:12:21,131 [INFO] Article ajouté Allociné (serie): Minecraft (série)
+2026-07-22 13:12:23,622 [INFO] Article ajouté Allociné (serie): Blood & Money (série)
+2026-07-22 13:12:24,920 [INFO] Article ajouté Allociné (serie): Orlando Bloom: To The Edge (série)
+2026-07-22 13:12:25,279 [INFO] Article ajouté Allociné (serie): Lego One Piece (série)
+2026-07-22 13:12:26,636 [INFO] Article ajouté Allociné (serie): Dateline (série)
+2026-07-22 13:12:27,598 [INFO] Article ajouté Allociné (serie): Tiny Toons Looniversité (série)
+2026-07-22 13:12:27,960 [INFO] Article ajouté Allociné (serie): God Save Texas (série)
+2026-07-22 13:12:29,682 [INFO] Article ajouté Allociné (serie): Victoria’s Secret: Angels and Demons (série)
+2026-07-22 13:12:30,620 [INFO] Article ajouté Allociné (serie): SmarTless: On The Road (série)
+2026-07-22 13:12:30,974 [INFO] Article ajouté Allociné (serie): Creamerie (série)
+2026-07-22 13:12:32,339 [INFO] Article ajouté Allociné (serie): Young David (série)
+2026-07-22 13:12:35,013 [INFO] Article ajouté Allociné (serie): Merc Storia (série)
+2026-07-22 13:12:38,241 [INFO] Article ajouté Allociné (serie): The Bravest Knight (série)
+2026-07-22 13:12:39,850 [INFO] Article ajouté Allociné (serie): De l'homme à la haine (série)
+2026-07-22 13:12:43,231 [INFO] Article ajouté Allociné (serie): The Chef in a Truck (série)
+2026-07-22 13:12:44,584 [INFO] Article ajouté Allociné (serie): The Con (série)
+2026-07-22 13:12:46,134 [INFO] Article ajouté Allociné (serie): Daleks! (série)
+2026-07-22 13:12:47,843 [INFO] Article ajouté Allociné (serie): NYC Epicenters 9/11-2021½ (série)
+2026-07-22 13:12:48,255 [INFO] Article ajouté Allociné (serie): Self-Portrait as a Coffee Pot (série)
+2026-07-22 13:12:51,652 [INFO] Article ajouté Allociné (serie): Telemarketers (série)
+2026-07-22 13:12:53,751 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/?page=4
+2026-07-22 13:12:55,219 [INFO] Article ajouté Allociné (serie): The Name Is Varvara (série)
+2026-07-22 13:12:56,480 [INFO] Article ajouté Allociné (serie): Reborn as a Space Mercenary : I Woke Up Piloting the Strongest Starship ! (série)
+2026-07-22 13:12:58,487 [INFO] Article ajouté Allociné (serie): Dengeki Daisy (série)
+2026-07-22 13:13:01,367 [INFO] Article ajouté Allociné (serie): Coastal Elites (série)
+2026-07-22 13:13:02,580 [INFO] Article ajouté Allociné (serie): Ultimate Viking (série)
+2026-07-22 13:13:03,865 [INFO] Article ajouté Allociné (serie): Supervillain: The Making of Tekashi 6ix9ine (série)
+2026-07-22 13:13:05,218 [INFO] Article ajouté Allociné (serie): The Pogmentary (série)
+2026-07-22 13:13:06,845 [INFO] Article ajouté Allociné (serie): Willie Nelson & Family (série)
+2026-07-22 13:13:07,314 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/?page=5
+2026-07-22 13:13:07,661 [INFO] Article ajouté Allociné (serie): The Name Is Varvara (série)
+2026-07-22 13:13:08,006 [INFO] Article ajouté Allociné (serie): Reborn as a Space Mercenary : I Woke Up Piloting the Strongest Starship ! (série)
+2026-07-22 13:13:08,335 [INFO] Article ajouté Allociné (serie): Dengeki Daisy (série)
+2026-07-22 13:13:08,635 [INFO] Article ajouté Allociné (serie): Coastal Elites (série)
+2026-07-22 13:13:08,949 [INFO] Article ajouté Allociné (serie): Ultimate Viking (série)
+2026-07-22 13:13:09,278 [INFO] Article ajouté Allociné (serie): Supervillain: The Making of Tekashi 6ix9ine (série)
+2026-07-22 13:13:09,617 [INFO] Article ajouté Allociné (serie): The Pogmentary (série)
+2026-07-22 13:13:09,956 [INFO] Article ajouté Allociné (serie): Willie Nelson & Family (série)
+2026-07-22 13:13:10,637 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/?page=6
+2026-07-22 13:13:11,095 [INFO] Article ajouté Allociné (serie): The Name Is Varvara (série)
+2026-07-22 13:13:11,426 [INFO] Article ajouté Allociné (serie): Reborn as a Space Mercenary : I Woke Up Piloting the Strongest Starship ! (série)
+2026-07-22 13:13:11,757 [INFO] Article ajouté Allociné (serie): Dengeki Daisy (série)
+2026-07-22 13:13:12,092 [INFO] Article ajouté Allociné (serie): Coastal Elites (série)
+2026-07-22 13:13:12,422 [INFO] Article ajouté Allociné (serie): Ultimate Viking (série)
+2026-07-22 13:13:12,757 [INFO] Article ajouté Allociné (serie): Supervillain: The Making of Tekashi 6ix9ine (série)
+2026-07-22 13:13:13,087 [INFO] Article ajouté Allociné (serie): The Pogmentary (série)
+2026-07-22 13:13:13,432 [INFO] Article ajouté Allociné (serie): Willie Nelson & Family (série)
+2026-07-22 13:13:13,432 [INFO] Scraping Allociné (séries) terminé
+2026-07-22 13:13:13,512 [INFO] Démarrage scraping TMDb...
+2026-07-22 13:13:13,892 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/2)
+2026-07-22 13:13:14,172 [INFO] 19 films récupérés depuis TMDb (upcoming, page 2/2)
+2026-07-22 13:13:14,365 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/11)
+2026-07-22 13:13:14,432 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/11)
+2026-07-22 13:13:14,604 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/11)
+2026-07-22 13:13:14,812 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/11)
+2026-07-22 13:13:15,276 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/11)
+2026-07-22 13:13:15,724 [INFO] Scraping TMDb terminé
+2026-07-22 13:13:15,726 [INFO] 91 nouveaux articles détectés
+2026-07-22 13:13:15,732 [INFO] 100 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-07-22 13:13:15,732 [INFO] Sauvegarde du log avec 838 identifiants
+2026-07-22 13:13:15,733 [INFO] Poussée automatique FORCÉE vers GitHub...

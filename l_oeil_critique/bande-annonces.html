@@ -117,6 +117,65 @@
             margin-top: 2rem;
         }
 
+        /* --- LECTEUR VIDÉO EN MINIATURE CLIQUABLE (économie de RAM) --- */
+        .video-responsive {
+            position: relative;
+            cursor: pointer;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-responsive .video-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-responsive .video-thumb-fallback {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1d23, #2a2e36);
+        }
+
+        .video-responsive .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(20, 23, 28, 0.75);
+            border: 2px solid #f2cd86;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, background 0.2s ease;
+            pointer-events: none;
+        }
+
+        .video-responsive .play-button::after {
+            content: '';
+            border-style: solid;
+            border-width: 12px 0 12px 20px;
+            border-color: transparent transparent transparent #f2cd86;
+            margin-left: 4px;
+        }
+
+        .video-responsive:hover .play-button {
+            background: rgba(242, 205, 134, 0.9);
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+
+        .video-responsive:hover .play-button::after {
+            border-color: transparent transparent transparent #14171c;
+        }
+
         /* --- RESPONSIVE OPTIMISÉ --- */
         @media (max-width: 768px) {
             .search-wrapper { 
@@ -171,6 +230,84 @@
 <script src="assets/js/header.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
+// Devine l'URL d'une miniature à partir du src d'un iframe (YouTube / Dailymotion).
+// Retourne null si la plateforme n'est pas reconnue (ex : player.allocine.fr),
+// auquel cas un fond générique avec bouton "play" est affiché à la place.
+function getThumbnailUrl(src) {
+    let m = src.match(/youtube\.com\/embed\/([A-Za-z0-9_-]+)/) || src.match(/youtu\.be\/([A-Za-z0-9_-]+)/);
+    if (m) return `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
+
+    m = src.match(/dailymotion\.com\/embed\/video\/([A-Za-z0-9]+)/);
+    if (m) return `https://www.dailymotion.com/thumbnail/video/${m[1]}`;
+
+    return null;
+}
+
+// Ajoute l'autoplay au moment où l'utilisateur clique réellement (pas avant).
+function withAutoplay(src) {
+    const sep = src.includes('?') ? '&' : '?';
+    if (src.includes('youtube.com')) return `${src}${sep}autoplay=1&rel=0`;
+    if (src.includes('dailymotion.com')) return `${src}${sep}autoplay=1`;
+    return src;
+}
+
+// Transforme une carte : retire l'iframe chargé d'office et le remplace par
+// une miniature + bouton play. L'iframe réel n'est créé qu'au clic.
+function lazifyCardVideo(card) {
+    const wrapper = card.querySelector('.video-responsive');
+    if (!wrapper) return;
+    const iframe = wrapper.querySelector('iframe');
+    if (!iframe) return;
+    const src = iframe.getAttribute('src');
+    if (!src) return;
+
+    const thumbUrl = getThumbnailUrl(src);
+    wrapper.innerHTML = '';
+    wrapper.dataset.src = src;
+
+    if (thumbUrl) {
+        const img = document.createElement('img');
+        img.src = thumbUrl;
+        img.alt = 'Miniature de la bande-annonce';
+        img.loading = 'lazy';
+        img.className = 'video-thumb';
+        wrapper.appendChild(img);
+    } else {
+        const fallback = document.createElement('div');
+        fallback.className = 'video-thumb-fallback';
+        wrapper.appendChild(fallback);
+    }
+
+    const playBtn = document.createElement('div');
+    playBtn.className = 'play-button';
+    playBtn.setAttribute('aria-hidden', 'true');
+    wrapper.appendChild(playBtn);
+
+    wrapper.setAttribute('role', 'button');
+    wrapper.setAttribute('tabindex', '0');
+    wrapper.setAttribute('aria-label', 'Lancer la lecture de la bande-annonce');
+
+    const lancerVideo = () => {
+        const realIframe = document.createElement('iframe');
+        realIframe.width = '560';
+        realIframe.height = '315';
+        realIframe.frameBorder = '0';
+        realIframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+        realIframe.allowFullscreen = true;
+        realIframe.src = withAutoplay(wrapper.dataset.src);
+        wrapper.innerHTML = '';
+        wrapper.appendChild(realIframe);
+    };
+
+    wrapper.addEventListener('click', lancerVideo, { once: true });
+    wrapper.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            lancerVideo();
+        }
+    }, { once: true });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('grille-bandes');
     const voirPlusBtn = document.getElementById('voir-plus-btn');
@@ -191,6 +328,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // On récupère toutes les cartes
         allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
+
+        // Remplace chaque iframe par une miniature cliquable : la vidéo (YouTube,
+        // Dailymotion, Allociné...) n'est réellement chargée qu'au clic de l'utilisateur.
+        // Cela évite de charger 10+ lecteurs vidéo simultanément (gros gain de RAM).
+        allCards.forEach(lazifyCardVideo);
 
         // Fonction pour afficher le mode normal (10 + bouton)
         const renderDefault = () => {

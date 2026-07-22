@@ -54,6 +54,7 @@ MAX_CARDS_FILE = 100
 # ces valeurs ne servent qu'à protéger un premier run sur un log vide)
 MAX_PAGES_CINE = 15        # 12 films/page environ -> jusqu'à ~180 films explorés si besoin
 MAX_PAGES_ALLOCINE = 15    # 25 films/page environ -> jusqu'à ~375 films explorés si besoin
+MAX_PAGES_ALLOCINE_SERIES = 6  # la liste "séries à venir" ne compte que ~4 pages au total
 MAX_PAGES_TMDB = 5         # 20 films/page -> jusqu'à 100 films par endpoint
 
 REQUEST_TIMEOUT = 10
@@ -227,22 +228,30 @@ def scrape_cinehorizons(log, page) -> Tuple[List[str], List[str]]:
     return articles, ids
 
 # ------------------------------
-# SCRAPER ALLOCINÉ
+# SCRAPER ALLOCINÉ (films + séries)
 # ------------------------------
 
-ALLOCINE_LINK_RE = re.compile(r"player_gen_cmedia=(\d+)&cfilm=(\d+)")
+LIST_ALLOCINE_SERIES_URL = "https://www.allocine.fr/video/series/prochainement/"
 
-def extract_allocine_detail(page, cfilm, cmedia):
+ALLOCINE_FILM_LINK_RE = re.compile(r"player_gen_cmedia=(\d+)&cfilm=(\d+)")
+ALLOCINE_SERIE_LINK_RE = re.compile(r"player_gen_cmedia=(\d+)&cserie=(\d+)")
+
+def extract_allocine_detail(page, content_id, cmedia, content_type):
     """
-    Va chercher le titre propre, le synopsis et la date de sortie sur la fiche film,
+    Va chercher le titre propre, le synopsis et la date sur la fiche film/série,
     puis construit l'iframe du lecteur Allociné (player.allocine.fr).
+    content_type: "film" ou "serie".
     """
-    detail_url = f"https://www.allocine.fr/film/fichefilm_gen_cfilm={cfilm}.html"
+    if content_type == "serie":
+        detail_url = f"https://www.allocine.fr/series/ficheserie_gen_cserie={content_id}.html"
+    else:
+        detail_url = f"https://www.allocine.fr/film/fichefilm_gen_cfilm={content_id}.html"
+
     try:
         page.goto(detail_url, timeout=PAGE_TIMEOUT)
         page.wait_for_selector('meta[property="og:title"]', timeout=8000, state="attached")
     except Exception as e:
-        logger.warning(f"Erreur chargement fiche Allociné cfilm={cfilm}: {e}")
+        logger.warning(f"Erreur chargement fiche Allociné ({content_type} id={content_id}): {e}")
         return None
 
     detail = BeautifulSoup(page.content(), "html.parser")
@@ -250,15 +259,22 @@ def extract_allocine_detail(page, cfilm, cmedia):
     titre_tag = detail.select_one('meta[property="og:title"]')
     titre = clean_text(titre_tag["content"]) if titre_tag and titre_tag.get("content") else None
     if not titre:
-        logger.warning(f"Titre introuvable pour cfilm={cfilm}, ignoré")
+        logger.warning(f"Titre introuvable pour {content_type} id={content_id}, ignoré")
         return None
 
     desc_tag = detail.select_one('meta[property="og:description"]')
     synopsis = summarize_synopsis(desc_tag["content"]) if desc_tag and desc_tag.get("content") else "Pas de synopsis"
 
-    # La date de sortie apparaît en texte libre du type "15 juillet 2026 en salle"
-    date_match = re.search(r"(\d{1,2}\s+[A-Za-zéûîôâ]+\s+\d{4})\s+en\s+salle", detail.get_text(" ", strip=True))
-    date_sortie = clean_text(date_match.group(1)) if date_match else "Date inconnue"
+    texte_page = detail.get_text(" ", strip=True)
+    if content_type == "serie":
+        # Pas de "sortie en salle" pour une série : on récupère au mieux l'année (ex: "Série TV 2026")
+        date_match = re.search(r"Série TV (\d{4})", texte_page)
+        date_sortie = f"Série {date_match.group(1)}" if date_match else "Date inconnue"
+        titre = f"{titre} (série)"
+    else:
+        # La date de sortie apparaît en texte libre du type "15 juillet 2026 en salle"
+        date_match = re.search(r"(\d{1,2}\s+[A-Za-zéûîôâ]+\s+\d{4})\s+en\s+salle", texte_page)
+        date_sortie = clean_text(date_match.group(1)) if date_match else "Date inconnue"
 
     iframe_html = (
         f'<iframe width="560" height="315" src="https://player.allocine.fr/{cmedia}.html" '
@@ -266,18 +282,17 @@ def extract_allocine_detail(page, cfilm, cmedia):
     )
     return {"titre": titre, "date_sortie": date_sortie, "synopsis": synopsis, "iframe_html": iframe_html}
 
-def scrape_allocine(log, page) -> Tuple[List[str], List[str]]:
+def _scrape_allocine_listing(log, page, list_url_base, link_re, id_prefix, content_type, max_pages):
     """
-    Parcourt les pages "Les plus récentes" d'Allociné (triées par date d'ajout décroissante).
-    S'arrête dès qu'une page entière ne contient plus aucune vidéo inconnue du log,
-    ou après MAX_PAGES_ALLOCINE pages par sécurité.
+    Fonction générique de pagination pour les listes Allociné (films ou séries),
+    triées par date d'ajout décroissante. S'arrête dès qu'une page entière ne
+    contient plus aucune vidéo inconnue du log, ou après max_pages par sécurité.
     """
-    logger.info("Démarrage scraping Allociné...")
     articles, ids = [], []
     date_ajout = datetime.now().strftime("%d %B %Y")
 
-    for page_index in range(1, MAX_PAGES_ALLOCINE + 1):
-        list_url = LIST_ALLOCINE_URL if page_index == 1 else f"{LIST_ALLOCINE_URL}?page={page_index}"
+    for page_index in range(1, max_pages + 1):
+        list_url = list_url_base if page_index == 1 else f"{list_url_base}?page={page_index}"
         try:
             page.goto(list_url, timeout=PAGE_TIMEOUT)
             page.wait_for_selector('a[href*="player_gen_cmedia"]', timeout=8000)
@@ -292,25 +307,25 @@ def scrape_allocine(log, page) -> Tuple[List[str], List[str]]:
             logger.info("Plus aucune vidéo trouvée, fin de pagination Allociné")
             break
 
-        # dédoublonnage des (cmedia, cfilm) rencontrés sur la page (même vidéo peut être liée 2x : image + titre)
+        # dédoublonnage des (cmedia, id) rencontrés sur la page (même vidéo peut être liée 2x : image + titre)
         vus_sur_page = set()
         nouveaux_sur_cette_page = 0
 
         for lien in liens:
-            match = ALLOCINE_LINK_RE.search(lien.get("href", ""))
+            match = link_re.search(lien.get("href", ""))
             if not match:
                 continue
-            cmedia, cfilm = match.group(1), match.group(2)
-            if (cmedia, cfilm) in vus_sur_page:
+            cmedia, content_id = match.group(1), match.group(2)
+            if (cmedia, content_id) in vus_sur_page:
                 continue
-            vus_sur_page.add((cmedia, cfilm))
+            vus_sur_page.add((cmedia, content_id))
 
-            identifiant = f"allocine::{cfilm}::{cmedia}"
+            identifiant = f"{id_prefix}::{content_id}::{cmedia}"
             if identifiant in log:
-                logger.debug(f"cfilm={cfilm}/cmedia={cmedia} déjà présent dans le log, ignoré")
+                logger.debug(f"{id_prefix} id={content_id}/cmedia={cmedia} déjà présent dans le log, ignoré")
                 continue
 
-            details = extract_allocine_detail(page, cfilm, cmedia)
+            details = extract_allocine_detail(page, content_id, cmedia, content_type)
             if not details:
                 continue
 
@@ -321,13 +336,30 @@ def scrape_allocine(log, page) -> Tuple[List[str], List[str]]:
             articles.append(article_html)
             ids.append(identifiant)
             nouveaux_sur_cette_page += 1
-            logger.info(f"Article ajouté Allociné: {details['titre']}")
+            logger.info(f"Article ajouté Allociné ({content_type}): {details['titre']}")
 
         if nouveaux_sur_cette_page == 0:
             logger.info("Aucune nouveauté sur cette page, on arrête la pagination Allociné")
             break
 
-    logger.info("Scraping Allociné terminé")
+    return articles, ids
+
+def scrape_allocine(log, page) -> Tuple[List[str], List[str]]:
+    """Bandes-annonces de films (Allociné 'Les plus récentes')."""
+    logger.info("Démarrage scraping Allociné (films)...")
+    articles, ids = _scrape_allocine_listing(
+        log, page, LIST_ALLOCINE_URL, ALLOCINE_FILM_LINK_RE, "allocine", "film", MAX_PAGES_ALLOCINE
+    )
+    logger.info("Scraping Allociné (films) terminé")
+    return articles, ids
+
+def scrape_allocine_series(log, page) -> Tuple[List[str], List[str]]:
+    """Bandes-annonces de séries à venir (Allociné 'Trailers des nouvelles séries')."""
+    logger.info("Démarrage scraping Allociné (séries)...")
+    articles, ids = _scrape_allocine_listing(
+        log, page, LIST_ALLOCINE_SERIES_URL, ALLOCINE_SERIE_LINK_RE, "allocine_serie", "serie", MAX_PAGES_ALLOCINE_SERIES
+    )
+    logger.info("Scraping Allociné (séries) terminé")
     return articles, ids
 
 # ------------------------------
@@ -463,21 +495,23 @@ def main():
 
     cine_articles, cine_ids = [], []
     allocine_articles, allocine_ids = [], []
+    allocine_series_articles, allocine_series_ids = [], []
 
-    # Un seul navigateur Playwright partagé pour CineHorizons + Allociné
+    # Un seul navigateur Playwright partagé pour CineHorizons + Allociné (films + séries)
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
 
         cine_articles, cine_ids = scrape_cinehorizons(log, page)
         allocine_articles, allocine_ids = scrape_allocine(log, page)
+        allocine_series_articles, allocine_series_ids = scrape_allocine_series(log, page)
 
         browser.close()
 
     tmdb_articles, tmdb_ids = scrape_tmdb(log)
 
-    nouveaux_articles = cine_articles + allocine_articles + tmdb_articles
-    nouveaux_ids = cine_ids + allocine_ids + tmdb_ids
+    nouveaux_articles = cine_articles + allocine_articles + allocine_series_articles + tmdb_articles
+    nouveaux_ids = cine_ids + allocine_ids + allocine_series_ids + tmdb_ids
     logger.info(f"{len(nouveaux_articles)} nouveaux articles détectés")
 
     if not nouveaux_articles:
