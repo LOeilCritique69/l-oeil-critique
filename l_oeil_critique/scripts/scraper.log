@@ -6968,3 +6968,22 @@ Call log:
 2026-07-22 00:02:10,585 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-07-22 00:02:10,605 [INFO] Rien à commiter, le répertoire est propre.
 2026-07-22 00:02:10,605 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-22 04:19:44,679 [INFO] ==== Début du script bandes-annonces ====
+2026-07-22 04:19:44,680 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-22 04:19:44,680 [INFO] 263 identifiants chargés depuis le log
+2026-07-22 04:19:44,680 [INFO] Démarrage scraping CineHorizons...
+2026-07-22 04:19:51,374 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-22 04:19:51,406 [INFO] 3 blocs détectés (limite 3)
+2026-07-22 04:19:51,407 [INFO] Extraction détails CineHorizons pour Malfaisante
+2026-07-22 04:19:52,429 [INFO] Article ajouté CineHorizons: Malfaisante
+2026-07-22 04:19:52,457 [INFO] Scraping CineHorizons terminé
+2026-07-22 04:19:52,464 [INFO] Démarrage scraping TMDb...
+2026-07-22 04:19:52,605 [INFO] 20 films récupérés depuis TMDb
+2026-07-22 04:19:52,883 [INFO] Article ajouté TMDb: Lawrence d'Arabie
+2026-07-22 04:19:52,883 [INFO] Scraping TMDb terminé
+2026-07-22 04:19:52,884 [INFO] 2 nouveaux articles détectés
+2026-07-22 04:19:52,887 [INFO] 83 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-07-22 04:19:52,887 [INFO] Sauvegarde du log avec 265 identifiants
+2026-07-22 04:19:52,887 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-22 04:19:52,902 [INFO] Rien à commiter, le répertoire est propre.
+2026-07-22 04:19:52,902 [INFO] ==== Fin du script bandes-annonces ====
