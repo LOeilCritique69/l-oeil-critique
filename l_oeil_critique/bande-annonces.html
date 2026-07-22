@@ -314,81 +314,99 @@ document.addEventListener('DOMContentLoaded', async () => {
     const dateMajContainer = document.getElementById('date-maj');
     const searchInput = document.getElementById('trailers-search');
 
-    let allCards = []; // Cache pour la recherche
-    const initialLimit = 12;
+    let allCards = [];
+
+    const cardsPerPage = 12;
+    let displayedCards = 0;
+
+    function renderNextCards(reset = false) {
+        if (reset) {
+            container.innerHTML = '';
+            displayedCards = 0;
+        }
+
+        const nextCards = allCards.slice(
+            displayedCards,
+            displayedCards + cardsPerPage
+        );
+
+        nextCards.forEach(card => container.appendChild(card));
+
+        displayedCards += nextCards.length;
+
+        voirPlusBtn.hidden = displayedCards >= allCards.length;
+    }
 
     try {
-        // Chargement du fichier généré par le script Python
         const response = await fetch('bande_annonces_blocs.html');
-        if (!response.ok) throw new Error('Fichier introuvable (404)');
-        
+
+        if (!response.ok) {
+            throw new Error('Fichier introuvable (404)');
+        }
+
         const html = await response.text();
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
 
-        // On récupère toutes les cartes
         allCards = Array.from(tempDiv.querySelectorAll('.card-bande'));
 
-        // Remplace chaque iframe par une miniature cliquable : la vidéo (YouTube,
-        // Dailymotion, Allociné...) n'est réellement chargée qu'au clic de l'utilisateur.
-        // Cela évite de charger 10+ lecteurs vidéo simultanément (gros gain de RAM).
         allCards.forEach(lazifyCardVideo);
 
-        // Fonction pour afficher le mode normal (10 + bouton)
-        const renderDefault = () => {
-            container.innerHTML = '';
-            allCards.slice(0, initialLimit).forEach(card => container.appendChild(card));
-            
-            if (allCards.length > initialLimit) {
-                voirPlusBtn.hidden = false;
-            }
-        };
-
-        // Initialisation
         if (allCards.length > 0) {
-            renderDefault();
+            renderNextCards(true);
         } else {
-            container.innerHTML = '<p class="no-results">Aucune bande-annonce disponible.</p>';
+            container.innerHTML = `
+                <p class="no-results">
+                    Aucune bande-annonce disponible.
+                </p>
+            `;
         }
 
-        // Clic sur "Voir plus"
         voirPlusBtn.addEventListener('click', () => {
-            allCards.slice(initialLimit).forEach(card => container.appendChild(card));
-            voirPlusBtn.hidden = true;
+            renderNextCards();
         });
 
-        // RECHERCHE EN TEMPS RÉEL
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
 
-            if (query.length > 0) {
-                voirPlusBtn.hidden = true;
-                container.innerHTML = '';
-
-                const filtered = allCards.filter(card => {
-                    const title = card.querySelector('h2').innerText.toLowerCase();
-                    return title.includes(query);
-                });
-
-                if (filtered.length > 0) {
-                    filtered.forEach(card => container.appendChild(card));
-                } else {
-                    container.innerHTML = `<div class="no-results">Aucun résultat pour "${query}"</div>`;
-                }
-            } else {
-                renderDefault();
+            if (query === '') {
+                renderNextCards(true);
+                return;
             }
+
+            voirPlusBtn.hidden = true;
+            container.innerHTML = '';
+
+            const filtered = allCards.filter(card => {
+                const title = card.querySelector('h2').innerText.toLowerCase();
+                return title.includes(query);
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        Aucun résultat pour "${query}"
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(card => container.appendChild(card));
         });
 
-        // Extraction de la date de MAJ
         const majP = tempDiv.querySelector('.maj-annonces');
+
         if (majP && dateMajContainer) {
             dateMajContainer.innerHTML = majP.outerHTML;
         }
 
     } catch (err) {
-        container.innerHTML = '<p class="no-results">Erreur de chargement des données.</p>';
-        console.error('Erreur au fetch:', err);
+        container.innerHTML = `
+            <p class="no-results">
+                Erreur de chargement des données.
+            </p>
+        `;
+        console.error(err);
     }
 });
 </script>

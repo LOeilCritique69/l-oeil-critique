@@ -1,0 +1,6 @@
+- Faire une base de données des bandes-annonces (pour les souvenirs surtout) donc rajouter des pages de bandes annonces 
+(surement une dizaine) pour ne pas surcharger la page de bande annonce.
+
+- Tier List MCU (globalité des projets Marvel Canon)
+
+- Page Théories (sur les futures sorties cinéma)
