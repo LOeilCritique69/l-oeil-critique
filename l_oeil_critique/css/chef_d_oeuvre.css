@@ -938,10 +938,13 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   font-family: var(--font-display);
   font-size: 1.25rem;
   color: var(--ink);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+
+  /* --- Propriétés pour couper le texte à 2 lignes --- */
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Support navigateur actuel */
+  line-clamp: 2;         /* Standard CSS */
 }
 
 .news-item p {
@@ -949,10 +952,13 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   margin: 0 1.4rem 1rem;
   color: var(--paper-soft);
   font-size: 0.92rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+
+  /* --- Tronquage à 3 lignes --- */
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Compatibilité actuelle */
+  line-clamp: 3;         /* Norme standard */
 }
 
 .news-item .publication-date { margin: 0 1.4rem 0.8rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--paper-soft); }
@@ -1098,15 +1104,17 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 
 .card-bande h2 { margin-bottom: 0.5rem; font-family: var(--font-display); font-size: 1.55rem; color: var(--ink); }
 .card-bande .meta-info { display: flex; justify-content: space-between; margin-bottom: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--paper-soft); }
-
 .card-bande .synopsis {
   margin-bottom: 1.4rem;
   color: var(--paper-soft);
   font-size: 0.92rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+
+  /* --- Tronquage à 3 lignes --- */
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Support navigateur actuel */
+  line-clamp: 3;         /* Norme standard CSS */
 }
 
 #voir-plus-btn {
@@ -1200,10 +1208,13 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   flex-grow: 1;
   color: var(--paper-soft);
   font-size: 0.92rem;
+
+  /* --- Tronquage à 3 lignes --- */
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Support navigateur actuel */
+  line-clamp: 3;         /* Norme standard CSS */
 }
 
 .review-card__read-more {
@@ -2225,7 +2236,17 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
   .search-container { display: none; }
 
   .card-bande h2 { font-size: 1.2rem; }
-  .card-bande .synopsis { font-size: 0.85rem; -webkit-line-clamp: 2; }
+  
+  /* --- Synopsis tronqué proprement à 2 lignes --- */
+  .card-bande .synopsis { 
+    font-size: 0.85rem; 
+    overflow: hidden;             /* Obligatoire : masque le texte qui dépasse */
+    display: -webkit-box;         /* Obligatoire : active le modèle de boîte legacy */
+    -webkit-box-orient: vertical; /* Obligatoire : orientation verticale */
+    -webkit-line-clamp: 2;        /* Compatibilité actuelle (Chrome, Safari, Firefox...) */
+    line-clamp: 2;                /* Norme standard future */
+  }
+
   #voir-plus-btn { padding: 0.7rem 1.5rem; font-size: 0.82rem; }
   .category-link { flex: 1 1 100%; }
 
@@ -2242,7 +2263,6 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
   .video-responsive .play-button { width: 52px; height: 52px; }
   .video-responsive .play-button::after { border-width: 10px 0 10px 16px; }
 }
-
 /* ============================================================================
    20.11 — TRÈS PETIT MOBILE (max-width: 400px)
    ============================================================================ */
