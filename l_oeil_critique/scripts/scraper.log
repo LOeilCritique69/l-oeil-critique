@@ -7778,3 +7778,37 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-07-23 11:52:55,888 [INFO] Scraping TMDb terminé
 2026-07-23 11:52:55,889 [INFO] 0 nouveaux articles détectés
 2026-07-23 11:52:55,889 [INFO] Aucun nouvel article à ajouter
+2026-07-23 14:08:17,435 [INFO] ==== Début du script bandes-annonces ====
+2026-07-23 14:08:17,436 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-23 14:08:17,436 [INFO] 841 identifiants chargés depuis le log
+2026-07-23 14:08:19,433 [INFO] Démarrage scraping CineHorizons...
+2026-07-23 14:08:21,338 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-23 14:08:21,373 [INFO] 10 blocs détectés sur la page 1
+2026-07-23 14:08:21,375 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-23 14:08:21,375 [INFO] Scraping CineHorizons terminé
+2026-07-23 14:08:21,375 [INFO] Démarrage scraping Allociné (films)...
+2026-07-23 14:08:21,811 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-23 14:08:21,897 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-23 14:08:21,897 [INFO] Scraping Allociné (films) terminé
+2026-07-23 14:08:21,897 [INFO] Démarrage scraping Allociné (séries)...
+2026-07-23 14:08:22,455 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/
+2026-07-23 14:08:22,553 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-23 14:08:22,553 [INFO] Scraping Allociné (séries) terminé
+2026-07-23 14:08:22,600 [INFO] Démarrage scraping TMDb...
+2026-07-23 14:08:22,681 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/2)
+2026-07-23 14:08:22,772 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/2)
+2026-07-23 14:08:23,538 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/11)
+2026-07-23 14:08:23,577 [INFO] Article ajouté TMDb (now_playing): Matrix
+2026-07-23 14:08:23,628 [INFO] Article ajouté TMDb (now_playing): District 9
+2026-07-23 14:08:23,644 [INFO] Article ajouté TMDb (now_playing): A.I. Intelligence artificielle
+2026-07-23 14:08:23,661 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/11)
+2026-07-23 14:08:23,724 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/11)
+2026-07-23 14:08:24,384 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/11)
+2026-07-23 14:08:24,638 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/11)
+2026-07-23 14:08:25,434 [INFO] Scraping TMDb terminé
+2026-07-23 14:08:25,435 [INFO] 3 nouveaux articles détectés
+2026-07-23 14:08:25,438 [INFO] 100 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-07-23 14:08:25,438 [INFO] Sauvegarde du log avec 844 identifiants
+2026-07-23 14:08:25,439 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-23 14:08:25,461 [INFO] Rien à commiter, le répertoire est propre.
+2026-07-23 14:08:25,461 [INFO] ==== Fin du script bandes-annonces ====
