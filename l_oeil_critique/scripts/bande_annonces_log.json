@@ -836,5 +836,8 @@
   "allocine_serie::27648::19590604",
   "allocine_serie::28268::19591231",
   "allocine_serie::28974::19596987",
-  "allocine_serie::29778::19604598"
+  "allocine_serie::29778::19604598",
+  "cinehorizons::Fantômas::https://www.cinehorizons.net/film/fant%C3%B4mas",
+  "tmdb::id::1361156",
+  "cinehorizons::Moulin::https://www.cinehorizons.net/film/moulin"
 ]

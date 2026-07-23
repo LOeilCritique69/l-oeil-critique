@@ -267,9 +267,15 @@ def extract_allocine_detail(page, content_id, cmedia, content_type):
 
     texte_page = detail.get_text(" ", strip=True)
     if content_type == "serie":
-        # Pas de "sortie en salle" pour une série : on récupère au mieux l'année (ex: "Série TV 2026")
-        date_match = re.search(r"Série TV (\d{4})", texte_page)
-        date_sortie = f"Série {date_match.group(1)}" if date_match else "Date inconnue"
+        # La fiche série affiche en général une vraie date ("Sortie : 27 juillet 2026").
+        # On la cherche en priorité, et on ne retombe sur l'année seule ("Série TV 2026")
+        # que si aucune date complète n'est trouvée.
+        date_match = re.search(r"Sortie\s*:\s*(\d{1,2}\s+[A-Za-zéûîôâ]+\s+\d{4})", texte_page)
+        if date_match:
+            date_sortie = clean_text(date_match.group(1))
+        else:
+            annee_match = re.search(r"Série TV (\d{4})", texte_page)
+            date_sortie = f"Série {annee_match.group(1)}" if annee_match else "Date inconnue"
         titre = f"{titre} (série)"
     else:
         # La date de sortie apparaît en texte libre du type "15 juillet 2026 en salle"

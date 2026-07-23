@@ -7715,3 +7715,39 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-07-22 13:32:21,568 [INFO] Scraping TMDb terminé
 2026-07-22 13:32:21,570 [INFO] 0 nouveaux articles détectés
 2026-07-22 13:32:21,570 [INFO] Aucun nouvel article à ajouter
+2026-07-23 13:39:44,777 [INFO] ==== Début du script bandes-annonces ====
+2026-07-23 13:39:44,799 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-23 13:39:44,799 [INFO] 838 identifiants chargés depuis le log
+2026-07-23 13:39:45,615 [INFO] Démarrage scraping CineHorizons...
+2026-07-23 13:39:49,270 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-23 13:39:49,290 [INFO] 10 blocs détectés sur la page 1
+2026-07-23 13:39:49,290 [INFO] Extraction détails CineHorizons pour Fantômas
+2026-07-23 13:39:51,780 [INFO] Article ajouté CineHorizons: Fantômas
+2026-07-23 13:39:51,780 [INFO] Extraction détails CineHorizons pour Moulin
+2026-07-23 13:39:52,213 [INFO] Article ajouté CineHorizons: Moulin
+2026-07-23 13:39:52,376 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-07-23 13:39:52,395 [INFO] 10 blocs détectés sur la page 2
+2026-07-23 13:39:52,396 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-23 13:39:52,396 [INFO] Scraping CineHorizons terminé
+2026-07-23 13:39:52,396 [INFO] Démarrage scraping Allociné (films)...
+2026-07-23 13:39:52,683 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-23 13:39:52,712 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-23 13:39:52,712 [INFO] Scraping Allociné (films) terminé
+2026-07-23 13:39:52,712 [INFO] Démarrage scraping Allociné (séries)...
+2026-07-23 13:39:53,146 [INFO] Page Allociné chargée: https://www.allocine.fr/video/series/prochainement/
+2026-07-23 13:39:53,213 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-23 13:39:53,213 [INFO] Scraping Allociné (séries) terminé
+2026-07-23 13:39:53,278 [INFO] Démarrage scraping TMDb...
+2026-07-23 13:39:53,624 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/2)
+2026-07-23 13:39:54,262 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/2)
+2026-07-23 13:39:56,138 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/11)
+2026-07-23 13:39:56,511 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/11)
+2026-07-23 13:39:56,888 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/11)
+2026-07-23 13:39:57,799 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/11)
+2026-07-23 13:39:59,295 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/11)
+2026-07-23 13:40:00,632 [INFO] Article ajouté TMDb (now_playing): Sous le ciel de Kyoto
+2026-07-23 13:40:01,633 [INFO] Scraping TMDb terminé
+2026-07-23 13:40:01,634 [INFO] 3 nouveaux articles détectés
+2026-07-23 13:40:01,682 [INFO] 100 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-07-23 13:40:01,682 [INFO] Sauvegarde du log avec 841 identifiants
+2026-07-23 13:40:01,683 [INFO] Poussée automatique FORCÉE vers GitHub...
