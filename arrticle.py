@@ -7,6 +7,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 BASE_DIR = os.path.join("l_oeil_critique", "articles")
+TIER_LIST_DIR = os.path.join("l_oeil_critique", "pages", "tier-list")
 OUTPUT_FILE = os.path.join("l_oeil_critique", "assets", "data", "articles_index.json")
 
 TYPES = [
@@ -15,8 +16,16 @@ TYPES = [
     "bande-annonces",
     "series",
     "actualités",
-    "bigactualités"
+    "bigactualités",
+    "theories"
 ]
+
+# Libellés d'affichage pour les dossiers dont le nom de dossier ne donne pas
+# directement le bon rendu via .capitalize() (accents, casse particulière...)
+DISPLAY_TYPE_OVERRIDES = {
+    "bigactualités": "BigActualités",
+    "theories": "Théories",
+}
 
 articles_index = []
 
@@ -135,6 +144,47 @@ def extract_rating(soup):
 
 
 # =========================================================
+# TIER LIST — extraction dédiée (structure différente des articles)
+# =========================================================
+def extract_og_image(soup):
+    og_image = soup.find("meta", attrs={"property": "og:image"})
+    if og_image and og_image.get("content"):
+        return og_image["content"]
+    return None
+
+
+def extract_tier_list_description(soup):
+    subtitle = soup.find("p", class_="list-page-header__subtitle")
+    if subtitle:
+        return subtitle.get_text(strip=True)
+    return extract_description(soup)
+
+
+def add_tier_list_file(file_path, url_base):
+    with open(file_path, "r", encoding="utf-8") as f:
+        soup = BeautifulSoup(f, "html.parser")
+
+    title_tag = soup.find("h1", class_="list-page-header__title")
+    if not title_tag:
+        title_tag = soup.find("title")
+    title = title_tag.get_text(strip=True) if title_tag else os.path.basename(file_path)
+
+    image = normalize_image_path(extract_og_image(soup))
+    description = extract_tier_list_description(soup)
+
+    articles_index.append({
+        "title": title,
+        "type": "Tier List",
+        "url": url_base,
+        "image": image,
+        "date": None,
+        "description": description,
+        "author": None,
+        "rating": None
+    })
+
+
+# =========================================================
 # TRI + ID
 # =========================================================
 def sort_articles(articles):
@@ -246,7 +296,7 @@ for type_folder in TYPES:
         continue
 
     # -------------------------
-    # AUTRES
+    # AUTRES (films, series, actualités, bigactualités, theories)
     # -------------------------
     for file_name in os.listdir(folder_path):
         if not file_name.endswith(".html") or file_name == "tendances.html":
@@ -261,7 +311,7 @@ for type_folder in TYPES:
         title_tag = soup.find("title")
         title = title_tag.get_text(strip=True) if title_tag else file_name.replace(".html", "")
 
-        display_type = "BigActualités" if type_folder == "bigactualités" else type_folder.capitalize()
+        display_type = DISPLAY_TYPE_OVERRIDES.get(type_folder, type_folder.capitalize())
 
         image = normalize_image_path(extract_image(soup))
         date = extract_date(soup)
@@ -278,6 +328,19 @@ for type_folder in TYPES:
             "author": author,
             "rating": None
         })
+
+
+# =========================================================
+# TIER LISTS — dossier séparé (l_oeil_critique/pages/tier-list)
+# =========================================================
+if os.path.exists(TIER_LIST_DIR):
+    for file_name in os.listdir(TIER_LIST_DIR):
+        if not file_name.endswith(".html"):
+            continue
+
+        file_path = os.path.join(TIER_LIST_DIR, file_name)
+        url_base = f"/l_oeil_critique/pages/tier-list/{file_name}"
+        add_tier_list_file(file_path, url_base)
 
 
 # =========================================================
