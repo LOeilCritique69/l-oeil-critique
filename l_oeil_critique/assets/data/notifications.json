@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "text": "Nouvelle rubrique : découvrez les Tier Lists de L'Œil Critique avec mes classements de sagas et franchises (Harry Potter, Spider-Man, Transformers, DCAMU, Jurassic, Tolkien...).",
+    "text": "Nouvelle rubrique : découvrez les Tier Lists de L'Œil Critique avec mes classements de sagas et franchises (Harry Potter, Spider-Man, Transformers, DC Animated Universe, Jurassic Park, Le Seigneur des Anneaux...).",
     "icon": "🏆",
     "unread": true,
     "url": "/l_oeil_critique/pages/tier-lists.html"
   },
   {
     "id": 2,
-    "text": "Reviews fait peau neuve : retrouvez désormais les critiques de films et de séries, mes notes Letterboxd ainsi que mes Tier Lists de sagas dans une seule page.",
+    "text": "Reviews fait peau neuve : retrouvez désormais les critiques de films et de séries, mes notes Letterboxd ainsi que toutes mes Tier Lists au même endroit.",
     "icon": "✨",
     "unread": true,
     "url": "/l_oeil_critique/reviews.html"
   },
   {
     "id": 3,
-    "text": "Critique — Supergirl – Une bonne base héroïque, mais une normalité.",
-    "icon": "🎬",
-    "unread": true,
-    "url": "/l_oeil_critique/articles/reviews/films/supergirl-critique.html"
-  },
-  {
-    "id": 4,
-    "text": "Critique — Disclosure Day – Spielberg dépassé par son propre sujet.",
-    "icon": "🎬",
-    "unread": true,
-    "url": "/l_oeil_critique/articles/reviews/films/disclosure-day-critique.html"
-  },
-  {
-    "id": 5,
-    "text": "Avengers : Doomsday – L'Avengers de trop ? Notre analyse du premier trailer",
+    "text": "Nouvel article : Avengers : Doomsday — L'Avengers de trop ? Découvrez mon analyse du premier trailer.",
     "icon": "📜",
     "unread": true,
     "url": "/l_oeil_critique/articles/films/doomsday-trailer.html"
+  },
+  {
+    "id": 4,
+    "text": "Nouvelle Tier List : retrouvez mon classement complet de tous les films du Marvel Cinematic Universe, de S à F.",
+    "icon": "🏆",
+    "unread": true,
+    "url": "/l_oeil_critique/pages/tier-list/MCU.html"
+  },
+  {
+    "id": 5,
+    "text": "SpideyTrack rejoint L'Œil Critique : suivez toute l'actualité des Spider-Men et des projets liés à l'univers Spider-Man.",
+    "icon": "🕷️",
+    "unread": true,
+    "url": "/l_oeil_critique/Spideytrack/marveldle.html"
   }
 ]

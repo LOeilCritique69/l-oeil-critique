@@ -1,24 +1,48 @@
 /* ============================================================================
-   L'ŒIL CRITIQUE — CSS GLOBAL DES PAGES DE LISTE
+   L'ŒIL CRITIQUE — CSS GLOBAL DES PAGES DE LISTE (refonte)
    (hub Critiques, Critiques Films/Séries, Tier Lists index, pages tier-list)
 
-   IMPORTANT :
-   Toutes les couleurs ci-dessous sont des valeurs FIXES, propres à ce fichier
-   (préfixe --lp-). Elles ne dépendent d'AUCUNE variable définie dans
-   chef_d_oeuvre.css : même si le thème global du site change, ces pages
-   garderont toujours exactement ce rendu.
+   IMPORTANT — inchangé depuis la version précédente :
+   Toutes les couleurs ci-dessous restent des valeurs FIXES, propres à ce
+   fichier (préfixe --lp-). Elles ne dépendent d'AUCUNE variable définie
+   dans chef_d_oeuvre.css : même si le thème global du site change, ces
+   pages garderont toujours exactement ce rendu. Cette indépendance est
+   volontaire (documentée dans la version d'origine) et a été conservée
+   telle quelle — seules les VALEURS des tokens --lp-* ont été retravaillées,
+   pas l'architecture.
+
+   CE QUI CHANGE DANS CETTE REFONTE
+   - Palette de rangs (S/A/B/C/D/F) : l'ancien dégradé "arc-en-ciel" façon
+     tier-list générique (or/orange/jaune-vert/vert/bleu/gris) est remplacé
+     par une gamme laiton → acier → velours, cohérente avec le reste du
+     site sans dépendre de ses tokens.
+   - Fond de page : un léger vignettage radial + un grain photographique
+     très discret remplacent le à-plat uni, pour une sensation de salle de
+     projection plutôt que de simple fond sombre.
+   - Rayons de bordure légèrement agrandis (sensation plus "propre").
+   - Nouvel état de survol sur les cartes (fond qui s'éclaircit en plus de
+     la bordure), et lueur douce sur les badges de tier list.
    ============================================================================ */
 
 :root {
-  --lp-gold: #c9a24a;                 /* accent doré */
+  --lp-gold: #c9a24a;                 /* accent doré (laiton) */
+  --lp-gold-light: #e8c878;           /* laiton clair — rang S, accents forts */
+  --lp-gold-deep: #9c7b34;            /* laiton profond — rang B, états pressés */
   --lp-gold-soft: rgba(201, 162, 74, 0.18);
   --lp-gold-border: rgba(201, 162, 74, 0.4);
-  --lp-bg: #0c0d12;                   /* fond très sombre des pages */
-  --lp-bg-card: #16171f;              /* fond des cartes */
+  --lp-velvet: #b8323a;               /* rouge velours — rang F, alertes */
+  --lp-velvet-deep: #8c2530;
+  --lp-steel: #4a4e63;                /* bleu-acier sourd — rang D */
+  --lp-bronze: #6b6355;               /* bronze mat — rang C */
+  --lp-bg: #0b0c12;                   /* fond très sombre des pages */
+  --lp-bg-card: #14151e;              /* fond des cartes */
+  --lp-bg-card-hover: #1b1c28;        /* fond des cartes au survol */
   --lp-text: #ece7db;                 /* texte clair (ivoire chaud) */
   --lp-text-dim: rgba(236, 231, 219, 0.65);
   --lp-font-title: 'Bebas Neue', 'Roboto', sans-serif;
   --lp-font-body: 'Roboto', sans-serif;
+  --lp-radius: 10px;
+  --lp-radius-lg: 14px;
 }
 
 /* ============================================================================
@@ -27,10 +51,14 @@
    ============================================================================ */
 body.lp-page {
   background-color: var(--lp-bg);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201, 162, 74, 0.08), transparent 65%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-attachment: fixed, fixed;
 }
 
 /* ============================================================================
-   HUB NAVIGATION — reviews.html (Films / Séries / Tier Lists)
+   HUB NAVIGATION — reviews.html (Films / Séries / Tier Lists / Théories)
    ============================================================================ */
 .hub-nav {
   padding: 4rem 3rem;
@@ -77,8 +105,8 @@ body.lp-page {
   text-decoration: none;
   background: var(--lp-bg-card);
   border: 1px solid var(--lp-gold-soft);
-  border-radius: 12px;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--lp-radius-lg);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .hub-nav__card::before {
@@ -91,7 +119,8 @@ body.lp-page {
 }
 
 .hub-nav__card:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  background: var(--lp-bg-card-hover);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--lp-gold-soft) inset;
   border-color: var(--lp-gold);
   transform: translateY(-6px);
 }
@@ -143,10 +172,11 @@ body.lp-page {
 .hub-nav__card--films .hub-nav__eyebrow { color: #7fb3ff; }
 .hub-nav__card--series .hub-nav__eyebrow { color: #ff9f7f; }
 .hub-nav__card--tierlist .hub-nav__eyebrow { color: var(--lp-gold); }
+.hub-nav__card--theories .hub-nav__eyebrow { color: var(--lp-velvet); }
 
 /* ============================================================================
    EN-TÊTE DE PAGE DE LISTE
-   critique-films.html / critique-series.html / tier-lists.html / tier-list/*.html
+   critique-films.html / critique-series.html / tier-lists.html / theories.html
    ============================================================================ */
 .list-page-header {
   padding: 3.5rem 3rem 2rem;
@@ -180,6 +210,7 @@ body.lp-page {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--lp-gold);
+  text-shadow: 0 0 24px rgba(201, 162, 74, 0.25);
 }
 
 .list-page-header__subtitle {
@@ -208,12 +239,13 @@ body.lp-page {
   text-decoration: none;
   background: var(--lp-bg-card);
   border: 1px solid var(--lp-gold-soft);
-  border-radius: 12px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  border-radius: var(--lp-radius-lg);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tierlist-card:hover {
   border-color: var(--lp-gold);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
   transform: translateY(-6px);
 }
 
@@ -236,6 +268,7 @@ body.lp-page {
   bottom: 0;
   left: 0;
   padding: 1.25rem;
+  background: linear-gradient(to top, rgba(11, 12, 18, 0.92), transparent);
 }
 
 .tierlist-card__title {
@@ -266,10 +299,11 @@ body.lp-page {
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid var(--lp-gold-border);
   border-radius: 20px;
+  backdrop-filter: blur(4px);
 }
 
 /* ============================================================================
-   GABARIT TIER LIST — tier-list/*.html (Harry Potter, Spider-Man, etc.)
+   GABARIT TIER LIST — tier-list/*.html (Harry Potter, Spider-Man, MCU, etc.)
    ============================================================================ */
 .tierlist-page {
   max-width: 1100px;
@@ -290,7 +324,8 @@ body.lp-page {
   min-height: 110px;
   margin-bottom: 0.75rem;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--lp-radius);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .tier-row__label {
@@ -303,6 +338,7 @@ body.lp-page {
   font-size: 2rem;
   letter-spacing: 1px;
   color: #10121a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .tier-row__items {
@@ -326,7 +362,7 @@ body.lp-page {
   color: rgba(255, 255, 255, 0.25);
   text-align: center;
   border: 2px dashed rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
+  border-radius: var(--lp-radius);
 }
 
 .tier-item {
@@ -334,7 +370,8 @@ body.lp-page {
   width: 90px;
   height: 90px;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: var(--lp-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 .tier-item img {
@@ -342,11 +379,12 @@ body.lp-page {
   height: 100%;
   object-fit: cover;
   cursor: zoom-in;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .tier-item:hover img {
-  transform: scale(1.03);
+  transform: scale(1.06);
+  filter: brightness(1.08);
 }
 
 .lp-modal {
@@ -367,6 +405,7 @@ body.lp-page {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.86);
+  backdrop-filter: blur(4px);
 }
 
 .lp-modal__content {
@@ -383,7 +422,7 @@ body.lp-page {
   max-width: min(88vw, 900px);
   max-height: min(80vh, 800px);
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: var(--lp-radius);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
 }
 
@@ -394,15 +433,336 @@ body.lp-page {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
-/* Couleurs des rangs — valeurs fixes, indépendantes du thème du site */
-.tier-row--s .tier-row__label { background: #e6c15c; }
-.tier-row--a .tier-row__label { background: #d99a4e; }
-.tier-row--b .tier-row__label { background: #d1d15c; }
-.tier-row--c .tier-row__label { background: #7fc17f; }
-.tier-row--d .tier-row__label { background: #7fa8d1; }
-.tier-row--f .tier-row__label { background: #b0b0b0; }
+/* Couleurs des rangs — palette laiton → acier → velours,
+   valeurs fixes et indépendantes du thème du site */
+.tier-row--s .tier-row__label { background: linear-gradient(160deg, var(--lp-gold-light), var(--lp-gold)); }
+.tier-row--a .tier-row__label { background: var(--lp-gold); }
+.tier-row--b .tier-row__label { background: var(--lp-gold-deep); color: var(--lp-text); text-shadow: none; }
+.tier-row--c .tier-row__label { background: var(--lp-bronze); color: var(--lp-text); text-shadow: none; }
+.tier-row--d .tier-row__label { background: var(--lp-steel); color: var(--lp-text); text-shadow: none; }
+.tier-row--f .tier-row__label { background: linear-gradient(160deg, var(--lp-velvet), var(--lp-velvet-deep)); color: var(--lp-text); text-shadow: none; }
 
+/* ============================================================================
+   CHANGELOG — mises-a-jour.html
+   Timeline verticale des versions du site, esprit pellicule (rail + perfos)
+   ============================================================================ */
+.changelog {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem 5rem;
+}
 
+.changelog__current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 auto 3rem;
+  padding: 0.6rem 1.25rem;
+  width: fit-content;
+  font-family: var(--lp-font-body);
+  font-size: 0.85rem;
+  color: var(--lp-text-dim);
+  background: var(--lp-bg-card);
+  border: 1px solid var(--lp-gold-soft);
+  border-radius: 999px;
+}
+
+.changelog__current strong {
+  font-family: var(--lp-font-title);
+  letter-spacing: 1px;
+  color: var(--lp-gold);
+}
+
+.changelog__timeline {
+  position: relative;
+  padding-left: 2.75rem;
+}
+
+.changelog__timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  left: 0.9rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--lp-gold-soft), rgba(255, 255, 255, 0.06) 90%);
+}
+
+.version-entry {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.version-entry:last-child {
+  margin-bottom: 0;
+}
+
+.version-entry::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: -2.75rem;
+  width: 14px;
+  height: 14px;
+  background: var(--lp-bg);
+  border: 2px solid var(--lp-gold-deep);
+  border-radius: 50%;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.version-entry--latest::before {
+  background: var(--lp-gold);
+  border-color: var(--lp-gold-light);
+  box-shadow: 0 0 0 4px var(--lp-gold-soft);
+}
+
+.version-entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.version-entry__number {
+  font-family: var(--lp-font-title);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--lp-gold);
+}
+
+.version-entry--latest .version-entry__number { color: var(--lp-gold-light); }
+
+.version-entry__date {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lp-text-dim);
+}
+
+.version-entry__badge-new {
+  padding: 0.15rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lp-bg);
+  background: var(--lp-gold-light);
+  border-radius: 999px;
+}
+
+.version-entry__title {
+  margin-bottom: 0.9rem;
+  font-family: var(--lp-font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--lp-text);
+}
+
+.version-entry__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.version-entry__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--lp-text-dim);
+}
+
+.changelog-tag {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  padding: 0.1rem 0.5rem;
+  font-family: var(--lp-font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.changelog-tag--ajout { color: #4FAE7C; background: rgba(79, 174, 124, 0.14); }
+.changelog-tag--refonte { color: var(--lp-gold); background: var(--lp-gold-soft); }
+.changelog-tag--fix { color: var(--lp-velvet); background: rgba(184, 50, 58, 0.14); }
+
+/* ============================================================================
+   NOTIFICATIONS — notifications.html
+   Page dédiée (remplace l'ancien panneau flottant du header)
+   ============================================================================ */
+.notif-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 3rem 5rem;
+}
+
+.notif-page__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.notif-page__mark-all {
+  padding: 0.5rem 1rem;
+  font-family: var(--lp-font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--lp-gold);
+  background: transparent;
+  border: 1px solid var(--lp-gold-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.notif-page__mark-all:hover {
+  background: var(--lp-gold-soft);
+}
+
+.notif-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notif-page__empty {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--lp-text-dim);
+  font-family: var(--lp-font-body);
+}
+
+a.notif-page__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: var(--lp-text);
+  background: var(--lp-bg-card);
+  border: 1px solid var(--lp-gold-soft);
+  border-left: 3px solid transparent;
+  border-radius: var(--lp-radius);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+a.notif-page__item:hover {
+  background: var(--lp-bg-card-hover);
+  border-color: var(--lp-gold);
+  transform: translateX(3px);
+}
+
+a.notif-page__item.is-unread {
+  border-left-color: var(--lp-gold);
+}
+
+.notif-page__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+}
+
+.notif-page__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-page__text {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--lp-text);
+}
+
+a.notif-page__item:not(.is-unread) .notif-page__text {
+  color: var(--lp-text-dim);
+}
+
+.notif-page__dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lp-gold);
+  opacity: 0;
+}
+
+a.notif-page__item.is-unread .notif-page__dot {
+  opacity: 1;
+}
+
+/* ============================================================================
+   ADDITIF — BARÈME NUMÉRIQUE /10 (tier-list/MCU.html et suivantes)
+   ----------------------------------------------------------------------------
+   À coller à la fin de list-pages.css. Les classes .tier-row--s/a/b/c/d/f
+   existantes ne sont pas touchées (au cas où d'autres tier lists du site
+   les utilisent encore) : ce barème 10→1 vit dans des classes à part,
+   .tier-row--10 à .tier-row--1, pour cohabiter sans conflit.
+
+   Le label est plus long ici ("5 · Basique / Oubliable" vs juste "S"), donc
+   la colonne de label est élargie et le texte repensé en deux niveaux :
+   un gros chiffre (.tier-num) au-dessus du nom du palier, plus lisible
+   qu'une seule ligne compressée.
+   ============================================================================ */
+
+.tierlist-page .tier-row__label {
+  flex-direction: column;
+  width: 130px;
+  padding: 0.5rem 0.4rem;
+  font-family: var(--lp-font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #10121a;
+}
+
+.tierlist-page .tier-row__label .tier-num {
+  font-family: var(--lp-font-title);
+  font-size: 2.1rem;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+/* Couleurs des rangs 10 → 1 — dégradé or (excellent) vers gris/lie-de-vin
+   (atrocité), valeurs fixes indépendantes du thème du site. */
+.tier-row--10 .tier-row__label { background: #e6c15c; }
+.tier-row--9  .tier-row__label { background: #e0b054; }
+.tier-row--8  .tier-row__label { background: #d99a4e; }
+.tier-row--7  .tier-row__label { background: #cbab52; }
+.tier-row--6  .tier-row__label { background: #d1d15c; }
+.tier-row--5  .tier-row__label { background: #a8c17f; }
+.tier-row--4  .tier-row__label { background: #7fc17f; }
+.tier-row--3  .tier-row__label { background: #7fa8d1; }
+.tier-row--2  .tier-row__label { background: #9d9d9d; color: #f2f2f2; }
+.tier-row--1  .tier-row__label { background: #8a3b4e; color: #f2e6e9; }
+
+@media (max-width: 600px) {
+  .tierlist-page .tier-row__label {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  .tierlist-page .tier-row__label .tier-num { font-size: 1.5rem; }
+}
 
 /* ============================================================================
    RESPONSIVE
@@ -417,4 +777,8 @@ body.lp-page {
   .tierlist-grid { padding: 1.5rem; }
   .tier-row { flex-direction: column; min-height: auto; }
   .tier-row__label { width: 100%; padding: 0.5rem 0; }
+  .changelog { padding: 2.5rem 1.25rem 3.5rem; }
+  .changelog__timeline { padding-left: 2rem; }
+  .version-entry::before { left: -2rem; }
+  .notif-page { padding: 2.5rem 1.25rem 3.5rem; }
 }

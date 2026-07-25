@@ -2,66 +2,128 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded fired");
 
   // =========================
-  // HEADER (unchanged)
+  // HEADER — structure "diaphragme ouvert"
   // =========================
   const headerHTML = `
     <header>
-      <div class="header-content">
-        <a href="/index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
-          <img src="/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
-        </a>
-        <h1 class="site-title">
-          <a href="/index.html" class="site-title-link">L'Œil Critique</a>
-        </h1>
+      <div class="header-utility" id="headerUtility">
+        <div class="header-utility__inner">
+          <span class="header-utility__time" id="headerClock">—</span>
+          <span class="header-utility__tagline">Chaque image mérite un jugement.</span>
+        </div>
+      </div>
 
-        <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-          <a href="/l_oeil_critique/news/Accueil.html">Actualités</a>
-          <a href="/l_oeil_critique/reviews.html">Critiques</a>
-          <a href="/l_oeil_critique/bande-annonces.html">Bandes-Annonces</a>
-          <a href="/l_oeil_critique/extras.html">Extras</a>
-          <a href="/l_oeil_critique/A_propos.html">À Propos</a>
-        </nav>
+      <div class="header-main">
+        <div class="header-content">
+          <a href="/index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+            <span class="logo-aperture" aria-hidden="true"></span>
+            <img src="/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
+            <span class="site-title">L'Œil Critique</span>
+          </a>
 
-        <div class="header-actions">
-          <div class="notif-wrapper">
-            <button class="notif-btn" id="notifBtn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
-              <span class="notif-icon">🔔</span>
-              <span class="notif-badge hidden" id="notifBadge">0</span>
+          <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+            <a href="/l_oeil_critique/news/Accueil.html" data-index="01">Actualités</a>
+            <a href="/l_oeil_critique/reviews.html" data-index="02">Critiques</a>
+            <a href="/l_oeil_critique/bande-annonces.html" data-index="03">Bandes-Annonces</a>
+            <a href="/l_oeil_critique/pages/theories.html" data-index="04">Théories</a>
+            <a href="/l_oeil_critique/extras.html" data-index="05">Extras</a>
+            <a href="/l_oeil_critique/A_propos.html" data-index="06">À Propos</a>
+          </nav>
+
+          <div class="header-actions">
+            <button class="icon-btn" id="searchOpenBtn" aria-label="Ouvrir la recherche" aria-haspopup="dialog" aria-expanded="false">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span class="icon-btn__kbd">/</span>
             </button>
-            <div class="notif-panel" id="notifPanel" role="dialog" aria-label="Notifications">
-              <div class="notif-panel-header">
-                <span class="notif-panel-title">Notifications</span>
-                <button class="notif-mark-all" id="markAllBtn">Tout marquer lu</button>
-              </div>
-              <div class="notif-list" id="notifList"></div>
-            </div>
-          </div>
 
-          <div class="search-container">
-            <input type="text" id="search-input" placeholder="Rechercher..." aria-label="Champ de recherche">
-            <button id="search-button" aria-label="Lancer la recherche">🔍</button>
-            <div id="search-results-container" class="search-results"></div>
+            <div class="notif-wrapper">
+              <button class="icon-btn" id="notifBtn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
+                <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                <span class="notif-badge hidden" id="notifBadge">0</span>
+              </button>
+              <div class="notif-panel" id="notifPanel" role="dialog" aria-label="Notifications">
+                <div class="notif-panel-header">
+                  <span class="notif-panel-title">Notifications</span>
+                  <button class="notif-mark-all" id="markAllBtn">Tout marquer lu</button>
+                </div>
+                <div class="notif-list" id="notifList"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
+
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Recherche">
+      <div class="search-overlay__backdrop" id="searchBackdrop"></div>
+      <div class="search-overlay__panel">
+        <div class="search-overlay__field">
+          <span class="search-overlay__icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input type="text" id="search-input" placeholder="Rechercher un film, une série, un article..." autocomplete="off">
+          <button class="search-overlay__close" id="searchCloseBtn" aria-label="Fermer la recherche">✕</button>
+        </div>
+        <div id="search-results-container" class="search-overlay__results"></div>
+      </div>
+    </div>
   `;
 
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
 
   // =========================
-  // FOOTER (unchanged)
+  // FOOTER — refonte "obturateur final"
   // =========================
   const footerHTML = `
     <footer>
-      <div class="footer-content">
-        <div class="footer-links">
-          <a href="/l_oeil_critique/mentions_légales.html">Mentions légales</a>
-          <a href="/l_oeil_critique/politique-de-confidentialité.html">Politique de confidentialité</a>
-          <a href="/l_oeil_critique/contact.html">Contact</a>
+      <div class="footer-aperture" aria-hidden="true"></div>
+
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="/index.html" class="footer-logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+              <span class="logo-aperture static" aria-hidden="true"></span>
+              <img src="/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg" alt="" class="footer-logo">
+              <span class="footer-site-title">L'Œil Critique</span>
+            </a>
+            <p class="footer-tagline">Chaque image mérite un jugement. Critiques, actualités et théories, sans complaisance.</p>
+            <div class="footer-socials">
+              <a href="https://letterboxd.com/oni_le_chan/" class="footer-social" aria-label="Suivre sur Letterboxd" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><circle cx="6.5" cy="12" r="3.2"></circle><circle cx="12" cy="12" r="3.2"></circle><circle cx="17.5" cy="12" r="3.2"></circle></svg>
+                Letterboxd
+              </a>
+            </div>
+          </div>
+
+          <nav class="footer-col footer-nav-explorer" aria-label="Explorer">
+            <span class="footer-col__title">Explorer</span>
+            <a href="/l_oeil_critique/news/Accueil.html" data-index="01">Actualités</a>
+            <a href="/l_oeil_critique/reviews.html" data-index="02">Critiques</a>
+            <a href="/l_oeil_critique/bande-annonces.html" data-index="03">Bandes-Annonces</a>
+            <a href="/l_oeil_critique/pages/theories.html" data-index="04">Théories</a>
+            <a href="/l_oeil_critique/extras.html" data-index="05">Extras</a>
+          </nav>
+
+          <nav class="footer-col" aria-label="Informations">
+            <span class="footer-col__title">Informations</span>
+            <a href="/l_oeil_critique/A_propos.html">À propos</a>
+            <a href="/l_oeil_critique/pages/mises-a-jour.html">Mises à jour</a>
+            <a href="/l_oeil_critique/mentions_légales.html">Mentions légales</a>
+            <a href="/l_oeil_critique/politique-de-confidentialité.html">Confidentialité</a>
+            <a href="/l_oeil_critique/contact.html">Contact</a>
+          </nav>
         </div>
-        <p>&copy; 2026 L'Œil Critique. Tous droits réservés.</p>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom__inner">
+          <p>&copy; 2026 L'Œil Critique. Tous droits réservés.</p>
+          <button class="footer-totop" id="footerToTop" aria-label="Retour en haut de page">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+            Haut de page
+          </button>
+        </div>
       </div>
     </footer>
   `;
@@ -69,7 +131,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // =========================
-  // NOTIFICATION SYSTEM
+  // FOOTER — retour en haut de page
+  // =========================
+  const footerToTop = document.getElementById("footerToTop");
+  footerToTop?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+
+  // =========================
+  // HORLOGE DE LA BANDE UTILITAIRE
+  // =========================
+  const headerClock = document.getElementById("headerClock");
+
+  function updateClock() {
+    if (!headerClock) return;
+    const now = new Date();
+    const formatted = now.toLocaleDateString("fr-FR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+    });
+    const time = now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    headerClock.textContent = `${formatted} — ${time}`;
+  }
+
+  updateClock();
+  setInterval(updateClock, 30000);
+
+
+  // =========================
+  // NOTIFICATION SYSTEM (logique inchangée)
   // =========================
   const STORAGE_KEY = "notif_read";
 
@@ -218,12 +310,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closePanel();
-    }
-  });
-
   window.NotifSystem = {
     push(notif) {
       notifications.unshift({ id: Date.now(), unread: true, ...notif });
@@ -247,11 +333,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // =========================
-  // SEARCH SYSTEM
+  // RECHERCHE — overlay plein écran (command palette)
   // =========================
+  const searchOpenBtn = document.getElementById("searchOpenBtn");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const searchBackdrop = document.getElementById("searchBackdrop");
+  const searchCloseBtn = document.getElementById("searchCloseBtn");
   const searchInput = document.querySelector("#search-input");
   const resultsContainer = document.querySelector("#search-results-container");
   let articlesIndex = [];
+  let searchOverlayOpen = false;
 
   fetch("/l_oeil_critique/assets/data/articles_index.json")
     .then((r) => (r.ok ? r.json() : []))
@@ -269,32 +360,35 @@ document.addEventListener("DOMContentLoaded", () => {
     return null;
   }
 
-  if (searchInput && resultsContainer) {
-    searchInput.addEventListener("input", () => {
-      const query = searchInput.value.trim().toLowerCase();
-      resultsContainer.innerHTML = "";
-      if (!query) {
-        resultsContainer.classList.remove("active");
-        return;
-      }
+  function renderSearchResults(query) {
+    if (!resultsContainer) return;
 
-      const filtered = articlesIndex
-        .filter(
-          (a) =>
-            a &&
-            a.title &&
-            typeof a.title === "string" &&
-            a.title.toLowerCase().includes(query)
-        )
-        .slice(0, 10);
+    if (!query) {
+      resultsContainer.innerHTML = '<div class="search-empty">Tapez pour rechercher un film, une série ou un article.</div>';
+      return;
+    }
 
-      for (const a of filtered) {
+    const filtered = articlesIndex
+      .filter(
+        (a) =>
+          a &&
+          a.title &&
+          typeof a.title === "string" &&
+          a.title.toLowerCase().includes(query)
+      )
+      .slice(0, 10);
+
+    if (filtered.length === 0) {
+      resultsContainer.innerHTML = '<div class="search-empty">Aucun résultat pour cette recherche.</div>';
+      return;
+    }
+
+    resultsContainer.innerHTML = filtered
+      .map((a) => {
         const url = typeof a.url === "string" ? a.url : "#";
         const imgSrc = getImageSrc(a.image);
-        const div = document.createElement("div");
-        div.className = "search-result-item";
-        div.innerHTML = `
-          <a href="${url}">
+        return `
+          <a href="${url}" class="search-link">
             <div class="search-item">
               <div class="search-thumb">${imgSrc ? `<img src="${imgSrc}" alt="">` : ""}</div>
               <div class="search-text">
@@ -304,27 +398,56 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </a>
         `;
-        resultsContainer.appendChild(div);
-      }
-      resultsContainer.classList.toggle("active", filtered.length > 0);
-    });
-  } else {
-    console.error("[SEARCH] #search-input ou #search-results-container introuvable", {
-      searchInput, resultsContainer
-    });
+      })
+      .join("");
   }
 
-  document.addEventListener("click", (e) => {
-    const searchContainer = document.querySelector(".search-container");
-    if (searchContainer && resultsContainer && !searchContainer.contains(e.target)) {
-      resultsContainer.classList.remove("active");
-    }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && resultsContainer) {
-      resultsContainer.classList.remove("active");
-    }
-  });
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlayOpen = true;
+    searchOverlay.classList.add("open");
+    searchOpenBtn?.setAttribute("aria-expanded", "true");
+    renderSearchResults(searchInput ? searchInput.value.trim().toLowerCase() : "");
+    requestAnimationFrame(() => searchInput?.focus());
+  }
+
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlayOpen = false;
+    searchOverlay.classList.remove("open");
+    searchOpenBtn?.setAttribute("aria-expanded", "false");
+    searchOpenBtn?.focus();
+  }
+
+  if (searchOpenBtn && searchOverlay && searchInput && resultsContainer) {
+    searchOpenBtn.addEventListener("click", () => {
+      searchOverlayOpen ? closeSearch() : openSearch();
+    });
+
+    searchCloseBtn?.addEventListener("click", closeSearch);
+    searchBackdrop?.addEventListener("click", closeSearch);
+
+    searchInput.addEventListener("input", () => {
+      renderSearchResults(searchInput.value.trim().toLowerCase());
+    });
+
+    document.addEventListener("keydown", (e) => {
+      const tag = document.activeElement?.tagName;
+      const isTyping = tag === "INPUT" || tag === "TEXTAREA";
+
+      if (e.key === "/" && !isTyping && !searchOverlayOpen) {
+        e.preventDefault();
+        openSearch();
+      }
+      if (e.key === "Escape" && searchOverlayOpen) {
+        closeSearch();
+      }
+    });
+  } else {
+    console.error("[SEARCH] élément(s) introuvable(s) — recherche désactivée", {
+      searchOpenBtn, searchOverlay, searchInput, resultsContainer
+    });
+  }
 
 
   // =========================
@@ -334,7 +457,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!headerEl) console.error("[HEADER] <header> introuvable dans le DOM");
 
   window.addEventListener("scroll", () => {
-    if (headerEl) headerEl.classList.toggle("scrolled", window.scrollY > 50);
+    const isScrolled = window.scrollY > 50;
+    if (headerEl) headerEl.classList.toggle("scrolled", isScrolled);
+    document.body.classList.toggle("header-scrolled", isScrolled);
   });
 
 
@@ -376,7 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("nav-locked");
       document.body.style.paddingRight = `${sbWidth}px`;
       headerEl.style.paddingRight = `${sbWidth}px`;
-      headerEl.classList.add("menu-open");          // ← ajouté
+      headerEl.classList.add("menu-open");
     }
 
     function closeMobileNav() {
@@ -386,7 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.remove("nav-locked");
       document.body.style.paddingRight = "";
       headerEl.style.paddingRight = "";
-      headerEl.classList.remove("menu-open");       // ← ajouté
+      headerEl.classList.remove("menu-open");
     }
 
     burgerBtn.addEventListener("click", () => {
@@ -420,12 +545,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // =========================
   // ACTIVE LINK FIX (ROBUSTE & ISOLÉ — basé sur le chemin complet)
+  // Couvre désormais aussi bien la nav du header que la colonne
+  // "Explorer" du footer, qui reprend les mêmes rubriques.
   // =========================
 
   console.log("[ACTIVE LINK] init");
 
-  // Normalise un chemin (URL ou attribut href) : minuscules, sans accents,
-  // sans query/hash, résolu par rapport à l'URL courante.
   const normalizePath = (path) => {
     if (!path) return "";
     try {
@@ -433,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return decodeURIComponent(url.pathname)
         .toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, ""); // enlève les accents (é -> e, etc.)
+        .replace(/[\u0300-\u036f]/g, "");
     } catch (e) {
       return (path || "").toLowerCase();
     }
@@ -442,8 +567,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentPath = normalizePath(window.location.pathname);
   console.log("[ACTIVE LINK] currentPath :", currentPath);
 
-  // Chaque groupe = un lien de nav (identifié par un mot-clé dans son texte)
-  // + la liste des motifs de chemin qui doivent l'activer.
   const NAV_GROUPS = [
     {
       keyword: "actual",
@@ -460,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "/reviews.html",
         "/pages/critique-films.html",
         "/pages/critique-series.html",
-        "/pages/tier-list", // couvre tier-lists.html ET tier-list/*.html
+        "/pages/tier-list",
         "/articles/reviews/"
       ]
     },
@@ -469,6 +592,13 @@ document.addEventListener("DOMContentLoaded", () => {
       patterns: [
         "/bande-annonces.html",
         "/bande_annonces_blocs.html"
+      ]
+    },
+    {
+      keyword: "th\u00e9ories",
+      patterns: [
+        "/pages/theories.html",
+        "/articles/theories/"
       ]
     },
     {
@@ -489,18 +619,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return group.patterns.some((p) => path.includes(p));
   }
 
-  const links = document.querySelectorAll(".main-nav a");
+  const links = document.querySelectorAll(".main-nav a, .footer-nav-explorer a");
   console.log("[ACTIVE LINK] links count :", links.length);
 
   links.forEach((a) => {
     const hrefPath = normalizePath(a.getAttribute("href"));
     const linkText = a.textContent.toLowerCase();
 
-    // 1. Match direct : la page courante EST le lien lui-même
     let isActive = hrefPath === currentPath;
 
-    // 2. Match par groupe : la page courante appartient à la même
-    //    rubrique que ce lien (ex : un article d'actu -> lien "Actualités")
     if (!isActive) {
       const group = NAV_GROUPS.find((g) => linkText.includes(g.keyword));
       if (group && matchesGroup(currentPath, group)) {

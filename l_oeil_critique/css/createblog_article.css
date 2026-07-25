@@ -39,9 +39,9 @@ body.article-page .container {
    ======================================================================== */
 
 .article-title {
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: clamp(1.9rem, 4vw, 3rem);
-  color: var(--primary-color);
+  color: var(--ink);
   line-height: 1.1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -49,14 +49,14 @@ body.article-page .container {
 }
 
 .article-meta {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: 0.8rem;
-  color: #888;
+  color: var(--paper-soft);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0 0 var(--space-6) 0;
   padding-bottom: var(--space-4);
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--brass);
   display: flex;
   align-items: center;
   gap: var(--space-4);
@@ -67,7 +67,7 @@ body.article-page .container {
   display: inline-block;
   width: 24px;
   height: 2px;
-  background: var(--secondary-color);
+  background: var(--brass);
   flex-shrink: 0;
 }
 
@@ -75,7 +75,7 @@ body.article-page .container {
 .article-image {
   width: 100%;
   margin-bottom: var(--space-8);
-  border-radius: var(--border-radius-base);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
@@ -99,10 +99,10 @@ body.article-page .container {
    ======================================================================== */
 
 .article-infos {
-  background: var(--primary-color);
-  color: var(--text-color-light);
-  border-radius: var(--border-radius-base);
-  padding: var(--border-radius-base) var(--space-6);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: var(--radius-lg) var(--space-6);
   padding: var(--space-6);
   margin-bottom: var(--space-8);
   display: grid;
@@ -118,14 +118,14 @@ body.article-page .container {
   position: absolute;
   top: 0; left: 0;
   width: 4px; height: 100%;
-  background: var(--secondary-color);
+  background: var(--brass);
 }
 
 .article-infos p {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.5;
-  color: var(--text-color-light);
+  color: var(--paper);
 }
 
 /* Ligne "Acteurs" sur toute la largeur */
@@ -134,7 +134,7 @@ body.article-page .container {
 }
 
 .article-infos strong {
-  color: var(--secondary-color);
+  color: var(--brass);
   font-weight: 700;
   margin-right: var(--space-1);
 }
@@ -145,9 +145,9 @@ body.article-page .container {
    ======================================================================== */
 
 .note {
-  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
-  color: var(--primary-color);
-  border-radius: var(--border-radius-base);
+  background: linear-gradient(135deg, var(--velvet) 0%, var(--brass) 100%);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
   padding: var(--space-6) var(--space-8);
   margin-bottom: var(--space-8);
   box-shadow: var(--shadow-md);
@@ -168,18 +168,18 @@ body.article-page .container {
 }
 
 .note h3 {
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: 1.7rem;
   letter-spacing: 0.04em;
   margin: 0 0 var(--space-2) 0;
-  color: var(--primary-color);
+  color: var(--ink);
 }
 
 .note p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--primary-color);
+  color: var(--ink);
 }
 
 .note strong {
@@ -194,9 +194,9 @@ body.article-page .container {
    ======================================================================== */
 
 .spoiler-warning {
-  background-color: #fff8e1;
-  border-left: 4px solid #e0a800;
-  border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
+  background-color: #fbf3e4;
+  border-left: 4px solid var(--brass);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: var(--space-4) var(--space-5);
   margin-bottom: var(--space-8);
 }
@@ -204,7 +204,7 @@ body.article-page .container {
 .spoiler-warning p {
   margin: 0;
   font-size: 0.88rem;
-  color: #7a5c00;
+  color: #8a5a1a;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -216,22 +216,22 @@ body.article-page .container {
    ======================================================================== */
 
 .critique {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--text-color-dark);
+  color: var(--ink);
 }
 
 /* h2 de section dans la critique */
 .critique h2 {
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  color: var(--primary-color);
+  color: var(--ink);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: var(--space-10) 0 var(--space-4) 0;
   padding-bottom: var(--space-2);
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--brass);
 }
 
 .critique h2::before {
@@ -239,7 +239,7 @@ body.article-page .container {
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: var(--accent-color);
+  background: var(--velvet);
   border-radius: 50%;
   margin-right: var(--space-3);
   vertical-align: middle;
@@ -251,17 +251,17 @@ body.article-page .container {
 }
 
 .critique strong {
-  color: var(--primary-color);
+  color: var(--ink);
   font-weight: 700;
 }
 
 .critique em {
-  color: #555;
+  color: var(--paper-soft);
 }
 
 .critique hr {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--line-on-paper);
   margin: var(--space-8) 0;
 }
 
@@ -270,16 +270,16 @@ body.article-page .container {
   pour ne pas écraser la règle globale `a { color: inherit; }`
 */
 .critique a {
-  color: var(--primary-color);
+  color: var(--ink);
   text-decoration: underline;
-  text-decoration-color: var(--secondary-color);
+  text-decoration-color: var(--brass);
   text-underline-offset: 3px;
   font-weight: 600;
   transition: color var(--transition-speed);
 }
 
 .critique a:hover {
-  color: #b8860b;
+  color: var(--brass);
 }
 
 
@@ -290,7 +290,7 @@ body.article-page .container {
 
 .critique figure {
   margin: var(--space-8) 0;
-  border-radius: var(--border-radius-base);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
@@ -309,8 +309,8 @@ body.article-page .container {
 }
 
 .critique figcaption {
-  background: var(--primary-color);
-  color: black;;
+  background: var(--ink);
+  color: var(--paper);
   font-size: 0.8rem;
   font-style: italic;
   padding: var(--space-3) var(--space-4);
@@ -319,7 +319,7 @@ body.article-page .container {
 }
 
 .critique figcaption em {
-  color: #bbb;
+  color: var(--ink-soft);
 }
 
 
@@ -330,10 +330,10 @@ body.article-page .container {
 .critique blockquote {
   margin: var(--space-8) 0;
   padding: var(--space-5) var(--space-6) var(--space-5) var(--space-8);
-  background: #f5f1ec;
-  border-left: 4px solid var(--secondary-color);
-  border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
-  color: #555;
+  background: var(--paper-2);
+  border-left: 4px solid var(--brass);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  color: var(--paper-soft);
   font-size: 0.93rem;
   line-height: 1.7;
   position: relative;
@@ -346,13 +346,13 @@ body.article-page .container {
   left: var(--space-3);
   font-size: 2.8rem;
   line-height: 1;
-  color: var(--secondary-color);
+  color: var(--brass);
   font-family: Georgia, serif;
   opacity: 0.35;
 }
 
 .critique blockquote em {
-  color: #555;
+  color: var(--paper-soft);
 }
 
 
@@ -364,9 +364,9 @@ body.article-page .container {
   display: flex;
   align-items: center;
   gap: var(--space-5);
-  background: var(--primary-color);
-  border-left: 4px solid var(--secondary-color);
-  border-radius: var(--border-radius-base);
+  background: var(--ink);
+  border-left: 4px solid var(--brass);
+  border-radius: var(--radius-lg);
   padding: var(--space-5) var(--space-6);
   margin-top: var(--space-12);
   box-shadow: var(--shadow-md);
@@ -383,7 +383,7 @@ body.article-page .container {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: calc(var(--border-radius-base) - 2px);
+  border-radius: calc(var(--radius-lg) - 2px);
   flex-shrink: 0;
 }
 
@@ -395,14 +395,14 @@ body.article-page .container {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--secondary-color);
+  color: var(--brass);
   margin: 0 0 var(--space-1) 0;
   font-weight: 700;
 }
 
 .last-review-link div p:last-of-type {
   font-size: 0.85rem;
-  color: #aaa;
+  color: var(--ink-soft);
   margin: 0 0 var(--space-2) 0;
 }
 
@@ -411,7 +411,7 @@ body.article-page .container {
   pour ne pas écraser le reset global `a { color: inherit }`
 */
 .last-review-link a {
-  color: var(--text-color-light);
+  color: var(--paper);
   font-weight: 700;
   font-size: 0.92rem;
   text-decoration: none;
@@ -423,7 +423,7 @@ body.article-page .container {
 }
 
 .last-review-link a:hover {
-  color: var(--secondary-color);
+  color: var(--brass);
 }
 
 
@@ -441,22 +441,22 @@ body.article-page .container {
 }
 
 .sidebar-block {
-  background: #fff;
-  border-radius: var(--border-radius-base);
+  background: var(--paper);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
 
 .sidebar-block-title {
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: 1.05rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--text-color-light);
-  background: var(--primary-color);
+  color: var(--paper);
+  background: var(--ink);
   padding: var(--space-3) var(--space-5);
   margin: 0;
-  border-bottom: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--brass);
 }
 
 .sidebar-item {
@@ -464,7 +464,7 @@ body.article-page .container {
   align-items: center;
   gap: var(--space-4);
   padding: var(--space-4) var(--space-5);
-  border-bottom: 1px solid #f0ece6;
+  border-bottom: 1px solid var(--line-on-paper);
   text-decoration: none;
   color: inherit;
   transition: background var(--transition-speed);
@@ -475,14 +475,14 @@ body.article-page .container {
 }
 
 .sidebar-item:hover {
-  background: #faf7f2;
+  background: var(--paper-2);
 }
 
 .sidebar-item img {
   width: 54px;
   height: 54px;
   object-fit: cover;
-  border-radius: calc(var(--border-radius-base) - 2px);
+  border-radius: calc(var(--radius-lg) - 2px);
   flex-shrink: 0;
 }
 
@@ -494,7 +494,7 @@ body.article-page .container {
   display: block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--ink);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -503,7 +503,7 @@ body.article-page .container {
 
 .sidebar-item-text small {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--paper-soft);
 }
 
 
@@ -551,7 +551,7 @@ body.article-page .container {
   .last-review-link img {
     width: 100%;
     height: 150px;
-    border-radius: var(--border-radius-base);
+    border-radius: var(--radius-lg);
   }
 
   .last-review-link a {
@@ -570,7 +570,7 @@ body.article-page .container {
 
 .badge-article {
   display: inline-block;
-  font-family: var(--font-family-title);
+  font-family: var(--font-display);
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   padding: var(--space-1) var(--space-4);
@@ -579,32 +579,32 @@ body.article-page .container {
 }
 
 .badge-article--gold {
-  background: var(--secondary-color);
-  color: var(--primary-color);
+  background: var(--brass);
+  color: var(--ink);
 }
 
 .badge-article--dark {
-  background: var(--primary-color);
-  color: var(--secondary-color);
+  background: var(--ink);
+  color: var(--brass);
 }
 
 /* Mise en exergue inline */
 .article-highlight {
-  background: linear-gradient(120deg, var(--accent-color) 0%, transparent 100%);
+  background: linear-gradient(120deg, var(--velvet) 0%, transparent 100%);
   padding: 0 var(--space-1);
   border-radius: 3px;
 }
 
 /* Encadré info neutre — distinct de .alert du global */
 .article-info-box {
-  border: 1px solid #e0dbd3;
-  border-radius: var(--border-radius-base);
+  border: 1px solid var(--line-on-paper-strong);
+  border-radius: var(--radius-lg);
   padding: var(--space-5) var(--space-6);
   margin: var(--space-6) 0;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #555;
-  background: #fafaf8;
+  color: var(--paper-soft);
+  background: var(--paper-2);
 }
 
 

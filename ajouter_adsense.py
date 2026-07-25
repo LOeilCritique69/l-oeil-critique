@@ -4,12 +4,17 @@ Script pour ajouter automatiquement le tag AdSense Google
 dans toutes les pages HTML d'un dossier (et sous-dossiers).
 
 Le script :
-- Cherche tous les fichiers .html / .htm dans le dossier indiqué
+- Cherche tous les fichiers .html / .htm dans le dossier où il se trouve
+  (et tous ses sous-dossiers)
 - Vérifie si le tag AdSense est déjà présent (pour éviter les doublons)
 - Insère le tag juste avant la balise </head> (ou au début du <body> si pas de <head>)
 
 Usage :
-    python ajouter_adsense.py /chemin/vers/dossier
+    Double-clic dessus (ou "Lancer avec Python"). Il traite automatiquement
+    tout ce qui est dans le même dossier que lui, sans rien demander.
+
+    Tu peux aussi lui passer un dossier explicite en argument :
+        python ajouter_adsense.py /chemin/vers/dossier
 """
 
 import sys
@@ -80,17 +85,22 @@ def traiter_dossier(dossier: Path):
 
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage : python ajouter_adsense.py /chemin/vers/dossier")
-        sys.exit(1)
-
-    dossier = Path(sys.argv[1])
+    if len(sys.argv) == 2:
+        # Un dossier a été passé explicitement en argument
+        dossier = Path(sys.argv[1])
+    else:
+        # Double-clic / lancement sans argument : on prend le dossier du script
+        dossier = Path(__file__).resolve().parent
 
     if not dossier.is_dir():
         print(f"Erreur : {dossier} n'est pas un dossier valide.")
+        input("Appuie sur Entrée pour fermer...")
         sys.exit(1)
 
+    print(f"Traitement du dossier : {dossier}\n")
     traiter_dossier(dossier)
+
+    input("\nTerminé. Appuie sur Entrée pour fermer...")
 
 
 if __name__ == "__main__":

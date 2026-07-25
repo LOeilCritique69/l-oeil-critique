@@ -1,25 +1,40 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root {
-  --bg: #0a0a0f;
-  --surface: #12121a;
-  --surface2: #1a1a26;
-  --surface3: #22223a;
-  --border: rgba(255,255,255,0.08);
-  --border2: rgba(255,255,255,0.15);
-  --gold: #f0c040;
-  --gold2: #ffd966;
-  --red: #e84545;
-  --green: #3dd68c;
-  --blue: #4d9fff;
-  --text: #f0ede8;
-  --text2: #a09898;
-  --text3: #605a5a;
-  --font-title: 'DM Serif Display', serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'Space Mono', monospace;
-  --r: 12px;
-  --r2: 20px;
+  /* --------------------------------------------------------------------
+     Devine Le Film consomme désormais les tokens globaux "Iris" déclarés
+     dans chef_d_oeuvre.css (chargé juste avant ce fichier). Les noms de
+     variables LOCALES (--bg, --gold, --r, etc.) sont conservés à l'identique
+     pour ne toucher AUCUN sélecteur plus bas dans ce fichier : seule leur
+     VALEUR change, en alias vers le système global. Les fallbacks après
+     la virgule ne servent qu'en cas de chargement isolé de ce fichier.
+     -------------------------------------------------------------------- */
+  --bg: var(--ink, #12141A);
+  --surface: var(--ink-2, #1B1E26);
+  --surface2: var(--ink-3, #23273E);
+  --surface3: #2A2E48; /* un cran au-dessus de --ink-3, pas d'équivalent global */
+  --border: var(--line-on-ink, rgba(201, 162, 74, 0.18));
+  --border2: var(--line-on-ink-strong, rgba(201, 162, 74, 0.4));
+  --gold: var(--brass, #C9A24A);
+  --gold2: var(--brass-light, #E8C878);
+  --red: var(--velvet, #B8323A);
+  /* Vert / bleu : pas d'équivalent dans la palette Iris (volontairement
+     limitée à encre/papier/velours/laiton). Conservés comme accents
+     fonctionnels (bonne réponse / info) mais redosés en tons plus sourds,
+     éditoriaux, pour rester dans l'esprit du reste du site. */
+  --green: #4FAE7C;
+  --blue: #6B8CBE;
+  --text: var(--paper, #F3EEE3);
+  --text2: var(--ink-soft, #9199A6);
+  --text3: var(--paper-soft, #6B6355);
+  /* --font-body et --font-mono portent le MÊME nom que les tokens globaux :
+     ne pas les redéclarer ici les laisse hériter directement de
+     chef_d_oeuvre.css (Inter / IBM Plex Mono) sans risque de référence
+     circulaire. Seul --font-title (nom local, différent de --font-display)
+     a besoin d'un alias explicite. */
+  --font-title: var(--font-display, 'Fraunces', Georgia, serif);
+  --r: 10px;
+  --r2: 18px;
 }
 
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.5;overflow-x:hidden}
@@ -45,7 +60,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .poster-img{width:100%;height:100%;object-fit:cover;display:block;transition:filter 0.8s ease,transform 0.5s ease;transform-origin:center}
 .poster-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,transparent 60%);pointer-events:none;opacity:0;transition:opacity 0.5s}
 .poster-overlay.show{opacity:1}
-.poster-label{position:absolute;bottom:12px;left:12px;right:12px;font-family:var(--font-title);font-size:1.05rem;color:#fff;line-height:1.3;opacity:0;transition:opacity 0.5s 0.2s}
+.poster-label{position:absolute;bottom:12px;left:12px;right:12px;font-family:var(--font-title);font-style:italic;font-size:1.05rem;color:var(--text);line-height:1.3;opacity:0;transition:opacity 0.5s 0.2s}
 .poster-label.show{opacity:1}
 
 /* BLUR INDICATOR */
@@ -65,7 +80,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 .round-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
 .round-badge{font-family:var(--font-mono);font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
-.combo-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(240,192,64,0.12);border:1px solid rgba(240,192,64,0.3);color:var(--gold);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;font-family:var(--font-mono);opacity:0;transform:scale(0.8);transition:all 0.3s}
+.combo-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,162,74,0.12);border:1px solid rgba(201,162,74,0.3);color:var(--gold);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;font-family:var(--font-mono);opacity:0;transform:scale(0.8);transition:all 0.3s}
 .combo-badge.show{opacity:1;transform:scale(1)}
 .combo-badge i{font-size:11px}
 
@@ -79,14 +94,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* HINT BUTTONS */
 .hints-row{display:flex;gap:8px;margin-bottom:16px}
 .hint-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--surface2);border:1px solid var(--border);color:var(--text2);border-radius:var(--r);padding:9px 12px;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font-body)}
-.hint-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold);background:rgba(240,192,64,0.06)}
+.hint-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold);background:rgba(201,162,74,0.06)}
 .hint-btn:disabled{opacity:0.4;cursor:not-allowed}
 .hint-btn i{font-size:11px}
 
 /* INPUT SECTION */
 .input-section{position:relative;margin-bottom:14px}
 .movie-input{width:100%;background:var(--surface2);border:1.5px solid var(--border2);color:var(--text);border-radius:var(--r);padding:13px 16px 13px 42px;font-size:0.95rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
-.movie-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(240,192,64,0.12)}
+.movie-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,74,0.12)}
 .movie-input::placeholder{color:var(--text3)}
 .input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none}
 .submit-btn{width:100%;background:var(--gold);color:var(--bg);border:none;border-radius:var(--r);padding:13px;font-weight:700;font-size:0.95rem;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;letter-spacing:0.3px}
@@ -105,12 +120,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* SUGGESTIONS (MULTIPLE CHOICE) */
 .suggestions-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .sug-btn{background:var(--surface2);border:1.5px solid var(--border);color:var(--text);border-radius:var(--r);padding:12px 14px;font-size:0.85rem;font-weight:500;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;text-align:left;line-height:1.3}
-.sug-btn:hover:not(:disabled){border-color:var(--blue);color:var(--blue);background:rgba(77,159,255,0.06)}
+.sug-btn:hover:not(:disabled){border-color:var(--blue);color:var(--blue);background:rgba(107,140,190,0.06)}
 .sug-btn:disabled{cursor:not-allowed}
-.sug-btn.correct{border-color:var(--green)!important;background:rgba(61,214,140,0.12)!important;color:var(--green)!important;animation:pulse-green 0.6s ease}
-.sug-btn.wrong{border-color:var(--red)!important;background:rgba(232,69,69,0.12)!important;color:var(--red)!important;animation:shake 0.4s ease}
+.sug-btn.correct{border-color:var(--green)!important;background:rgba(79,174,124,0.12)!important;color:var(--green)!important;animation:pulse-green 0.6s ease}
+.sug-btn.wrong{border-color:var(--red)!important;background:rgba(184,50,58,0.12)!important;color:var(--red)!important;animation:shake 0.4s ease}
 
-@keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(61,214,140,0)}50%{box-shadow:0 0 0 8px rgba(61,214,140,0)}}
+@keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(79,174,124,0)}50%{box-shadow:0 0 0 8px rgba(79,174,124,0)}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 
 /* MODE TOGGLE */
@@ -120,9 +135,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* FEEDBACK */
 .feedback-line{min-height:36px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;border-radius:var(--r);padding:8px 14px;transition:all 0.3s;text-align:center}
-.feedback-line.correct{background:rgba(61,214,140,0.12);color:var(--green)}
-.feedback-line.wrong{background:rgba(232,69,69,0.12);color:var(--red)}
-.feedback-line.info{background:rgba(240,192,64,0.1);color:var(--gold)}
+.feedback-line.correct{background:rgba(79,174,124,0.12);color:var(--green)}
+.feedback-line.wrong{background:rgba(184,50,58,0.12);color:var(--red)}
+.feedback-line.info{background:rgba(201,162,74,0.1);color:var(--gold)}
 
 /* NEXT BTN */
 .next-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:transparent;border:1.5px solid var(--border2);color:var(--text2);border-radius:var(--r);padding:12px;font-weight:600;font-size:0.88rem;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;margin-top:10px}
@@ -132,7 +147,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* DIFFICULTY SELECTOR */
 .diff-row{display:flex;gap:8px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:28px}
 .diff-btn{flex:1;padding:8px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text3);font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font-mono);text-transform:uppercase}
-.diff-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(240,192,64,0.08)}
+.diff-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(201,162,74,0.08)}
 
 .lives-display {
     display: flex;
@@ -169,7 +184,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* DIFF OPTIONS IN MODAL */
 .diff-options-modal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
 .diff-card{background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r);padding:14px;cursor:pointer;transition:all 0.2s;text-align:left}
-.diff-card:hover,.diff-card.selected{border-color:var(--gold);background:rgba(240,192,64,0.07)}
+.diff-card:hover,.diff-card.selected{border-color:var(--gold);background:rgba(201,162,74,0.07)}
 .diff-card.selected .diff-name{color:var(--gold)}
 .diff-name{font-weight:700;font-size:0.9rem;margin-bottom:2px}
 .diff-desc{font-size:0.75rem;color:var(--text3)}
@@ -188,10 +203,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .lb-rank.first{color:var(--gold)}
 .lb-score{font-family:var(--font-mono);font-weight:700;font-size:0.9rem;margin-left:auto}
 .lb-diff{font-size:0.7rem;padding:3px 8px;border-radius:100px;font-weight:600}
-.lb-diff.facile{background:rgba(61,214,140,0.15);color:var(--green)}
-.lb-diff.normal{background:rgba(77,159,255,0.15);color:var(--blue)}
-.lb-diff.difficile{background:rgba(240,192,64,0.15);color:var(--gold)}
-.lb-diff.expert{background:rgba(232,69,69,0.15);color:var(--red)}
+.lb-diff.facile{background:rgba(79,174,124,0.15);color:var(--green)}
+.lb-diff.normal{background:rgba(107,140,190,0.15);color:var(--blue)}
+.lb-diff.difficile{background:rgba(201,162,74,0.15);color:var(--gold)}
+.lb-diff.expert{background:rgba(184,50,58,0.15);color:var(--red)}
 
 /* CONFETTI */
 .confetto{position:fixed;pointer-events:none;width:8px;height:8px;border-radius:2px;z-index:999;animation:confetto-fall linear forwards}
@@ -222,9 +237,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* Variante gold (score) */
 .stat-pill.gold {
-  background: rgba(240, 192, 64, 0.12);
+  background: rgba(201, 162, 74, 0.12);
   color: var(--gold);
-  border: 1px solid rgba(240, 192, 64, 0.3);
+  border: 1px solid rgba(201, 162, 74, 0.3);
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 600;
@@ -237,9 +252,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* Variante lives (cœurs) */
 .stat-pill.lives {
-  background: rgba(232, 69, 69, 0.1);
+  background: rgba(184, 50, 58, 0.1);
   color: var(--red);
-  border: 1px solid rgba(232, 69, 69, 0.25);
+  border: 1px solid rgba(184, 50, 58, 0.25);
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 600;

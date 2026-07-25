@@ -1,7 +1,7 @@
 [
   {
     "Date": "2024-10-12",
-    "Name": 300,
+    "Name": "300",
     "Year": 2006,
     "Letterboxd URI": "https://boxd.it/28XI",
     "Rating": 5,
@@ -2601,7 +2601,7 @@
   },
   {
     "Date": "2024-11-12",
-    "Name": 2012,
+    "Name": "2012",
     "Year": 2009,
     "Letterboxd URI": "https://boxd.it/1OE2",
     "Rating": 3.5,
@@ -5576,5 +5576,15 @@
     "poster_path": "/8MNddEYoreFL2S3n257uwsYiKf6.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/8MNddEYoreFL2S3n257uwsYiKf6.jpg",
     "tmdb_id": 1368314
+  },
+  {
+    "Name": "Comédie-Française",
+    "Year": 2026,
+    "Date": "2026-07-23",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/comedie-francaise/",
+    "poster_path": "/bfjG4eH78KOnpVNlEH8wneMHXLv.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bfjG4eH78KOnpVNlEH8wneMHXLv.jpg",
+    "tmdb_id": 1496491
   }
 ]

@@ -49,6 +49,13 @@
      vidéo) dans la section 10, avec les tokens du design system (au lieu
      du bloc de couleurs ad-hoc doré/noir qui trainait en inline dans
      bande-annonces.html et qui ne suivait pas la charte Iris).
+   - Refonte : section 7 (HEADER) entièrement reconstruite — bande
+     utilitaire rétractable, logo à iris, navigation à révélation
+     circulaire, actions en icon-btn cohérents, recherche transformée
+     en overlay plein écran (command palette). Les media queries liées
+     au header ont été déplacées et regroupées à la fin de la section 7
+     plutôt que dispersées dans la section 20, pour que le composant
+     reste autonome et lisible.
    ============================================================================ */
 
 /* ============================================================================
@@ -57,6 +64,8 @@
 :root {
   --header-h: 84px;
   --header-h-scrolled: 64px;
+  --header-utility-h: 30px;
+  --header-total-h: calc(var(--header-h) + var(--header-utility-h));
   --ink: #12141A;
   --ink-2: #1B1E26;
   --ink-3: #23273E;
@@ -130,7 +139,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 88px;
+  scroll-padding-top: calc(var(--header-total-h) + 12px);
 }
 
 html,
@@ -142,9 +151,11 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  padding-top: 44px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: 2.8rem;
+  transition: background-color 0.3s ease, color 0.3s ease, padding-top 0.25s ease;
 }
+
+body.header-scrolled { padding-top: var(--header-h-scrolled); }
 
 main {
   flex-grow: 1;
@@ -416,7 +427,13 @@ em { font-style: italic; }
 }
 
 /* ============================================================================
-   7) HEADER
+   7) HEADER — "DIAPHRAGME OUVERT" (refonte complète)
+   ----------------------------------------------------------------------------
+   Composant autonome : structure à deux niveaux (bande utilitaire +
+   barre principale), logo à iris, navigation à révélation circulaire,
+   actions en icon-btn cohérents, recherche en overlay plein écran.
+   Toutes les media queries propres au header sont regroupées en fin de
+   section plutôt que dispersées dans la section 20.
    ============================================================================ */
 header {
   position: fixed;
@@ -424,19 +441,64 @@ header {
   left: 0;
   z-index: 2000;
   width: 100%;
-  height: var(--header-h);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   background: rgba(18, 20, 26, 0.92);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-on-ink);
-  transition: height 0.25s ease, background 0.25s ease;
+  transition: background 0.25s ease;
 }
 
-header.scrolled { height: var(--header-h-scrolled);}
-header.menu-open {
-  backdrop-filter: none;
+header.menu-open { backdrop-filter: none; }
+
+/* --- Bande utilitaire : se rétracte entièrement au scroll --- */
+.header-utility {
+  height: var(--header-utility-h);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line-on-ink);
+  transition: height 0.3s var(--ease-out), opacity 0.3s ease, border-color 0.3s ease;
 }
+
+.header-utility__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.header-utility__time::before { content: "◐ "; color: var(--brass); }
+
+.header-utility__tagline {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--paper-faint);
+}
+
+header.scrolled .header-utility {
+  height: 0;
+  opacity: 0;
+  border-color: transparent;
+  pointer-events: none;
+}
+
+/* --- Barre principale --- */
+.header-main {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition: height 0.25s ease;
+}
+
+header.scrolled .header-main { height: var(--header-h-scrolled); }
 
 .header-content {
   display: flex;
@@ -448,12 +510,52 @@ header.menu-open {
   padding: 0 2rem;
 }
 
-/* --- Logo --- */
-.logo-link { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; flex-shrink: 0; }
-.logo { width: 2.4rem; height: auto; transition: width 0.25s ease; }
+/* --- Logo à iris --- */
+.logo-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding-left: 14px; /* place pour l'anneau derrière le logo */
+}
+
+.logo-aperture {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+  -webkit-mask: radial-gradient(circle, transparent 55%, #000 56%, #000 78%, transparent 79%);
+          mask: radial-gradient(circle, transparent 55%, #000 56%, #000 78%, transparent 79%);
+  opacity: 0.32;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.7s var(--ease-out);
+}
+
+.logo-link:hover .logo-aperture,
+.logo-link:focus-visible .logo-aperture {
+  opacity: 0.95;
+  transform: translate(-50%, -50%) rotate(150deg);
+}
+
+.logo {
+  position: relative;
+  z-index: 1;
+  width: 2.4rem;
+  height: auto;
+  transition: width 0.25s ease;
+}
+
 header.scrolled .logo { width: 2.1rem; }
 
 .site-title {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
@@ -462,98 +564,164 @@ header.scrolled .logo { width: 2.1rem; }
   color: var(--paper);
 }
 
-/* --- Navigation desktop --- */
+/* --- Navigation desktop : révélation circulaire --- */
 .main-nav {
-  display: none; /* affichée dès 993px, voir media query */
-  gap: 0.4rem;
+  display: none; /* réaffichée dès 993px, voir media query en fin de section */
+  gap: 0.2rem;
   align-items: center;
 }
 
 .main-nav a {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
   padding: 0.5rem 0.9rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  isolation: isolate;
+  transition: color 0.3s ease;
+}
+
+.main-nav a::before {
+  content: attr(data-index);
+  font-size: 0.64rem;
+  color: var(--brass);
+  opacity: 0.75;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--radius);
+  background: rgba(201, 162, 74, 0.12);
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 0.45s var(--ease-out);
 }
 
 .main-nav a:hover,
-.main-nav a.active { color: var(--brass-light); border-bottom-color: var(--brass); }
+.main-nav a.active { color: var(--brass-light); }
 
-/* --- Actions du header (cloche + recherche + burger) --- */
-.header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.main-nav a:hover::after,
+.main-nav a.active::after { clip-path: circle(75% at 50% 50%); }
 
-/* --- Recherche (contexte sombre) --- */
-.search-container {
+/* --- Actions du header : icônes cohérentes --- */
+.header-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+
+.icon-btn {
+  position: relative;
   display: flex;
   align-items: center;
-  max-width: 200px;
-  padding: 3px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--line-on-ink);
+  gap: 6px;
+  padding: 8px 10px;
   border-radius: var(--radius);
-  transition: border-color 0.2s ease;
-}
-
-.search-container:focus-within { border-color: var(--brass); }
-
-#search-input {
-  width: 100%;
-  padding: 0.4rem 0.5rem;
-  border: none;
-  outline: none;
-  background: transparent;
   color: var(--paper);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-}
-
-#search-input::placeholder { color: var(--paper-faint); }
-
-#search-button {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: var(--radius);
-  background: var(--brass);
-  color: var(--ink);
   transition: background 0.2s ease;
 }
 
-#search-button:hover { background: var(--brass-light); }
-#search-button:active { background: var(--brass); }
+.icon-btn:hover,
+.icon-btn[aria-expanded="true"] { background: rgba(255, 255, 255, 0.07); }
 
-/* Dropdown résultats */
-.search-results {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  width: 600px;
-  max-height: 380px;
-  z-index: 3000;
-  background: var(--ink-2);
-  border: 1px solid var(--line-on-ink);
-  border-radius: var(--radius);
-  overflow-y: auto;
-
-  display: none;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity 0.18s ease, transform 0.18s ease;
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  opacity: 0.92;
 }
 
-.search-results.active { display: block; opacity: 1; transform: translateY(0); }
+.icon-btn__kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--line-on-ink-strong);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
 
-.search-results::-webkit-scrollbar { width: 4px; }
-.search-results::-webkit-scrollbar-track { background: transparent; }
-.search-results::-webkit-scrollbar-thumb { background: var(--line-on-ink-strong); border-radius: 2px; }
+/* --- Recherche : overlay plein écran (command palette) --- */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: none;
+  padding-top: 12vh;
+}
+
+.search-overlay.open { display: block; }
+
+.search-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 20, 26, 0.75);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.search-overlay.open .search-overlay__backdrop { opacity: 1; }
+
+.search-overlay__panel {
+  position: relative;
+  z-index: 1;
+  width: min(640px, 92vw);
+  margin: 0 auto;
+  background: var(--ink-2);
+  border: 1px solid var(--line-on-ink-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-14px) scale(0.98);
+  transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+
+.search-overlay.open .search-overlay__panel { opacity: 1; transform: translateY(0) scale(1); }
+
+.search-overlay__field {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--line-on-ink);
+}
+
+.search-overlay__icon { display: flex; color: var(--brass); }
+.search-overlay__icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+
+.search-overlay__field input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.search-overlay__field input::placeholder { color: var(--paper-faint); }
+
+.search-overlay__close {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.search-overlay__close:hover { color: var(--paper); background: rgba(255, 255, 255, 0.06); }
+
+.search-overlay__results { max-height: 50vh; overflow-y: auto; }
+.search-overlay__results::-webkit-scrollbar { width: 4px; }
+.search-overlay__results::-webkit-scrollbar-track { background: transparent; }
+.search-overlay__results::-webkit-scrollbar-thumb { background: var(--line-on-ink-strong); border-radius: 2px; }
 
 a.search-link { display: block; color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-on-ink); }
 a.search-link:last-child { border-bottom: none; }
@@ -589,14 +757,13 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 .search-empty { padding: 1.5rem 1rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; font-style: italic; }
 
 /* --- Notifications (bulle header) --- */
-.notif-btn { position: relative; padding: 6px; border-radius: 50%; transition: background 0.2s; }
-.notif-btn:hover { background: rgba(255, 255, 255, 0.06); }
-.notif-icon { font-size: 18px; display: block; opacity: 0.85; }
+.notif-btn,
+.notif-wrapper .icon-btn { position: relative; }
 
 .notif-badge {
   position: absolute;
-  top: -2px;
-  right: -2px;
+  top: 2px;
+  right: 2px;
   min-width: 16px;
   height: 16px;
   padding: 0 4px;
@@ -701,11 +868,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   cursor: pointer;
   z-index: 3001;
   transition: background 0.3s;
-  margin-left: 10px;
-}
-
-@media (min-width: 993px) {
-  .burger-menu { display: none; }
+  margin-left: 6px;
 }
 
 .burger-box {
@@ -732,6 +895,87 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 .burger-menu.active .burger-line:nth-child(1) { transform: translateY(0) rotate(45deg); }
 .burger-menu.active .burger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .burger-menu.active .burger-line:nth-child(3) { transform: translateY(0) rotate(-45deg); }
+
+/* --- Media queries propres au header (regroupées ici, section autonome) --- */
+@media (min-width: 993px) {
+  .main-nav { display: flex; }
+  .burger-menu { display: none !important; visibility: hidden; }
+}
+
+@media (max-width: 1200px) {
+  .header-content { padding: 0 1.5rem; }
+}
+
+@media (max-width: 992px) {
+  .burger-menu { display: flex; }
+
+  .main-nav {
+    position: fixed;
+    top: var(--header-total-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--ink);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+
+  body.nav-locked { overflow: hidden; }
+
+  header.scrolled .main-nav { top: var(--header-h-scrolled); }
+
+  .main-nav.mobile-open { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  .main-nav a {
+    padding: 0.9rem 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--paper);
+  }
+
+  .main-nav a::before { font-family: var(--font-mono); font-size: 0.85rem; }
+  .main-nav a::after { display: none; }
+  .main-nav a:hover,
+  .main-nav a.active { color: var(--brass-light); }
+
+  .notif-panel { width: min(320px, calc(100vw - 2rem)); }
+}
+
+@media (max-width: 768px) {
+  .header-utility__tagline { display: none; }
+  .header-content { padding: 0 1.25rem; }
+}
+
+@media (max-width: 600px) {
+  .icon-btn__kbd { display: none; }
+  .search-overlay { padding-top: 6vh; }
+  .search-overlay__panel { width: 94vw; }
+}
+
+@media (max-width: 480px) {
+  .site-title { display: none; }
+  .logo { width: 2rem; }
+  .header-actions { gap: 2px; }
+  .header-utility__inner { padding: 0 1.25rem; }
+}
+
+@media (max-width: 360px) {
+  .header-content { padding: 0 1rem; }
+  .logo { width: 1.8rem; }
+}
 
 /* ============================================================================
    8) ACCUEIL — Bienvenue, Slider, Catégories
@@ -1690,25 +1934,190 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 .contact button:hover { background: var(--velvet); color: var(--paper); }
 
 /* ============================================================================
-   15) FOOTER
+   15) FOOTER — "OBTURATEUR FINAL" (refonte complète)
+   ----------------------------------------------------------------------------
+   Footer à trois niveaux : un diaphragme géant en filigrane, une bande
+   supérieure (marque + Letterboxd + navigation) et une bande basse
+   (copyright + retour en haut). Comme pour le header (section 7),
+   toutes les media queries propres au footer vivent ici plutôt que d'être
+   dispersées dans la section 20.
    ============================================================================ */
-footer { margin-top: auto; padding: 3rem 1.5rem; text-align: center; background: var(--ink); color: var(--brass-light); font-size: 0.9rem; border-top: 1px solid var(--line-on-ink); }
-.footer-content { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; max-width: 1200px; margin: 0 auto; }
-.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.8rem; }
-
-.footer-links a {
+footer {
   position: relative;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  margin-top: auto;
+  background: var(--ink);
   color: var(--brass-light);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s ease, color 0.25s ease;
+  overflow: hidden;
 }
 
-.footer-links a:hover { color: var(--paper); border-bottom-color: var(--brass); }
-footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem; color: rgba(243, 238, 227, 0.35); }
+.footer-aperture {
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.footer-top {
+  position: relative;
+  z-index: 1;
+  padding: 4.5rem 1.5rem 3rem;
+  border-bottom: 1px solid var(--line-on-ink);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- Colonne marque --- */
+.footer-brand { max-width: 320px; }
+
+.footer-logo-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+.footer-logo-link .logo-aperture { left: 2px; width: 38px; height: 38px; opacity: 0.4; }
+
+.footer-logo { position: relative; z-index: 1; width: 2rem; height: auto; }
+
+.footer-site-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--paper);
+}
+
+.footer-tagline {
+  margin-bottom: 1.4rem;
+  max-width: 280px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(243, 238, 227, 0.6);
+}
+
+.footer-socials { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--line-on-ink-strong);
+  border-radius: 999px;
+  color: var(--brass-light);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+
+.footer-social:hover {
+  border-color: var(--brass);
+  background: rgba(201, 162, 74, 0.1);
+  transform: translateY(-3px);
+}
+
+/* --- Colonnes de liens --- */
+.footer-col { display: flex; flex-direction: column; }
+
+.footer-col__title {
+  display: block;
+  margin-bottom: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper-faint);
+}
+
+.footer-col a {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: rgba(243, 238, 227, 0.65);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-col a[data-index]::before {
+  content: attr(data-index);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--brass);
+  opacity: 0.7;
+}
+
+.footer-col a:hover,
+.footer-col a.active { color: var(--brass-light); padding-left: 4px; }
+
+/* --- Bande basse --- */
+.footer-bottom { position: relative; z-index: 1; padding: 1.2rem 1.5rem; }
+
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(243, 238, 227, 0.35);
+}
+
+.footer-totop {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(243, 238, 227, 0.5);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-totop:hover { color: var(--brass-light); transform: translateY(-2px); }
+.footer-totop svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* --- Media queries propres au footer --- */
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
+  .footer-brand { grid-column: span 2; max-width: 420px; }
+}
+
+@media (max-width: 600px) {
+  .footer-top { padding: 3.5rem 1.25rem 2.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+  .footer-brand { grid-column: auto; max-width: 100%; }
+  .footer-bottom__inner { flex-direction: column; gap: 0.8rem; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .footer-aperture { width: 280px; height: 280px; right: -90px; }
+}
 
 /* ============================================================================
    16) COMPOSANTS DIVERS — tag, alert, skeleton, modal, toast
@@ -1941,28 +2350,27 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
 /* ============================================================================
    20) RESPONSIVE — VERSION MOBILE COMPLÈTE ET DÉTAILLÉE
    ----------------------------------------------------------------------------
-   Rien n'a été touché au-dessus : toutes les règles "desktop" restent
-   identiques à la version d'origine. Ce qui suit est une reconstruction
-   entière des adaptations mobiles, composant par composant, avec plusieurs
-   paliers de largeur (tablette large → tablette → grand mobile → mobile →
-   petit mobile → très petit mobile) au lieu des quelques correctifs épars
-   de la version précédente. Chaque bloc reprend la numérotation des
-   sections du fichier pour qu'on s'y retrouve.
+   Rien n'a été touché au-dessus (hormis la section 7, HEADER, désormais
+   autonome et dont les media queries vivent à la fin de la section 7
+   plutôt qu'ici). Ce qui suit reste la reconstruction des adaptations
+   mobiles pour tout le reste du site, composant par composant, avec
+   plusieurs paliers de largeur (tablette large → tablette → grand mobile
+   → mobile → petit mobile → très petit mobile).
    ============================================================================ */
 
 /* ----------------------------------------------------------------------
    20.0 — PALIERS DE RÉFÉRENCE (documentation, pas de code)
    1350px : début de compression des grilles à 3 colonnes
-   1200px : le container perd sa marge de confort
    1024px : bascule tablette — grilles à 2 colonnes, titres réduits
-   992px  : bascule navigation — le burger prend le relais du menu horizontal
    900px  : hero-duo et hub-nav passent en une colonne
    768px  : bascule mobile générale — la plupart des sections passent à 1 colonne
    650/640px : ajustements fins de grilles (featured, catégories)
    600px  : footer et hub-nav resserrés
-   480px  : petit mobile — recherche masquée, titres condensés
+   480px  : petit mobile — titres condensés
    400px  : très petit mobile — dernier filet de sécurité typographique
-   360px  : mobile d'entrée de gamme — paddings header minimaux
+   360px  : mobile d'entrée de gamme
+   (Les paliers propres au header — 993px, 992px, 768px, 600px, 480px,
+   360px pour la nav/recherche/burger — sont désormais dans la section 7.)
    ------------------------------------------------------------------- */
 
 /* ============================================================================
@@ -1978,19 +2386,7 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
    ============================================================================ */
 @media (max-width: 1200px) {
   .container { width: min(1100px, 100% - 2rem); }
-  .header-content { max-width: 100%; padding: 0 1.5rem; }
   .hero-content { max-width: 620px; }
-}
-
-/* ============================================================================
-   20.3 — POINT DE BASCULE NAVIGATION (min-width: 993px)
-   ----------------------------------------------------------------------------
-   Au-dessus de 992px, la nav horizontale desktop reprend sa place et le
-   burger disparaît. En dessous (section 20.5), c'est l'inverse.
-   ============================================================================ */
-@media (min-width: 993px) {
-  .main-nav { display: flex; }
-  .burger-menu { display: none !important; visibility: hidden; }
 }
 
 /* ============================================================================
@@ -2019,68 +2415,6 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
 
   /* --- Featured --- */
   .featured-section { padding: 0 1.25rem 2.5rem; }
-}
-
-/* ============================================================================
-   20.5 — BASCULE NAVIGATION MOBILE (max-width: 992px)
-   ----------------------------------------------------------------------------
-   Le menu horizontal desktop laisse place à un panneau plein écran ouvert
-   par le burger. C'est la pièce maîtresse de la version mobile : sans ce
-   bloc, la nav resterait un menu de bureau écrasé sur un petit écran.
-   ============================================================================ */
-@media (max-width: 992px) {
-  .main-nav {
-    position: fixed;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1900; /* sous le header, donc sous le burger — plus de disparition */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
-    background: var(--ink);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  }
-
-  body.nav-locked { overflow: hidden; }
-
-  header.scrolled .main-nav { top: var(--header-h-scrolled); }
-
-  .main-nav.mobile-open { opacity: 1; visibility: visible; transform: translateY(0); }
-
-  .main-nav a {
-    padding: 0.9rem 0;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.6rem;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--paper);
-    border-bottom: 1px solid transparent;
-  }
-
-  .main-nav a:hover,
-  .main-nav a.active { color: var(--brass-light); border-bottom-color: var(--brass); }
-
-  /* Le panneau de recherche flottant est repositionné pour rester visible
-     même quand la largeur diminue : ancré au header, plein largeur utile. */
-  .search-results {
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-  }
-
-  /* La cloche de notifications garde sa taille tactile mais son panneau
-     ne doit plus déborder de l'écran. */
-  .notif-panel { width: min(320px, calc(100vw - 2rem)); }
 }
 
 /* ============================================================================
@@ -2117,12 +2451,10 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
    20.7 — BASCULE MOBILE GÉNÉRALE (max-width: 768px)
    ----------------------------------------------------------------------------
    C'est ici que la majorité des sections passent réellement en mode
-   "une colonne, empilé, pouce plutôt que souris".
+   "une colonne, empilé, pouce plutôt que souris". (Le header a son propre
+   palier 768px dans la section 7.)
    ============================================================================ */
 @media (max-width: 768px) {
-
-  /* --- Header --- */
-  .header-content { padding: 0 1.25rem; }
 
   /* --- Blocs d'introduction --- */
   .welcome-section,
@@ -2146,9 +2478,6 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
   .review-links-section { padding: 0.5rem 1rem 2.5rem; }
   .category-links-container { flex-direction: column; }
   .category-link { flex: 1 1 100%; height: 8.5rem; }
-
-  /* --- Footer --- */
-  footer { padding: 1.75rem 1rem; }
 
   /* --- Grilles d'actualités : une colonne --- */
   .news-grid { grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem auto; padding: 0 1rem; }
@@ -2213,33 +2542,25 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
 }
 
 /* ============================================================================
-   20.9 — FOOTER & HUB-NAV RESSERRÉS (max-width: 600px)
+   20.9 — HUB-NAV RESSERRÉ (max-width: 600px)
+   ----------------------------------------------------------------------------
+   (Le resserrement du footer vit désormais dans la section 15, avec le
+   reste de ses media queries.)
    ============================================================================ */
 @media (max-width: 600px) {
-  .footer-links { flex-direction: column; gap: 1rem; }
-  footer { padding: 2rem 1rem; }
   .hub-nav { padding: 2.5rem 1.5rem; }
   .hub-nav__title { font-size: 1.7rem; }
 }
 
 /* ============================================================================
    20.10 — PETIT MOBILE (max-width: 480px)
-   ----------------------------------------------------------------------------
-   Le gabarit le plus courant pour un téléphone en usage réel : c'est ici
-   que la recherche et le nom du site cèdent la place à des éléments plus
-   essentiels (logo, cloche, burger).
    ============================================================================ */
 @media (max-width: 480px) {
-  .site-title { display: none; }
-  .logo { width: 2rem; }
-  .header-actions { gap: 4px; }
-  .search-container { display: none; }
-
   .card-bande h2 { font-size: 1.2rem; }
-  
+
   /* --- Synopsis tronqué proprement à 2 lignes --- */
-  .card-bande .synopsis { 
-    font-size: 0.85rem; 
+  .card-bande .synopsis {
+    font-size: 0.85rem;
     overflow: hidden;             /* Obligatoire : masque le texte qui dépasse */
     display: -webkit-box;         /* Obligatoire : active le modèle de boîte legacy */
     -webkit-box-orient: vertical; /* Obligatoire : orientation verticale */
@@ -2279,8 +2600,6 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
    20.12 — MOBILE D'ENTRÉE DE GAMME (max-width: 360px)
    ============================================================================ */
 @media (max-width: 360px) {
-  .header-content { padding: 0 1rem; }
-  .logo { width: 1.8rem; }
   .btn { padding: 0.7rem 1.3rem; font-size: 0.78rem; }
 }
 
@@ -2289,8 +2608,10 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
    ============================================================================ */
 @media print {
   header,
+  .header-utility,
   .main-nav,
   .burger-menu,
+  .search-overlay,
   footer,
   .slider-section,
   .category-links-section,
@@ -2298,7 +2619,7 @@ footer p { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.72rem
   .tiktok-section,
   #voir-plus-btn { display: none !important; }
 
-  body { background: #fff; color: #000; }
+  body { background: #fff; color: #000; padding-top: 0; }
 
   .page-intro-section,
   .a-propos,
