@@ -7831,3 +7831,159 @@ playwright._impl._errors.TargetClosedError: Target page, context or browser has 
 2026-07-26 11:54:08,815 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-07-26 11:54:48,603 [INFO] Push GitHub FORCE réussi
 2026-07-26 11:54:48,603 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-26 21:59:42,631 [INFO] ==== Début du script bandes-annonces ====
+2026-07-26 21:59:42,662 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-26 21:59:42,691 [INFO] 854 identifiants chargés depuis le log
+2026-07-26 21:59:49,811 [INFO] Démarrage scraping CineHorizons...
+2026-07-26 21:59:53,431 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-26 21:59:53,450 [INFO] 10 blocs détectés sur la page 1
+2026-07-26 21:59:53,451 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-26 21:59:53,451 [INFO] Scraping CineHorizons terminé
+2026-07-26 21:59:53,451 [INFO] Démarrage scraping Allociné (films)...
+2026-07-26 21:59:53,762 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-26 21:59:53,789 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-26 21:59:53,789 [INFO] Scraping Allociné (films) terminé
+2026-07-26 21:59:53,790 [INFO] Démarrage scraping Allociné (séries)...
+2026-07-26 21:59:54,232 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-07-26 21:59:57,269 [INFO] Article ajouté Allociné (serie): Percy Jackson et les Olympiens (saison 3)
+2026-07-26 21:59:57,886 [INFO] Article ajouté Allociné (serie): Percy Jackson et les Olympiens (saison 3)
+2026-07-26 21:59:58,547 [INFO] Article ajouté Allociné (serie): The Undeclared War (saison 2)
+2026-07-26 21:59:59,195 [INFO] Article ajouté Allociné (serie): Pluribus (saison 1)
+2026-07-26 22:00:02,042 [INFO] Article ajouté Allociné (serie): Las Azules (saison 2)
+2026-07-26 22:00:03,024 [INFO] Article ajouté Allociné (serie): Las Azules (saison 2)
+2026-07-26 22:00:04,955 [INFO] Article ajouté Allociné (serie): Brasil 70 : Le troisième sacre (saison 1)
+2026-07-26 22:00:07,666 [INFO] Article ajouté Allociné (serie): The Dynasty: UConn Huskies (saison 1)
+2026-07-26 22:00:09,922 [INFO] Article ajouté Allociné (serie): L'Affaire Swagg Man: Hip-hop, influence et bitcoins (saison 1)
+2026-07-26 22:00:11,651 [INFO] Article ajouté Allociné (serie): Cent ans de solitude (saison 2)
+2026-07-26 22:00:12,286 [INFO] Article ajouté Allociné (serie): Opérations Spéciales : Lioness (saison 3)
+2026-07-26 22:00:12,900 [INFO] Article ajouté Allociné (serie): Opérations Spéciales : Lioness (saison 3)
+2026-07-26 22:00:14,066 [INFO] Article ajouté Allociné (serie): The Shards (saison 1)
+2026-07-26 22:00:14,702 [INFO] Article ajouté Allociné (serie): Ma vie avec les Walter Boys (saison 3)
+2026-07-26 22:00:16,052 [INFO] Article ajouté Allociné (serie): Toute la vérité de mes mensonges (saison 1)
+2026-07-26 22:00:17,288 [INFO] Article ajouté Allociné (serie): Mayfair Witches (saison 3)
+2026-07-26 22:00:17,902 [INFO] Article ajouté Allociné (serie): Prisoner (saison 1)
+2026-07-26 22:00:20,384 [INFO] Article ajouté Allociné (serie): Our Sticky Love (saison 1)
+2026-07-26 22:00:21,092 [INFO] Article ajouté Allociné (serie): A Shop For Killers (saison 2)
+2026-07-26 22:00:22,681 [INFO] Article ajouté Allociné (serie): Sterling Point (saison 1)
+2026-07-26 22:00:24,182 [INFO] Article ajouté Allociné (serie): The Gentlemen (saison 2)
+2026-07-26 22:00:24,824 [INFO] Article ajouté Allociné (serie): The Gentlemen (saison 2)
+2026-07-26 22:00:26,288 [INFO] Article ajouté Allociné (serie): MobLand (saison 2)
+2026-07-26 22:00:26,936 [INFO] Article ajouté Allociné (serie): MobLand (saison 2)
+2026-07-26 22:00:27,590 [INFO] Article ajouté Allociné (serie): Death Inc. (saison 4)
+2026-07-26 22:00:29,294 [INFO] Article ajouté Allociné (serie): Thunder 3 (saison 1)
+2026-07-26 22:00:31,491 [INFO] Article ajouté Allociné (serie): L'Atelier des Sorciers (saison 2)
+2026-07-26 22:00:33,494 [INFO] Article ajouté Allociné (serie): Black Torch (saison 1)
+2026-07-26 22:00:36,398 [INFO] Article ajouté Allociné (serie): WWE: Unreal (saison 3)
+2026-07-26 22:00:38,017 [INFO] Article ajouté Allociné (serie): Syndic de choc (saison 1)
+2026-07-26 22:00:41,298 [INFO] Article ajouté Allociné (serie): Sakamoto Days (saison 2)
+2026-07-26 22:00:42,023 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-07-26 22:00:45,663 [INFO] Article ajouté Allociné (serie): Star Wars: Visions Présente - Le Neuvième Jedi (saison 1)
+2026-07-26 22:00:46,693 [INFO] Article ajouté Allociné (serie): Spooky in Love (saison 1)
+2026-07-26 22:00:47,840 [INFO] Article ajouté Allociné (serie): The Crow Girl (saison 2)
+2026-07-26 22:00:48,915 [INFO] Article ajouté Allociné (serie): Le Palais de l'Est (saison 1)
+2026-07-26 22:00:50,135 [INFO] Article ajouté Allociné (serie): The Iris Affair (saison 1)
+2026-07-26 22:00:52,724 [INFO] Article ajouté Allociné (serie): L'Attentat du vol Pan Am 103 (saison 1)
+2026-07-26 22:00:55,126 [INFO] Article ajouté Allociné (serie): Kaulitz & Kaulitz (saison 3)
+2026-07-26 22:00:56,793 [INFO] Article ajouté Allociné (serie): Furious (saison 1)
+2026-07-26 22:00:57,999 [INFO] Article ajouté Allociné (serie): Nouvelle vie à Ransom Canyon (saison 2)
+2026-07-26 22:00:59,250 [INFO] Article ajouté Allociné (serie): The Hawk (saison 1)
+2026-07-26 22:01:00,418 [INFO] Article ajouté Allociné (serie): The Hawk (saison 1)
+2026-07-26 22:01:03,800 [INFO] Article ajouté Allociné (serie): MEBIUS DUST (saison 1)
+2026-07-26 22:01:10,404 [INFO] Article ajouté Allociné (serie): Les Rois du Texas (King of the Hill) (saison 15)
+2026-07-26 22:01:15,823 [INFO] Article ajouté Allociné (serie): Oh Boy, Was I Wrong About Her (saison 1)
+2026-07-26 22:01:19,745 [INFO] Article ajouté Allociné (serie): Batman : Le justicier masqué (saison 2)
+2026-07-26 22:01:21,429 [INFO] Article ajouté Allociné (serie): Les Rois du Texas (King of the Hill) (saison 15)
+2026-07-26 22:01:23,397 [INFO] Article ajouté Allociné (serie): The Insipid Prince's Furtive Grab for The Throne (saison 1)
+2026-07-26 22:01:24,856 [INFO] Article ajouté Allociné (serie): GIGN (saison 1)
+2026-07-26 22:01:26,303 [INFO] Article ajouté Allociné (serie): Stuart Fails To Save The Universe (saison 1)
+2026-07-26 22:01:27,833 [INFO] Article ajouté Allociné (serie): Légende vivante (saison 1)
+2026-07-26 22:01:31,169 [INFO] Article ajouté Allociné (serie): The Villager of Level 999 (saison 1)
+2026-07-26 22:01:34,043 [INFO] Article ajouté Allociné (serie): Alley Cats (saison 1)
+2026-07-26 22:01:37,931 [INFO] Article ajouté Allociné (serie): The World's Strongest Rearguard (saison 1)
+2026-07-26 22:01:40,760 [INFO] Article ajouté Allociné (serie): KAIJU GIRL CARAMELISE (saison 1)
+2026-07-26 22:01:43,876 [INFO] Article ajouté Allociné (serie): Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance (saison 1)
+2026-07-26 22:01:45,036 [INFO] Article ajouté Allociné (serie): Étincelles de demain (saison 1)
+2026-07-26 22:01:47,398 [INFO] Article ajouté Allociné (serie): The Duke’s Son Claims He Won’t Love Me Yet Showers Me with Adoration (saison 1)
+2026-07-26 22:01:50,319 [INFO] Article ajouté Allociné (serie): Je veux t'aimer jusqu'à ta mort (saison 1)
+2026-07-26 22:01:53,020 [INFO] Article ajouté Allociné (serie): Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs (saison 2)
+2026-07-26 22:01:55,803 [INFO] Article ajouté Allociné (serie): Les Ingénieurs du Futur (saison 1)
+2026-07-26 22:02:00,007 [INFO] Article ajouté Allociné (serie): Ranma ½ (2024) (saison 3)
+2026-07-26 22:02:02,609 [INFO] Article ajouté Allociné (serie): Jaadugar - La Légende de Fatima (saison 1)
+2026-07-26 22:02:03,887 [INFO] Article ajouté Allociné (serie): Clevatess (saison 2)
+2026-07-26 22:02:06,976 [INFO] Article ajouté Allociné (serie): Dame Dara de Reiwa (saison 1)
+2026-07-26 22:02:09,746 [INFO] Article ajouté Allociné (serie): The Gilded Age (saison 4)
+2026-07-26 22:02:11,020 [INFO] Article ajouté Allociné (serie): Outer Banks (saison 5)
+2026-07-26 22:02:12,975 [INFO] Article ajouté Allociné (serie): Outer Banks (saison 5)
+2026-07-26 22:02:14,600 [INFO] Article ajouté Allociné (serie): Le Palais de l'Est (saison 1)
+2026-07-26 22:02:15,729 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=3
+2026-07-26 22:02:17,883 [INFO] Article ajouté Allociné (serie): La Loi de la plus forte (saison 3)
+2026-07-26 22:02:19,138 [INFO] Article ajouté Allociné (serie): Zodiaque (saison 1)
+2026-07-26 22:02:20,512 [INFO] Article ajouté Allociné (serie): Rivals (saison 2)
+2026-07-26 22:02:21,929 [INFO] Article ajouté Allociné (serie): La ville nous appartient (saison 1)
+2026-07-26 22:02:23,340 [INFO] Article ajouté Allociné (serie): Star Trek: Strange New Worlds (saison 4)
+2026-07-26 22:02:25,216 [INFO] Article ajouté Allociné (serie): Outlander : Blood Of My Blood (saison 2)
+2026-07-26 22:02:26,981 [INFO] Article ajouté Allociné (serie): Je n'ai pas peur (saison 1)
+2026-07-26 22:02:28,661 [INFO] Article ajouté Allociné (serie): Le Chemin de l'olivier (saison 3)
+2026-07-26 22:02:29,994 [INFO] Article ajouté Allociné (serie): Agent Kim Reactivated (saison 1)
+2026-07-26 22:02:31,316 [INFO] Article ajouté Allociné (serie): Proud (saison 1)
+2026-07-26 22:02:32,973 [INFO] Article ajouté Allociné (serie): Life, Larry and The Pursuit of Unhappiness (saison 1)
+2026-07-26 22:02:34,730 [INFO] Article ajouté Allociné (serie): Opérations Spéciales : Lioness (saison 3)
+2026-07-26 22:02:36,301 [INFO] Article ajouté Allociné (serie): Opérations Spéciales : Lioness (saison 3)
+2026-07-26 22:02:37,736 [INFO] Article ajouté Allociné (serie): La Petite maison dans la prairie (saison 1)
+2026-07-26 22:02:39,279 [INFO] Article ajouté Allociné (serie): La Petite maison dans la prairie (saison 1)
+2026-07-26 22:02:40,741 [INFO] Article ajouté Allociné (serie): Thunder 3 (saison 1)
+2026-07-26 22:02:42,590 [INFO] Article ajouté Allociné (serie): Le Garçon du dernier rang (saison 1)
+2026-07-26 22:02:45,653 [INFO] Article ajouté Allociné (serie): Le camp de vacances de Snoopy (saison 2)
+2026-07-26 22:02:47,152 [INFO] Article ajouté Allociné (serie): La Carte des désirs (saison 1)
+2026-07-26 22:02:49,173 [INFO] Article ajouté Allociné (serie): Trying (saison 5)
+2026-07-26 22:02:51,071 [INFO] Article ajouté Allociné (serie): Trying (saison 5)
+2026-07-26 22:02:52,412 [INFO] Article ajouté Allociné (serie): Elle (saison 1)
+2026-07-26 22:02:53,759 [INFO] Article ajouté Allociné (serie): Ride Or Die (saison 1)
+2026-07-26 22:02:55,056 [INFO] Article ajouté Allociné (serie): Ride Or Die (saison 1)
+2026-07-26 22:02:56,238 [INFO] Article ajouté Allociné (serie): The Split : Barcelona (saison 1)
+2026-07-26 22:02:58,336 [INFO] Article ajouté Allociné (serie): The American Experiment (saison 1)
+2026-07-26 22:02:59,608 [INFO] Article ajouté Allociné (serie): The Bear : sur place ou à emporter (saison 5)
+2026-07-26 22:03:01,042 [INFO] Article ajouté Allociné (serie): The Bear : sur place ou à emporter (saison 5)
+2026-07-26 22:03:03,021 [INFO] Article ajouté Allociné (serie): Among Us (saison 1)
+2026-07-26 22:03:04,202 [INFO] Article ajouté Allociné (serie): Tomb Raider King (saison 1)
+2026-07-26 22:03:07,015 [INFO] Article ajouté Allociné (serie): Victoria of Many Faces (saison 1)
+2026-07-26 22:03:09,603 [INFO] Article ajouté Allociné (serie): Sasaki and Peeps (saison 2)
+2026-07-26 22:03:11,143 [INFO] Article ajouté Allociné (serie): The Lady : A Royal Murder Scandal (saison 1)
+2026-07-26 22:03:14,002 [INFO] Article ajouté Allociné (serie): The Oblivious Saint Can't Contain Her Power (saison 1)
+2026-07-26 22:03:15,566 [INFO] Article ajouté Allociné (serie): Dragon Striker (saison 1)
+2026-07-26 22:03:16,998 [INFO] Article ajouté Allociné (serie): Oasis (saison 1)
+2026-07-26 22:03:18,239 [INFO] Article ajouté Allociné (serie): Lucky (saison 1)
+2026-07-26 22:03:19,551 [INFO] Article ajouté Allociné (serie): Lucky (saison 1)
+2026-07-26 22:03:20,287 [INFO] Article ajouté Allociné (serie): Sur tes traces (saison 1)
+2026-07-26 22:03:28,490 [WARNING] Erreur chargement fiche Allociné (serie id=29245): Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("meta[property=\"og:title\"]")
+
+2026-07-26 22:03:36,565 [WARNING] Erreur chargement fiche Allociné (serie id=29245): Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("meta[property=\"og:title\"]")
+
+2026-07-26 22:03:45,642 [WARNING] Erreur chargement page vidéo Allociné (cmedia=20638671): Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("figure[data-model]") to be visible
+
+2026-07-26 22:03:45,642 [INFO] Article ajouté Allociné (serie): Sur tes traces (série)
+2026-07-26 22:03:53,714 [WARNING] Erreur chargement page liste Allociné (https://www.allocine.fr/series/video/recentes/?page=4): Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("a[href*=\"player_gen_cmedia\"]") to be visible
+
+2026-07-26 22:03:53,714 [INFO] Scraping Allociné (séries) terminé
+2026-07-26 22:03:53,831 [INFO] Démarrage scraping TMDb...
+2026-07-26 22:03:54,210 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/3)
+2026-07-26 22:03:54,846 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-07-26 22:03:56,563 [INFO] 2 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-07-26 22:03:56,938 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/11)
+2026-07-26 22:03:57,320 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/11)
+2026-07-26 22:03:57,460 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/11)
+2026-07-26 22:03:58,088 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/11)
+2026-07-26 22:03:59,528 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/11)
+2026-07-26 22:04:00,922 [INFO] Scraping TMDb terminé
+2026-07-26 22:04:00,923 [INFO] 109 nouveaux articles détectés
+2026-07-26 22:04:00,929 [INFO] 100 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-07-26 22:04:00,929 [INFO] Sauvegarde du log avec 963 identifiants
+2026-07-26 22:04:00,930 [INFO] Poussée automatique FORCÉE vers GitHub...

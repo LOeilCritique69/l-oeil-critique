@@ -231,10 +231,66 @@ def scrape_cinehorizons(log, page) -> Tuple[List[str], List[str]]:
 # SCRAPER ALLOCINÉ (films + séries)
 # ------------------------------
 
-LIST_ALLOCINE_SERIES_URL = "https://www.allocine.fr/video/series/prochainement/"
+LIST_ALLOCINE_SERIES_URL = "https://www.allocine.fr/series/video/recentes/"
 
 ALLOCINE_FILM_LINK_RE = re.compile(r"player_gen_cmedia=(\d+)&cfilm=(\d+)")
 ALLOCINE_SERIE_LINK_RE = re.compile(r"player_gen_cmedia=(\d+)&cserie=(\d+)")
+
+def extract_allocine_video_season_info(page, cmedia, cserie):
+    """
+    La fiche série globale ne contient PAS la date de la saison réellement
+    teasée par la vidéo (elle ne parle que de la toute première saison).
+    Le seul endroit où l'ID interne de la bonne saison est disponible, c'est
+    le JSON `data-model` embarqué dans la page de la vidéo elle-même.
+    On y va donc chercher `id_main_season` et `main_season_number`.
+    """
+    video_url = f"https://www.allocine.fr/video/player_gen_cmedia={cmedia}&cserie={cserie}.html"
+    try:
+        page.goto(video_url, timeout=PAGE_TIMEOUT)
+        page.wait_for_selector("figure[data-model]", timeout=8000)
+    except Exception as e:
+        logger.warning(f"Erreur chargement page vidéo Allociné (cmedia={cmedia}): {e}")
+        return None, None
+
+    detail = BeautifulSoup(page.content(), "html.parser")
+    figure = detail.select_one("figure[data-model]")
+    if not figure or not figure.get("data-model"):
+        logger.warning(f"data-model introuvable sur la page vidéo (cmedia={cmedia})")
+        return None, None
+    try:
+        model = json.loads(figure["data-model"])
+        metas = model.get("videos", [{}])[0].get("metas", {})
+        return metas.get("id_main_season"), metas.get("main_season_number")
+    except Exception as e:
+        logger.warning(f"Erreur parsing data-model vidéo Allociné (cmedia={cmedia}): {e}")
+        return None, None
+
+def extract_allocine_season_release_date(page, cserie, season_id):
+    """
+    Va chercher la vraie date de diffusion sur la page dédiée à CETTE saison
+    (ex: /series/ficheserie-26596/saison-1000001287/ -> "Diffusée à partir
+    de : 20 novembre 2026"), au lieu de la date de la fiche série globale.
+    """
+    if not season_id:
+        return None
+    season_url = f"https://www.allocine.fr/series/ficheserie-{cserie}/saison-{season_id}/"
+    try:
+        page.goto(season_url, timeout=PAGE_TIMEOUT)
+        page.wait_for_selector("body", timeout=8000)
+    except Exception as e:
+        logger.warning(f"Erreur chargement page saison Allociné ({season_url}): {e}")
+        return None
+
+    texte_page = BeautifulSoup(page.content(), "html.parser").get_text(" ", strip=True)
+    for pattern in (
+        r"Diffus[ée]e?\s*à partir de\s*:?\s*(\d{1,2}\s+[A-Za-zéûîôâÀ-ÿ]+\s+\d{4})",
+        r"Diffus[ée]e?\s+le\s*:?\s*(\d{1,2}\s+[A-Za-zéûîôâÀ-ÿ]+\s+\d{4})",
+        r"Diffusion\s*:?\s*(\d{1,2}\s+[A-Za-zéûîôâÀ-ÿ]+\s+\d{4})",
+    ):
+        match = re.search(pattern, texte_page)
+        if match:
+            return clean_text(match.group(1))
+    return None
 
 def extract_allocine_detail(page, content_id, cmedia, content_type):
     """
@@ -265,20 +321,21 @@ def extract_allocine_detail(page, content_id, cmedia, content_type):
     desc_tag = detail.select_one('meta[property="og:description"]')
     synopsis = summarize_synopsis(desc_tag["content"]) if desc_tag and desc_tag.get("content") else "Pas de synopsis"
 
-    texte_page = detail.get_text(" ", strip=True)
     if content_type == "serie":
-        # La fiche série affiche en général une vraie date ("Sortie : 27 juillet 2026").
-        # On la cherche en priorité, et on ne retombe sur l'année seule ("Série TV 2026")
-        # que si aucune date complète n'est trouvée.
-        date_match = re.search(r"Sortie\s*:\s*(\d{1,2}\s+[A-Za-zéûîôâ]+\s+\d{4})", texte_page)
-        if date_match:
-            date_sortie = clean_text(date_match.group(1))
-        else:
+        # On récupère d'abord l'ID de la VRAIE saison teasée (via la page vidéo),
+        # puis sa date de diffusion réelle (via la page de cette saison).
+        # /!\ ces deux appels naviguent avec `page`, donc DOIVENT avoir lieu
+        # après qu'on a déjà extrait titre/synopsis de `detail` ci-dessus.
+        season_id, season_number = extract_allocine_video_season_info(page, cmedia, content_id)
+        date_sortie = extract_allocine_season_release_date(page, content_id, season_id)
+        if not date_sortie:
+            texte_page = detail.get_text(" ", strip=True)
             annee_match = re.search(r"Série TV (\d{4})", texte_page)
             date_sortie = f"Série {annee_match.group(1)}" if annee_match else "Date inconnue"
-        titre = f"{titre} (série)"
+        titre = f"{titre} (saison {season_number})" if season_number else f"{titre} (série)"
     else:
         # La date de sortie apparaît en texte libre du type "15 juillet 2026 en salle"
+        texte_page = detail.get_text(" ", strip=True)
         date_match = re.search(r"(\d{1,2}\s+[A-Za-zéûîôâ]+\s+\d{4})\s+en\s+salle", texte_page)
         date_sortie = clean_text(date_match.group(1)) if date_match else "Date inconnue"
 
