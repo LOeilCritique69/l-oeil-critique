@@ -697,7 +697,15 @@ def main():
         all_seen_ids = [i.identifiant for i in (cine_all + allocine_all + allocine_series_all + tmdb_all)]
         save_log(all_seen_ids)
     else:
-        save_log(log + [i.identifiant for i in nouveaux_items])
+        # FIX : on ne loggue plus seulement les identifiants des quelques items
+        # retenus pour l'affichage (nouveaux_items, plafonnés à
+        # MAX_NEW_PER_SOURCE_PER_RUN par source). On loggue TOUT ce qui a été vu
+        # pendant le scraping de ce run (cine_all/allocine_all/...), même les
+        # items au-delà du plafond d'affichage. Sinon, tout ce qui dépasse le
+        # plafond n'était jamais mémorisé et se faisait redétecter comme
+        # "nouveau" indéfiniment aux runs suivants (boucle infinie observée).
+        all_seen_ids = [i.identifiant for i in (cine_all + allocine_all + allocine_series_all + tmdb_all)]
+        save_log(list(dict.fromkeys(log + all_seen_ids)))  # dédoublonné, ordre préservé
 
     push_to_github()
     logger.info("==== Fin du script bandes-annonces ====")
