@@ -13780,3 +13780,40 @@ Call log:
 2026-07-27 13:56:36,234 [INFO] 100 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-07-27 13:56:36,235 [INFO] Sauvegarde du log avec 627 identifiants
 2026-07-27 13:56:36,235 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-27 13:57:14,901 [INFO] Push GitHub FORCE réussi
+2026-07-27 13:57:14,901 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-27 14:03:09,643 [INFO] ==== Début du script bandes-annonces ====
+2026-07-27 14:03:09,649 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-07-27 14:03:09,649 [INFO] 627 identifiants chargés depuis le log
+2026-07-27 14:03:10,095 [INFO] Démarrage scraping CineHorizons...
+2026-07-27 14:03:12,568 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-27 14:03:12,583 [INFO] 10 blocs détectés sur la page 1
+2026-07-27 14:03:12,584 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-27 14:03:12,584 [INFO] Scraping CineHorizons terminé (0 items)
+2026-07-27 14:03:12,584 [INFO] Démarrage scraping Allociné (films)...
+2026-07-27 14:03:12,862 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-27 14:03:12,893 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-27 14:03:12,893 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-07-27 14:03:12,893 [INFO] Démarrage scraping Allociné (séries)...
+2026-07-27 14:03:13,368 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-07-27 14:03:14,334 [INFO] Article ajouté Allociné (serie): Neuromancer (saison 1)
+2026-07-27 14:03:14,969 [INFO] Article ajouté Allociné (serie): Dark Matter (saison 2)
+2026-07-27 14:03:15,765 [INFO] Article ajouté Allociné (serie): Lanterns (saison 1)
+2026-07-27 14:03:16,315 [INFO] Article ajouté Allociné (serie): Lanterns (saison 1)
+2026-07-27 14:03:16,477 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-07-27 14:03:16,510 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-27 14:03:16,510 [INFO] Scraping Allociné (séries) terminé (4 items)
+2026-07-27 14:03:16,570 [INFO] Démarrage scraping TMDb...
+2026-07-27 14:03:17,078 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/3)
+2026-07-27 14:03:17,119 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-07-27 14:03:17,549 [INFO] 2 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-07-27 14:03:17,571 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/11)
+2026-07-27 14:03:17,594 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/11)
+2026-07-27 14:03:17,603 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/11)
+2026-07-27 14:03:17,682 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/11)
+2026-07-27 14:03:17,950 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/11)
+2026-07-27 14:03:18,438 [INFO] Scraping TMDb terminé (0 items)
+2026-07-27 14:03:18,439 [INFO] 4 articles retenus pour ce run
+2026-07-27 14:03:18,453 [INFO] 718 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-07-27 14:03:18,453 [INFO] Sauvegarde du log avec 631 identifiants
+2026-07-27 14:03:18,454 [INFO] Poussée automatique FORCÉE vers GitHub...
