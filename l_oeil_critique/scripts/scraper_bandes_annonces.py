@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -64,7 +65,7 @@ TMDB_BASE_URL = "https://api.themoviedb.org/3"
 TMDB_ENDPOINTS = ["upcoming", "now_playing"]
 
 MAX_SYNOPSIS_LEN = 500
-MAX_CARDS_FILE = 100
+MAX_CARDS_FILE = 5000
 
 # Plafond quotidien (mode normal, sans --backfill) : inchangé par rapport à la v2
 MAX_NEW_PER_SOURCE_PER_RUN = 8
@@ -397,15 +398,6 @@ def _scrape_allocine_listing(log, page, list_url_base, link_re, id_prefix, conte
     items: List[ScrapedItem] = []
     date_ajout = datetime.now().strftime("%d %B %Y")
 
-    # FIX : dédoublonnage sur (cmedia, content_id) valable pour TOUT le run
-    # (pas remis à zéro à chaque page). Comme visiter une page en détail prend
-    # du temps (chaque fiche est chargée une par une), Allociné ajoute parfois
-    # de nouvelles vidéos entre deux chargements de page, ce qui décale le
-    # contenu et fait réapparaître les mêmes vidéos sur la page suivante
-    # (ex: un titre vu page 3 se retrouve aussi sur la page 4). Sans ça, la
-    # même vidéo pouvait être traitée deux fois pendant un seul run.
-    vus_ce_run = set()
-
     for page_index in range(1, max_pages + 1):
         list_url = list_url_base if page_index == 1 else f"{list_url_base}?page={page_index}"
         try:
@@ -422,6 +414,7 @@ def _scrape_allocine_listing(log, page, list_url_base, link_re, id_prefix, conte
             logger.info("Plus aucune vidéo trouvée, fin de pagination Allociné")
             break
 
+        vus_sur_page = set()
         nouveaux_sur_cette_page = 0
 
         for lien in liens:
@@ -429,9 +422,9 @@ def _scrape_allocine_listing(log, page, list_url_base, link_re, id_prefix, conte
             if not match:
                 continue
             cmedia, content_id = match.group(1), match.group(2)
-            if (cmedia, content_id) in vus_ce_run:
+            if (cmedia, content_id) in vus_sur_page:
                 continue
-            vus_ce_run.add((cmedia, content_id))
+            vus_sur_page.add((cmedia, content_id))
 
             identifiant = f"{id_prefix}::{content_id}::{cmedia}"
             if identifiant in log:
@@ -693,8 +686,7 @@ def main():
             if i >= 6:
                 article = remove_badge_from_article(article)
             articles_finaux.append(article)
-        # Plus de troncature ici : on garde TOUTES les anciennes bandes-annonces,
-        # le fichier grossit au fil du temps au lieu de perdre les plus vieilles.
+        articles_finaux = articles_finaux[:MAX_CARDS_FILE]
 
     OUTPUT_FILE.write_text("\n\n".join(articles_finaux), encoding="utf-8")
     logger.info(f"{len(articles_finaux)} articles sauvegardés dans {OUTPUT_FILE}")
@@ -706,15 +698,7 @@ def main():
         all_seen_ids = [i.identifiant for i in (cine_all + allocine_all + allocine_series_all + tmdb_all)]
         save_log(all_seen_ids)
     else:
-        # FIX : on ne loggue plus seulement les identifiants des quelques items
-        # retenus pour l'affichage (nouveaux_items, plafonnés à
-        # MAX_NEW_PER_SOURCE_PER_RUN par source). On loggue TOUT ce qui a été vu
-        # pendant le scraping de ce run (cine_all/allocine_all/...), même les
-        # items au-delà du plafond d'affichage. Sinon, tout ce qui dépasse le
-        # plafond n'était jamais mémorisé et se faisait redétecter comme
-        # "nouveau" indéfiniment aux runs suivants (boucle infinie observée).
-        all_seen_ids = [i.identifiant for i in (cine_all + allocine_all + allocine_series_all + tmdb_all)]
-        save_log(list(dict.fromkeys(log + all_seen_ids)))  # dédoublonné, ordre préservé
+        save_log(log + [i.identifiant for i in nouveaux_items])
 
     push_to_github()
     logger.info("==== Fin du script bandes-annonces ====")

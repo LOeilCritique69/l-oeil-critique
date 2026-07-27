@@ -11077,5 +11077,25 @@
     "video": false,
     "vote_average": 7.5,
     "vote_count": 12
+  },
+  "The Spider Within: A Spider-Verse Story_2023": {
+    "adult": false,
+    "backdrop_path": "/g5ADksfKtjo2X2A4ccFZAghST31.jpg",
+    "genre_ids": [
+      16,
+      18
+    ],
+    "id": 1106299,
+    "title": "The Spider Within: A Spider-Verse Story",
+    "original_language": "en",
+    "original_title": "The Spider Within: A Spider-Verse Story",
+    "overview": "",
+    "popularity": 0.8991,
+    "poster_path": "/2xlk27ZW2WI6Q77SLEmwhUpz190.jpg",
+    "release_date": "2023-06-12",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.075,
+    "vote_count": 107
   }
 }
