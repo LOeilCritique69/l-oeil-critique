@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://l-oeil-critique.netlify.app/</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-07-29</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/A_propos.html</loc>
@@ -310,7 +310,7 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/bande_annonces_blocs.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/contact.html</loc>
@@ -343,6 +343,10 @@
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/news/series.html</loc>
     <lastmod>2026-07-21</lastmod>
+  </url>
+  <url>
+    <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/calendrier.html</loc>
+    <lastmod>2026-07-29</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/critique-films.html</loc>
