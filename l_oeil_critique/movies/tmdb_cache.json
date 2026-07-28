@@ -11118,5 +11118,26 @@
     "video": false,
     "vote_average": 7.227,
     "vote_count": 6705
+  },
+  "Enola Holmes 2_2022": {
+    "adult": false,
+    "backdrop_path": "/n2OaA7Je0fgcVnfJM7xDJoPny7x.jpg",
+    "genre_ids": [
+      12,
+      9648,
+      80
+    ],
+    "id": 829280,
+    "title": "Enola Holmes 2",
+    "original_language": "en",
+    "original_title": "Enola Holmes 2",
+    "overview": "Chargée, pour sa première affaire officielle, de percer le mystère d'une jeune disparue, la détective Enola doit solliciter l'aide de ses amis... et de son frère Sherlock.",
+    "popularity": 9.1309,
+    "poster_path": "/n4MNnDDVm86AELe1fxbLvxHYeyh.jpg",
+    "release_date": "2022-11-03",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.414,
+    "vote_count": 3082
   }
 }
