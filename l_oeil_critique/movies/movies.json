@@ -5596,5 +5596,15 @@
     "poster_path": "/2xlk27ZW2WI6Q77SLEmwhUpz190.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/2xlk27ZW2WI6Q77SLEmwhUpz190.jpg",
     "tmdb_id": 1106299
+  },
+  {
+    "Name": "Enola Holmes",
+    "Year": 2020,
+    "Date": "2026-07-27",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/enola-holmes/",
+    "poster_path": "/zDtraIGPVhmSnPZQ34fmyvWT5tz.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zDtraIGPVhmSnPZQ34fmyvWT5tz.jpg",
+    "tmdb_id": 497582
   }
 ]

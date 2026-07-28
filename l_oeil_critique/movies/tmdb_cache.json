@@ -11097,5 +11097,26 @@
     "video": false,
     "vote_average": 7.075,
     "vote_count": 107
+  },
+  "Enola Holmes_2020": {
+    "adult": false,
+    "backdrop_path": "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg",
+    "genre_ids": [
+      12,
+      9648,
+      80
+    ],
+    "id": 497582,
+    "title": "Enola Holmes",
+    "original_language": "en",
+    "original_title": "Enola Holmes",
+    "overview": "Adolescente rebelle à la recherche de sa mère disparue, Enola Holmes utilise ses talents de détective pour surpasser son grand frère Sherlock et aider un lord en cavale.",
+    "popularity": 10.3257,
+    "poster_path": "/zDtraIGPVhmSnPZQ34fmyvWT5tz.jpg",
+    "release_date": "2020-09-22",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.227,
+    "vote_count": 6705
   }
 }
