@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta property="og:title" content="Calendrier des sorties – L'Œil Critique">
+    <meta property="og:description" content="Films, séries, jeux et animés à venir — calendrier des sorties de L'Œil Critique">
+    <meta property="og:image" content="../assets/img/logo_chef_doeuvre_processed_copy.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.l-oeil-critique.com/pages/calendrier.html">
+    <link rel="canonical" href="https://www.l-oeil-critique.com/pages/calendrier.html">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="calendrier sorties, sorties films, sorties séries, sorties jeux vidéo, sorties animés, L'Œil Critique">
+    <link href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg">
+    <title>Calendrier des sorties – L'Œil Critique</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="../css/chef_d_oeuvre.css" rel="stylesheet">
+    <link href="../css/reviews.css" rel="stylesheet">
+    <link href="../css/list-pages.css" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
+
+<style>
+  :root{
+    --bg:#121014;
+    --bg-raised:#1a171c;
+    --stub:#1f1c21;
+    --hairline:#332e35;
+    --ink2:#f4efe6;
+    --ink-dim:#a89f95;
+    --ink-faint:#6f6a67;
+    --red:#c1272d;
+    --red-dim:#7a2024;
+    --gold:#cfa348;
+    --cat-films:#5b8ac9;
+    --cat-series:#4fb3ad;
+    --cat-jeux:#7fae5a;
+    --cat-animes:#e0a24f;
+    --cat-autre:#9089a3;
+    --cat-music:#b57ad1;
+    --radius:2px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body.lp-page{
+    margin:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(193,39,45,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 400px at 100% 0%, rgba(207,163,72,0.06), transparent 55%),
+      var(--bg);
+    color:var(--ink2);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  ::selection{ background:var(--red); color:#fff; }
+
+  a{ color:inherit; }
+
+  /* ---------- BREADCRUMB / EN-TÊTE DE LISTE (gabarit standard du site) ---------- */
+  .list-page-header{
+    max-width:1080px;
+    margin:0 auto;
+    padding:32px 24px 0;
+  }
+  .list-page-header__breadcrumb{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0;
+  }
+  .list-page-header__breadcrumb a:hover{ color:var(--gold); }
+  .list-page-header__breadcrumb .is-current{ color:var(--gold); }
+  .list-page-header__title{
+    display:block; /* le titre éditorial ci-dessous (masthead) remplace le h1 générique */
+  }
+
+  
+
+  /* ---------- CONTROLS ---------- */
+  .controls{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px 8px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    justify-content:center;
+  }
+  .chip{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.02em;
+    padding:8px 14px;
+    border:1px solid var(--hairline);
+    border-radius:999px;
+    background:transparent;
+    color:var(--ink-dim);
+    cursor:pointer;
+    transition:all .15s ease;
+    white-space:nowrap;
+  }
+  .chip:hover{ border-color:var(--ink-dim); color:var(--ink2); }
+  .chip.active{
+    background:var(--ink2);
+    color:var(--bg);
+    border-color:var(--ink2);
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{
+    max-width:1080px;
+    margin:0 auto;
+    padding:40px 24px 8px;
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:20px;
+  }
+  .section-head h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.5rem;
+    margin:0;
+  }
+  .section-head .count{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+  }
+  .section-head .line{
+    flex:1;
+    height:1px;
+    background:var(--hairline);
+  }
+  .section-head.urgent h2{ color:var(--red); }
+  .section-head.urgent .line{
+    background:repeating-linear-gradient(90deg, var(--red-dim) 0 6px, transparent 6px 12px);
+    height:1px;
+  }
+
+  /* ---------- SORTIES PASSÉES (repliable, discrète) ---------- */
+  .section.past{
+    opacity:0.62;
+  }
+  .section.past summary{
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:20px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.5rem;
+    color:var(--ink-dim);
+    list-style:none;
+  }
+  .section.past summary::-webkit-details-marker{ display:none; }
+  .section.past summary::after{
+    content:"▸";
+    margin-left:auto;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    transition:transform .15s ease;
+  }
+  .section.past[open] summary::after{ transform:rotate(90deg); }
+  .section.past summary .count{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    font-weight:400;
+  }
+  .section.past .grid{ margin-top:4px; }
+
+  /* ---------- TICKET GRID ---------- */
+  .grid{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px 8px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+    gap:18px;
+  }
+  .section.past .grid{ padding:0; }
+
+  /* Ticket stub card */
+  .ticket{
+    position:relative;
+    background:var(--stub);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    display:flex;
+    overflow:hidden;
+    transition:transform .18s ease, border-color .18s ease;
+  }
+  .ticket:hover{
+    transform:translateY(-2px);
+    border-color:#4a444c;
+  }
+
+  .ticket-stub{
+    flex:0 0 78px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border-right:1px dashed var(--hairline);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:12px 6px;
+    position:relative;
+  }
+  /* perforation notches */
+  .ticket-stub::before,
+  .ticket-stub::after{
+    content:"";
+    position:absolute;
+    right:-7px;
+    width:14px; height:14px;
+    background:var(--bg);
+    border-radius:50%;
+    border:1px solid var(--hairline);
+  }
+  .ticket-stub::before{ top:-7px; }
+  .ticket-stub::after{ bottom:-7px; }
+
+  .stub-day{
+    font-family:'Fraunces', serif;
+    font-size:1.9rem;
+    font-weight:700;
+    line-height:1;
+  }
+  .stub-month{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    margin-top:4px;
+  }
+  .stub-year{
+    font-family:'JetBrains Mono', monospace;
+    font-size:9px;
+    color:var(--ink-faint);
+    margin-top:2px;
+  }
+  .stub-vague{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--ink-dim);
+    text-align:center;
+    line-height:1.4;
+    padding:0 4px;
+  }
+
+  .ticket-body{
+    flex:1;
+    padding:14px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:0;
+  }
+  .ticket-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.02rem;
+    line-height:1.25;
+    margin:0;
+    word-break:break-word;
+  }
+  .ticket-meta{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:auto;
+  }
+  .cat-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.04em;
+    padding:3px 8px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.06);
+  }
+  .cat-dot{
+    display:inline-block;
+    width:6px; height:6px;
+    border-radius:50%;
+    margin-right:5px;
+    vertical-align:middle;
+    position:relative;
+    top:-1px;
+  }
+  .echeance{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    color:var(--gold);
+    margin-left:auto;
+  }
+  .echeance.today{ color:var(--red); font-weight:600; }
+
+  /* category colors */
+  .cat-films{ background:rgba(91,138,201,0.16); color:var(--cat-films); }
+  .cat-films .cat-dot{ background:var(--cat-films); }
+  .cat-series{ background:rgba(79,179,173,0.16); color:var(--cat-series); }
+  .cat-series .cat-dot{ background:var(--cat-series); }
+  .cat-jeux{ background:rgba(127,174,90,0.16); color:var(--cat-jeux); }
+  .cat-jeux .cat-dot{ background:var(--cat-jeux); }
+  .cat-animes{ background:rgba(224,162,79,0.16); color:var(--cat-animes); }
+  .cat-animes .cat-dot{ background:var(--cat-animes); }
+  .cat-autre{ background:rgba(144,137,163,0.16); color:var(--cat-autre); }
+  .cat-autre .cat-dot{ background:var(--cat-autre); }
+  .cat-music{ background:rgba(181,122,209,0.16); color:var(--cat-music); }
+  .cat-music .cat-dot{ background:var(--cat-music); }
+
+  /* ---------- LOADER ---------- */
+
+    #loadingOverlay{
+        position:fixed;
+        inset:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:rgba(10,10,10,.82);
+        backdrop-filter:blur(8px);
+        z-index:99999;
+        transition:opacity .35s ease;
+    }
+
+    #loadingOverlay.hidden{
+        opacity:0;
+        visibility:hidden;
+    }
+
+    .loading-box{
+        width:340px;
+        padding:35px;
+        border-radius:12px;
+        background:#1b181d;
+        border:1px solid var(--hairline);
+        text-align:center;
+        box-shadow:0 20px 70px rgba(0,0,0,.45);
+    }
+
+    .loading-box h2{
+        margin:20px 0 10px;
+        font-family:'Fraunces',serif;
+        font-size:1.8rem;
+        color:var(--ink2);
+    }
+
+    .loading-box p{
+        margin:0;
+        color:var(--ink-dim);
+        font-size:.95rem;
+    }
+
+    .loading-box .spinner{
+        width:42px;
+        height:42px;
+        margin:auto;
+        border:3px solid rgba(255,255,255,.15);
+        border-top-color:var(--gold);
+        border-radius:50%;
+        animation:spin .8s linear infinite;
+    }
+
+  /* ---------- STATES ---------- */
+  .state{
+    max-width:1080px; margin:0 auto; padding:60px 24px;
+    text-align:center; color:var(--ink-dim);
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+  }
+  .state .big{
+    font-family:'Fraunces', serif;
+    font-size:1.4rem;
+    color:var(--ink2);
+    margin-bottom:8px;
+    font-style:italic;
+  }
+  .spinner{
+    width:22px; height:22px;
+    border:2px solid var(--hairline);
+    border-top-color:var(--gold);
+    border-radius:50%;
+    margin:0 auto 16px;
+    animation:spin 0.8s linear infinite;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+
+  @media (max-width:520px){
+    .grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body class="lp-page">
+
+    <div id="loadingOverlay">
+        <div class="loading-box">
+            <div class="spinner"></div>
+            <h2>Chargement des sorties</h2>
+            <p>Récupération du calendrier éditorial...</p>
+        </div>
+    </div>
+
+<div class="list-page-header">
+    <p class="list-page-header__breadcrumb">
+        <a href="../index.html">Accueil</a> /
+        <span class="is-current">Calendrier</span>
+    </p>
+
+    <h1 class="list-page-header__title">
+        Calendrier des sorties
+    </h1>
+
+    <p class="list-page-header__description">
+        Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, animés et autres événements suivis par L'Œil Critique. Malgré une veille régulière, certaines annonces peuvent exceptionnellement manquer. Le calendrier est mis à jour en continu afin d'ajouter un maximum de sorties à venir.
+    </p>
+</div>
+
+<main>
+
+  <div class="controls" id="catFilters"></div>
+
+  <div id="app"></div>
+
+</main>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbxlirwM0w0htLq2hV00rXPXtlMFCQBAtpiNFpVK91LQcs_zj412a-6PInoMYHiyg_4rtQ/exec";
+
+const MOIS = ["JANVIER","FÉVRIER","MARS","AVRIL","MAI","JUIN","JUILLET","AOÛT","SEPTEMBRE","OCTOBRE","NOVEMBRE","DÉCEMBRE"];
+const MOIS_LOWER = MOIS.map(m => m.toLowerCase());
+const SAISON_MOIS = { "hiver":0, "printemps":3, "été":6, "automne":9 };
+
+const CAT_CLASS = {
+  "🎬 Films":"cat-films",
+  "📺 Séries":"cat-series",
+  "🎮 Jeux":"cat-jeux",
+  "🍿 Animés":"cat-animes",
+  "📦 Autre":"cat-autre",
+  "🎵 Music":"cat-music",
+  "🎬 Films/Séries":"cat-films"
+};
+
+let ALL_ITEMS = [];
+let activeCat = "TOUS";
+
+function parseItemDate(dateStr){
+  if(!dateStr) return { kind:"inconnue", sortKey:Infinity };
+  const s = dateStr.trim();
+
+  // dd/mm/yyyy
+  let m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  if(m){
+    return { kind:"jour", jour:parseInt(m[1]), mois:parseInt(m[2])-1, annee:parseInt(m[3]),
+             sortKey:new Date(parseInt(m[3]), parseInt(m[2])-1, parseInt(m[1])).getTime() };
+  }
+
+  // "NomDuMois yyyy" (jour inconnu)
+  m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
+  if(m){
+    const nom = m[1].toLowerCase();
+    const idxMois = MOIS_LOWER.indexOf(nom);
+    if(idxMois !== -1){
+      const annee = parseInt(m[2]);
+      return { kind:"mois", mois:idxMois, annee, sortKey:new Date(annee, idxMois, 1).getTime() };
+    }
+    // saison
+    for(const saison in SAISON_MOIS){
+      if(nom === saison){
+        const annee = parseInt(m[2]);
+        return { kind:"saison", saison:m[1], annee, sortKey:new Date(annee, SAISON_MOIS[saison], 1).getTime() };
+      }
+    }
+  }
+
+  // année seule
+  m = s.match(/^(\d{4})$/);
+  if(m){
+    const annee = parseInt(m[1]);
+    return { kind:"annee", annee, sortKey:new Date(annee, 11, 31, 23).getTime() };
+  }
+
+  return { kind:"inconnue", sortKey:Infinity };
+}
+
+function daysUntil(sortKey){
+  const today = new Date(); today.setHours(0,0,0,0);
+  const target = new Date(sortKey); target.setHours(0,0,0,0);
+  return Math.round((target - today) / 86400000);
+}
+
+function echeanceLabel(diff){
+  if(diff < 0) return null;
+  if(diff === 0) return { txt:"Aujourd'hui", today:true };
+  if(diff === 1) return { txt:"Demain", today:false };
+  if(diff <= 7) return { txt:`Dans ${diff} j.`, today:false };
+  return null;
+}
+
+function ticketHTML(item){
+  const p = item.parsed;
+  const catClass = CAT_CLASS[item.categorie] || "cat-autre";
+  let stubHTML = "";
+
+  if(p.kind === "jour"){
+    stubHTML = `
+      <div class="stub-day">${String(p.jour).padStart(2,"0")}</div>
+      <div class="stub-month">${MOIS[p.mois].slice(0,3)}</div>
+      <div class="stub-year">${p.annee}</div>`;
+  } else if(p.kind === "mois"){
+    stubHTML = `<div class="stub-vague">${MOIS[p.mois].slice(0,3)}<br>${p.annee}</div>`;
+  } else if(p.kind === "saison"){
+    stubHTML = `<div class="stub-vague">${p.saison}<br>${p.annee}</div>`;
+  } else if(p.kind === "annee"){
+    stubHTML = `<div class="stub-vague">${p.annee}<br><span style="color:var(--ink-faint)">?</span></div>`;
+  } else {
+    stubHTML = `<div class="stub-vague">?</div>`;
+  }
+
+  let echTag = "";
+  if(p.kind === "jour"){
+    const ech = echeanceLabel(daysUntil(p.sortKey));
+    if(ech) echTag = `<span class="echeance ${ech.today ? "today":""}">${ech.today ? "🔥 " : ""}${ech.txt}</span>`;
+  }
+
+  return `
+    <article class="ticket">
+      <div class="ticket-stub">${stubHTML}</div>
+      <div class="ticket-body">
+        <p class="ticket-title">${escapeHTML(item.titre)}</p>
+        <div class="ticket-meta">
+          <span class="cat-tag ${catClass}"><span class="cat-dot"></span>${escapeHTML(item.categorie)}</span>
+          ${echTag}
+        </div>
+      </div>
+    </article>`;
+}
+
+function escapeHTML(str){
+  const div = document.createElement("div");
+  div.textContent = str ?? "";
+  return div.innerHTML;
+}
+
+function section(title, list, urgent){
+  return `
+    <section class="section">
+      <div class="section-head ${urgent ? "urgent":""}">
+        <h2>${title}</h2>
+        <span class="count">${list.length}</span>
+        <div class="line"></div>
+      </div>
+      <div class="grid">${list.map(ticketHTML).join("")}</div>
+    </section>`;
+}
+
+function render(){
+  const app = document.getElementById("app");
+
+  let items = ALL_ITEMS.filter(it => activeCat === "TOUS" || it.categorie === activeCat);
+  items.sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
+
+  const aujourdhui = new Date(); aujourdhui.setHours(0,0,0,0);
+  const todayKey = aujourdhui.getTime();
+
+  // Une date "inconnue" (parsing raté) est traitée comme à venir, pour ne
+  // jamais la faire disparaître silencieusement dans les passées.
+  const futures = items.filter(it => it.parsed.sortKey >= todayKey || it.parsed.kind === "inconnue");
+  const passees = items.filter(it => it.parsed.sortKey < todayKey && it.parsed.kind !== "inconnue");
+
+  const semaine = futures.filter(it =>
+    it.parsed.kind === "jour" && daysUntil(it.parsed.sortKey) >= 0 && daysUntil(it.parsed.sortKey) <= 7
+  );
+  const semaineIds = new Set(semaine.map(it => it._id));
+  const reste = futures.filter(it => !semaineIds.has(it._id));
+
+  if(items.length === 0){
+    app.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre.</div>`;
+    return;
+  }
+
+  let html = "";
+
+  if(semaine.length > 0){
+    html += section("🔔 Cette semaine", semaine, true);
+  }
+
+  if(reste.length > 0){
+    html += section("À venir", reste, false);
+  } else if(semaine.length === 0){
+    html += `<div class="state"><div class="big">Aucune sortie à venir programmée.</div>Reviens bientôt !</div>`;
+  }
+
+  if(passees.length > 0){
+    html += `
+      <details class="section past">
+        <summary>
+          <span>Sorties passées</span>
+          <span class="count">${passees.length}</span>
+        </summary>
+        <div class="grid">${passees.map(ticketHTML).join("")}</div>
+      </details>`;
+  }
+
+  app.innerHTML = html;
+}
+
+function buildFilters(){
+  const cats = ["TOUS", ...new Set(ALL_ITEMS.map(it => it.categorie))];
+  const catBox = document.getElementById("catFilters");
+  catBox.innerHTML = cats.map(c =>
+    `<button class="chip ${c === activeCat ? "active":""}" data-cat="${escapeHTML(c)}">${c === "TOUS" ? "Tout" : escapeHTML(c)}</button>`
+  ).join("");
+  catBox.querySelectorAll(".chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeCat = btn.dataset.cat;
+      buildFilters();
+      render();
+    });
+  });
+}
+async function load() {
+
+    const overlay = document.getElementById("loadingOverlay");
+    const app = document.getElementById("app");
+
+    const start = Date.now();
+
+    try{
+
+        const res = await fetch(API_URL);
+
+        if(!res.ok)
+            throw new Error("Réponse réseau invalide");
+
+        const data = await res.json();
+
+        if(!Array.isArray(data))
+            throw new Error("Format inattendu");
+
+        ALL_ITEMS = data.map((it,i)=>({
+            ...it,
+            parsed:parseItemDate(it.date),
+            _id:i
+        }));
+
+        // minimum 900 ms d'affichage
+        const elapsed = Date.now() - start;
+
+        if(elapsed < 900){
+            await new Promise(r=>setTimeout(r,900-elapsed));
+        }
+
+        buildFilters();
+        render();
+
+        overlay.classList.add("hidden");
+
+        setTimeout(()=>{
+            overlay.remove();
+        },350);
+
+    }
+    catch(err){
+
+        console.error(err);
+
+        overlay.classList.add("hidden");
+
+        app.innerHTML = `
+            <div class="state">
+                <div class="big">Le calendrier ne répond pas.</div>
+                Réessaie dans un instant, ou vérifie la connexion à la source.
+            </div>
+        `;
+    }
+
+}
+
+load();
+
+
+</script>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/header.js"></script>
+
+</body>
+</html>
