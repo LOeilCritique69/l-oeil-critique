@@ -19156,3 +19156,71 @@ Call log:
 2026-07-29 05:55:58,739 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-07-29 05:55:58,780 [INFO] Rien à commiter, le répertoire est propre.
 2026-07-29 05:55:58,780 [INFO] ==== Fin du script bandes-annonces ====
+2026-07-29 08:45:49,792 [INFO] ==== Début du script bandes-annonces ====
+2026-07-29 08:45:49,913 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-07-29 08:45:49,914 [INFO] 839 identifiants chargés depuis le log
+2026-07-29 08:45:49,914 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-07-29 08:45:50,497 [INFO] Démarrage scraping CineHorizons...
+2026-07-29 08:45:53,626 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-07-29 08:45:53,666 [INFO] 10 blocs détectés sur la page 1
+2026-07-29 08:45:53,668 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-07-29 08:45:53,668 [INFO] Scraping CineHorizons terminé (0 items)
+2026-07-29 08:45:53,669 [INFO] Démarrage scraping Allociné (films)...
+2026-07-29 08:45:54,403 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-07-29 08:45:54,904 [INFO] Article ajouté Allociné (film): Spider-Man: Brand New Day
+2026-07-29 08:45:55,275 [INFO] Article ajouté Allociné (film): The Ugly
+2026-07-29 08:45:55,976 [INFO] Article ajouté Allociné (film): I Want Your Sex
+2026-07-29 08:45:57,006 [INFO] Article ajouté Allociné (film): Home stories
+2026-07-29 08:45:57,873 [INFO] Article ajouté Allociné (film): Les Matins merveilleux
+2026-07-29 08:45:58,646 [INFO] Article ajouté Allociné (film): Le Triangle d'or
+2026-07-29 08:45:59,367 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:00,780 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-07-29 08:46:01,592 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:02,785 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-07-29 08:46:03,528 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:04,607 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-07-29 08:46:05,364 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:06,534 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-07-29 08:46:07,226 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:08,596 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-07-29 08:46:09,298 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:12,011 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-07-29 08:46:12,994 [INFO] Article ajouté Allociné (film): Tommy Guns
+2026-07-29 08:46:13,593 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:14,895 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-07-29 08:46:15,577 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:16,618 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-07-29 08:46:17,343 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:18,415 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-07-29 08:46:19,175 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:20,130 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-07-29 08:46:20,844 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:21,959 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-07-29 08:46:22,648 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:23,795 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-07-29 08:46:24,490 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:26,467 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-07-29 08:46:27,156 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:28,312 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-07-29 08:46:28,987 [INFO] Article ajouté Allociné (film): Fantômas – Le nouveau monde
+2026-07-29 08:46:28,987 [INFO] Scraping Allociné (films) terminé (22 items)
+2026-07-29 08:46:28,987 [INFO] Démarrage scraping Allociné (séries)...
+2026-07-29 08:46:29,595 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-07-29 08:46:29,691 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-07-29 08:46:29,691 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-07-29 08:46:29,751 [INFO] Démarrage scraping TMDb...
+2026-07-29 08:46:29,899 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/3)
+2026-07-29 08:46:30,540 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-07-29 08:46:31,557 [INFO] 2 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-07-29 08:46:31,833 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-07-29 08:46:32,111 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-07-29 08:46:32,199 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-07-29 08:46:33,014 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-07-29 08:46:34,258 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-07-29 08:46:36,154 [INFO] Scraping TMDb terminé (0 items)
+2026-07-29 08:46:36,154 [INFO] 8 articles retenus pour ce run
+2026-07-29 08:46:36,215 [INFO] 1937 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-07-29 08:46:36,216 [INFO] Sauvegarde du log avec 846 identifiants
+2026-07-29 08:46:36,216 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-29 08:46:36,268 [INFO] Rien à commiter, le répertoire est propre.
+2026-07-29 08:46:36,268 [INFO] ==== Fin du script bandes-annonces ====
