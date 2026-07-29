@@ -56,6 +56,11 @@
      au header ont été déplacées et regroupées à la fin de la section 7
      plutôt que dispersées dans la section 20, pour que le composant
      reste autonome et lisible.
+   - Correctif : l'icône calendrier ajoutée dans .header-actions
+     surchargeait la barre d'icônes sur mobile/tablette (<992px), où le
+     menu principal cède déjà la place au burger. Elle est désormais
+     masquée sur ces largeurs et son équivalent (#calendarNavLink) vit
+     dans le menu plein écran, symétriquement caché en desktop.
    ============================================================================ */
 
 /* ============================================================================
@@ -502,6 +507,7 @@ header.scrolled .header-main { height: var(--header-h-scrolled); }
 
 .header-content {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -567,6 +573,7 @@ header.scrolled .logo { width: 2.1rem; }
 /* --- Navigation desktop : révélation circulaire --- */
 .main-nav {
   display: none; /* réaffichée dès 993px, voir media query en fin de section */
+  flex-wrap: nowrap;
   gap: 0.2rem;
   align-items: center;
 }
@@ -576,11 +583,13 @@ header.scrolled .logo { width: 2.1rem; }
   display: flex;
   align-items: baseline;
   gap: 0.45rem;
+  flex-shrink: 0;
   padding: 0.5rem 0.9rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--ink-soft);
   isolation: isolate;
   transition: color 0.3s ease;
@@ -610,8 +619,12 @@ header.scrolled .logo { width: 2.1rem; }
 .main-nav a:hover::after,
 .main-nav a.active::after { clip-path: circle(75% at 50% 50%); }
 
+/* --- Lien calendrier de la nav mobile : caché en desktop, où l'icône
+   #calendarBtn (ci-dessous) fait déjà le travail --- */
+#calendarNavLink { display: none; }
+
 /* --- Actions du header : icônes cohérentes --- */
-.header-actions { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.header-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: 4px; flex-shrink: 0; }
 
 .icon-btn {
   position: relative;
@@ -902,12 +915,26 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   .burger-menu { display: none !important; visibility: hidden; }
 }
 
+/* Desktop "à l'étroit" : on resserre la nav et les icônes avant que ça
+   ne déborde ou ne wrap (au lieu d'attendre la bascule burger à 992px). */
+@media (min-width: 993px) and (max-width: 1300px) {
+  .main-nav { gap: 0; }
+  .main-nav a { padding: 0.5rem 0.55rem; font-size: 0.72rem; }
+  .icon-btn__kbd { display: none; }
+  .header-actions { gap: 0; }
+}
+
 @media (max-width: 1200px) {
   .header-content { padding: 0 1.5rem; }
 }
 
 @media (max-width: 992px) {
   .burger-menu { display: flex; }
+
+  /* L'icône calendrier cède la place au lien équivalent dans le menu
+     plein écran (#calendarNavLink) : ça évite de tasser 4 icônes contre
+     le logo sur les largeurs tablette/mobile. */
+  #calendarBtn { display: none; }
 
   .main-nav {
     position: fixed;
@@ -950,6 +977,9 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   .main-nav a::after { display: none; }
   .main-nav a:hover,
   .main-nav a.active { color: var(--brass-light); }
+
+  /* Dans le menu plein écran, le lien calendrier redevient visible */
+  #calendarNavLink { display: flex; }
 
   .notif-panel { width: min(320px, calc(100vw - 2rem)); }
 }

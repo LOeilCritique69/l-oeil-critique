@@ -8,6 +8,22 @@
    - .container n'est PAS redéfini ici (déjà géré globalement)
    - .btn n'est PAS redéfini ici (déjà géré globalement)
    - Les règles globales img/a/body restent intactes
+
+   CHANGELOG (couleurs)
+   - Correctif contraste : .note utilisait un dégradé velvet → brass avec
+     texte --ink. Côté velvet, le contraste tombait à ~3.09:1 (minimum
+     WCAG AA pour texte normal = 4.5:1), rendant .note p illisible.
+     Remplacé par un dégradé brass-light → brass (contraste ≥7.6:1 sur
+     toute la largeur), velvet réintroduit en accent (bordure gauche +
+     étoile teintée) plutôt qu'en aplat derrière le texte.
+   - Correctif contraste : .article-highlight utilisait var(--velvet) en
+     aplat plein (0% → transparent), faisant tomber le texte --ink hérité
+     à ~3.09:1 en début de surlignage. Remplacé par un lavis translucide
+     rgba(184, 50, 58, 0.18) — valeur déjà utilisée ailleurs dans
+     chef_d_oeuvre.css (.a-propos a, hover .notif-item), donc cohérent
+     avec la charte existante plutôt qu'une couleur inventée.
+   - Cleanup : suppression d'une déclaration padding en double dans
+     .article-infos (la première était écrasée, code mort).
    ======================================================================== */
 
 
@@ -102,7 +118,6 @@ body.article-page .container {
   background: var(--ink);
   color: var(--paper);
   border-radius: var(--radius-lg);
-  padding: var(--radius-lg) var(--space-6);
   padding: var(--space-6);
   margin-bottom: var(--space-8);
   display: grid;
@@ -145,9 +160,10 @@ body.article-page .container {
    ======================================================================== */
 
 .note {
-  background: linear-gradient(135deg, var(--velvet) 0%, var(--brass) 100%);
+  background: linear-gradient(135deg, var(--brass-light) 0%, var(--brass) 100%);
   color: var(--ink);
-  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--velvet);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: var(--space-6) var(--space-8);
   margin-bottom: var(--space-8);
   box-shadow: var(--shadow-md);
@@ -162,7 +178,8 @@ body.article-page .container {
   top: 50%;
   transform: translateY(-50%);
   font-size: 5rem;
-  opacity: 0.1;
+  color: var(--velvet);
+  opacity: 0.15;
   pointer-events: none;
   line-height: 1;
 }
@@ -506,6 +523,62 @@ body.article-page .container {
   color: var(--paper-soft);
 }
 
+/* --- Sommaire (table des matières) ---
+   Réutilise le chrome .sidebar-block / .sidebar-block-title. Numérotation
+   via compteur CSS, même logique que .main-nav a::before (attr(data-index))
+   ou .footer-col a[data-index]::before dans chef_d_oeuvre.css. */
+.toc-list {
+  counter-reset: toc-counter;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-list li {
+  border-bottom: 1px solid var(--line-on-paper);
+}
+
+.toc-list li:last-child {
+  border-bottom: none;
+}
+
+.toc-list a {
+  counter-increment: toc-counter;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--ink);
+  transition: color var(--transition-speed), background var(--transition-speed), padding-left var(--transition-speed);
+}
+
+.toc-list a::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: var(--brass);
+  opacity: 0.85;
+}
+
+.toc-list a:hover {
+  color: var(--velvet);
+  background: var(--paper-2);
+  padding-left: calc(var(--space-5) + 4px);
+}
+
+.toc-list a.active {
+  color: var(--velvet);
+  font-weight: 700;
+}
+
+.toc-list a.active::before {
+  color: var(--velvet);
+  opacity: 1;
+}
+
 
 /* ========================================================================
    11) RESPONSIVE
@@ -519,6 +592,8 @@ body.article-page .container {
 
   .sidebar {
     position: static;
+    order: -1; /* Le sommaire remonte visuellement avant l'article, même si
+                  il est après .main-content dans le DOM */
   }
 
   .article-infos {
@@ -588,9 +663,10 @@ body.article-page .container {
   color: var(--brass);
 }
 
-/* Mise en exergue inline */
+/* Mise en exergue inline — lavis translucide plutôt qu'aplat plein,
+   pour garantir la lisibilité du texte --ink hérité (voir changelog) */
 .article-highlight {
-  background: linear-gradient(120deg, var(--velvet) 0%, transparent 100%);
+  background: linear-gradient(120deg, rgba(184, 50, 58, 0.18) 0%, transparent 100%);
   padding: 0 var(--space-1);
   border-radius: 3px;
 }

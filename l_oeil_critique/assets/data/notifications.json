@@ -1,34 +1,41 @@
 [
   {
     "id": 1,
+    "text": "Nouveau : découvrez le Calendrier des sorties de L'Œil Critique et suivez les prochaines sorties cinéma, séries, jeux vidéo et animés.",
+    "icon": "📅",
+    "unread": true,
+    "url": "/l_oeil_critique/pages/calendrier.html"
+  },
+  {
+    "id": 2,
     "text": "Nouvelle rubrique : découvrez les Tier Lists de L'Œil Critique avec mes classements de sagas et franchises (Harry Potter, Spider-Man, Transformers, DC Animated Universe, Jurassic Park, Le Seigneur des Anneaux...).",
     "icon": "🏆",
     "unread": true,
     "url": "/l_oeil_critique/pages/tier-lists.html"
   },
   {
-    "id": 2,
+    "id": 3,
     "text": "Reviews fait peau neuve : retrouvez désormais les critiques de films et de séries, mes notes Letterboxd ainsi que toutes mes Tier Lists au même endroit.",
     "icon": "✨",
     "unread": true,
     "url": "/l_oeil_critique/reviews.html"
   },
   {
-    "id": 3,
+    "id": 4,
     "text": "Nouvel article : Avengers : Doomsday — L'Avengers de trop ? Découvrez mon analyse du premier trailer.",
     "icon": "📜",
     "unread": true,
     "url": "/l_oeil_critique/articles/films/doomsday-trailer.html"
   },
   {
-    "id": 4,
+    "id": 5,
     "text": "Nouvelle Tier List : retrouvez mon classement complet de tous les films du Marvel Cinematic Universe, de S à F.",
     "icon": "🏆",
     "unread": true,
     "url": "/l_oeil_critique/pages/tier-list/MCU.html"
   },
   {
-    "id": 5,
+    "id": 6,
     "text": "SpideyTrack rejoint L'Œil Critique : suivez toute l'actualité des Spider-Men et des projets liés à l'univers Spider-Man.",
     "icon": "🕷️",
     "unread": true,

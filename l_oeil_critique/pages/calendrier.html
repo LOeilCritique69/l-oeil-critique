@@ -118,6 +118,105 @@
     border-color:var(--ink2);
   }
 
+  /* ---------- TOOLBAR (recherche + compteur) ---------- */
+  .toolbar{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-top:6px;
+  }
+  .search-wrap{
+    position:relative;
+    flex:1 1 320px;
+    max-width:420px;
+  }
+  .search-input{
+    width:100%;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    padding:10px 14px 10px 34px;
+    border-radius:999px;
+    border:1px solid var(--hairline);
+    background:var(--bg-raised);
+    color:var(--ink2);
+    outline:none;
+    transition:border-color .15s ease;
+  }
+  .search-input::placeholder{ color:var(--ink-faint); }
+  .search-input:focus{ border-color:var(--gold); }
+  .search-icon{
+    position:absolute;
+    left:13px; top:50%;
+    transform:translateY(-50%);
+    font-size:13px;
+    pointer-events:none;
+    opacity:.7;
+  }
+  .stat-count{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--ink-faint);
+    white-space:nowrap;
+  }
+
+  /* ---------- LIENS RAPIDES PAR ANNÉE ---------- */
+  .year-jump{
+    max-width:1080px;
+    margin:14px auto 0;
+    padding:0 24px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+  }
+  .year-jump a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.04em;
+    padding:5px 12px;
+    border-radius:999px;
+    border:1px dashed var(--hairline);
+    color:var(--ink-dim);
+    text-decoration:none;
+    transition:all .15s ease;
+  }
+  .year-jump a:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+
+  /* ---------- REGROUPEMENT PAR ANNÉE (section "À venir") ---------- */
+  .year-group{
+    scroll-margin-top:24px;
+  }
+  .year-group + .year-group{
+    margin-top:34px;
+  }
+  .year-heading{
+    max-width:1080px;
+    margin:0 auto 14px;
+    padding:0 24px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:1.1rem;
+    color:var(--gold);
+  }
+  .year-heading .count{
+    font-family:'JetBrains Mono', monospace;
+    font-style:normal;
+    font-size:11px;
+    color:var(--ink-faint);
+  }
+
   /* ---------- SECTION HEADERS ---------- */
   .section{
     max-width:1080px;
@@ -439,7 +538,17 @@
 
 <main>
 
+  <div class="toolbar" id="toolbar">
+    <div class="search-wrap">
+      <span class="search-icon">🔎</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un titre…">
+    </div>
+    <span class="stat-count" id="statCount"></span>
+  </div>
+
   <div class="controls" id="catFilters"></div>
+
+  <nav class="year-jump" id="yearJump"></nav>
 
   <div id="app"></div>
 
@@ -464,6 +573,7 @@ const CAT_CLASS = {
 
 let ALL_ITEMS = [];
 let activeCat = "TOUS";
+let searchTerm = "";
 
 function parseItemDate(dateStr){
   if(!dateStr) return { kind:"inconnue", sortKey:Infinity };
@@ -563,6 +673,18 @@ function escapeHTML(str){
   return div.innerHTML;
 }
 
+// Regroupe une liste (déjà triée chronologiquement) par année, en conservant
+// l'ordre d'apparition des années (donc chronologique).
+function groupByYear(list){
+  const map = new Map();
+  list.forEach(it => {
+    const y = it.parsed.annee;
+    if(!map.has(y)) map.set(y, []);
+    map.get(y).push(it);
+  });
+  return map;
+}
+
 function section(title, list, urgent){
   return `
     <section class="section">
@@ -577,8 +699,13 @@ function section(title, list, urgent){
 
 function render(){
   const app = document.getElementById("app");
+  const yearJump = document.getElementById("yearJump");
+  const statCount = document.getElementById("statCount");
+
+  const terme = searchTerm.trim().toLowerCase();
 
   let items = ALL_ITEMS.filter(it => activeCat === "TOUS" || it.categorie === activeCat);
+  if(terme) items = items.filter(it => it.titre.toLowerCase().includes(terme));
   items.sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
 
   const aujourdhui = new Date(); aujourdhui.setHours(0,0,0,0);
@@ -595,8 +722,20 @@ function render(){
   const semaineIds = new Set(semaine.map(it => it._id));
   const reste = futures.filter(it => !semaineIds.has(it._id));
 
+  // ── Compteur (toujours par rapport au total réellement chargé) ──
+  statCount.textContent = terme || activeCat !== "TOUS"
+    ? `${items.length} résultat(s) affiché(s) sur ${ALL_ITEMS.length} sortie(s) au total`
+    : `${ALL_ITEMS.length} sortie(s) au total`;
+
+  // ── Liens rapides par année (calculés sur "reste", donc respectent les filtres actifs) ──
+  const parYear = groupByYear(reste);
+  const annees = Array.from(parYear.keys());
+  yearJump.innerHTML = annees.length > 1
+    ? annees.map(a => `<a href="#year-${a}">${a} <span style="opacity:.6">(${parYear.get(a).length})</span></a>`).join("")
+    : "";
+
   if(items.length === 0){
-    app.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre.</div>`;
+    app.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre ou une autre recherche.</div>`;
     return;
   }
 
@@ -607,7 +746,20 @@ function render(){
   }
 
   if(reste.length > 0){
-    html += section("À venir", reste, false);
+    html += `
+      <section class="section">
+        <div class="section-head">
+          <h2>À venir</h2>
+          <span class="count">${reste.length}</span>
+          <div class="line"></div>
+        </div>
+        ${Array.from(parYear.entries()).map(([annee, list]) => `
+          <div class="year-group" id="year-${annee}">
+            <h3 class="year-heading">${annee} <span class="count">${list.length} sortie(s)</span></h3>
+            <div class="grid">${list.map(ticketHTML).join("")}</div>
+          </div>
+        `).join("")}
+      </section>`;
   } else if(semaine.length === 0){
     html += `<div class="state"><div class="big">Aucune sortie à venir programmée.</div>Reviens bientôt !</div>`;
   }
@@ -624,6 +776,14 @@ function render(){
   }
 
   app.innerHTML = html;
+}
+
+function initSearch(){
+  const input = document.getElementById("searchInput");
+  input.addEventListener("input", () => {
+    searchTerm = input.value;
+    render();
+  });
 }
 
 function buildFilters(){
@@ -698,6 +858,7 @@ async function load() {
 
 }
 
+initSearch();
 load();
 
 

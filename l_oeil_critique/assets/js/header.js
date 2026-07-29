@@ -28,9 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="/l_oeil_critique/pages/theories.html" data-index="04">Théories</a>
             <a href="/l_oeil_critique/extras.html" data-index="05">Extras</a>
             <a href="/l_oeil_critique/A_propos.html" data-index="06">À Propos</a>
+            <a href="/l_oeil_critique/pages/calendrier.html" data-index="07" id="calendarNavLink">Calendrier</a>
           </nav>
 
           <div class="header-actions">
+            <a class="icon-btn" id="calendarBtn" href="/l_oeil_critique/pages/calendrier.html" aria-label="Calendrier des sorties" title="Calendrier des sorties">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </a>
+
             <button class="icon-btn" id="searchOpenBtn" aria-label="Ouvrir la recherche" aria-haspopup="dialog" aria-expanded="false">
               <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span class="icon-btn__kbd">/</span>
@@ -643,4 +648,10 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(`[SKIP] ${hrefPath || linkText}`);
     }
   });
+
+  // Icône calendrier : mise en avant visuelle si on est déjà sur la page calendrier
+  const calendarBtn = document.getElementById("calendarBtn");
+  if (calendarBtn && currentPath.includes("/pages/calendrier.html")) {
+    calendarBtn.classList.add("active");
+  }
 });
