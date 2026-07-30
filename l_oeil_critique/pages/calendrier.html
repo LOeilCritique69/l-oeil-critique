@@ -31,13 +31,16 @@
     --bg:#121014;
     --bg-raised:#1a171c;
     --stub:#1f1c21;
+    --cell:#19161a;
     --hairline:#332e35;
+    --hairline-soft:#2a262b;
     --ink2:#f4efe6;
     --ink-dim:#a89f95;
     --ink-faint:#6f6a67;
     --red:#c1272d;
     --red-dim:#7a2024;
     --gold:#cfa348;
+    --gold-dim:#8a7133;
     --cat-films:#5b8ac9;
     --cat-series:#4fb3ad;
     --cat-jeux:#7fae5a;
@@ -62,12 +65,12 @@
   }
 
   ::selection{ background:var(--red); color:#fff; }
-
   a{ color:inherit; }
+  button{ font-family:inherit; }
 
-  /* ---------- BREADCRUMB / EN-TÊTE DE LISTE (gabarit standard du site) ---------- */
+  /* ---------- EN-TÊTE ---------- */
   .list-page-header{
-    max-width:1080px;
+    max-width:1180px;
     margin:0 auto;
     padding:32px 24px 0;
   }
@@ -81,60 +84,25 @@
   }
   .list-page-header__breadcrumb a:hover{ color:var(--gold); }
   .list-page-header__breadcrumb .is-current{ color:var(--gold); }
-  .list-page-header__title{
-    display:block; /* le titre éditorial ci-dessous (masthead) remplace le h1 générique */
-  }
-
-  
-
-  /* ---------- CONTROLS ---------- */
-  .controls{
-    max-width:1080px;
-    margin:0 auto;
-    padding:0 24px 8px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    align-items:center;
-    justify-content:center;
-  }
-  .chip{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.02em;
-    padding:8px 14px;
-    border:1px solid var(--hairline);
-    border-radius:999px;
-    background:transparent;
+  .list-page-header__description{
     color:var(--ink-dim);
-    cursor:pointer;
-    transition:all .15s ease;
-    white-space:nowrap;
-  }
-  .chip:hover{ border-color:var(--ink-dim); color:var(--ink2); }
-  .chip.active{
-    background:var(--ink2);
-    color:var(--bg);
-    border-color:var(--ink2);
+    font-size:0.92rem;
+    max-width:64ch;
+    line-height:1.6;
   }
 
-  /* ---------- TOOLBAR (recherche + compteur) ---------- */
+  main{ max-width:1180px; margin:0 auto; padding:0 24px 80px; }
+
+  /* ---------- TOOLBAR ---------- */
   .toolbar{
-    max-width:1080px;
-    margin:0 auto;
-    padding:0 24px;
     display:flex;
     flex-wrap:wrap;
     align-items:center;
-    justify-content:center;
+    justify-content:space-between;
     gap:14px;
-    margin-top:6px;
+    margin-top:18px;
   }
-  .search-wrap{
-    position:relative;
-    flex:1 1 320px;
-    max-width:420px;
-  }
+  .search-wrap{ position:relative; flex:1 1 280px; max-width:380px; }
   .search-input{
     width:100%;
     font-family:'Inter', sans-serif;
@@ -150,12 +118,8 @@
   .search-input::placeholder{ color:var(--ink-faint); }
   .search-input:focus{ border-color:var(--gold); }
   .search-icon{
-    position:absolute;
-    left:13px; top:50%;
-    transform:translateY(-50%);
-    font-size:13px;
-    pointer-events:none;
-    opacity:.7;
+    position:absolute; left:13px; top:50%; transform:translateY(-50%);
+    font-size:13px; pointer-events:none; opacity:.7;
   }
   .stat-count{
     font-family:'JetBrains Mono', monospace;
@@ -164,350 +128,350 @@
     white-space:nowrap;
   }
 
-  /* ---------- LIENS RAPIDES PAR ANNÉE ---------- */
-  .year-jump{
-    max-width:1080px;
-    margin:14px auto 0;
-    padding:0 24px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    justify-content:center;
+  .controls{
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;
   }
-  .year-jump a{
+  .chip{
     font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.04em;
-    padding:5px 12px;
+    font-size:11.5px;
+    letter-spacing:0.02em;
+    padding:7px 13px;
+    border:1px solid var(--hairline);
     border-radius:999px;
-    border:1px dashed var(--hairline);
+    background:transparent;
     color:var(--ink-dim);
-    text-decoration:none;
-    transition:all .15s ease;
-  }
-  .year-jump a:hover{
-    border-color:var(--gold);
-    color:var(--gold);
-  }
-
-  /* ---------- REGROUPEMENT PAR ANNÉE (section "À venir") ---------- */
-  .year-group{
-    scroll-margin-top:24px;
-  }
-  .year-group + .year-group{
-    margin-top:34px;
-  }
-  .year-heading{
-    max-width:1080px;
-    margin:0 auto 14px;
-    padding:0 24px;
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-style:italic;
-    font-size:1.1rem;
-    color:var(--gold);
-  }
-  .year-heading .count{
-    font-family:'JetBrains Mono', monospace;
-    font-style:normal;
-    font-size:11px;
-    color:var(--ink-faint);
-  }
-
-  /* ---------- SECTION HEADERS ---------- */
-  .section{
-    max-width:1080px;
-    margin:0 auto;
-    padding:40px 24px 8px;
-  }
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin-bottom:20px;
-  }
-  .section-head h2{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.5rem;
-    margin:0;
-  }
-  .section-head .count{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12px;
-    color:var(--ink-faint);
-  }
-  .section-head .line{
-    flex:1;
-    height:1px;
-    background:var(--hairline);
-  }
-  .section-head.urgent h2{ color:var(--red); }
-  .section-head.urgent .line{
-    background:repeating-linear-gradient(90deg, var(--red-dim) 0 6px, transparent 6px 12px);
-    height:1px;
-  }
-
-  /* ---------- SORTIES PASSÉES (repliable, discrète) ---------- */
-  .section.past{
-    opacity:0.62;
-  }
-  .section.past summary{
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin-bottom:20px;
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.5rem;
-    color:var(--ink-dim);
-    list-style:none;
+    transition:all .15s ease;
+    white-space:nowrap;
   }
-  .section.past summary::-webkit-details-marker{ display:none; }
-  .section.past summary::after{
-    content:"▸";
-    margin-left:auto;
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-    transition:transform .15s ease;
-  }
-  .section.past[open] summary::after{ transform:rotate(90deg); }
-  .section.past summary .count{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12px;
-    color:var(--ink-faint);
-    font-weight:400;
-  }
-  .section.past .grid{ margin-top:4px; }
+  .chip:hover{ border-color:var(--ink-dim); color:var(--ink2); }
+  .chip.active{ background:var(--ink2); color:var(--bg); border-color:var(--ink2); }
 
-  /* ---------- TICKET GRID ---------- */
-  .grid{
-    max-width:1080px;
-    margin:0 auto;
-    padding:0 24px 8px;
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-    gap:18px;
+  /* ---------- CETTE SEMAINE (bandeau) ---------- */
+  .week-strip{ margin-top:30px; }
+  .week-strip__head{
+    display:flex; align-items:baseline; gap:10px; margin-bottom:12px;
   }
-  .section.past .grid{ padding:0; }
-
-  /* Ticket stub card */
-  .ticket{
-    position:relative;
+  .week-strip__head h2{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
+    color:var(--red); margin:0;
+  }
+  .week-strip__head .line{
+    flex:1; height:1px;
+    background:repeating-linear-gradient(90deg, var(--red-dim) 0 6px, transparent 6px 12px);
+  }
+  .week-strip__row{
+    display:flex; gap:12px; overflow-x:auto; padding-bottom:6px;
+    scrollbar-width:thin;
+  }
+  .week-card{
+    flex:0 0 auto;
+    width:190px;
     background:var(--stub);
     border:1px solid var(--hairline);
     border-radius:var(--radius);
-    display:flex;
-    overflow:hidden;
-    transition:transform .18s ease, border-color .18s ease;
+    padding:12px 14px;
+    cursor:pointer;
+    transition:transform .15s ease, border-color .15s ease;
   }
-  .ticket:hover{
-    transform:translateY(-2px);
-    border-color:#4a444c;
+  .week-card:hover{ transform:translateY(-2px); border-color:#4a444c; }
+  .week-card__ech{
+    font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--gold);
+  }
+  .week-card__ech.today{ color:var(--red); font-weight:600; }
+  .week-card__title{
+    font-family:'Fraunces', serif; font-weight:600; font-size:0.95rem;
+    margin:6px 0 8px; line-height:1.3;
   }
 
-  .ticket-stub{
-    flex:0 0 78px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-    border-right:1px dashed var(--hairline);
+  /* ---------- MARQUISE (navigation mois) ---------- */
+  .marquee{
+    margin-top:34px;
+    position:relative;
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-    padding:12px 6px;
-    position:relative;
+    gap:18px;
+    padding:16px 20px;
+    background:linear-gradient(180deg, var(--bg-raised), var(--stub));
+    border:1px solid var(--hairline);
+    border-radius:6px;
   }
-  /* perforation notches */
-  .ticket-stub::before,
-  .ticket-stub::after{
+  .marquee::before, .marquee::after{
     content:"";
-    position:absolute;
-    right:-7px;
-    width:14px; height:14px;
-    background:var(--bg);
+    position:absolute; left:14px; right:14px;
+    height:1px;
+    background-image:radial-gradient(circle, var(--gold-dim) 1.4px, transparent 1.6px);
+    background-size:16px 1px;
+    background-repeat:repeat-x;
+    opacity:.8;
+  }
+  .marquee::before{ top:6px; }
+  .marquee::after{ bottom:6px; }
+  .marquee-btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:15px;
+    width:34px; height:34px;
     border-radius:50%;
     border:1px solid var(--hairline);
-  }
-  .ticket-stub::before{ top:-7px; }
-  .ticket-stub::after{ bottom:-7px; }
-
-  .stub-day{
-    font-family:'Fraunces', serif;
-    font-size:1.9rem;
-    font-weight:700;
-    line-height:1;
-  }
-  .stub-month{
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
+    background:transparent;
     color:var(--ink-dim);
-    margin-top:4px;
+    cursor:pointer;
+    transition:all .15s ease;
+    flex:0 0 auto;
   }
-  .stub-year{
-    font-family:'JetBrains Mono', monospace;
-    font-size:9px;
-    color:var(--ink-faint);
-    margin-top:2px;
+  .marquee-btn:hover{ border-color:var(--gold); color:var(--gold); }
+  .marquee-label{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-style:italic;
+    font-size:1.5rem;
+    letter-spacing:0.02em;
+    color:var(--ink2);
+    min-width:220px;
+    text-align:center;
   }
-  .stub-vague{
+  .marquee-label .yr{ color:var(--gold); font-style:normal; font-weight:600; font-size:1rem; margin-left:6px; }
+  .today-btn{
     font-family:'JetBrains Mono', monospace;
     font-size:11px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:8px 14px;
+    border-radius:999px;
+    border:1px dashed var(--hairline);
+    background:transparent;
     color:var(--ink-dim);
-    text-align:center;
-    line-height:1.4;
-    padding:0 4px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .today-btn:hover{ border-color:var(--gold); color:var(--gold); }
+
+  /* ---------- GRILLE CALENDRIER ---------- */
+  .cal-wrap{ margin-top:18px; }
+  .weekdays{
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    gap:6px;
+    position:relative;
+    padding:6px 0;
+  }
+  .weekdays::before, .weekdays::after{
+    content:"";
+    position:absolute; left:0; right:0; height:1px;
+    background-image:radial-gradient(circle, var(--hairline) 1.2px, transparent 1.4px);
+    background-size:14px 1px; background-repeat:repeat-x;
+  }
+  .weekdays::before{ top:0; }
+  .weekdays::after{ bottom:0; }
+  .weekday{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
+    text-align:center; color:var(--ink-faint); padding:6px 0;
   }
 
-  .ticket-body{
-    flex:1;
-    padding:14px 16px;
+  .cal-grid{
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    gap:6px;
+    margin-top:6px;
+  }
+  .cal-cell{
+    position:relative;
+    min-height:104px;
+    background:var(--cell);
+    border:1px solid var(--hairline-soft);
+    border-radius:var(--radius);
+    padding:6px 6px 8px;
     display:flex;
     flex-direction:column;
-    gap:8px;
-    min-width:0;
+    gap:4px;
+    cursor:default;
   }
-  .ticket-title{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size:1.02rem;
-    line-height:1.25;
-    margin:0;
-    word-break:break-word;
+  .cal-cell.outside{ opacity:0.28; }
+  .cal-cell.has-events{ cursor:pointer; }
+  .cal-cell.has-events:hover{ border-color:#4a444c; }
+  .cal-cell.is-today{
+    border-color:var(--gold);
+    box-shadow:0 0 0 1px var(--gold), 0 0 16px rgba(207,163,72,0.18);
   }
-  .ticket-meta{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-top:auto;
+  .cal-cell.is-week{ border-color:var(--red-dim); }
+  .cal-cell__num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--ink-faint);
+    align-self:flex-end;
   }
-  .cat-tag{
+  .cal-cell.is-today .cal-cell__num{ color:var(--gold); font-weight:600; }
+  .cal-cell__events{ display:flex; flex-direction:column; gap:3px; }
+  .ev-chip{
+    display:flex; align-items:center; gap:5px;
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    line-height:1.3;
+    padding:3px 6px;
+    border-radius:4px;
+    background:rgba(255,255,255,0.05);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .ev-dot{ width:6px; height:6px; border-radius:50%; flex:0 0 auto; }
+  .ev-more{
     font-family:'JetBrains Mono', monospace;
     font-size:10px;
-    letter-spacing:0.04em;
-    padding:3px 8px;
-    border-radius:999px;
+    color:var(--ink-faint);
+    padding:2px 6px;
+  }
+  .cat-films .ev-dot, .dot-films{ background:var(--cat-films); }
+  .cat-series .ev-dot, .dot-series{ background:var(--cat-series); }
+  .cat-jeux .ev-dot, .dot-jeux{ background:var(--cat-jeux); }
+  .cat-animes .ev-dot, .dot-animes{ background:var(--cat-animes); }
+  .cat-autre .ev-dot, .dot-autre{ background:var(--cat-autre); }
+  .cat-music .ev-dot, .dot-music{ background:var(--cat-music); }
+
+  .cat-tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px; letter-spacing:0.03em;
+    padding:3px 9px; border-radius:999px;
     background:rgba(255,255,255,0.06);
   }
-  .cat-dot{
-    display:inline-block;
-    width:6px; height:6px;
-    border-radius:50%;
-    margin-right:5px;
-    vertical-align:middle;
-    position:relative;
-    top:-1px;
+  .cat-tag.cat-films{ background:rgba(91,138,201,0.16); color:var(--cat-films); }
+  .cat-tag.cat-series{ background:rgba(79,179,173,0.16); color:var(--cat-series); }
+  .cat-tag.cat-jeux{ background:rgba(127,174,90,0.16); color:var(--cat-jeux); }
+  .cat-tag.cat-animes{ background:rgba(224,162,79,0.16); color:var(--cat-animes); }
+  .cat-tag.cat-autre{ background:rgba(144,137,163,0.16); color:var(--cat-autre); }
+  .cat-tag.cat-music{ background:rgba(181,122,209,0.16); color:var(--cat-music); }
+  .cat-tag .dot{ width:6px; height:6px; border-radius:50%; }
+  .cat-tag.cat-films .dot{ background:var(--cat-films); }
+  .cat-tag.cat-series .dot{ background:var(--cat-series); }
+  .cat-tag.cat-jeux .dot{ background:var(--cat-jeux); }
+  .cat-tag.cat-animes .dot{ background:var(--cat-animes); }
+  .cat-tag.cat-autre .dot{ background:var(--cat-autre); }
+  .cat-tag.cat-music .dot{ background:var(--cat-music); }
+
+  /* ---------- SECTIONS FLOUES (sous la grille) ---------- */
+  .fuzzy-sections{ display:flex; flex-direction:column; gap:22px; margin-top:30px; }
+  .fuzzy-block h3{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:600;
+    font-size:0.98rem; color:var(--ink-dim); margin:0 0 10px;
+    display:flex; align-items:center; gap:8px;
   }
-  .echeance{
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px;
-    color:var(--gold);
-    margin-left:auto;
+  .fuzzy-block h3 .count{ font-family:'JetBrains Mono', monospace; font-style:normal; font-size:10px; color:var(--ink-faint); }
+  .fuzzy-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .fuzzy-pill{
+    display:flex; align-items:center; gap:8px;
+    background:var(--stub); border:1px dashed var(--hairline);
+    border-radius:999px; padding:7px 12px 7px 8px;
+    cursor:pointer; transition:border-color .15s ease;
   }
-  .echeance.today{ color:var(--red); font-weight:600; }
-
-  /* category colors */
-  .cat-films{ background:rgba(91,138,201,0.16); color:var(--cat-films); }
-  .cat-films .cat-dot{ background:var(--cat-films); }
-  .cat-series{ background:rgba(79,179,173,0.16); color:var(--cat-series); }
-  .cat-series .cat-dot{ background:var(--cat-series); }
-  .cat-jeux{ background:rgba(127,174,90,0.16); color:var(--cat-jeux); }
-  .cat-jeux .cat-dot{ background:var(--cat-jeux); }
-  .cat-animes{ background:rgba(224,162,79,0.16); color:var(--cat-animes); }
-  .cat-animes .cat-dot{ background:var(--cat-animes); }
-  .cat-autre{ background:rgba(144,137,163,0.16); color:var(--cat-autre); }
-  .cat-autre .cat-dot{ background:var(--cat-autre); }
-  .cat-music{ background:rgba(181,122,209,0.16); color:var(--cat-music); }
-  .cat-music .cat-dot{ background:var(--cat-music); }
-
-  /* ---------- LOADER ---------- */
-
-    #loadingOverlay{
-        position:fixed;
-        inset:0;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background:rgba(10,10,10,.82);
-        backdrop-filter:blur(8px);
-        z-index:99999;
-        transition:opacity .35s ease;
-    }
-
-    #loadingOverlay.hidden{
-        opacity:0;
-        visibility:hidden;
-    }
-
-    .loading-box{
-        width:340px;
-        padding:35px;
-        border-radius:12px;
-        background:#1b181d;
-        border:1px solid var(--hairline);
-        text-align:center;
-        box-shadow:0 20px 70px rgba(0,0,0,.45);
-    }
-
-    .loading-box h2{
-        margin:20px 0 10px;
-        font-family:'Fraunces',serif;
-        font-size:1.8rem;
-        color:var(--ink2);
-    }
-
-    .loading-box p{
-        margin:0;
-        color:var(--ink-dim);
-        font-size:.95rem;
-    }
-
-    .loading-box .spinner{
-        width:42px;
-        height:42px;
-        margin:auto;
-        border:3px solid rgba(255,255,255,.15);
-        border-top-color:var(--gold);
-        border-radius:50%;
-        animation:spin .8s linear infinite;
-    }
-
-  /* ---------- STATES ---------- */
-  .state{
-    max-width:1080px; margin:0 auto; padding:60px 24px;
-    text-align:center; color:var(--ink-dim);
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
+  .fuzzy-pill:hover{ border-color:var(--gold); }
+  .fuzzy-pill span.title{ font-size:12.5px; }
+  details.fuzzy-collapse summary{
+    cursor:pointer; list-style:none;
+    font-family:'Fraunces', serif; font-style:italic; font-weight:600;
+    font-size:0.98rem; color:var(--ink-faint);
+    display:flex; align-items:center; gap:8px;
   }
-  .state .big{
-    font-family:'Fraunces', serif;
-    font-size:1.4rem;
-    color:var(--ink2);
-    margin-bottom:8px;
-    font-style:italic;
+  details.fuzzy-collapse summary::-webkit-details-marker{ display:none; }
+  details.fuzzy-collapse summary::after{ content:"▸"; margin-left:auto; font-family:'JetBrains Mono', monospace; font-size:12px; }
+  details.fuzzy-collapse[open] summary::after{ transform:rotate(90deg); display:inline-block; }
+  details.fuzzy-collapse .fuzzy-row{ margin-top:10px; }
+
+  /* ---------- AGENDA (mode recherche) ---------- */
+  .agenda{ margin-top:30px; display:flex; flex-direction:column; gap:26px; }
+  .agenda-group h3{
+    font-family:'Fraunces', serif; font-weight:600; font-size:1.1rem;
+    color:var(--gold); margin:0 0 12px;
   }
+  .agenda-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px;
+  }
+  .agenda-card{
+    display:flex; gap:12px;
+    background:var(--stub); border:1px solid var(--hairline);
+    border-radius:var(--radius); padding:12px 14px;
+    cursor:pointer; transition:transform .15s ease, border-color .15s ease;
+  }
+  .agenda-card:hover{ transform:translateY(-2px); border-color:#4a444c; }
+  .agenda-date{
+    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ink-faint);
+    flex:0 0 auto; white-space:nowrap;
+  }
+  .agenda-title{ font-family:'Fraunces', serif; font-weight:600; font-size:0.95rem; margin:2px 0 8px; }
+
+  /* ---------- MODALE JOUR / ITEM ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(8,7,9,0.78);
+    backdrop-filter:blur(4px);
+    display:flex; align-items:center; justify-content:center;
+    z-index:9998; padding:20px;
+    opacity:0; pointer-events:none; transition:opacity .18s ease;
+  }
+  .modal-overlay.open{ opacity:1; pointer-events:auto; }
+  .modal-box{
+    width:100%; max-width:520px; max-height:82vh; overflow-y:auto;
+    background:var(--bg-raised); border:1px solid var(--hairline);
+    border-radius:8px; padding:22px;
+  }
+  .modal-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .modal-head h3{ font-family:'Fraunces', serif; font-weight:600; font-size:1.15rem; margin:0; }
+  .modal-close{
+    width:30px; height:30px; border-radius:50%; border:1px solid var(--hairline);
+    background:transparent; color:var(--ink-dim); font-size:14px; cursor:pointer;
+  }
+  .modal-close:hover{ border-color:var(--gold); color:var(--gold); }
+  .modal-item{ display:flex; gap:14px; padding:14px 0; border-top:1px solid var(--hairline); }
+  .modal-item:first-of-type{ border-top:none; }
+  .modal-poster{
+    flex:0 0 78px; height:112px; border-radius:4px; background:var(--stub);
+    background-size:cover; background-position:center;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--hairline);
+  }
+  .modal-poster .ph{ font-size:10px; color:var(--ink-faint); font-family:'JetBrains Mono', monospace; text-align:center; padding:4px; }
+  .modal-body{ flex:1; min-width:0; }
+  .modal-title{ font-family:'Fraunces', serif; font-weight:600; font-size:1rem; margin:0 0 8px; }
+  .modal-date{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--gold); margin-top:8px; display:block; }
+
+  /* ---------- ÉTATS / LOADER ---------- */
+  #loadingOverlay{
+    position:fixed; inset:0; display:flex; justify-content:center; align-items:center;
+    background:rgba(10,10,10,.82); backdrop-filter:blur(8px); z-index:99999;
+    transition:opacity .35s ease;
+  }
+  #loadingOverlay.hidden{ opacity:0; visibility:hidden; }
+  .loading-box{
+    width:340px; padding:35px; border-radius:12px; background:#1b181d;
+    border:1px solid var(--hairline); text-align:center; box-shadow:0 20px 70px rgba(0,0,0,.45);
+  }
+  .loading-box h2{ margin:20px 0 10px; font-family:'Fraunces',serif; font-size:1.8rem; color:var(--ink2); }
+  .loading-box p{ margin:0; color:var(--ink-dim); font-size:.95rem; }
   .spinner{
-    width:22px; height:22px;
-    border:2px solid var(--hairline);
-    border-top-color:var(--gold);
-    border-radius:50%;
-    margin:0 auto 16px;
-    animation:spin 0.8s linear infinite;
+    width:42px; height:42px; margin:auto;
+    border:3px solid rgba(255,255,255,.15); border-top-color:var(--gold);
+    border-radius:50%; animation:spin .8s linear infinite;
   }
+  .spinner.small{ width:20px; height:20px; border-width:2px; margin:0; }
   @keyframes spin{ to{ transform:rotate(360deg); } }
 
-  @media (prefers-reduced-motion: reduce){
-    *{ animation:none !important; transition:none !important; }
+  .state{
+    padding:60px 24px; text-align:center; color:var(--ink-dim);
+    font-family:'JetBrains Mono', monospace; font-size:13px;
   }
+  .state .big{ font-family:'Fraunces', serif; font-size:1.4rem; color:var(--ink2); margin-bottom:8px; font-style:italic; }
 
-  @media (max-width:520px){
-    .grid{ grid-template-columns:1fr; }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+  @media (max-width:720px){
+    .cal-cell{ min-height:64px; padding:4px; }
+    .ev-chip span.txt{ display:none; }
+    .ev-chip{ justify-content:center; padding:4px; }
+    .cal-cell__events{ flex-direction:row; flex-wrap:wrap; gap:3px; }
+    .weekday{ font-size:9px; }
+    .marquee-label{ font-size:1.15rem; min-width:0; }
+    .week-card{ width:160px; }
   }
 </style>
 </head>
@@ -526,19 +490,15 @@
         <a href="../index.html">Accueil</a> /
         <span class="is-current">Calendrier</span>
     </p>
-
-    <h1 class="list-page-header__title">
-        Calendrier des sorties
-    </h1>
-
-    <p class="list-page-header__description">
+    <h1 class="list-page-header__title">Calendrier des sorties</h1>
+    <p class="list-page-header__description2">
         Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, animés et autres événements suivis par L'Œil Critique. Malgré une veille régulière, certaines annonces peuvent exceptionnellement manquer. Le calendrier est mis à jour en continu afin d'ajouter un maximum de sorties à venir.
     </p>
 </div>
 
 <main>
 
-  <div class="toolbar" id="toolbar">
+  <div class="toolbar">
     <div class="search-wrap">
       <span class="search-icon">🔎</span>
       <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un titre…">
@@ -548,45 +508,135 @@
 
   <div class="controls" id="catFilters"></div>
 
-  <nav class="year-jump" id="yearJump"></nav>
+  <section class="week-strip" id="weekStrip" style="display:none;">
+    <div class="week-strip__head">
+      <h2>🔔 Cette semaine</h2>
+      <div class="line"></div>
+    </div>
+    <div class="week-strip__row" id="weekStripRow"></div>
+  </section>
 
-  <div id="app"></div>
+  <div id="calendarView">
+    <div class="marquee">
+      <button class="marquee-btn" id="prevMonth" aria-label="Mois précédent">‹</button>
+      <div class="marquee-label" id="monthLabel"></div>
+      <button class="marquee-btn" id="nextMonth" aria-label="Mois suivant">›</button>
+      <button class="today-btn" id="todayBtn">Aujourd'hui</button>
+    </div>
+
+    <div class="cal-wrap">
+      <div class="weekdays">
+        <div class="weekday">Lun</div><div class="weekday">Mar</div><div class="weekday">Mer</div>
+        <div class="weekday">Jeu</div><div class="weekday">Ven</div><div class="weekday">Sam</div><div class="weekday">Dim</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+
+    <div class="fuzzy-sections" id="fuzzySections"></div>
+  </div>
+
+  <div id="agendaView" class="agenda" style="display:none;"></div>
 
 </main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle"></h3>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycbxlirwM0w0htLq2hV00rXPXtlMFCQBAtpiNFpVK91LQcs_zj412a-6PInoMYHiyg_4rtQ/exec";
 
-const MOIS = ["JANVIER","FÉVRIER","MARS","AVRIL","MAI","JUIN","JUILLET","AOÛT","SEPTEMBRE","OCTOBRE","NOVEMBRE","DÉCEMBRE"];
+// --- Affiches : OMDb (IMDB) en priorité, TMDB en repli --------------------
+const OMDB_API_KEY = "23538300";
+const OMDB_BASE_URL = "https://www.omdbapi.com/";
+const TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa";
+const TMDB_SEARCH_URL = "https://api.themoviedb.org/3/search/multi";
+const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
+const POSTER_CATEGORIES = new Set(["🎬 Films", "📺 Séries", "🎬 Films/Séries", "🍿 Animés"]);
+
+const posterCache = new Map();
+
+async function fetchPosterFromOMDb(title, annee){
+  if(!OMDB_API_KEY) return null;
+  try{
+    const params = new URLSearchParams({ apikey: OMDB_API_KEY, t: title });
+    if(annee) params.set("y", annee);
+    const res = await fetch(`${OMDB_BASE_URL}?${params.toString()}`);
+    if(!res.ok) return null;
+    const data = await res.json();
+    if(data.Response === "True" && data.Poster && data.Poster !== "N/A") return data.Poster;
+    if(annee){
+      const paramsNoYear = new URLSearchParams({ apikey: OMDB_API_KEY, t: title });
+      const res2 = await fetch(`${OMDB_BASE_URL}?${paramsNoYear.toString()}`);
+      if(res2.ok){
+        const data2 = await res2.json();
+        if(data2.Response === "True" && data2.Poster && data2.Poster !== "N/A") return data2.Poster;
+      }
+    }
+    return null;
+  }catch(err){ console.warn("OMDb : affiche introuvable pour", title, err); return null; }
+}
+
+async function fetchPosterFromTMDB(title, annee){
+  if(!TMDB_API_KEY) return null;
+  try{
+    const params = new URLSearchParams({ api_key: TMDB_API_KEY, query: title, language: "fr-FR", include_adult: "false" });
+    const res = await fetch(`${TMDB_SEARCH_URL}?${params.toString()}`);
+    if(!res.ok) return null;
+    const data = await res.json();
+    const results = Array.isArray(data.results) ? data.results : [];
+    const withPoster = results.filter(r => (r.media_type === "movie" || r.media_type === "tv") && r.poster_path);
+    let hit = null;
+    if(annee){
+      hit = withPoster.find(r => {
+        const date = r.release_date || r.first_air_date || "";
+        return date.startsWith(String(annee));
+      });
+    }
+    if(!hit) hit = withPoster[0];
+    return hit ? `${TMDB_IMAGE_BASE}${hit.poster_path}` : null;
+  }catch(err){ console.warn("TMDB : affiche introuvable pour", title, err); return null; }
+}
+
+async function fetchPoster(title, annee){
+  const fromOMDb = await fetchPosterFromOMDb(title, annee);
+  if(fromOMDb) return fromOMDb;
+  return await fetchPosterFromTMDB(title, annee);
+}
+// ---------------------------------------------------------------------------
+
+const MOIS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
 const MOIS_LOWER = MOIS.map(m => m.toLowerCase());
 const SAISON_MOIS = { "hiver":0, "printemps":3, "été":6, "automne":9 };
+const WEEKDAY_INDEX = d => (d.getDay() + 6) % 7; // Lundi = 0
 
 const CAT_CLASS = {
-  "🎬 Films":"cat-films",
-  "📺 Séries":"cat-series",
-  "🎮 Jeux":"cat-jeux",
-  "🍿 Animés":"cat-animes",
-  "📦 Autre":"cat-autre",
-  "🎵 Music":"cat-music",
+  "🎬 Films":"cat-films", "📺 Séries":"cat-series", "🎮 Jeux":"cat-jeux",
+  "🍿 Animés":"cat-animes", "📦 Autre":"cat-autre", "🎵 Music":"cat-music",
   "🎬 Films/Séries":"cat-films"
 };
 
 let ALL_ITEMS = [];
 let activeCat = "TOUS";
 let searchTerm = "";
+let today = new Date(); today.setHours(0,0,0,0);
+let viewYear = today.getFullYear();
+let viewMonth = today.getMonth();
 
 function parseItemDate(dateStr){
   if(!dateStr) return { kind:"inconnue", sortKey:Infinity };
   const s = dateStr.trim();
-
-  // dd/mm/yyyy
   let m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
   if(m){
     return { kind:"jour", jour:parseInt(m[1]), mois:parseInt(m[2])-1, annee:parseInt(m[3]),
              sortKey:new Date(parseInt(m[3]), parseInt(m[2])-1, parseInt(m[1])).getTime() };
   }
-
-  // "NomDuMois yyyy" (jour inconnu)
   m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
   if(m){
     const nom = m[1].toLowerCase();
@@ -595,27 +645,22 @@ function parseItemDate(dateStr){
       const annee = parseInt(m[2]);
       return { kind:"mois", mois:idxMois, annee, sortKey:new Date(annee, idxMois, 1).getTime() };
     }
-    // saison
     for(const saison in SAISON_MOIS){
       if(nom === saison){
         const annee = parseInt(m[2]);
-        return { kind:"saison", saison:m[1], annee, sortKey:new Date(annee, SAISON_MOIS[saison], 1).getTime() };
+        return { kind:"saison", saison:m[1], moisDebut:SAISON_MOIS[saison], annee, sortKey:new Date(annee, SAISON_MOIS[saison], 1).getTime() };
       }
     }
   }
-
-  // année seule
   m = s.match(/^(\d{4})$/);
   if(m){
     const annee = parseInt(m[1]);
     return { kind:"annee", annee, sortKey:new Date(annee, 11, 31, 23).getTime() };
   }
-
   return { kind:"inconnue", sortKey:Infinity };
 }
 
 function daysUntil(sortKey){
-  const today = new Date(); today.setHours(0,0,0,0);
   const target = new Date(sortKey); target.setHours(0,0,0,0);
   return Math.round((target - today) / 86400000);
 }
@@ -624,47 +669,7 @@ function echeanceLabel(diff){
   if(diff < 0) return null;
   if(diff === 0) return { txt:"Aujourd'hui", today:true };
   if(diff === 1) return { txt:"Demain", today:false };
-  if(diff <= 7) return { txt:`Dans ${diff} j.`, today:false };
-  return null;
-}
-
-function ticketHTML(item){
-  const p = item.parsed;
-  const catClass = CAT_CLASS[item.categorie] || "cat-autre";
-  let stubHTML = "";
-
-  if(p.kind === "jour"){
-    stubHTML = `
-      <div class="stub-day">${String(p.jour).padStart(2,"0")}</div>
-      <div class="stub-month">${MOIS[p.mois].slice(0,3)}</div>
-      <div class="stub-year">${p.annee}</div>`;
-  } else if(p.kind === "mois"){
-    stubHTML = `<div class="stub-vague">${MOIS[p.mois].slice(0,3)}<br>${p.annee}</div>`;
-  } else if(p.kind === "saison"){
-    stubHTML = `<div class="stub-vague">${p.saison}<br>${p.annee}</div>`;
-  } else if(p.kind === "annee"){
-    stubHTML = `<div class="stub-vague">${p.annee}<br><span style="color:var(--ink-faint)">?</span></div>`;
-  } else {
-    stubHTML = `<div class="stub-vague">?</div>`;
-  }
-
-  let echTag = "";
-  if(p.kind === "jour"){
-    const ech = echeanceLabel(daysUntil(p.sortKey));
-    if(ech) echTag = `<span class="echeance ${ech.today ? "today":""}">${ech.today ? "🔥 " : ""}${ech.txt}</span>`;
-  }
-
-  return `
-    <article class="ticket">
-      <div class="ticket-stub">${stubHTML}</div>
-      <div class="ticket-body">
-        <p class="ticket-title">${escapeHTML(item.titre)}</p>
-        <div class="ticket-meta">
-          <span class="cat-tag ${catClass}"><span class="cat-dot"></span>${escapeHTML(item.categorie)}</span>
-          ${echTag}
-        </div>
-      </div>
-    </article>`;
+  return { txt:`Dans ${diff} j.`, today:false };
 }
 
 function escapeHTML(str){
@@ -673,117 +678,299 @@ function escapeHTML(str){
   return div.innerHTML;
 }
 
-// Regroupe une liste (déjà triée chronologiquement) par année, en conservant
-// l'ordre d'apparition des années (donc chronologique).
-function groupByYear(list){
-  const map = new Map();
-  list.forEach(it => {
-    const y = it.parsed.annee;
-    if(!map.has(y)) map.set(y, []);
-    map.get(y).push(it);
+function catClass(cat){ return CAT_CLASS[cat] || "cat-autre"; }
+
+function matchesFilters(it){
+  if(activeCat !== "TOUS" && it.categorie !== activeCat) return false;
+  if(searchTerm && !it.titre.toLowerCase().includes(searchTerm.trim().toLowerCase())) return false;
+  return true;
+}
+
+function catTagHTML(cat){
+  return `<span class="cat-tag ${catClass(cat)}"><span class="dot"></span>${escapeHTML(cat)}</span>`;
+}
+
+/* ---------------- CETTE SEMAINE ---------------- */
+function renderWeekStrip(){
+  const box = document.getElementById("weekStrip");
+  const row = document.getElementById("weekStripRow");
+  const items = ALL_ITEMS
+    .filter(it => it.parsed.kind === "jour")
+    .filter(it => activeCat === "TOUS" || it.categorie === activeCat)
+    .filter(it => { const d = daysUntil(it.parsed.sortKey); return d >= 0 && d <= 7; })
+    .sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
+
+  if(searchTerm || items.length === 0){ box.style.display = "none"; return; }
+  box.style.display = "";
+  row.innerHTML = items.map(it => {
+    const ech = echeanceLabel(daysUntil(it.parsed.sortKey));
+    return `
+      <div class="week-card" data-day-id="${it._id}">
+        <div class="week-card__ech ${ech.today ? "today":""}">${ech.today ? "🔥 " : ""}${ech.txt}</div>
+        <div class="week-card__title">${escapeHTML(it.titre)}</div>
+        ${catTagHTML(it.categorie)}
+      </div>`;
+  }).join("");
+  row.querySelectorAll(".week-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const it = ALL_ITEMS.find(i => i._id === parseInt(card.dataset.dayId));
+      if(it) openModal([it], it.titre);
+    });
   });
-  return map;
 }
 
-function section(title, list, urgent){
-  return `
-    <section class="section">
-      <div class="section-head ${urgent ? "urgent":""}">
-        <h2>${title}</h2>
-        <span class="count">${list.length}</span>
-        <div class="line"></div>
-      </div>
-      <div class="grid">${list.map(ticketHTML).join("")}</div>
-    </section>`;
+/* ---------------- GRILLE MENSUELLE ---------------- */
+function renderMonthLabel(){
+  document.getElementById("monthLabel").innerHTML = `${MOIS[viewMonth]}<span class="yr">${viewYear}</span>`;
 }
 
-function render(){
-  const app = document.getElementById("app");
-  const yearJump = document.getElementById("yearJump");
-  const statCount = document.getElementById("statCount");
+function renderCalendarGrid(){
+  const grid = document.getElementById("calGrid");
+  const firstOfMonth = new Date(viewYear, viewMonth, 1);
+  const leading = WEEKDAY_INDEX(firstOfMonth);
+  const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+  const totalCells = Math.ceil((leading + daysInMonth) / 7) * 7;
 
-  const terme = searchTerm.trim().toLowerCase();
-
-  let items = ALL_ITEMS.filter(it => activeCat === "TOUS" || it.categorie === activeCat);
-  if(terme) items = items.filter(it => it.titre.toLowerCase().includes(terme));
-  items.sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
-
-  const aujourdhui = new Date(); aujourdhui.setHours(0,0,0,0);
-  const todayKey = aujourdhui.getTime();
-
-  // Une date "inconnue" (parsing raté) est traitée comme à venir, pour ne
-  // jamais la faire disparaître silencieusement dans les passées.
-  const futures = items.filter(it => it.parsed.sortKey >= todayKey || it.parsed.kind === "inconnue");
-  const passees = items.filter(it => it.parsed.sortKey < todayKey && it.parsed.kind !== "inconnue");
-
-  const semaine = futures.filter(it =>
-    it.parsed.kind === "jour" && daysUntil(it.parsed.sortKey) >= 0 && daysUntil(it.parsed.sortKey) <= 7
+  const dayItems = ALL_ITEMS.filter(it =>
+    it.parsed.kind === "jour" && it.parsed.annee === viewYear && it.parsed.mois === viewMonth && matchesFilters(it)
   );
-  const semaineIds = new Set(semaine.map(it => it._id));
-  const reste = futures.filter(it => !semaineIds.has(it._id));
+  const byDay = new Map();
+  dayItems.forEach(it => {
+    if(!byDay.has(it.parsed.jour)) byDay.set(it.parsed.jour, []);
+    byDay.get(it.parsed.jour).push(it);
+  });
 
-  // ── Compteur (toujours par rapport au total réellement chargé) ──
-  statCount.textContent = terme || activeCat !== "TOUS"
-    ? `${items.length} résultat(s) affiché(s) sur ${ALL_ITEMS.length} sortie(s) au total`
-    : `${ALL_ITEMS.length} sortie(s) au total`;
+  let html = "";
+  for(let cellIdx = 0; cellIdx < totalCells; cellIdx++){
+    const dayNum = cellIdx - leading + 1;
+    const inMonth = dayNum >= 1 && dayNum <= daysInMonth;
+    if(!inMonth){
+      html += `<div class="cal-cell outside"></div>`;
+      continue;
+    }
+    const cellDate = new Date(viewYear, viewMonth, dayNum);
+    const isToday = cellDate.getTime() === today.getTime();
+    const diff = daysUntil(cellDate.getTime());
+    const isWeek = diff >= 0 && diff <= 7;
+    const events = byDay.get(dayNum) || [];
+    const shown = events.slice(0, 3);
+    const rest = events.length - shown.length;
 
-  // ── Liens rapides par année (calculés sur "reste", donc respectent les filtres actifs) ──
-  const parYear = groupByYear(reste);
-  const annees = Array.from(parYear.keys());
-  yearJump.innerHTML = annees.length > 1
-    ? annees.map(a => `<a href="#year-${a}">${a} <span style="opacity:.6">(${parYear.get(a).length})</span></a>`).join("")
-    : "";
+    html += `
+      <div class="cal-cell ${events.length ? "has-events":""} ${isToday ? "is-today":""} ${isWeek && !isToday ? "is-week":""}"
+           ${events.length ? `data-day="${dayNum}"` : ""}>
+        <span class="cal-cell__num">${dayNum}</span>
+        <div class="cal-cell__events">
+          ${shown.map(it => `
+            <div class="ev-chip ${catClass(it.categorie)}">
+              <span class="ev-dot"></span><span class="txt">${escapeHTML(it.titre)}</span>
+            </div>`).join("")}
+          ${rest > 0 ? `<div class="ev-more">+${rest} autre${rest>1?"s":""}</div>` : ""}
+        </div>
+      </div>`;
+  }
+  grid.innerHTML = html;
 
-  if(items.length === 0){
-    app.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre ou une autre recherche.</div>`;
-    return;
+  grid.querySelectorAll(".cal-cell[data-day]").forEach(cell => {
+    cell.addEventListener("click", () => {
+      const d = parseInt(cell.dataset.day);
+      const items = byDay.get(d) || [];
+      const label = `${d} ${MOIS[viewMonth]} ${viewYear}`;
+      openModal(items, label);
+    });
+  });
+}
+
+/* ---------------- SECTIONS FLOUES ---------------- */
+function renderFuzzySections(){
+  const box = document.getElementById("fuzzySections");
+  if(searchTerm){ box.innerHTML = ""; return; }
+
+  const moisFlous = ALL_ITEMS.filter(it => it.parsed.kind === "mois" && it.parsed.annee === viewYear && it.parsed.mois === viewMonth && matchesFilters(it));
+  const saisonFlous = ALL_ITEMS.filter(it => {
+    if(it.parsed.kind !== "saison" || it.parsed.annee !== viewYear) return false;
+    const start = it.parsed.moisDebut;
+    return viewMonth >= start && viewMonth <= start + 2 && matchesFilters(it);
+  });
+  const anneeFlous = ALL_ITEMS.filter(it => it.parsed.kind === "annee" && it.parsed.annee === viewYear && matchesFilters(it));
+  const inconnues = ALL_ITEMS.filter(it => it.parsed.kind === "inconnue" && matchesFilters(it));
+
+  function pillRow(list){
+    return `<div class="fuzzy-row">${list.map(it => `
+      <div class="fuzzy-pill" data-id="${it._id}">
+        <span class="dot ${catClass(it.categorie)}" style="width:6px;height:6px;border-radius:50%;"></span>
+        <span class="title">${escapeHTML(it.titre)}</span>
+      </div>`).join("")}</div>`;
   }
 
   let html = "";
-
-  if(semaine.length > 0){
-    html += section("🔔 Cette semaine", semaine, true);
+  if(moisFlous.length){
+    html += `<div class="fuzzy-block"><h3>Sorties ce mois-ci <span class="count">jour non précisé — ${moisFlous.length}</span></h3>${pillRow(moisFlous)}</div>`;
   }
-
-  if(reste.length > 0){
-    html += `
-      <section class="section">
-        <div class="section-head">
-          <h2>À venir</h2>
-          <span class="count">${reste.length}</span>
-          <div class="line"></div>
-        </div>
-        ${Array.from(parYear.entries()).map(([annee, list]) => `
-          <div class="year-group" id="year-${annee}">
-            <h3 class="year-heading">${annee} <span class="count">${list.length} sortie(s)</span></h3>
-            <div class="grid">${list.map(ticketHTML).join("")}</div>
-          </div>
-        `).join("")}
-      </section>`;
-  } else if(semaine.length === 0){
-    html += `<div class="state"><div class="big">Aucune sortie à venir programmée.</div>Reviens bientôt !</div>`;
+  if(saisonFlous.length){
+    html += `<div class="fuzzy-block"><h3>Prévues cette saison <span class="count">${saisonFlous.length}</span></h3>${pillRow(saisonFlous)}</div>`;
   }
-
-  if(passees.length > 0){
+  if(anneeFlous.length){
+    html += `<div class="fuzzy-block"><h3>Prévues en ${viewYear} <span class="count">mois non précisé — ${anneeFlous.length}</span></h3>${pillRow(anneeFlous)}</div>`;
+  }
+  if(inconnues.length){
     html += `
-      <details class="section past">
-        <summary>
-          <span>Sorties passées</span>
-          <span class="count">${passees.length}</span>
-        </summary>
-        <div class="grid">${passees.map(ticketHTML).join("")}</div>
+      <details class="fuzzy-collapse">
+        <summary>Dates encore à préciser <span class="count">${inconnues.length}</span></summary>
+        ${pillRow(inconnues)}
       </details>`;
   }
-
-  app.innerHTML = html;
+  box.innerHTML = html;
+  box.querySelectorAll(".fuzzy-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+      const it = ALL_ITEMS.find(i => i._id === parseInt(pill.dataset.id));
+      if(it) openModal([it], it.titre);
+    });
+  });
 }
 
-function initSearch(){
-  const input = document.getElementById("searchInput");
-  input.addEventListener("input", () => {
-    searchTerm = input.value;
+/* ---------------- AGENDA (mode recherche) ---------------- */
+function renderAgenda(){
+  const box = document.getElementById("agendaView");
+  const items = ALL_ITEMS.filter(matchesFilters).sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
+
+  if(items.length === 0){
+    box.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre ou une autre recherche.</div>`;
+    return;
+  }
+
+  const groups = new Map();
+  items.forEach(it => {
+    const key = it.parsed.kind === "annee" || it.parsed.kind === "inconnue"
+      ? (it.parsed.kind === "annee" ? `${it.parsed.annee}` : "Date à préciser")
+      : `${MOIS[it.parsed.mois]} ${it.parsed.annee}`;
+    if(!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(it);
+  });
+
+  function dateLabel(it){
+    const p = it.parsed;
+    if(p.kind === "jour") return `${String(p.jour).padStart(2,"0")} ${MOIS[p.mois].slice(0,3)} ${p.annee}`;
+    if(p.kind === "mois") return `${MOIS[p.mois]} ${p.annee}`;
+    if(p.kind === "saison") return `${it.date}`;
+    if(p.kind === "annee") return `${p.annee}`;
+    return "À préciser";
+  }
+
+  box.innerHTML = Array.from(groups.entries()).map(([label, list]) => `
+    <div class="agenda-group">
+      <h3>${escapeHTML(label)}</h3>
+      <div class="agenda-grid">
+        ${list.map(it => `
+          <div class="agenda-card" data-id="${it._id}">
+            <div>
+              <div class="agenda-date">${escapeHTML(dateLabel(it))}</div>
+              <div class="agenda-title">${escapeHTML(it.titre)}</div>
+              ${catTagHTML(it.categorie)}
+            </div>
+          </div>`).join("")}
+      </div>
+    </div>`).join("");
+
+  box.querySelectorAll(".agenda-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const it = ALL_ITEMS.find(i => i._id === parseInt(card.dataset.id));
+      if(it) openModal([it], it.titre);
+    });
+  });
+}
+
+/* ---------------- MODALE ---------------- */
+function openModal(items, title){
+  document.getElementById("modalTitle").textContent = title;
+  const body = document.getElementById("modalBody");
+  body.innerHTML = items.map((it, i) => `
+    <div class="modal-item" data-idx="${i}">
+      <div class="modal-poster" id="poster-${i}"><span class="ph spinner small"></span></div>
+      <div class="modal-body">
+        <p class="modal-title">${escapeHTML(it.titre)}</p>
+        ${catTagHTML(it.categorie)}
+        <span class="modal-date">${escapeHTML(it.date || "")}</span>
+      </div>
+    </div>`).join("");
+
+  items.forEach((it, i) => {
+    const posterBox = document.getElementById(`poster-${i}`);
+    if(!POSTER_CATEGORIES.has(it.categorie)){
+      posterBox.innerHTML = `<span class="ph">Pas d'affiche</span>`;
+      return;
+    }
+    if(posterCache.has(it.titre)){
+      const url = posterCache.get(it.titre);
+      posterBox.innerHTML = url ? "" : `<span class="ph">Affiche introuvable</span>`;
+      if(url) posterBox.style.backgroundImage = `url("${url.replace(/"/g,'%22')}")`;
+      return;
+    }
+    fetchPoster(it.titre, it.parsed.annee).then(url => {
+      posterCache.set(it.titre, url);
+      if(url){
+        posterBox.style.backgroundImage = `url("${url.replace(/"/g,'%22')}")`;
+        posterBox.innerHTML = "";
+      } else {
+        posterBox.innerHTML = `<span class="ph">Affiche introuvable</span>`;
+      }
+    });
+  });
+
+  document.getElementById("modalOverlay").classList.add("open");
+}
+function closeModal(){ document.getElementById("modalOverlay").classList.remove("open"); }
+
+/* ---------------- ORCHESTRATION ---------------- */
+function render(){
+  const statCount = document.getElementById("statCount");
+  const filtered = ALL_ITEMS.filter(matchesFilters);
+  statCount.textContent = (searchTerm || activeCat !== "TOUS")
+    ? `${filtered.length} résultat(s) affiché(s) sur ${ALL_ITEMS.length} sortie(s) au total`
+    : `${ALL_ITEMS.length} sortie(s) au total`;
+
+  renderWeekStrip();
+
+  const calendarView = document.getElementById("calendarView");
+  const agendaView = document.getElementById("agendaView");
+
+  if(searchTerm.trim()){
+    calendarView.style.display = "none";
+    agendaView.style.display = "";
+    renderAgenda();
+  } else {
+    calendarView.style.display = "";
+    agendaView.style.display = "none";
+    renderMonthLabel();
+    renderCalendarGrid();
+    renderFuzzySections();
+  }
+}
+
+function changeMonth(delta){
+  viewMonth += delta;
+  if(viewMonth < 0){ viewMonth = 11; viewYear--; }
+  if(viewMonth > 11){ viewMonth = 0; viewYear++; }
+  render();
+}
+
+function initControls(){
+  document.getElementById("searchInput").addEventListener("input", (e) => {
+    searchTerm = e.target.value;
     render();
   });
+  document.getElementById("prevMonth").addEventListener("click", () => changeMonth(-1));
+  document.getElementById("nextMonth").addEventListener("click", () => changeMonth(1));
+  document.getElementById("todayBtn").addEventListener("click", () => {
+    viewYear = today.getFullYear();
+    viewMonth = today.getMonth();
+    render();
+  });
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("modalOverlay").addEventListener("click", (e) => {
+    if(e.target.id === "modalOverlay") closeModal();
+  });
+  document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeModal(); });
 }
 
 function buildFilters(){
@@ -800,68 +987,40 @@ function buildFilters(){
     });
   });
 }
-async function load() {
 
-    const overlay = document.getElementById("loadingOverlay");
-    const app = document.getElementById("app");
+async function load(){
+  const overlay = document.getElementById("loadingOverlay");
+  const app = document.querySelector("main");
+  const start = Date.now();
+  try{
+    const res = await fetch(API_URL);
+    if(!res.ok) throw new Error("Réponse réseau invalide");
+    const data = await res.json();
+    if(!Array.isArray(data)) throw new Error("Format inattendu");
 
-    const start = Date.now();
+    ALL_ITEMS = data.map((it, i) => ({ ...it, parsed: parseItemDate(it.date), _id: i }));
 
-    try{
+    const elapsed = Date.now() - start;
+    if(elapsed < 900) await new Promise(r => setTimeout(r, 900 - elapsed));
 
-        const res = await fetch(API_URL);
+    buildFilters();
+    render();
 
-        if(!res.ok)
-            throw new Error("Réponse réseau invalide");
-
-        const data = await res.json();
-
-        if(!Array.isArray(data))
-            throw new Error("Format inattendu");
-
-        ALL_ITEMS = data.map((it,i)=>({
-            ...it,
-            parsed:parseItemDate(it.date),
-            _id:i
-        }));
-
-        // minimum 900 ms d'affichage
-        const elapsed = Date.now() - start;
-
-        if(elapsed < 900){
-            await new Promise(r=>setTimeout(r,900-elapsed));
-        }
-
-        buildFilters();
-        render();
-
-        overlay.classList.add("hidden");
-
-        setTimeout(()=>{
-            overlay.remove();
-        },350);
-
-    }
-    catch(err){
-
-        console.error(err);
-
-        overlay.classList.add("hidden");
-
-        app.innerHTML = `
-            <div class="state">
-                <div class="big">Le calendrier ne répond pas.</div>
-                Réessaie dans un instant, ou vérifie la connexion à la source.
-            </div>
-        `;
-    }
-
+    overlay.classList.add("hidden");
+    setTimeout(() => overlay.remove(), 350);
+  }catch(err){
+    console.error(err);
+    overlay.classList.add("hidden");
+    app.innerHTML = `
+      <div class="state">
+        <div class="big">Le calendrier ne répond pas.</div>
+        Réessaie dans un instant, ou vérifie la connexion à la source.
+      </div>`;
+  }
 }
 
-initSearch();
+initControls();
 load();
-
-
 </script>
 
 <script src="../assets/js/main.js"></script>

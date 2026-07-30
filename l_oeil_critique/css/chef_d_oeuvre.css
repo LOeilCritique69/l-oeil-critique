@@ -2187,7 +2187,7 @@ footer {
 
 .modal-dialog { width: min(600px, 92vw); background: var(--paper); overflow: hidden; box-shadow: var(--shadow-lg); }
 .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.2rem; border-bottom: 1px solid var(--line-on-paper); }
-.modal-title { font-family: var(--font-display); color: var(--ink); }
+.modal-title { font-family: var(--font-display); color: white; }
 .modal-close { background: none; border: none; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
 .modal-body { padding: 1.2rem; color: var(--paper-soft); }
 .modal-footer { display: flex; justify-content: flex-end; gap: 0.7rem; padding: 1rem 1.2rem; border-top: 1px solid var(--line-on-paper); }
