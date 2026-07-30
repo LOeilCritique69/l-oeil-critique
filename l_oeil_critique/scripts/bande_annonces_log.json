@@ -855,5 +855,10 @@
   "cinehorizons::Scrooge::https://www.cinehorizons.net/film/scrooge",
   "cinehorizons::L'invitation::https://www.cinehorizons.net/film/linvitation",
   "cinehorizons::Primetime::https://www.cinehorizons.net/film/primetime",
-  "allocine::1000032856::20638756"
+  "allocine::1000032856::20638756",
+  "allocine_serie::36621::20641605",
+  "allocine_serie::24169::20641604",
+  "allocine_serie::31847::20641580",
+  "allocine_serie::37431::20641570",
+  "allocine_serie::517::20641569"
 ]
