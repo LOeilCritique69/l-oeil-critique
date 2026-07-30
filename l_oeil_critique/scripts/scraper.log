@@ -19529,3 +19529,5 @@ Call log:
 2026-07-30 21:20:19,622 [INFO] 1953 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-07-30 21:20:19,622 [INFO] Sauvegarde du log avec 862 identifiants
 2026-07-30 21:20:19,623 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-07-30 21:20:24,028 [INFO] Push GitHub FORCE réussi
+2026-07-30 21:20:24,028 [INFO] ==== Fin du script bandes-annonces ====
