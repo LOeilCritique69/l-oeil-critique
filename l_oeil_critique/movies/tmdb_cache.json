@@ -11139,5 +11139,26 @@
     "video": false,
     "vote_average": 7.414,
     "vote_count": 3082
+  },
+  "Spider-Man: Brand New Day_2026": {
+    "adult": false,
+    "backdrop_path": "/vjMvFSmGUxEtqVdaZgvFee9XkZl.jpg",
+    "genre_ids": [
+      878,
+      28,
+      12
+    ],
+    "id": 969681,
+    "title": "Spider-Man : Brand New Day",
+    "original_language": "en",
+    "original_title": "Spider-Man: Brand New Day",
+    "overview": "Quatre ans se sont écoulés, Peter, désormais adulte, vit seul, s'est volontairement effacé de la vie et des souvenirs de ses proches. Luttant contre le crime dans un New York qui ne le reconnaît plus, il se consacre entièrement à la protection de la ville - un Spider-Man à plein temps - mais à mesure que les responsabilités s'intensifient, la pression provoque une transformation physique surprenante qui menace son existence, tandis qu'une étrange nouvelle vague de crimes donne naissance à l'une des menaces les plus redoutables qu'il ait jamais affrontées.",
+    "popularity": 410.4648,
+    "poster_path": "/yikio8CfJxIA7faZxgvB9FGXy6u.jpg",
+    "release_date": "2026-07-28",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.9,
+    "vote_count": 67
   }
 }
