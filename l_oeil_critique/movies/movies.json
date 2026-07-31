@@ -5626,5 +5626,15 @@
     "poster_path": "/yikio8CfJxIA7faZxgvB9FGXy6u.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/yikio8CfJxIA7faZxgvB9FGXy6u.jpg",
     "tmdb_id": 969681
+  },
+  {
+    "Name": "Enola Holmes 3",
+    "Year": 2026,
+    "Date": "2026-07-31",
+    "Rating": 1.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/enola-holmes-3/",
+    "poster_path": "/ncHImt9szlNQaNM2iY3vcgSdDp.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ncHImt9szlNQaNM2iY3vcgSdDp.jpg",
+    "tmdb_id": 1202033
   }
 ]

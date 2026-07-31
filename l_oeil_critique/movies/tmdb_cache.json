@@ -11160,5 +11160,26 @@
     "video": false,
     "vote_average": 7.9,
     "vote_count": 67
+  },
+  "Enola Holmes 3_2026": {
+    "adult": false,
+    "backdrop_path": "/yNcfMiULkoh1h2yyNKFm4T9FvRM.jpg",
+    "genre_ids": [
+      12,
+      80,
+      9648
+    ],
+    "id": 1202033,
+    "title": "Enola Holmes 3",
+    "original_language": "en",
+    "original_title": "Enola Holmes 3",
+    "overview": "La détective Enola Holmes poursuit ses aventures à Malte, où son projet de mariage se complique quand elle doit résoudre une périlleuse affaire liée à la disparition de Sherlock.",
+    "popularity": 28.0281,
+    "poster_path": "/ncHImt9szlNQaNM2iY3vcgSdDp.jpg",
+    "release_date": "2026-06-30",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.899,
+    "vote_count": 530
   }
 }
