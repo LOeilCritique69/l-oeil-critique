@@ -5636,5 +5636,15 @@
     "poster_path": "/ncHImt9szlNQaNM2iY3vcgSdDp.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/ncHImt9szlNQaNM2iY3vcgSdDp.jpg",
     "tmdb_id": 1202033
+  },
+  {
+    "Name": "Berlin Hero",
+    "Year": 2025,
+    "Date": "2026-07-18",
+    "Rating": 1.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/berlin-hero/",
+    "poster_path": "/gmPute26B4JnsQNMZdgyWAfYfYj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gmPute26B4JnsQNMZdgyWAfYfYj.jpg",
+    "tmdb_id": 1248217
   }
 ]
