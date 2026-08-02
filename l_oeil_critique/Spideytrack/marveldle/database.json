@@ -6127,6 +6127,35 @@
           "screenshot": "marveldle/images_tobey/day_211.png"
         }
       }
+    },
+    "212": {
+      "date": "2026-08-02",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images/day_212.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_212.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_212.png"
+        }
+      }
     }
   }
 }
