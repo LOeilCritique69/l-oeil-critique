@@ -872,5 +872,8 @@
   "tmdb::id::4928",
   "tmdb::id::1204680",
   "cinehorizons::La Vie d'une femme::https://www.cinehorizons.net/film/la-vie-dune-femme",
-  "allocine::320681::20639163"
+  "allocine::320681::20639163",
+  "allocine_serie::24332::20641706",
+  "allocine_serie::32303::20641692",
+  "allocine_serie::33008::20641687"
 ]
