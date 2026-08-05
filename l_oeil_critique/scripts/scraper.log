@@ -21246,3 +21246,38 @@ Call log:
 2026-08-05 12:56:13,331 [INFO] Scraping TMDb terminé (0 items)
 2026-08-05 12:56:13,331 [INFO] 0 articles retenus pour ce run
 2026-08-05 12:56:13,331 [INFO] Aucun article à écrire, arrêt
+2026-08-05 15:19:29,350 [INFO] ==== Début du script bandes-annonces ====
+2026-08-05 15:19:29,366 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-05 15:19:29,366 [INFO] 900 identifiants chargés depuis le log
+2026-08-05 15:19:29,367 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-05 15:19:29,990 [INFO] Démarrage scraping CineHorizons...
+2026-08-05 15:19:32,951 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-05 15:19:32,990 [INFO] 10 blocs détectés sur la page 1
+2026-08-05 15:19:32,992 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-05 15:19:32,992 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-05 15:19:32,992 [INFO] Démarrage scraping Allociné (films)...
+2026-08-05 15:19:34,100 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-05 15:19:34,248 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-05 15:19:34,248 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-05 15:19:34,248 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-05 15:19:35,525 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-05 15:19:35,662 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-05 15:19:35,662 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-08-05 15:19:35,718 [INFO] Démarrage scraping TMDb...
+2026-08-05 15:19:35,870 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/3)
+2026-08-05 15:19:36,237 [INFO] Article ajouté TMDb (upcoming): KATSEYE: WILD HEARTS
+2026-08-05 15:19:36,508 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-08-05 15:19:37,564 [INFO] 10 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-08-05 15:19:38,562 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-08-05 15:19:38,836 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-08-05 15:19:39,116 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-08-05 15:19:39,479 [INFO] Article ajouté TMDb (now_playing): KATSEYE: WILD HEARTS
+2026-08-05 15:19:39,943 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-08-05 15:19:41,201 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-08-05 15:19:42,298 [INFO] Scraping TMDb terminé (2 items)
+2026-08-05 15:19:42,298 [INFO] 2 articles retenus pour ce run
+2026-08-05 15:19:42,364 [INFO] 1995 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-05 15:19:42,365 [INFO] Sauvegarde du log avec 901 identifiants
+2026-08-05 15:19:42,367 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-05 15:19:42,440 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-05 15:19:42,440 [INFO] ==== Fin du script bandes-annonces ====
