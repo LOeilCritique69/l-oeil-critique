@@ -902,5 +902,7 @@
   "tmdb::id::1728113",
   "allocine_serie::36032::20641834",
   "allocine_serie::1000002311::20641877",
-  "allocine_serie::1000001442::20641910"
+  "allocine_serie::1000001442::20641910",
+  "cinehorizons::Les Contrebandiers::https://www.cinehorizons.net/film/les-contrebandiers",
+  "cinehorizons::Klara et le soleil::https://www.cinehorizons.net/film/klara-et-le-soleil"
 ]
