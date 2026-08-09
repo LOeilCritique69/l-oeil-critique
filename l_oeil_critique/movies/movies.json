@@ -5646,5 +5646,15 @@
     "poster_path": "/gmPute26B4JnsQNMZdgyWAfYfYj.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/gmPute26B4JnsQNMZdgyWAfYfYj.jpg",
     "tmdb_id": 1248217
+  },
+  {
+    "Name": "War Machine",
+    "Year": 2026,
+    "Date": "2026-08-09",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/war-machine-2026/",
+    "poster_path": "/tlPgDzwIE7VYYIIAGCTUOnN4wI1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tlPgDzwIE7VYYIIAGCTUOnN4wI1.jpg",
+    "tmdb_id": 1265609
   }
 ]

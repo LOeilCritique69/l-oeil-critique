@@ -11200,5 +11200,26 @@
     "video": false,
     "vote_average": 6.6,
     "vote_count": 17
+  },
+  "War Machine_2026": {
+    "adult": false,
+    "backdrop_path": "/6yeVcxFR0j08vlv2OlL6zbewm4D.jpg",
+    "genre_ids": [
+      28,
+      878,
+      53
+    ],
+    "id": 1265609,
+    "title": "War Machine",
+    "original_language": "en",
+    "original_title": "War Machine",
+    "overview": "Lors d'une dernière mission éprouvante pendant sa formation de Ranger, un ingénieur militaire doit mener son unité contre une gigantesque machine à tuer venue d'un autre monde.",
+    "popularity": 42.3468,
+    "poster_path": "/tlPgDzwIE7VYYIIAGCTUOnN4wI1.jpg",
+    "release_date": "2026-02-12",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.437,
+    "vote_count": 2244
   }
 }
