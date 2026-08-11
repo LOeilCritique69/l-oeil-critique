@@ -11221,5 +11221,25 @@
     "video": false,
     "vote_average": 7.437,
     "vote_count": 2244
+  },
+  "The Devil's Mouth_2026": {
+    "adult": false,
+    "backdrop_path": "/se8LfmZYFiNerF6U7zMUKePV0vE.jpg",
+    "genre_ids": [
+      27,
+      53
+    ],
+    "id": 1481343,
+    "title": "La Bouche du Diable",
+    "original_language": "en",
+    "original_title": "The Devil's Mouth",
+    "overview": "En Thaïlande, cinq amis explorent les grottes de la Bouche du Diable pour une dernière aventure avant de se lancer dans la vie d'adultes. Mais ils découvrent rapidement qu'une chose se met à les traquer sous l'eau… une chose rapide, silencieuse et mortelle. Dans l'obscurité étouffante, la confiance se volatilise, la panique se répand, et chaque erreur se transforme en une lutte pour la survie.",
+    "popularity": 208.7358,
+    "poster_path": "/9IKCSvhoKUM6LwD279FxuIvr8OL.jpg",
+    "release_date": "2026-07-29",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.552,
+    "vote_count": 558
   }
 }
