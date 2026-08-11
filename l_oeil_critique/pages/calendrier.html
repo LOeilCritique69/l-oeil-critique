@@ -21,7 +21,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link href="../css/chef_d_oeuvre.css" rel="stylesheet">
-    <link href="../css/reviews.css" rel="stylesheet">
     <link href="../css/list-pages.css" rel="stylesheet">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
@@ -45,6 +44,7 @@
     --cat-series:#4fb3ad;
     --cat-jeux:#7fae5a;
     --cat-animes:#e0a24f;
+    --cat-evenements:#d4638a;
     --cat-autre:#9089a3;
     --cat-music:#b57ad1;
     --radius:2px;
@@ -327,6 +327,7 @@
   .cat-series .ev-dot, .dot-series{ background:var(--cat-series); }
   .cat-jeux .ev-dot, .dot-jeux{ background:var(--cat-jeux); }
   .cat-animes .ev-dot, .dot-animes{ background:var(--cat-animes); }
+  .cat-evenements .ev-dot, .dot-evenements{ background:var(--cat-evenements); }
   .cat-autre .ev-dot, .dot-autre{ background:var(--cat-autre); }
   .cat-music .ev-dot, .dot-music{ background:var(--cat-music); }
 
@@ -341,6 +342,7 @@
   .cat-tag.cat-series{ background:rgba(79,179,173,0.16); color:var(--cat-series); }
   .cat-tag.cat-jeux{ background:rgba(127,174,90,0.16); color:var(--cat-jeux); }
   .cat-tag.cat-animes{ background:rgba(224,162,79,0.16); color:var(--cat-animes); }
+  .cat-tag.cat-evenements{ background:rgba(212,99,138,0.16); color:var(--cat-evenements); }
   .cat-tag.cat-autre{ background:rgba(144,137,163,0.16); color:var(--cat-autre); }
   .cat-tag.cat-music{ background:rgba(181,122,209,0.16); color:var(--cat-music); }
   .cat-tag .dot{ width:6px; height:6px; border-radius:50%; }
@@ -348,6 +350,7 @@
   .cat-tag.cat-series .dot{ background:var(--cat-series); }
   .cat-tag.cat-jeux .dot{ background:var(--cat-jeux); }
   .cat-tag.cat-animes .dot{ background:var(--cat-animes); }
+  .cat-tag.cat-evenements .dot{ background:var(--cat-evenements); }
   .cat-tag.cat-autre .dot{ background:var(--cat-autre); }
   .cat-tag.cat-music .dot{ background:var(--cat-music); }
 
@@ -386,7 +389,7 @@
     color:var(--gold); margin:0 0 12px;
   }
   .agenda-grid{
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px;
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:14px;
   }
   .agenda-card{
     display:flex; gap:12px;
@@ -397,9 +400,11 @@
   .agenda-card:hover{ transform:translateY(-2px); border-color:#4a444c; }
   .agenda-date{
     font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ink-faint);
-    flex:0 0 auto; white-space:nowrap;
+    flex:0 0 auto; white-space:nowrap; margin-bottom:2px;
   }
-  .agenda-title{ font-family:'Fraunces', serif; font-weight:600; font-size:0.95rem; margin:2px 0 8px; }
+  .agenda-title{ font-family:'Fraunces', serif; font-weight:600; font-size:1rem; margin:2px 0 8px; }
+  .agenda-tags{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .agenda-plat{ font-family:'Inter', sans-serif; font-size:11px; color:var(--ink-dim); background:var(--bg-raised); padding:3px 8px; border-radius:999px; border:1px solid var(--hairline); }
 
   /* ---------- MODALE JOUR / ITEM ---------- */
   .modal-overlay{
@@ -422,18 +427,20 @@
     background:transparent; color:var(--ink-dim); font-size:14px; cursor:pointer;
   }
   .modal-close:hover{ border-color:var(--gold); color:var(--gold); }
-  .modal-item{ display:flex; gap:14px; padding:14px 0; border-top:1px solid var(--hairline); }
+  .modal-item{ display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--hairline); }
   .modal-item:first-of-type{ border-top:none; }
   .modal-poster{
-    flex:0 0 78px; height:112px; border-radius:4px; background:var(--stub);
+    flex:0 0 84px; height:120px; border-radius:4px; background:var(--stub);
     background-size:cover; background-position:center;
     display:flex; align-items:center; justify-content:center;
     border:1px solid var(--hairline);
   }
   .modal-poster .ph{ font-size:10px; color:var(--ink-faint); font-family:'JetBrains Mono', monospace; text-align:center; padding:4px; }
-  .modal-body{ flex:1; min-width:0; }
-  .modal-title{ font-family:'Fraunces', serif; font-weight:600; font-size:1rem; margin:0 0 8px; }
-  .modal-date{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--gold); margin-top:8px; display:block; }
+  .modal-body{ flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; justify-content:flex-start; }
+  .modal-title{ font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; margin:0; line-height:1.2; }
+  .modal-date{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--gold); margin-top:4px; }
+  .modal-link{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--cat-films); text-decoration:none; display:inline-block; margin-top:8px; border:1px solid rgba(91,138,201,0.4); padding:5px 10px; border-radius:4px; transition:background .15s; text-align:center; width:fit-content; }
+  .modal-link:hover{ background:rgba(91,138,201,0.1); }
 
   /* ---------- ÉTATS / LOADER ---------- */
   #loadingOverlay{
@@ -492,7 +499,7 @@
     </p>
     <h1 class="list-page-header__title">Calendrier des sorties</h1>
     <p class="list-page-header__description2">
-        Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, animés et autres événements suivis par L'Œil Critique. Malgré une veille régulière, certaines annonces peuvent exceptionnellement manquer. Le calendrier est mis à jour en continu afin d'ajouter un maximum de sorties à venir.
+        Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, événements, animés et autres suivis par L'Œil Critique. Malgré une veille régulière, certaines annonces peuvent exceptionnellement manquer. Le calendrier est mis à jour en continu.
     </p>
 </div>
 
@@ -550,7 +557,10 @@
 </div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbxlirwM0w0htLq2hV00rXPXtlMFCQBAtpiNFpVK91LQcs_zj412a-6PInoMYHiyg_4rtQ/exec";
+// IMPORTANT : Pour que la page web récupère correctement le JSON de la V9 de ton script App Script,
+// l'URL doit inclure le paramètre "?format=json" à la fin. Si tu as redéployé ton script récemment,
+// remplace cette URL par la tienne tout en conservant le "?format=json" à la fin.
+const API_URL = "https://script.google.com/macros/s/AKfycbxWg5JgVbPFD2C3ulP3LHVhzg8rLwZFK2B1vqVfB4X7gNrFfYvTYOKJtNiZSwNQPF6RuQ/exec?format=json";
 
 // --- Affiches : OMDb (IMDB) en priorité, TMDB en repli --------------------
 const OMDB_API_KEY = "23538300";
@@ -618,7 +628,7 @@ const WEEKDAY_INDEX = d => (d.getDay() + 6) % 7; // Lundi = 0
 
 const CAT_CLASS = {
   "🎬 Films":"cat-films", "📺 Séries":"cat-series", "🎮 Jeux":"cat-jeux",
-  "🍿 Animés":"cat-animes", "📦 Autre":"cat-autre", "🎵 Music":"cat-music",
+  "🍿 Animés":"cat-animes", "🎪 Événements":"cat-evenements", "📦 Autre":"cat-autre", "🎵 Music":"cat-music",
   "🎬 Films/Séries":"cat-films"
 };
 
@@ -631,27 +641,40 @@ let viewMonth = today.getMonth();
 
 function parseItemDate(dateStr){
   if(!dateStr) return { kind:"inconnue", sortKey:Infinity };
-  const s = dateStr.trim();
-  let m = s.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  const s = dateStr.toString().trim();
+
+  // Prise en charge des dates précises JJ/MM/AAAA ou des dates partielles issues de la v9 : ?/MM/AAAA
+  let m = s.match(/^(\?|\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   if(m){
-    return { kind:"jour", jour:parseInt(m[1]), mois:parseInt(m[2])-1, annee:parseInt(m[3]),
-             sortKey:new Date(parseInt(m[3]), parseInt(m[2])-1, parseInt(m[1])).getTime() };
+    const mois = parseInt(m[2], 10) - 1;
+    const annee = parseInt(m[3], 10);
+    // Si c'est un point d'interrogation, c'est une sortie ce mois-ci mais date exacte inconnue.
+    if(m[1] === "?") {
+      return { kind:"mois", mois, annee, sortKey:new Date(annee, mois, 28).getTime() };
+    } else {
+      const jour = parseInt(m[1], 10);
+      return { kind:"jour", jour, mois, annee, sortKey:new Date(annee, mois, jour).getTime() };
+    }
   }
+
+  // Format "Novembre 2026" ou "Printemps 2027"
   m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
   if(m){
     const nom = m[1].toLowerCase();
     const idxMois = MOIS_LOWER.indexOf(nom);
     if(idxMois !== -1){
       const annee = parseInt(m[2]);
-      return { kind:"mois", mois:idxMois, annee, sortKey:new Date(annee, idxMois, 1).getTime() };
+      return { kind:"mois", mois:idxMois, annee, sortKey:new Date(annee, idxMois, 28).getTime() };
     }
     for(const saison in SAISON_MOIS){
       if(nom === saison){
         const annee = parseInt(m[2]);
-        return { kind:"saison", saison:m[1], moisDebut:SAISON_MOIS[saison], annee, sortKey:new Date(annee, SAISON_MOIS[saison], 1).getTime() };
+        return { kind:"saison", saison:m[1], moisDebut:SAISON_MOIS[saison], annee, sortKey:new Date(annee, SAISON_MOIS[saison], 28).getTime() };
       }
     }
   }
+
+  // Format "2026"
   m = s.match(/^(\d{4})$/);
   if(m){
     const annee = parseInt(m[1]);
@@ -866,7 +889,10 @@ function renderAgenda(){
             <div>
               <div class="agenda-date">${escapeHTML(dateLabel(it))}</div>
               <div class="agenda-title">${escapeHTML(it.titre)}</div>
-              ${catTagHTML(it.categorie)}
+              <div class="agenda-tags">
+                 ${catTagHTML(it.categorie)}
+                 ${it.plateforme ? `<span class="agenda-plat">${escapeHTML(it.plateforme)}</span>` : ""}
+              </div>
             </div>
           </div>`).join("")}
       </div>
@@ -889,8 +915,12 @@ function openModal(items, title){
       <div class="modal-poster" id="poster-${i}"><span class="ph spinner small"></span></div>
       <div class="modal-body">
         <p class="modal-title">${escapeHTML(it.titre)}</p>
-        ${catTagHTML(it.categorie)}
-        <span class="modal-date">${escapeHTML(it.date || "")}</span>
+        <div>${catTagHTML(it.categorie)}</div>
+        <span class="modal-date">📅 ${escapeHTML(it.date || "")}</span>
+        ${it.plateforme ? `<span class="modal-date" style="color:var(--ink2);">📺 ${escapeHTML(it.plateforme)}</span>` : ""}
+        ${it.vu === "✔️" ? `<span class="modal-date" style="color:var(--cat-jeux); font-weight:600;">✔️ Vu</span>` : ""}
+        ${it.vu === "❌" ? `<span class="modal-date" style="color:var(--red); font-weight:600;">❌ Pas vu</span>` : ""}
+        ${it.lien ? `<a href="${escapeHTML(it.lien)}" target="_blank" class="modal-link">🔗 Fiche / infos</a>` : ""}
       </div>
     </div>`).join("");
 
