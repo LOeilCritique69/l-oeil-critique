@@ -18,6 +18,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://script.google.com">
+    <link rel="dns-prefetch" href="https://script.google.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link href="../css/chef_d_oeuvre.css" rel="stylesheet">
@@ -557,11 +559,8 @@
 </div>
 
 <script>
-// IMPORTANT : Pour que la page web récupère correctement le JSON de la V9 de ton script App Script,
-// l'URL doit inclure le paramètre "?format=json" à la fin. Si tu as redéployé ton script récemment,
-// remplace cette URL par la tienne tout en conservant le "?format=json" à la fin.
-const API_URL = "https://script.google.com/macros/s/AKfycby-68gzwEvoDNw9l3RLC0vDNKWWqMoWuJz5BYNAdqC4JzBFh0kX6-RBfOMb7FFEZlePCQ/exec?format=json";
-// --- Affiches : OMDb (IMDB) en priorité, TMDB en repli --------------------
+const API_URL = "https://script.google.com/macros/s/AKfycbwvIu-oRNEI4IxcM0F-x4IgPmTUTqArbiDEF1tz39YaZ-xuyVSzrO1efxs-0RaH7y889g/exec?format=json";
+
 const OMDB_API_KEY = "23538300";
 const OMDB_BASE_URL = "https://www.omdbapi.com/";
 const TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa";
@@ -618,12 +617,21 @@ async function fetchPoster(title, annee){
   if(fromOMDb) return fromOMDb;
   return await fetchPosterFromTMDB(title, annee);
 }
-// ---------------------------------------------------------------------------
 
 const MOIS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
-const MOIS_LOWER = MOIS.map(m => m.toLowerCase());
-const SAISON_MOIS = { "hiver":0, "printemps":3, "été":6, "automne":9 };
-const WEEKDAY_INDEX = d => (d.getDay() + 6) % 7; // Lundi = 0
+function normStr(str) {
+  return (str || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+}
+const MOIS_NORM = MOIS.map(m => normStr(m));
+
+const SAISON_MAP = {
+  "hiver": { name: "Hiver", moisDebut: 0 },
+  "printemps": { name: "Printemps", moisDebut: 3 },
+  "ete": { name: "Été", moisDebut: 6 },
+  "automne": { name: "Automne", moisDebut: 9 }
+};
+
+const WEEKDAY_INDEX = d => (d.getDay() + 6) % 7;
 
 const CAT_CLASS = {
   "🎬 Films":"cat-films", "📺 Séries":"cat-series", "🎮 Jeux":"cat-jeux",
@@ -640,45 +648,72 @@ let viewMonth = today.getMonth();
 
 function parseItemDate(dateStr){
   if(!dateStr) return { kind:"inconnue", sortKey:Infinity };
-  const s = dateStr.toString().trim();
+  let s = dateStr.toString().trim();
 
-  // Prise en charge des dates précises JJ/MM/AAAA ou des dates partielles issues de la v9 : ?/MM/AAAA
-  let m = s.match(/^(\?|\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  // Nettoyage des années répétées issues de l'API (ex: "Automne 2026 2026" ou "2026 2026")
+  s = s.replace(/(\b\d{4}\b)\s+\1/g, "$1").trim();
+
+  // Format 1 : JJ/MM/AAAA ou ?/MM/AAAA
+  let m = s.match(/^(\?|\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
   if(m){
-    const mois = parseInt(m[2], 10) - 1;
-    const annee = parseInt(m[3], 10);
-    // Si c'est un point d'interrogation, c'est une sortie ce mois-ci mais date exacte inconnue.
-    if(m[1] === "?") {
+    let mois = parseInt(m[2], 10) - 1;
+    let annee = parseInt(m[3], 10);
+    if (annee < 100) annee += 2000;
+    if (isNaN(mois) || mois < 0 || mois > 11) return { kind: "inconnue", sortKey: Infinity };
+
+    if(m[1] === "?" || m[1] === "") {
       return { kind:"mois", mois, annee, sortKey:new Date(annee, mois, 28).getTime() };
     } else {
-      const jour = parseInt(m[1], 10);
+      let jour = parseInt(m[1], 10);
+      if (isNaN(jour) || jour < 1 || jour > 31) return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28).getTime() };
       return { kind:"jour", jour, mois, annee, sortKey:new Date(annee, mois, jour).getTime() };
     }
   }
 
-  // Format "Novembre 2026" ou "Printemps 2027"
-  m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
+  // Format 2 : MM/AAAA (ex: 08/2026)
+  m = s.match(/^(\d{1,2})\/(\d{2,4})$/);
   if(m){
-    const nom = m[1].toLowerCase();
-    const idxMois = MOIS_LOWER.indexOf(nom);
-    if(idxMois !== -1){
-      const annee = parseInt(m[2]);
-      return { kind:"mois", mois:idxMois, annee, sortKey:new Date(annee, idxMois, 28).getTime() };
-    }
-    for(const saison in SAISON_MOIS){
-      if(nom === saison){
-        const annee = parseInt(m[2]);
-        return { kind:"saison", saison:m[1], moisDebut:SAISON_MOIS[saison], annee, sortKey:new Date(annee, SAISON_MOIS[saison], 28).getTime() };
-      }
+    let mois = parseInt(m[1], 10) - 1;
+    let annee = parseInt(m[2], 10);
+    if (annee < 100) annee += 2000;
+    if (!isNaN(mois) && mois >= 0 && mois <= 11) {
+      return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28).getTime() };
     }
   }
 
-  // Format "2026"
+  // Format 3 : "Mois AAAA" ou "Saison AAAA" (insensible aux accents)
+  m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
+  if(m){
+    let wordNorm = normStr(m[1]);
+    let annee = parseInt(m[2], 10);
+
+    let idxMois = MOIS_NORM.indexOf(wordNorm);
+    if(idxMois !== -1){
+      return { kind:"mois", mois:idxMois, annee, sortKey:new Date(annee, idxMois, 28).getTime() };
+    }
+
+    if(SAISON_MAP[wordNorm]){
+      let infoS = SAISON_MAP[wordNorm];
+      return { kind:"saison", saison:infoS.name, moisDebut:infoS.moisDebut, annee, sortKey:new Date(annee, infoS.moisDebut, 28).getTime() };
+    }
+  }
+
+  // Format 4 : "2026" seul
   m = s.match(/^(\d{4})$/);
   if(m){
-    const annee = parseInt(m[1]);
+    let annee = parseInt(m[1], 10);
     return { kind:"annee", annee, sortKey:new Date(annee, 11, 31, 23).getTime() };
   }
+
+  // Format 5 : Date standard JS / Google Sheets
+  let dParsed = new Date(s);
+  if(!isNaN(dParsed.getTime()) && dParsed.getFullYear() >= 2020 && dParsed.getFullYear() <= 2035){
+    let jour = dParsed.getDate();
+    let mois = dParsed.getMonth();
+    let annee = dParsed.getFullYear();
+    return { kind:"jour", jour, mois, annee, sortKey:new Date(annee, mois, jour).getTime() };
+  }
+
   return { kind:"inconnue", sortKey:Infinity };
 }
 
@@ -712,7 +747,6 @@ function catTagHTML(cat){
   return `<span class="cat-tag ${catClass(cat)}"><span class="dot"></span>${escapeHTML(cat)}</span>`;
 }
 
-/* ---------------- CETTE SEMAINE ---------------- */
 function renderWeekStrip(){
   const box = document.getElementById("weekStrip");
   const row = document.getElementById("weekStripRow");
@@ -741,7 +775,6 @@ function renderWeekStrip(){
   });
 }
 
-/* ---------------- GRILLE MENSUELLE ---------------- */
 function renderMonthLabel(){
   document.getElementById("monthLabel").innerHTML = `${MOIS[viewMonth]}<span class="yr">${viewYear}</span>`;
 }
@@ -803,7 +836,6 @@ function renderCalendarGrid(){
   });
 }
 
-/* ---------------- SECTIONS FLOUES ---------------- */
 function renderFuzzySections(){
   const box = document.getElementById("fuzzySections");
   if(searchTerm){ box.innerHTML = ""; return; }
@@ -851,7 +883,6 @@ function renderFuzzySections(){
   });
 }
 
-/* ---------------- AGENDA (mode recherche) ---------------- */
 function renderAgenda(){
   const box = document.getElementById("agendaView");
   const items = ALL_ITEMS.filter(matchesFilters).sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
@@ -874,7 +905,7 @@ function renderAgenda(){
     const p = it.parsed;
     if(p.kind === "jour") return `${String(p.jour).padStart(2,"0")} ${MOIS[p.mois].slice(0,3)} ${p.annee}`;
     if(p.kind === "mois") return `${MOIS[p.mois]} ${p.annee}`;
-    if(p.kind === "saison") return `${it.date}`;
+    if(p.kind === "saison") return `${p.saison || it.date} ${p.annee}`;
     if(p.kind === "annee") return `${p.annee}`;
     return "À préciser";
   }
@@ -905,7 +936,6 @@ function renderAgenda(){
   });
 }
 
-/* ---------------- MODALE ---------------- */
 function openModal(items, title){
   document.getElementById("modalTitle").textContent = title;
   const body = document.getElementById("modalBody");
@@ -950,7 +980,6 @@ function openModal(items, title){
 }
 function closeModal(){ document.getElementById("modalOverlay").classList.remove("open"); }
 
-/* ---------------- ORCHESTRATION ---------------- */
 function render(){
   const statCount = document.getElementById("statCount");
   const filtered = ALL_ITEMS.filter(matchesFilters);
@@ -1017,34 +1046,124 @@ function buildFilters(){
   });
 }
 
+// Chargeur JSONP qui contourne 100 % des restrictions CORS, avec retry automatique
+// et cache-bust pour éviter les échecs transitoires (extensions, quotas, cache réseau).
+function loadViaJSONP(tentative = 1, maxTentatives = 3) {
+  return new Promise((resolve, reject) => {
+    const callbackName = "handleGASResponse_" + Math.round(Math.random() * 1000000);
+    let script = null;
+
+    const cleanup = () => {
+      delete window[callbackName];
+      if (script && document.head.contains(script)) document.head.removeChild(script);
+    };
+
+    window[callbackName] = function(data) {
+      cleanup();
+      resolve(data);
+    };
+
+    script = document.createElement("script");
+    // "_t" casse le cache navigateur/proxy qui pourrait servir une réponse périmée ou invalide
+    script.src = API_URL + "&callback=" + callbackName + "&_t=" + Date.now();
+    script.onerror = function() {
+      cleanup();
+      if (tentative < maxTentatives) {
+        console.warn(`JSONP : échec de chargement (tentative ${tentative}/${maxTentatives}), nouvel essai…`);
+        setTimeout(() => {
+          loadViaJSONP(tentative + 1, maxTentatives).then(resolve).catch(reject);
+        }, 800 * tentative); // délai croissant : 0.8s, 1.6s, 2.4s...
+      } else {
+        reject(new Error("Erreur de chargement du script JSONP après " + maxTentatives + " tentative(s)"));
+      }
+    };
+
+    document.head.appendChild(script);
+  });
+}
+
+const CACHE_KEY = "calendrier_sorties_cache_v1";
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes : au-delà, on considère le cache "périmé" et on revalide
+
+function lireCache(){
+  try{
+    const raw = sessionStorage.getItem(CACHE_KEY);
+    if(!raw) return null;
+    const parsed = JSON.parse(raw);
+    if(!Array.isArray(parsed.data)) return null;
+    return parsed; // { data, ts }
+  }catch(e){ return null; }
+}
+
+function ecrireCache(data){
+  try{
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+  }catch(e){ /* stockage plein ou indisponible : on ignore silencieusement */ }
+}
+
+function hydraterItems(data){
+  ALL_ITEMS = data.map((it, i) => {
+    let cleanedDate = (it.date || "").toString().trim().replace(/(\b\d{4}\b)\s+\1/g, "$1").trim();
+    return {
+      ...it,
+      date: cleanedDate,
+      parsed: parseItemDate(cleanedDate),
+      _id: i
+    };
+  });
+}
+
+function masquerOverlay(){
+  const overlay = document.getElementById("loadingOverlay");
+  if(!overlay) return;
+  overlay.classList.add("hidden");
+  setTimeout(() => overlay.remove(), 350);
+}
+
 async function load(){
   const overlay = document.getElementById("loadingOverlay");
   const app = document.querySelector("main");
-  const start = Date.now();
-  try{
-    const res = await fetch(API_URL);
-    if(!res.ok) throw new Error("Réponse réseau invalide");
-    const data = await res.json();
-    if(!Array.isArray(data)) throw new Error("Format inattendu");
 
-    ALL_ITEMS = data.map((it, i) => ({ ...it, parsed: parseItemDate(it.date), _id: i }));
+  const cache = lireCache();
+  const cacheEstFrais = cache && (Date.now() - cache.ts) < CACHE_TTL_MS;
 
-    const elapsed = Date.now() - start;
-    if(elapsed < 900) await new Promise(r => setTimeout(r, 900 - elapsed));
-
+  // 1) S'il y a un cache (même périmé), on affiche IMMÉDIATEMENT — aucune attente réseau visible.
+  if(cache){
+    hydraterItems(cache.data);
     buildFilters();
     render();
+    masquerOverlay();
+  }
 
-    overlay.classList.add("hidden");
-    setTimeout(() => overlay.remove(), 350);
+  // 2) Si le cache est frais, inutile de re-solliciter le serveur : on s'arrête là.
+  if(cacheEstFrais) return;
+
+  // 3) Sinon (pas de cache, ou cache périmé) : on va chercher les données à jour.
+  //    Si un cache était déjà affiché, ça se passe en silence, sans overlay ni écran d'erreur.
+  try{
+    const data = await loadViaJSONP();
+    if(!Array.isArray(data)) throw new Error("Format inattendu");
+
+    ecrireCache(data);
+    hydraterItems(data);
+    buildFilters();
+    render();
+    masquerOverlay();
   }catch(err){
     console.error(err);
-    overlay.classList.add("hidden");
-    app.innerHTML = `
-      <div class="state">
-        <div class="big">Le calendrier ne répond pas.</div>
-        Réessaie dans un instant, ou vérifie la connexion à la source.
-      </div>`;
+    if(!cache){
+      // Aucune donnée à afficher, ni fraîche ni en cache : on montre l'état d'erreur.
+      masquerOverlay();
+      app.innerHTML = `
+        <div class="state">
+          <div class="big">Le calendrier ne répond pas.</div>
+          Réessaie dans un instant, ou vérifie la connexion à la source.
+          <div style="margin-top:16px;">
+            <button class="today-btn" onclick="location.reload()">🔄 Réessayer</button>
+          </div>
+        </div>`;
+    }
+    // Sinon : le cache périmé reste affiché tel quel, tant pis pour cette fois — pas d'interruption pour l'utilisateur.
   }
 }
 
