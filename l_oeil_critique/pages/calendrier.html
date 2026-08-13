@@ -28,459 +28,899 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
 
 <style>
-  :root{
-    --bg:#121014;
-    --bg-raised:#1a171c;
-    --stub:#1f1c21;
-    --cell:#19161a;
-    --hairline:#332e35;
-    --hairline-soft:#2a262b;
-    --ink2:#f4efe6;
-    --ink-dim:#a89f95;
-    --ink-faint:#6f6a67;
-    --red:#c1272d;
-    --red-dim:#7a2024;
-    --gold:#cfa348;
-    --gold-dim:#8a7133;
-    --cat-films:#5b8ac9;
-    --cat-series:#4fb3ad;
-    --cat-jeux:#7fae5a;
-    --cat-animes:#e0a24f;
-    --cat-evenements:#d4638a;
-    --cat-autre:#9089a3;
-    --cat-music:#b57ad1;
-    --radius:2px;
+  /* ==========================================================================
+     DESIGN SYSTEM & PALETTE CINÉMATOGRAPHIQUE
+     ========================================================================== */
+  :root {
+    --bg-dark: #09080b;
+    --bg-card: #131117;
+    --bg-card-raised: #1b1822;
+    --bg-input: #15131a;
+    
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-medium: rgba(255, 255, 255, 0.14);
+    --border-gold: rgba(212, 175, 55, 0.35);
+    
+    --text-primary: #f6f3ed;
+    --text-muted: #a8a096;
+    --text-faint: #6e6760;
+    
+    --gold: #d4af37;
+    --gold-light: #f3e3a1;
+    --gold-glow: rgba(212, 175, 55, 0.18);
+    --red: #e53935;
+    --red-dim: #7a1c1d;
+    --red-glow: rgba(229, 57, 53, 0.2);
+    
+    /* Catégories de contenu */
+    --cat-films: #5b8ac9;
+    --cat-series: #4fb3ad;
+    --cat-jeux: #7fae5a;
+    --cat-animes: #e0a24f;
+    --cat-evenements: #d4638a;
+    --cat-autre: #9089a3;
+    --cat-music: #b57ad1;
+    
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 9999px;
+
+    --shadow-subtle: 0 4px 20px rgba(0,0,0,0.35);
+    --shadow-elevated: 0 12px 35px rgba(0,0,0,0.55);
+    --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body.lp-page{
-    margin:0;
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body.lp-page {
+    margin: 0;
     background:
-      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(193,39,45,0.10), transparent 60%),
-      radial-gradient(ellipse 700px 400px at 100% 0%, rgba(207,163,72,0.06), transparent 55%),
-      var(--bg);
-    color:var(--ink2);
-    font-family:'Inter', sans-serif;
-    -webkit-font-smoothing:antialiased;
-    min-height:100vh;
+      radial-gradient(ellipse 1100px 700px at 20% -10%, rgba(229, 57, 53, 0.11), transparent 60%),
+      radial-gradient(ellipse 900px 600px at 90% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
+      var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    line-height: 1.5;
   }
 
-  ::selection{ background:var(--red); color:#fff; }
-  a{ color:inherit; }
-  button{ font-family:inherit; }
+  ::selection { background: var(--gold); color: #000; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; border: none; background: none; }
 
-  /* ---------- EN-TÊTE ---------- */
-  .list-page-header{
-    max-width:1180px;
-    margin:0 auto;
-    padding:32px 24px 0;
-  }
-  .list-page-header__breadcrumb{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--ink-faint);
-    margin:0;
-  }
-  .list-page-header__breadcrumb a:hover{ color:var(--gold); }
-  .list-page-header__breadcrumb .is-current{ color:var(--gold); }
-  .list-page-header__description{
-    color:var(--ink-dim);
-    font-size:0.92rem;
-    max-width:64ch;
-    line-height:1.6;
+  button:focus-visible, input:focus-visible, a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
   }
 
-  main{ max-width:1180px; margin:0 auto; padding:0 24px 80px; }
-
-  /* ---------- TOOLBAR ---------- */
-  .toolbar{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-    gap:14px;
-    margin-top:18px;
-  }
-  .search-wrap{ position:relative; flex:1 1 280px; max-width:380px; }
-  .search-input{
-    width:100%;
-    font-family:'Inter', sans-serif;
-    font-size:13px;
-    padding:10px 14px 10px 34px;
-    border-radius:999px;
-    border:1px solid var(--hairline);
-    background:var(--bg-raised);
-    color:var(--ink2);
-    outline:none;
-    transition:border-color .15s ease;
-  }
-  .search-input::placeholder{ color:var(--ink-faint); }
-  .search-input:focus{ border-color:var(--gold); }
-  .search-icon{
-    position:absolute; left:13px; top:50%; transform:translateY(-50%);
-    font-size:13px; pointer-events:none; opacity:.7;
-  }
-  .stat-count{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    color:var(--ink-faint);
-    white-space:nowrap;
+  /* ---------- EN-TÊTE PAGE CENTRÉ & ÉLÉGANT ---------- */
+  .list-page-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 16px;
+    text-align: center;
   }
 
-  .controls{
-    display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;
+  .list-page-header__breadcrumb {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
-  .chip{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11.5px;
-    letter-spacing:0.02em;
-    padding:7px 13px;
-    border:1px solid var(--hairline);
-    border-radius:999px;
-    background:transparent;
-    color:var(--ink-dim);
-    cursor:pointer;
-    transition:all .15s ease;
-    white-space:nowrap;
-  }
-  .chip:hover{ border-color:var(--ink-dim); color:var(--ink2); }
-  .chip.active{ background:var(--ink2); color:var(--bg); border-color:var(--ink2); }
+  .list-page-header__breadcrumb a { transition: color var(--transition); }
+  .list-page-header__breadcrumb a:hover { color: var(--gold); }
+  .list-page-header__breadcrumb .is-current { color: var(--gold); font-weight: 600; }
 
-  /* ---------- CETTE SEMAINE (bandeau) ---------- */
-  .week-strip{ margin-top:30px; }
-  .week-strip__head{
-    display:flex; align-items:baseline; gap:10px; margin-bottom:12px;
-  }
-  .week-strip__head h2{
-    font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;
-    color:var(--red); margin:0;
-  }
-  .week-strip__head .line{
-    flex:1; height:1px;
-    background:repeating-linear-gradient(90deg, var(--red-dim) 0 6px, transparent 6px 12px);
-  }
-  .week-strip__row{
-    display:flex; gap:12px; overflow-x:auto; padding-bottom:6px;
-    scrollbar-width:thin;
-  }
-  .week-card{
-    flex:0 0 auto;
-    width:190px;
-    background:var(--stub);
-    border:1px solid var(--hairline);
-    border-radius:var(--radius);
-    padding:12px 14px;
-    cursor:pointer;
-    transition:transform .15s ease, border-color .15s ease;
-  }
-  .week-card:hover{ transform:translateY(-2px); border-color:#4a444c; }
-  .week-card__ech{
-    font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--gold);
-  }
-  .week-card__ech.today{ color:var(--red); font-weight:600; }
-  .week-card__title{
-    font-family:'Fraunces', serif; font-weight:600; font-size:0.95rem;
-    margin:6px 0 8px; line-height:1.3;
+  .list-page-header__title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 0 0 16px;
+    color: var(--text-primary);
+    line-height: 1.1;
   }
 
-  /* ---------- MARQUISE (navigation mois) ---------- */
-  .marquee{
-    margin-top:34px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:18px;
-    padding:16px 20px;
-    background:linear-gradient(180deg, var(--bg-raised), var(--stub));
-    border:1px solid var(--hairline);
-    border-radius:6px;
-  }
-  .marquee::before, .marquee::after{
-    content:"";
-    position:absolute; left:14px; right:14px;
-    height:1px;
-    background-image:radial-gradient(circle, var(--gold-dim) 1.4px, transparent 1.6px);
-    background-size:16px 1px;
-    background-repeat:repeat-x;
-    opacity:.8;
-  }
-  .marquee::before{ top:6px; }
-  .marquee::after{ bottom:6px; }
-  .marquee-btn{
-    font-family:'JetBrains Mono', monospace;
-    font-size:15px;
-    width:34px; height:34px;
-    border-radius:50%;
-    border:1px solid var(--hairline);
-    background:transparent;
-    color:var(--ink-dim);
-    cursor:pointer;
-    transition:all .15s ease;
-    flex:0 0 auto;
-  }
-  .marquee-btn:hover{ border-color:var(--gold); color:var(--gold); }
-  .marquee-label{
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-style:italic;
-    font-size:1.5rem;
-    letter-spacing:0.02em;
-    color:var(--ink2);
-    min-width:220px;
-    text-align:center;
-  }
-  .marquee-label .yr{ color:var(--gold); font-style:normal; font-weight:600; font-size:1rem; margin-left:6px; }
-  .today-btn{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    padding:8px 14px;
-    border-radius:999px;
-    border:1px dashed var(--hairline);
-    background:transparent;
-    color:var(--ink-dim);
-    cursor:pointer;
-    transition:all .15s ease;
-  }
-  .today-btn:hover{ border-color:var(--gold); color:var(--gold); }
-
-  /* ---------- GRILLE CALENDRIER ---------- */
-  .cal-wrap{ margin-top:18px; }
-  .weekdays{
-    display:grid;
-    grid-template-columns:repeat(7, 1fr);
-    gap:6px;
-    position:relative;
-    padding:6px 0;
-  }
-  .weekdays::before, .weekdays::after{
-    content:"";
-    position:absolute; left:0; right:0; height:1px;
-    background-image:radial-gradient(circle, var(--hairline) 1.2px, transparent 1.4px);
-    background-size:14px 1px; background-repeat:repeat-x;
-  }
-  .weekdays::before{ top:0; }
-  .weekdays::after{ bottom:0; }
-  .weekday{
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
-    text-align:center; color:var(--ink-faint); padding:6px 0;
+  .list-page-header__description2 {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    max-width: 68ch;
+    line-height: 1.65;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .cal-grid{
-    display:grid;
-    grid-template-columns:repeat(7, 1fr);
-    gap:6px;
-    margin-top:6px;
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
   }
-  .cal-cell{
-    position:relative;
-    min-height:104px;
-    background:var(--cell);
-    border:1px solid var(--hairline-soft);
-    border-radius:var(--radius);
-    padding:6px 6px 8px;
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    cursor:default;
-  }
-  .cal-cell.outside{ opacity:0.28; }
-  .cal-cell.has-events{ cursor:pointer; }
-  .cal-cell.has-events:hover{ border-color:#4a444c; }
-  .cal-cell.is-today{
-    border-color:var(--gold);
-    box-shadow:0 0 0 1px var(--gold), 0 0 16px rgba(207,163,72,0.18);
-  }
-  .cal-cell.is-week{ border-color:var(--red-dim); }
-  .cal-cell__num{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11px;
-    color:var(--ink-faint);
-    align-self:flex-end;
-  }
-  .cal-cell.is-today .cal-cell__num{ color:var(--gold); font-weight:600; }
-  .cal-cell__events{ display:flex; flex-direction:column; gap:3px; }
-  .ev-chip{
-    display:flex; align-items:center; gap:5px;
-    font-family:'Inter', sans-serif;
-    font-size:11px;
-    line-height:1.3;
-    padding:3px 6px;
-    border-radius:4px;
-    background:rgba(255,255,255,0.05);
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-  .ev-dot{ width:6px; height:6px; border-radius:50%; flex:0 0 auto; }
-  .ev-more{
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px;
-    color:var(--ink-faint);
-    padding:2px 6px;
-  }
-  .cat-films .ev-dot, .dot-films{ background:var(--cat-films); }
-  .cat-series .ev-dot, .dot-series{ background:var(--cat-series); }
-  .cat-jeux .ev-dot, .dot-jeux{ background:var(--cat-jeux); }
-  .cat-animes .ev-dot, .dot-animes{ background:var(--cat-animes); }
-  .cat-evenements .ev-dot, .dot-evenements{ background:var(--cat-evenements); }
-  .cat-autre .ev-dot, .dot-autre{ background:var(--cat-autre); }
-  .cat-music .ev-dot, .dot-music{ background:var(--cat-music); }
 
-  .cat-tag{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family:'JetBrains Mono', monospace;
-    font-size:10px; letter-spacing:0.03em;
-    padding:3px 9px; border-radius:999px;
-    background:rgba(255,255,255,0.06);
+  /* ---------- BARRE DE RECHERCHE & FILTRES ---------- */
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
   }
-  .cat-tag.cat-films{ background:rgba(91,138,201,0.16); color:var(--cat-films); }
-  .cat-tag.cat-series{ background:rgba(79,179,173,0.16); color:var(--cat-series); }
-  .cat-tag.cat-jeux{ background:rgba(127,174,90,0.16); color:var(--cat-jeux); }
-  .cat-tag.cat-animes{ background:rgba(224,162,79,0.16); color:var(--cat-animes); }
-  .cat-tag.cat-evenements{ background:rgba(212,99,138,0.16); color:var(--cat-evenements); }
-  .cat-tag.cat-autre{ background:rgba(144,137,163,0.16); color:var(--cat-autre); }
-  .cat-tag.cat-music{ background:rgba(181,122,209,0.16); color:var(--cat-music); }
-  .cat-tag .dot{ width:6px; height:6px; border-radius:50%; }
-  .cat-tag.cat-films .dot{ background:var(--cat-films); }
-  .cat-tag.cat-series .dot{ background:var(--cat-series); }
-  .cat-tag.cat-jeux .dot{ background:var(--cat-jeux); }
-  .cat-tag.cat-animes .dot{ background:var(--cat-animes); }
-  .cat-tag.cat-evenements .dot{ background:var(--cat-evenements); }
-  .cat-tag.cat-autre .dot{ background:var(--cat-autre); }
-  .cat-tag.cat-music .dot{ background:var(--cat-music); }
 
-  /* ---------- SECTIONS FLOUES (sous la grille) ---------- */
-  .fuzzy-sections{ display:flex; flex-direction:column; gap:22px; margin-top:30px; }
-  .fuzzy-block h3{
-    font-family:'Fraunces', serif; font-style:italic; font-weight:600;
-    font-size:0.98rem; color:var(--ink-dim); margin:0 0 10px;
-    display:flex; align-items:center; gap:8px;
+  .search-wrap {
+    position: relative;
+    flex: 1 1 320px;
+    max-width: 420px;
   }
-  .fuzzy-block h3 .count{ font-family:'JetBrains Mono', monospace; font-style:normal; font-size:10px; color:var(--ink-faint); }
-  .fuzzy-row{ display:flex; flex-wrap:wrap; gap:10px; }
-  .fuzzy-pill{
-    display:flex; align-items:center; gap:8px;
-    background:var(--stub); border:1px dashed var(--hairline);
-    border-radius:999px; padding:7px 12px 7px 8px;
-    cursor:pointer; transition:border-color .15s ease;
-  }
-  .fuzzy-pill:hover{ border-color:var(--gold); }
-  .fuzzy-pill span.title{ font-size:12.5px; }
-  details.fuzzy-collapse summary{
-    cursor:pointer; list-style:none;
-    font-family:'Fraunces', serif; font-style:italic; font-weight:600;
-    font-size:0.98rem; color:var(--ink-faint);
-    display:flex; align-items:center; gap:8px;
-  }
-  details.fuzzy-collapse summary::-webkit-details-marker{ display:none; }
-  details.fuzzy-collapse summary::after{ content:"▸"; margin-left:auto; font-family:'JetBrains Mono', monospace; font-size:12px; }
-  details.fuzzy-collapse[open] summary::after{ transform:rotate(90deg); display:inline-block; }
-  details.fuzzy-collapse .fuzzy-row{ margin-top:10px; }
 
-  /* ---------- AGENDA (mode recherche) ---------- */
-  .agenda{ margin-top:30px; display:flex; flex-direction:column; gap:26px; }
-  .agenda-group h3{
-    font-family:'Fraunces', serif; font-weight:600; font-size:1.1rem;
-    color:var(--gold); margin:0 0 12px;
+  .search-input {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    padding: 12px 18px 12px 42px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    outline: none;
+    transition: var(--transition);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
   }
-  .agenda-grid{
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:14px;
-  }
-  .agenda-card{
-    display:flex; gap:12px;
-    background:var(--stub); border:1px solid var(--hairline);
-    border-radius:var(--radius); padding:12px 14px;
-    cursor:pointer; transition:transform .15s ease, border-color .15s ease;
-  }
-  .agenda-card:hover{ transform:translateY(-2px); border-color:#4a444c; }
-  .agenda-date{
-    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ink-faint);
-    flex:0 0 auto; white-space:nowrap; margin-bottom:2px;
-  }
-  .agenda-title{ font-family:'Fraunces', serif; font-weight:600; font-size:1rem; margin:2px 0 8px; }
-  .agenda-tags{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-  .agenda-plat{ font-family:'Inter', sans-serif; font-size:11px; color:var(--ink-dim); background:var(--bg-raised); padding:3px 8px; border-radius:999px; border:1px solid var(--hairline); }
 
-  /* ---------- MODALE JOUR / ITEM ---------- */
-  .modal-overlay{
-    position:fixed; inset:0; background:rgba(8,7,9,0.78);
-    backdrop-filter:blur(4px);
-    display:flex; align-items:center; justify-content:center;
-    z-index:9998; padding:20px;
-    opacity:0; pointer-events:none; transition:opacity .18s ease;
+  .search-input::placeholder { color: var(--text-faint); }
+  .search-input:focus {
+    border-color: var(--gold);
+    background: var(--bg-card-raised);
+    box-shadow: 0 0 0 4px var(--gold-glow);
   }
-  .modal-overlay.open{ opacity:1; pointer-events:auto; }
-  .modal-box{
-    width:100%; max-width:520px; max-height:82vh; overflow-y:auto;
-    background:var(--bg-raised); border:1px solid var(--hairline);
-    border-radius:8px; padding:22px;
-  }
-  .modal-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
-  .modal-head h3{ font-family:'Fraunces', serif; font-weight:600; font-size:1.15rem; margin:0; }
-  .modal-close{
-    width:30px; height:30px; border-radius:50%; border:1px solid var(--hairline);
-    background:transparent; color:var(--ink-dim); font-size:14px; cursor:pointer;
-  }
-  .modal-close:hover{ border-color:var(--gold); color:var(--gold); }
-  .modal-item{ display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--hairline); }
-  .modal-item:first-of-type{ border-top:none; }
-  .modal-poster{
-    flex:0 0 84px; height:120px; border-radius:4px; background:var(--stub);
-    background-size:cover; background-position:center;
-    display:flex; align-items:center; justify-content:center;
-    border:1px solid var(--hairline);
-  }
-  .modal-poster .ph{ font-size:10px; color:var(--ink-faint); font-family:'JetBrains Mono', monospace; text-align:center; padding:4px; }
-  .modal-body{ flex:1; min-width:0; display:flex; flex-direction:column; gap:6px; justify-content:flex-start; }
-  .modal-title{ font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; margin:0; line-height:1.2; }
-  .modal-date{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--gold); margin-top:4px; }
-  .modal-link{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--cat-films); text-decoration:none; display:inline-block; margin-top:8px; border:1px solid rgba(91,138,201,0.4); padding:5px 10px; border-radius:4px; transition:background .15s; text-align:center; width:fit-content; }
-  .modal-link:hover{ background:rgba(91,138,201,0.1); }
 
-  /* ---------- ÉTATS / LOADER ---------- */
-  #loadingOverlay{
-    position:fixed; inset:0; display:flex; justify-content:center; align-items:center;
-    background:rgba(10,10,10,.82); backdrop-filter:blur(8px); z-index:99999;
-    transition:opacity .35s ease;
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0.5;
   }
-  #loadingOverlay.hidden{ opacity:0; visibility:hidden; }
-  .loading-box{
-    width:340px; padding:35px; border-radius:12px; background:#1b181d;
-    border:1px solid var(--hairline); text-align:center; box-shadow:0 20px 70px rgba(0,0,0,.45);
-  }
-  .loading-box h2{ margin:20px 0 10px; font-family:'Fraunces',serif; font-size:1.8rem; color:var(--ink2); }
-  .loading-box p{ margin:0; color:var(--ink-dim); font-size:.95rem; }
-  .spinner{
-    width:42px; height:42px; margin:auto;
-    border:3px solid rgba(255,255,255,.15); border-top-color:var(--gold);
-    border-radius:50%; animation:spin .8s linear infinite;
-  }
-  .spinner.small{ width:20px; height:20px; border-width:2px; margin:0; }
-  @keyframes spin{ to{ transform:rotate(360deg); } }
 
-  .state{
-    padding:60px 24px; text-align:center; color:var(--ink-dim);
-    font-family:'JetBrains Mono', monospace; font-size:13px;
+  .stat-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    background: var(--bg-card-raised);
+    padding: 7px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-subtle);
   }
-  .state .big{ font-family:'Fraunces', serif; font-size:1.4rem; color:var(--ink2); margin-bottom:8px; font-style:italic; }
 
-  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
 
-  @media (max-width:720px){
-    .cal-cell{ min-height:64px; padding:4px; }
-    .ev-chip span.txt{ display:none; }
-    .ev-chip{ justify-content:center; padding:4px; }
-    .cal-cell__events{ flex-direction:row; flex-wrap:wrap; gap:3px; }
-    .weekday{ font-size:9px; }
-    .marquee-label{ font-size:1.15rem; min-width:0; }
-    .week-card{ width:160px; }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    padding: 8px 16px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-pill);
+    background: var(--bg-card);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .chip:hover {
+    border-color: var(--border-medium);
+    color: var(--text-primary);
+    background: var(--bg-card-raised);
+    transform: translateY(-1px);
+  }
+
+  .chip.active {
+    background: var(--text-primary);
+    color: var(--bg-dark);
+    border-color: var(--text-primary);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.15);
+  }
+
+  /* ---------- BANDEAU CETTE SEMAINE ---------- */
+  .week-strip {
+    margin-top: 40px;
+  }
+
+  .week-strip__head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .week-strip__head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--red);
+    margin: 0;
+  }
+
+  .week-strip__head .line {
+    flex: 1;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--red-glow) 0 6px, transparent 6px 12px);
+  }
+
+  .week-strip__row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 4px 2px 12px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-medium) transparent;
+  }
+
+  .week-card {
+    flex: 0 0 205px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .week-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-gold);
+    background: var(--bg-card-raised);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .week-card__ech {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .week-card__ech.today {
+    color: var(--red);
+  }
+
+  .week-card__title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    margin: 4px 0 10px;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ---------- MARQUISE (NAVIGATION DU MOIS) ---------- */
+  .marquee {
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: linear-gradient(180deg, var(--bg-card-raised) 0%, var(--bg-card) 100%);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .marquee-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-dark);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marquee-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 12px var(--gold-glow);
+    transform: scale(1.05);
+  }
+
+  .marquee-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    text-align: center;
+  }
+
+  .marquee-label .yr {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-left: 8px;
+  }
+
+  .today-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: var(--radius-pill);
+    border: 1px dashed var(--border-gold);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .today-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.08);
+  }
+
+  /* ---------- GRILLE CALENDRIER (SANS DÉBORDEMENT) ---------- */
+  .cal-wrap { margin-top: 24px; }
+
+  .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 10px;
+  }
+
+  .weekday {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-faint);
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .cal-cell {
+    position: relative;
+    min-height: 118px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: default;
+    transition: var(--transition);
+    min-width: 0;
+  }
+
+  .cal-cell.outside {
+    background: rgba(12, 10, 15, 0.35);
+    border-color: rgba(255, 255, 255, 0.02);
+  }
+
+  .cal-cell.outside .cal-cell__num {
+    color: var(--text-faint);
+    opacity: 0.35;
+  }
+
+  .cal-cell.has-events { cursor: pointer; }
+  .cal-cell.has-events:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: var(--bg-card-raised);
+  }
+
+  .cal-cell.is-today {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold), 0 0 18px var(--gold-glow);
+  }
+
+  .cal-cell.is-week {
+    border-color: var(--red-dim);
+  }
+
+  .cal-cell__num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    align-self: flex-end;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .cal-cell.is-today .cal-cell__num {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .cal-cell__events {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .ev-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .ev-chip .txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
+  .ev-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .ev-more {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--text-faint);
+    padding: 2px 4px;
+  }
+
+  .cat-films .ev-dot, .dot-films { background: var(--cat-films); }
+  .cat-series .ev-dot, .dot-series { background: var(--cat-series); }
+  .cat-jeux .ev-dot, .dot-jeux { background: var(--cat-jeux); }
+  .cat-animes .ev-dot, .dot-animes { background: var(--cat-animes); }
+  .cat-evenements .ev-dot, .dot-evenements { background: var(--cat-evenements); }
+  .cat-autre .ev-dot, .dot-autre { background: var(--cat-autre); }
+  .cat-music .ev-dot, .dot-music { background: var(--cat-music); }
+
+  .cat-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .cat-tag.cat-films { background: rgba(91,138,201,0.18); color: var(--cat-films); }
+  .cat-tag.cat-series { background: rgba(79,179,173,0.18); color: var(--cat-series); }
+  .cat-tag.cat-jeux { background: rgba(127,174,90,0.18); color: var(--cat-jeux); }
+  .cat-tag.cat-animes { background: rgba(224,162,79,0.18); color: var(--cat-animes); }
+  .cat-tag.cat-evenements { background: rgba(212,99,138,0.18); color: var(--cat-evenements); }
+  .cat-tag.cat-autre { background: rgba(144,137,163,0.18); color: var(--cat-autre); }
+  .cat-tag.cat-music { background: rgba(181,122,209,0.18); color: var(--cat-music); }
+  .cat-tag .dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  /* ---------- SECTIONS FLOUES ---------- */
+  .fuzzy-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 36px;
+  }
+
+  .fuzzy-block h3 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .fuzzy-block h3 .count {
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-size: 10px;
+    color: var(--text-faint);
+  }
+
+  .fuzzy-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .fuzzy-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: 1px dashed var(--border-subtle);
+    border-radius: var(--radius-pill);
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .fuzzy-pill:hover {
+    border-color: var(--gold);
+    background: var(--bg-card-raised);
+    transform: translateY(-1px);
+  }
+
+  .fuzzy-pill span.title { font-size: 12.5px; }
+
+  details.fuzzy-collapse summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-faint);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  details.fuzzy-collapse summary::-webkit-details-marker { display: none; }
+  details.fuzzy-collapse summary::after {
+    content: "▸";
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    transition: transform var(--transition);
+  }
+
+  details.fuzzy-collapse[open] summary::after { transform: rotate(90deg); }
+  details.fuzzy-collapse .fuzzy-row { margin-top: 14px; }
+
+  /* ---------- AGENDA (MODE RECHERCHE) ---------- */
+  .agenda {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .agenda-group h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .agenda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .agenda-card {
+    display: flex;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .agenda-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-gold);
+    background: var(--bg-card-raised);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .agenda-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+  }
+
+  .agenda-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 2px 0 10px;
+    line-height: 1.35;
+  }
+
+  .agenda-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .agenda-plat {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--bg-dark);
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* ---------- MODALE DÉTAILS D'UN ITEM ---------- */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 4, 7, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+  }
+
+  .modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+  .modal-box {
+    width: 100%;
+    max-width: 540px;
+    max-height: 84vh;
+    overflow-y: auto;
+    background: var(--bg-card-raised);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.7);
+  }
+
+  .modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .modal-head h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .modal-close {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-dark);
+    color: var(--text-muted);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+  }
+
+  .modal-close:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: rotate(90deg);
+  }
+
+  .modal-item {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .modal-item:first-of-type { border-top: none; }
+
+  .modal-poster {
+    flex: 0 0 92px;
+    height: 132px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+
+  .modal-poster .ph {
+    font-size: 10px;
+    color: var(--text-faint);
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+    padding: 4px;
+  }
+
+  .modal-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .modal-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .modal-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+
+  .modal-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cat-films);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 8px;
+    border: 1px solid rgba(91,138,201,0.4);
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    width: fit-content;
+  }
+
+  .modal-link:hover {
+    background: rgba(91,138,201,0.15);
+    border-color: var(--cat-films);
+  }
+
+  /* ---------- LOADER & ÉTATS DE CHARGEMENT ---------- */
+  #loadingOverlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(9, 8, 11, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 99999;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+
+  #loadingOverlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .loading-box {
+    width: 330px;
+    padding: 40px 32px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card-raised);
+    border: 1px solid var(--border-medium);
+    text-align: center;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .loading-box h2 {
+    margin: 20px 0 8px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.65rem;
+    color: var(--text-primary);
+  }
+
+  .loading-box p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+
+  .spinner {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto;
+    border: 3px solid var(--border-subtle);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  .spinner.small {
+    width: 18px;
+    height: 18px;
+    border-width: 2px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .state {
+    padding: 70px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+
+  .state .big {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  @media (max-width: 720px) {
+    .cal-cell { min-height: 70px; padding: 4px; }
+    .ev-chip span.txt { display: none; }
+    .ev-chip { justify-content: center; padding: 4px; }
+    .cal-cell__events { flex-direction: row; flex-wrap: wrap; gap: 3px; }
+    .weekday { font-size: 9px; }
+    .marquee-label { font-size: 1.25rem; }
+    .week-card { flex: 0 0 170px; }
   }
 </style>
 </head>
@@ -784,6 +1224,7 @@ function renderCalendarGrid(){
   const firstOfMonth = new Date(viewYear, viewMonth, 1);
   const leading = WEEKDAY_INDEX(firstOfMonth);
   const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+  const prevMonthLastDay = new Date(viewYear, viewMonth, 0).getDate();
   const totalCells = Math.ceil((leading + daysInMonth) / 7) * 7;
 
   const dayItems = ALL_ITEMS.filter(it =>
@@ -798,31 +1239,43 @@ function renderCalendarGrid(){
   let html = "";
   for(let cellIdx = 0; cellIdx < totalCells; cellIdx++){
     const dayNum = cellIdx - leading + 1;
-    const inMonth = dayNum >= 1 && dayNum <= daysInMonth;
-    if(!inMonth){
-      html += `<div class="cal-cell outside"></div>`;
-      continue;
-    }
-    const cellDate = new Date(viewYear, viewMonth, dayNum);
-    const isToday = cellDate.getTime() === today.getTime();
-    const diff = daysUntil(cellDate.getTime());
-    const isWeek = diff >= 0 && diff <= 7;
-    const events = byDay.get(dayNum) || [];
-    const shown = events.slice(0, 3);
-    const rest = events.length - shown.length;
+    if (cellIdx < leading) {
+      // Jours du mois précédent
+      const prevDayNum = prevMonthLastDay - leading + cellIdx + 1;
+      html += `
+        <div class="cal-cell outside">
+          <span class="cal-cell__num">${prevDayNum}</span>
+        </div>`;
+    } else if (cellIdx < leading + daysInMonth) {
+      // Jours du mois en cours
+      const cellDate = new Date(viewYear, viewMonth, dayNum);
+      const isToday = cellDate.getTime() === today.getTime();
+      const diff = daysUntil(cellDate.getTime());
+      const isWeek = diff >= 0 && diff <= 7;
+      const events = byDay.get(dayNum) || [];
+      const shown = events.slice(0, 3);
+      const rest = events.length - shown.length;
 
-    html += `
-      <div class="cal-cell ${events.length ? "has-events":""} ${isToday ? "is-today":""} ${isWeek && !isToday ? "is-week":""}"
-           ${events.length ? `data-day="${dayNum}"` : ""}>
-        <span class="cal-cell__num">${dayNum}</span>
-        <div class="cal-cell__events">
-          ${shown.map(it => `
-            <div class="ev-chip ${catClass(it.categorie)}">
-              <span class="ev-dot"></span><span class="txt">${escapeHTML(it.titre)}</span>
-            </div>`).join("")}
-          ${rest > 0 ? `<div class="ev-more">+${rest} autre${rest>1?"s":""}</div>` : ""}
-        </div>
-      </div>`;
+      html += `
+        <div class="cal-cell ${events.length ? "has-events":""} ${isToday ? "is-today":""} ${isWeek && !isToday ? "is-week":""}"
+             ${events.length ? `data-day="${dayNum}"` : ""}>
+          <span class="cal-cell__num">${dayNum}</span>
+          <div class="cal-cell__events">
+            ${shown.map(it => `
+              <div class="ev-chip ${catClass(it.categorie)}">
+                <span class="ev-dot"></span><span class="txt">${escapeHTML(it.titre)}</span>
+              </div>`).join("")}
+            ${rest > 0 ? `<div class="ev-more">+${rest} autre${rest>1?"s":""}</div>` : ""}
+          </div>
+        </div>`;
+    } else {
+      // Jours du mois suivant
+      const nextDayNum = cellIdx - (leading + daysInMonth) + 1;
+      html += `
+        <div class="cal-cell outside">
+          <span class="cal-cell__num">${nextDayNum}</span>
+        </div>`;
+    }
   }
   grid.innerHTML = html;
 
@@ -946,9 +1399,7 @@ function openModal(items, title){
         <p class="modal-title">${escapeHTML(it.titre)}</p>
         <div>${catTagHTML(it.categorie)}</div>
         <span class="modal-date">📅 ${escapeHTML(it.date || "")}</span>
-        ${it.plateforme ? `<span class="modal-date" style="color:var(--ink2);">📺 ${escapeHTML(it.plateforme)}</span>` : ""}
-        ${it.vu === "✔️" ? `<span class="modal-date" style="color:var(--cat-jeux); font-weight:600;">✔️ Vu</span>` : ""}
-        ${it.vu === "❌" ? `<span class="modal-date" style="color:var(--red); font-weight:600;">❌ Pas vu</span>` : ""}
+        ${it.plateforme ? `<span class="modal-date" style="color:var(--text-primary);">📺 ${escapeHTML(it.plateforme)}</span>` : ""}
         ${it.lien ? `<a href="${escapeHTML(it.lien)}" target="_blank" class="modal-link">🔗 Fiche / infos</a>` : ""}
       </div>
     </div>`).join("");
@@ -1046,8 +1497,6 @@ function buildFilters(){
   });
 }
 
-// Chargeur JSONP qui contourne 100 % des restrictions CORS, avec retry automatique
-// et cache-bust pour éviter les échecs transitoires (extensions, quotas, cache réseau).
 function loadViaJSONP(tentative = 1, maxTentatives = 3) {
   return new Promise((resolve, reject) => {
     const callbackName = "handleGASResponse_" + Math.round(Math.random() * 1000000);
@@ -1064,7 +1513,6 @@ function loadViaJSONP(tentative = 1, maxTentatives = 3) {
     };
 
     script = document.createElement("script");
-    // "_t" casse le cache navigateur/proxy qui pourrait servir une réponse périmée ou invalide
     script.src = API_URL + "&callback=" + callbackName + "&_t=" + Date.now();
     script.onerror = function() {
       cleanup();
@@ -1072,7 +1520,7 @@ function loadViaJSONP(tentative = 1, maxTentatives = 3) {
         console.warn(`JSONP : échec de chargement (tentative ${tentative}/${maxTentatives}), nouvel essai…`);
         setTimeout(() => {
           loadViaJSONP(tentative + 1, maxTentatives).then(resolve).catch(reject);
-        }, 800 * tentative); // délai croissant : 0.8s, 1.6s, 2.4s...
+        }, 800 * tentative);
       } else {
         reject(new Error("Erreur de chargement du script JSONP après " + maxTentatives + " tentative(s)"));
       }
@@ -1083,7 +1531,7 @@ function loadViaJSONP(tentative = 1, maxTentatives = 3) {
 }
 
 const CACHE_KEY = "calendrier_sorties_cache_v1";
-const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes : au-delà, on considère le cache "périmé" et on revalide
+const CACHE_TTL_MS = 5 * 60 * 1000;
 
 function lireCache(){
   try{
@@ -1091,14 +1539,14 @@ function lireCache(){
     if(!raw) return null;
     const parsed = JSON.parse(raw);
     if(!Array.isArray(parsed.data)) return null;
-    return parsed; // { data, ts }
+    return parsed;
   }catch(e){ return null; }
 }
 
 function ecrireCache(data){
   try{
     sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
-  }catch(e){ /* stockage plein ou indisponible : on ignore silencieusement */ }
+  }catch(e){ }
 }
 
 function hydraterItems(data){
@@ -1127,7 +1575,6 @@ async function load(){
   const cache = lireCache();
   const cacheEstFrais = cache && (Date.now() - cache.ts) < CACHE_TTL_MS;
 
-  // 1) S'il y a un cache (même périmé), on affiche IMMÉDIATEMENT — aucune attente réseau visible.
   if(cache){
     hydraterItems(cache.data);
     buildFilters();
@@ -1135,11 +1582,8 @@ async function load(){
     masquerOverlay();
   }
 
-  // 2) Si le cache est frais, inutile de re-solliciter le serveur : on s'arrête là.
   if(cacheEstFrais) return;
 
-  // 3) Sinon (pas de cache, ou cache périmé) : on va chercher les données à jour.
-  //    Si un cache était déjà affiché, ça se passe en silence, sans overlay ni écran d'erreur.
   try{
     const data = await loadViaJSONP();
     if(!Array.isArray(data)) throw new Error("Format inattendu");
@@ -1152,7 +1596,6 @@ async function load(){
   }catch(err){
     console.error(err);
     if(!cache){
-      // Aucune donnée à afficher, ni fraîche ni en cache : on montre l'état d'erreur.
       masquerOverlay();
       app.innerHTML = `
         <div class="state">
@@ -1163,7 +1606,6 @@ async function load(){
           </div>
         </div>`;
     }
-    // Sinon : le cache périmé reste affiché tel quel, tant pis pour cette fois — pas d'interruption pour l'utilisateur.
   }
 }
 
