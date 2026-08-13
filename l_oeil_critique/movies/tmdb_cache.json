@@ -11241,5 +11241,26 @@
     "video": false,
     "vote_average": 6.552,
     "vote_count": 558
+  },
+  "Megan Is Missing_2011": {
+    "adult": false,
+    "backdrop_path": "/hGTK2dnm1vXYpr26QGWjXIVpI9l.jpg",
+    "genre_ids": [
+      18,
+      27,
+      53
+    ],
+    "id": 63197,
+    "title": "Megan Is Missing",
+    "original_language": "en",
+    "original_title": "Megan Is Missing",
+    "overview": "Megan Stewart et Amy Herman sont deux jeunes adolescentes que tout oppose mais qui forment une amitié très solide. Megan est une débauchée qui enchaîne les fêtes, tandis qu'Amy est une grande timide mal à l'aise socialement. Un jour, Megan va disparaître après être allée à un rendez-vous pour rencontrer un certain Josh, un soi-disant jeune homme plus âgée qu'elle. À mesure que les médias vont s'emparer de cette histoire, Amy va tout faire pour retrouver sa meilleure amie, mais ce sur quoi elle va tomber dépassera toutes les limites de son cerveau pur et innocent, et l'entraînera dans une spirale horrifique infernale et effroyable.",
+    "popularity": 5.0543,
+    "poster_path": "/lDmIqn0HJDjQJZDZaofuyaAnw2X.jpg",
+    "release_date": "2011-05-01",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.138,
+    "vote_count": 864
   }
 }
