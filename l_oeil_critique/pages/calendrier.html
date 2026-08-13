@@ -139,6 +139,48 @@
     text-align: center;
   }
 
+  /* ---------- BANDEAU PROPOSITION DE SORTIE ---------- */
+  .add-proposal-banner {
+    margin: 24px auto 0;
+    padding: 16px 20px;
+    max-width: 640px;
+    background: linear-gradient(180deg, var(--bg-card-raised) 0%, var(--bg-card) 100%);
+    border: 1px solid var(--border-gold);
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 20px var(--gold-glow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .add-proposal-banner__text {
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .add-proposal-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--bg-dark);
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 4px 15px var(--gold-glow);
+    transition: var(--transition);
+  }
+
+  .add-proposal-banner__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    background: #fff;
+  }
+
   main {
     max-width: 1200px;
     margin: 0 auto;
@@ -391,7 +433,7 @@
     background: rgba(212, 175, 55, 0.08);
   }
 
-  /* ---------- GRILLE CALENDRIER (SANS DÉBORDEMENT) ---------- */
+  /* ---------- GRILLE CALENDRIER ---------- */
   .cal-wrap { margin-top: 24px; }
 
   .weekdays {
@@ -716,8 +758,8 @@
 
   .modal-box {
     width: 100%;
-    max-width: 540px;
-    max-height: 84vh;
+    max-width: 560px;
+    max-height: 85vh;
     overflow-y: auto;
     background: var(--bg-card-raised);
     border: 1px solid var(--border-medium);
@@ -808,6 +850,24 @@
     line-height: 1.25;
   }
 
+  .modal-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .modal-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 2px 7px;
+    border-radius: var(--radius-pill);
+  }
+
   .modal-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11.5px;
@@ -815,23 +875,50 @@
     margin-top: 2px;
   }
 
-  .modal-link {
+  .modal-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .modal-btn-link {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     color: var(--cat-films);
     text-decoration: none;
-    display: inline-block;
-    margin-top: 8px;
     border: 1px solid rgba(91,138,201,0.4);
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: var(--radius-sm);
     transition: var(--transition);
-    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
   }
 
-  .modal-link:hover {
+  .modal-btn-link:hover {
     background: rgba(91,138,201,0.15);
     border-color: var(--cat-films);
+  }
+
+  .btn-gcal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    border: 1px solid var(--border-gold);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(212, 175, 55, 0.05);
+  }
+
+  .btn-gcal:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
+    font-weight: 600;
   }
 
   /* ---------- LOADER & ÉTATS DE CHARGEMENT ---------- */
@@ -941,8 +1028,16 @@
     </p>
     <h1 class="list-page-header__title">Calendrier des sorties</h1>
     <p class="list-page-header__description2">
-        Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, événements, animés et autres suivis par L'Œil Critique. Malgré une veille régulière, certaines annonces peuvent exceptionnellement manquer. Le calendrier est mis à jour en continu.
+        Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, événements, animés et autres suivis par L'Œil Critique. Le calendrier est mis à jour en continu.
     </p>
+
+    <!-- BANDEAU DE PROPOSITION DE SORTIE -->
+    <div class="add-proposal-banner">
+        <p class="add-proposal-banner__text">💡 Une sortie manque à l'appel ? Proposez-la pour qu'elle apparaisse dans le calendrier !</p>
+        <a href="https://script.google.com/macros/s/AKfycbxXeOjoCzPjJeLNRfe3iyyy23dr9f6OstS_nh1h00cfksL5E5djXn42EKDVA1rLO36_cg/exec?vue=ajouter" target="_blank" rel="noopener noreferrer" class="add-proposal-banner__btn">
+            ➕ Proposer une sortie
+        </a>
+    </div>
 </div>
 
 <main>
@@ -999,7 +1094,7 @@
 </div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbwvIu-oRNEI4IxcM0F-x4IgPmTUTqArbiDEF1tz39YaZ-xuyVSzrO1efxs-0RaH7y889g/exec?format=json";
+const API_URL = "https://script.google.com/macros/s/AKfycbw6GZTe_UbHEzV1JF-DfKFVAJH0ER-GjaG_t4zIyeJLzht9GsQOh8hOH4S4iuX-d7CsgA/exec?format=json";
 
 const OMDB_API_KEY = "23538300";
 const OMDB_BASE_URL = "https://www.omdbapi.com/";
@@ -1009,27 +1104,6 @@ const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 const POSTER_CATEGORIES = new Set(["🎬 Films", "📺 Séries", "🎬 Films/Séries", "🍿 Animés"]);
 
 const posterCache = new Map();
-
-async function fetchPosterFromOMDb(title, annee){
-  if(!OMDB_API_KEY) return null;
-  try{
-    const params = new URLSearchParams({ apikey: OMDB_API_KEY, t: title });
-    if(annee) params.set("y", annee);
-    const res = await fetch(`${OMDB_BASE_URL}?${params.toString()}`);
-    if(!res.ok) return null;
-    const data = await res.json();
-    if(data.Response === "True" && data.Poster && data.Poster !== "N/A") return data.Poster;
-    if(annee){
-      const paramsNoYear = new URLSearchParams({ apikey: OMDB_API_KEY, t: title });
-      const res2 = await fetch(`${OMDB_BASE_URL}?${paramsNoYear.toString()}`);
-      if(res2.ok){
-        const data2 = await res2.json();
-        if(data2.Response === "True" && data2.Poster && data2.Poster !== "N/A") return data2.Poster;
-      }
-    }
-    return null;
-  }catch(err){ console.warn("OMDb : affiche introuvable pour", title, err); return null; }
-}
 
 async function fetchPosterFromTMDB(title, annee){
   if(!TMDB_API_KEY) return null;
@@ -1048,14 +1122,34 @@ async function fetchPosterFromTMDB(title, annee){
       });
     }
     if(!hit) hit = withPoster[0];
-    return hit ? `${TMDB_IMAGE_BASE}${hit.poster_path}` : null;
+    if(hit) {
+      const score = hit.vote_average ? Math.round(hit.vote_average * 10) / 10 : null;
+      return { poster: `${TMDB_IMAGE_BASE}${hit.poster_path}`, score };
+    }
+    return null;
   }catch(err){ console.warn("TMDB : affiche introuvable pour", title, err); return null; }
 }
 
+async function fetchPosterFromOMDb(title, annee){
+  if(!OMDB_API_KEY) return null;
+  try{
+    const params = new URLSearchParams({ apikey: OMDB_API_KEY, t: title });
+    if(annee) params.set("y", annee);
+    const res = await fetch(`${OMDB_BASE_URL}?${params.toString()}`);
+    if(!res.ok) return null;
+    const data = await res.json();
+    if(data.Response === "True" && data.Poster && data.Poster !== "N/A") {
+      const score = data.imdbRating && data.imdbRating !== "N/A" ? parseFloat(data.imdbRating) : null;
+      return { poster: data.Poster, score };
+    }
+    return null;
+  }catch(err){ return null; }
+}
+
 async function fetchPoster(title, annee){
-  const fromOMDb = await fetchPosterFromOMDb(title, annee);
-  if(fromOMDb) return fromOMDb;
-  return await fetchPosterFromTMDB(title, annee);
+  const fromTMDB = await fetchPosterFromTMDB(title, annee);
+  if(fromTMDB) return fromTMDB;
+  return await fetchPosterFromOMDb(title, annee);
 }
 
 const MOIS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
@@ -1086,75 +1180,95 @@ let today = new Date(); today.setHours(0,0,0,0);
 let viewYear = today.getFullYear();
 let viewMonth = today.getMonth();
 
-function parseItemDate(dateStr){
-  if(!dateStr) return { kind:"inconnue", sortKey:Infinity };
+function parseItemDate(dateStr) {
+  if (!dateStr) return { kind: "inconnue", sortKey: Infinity };
   let s = dateStr.toString().trim();
 
-  // Nettoyage des années répétées issues de l'API (ex: "Automne 2026 2026" ou "2026 2026")
+  // Nettoyage des doublons d'année (ex: "Automne 2026 2026")
   s = s.replace(/(\b\d{4}\b)\s+\1/g, "$1").trim();
 
-  // Format 1 : JJ/MM/AAAA ou ?/MM/AAAA
-  let m = s.match(/^(\?|\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
-  if(m){
-    let mois = parseInt(m[2], 10) - 1;
-    let annee = parseInt(m[3], 10);
-    if (annee < 100) annee += 2000;
-    if (isNaN(mois) || mois < 0 || mois > 11) return { kind: "inconnue", sortKey: Infinity };
+  // Nettoyage si la date commence par un slash (ex: "/08/2026" -> "08/2026")
+  if (s.startsWith("/")) s = s.substring(1).trim();
 
-    if(m[1] === "?" || m[1] === "") {
-      return { kind:"mois", mois, annee, sortKey:new Date(annee, mois, 28).getTime() };
-    } else {
-      let jour = parseInt(m[1], 10);
-      if (isNaN(jour) || jour < 1 || jour > 31) return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28).getTime() };
-      return { kind:"jour", jour, mois, annee, sortKey:new Date(annee, mois, jour).getTime() };
+  // 1. Format JJ/MM/AAAA ou ?/MM/AAAA
+  let mFr = s.match(/^(\?|\d{1,2})[-/](\d{1,2})[-/](\d{2,4})$/);
+  if (mFr) {
+    let mois = parseInt(mFr[2], 10) - 1; // 08 devient 7 (Août)
+    let annee = parseInt(mFr[3], 10);
+    if (annee < 100) annee += 2000;
+    if (mois >= 0 && mois <= 11) {
+      if (mFr[1] === "?" || mFr[1] === "") {
+        return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28, 12).getTime() };
+      } else {
+        let jour = parseInt(mFr[1], 10);
+        if (jour >= 1 && jour <= 31) {
+          return { kind: "jour", jour, mois, annee, sortKey: new Date(annee, mois, jour, 12).getTime() };
+        }
+        return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28, 12).getTime() };
+      }
     }
   }
 
-  // Format 2 : MM/AAAA (ex: 08/2026)
-  m = s.match(/^(\d{1,2})\/(\d{2,4})$/);
-  if(m){
-    let mois = parseInt(m[1], 10) - 1;
-    let annee = parseInt(m[2], 10);
+  // 2. Format MM/AAAA (ex: 08/2026)
+  let mMois = s.match(/^(\d{1,2})[-/](\d{2,4})$/);
+  if (mMois) {
+    let mois = parseInt(mMois[1], 10) - 1;
+    let annee = parseInt(mMois[2], 10);
     if (annee < 100) annee += 2000;
-    if (!isNaN(mois) && mois >= 0 && mois <= 11) {
-      return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28).getTime() };
+    if (mois >= 0 && mois <= 11) {
+      return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28, 12).getTime() };
     }
   }
 
-  // Format 3 : "Mois AAAA" ou "Saison AAAA" (insensible aux accents)
-  m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
-  if(m){
-    let wordNorm = normStr(m[1]);
-    let annee = parseInt(m[2], 10);
+  // 3. Format "Mois AAAA" ou "Saison AAAA"
+  let mTxt = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
+  if (mTxt) {
+    let wordNorm = normStr(mTxt[1]);
+    let annee = parseInt(mTxt[2], 10);
 
     let idxMois = MOIS_NORM.indexOf(wordNorm);
-    if(idxMois !== -1){
-      return { kind:"mois", mois:idxMois, annee, sortKey:new Date(annee, idxMois, 28).getTime() };
+    if (idxMois !== -1) {
+      return { kind: "mois", mois: idxMois, annee, sortKey: new Date(annee, idxMois, 28, 12).getTime() };
     }
 
-    if(SAISON_MAP[wordNorm]){
+    if (SAISON_MAP[wordNorm]) {
       let infoS = SAISON_MAP[wordNorm];
-      return { kind:"saison", saison:infoS.name, moisDebut:infoS.moisDebut, annee, sortKey:new Date(annee, infoS.moisDebut, 28).getTime() };
+      return { kind: "saison", saison: infoS.name, moisDebut: infoS.moisDebut, annee, sortKey: new Date(annee, infoS.moisDebut, 15, 12).getTime() };
     }
   }
 
-  // Format 4 : "2026" seul
-  m = s.match(/^(\d{4})$/);
-  if(m){
-    let annee = parseInt(m[1], 10);
-    return { kind:"annee", annee, sortKey:new Date(annee, 11, 31, 23).getTime() };
+  // 4. Format "AAAA" seul
+  let mAn = s.match(/^(\d{4})$/);
+  if (mAn) {
+    let annee = parseInt(mAn[1], 10);
+    return { kind: "annee", annee, sortKey: new Date(annee, 11, 31, 12).getTime() };
   }
 
-  // Format 5 : Date standard JS / Google Sheets
+  // 5. Fallback Date JS
   let dParsed = new Date(s);
-  if(!isNaN(dParsed.getTime()) && dParsed.getFullYear() >= 2020 && dParsed.getFullYear() <= 2035){
+  if (!isNaN(dParsed.getTime()) && dParsed.getFullYear() >= 2020 && dParsed.getFullYear() <= 2035) {
     let jour = dParsed.getDate();
     let mois = dParsed.getMonth();
     let annee = dParsed.getFullYear();
-    return { kind:"jour", jour, mois, annee, sortKey:new Date(annee, mois, jour).getTime() };
+    return { kind: "jour", jour, mois, annee, sortKey: new Date(annee, mois, jour, 12).getTime() };
   }
 
-  return { kind:"inconnue", sortKey:Infinity };
+  return { kind: "inconnue", sortKey: Infinity };
+}
+
+function hydraterItems(data){
+  ALL_ITEMS = data.map((it, i) => {
+    let cleanedDate = (it.date || "").toString().trim().replace(/(\b\d{4}\b)\s+\1/g, "$1").trim();
+    return {
+      ...it,
+      date: cleanedDate,
+      parsed: parseItemDate(cleanedDate),
+      _id: i
+    };
+  });
+
+  // Tri chronologique strict de toutes les cartes
+  ALL_ITEMS.sort((a, b) => a.parsed.sortKey - b.parsed.sortKey);
 }
 
 function daysUntil(sortKey){
@@ -1185,6 +1299,27 @@ function matchesFilters(it){
 
 function catTagHTML(cat){
   return `<span class="cat-tag ${catClass(cat)}"><span class="dot"></span>${escapeHTML(cat)}</span>`;
+}
+
+// 📅 Helper pour générer un lien d'ajout à Google Calendar
+function buildGoogleCalendarUrl(it) {
+  const p = it.parsed;
+  let datesStr = "";
+  if (p.kind === "jour") {
+    const mm = String(p.mois + 1).padStart(2, '0');
+    const dd = String(p.jour).padStart(2, '0');
+    const yyyy = p.annee;
+    datesStr = `${yyyy}${mm}${dd}/${yyyy}${mm}${dd}`;
+  } else {
+    // Si pas de jour précis, on met le 1er du mois
+    const mm = String((p.mois || 0) + 1).padStart(2, '0');
+    const yyyy = p.annee || today.getFullYear();
+    datesStr = `${yyyy}${mm}01/${yyyy}${mm}01`;
+  }
+
+  const title = encodeURIComponent(`🍿 Sortie : ${it.titre}`);
+  const details = encodeURIComponent(`Catégorie : ${it.categorie}\nOù voir : ${it.plateforme || 'N/C'}\n${it.lien || ''}`);
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${datesStr}&details=${details}`;
 }
 
 function renderWeekStrip(){
@@ -1240,14 +1375,12 @@ function renderCalendarGrid(){
   for(let cellIdx = 0; cellIdx < totalCells; cellIdx++){
     const dayNum = cellIdx - leading + 1;
     if (cellIdx < leading) {
-      // Jours du mois précédent
       const prevDayNum = prevMonthLastDay - leading + cellIdx + 1;
       html += `
         <div class="cal-cell outside">
           <span class="cal-cell__num">${prevDayNum}</span>
         </div>`;
     } else if (cellIdx < leading + daysInMonth) {
-      // Jours du mois en cours
       const cellDate = new Date(viewYear, viewMonth, dayNum);
       const isToday = cellDate.getTime() === today.getTime();
       const diff = daysUntil(cellDate.getTime());
@@ -1269,7 +1402,6 @@ function renderCalendarGrid(){
           </div>
         </div>`;
     } else {
-      // Jours du mois suivant
       const nextDayNum = cellIdx - (leading + daysInMonth) + 1;
       html += `
         <div class="cal-cell outside">
@@ -1397,30 +1529,53 @@ function openModal(items, title){
       <div class="modal-poster" id="poster-${i}"><span class="ph spinner small"></span></div>
       <div class="modal-body">
         <p class="modal-title">${escapeHTML(it.titre)}</p>
-        <div>${catTagHTML(it.categorie)}</div>
+        <div class="modal-meta-row">
+          ${catTagHTML(it.categorie)}
+          <span class="modal-score" id="score-${i}" style="display:none;"></span>
+        </div>
         <span class="modal-date">📅 ${escapeHTML(it.date || "")}</span>
         ${it.plateforme ? `<span class="modal-date" style="color:var(--text-primary);">📺 ${escapeHTML(it.plateforme)}</span>` : ""}
-        ${it.lien ? `<a href="${escapeHTML(it.lien)}" target="_blank" class="modal-link">🔗 Fiche / infos</a>` : ""}
+        
+        <div class="modal-actions">
+          <a href="${buildGoogleCalendarUrl(it)}" target="_blank" class="btn-gcal">📆 Google Calendar</a>
+          ${it.lien ? `<a href="${escapeHTML(it.lien)}" target="_blank" class="modal-btn-link">🔗 Fiche / infos</a>` : ""}
+        </div>
       </div>
     </div>`).join("");
 
   items.forEach((it, i) => {
     const posterBox = document.getElementById(`poster-${i}`);
+    const scoreBox = document.getElementById(`score-${i}`);
+
     if(!POSTER_CATEGORIES.has(it.categorie)){
       posterBox.innerHTML = `<span class="ph">Pas d'affiche</span>`;
       return;
     }
+
     if(posterCache.has(it.titre)){
-      const url = posterCache.get(it.titre);
-      posterBox.innerHTML = url ? "" : `<span class="ph">Affiche introuvable</span>`;
-      if(url) posterBox.style.backgroundImage = `url("${url.replace(/"/g,'%22')}")`;
+      const cached = posterCache.get(it.titre);
+      if(cached && cached.poster) {
+        posterBox.style.backgroundImage = `url("${cached.poster.replace(/"/g,'%22')}")`;
+        posterBox.innerHTML = "";
+        if(cached.score) {
+          scoreBox.textContent = `⭐ ${cached.score}/10`;
+          scoreBox.style.display = "inline-block";
+        }
+      } else {
+        posterBox.innerHTML = `<span class="ph">Affiche introuvable</span>`;
+      }
       return;
     }
-    fetchPoster(it.titre, it.parsed.annee).then(url => {
-      posterCache.set(it.titre, url);
-      if(url){
-        posterBox.style.backgroundImage = `url("${url.replace(/"/g,'%22')}")`;
+
+    fetchPoster(it.titre, it.parsed.annee).then(res => {
+      posterCache.set(it.titre, res);
+      if(res && res.poster){
+        posterBox.style.backgroundImage = `url("${res.poster.replace(/"/g,'%22')}")`;
         posterBox.innerHTML = "";
+        if(res.score) {
+          scoreBox.textContent = `⭐ ${res.score}/10`;
+          scoreBox.style.display = "inline-block";
+        }
       } else {
         posterBox.innerHTML = `<span class="ph">Affiche introuvable</span>`;
       }
@@ -1429,6 +1584,7 @@ function openModal(items, title){
 
   document.getElementById("modalOverlay").classList.add("open");
 }
+
 function closeModal(){ document.getElementById("modalOverlay").classList.remove("open"); }
 
 function render(){
@@ -1530,12 +1686,12 @@ function loadViaJSONP(tentative = 1, maxTentatives = 3) {
   });
 }
 
-const CACHE_KEY = "calendrier_sorties_cache_v1";
-const CACHE_TTL_MS = 5 * 60 * 1000;
+const CACHE_KEY = "calendrier_sorties_cache_v2";
+const CACHE_TTL_MS = 30 * 60 * 1000;
 
 function lireCache(){
   try{
-    const raw = sessionStorage.getItem(CACHE_KEY);
+    const raw = localStorage.getItem(CACHE_KEY);
     if(!raw) return null;
     const parsed = JSON.parse(raw);
     if(!Array.isArray(parsed.data)) return null;
@@ -1545,20 +1701,8 @@ function lireCache(){
 
 function ecrireCache(data){
   try{
-    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
   }catch(e){ }
-}
-
-function hydraterItems(data){
-  ALL_ITEMS = data.map((it, i) => {
-    let cleanedDate = (it.date || "").toString().trim().replace(/(\b\d{4}\b)\s+\1/g, "$1").trim();
-    return {
-      ...it,
-      date: cleanedDate,
-      parsed: parseItemDate(cleanedDate),
-      _id: i
-    };
-  });
 }
 
 function masquerOverlay(){
@@ -1569,21 +1713,20 @@ function masquerOverlay(){
 }
 
 async function load(){
-  const overlay = document.getElementById("loadingOverlay");
-  const app = document.querySelector("main");
-
   const cache = lireCache();
-  const cacheEstFrais = cache && (Date.now() - cache.ts) < CACHE_TTL_MS;
-
-  if(cache){
+  
+  // STEP 1 : Affichage INSTANTANÉ (0ms) si données en local
+  if(cache && cache.data.length > 0){
     hydraterItems(cache.data);
     buildFilters();
     render();
     masquerOverlay();
   }
 
+  const cacheEstFrais = cache && (Date.now() - cache.ts) < CACHE_TTL_MS;
   if(cacheEstFrais) return;
 
+  // STEP 2 : Mise à jour silencieuse réseau
   try{
     const data = await loadViaJSONP();
     if(!Array.isArray(data)) throw new Error("Format inattendu");
@@ -1594,16 +1737,13 @@ async function load(){
     render();
     masquerOverlay();
   }catch(err){
-    console.error(err);
+    console.error("Erreur réseau:", err);
     if(!cache){
       masquerOverlay();
-      app.innerHTML = `
+      document.querySelector("main").innerHTML = `
         <div class="state">
           <div class="big">Le calendrier ne répond pas.</div>
-          Réessaie dans un instant, ou vérifie la connexion à la source.
-          <div style="margin-top:16px;">
-            <button class="today-btn" onclick="location.reload()">🔄 Réessayer</button>
-          </div>
+          <button class="today-btn" onclick="location.reload()">🔄 Réessayer</button>
         </div>`;
     }
   }
