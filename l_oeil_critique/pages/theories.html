@@ -22,6 +22,30 @@
 <link href="../css/reviews.css" rel="stylesheet"/>
 <link href="../css/list-pages.css" rel="stylesheet"/>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
+    <style>
+        /* Badge "bandes-annonces" sur la carte du bilan D23 — cohérent avec
+           l'habillage guichet de l'article (tokens Iris --ink/--brass). */
+        .review-card__video-badge {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.6rem;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35em;
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--paper, #f4ede0);
+            background: color-mix(in srgb, var(--ink, #2b2420) 88%, transparent);
+            border: 1px solid var(--brass, #b08d3f);
+            padding: 0.28em 0.6em;
+            border-radius: 2px;
+        }
+        .review-card__video-badge::before { content: "▶"; color: var(--brass, #b08d3f); }
+    </style>
 </head>
 <body class="lp-page">
 <main>
@@ -32,6 +56,21 @@
 </div>
 <section class="reviews-list" id="theories">
 <div class="reviews-list__grid">
+
+<article class="review-card">
+    <a class="review-card__link" href="../articles/theories/D23-2026-bilan-predictions.html">
+        <div class="review-card__image-wrap" style="position:relative;">
+            <img alt="Casting complet du reboot X-Men révélé à la D23 2026" class="review-card__image" src="../assets/img/theories/d23-2026/cover-bilan.jpg"/>
+        </div>
+        <div class="review-card__content">
+            <span class="review-card__type film">Théorie</span>
+            <h3 class="review-card__title">D23 Expo 2026 : le bilan de nos prédictions</h3>
+            <p class="review-card__meta">Par Yanis • 15/08/2026</p>
+            <p class="review-card__summary"><strong>Confirmées, dépassées, aux abonnés absents.</strong> Cast X-Men complet, trailers VisionQuest, Doomsday et Percy Jackson, concept-art des Indestructibles 3 : on reprend chaque pari posé avant Anaheim et on le confronte à ce qui est réellement tombé sur scène.</p>
+            <span class="review-card__read-more">Lire le bilan</span>
+        </div>
+    </a>
+</article>
 
 <article class="review-card">
     <a class="review-card__link" href="../articles/theories/D23-2026-nos-predictions.html">

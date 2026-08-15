@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta property="og:title" content="D23 Expo 2026 : Le bilan de nos prédictions face à la réalité">
+    <meta property="og:description" content="Publié le 15 août 2026 par Yanis">
+    <meta property="og:image" content="../../assets/img/theories/d23-2026/cover-bilan.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html">
+    <link rel="canonical" href="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="D23 Expo 2026, Marvel Studios, Nova, X-Men MCU, VisionQuest, Spider-Man, Avengers Doomsday, Percy Jackson saison 3, bilan predictions" name="keywords">
+    <link href="../../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg">
+    <title>D23 Expo 2026 : Le bilan de nos prédictions face à la réalité – L'Œil Critique</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet">
+    <link href="../../css/chef_d_oeuvre.css" rel="stylesheet">
+    <link href="../../css/createblog.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/site-2026.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
+
+    <style>
+        /*
+          Bilan D23 2026,  habillage "guichet de vérification"
+          Repose sur les tokens Iris existants (--ink, --paper, --velvet, --brass).
+          Le fil conducteur : chaque prédiction est "tamponnée" comme un ticket
+          qu'on valide ou qu'on annule au guichet, avec un ledger de résultats
+          en fin d'article façon souche de carnet.
+        */
+
+        .bilan-intro-note {
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+            color: var(--ink, #2b2420);
+            background: color-mix(in srgb, var(--paper, #f4ede0) 88%, var(--brass, #b08d3f) 12%);
+            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 25%, transparent);
+            border-left: 4px solid var(--brass, #b08d3f);
+            padding: 0.9rem 1.1rem;
+            margin: 1.6rem 0 2.2rem;
+        }
+
+        /* --- Bloc de prédiction ------------------------------------------- */
+
+        .prediction-block {
+            position: relative;
+            padding: 1.4rem 1.5rem 1.6rem;
+            margin: 2.4rem 0;
+            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 15%, transparent);
+            border-top: none;
+            background:
+                linear-gradient(color-mix(in srgb, var(--paper, #f4ede0) 100%, transparent),
+                                 color-mix(in srgb, var(--paper, #f4ede0) 100%, transparent));
+        }
+
+        .prediction-block::before {
+            /* liseré perforé façon souche de billet, en tête de bloc */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-image: radial-gradient(circle, color-mix(in srgb, var(--ink, #2b2420) 35%, transparent) 1px, transparent 1.4px);
+            background-size: 9px 3px;
+            background-repeat: repeat-x;
+        }
+
+        .prediction-block__title {
+            font-family: var(--font-display, "Fraunces", serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0.6rem 0 1rem;
+            color: var(--ink, #2b2420);
+        }
+
+        .verdict-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .verdict-row__label {
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: color-mix(in srgb, var(--ink, #2b2420) 62%, transparent);
+        }
+
+        /* --- Le tampon : élément signature de la page ---------------------- */
+
+        .stamp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.28em 0.7em;
+            border-radius: 2px;
+            transform: rotate(-2deg);
+            line-height: 1.3;
+        }
+
+        .stamp--confirme {
+            color: color-mix(in srgb, var(--brass, #b08d3f) 55%, #4a3a12 45%);
+            border: 2px solid var(--brass, #b08d3f);
+            background: color-mix(in srgb, var(--brass, #b08d3f) 10%, transparent);
+        }
+        .stamp--confirme::before { content: "✓"; }
+
+        .stamp--depasse {
+            color: var(--paper, #f4ede0);
+            background: var(--velvet, #7a1f2b);
+            border: 2px solid var(--velvet, #7a1f2b);
+            transform: rotate(-3deg) scale(1.03);
+        }
+        .stamp--depasse::before { content: "★"; }
+
+        .stamp--absent {
+            color: color-mix(in srgb, var(--ink, #2b2420) 55%, transparent);
+            border: 2px dashed color-mix(in srgb, var(--ink, #2b2420) 45%, transparent);
+            background: transparent;
+            transform: rotate(1deg);
+        }
+        .stamp--absent::before { content: "✕"; }
+
+        .stamp--remplace {
+            color: var(--ink, #2b2420);
+            border: 2px solid var(--ink, #2b2420);
+            background: color-mix(in srgb, var(--ink, #2b2420) 6%, transparent);
+            transform: rotate(-1.5deg);
+        }
+        .stamp--remplace::before { content: "⇄"; }
+
+        .stamp--attente {
+            color: color-mix(in srgb, var(--ink, #2b2420) 50%, transparent);
+            border: 2px dotted color-mix(in srgb, var(--ink, #2b2420) 35%, transparent);
+            background: transparent;
+            transform: rotate(0.5deg);
+        }
+        .stamp--attente::before { content: "…"; }
+
+        .prediction-block__body p {
+            margin: 0.6rem 0;
+        }
+
+        /* --- Ledger / souche de résultats ---------------------------------- */
+
+        .ledger {
+            margin: 2.4rem 0 1.2rem;
+            border: 1px solid var(--ink, #2b2420);
+            background: var(--paper, #f4ede0);
+        }
+
+        .ledger__head {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem 1rem;
+            padding: 0.7rem 1rem;
+            background: var(--ink, #2b2420);
+            color: var(--paper, #f4ede0);
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .ledger__row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem 1rem;
+            align-items: center;
+            padding: 0.65rem 1rem;
+            border-top: 1px dashed color-mix(in srgb, var(--ink, #2b2420) 25%, transparent);
+            font-size: 0.95rem;
+        }
+
+        .ledger__row:nth-child(even) {
+            background: color-mix(in srgb, var(--brass, #b08d3f) 6%, transparent);
+        }
+
+        .ledger__title {
+            font-family: var(--font-body, "Inter", sans-serif);
+            color: var(--ink, #2b2420);
+        }
+
+        .ledger__verdict {
+            justify-self: end;
+        }
+
+        /* --- Tally : compteur de guichet en clôture ------------------------ */
+
+        .tally {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            justify-content: center;
+            margin: 2rem 0 1rem;
+            padding: 1.4rem 1rem;
+            border-top: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
+            border-bottom: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
+        }
+
+        .tally__item {
+            text-align: center;
+            min-width: 6.5rem;
+        }
+
+        .tally__number {
+            display: block;
+            font-family: var(--font-display, "Fraunces", serif);
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: var(--velvet, #7a1f2b);
+            line-height: 1;
+        }
+
+        .tally__label {
+            display: block;
+            margin-top: 0.35rem;
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: color-mix(in srgb, var(--ink, #2b2420) 65%, transparent);
+        }
+
+        /* --- Figures image (stills, logo, cast, concept-art) --------------- */
+
+        .article-figure {
+            margin: 1.4rem 0 0.4rem;
+            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
+            background: var(--paper, #f4ede0);
+            padding: 0.4rem;
+        }
+
+        .article-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .article-figure figcaption {
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.68rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: color-mix(in srgb, var(--ink, #2b2420) 60%, transparent);
+            padding: 0.5rem 0.3rem 0.2rem;
+        }
+
+        .figure-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.4rem 0 0.4rem;
+        }
+
+        .figure-pair .article-figure { margin: 0; }
+
+        .figure-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.4rem 0 1.8rem;
+        }
+
+        @media (max-width: 640px) {
+            .figure-pair { grid-template-columns: 1fr; }
+            .figure-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* --- Embeds vidéo YouTube (bandes-annonces) ------------------------- */
+
+        .video-embed {
+            margin: 1.4rem 0 0.4rem;
+            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
+            background: var(--ink, #2b2420);
+            padding: 0.4rem;
+        }
+
+        .video-embed__label {
+            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: color-mix(in srgb, var(--paper, #f4ede0) 70%, transparent);
+            margin: 0 0 0.4rem;
+            padding: 0 0.2rem;
+        }
+
+        .video-embed__frame {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* ratio 16:9 */
+        }
+
+        .video-embed__frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 640px) {
+            .prediction-block { padding: 1.1rem 1rem 1.3rem; }
+            .stamp { font-size: 0.72rem; }
+            .ledger__head, .ledger__row { grid-template-columns: 1fr; }
+            .ledger__verdict { justify-self: start; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="main-content">
+    <h2 class="article-title">D23 Expo 2026 : Le bilan de nos prédictions face à la réalité</h2>
+    <p class="article-meta">Publié le 15 août 2026 par Yanis</p>
+
+    <div class="article-image">
+        <img alt="D23 Expo 2026 bilan des prédictions Marvel et Disney" src="../../assets/img/theories/d23-2026/cover-bilan.jpg"/>
+    </div>
+
+    <div class="article-content">
+        <p>Le rideau est tombé sur le Disney Entertainment Showcase de la D23 2026, neige artificielle comprise. Il y a quelques jours, on s'était livrés à l'exercice périlleux des pronostics sur ce que Kevin Feige et la maison Disney allaient dégainer. Résultat des courses : certaines prédictions sont tombées pile, d'autres ont été littéralement pulvérisées par l'ampleur des annonces, et quelques-unes n'ont tout simplement jamais eu lieu. Petit debrief, tampon par tampon.</p>
+
+        <p class="bilan-intro-note">Méthode : pour chaque prédiction, on rappelle l'indice de plausibilité initial, suivi du verdict réel constaté pendant le Showcase du 15 août.</p>
+
+        <div class="article-toc">
+            <h3>Sommaire de l'article</h3>
+            <ul>
+                <li><a href="#nova">1. Nova</a></li>
+                <li><a href="#xmen">2. X-Men MCU</a></li>
+                <li><a href="#visionquest">3. VisionQuest</a></li>
+                <li><a href="#spiderman">4. Friendly Neighborhood Spider-Man Saison 2</a></li>
+                <li><a href="#endgame">5. Avengers Endgame: Encore</a></li>
+                <li><a href="#zombies">6. Marvel Zombies Saison 2</a></li>
+                <li><a href="#percy">7. Percy Jackson Saison 3</a></li>
+                <li><a href="#indestructibles">8. Les Indestructibles 3</a></li>
+                <li><a href="#parks">9. Disney Parks</a></li>
+                <li><a href="#surprises">10. Les surprises hors-radar</a></li>
+                <li><a href="#score">Le score final</a></li>
+            </ul>
+        </div>
+
+        <div class="prediction-block" id="nova">
+            <h2 class="prediction-block__title">1. Nova : l'officialisation de la branche cosmique</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟢 Très probable
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--absent">Pas tombé</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Rien. Pas un logo, pas une ligne sur Richard Rider durant tout le Showcase. Le dossier cosmique reste donc entièrement fermé pour l'instant, malgré nos attentes.</p>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="xmen">
+            <h2 class="prediction-block__title">2. X-Men MCU : Logo et casting partiel</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟡 Probable pour le logo / Partiel pour le casting
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--depasse">Dépassée</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>C'est là que Marvel a frappé le plus fort de la soirée. Pas de simple logo ou de duo d'acteurs : Sadie Sink et le réalisateur Jake Schreier ont dévoilé l'intégralité du casting principal. Kit Connor en Cyclope, Christopher Abbott en Professeur X, Maya Boyd en Tornade, Samara Weaving en Emma Frost, Inde Navarrette en Malicia, et la surprise totale : Adam Driver en Mr. Sinister. Sink elle-même incarne Jean Grey. Sortie annoncée pour le 5 mai 2028. On visait juste, mais on a largement sous-estimé l'ampleur du move.</p>
+                <div class="figure-pair">
+                    <figure class="article-figure">
+                        <img alt="Logo officiel du reboot X-Men au MCU" loading="lazy" src="../../assets/img/theories/d23-2026/xmen-logo.jpg"/>
+                        <figcaption>Le logo officiel dévoilé à la D23</figcaption>
+                    </figure>
+                    <figure class="article-figure">
+                        <img alt="Cast complet du reboot X-Men au MCU" loading="lazy" src="../../assets/img/theories/d23-2026/xmen-cast.jpg"/>
+                        <figcaption>Le casting complet sur scène</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="visionquest">
+            <h2 class="prediction-block__title">3. VisionQuest : le trailer tant attendu</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟢 Quasi certain
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--confirme">Confirmée</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Kevin Feige, Paul Bettany et James Spader sont montés sur scène ensemble pour présenter un nouveau trailer. Diffusion annoncée en octobre sur Disney+. Prédiction en plein dans le mille.</p>
+                <div class="video-embed">
+                    <p class="video-embed__label">La bande-annonce</p>
+                    <div class="video-embed__frame">
+                        <iframe src="https://www.youtube.com/embed/oSVTAUKyrL8" title="Bande-annonce VisionQuest" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="spiderman">
+            <h2 class="prediction-block__title">4. Friendly Neighborhood Spider-Man Saison 2</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟢 Très probable
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--absent">Pas tombé</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Malgré les 65 ans de Spider-Man célébrés cette année, rien n'a filtré sur la saison 2 durant ce panel. Possible qu'une annonce séparée soit encore prévue ailleurs, mais sur ce Showcase précis, silence complet.</p>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="endgame">
+            <h2 class="prediction-block__title">5. Avengers Endgame: Encore : la bande-annonce</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟢 Concret
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--remplace">Remplacée</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Pas de trailer pour la ressortie d'Endgame. En revanche, consolation de taille : un tout nouveau trailer d'<em>Avengers: Doomsday</em> a été projeté, avec Robert Downey Jr., Hayley Atwell et Chris Evans sur scène. Dr Doom sur son trône, Magneto, Gambit, une armée de Sentinelles, Mr. Fantastic qui confronte Victor face à face. La promo Endgame attendra, mais Doomsday a largement pris le relais côté hype.</p>
+                <div class="video-embed">
+                    <p class="video-embed__label">Le trailer Avengers: Doomsday</p>
+                    <div class="video-embed__frame">
+                        <iframe src="https://www.youtube.com/embed/W2TsfrbvJ1Y" title="Bande-annonce Avengers: Doomsday" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="zombies">
+            <h2 class="prediction-block__title">6. Marvel Zombies Saison 2</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟡 Possible
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--absent">Pas tombé</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Pas un mot sur une éventuelle saison 2. Le volet animation adulte de Marvel reste pour l'instant sans nouvelles fraîches.</p>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="percy">
+            <h2 class="prediction-block__title">7. Percy Jackson Saison 3</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟢 Officiellement confirmé
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--confirme">Confirmée</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Le cast complet était bien présent sur scène. On apprend l'arrivée des Chasseresses d'Artémis, de nouveaux demi-dieux, et de nouveaux personnages dont Athéna et Héra (jouée par Ming-Na Wen). Diffusion prévue le 20 novembre. Prédiction validée à 100%.</p>
+                <div class="video-embed">
+                    <p class="video-embed__label">La bande-annonce</p>
+                    <div class="video-embed__frame">
+                        <iframe src="https://www.youtube.com/embed/dhXp_rpzUJ0" title="Bande-annonce Percy Jackson Saison 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="indestructibles">
+            <h2 class="prediction-block__title">8. Les Indestructibles 3 : premier visuel et saut dans le temps ?</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟢 Très probable
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--confirme">Confirmée</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Pete Docter a bien dévoilé du concept-art pour les 40 ans de Pixar. Violet et Dash prennent effectivement le relais en tant que jeunes héros, Jack-Jack reste incontrôlable, et Bob doit composer avec sa propre obsolescence face à une nouvelle génération de Supers. Sortie calée en juin 2028. Le « saut dans le temps » façon Jack-Jack ado n'est pas formulé tel quel, mais l'esprit de notre théorie,  la relève générationnelle,  colle plutôt bien à ce qui a été montré.</p>
+                <figure class="article-figure">
+                    <img alt="Concept-art Les Indestructibles 3" loading="lazy" src="../../assets/img/theories/d23-2026/indestructibles-3-concept-art.jpg"/>
+                    <figcaption>Premier concept-art dévoilé pour les 40 ans de Pixar</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="prediction-block" id="parks">
+            <h2 class="prediction-block__title">9. Disney Parks (Panel Horizons) : Villains Land</h2>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Prédiction :</span> 🟢 Certain
+            </div>
+            <div class="verdict-row">
+                <span class="verdict-row__label">Résultat :</span>
+                <span class="stamp stamp--attente">Non couvert</span>
+            </div>
+            <div class="prediction-block__body">
+                <p>Le panel Parks (Horizons: A Carousel of Progress, animé par Neil Patrick Harris) est un événement distinct du Disney Entertainment Showcase. Aucune information sur Villains Land, Piston Peak ou le dark-ride Coco n'a émergé de cette soirée précise,  il faudra se référer à la couverture dédiée du panel Parks pour trancher ce point.</p>
+            </div>
+        </div>
+
+        <h2 id="surprises">10. Les surprises qu'on n'avait pas vues venir</h2>
+        <p>Une bonne partie du Showcase s'est jouée en dehors de notre radar 100% Marvel/mutants. Quelques flashs à retenir : un premier aperçu de <em>Frozen 3</em> (automne 2027) avec un nouveau personnage aux pouvoirs de glace, le logo officiel de <em>Star Wars: Starfighter</em> de Shawn Levy,  l'histoire d'un homme du mauvais côté de la galaxie propriétaire du chasseur stellaire le plus rapide jamais construit, incarné par Ryan Gosling, , une date pour <em>Ahsoka</em> Saison 2 en janvier, <em>Tangled</em> en live-action calé pour mars 2028 avec Kathryn Hahn en Mère Gothel, une adaptation anime de <em>Kingdom Hearts</em> en partenariat avec Square Enix, l'arrivée d'Angel dans <em>Lilo & Stitch 2</em>, un aperçu de <em>Gatto</em> par le réalisateur de Luca, <em>Coco 2</em> annoncé pour 2029, et la confirmation officielle de <em>Zootopia 3</em>.</p>
+
+        <div class="figure-grid">
+            <figure class="article-figure">
+                <img alt="Aperçu de Frozen 3" loading="lazy" src="../../assets/img/theories/d23-2026/frozen-3.jpg"/>
+                <figcaption>Frozen 3</figcaption>
+            </figure>
+            <figure class="article-figure">
+                <img alt="Logo officiel de Star Wars: Starfighter avec Ryan Gosling" loading="lazy" src="../../assets/img/theories/d23-2026/starwars-starfighter-logo.jpg"/>
+                <figcaption>Star Wars: Starfighter</figcaption>
+            </figure>
+            <figure class="article-figure">
+                <img alt="Aperçu de Tangled en live-action" loading="lazy" src="../../assets/img/theories/d23-2026/tangled-live-action.jpg"/>
+                <figcaption>Tangled (live-action)</figcaption>
+            </figure>
+            <figure class="article-figure">
+                <img alt="Aperçu de Zootopia 3" loading="lazy" src="../../assets/img/theories/d23-2026/zootopia-3.jpg"/>
+                <figcaption>Zootopia 3</figcaption>
+            </figure>
+            <figure class="article-figure">
+                <img alt="Aperçu de Lilo & Stitch 2" loading="lazy" src="../../assets/img/theories/d23-2026/lilo-stitch-2.jpg"/>
+                <figcaption>Lilo & Stitch 2</figcaption>
+            </figure>
+            <figure class="article-figure">
+                <img alt="Aperçu de Gatto" loading="lazy" src="../../assets/img/theories/d23-2026/gatto.jpg"/>
+                <figcaption>Gatto</figcaption>
+            </figure>
+            <figure class="article-figure">
+                <img alt="Aperçu de Coco 2" loading="lazy" src="../../assets/img/theories/d23-2026/coco-2.jpg"/>
+                <figcaption>Coco 2</figcaption>
+            </figure>
+        </div>
+
+        <h2 id="score">Le score final</h2>
+
+        <div class="tally">
+            <div class="tally__item">
+                <span class="tally__number">3</span>
+                <span class="tally__label">Confirmées</span>
+            </div>
+            <div class="tally__item">
+                <span class="tally__number">1</span>
+                <span class="tally__label">Dépassées</span>
+            </div>
+            <div class="tally__item">
+                <span class="tally__number">3</span>
+                <span class="tally__label">Pas tombées</span>
+            </div>
+            <div class="tally__item">
+                <span class="tally__number">1</span>
+                <span class="tally__label">Remplacée</span>
+            </div>
+            <div class="tally__item">
+                <span class="tally__number">1</span>
+                <span class="tally__label">Non couverte</span>
+            </div>
+        </div>
+
+        <div class="ledger">
+            <div class="ledger__head">
+                <span>Prédiction</span>
+                <span>Verdict</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">Nova</span>
+                <span class="ledger__verdict stamp stamp--absent">Pas tombé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">X-Men MCU</span>
+                <span class="ledger__verdict stamp stamp--depasse">Dépassé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">VisionQuest</span>
+                <span class="ledger__verdict stamp stamp--confirme">Confirmé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">Friendly Neighborhood Spider-Man S2</span>
+                <span class="ledger__verdict stamp stamp--absent">Pas tombé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">Avengers Endgame: Encore</span>
+                <span class="ledger__verdict stamp stamp--remplace">Remplacé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">Marvel Zombies S2</span>
+                <span class="ledger__verdict stamp stamp--absent">Pas tombé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">Percy Jackson S3</span>
+                <span class="ledger__verdict stamp stamp--confirme">Confirmé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">Les Indestructibles 3</span>
+                <span class="ledger__verdict stamp stamp--confirme">Confirmé</span>
+            </div>
+            <div class="ledger__row">
+                <span class="ledger__title">Disney Parks / Villains Land</span>
+                <span class="ledger__verdict stamp stamp--attente">Non couvert</span>
+            </div>
+        </div>
+
+        <p>Sur les neuf prédictions, trois tombent pile, une explose totalement notre pronostic (dans le bon sens), trois ne se sont jamais matérialisées, une a été remplacée par une autre annonce tout aussi forte, et une reste en attente faute de couverture. Pas un sans-faute, mais un bilan honorable pour un exercice qui reste, par nature, un pari sur l'avenir. Rendez-vous à la prochaine convention pour retenter le coup.</p>
+    </div>
+</div>
+
+<aside class="sidebar">
+    <div class="widget">
+        <h3 class="titre-tendances">Tendances</h3>
+        <ul id="tendances-list"></ul>
+    </div>
+</aside>
+</div>
+
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/header.js"></script>
+<script src="../../assets/js/tendances.js"></script>
+</body>
+</html>
