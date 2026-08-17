@@ -11262,5 +11262,26 @@
     "video": false,
     "vote_average": 6.138,
     "vote_count": 864
+  },
+  "The End of Oak Street_2026": {
+    "adult": false,
+    "backdrop_path": "/wnR8pwWtoL3TFwP41mLCt91ReCt.jpg",
+    "genre_ids": [
+      878,
+      9648,
+      53
+    ],
+    "id": 1101383,
+    "title": "La Fin d'Oak Street",
+    "original_language": "en",
+    "original_title": "The End of Oak Street",
+    "overview": "Lorsqu’un mystérieux événement cosmique arrache Oak Street à sa paisible banlieue et la transporte vers un lieu inconnu, la famille Platt, désorientée dans ce nouvel environnement hostile, comprend vite qu’il leur faudra rester unis pour survivre.",
+    "popularity": 232.4848,
+    "poster_path": "/1flRy4qysdwjhlqw2BZ1Wm1zcpM.jpg",
+    "release_date": "2026-08-12",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.793,
+    "vote_count": 179
   }
 }
