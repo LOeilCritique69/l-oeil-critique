@@ -11283,5 +11283,27 @@
     "video": false,
     "vote_average": 6.793,
     "vote_count": 179
+  },
+  "Cinderella_1950": {
+    "adult": false,
+    "backdrop_path": "/puJKgNcWaGgMk5VHanSSomUTpmw.jpg",
+    "genre_ids": [
+      10751,
+      14,
+      16,
+      10749
+    ],
+    "id": 11224,
+    "title": "Cendrillon",
+    "original_language": "en",
+    "original_title": "Cinderella",
+    "overview": "D’un coup de baguette magique, la fée Marraine transforme les haillons de Cendrillon en robe féérique et, dans une citrouille changée en carrosse, l’envoie au bal. Mais le charme se rompt à minuit. Les souris, Jaq et Gus, et une pantoufle de vair contribueront au dénouement d'un conte de fées des plus mémorables.",
+    "popularity": 13.0488,
+    "poster_path": "/nqSJwBdvG89uHRpDDdaAy5YhogZ.jpg",
+    "release_date": "1950-02-22",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.052,
+    "vote_count": 7237
   }
 }
