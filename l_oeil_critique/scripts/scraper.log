@@ -28036,3 +28036,45 @@ Call log:
 2026-08-19 01:23:52,980 [INFO] Scraping TMDb terminé (0 items)
 2026-08-19 01:23:52,981 [INFO] 0 articles retenus pour ce run
 2026-08-19 01:23:52,981 [INFO] Aucun article à écrire, arrêt
+2026-08-19 03:04:29,783 [INFO] ==== Début du script bandes-annonces ====
+2026-08-19 03:04:29,807 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-19 03:04:29,807 [INFO] 967 identifiants chargés depuis le log
+2026-08-19 03:04:29,808 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-19 03:04:30,400 [INFO] Démarrage scraping CineHorizons...
+2026-08-19 03:04:32,632 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-19 03:04:32,674 [INFO] 10 blocs détectés sur la page 1
+2026-08-19 03:04:32,676 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-19 03:04:32,676 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-19 03:04:32,676 [INFO] Démarrage scraping Allociné (films)...
+2026-08-19 03:04:33,298 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-19 03:04:34,828 [INFO] Article ajouté Allociné (film): L'Invitation
+2026-08-19 03:04:35,857 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-08-19 03:04:35,945 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-19 03:04:35,945 [INFO] Scraping Allociné (films) terminé (1 items)
+2026-08-19 03:04:35,945 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-19 03:04:36,396 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-19 03:04:36,504 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-19 03:04:36,504 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-08-19 03:04:36,554 [INFO] Démarrage scraping TMDb...
+2026-08-19 03:04:36,751 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/3)
+2026-08-19 03:04:36,786 [INFO] Article ajouté TMDb (upcoming): L'Invitation
+2026-08-19 03:04:36,822 [INFO] Article ajouté TMDb (upcoming): Resident Evil
+2026-08-19 03:04:36,918 [INFO] Article ajouté TMDb (upcoming): Les Contrebandiers
+2026-08-19 03:04:36,992 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-08-19 03:04:37,033 [INFO] Article ajouté TMDb (upcoming): Histoires de la nuit
+2026-08-19 03:04:37,065 [INFO] Article ajouté TMDb (upcoming): Sham
+2026-08-19 03:04:37,309 [INFO] Article ajouté TMDb (upcoming): Si tu penses bien
+2026-08-19 03:04:37,477 [INFO] Article ajouté TMDb (upcoming): La Ligne bleue
+2026-08-19 03:04:37,492 [INFO] 17 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-08-19 03:04:38,418 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/7)
+2026-08-19 03:04:38,544 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/7)
+2026-08-19 03:04:38,610 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-19 03:04:38,854 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-19 03:04:39,209 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/7)
+2026-08-19 03:04:39,592 [INFO] Scraping TMDb terminé (7 items)
+2026-08-19 03:04:39,592 [INFO] 8 articles retenus pour ce run
+2026-08-19 03:04:39,659 [INFO] 2070 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-19 03:04:39,660 [INFO] Sauvegarde du log avec 975 identifiants
+2026-08-19 03:04:39,660 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-19 03:04:39,723 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-19 03:04:39,723 [INFO] ==== Fin du script bandes-annonces ====
