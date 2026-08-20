@@ -5706,5 +5706,15 @@
     "poster_path": "/91DUnlKB6U77lqBZC0KnBHVVz6S.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/91DUnlKB6U77lqBZC0KnBHVVz6S.jpg",
     "tmdb_id": 12092
+  },
+  {
+    "Name": "Fjord",
+    "Year": 2026,
+    "Date": "2026-08-20",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/fjord-2026/",
+    "poster_path": "/3btHoXx6lJtDJEybsCLhkqhNCb9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3btHoXx6lJtDJEybsCLhkqhNCb9.jpg",
+    "tmdb_id": 1401459
   }
 ]

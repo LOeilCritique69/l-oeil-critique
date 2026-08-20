@@ -11327,5 +11327,25 @@
     "video": false,
     "vote_average": 7.189,
     "vote_count": 6345
+  },
+  "Fjord_2026": {
+    "adult": false,
+    "backdrop_path": "/6wMoHrnRJkOA6XFcq4V34z3RxkI.jpg",
+    "genre_ids": [
+      10751,
+      18
+    ],
+    "id": 1401459,
+    "title": "Fjord",
+    "original_language": "no",
+    "original_title": "Fjord",
+    "overview": "Les Gheorghiu, un couple roumano-norvégien très pieux, s’installent dans un village au bout d’un fjord où ils se lient rapidement d’amitié avec leurs voisins, les Halberg. Les enfants des deux familles deviennent très proches, malgré des éducations différentes. Lorsque le corps enseignant découvre des ecchymoses sur le corps d’Elia, l’aînée des enfants Gheorghiu, la communauté se demande si l’éducation traditionnelle que les enfants Gheorghiu reçoivent de leurs parents pourrait en être la cause.",
+    "popularity": 5.0872,
+    "poster_path": "/3btHoXx6lJtDJEybsCLhkqhNCb9.jpg",
+    "release_date": "2026-06-13",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.0,
+    "vote_count": 8
   }
 }
