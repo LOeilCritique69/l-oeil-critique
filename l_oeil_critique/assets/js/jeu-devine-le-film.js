@@ -8,6 +8,14 @@ const IMG = 'https://image.tmdb.org/t/p/w500';
 const MAX_ROUNDS = 10;
 const START_TIME = 20;
 
+// Cache local de la liste de films : évite de refaire ~144 requêtes TMDB
+// à CHAQUE visite. Durée de vie du cache : 12h.
+const CACHE_KEY = 'cinaguess_movies_cache_v1';
+const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
+
+// Debounce de l'autocomplete (ms) : évite de refiltrer sur chaque frappe.
+const AUTOCOMPLETE_DEBOUNCE_MS = 150;
+
 const GENRES = {
   28:'Action',12:'Aventure',16:'Animation',35:'Comédie',80:'Crime',
   99:'Documentaire',18:'Drame',10751:'Familial',14:'Fantastique',
@@ -46,6 +54,7 @@ let acItems = [];
 let acIndex = -1;
 let loadedCount = 0;
 let totalToLoad = 0;
+let autocompleteDebounceTimer = null;
 
 // ============================================================
 // DOM
@@ -69,17 +78,54 @@ const suggestionsGrid = $('suggestionsGrid');
 const streakBanner = $('streakBanner');
 
 // ============================================================
-// LOADING
+// LOADING (avec cache localStorage)
 // ============================================================
+function readMovieCache() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || !Array.isArray(parsed.movies) || !parsed.savedAt) return null;
+    if (Date.now() - parsed.savedAt > CACHE_TTL_MS) return null; // expiré
+    return parsed.movies;
+  } catch {
+    return null;
+  }
+}
+
+function writeMovieCache(movies) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ movies, savedAt: Date.now() }));
+  } catch {
+    // localStorage plein ou indisponible : on continue sans cache, pas bloquant
+  }
+}
+
 async function loadMovies() {
+  $('loadingBox').style.display = 'block';
+  $('startBtn').disabled = true;
+  $('startBtn').style.opacity = '0.4';
+
+  const cached = readMovieCache();
+  if (cached && cached.length > 0) {
+    allMovies = cached;
+    $('loadText').textContent = `${allMovies.length} films chargés (cache) !`;
+    $('loadBar').style.width = '100%';
+    $('startBtn').disabled = false;
+    $('startBtn').style.opacity = '1';
+    $('startBtn').textContent = '🎬 Lancer la partie !';
+    console.log(`✅ ${allMovies.length} films chargés depuis le cache local`);
+    return;
+  }
+
+  await fetchMoviesFromTMDB();
+}
+
+async function fetchMoviesFromTMDB() {
   const genreIds = Object.keys(GENRES);
   const pages = 8; // 8 pages × 20 films × 18 genres ≈ 2880 films
   totalToLoad = genreIds.length * pages;
   loadedCount = 0;
-
-  $('loadingBox').style.display = 'block';
-  $('startBtn').disabled = true;
-  $('startBtn').style.opacity = '0.4';
 
   const seen = new Set();
   const results = [];
@@ -129,7 +175,8 @@ async function loadMovies() {
   } catch {}
 
   allMovies = results;
-  console.log(`✅ ${allMovies.length} films chargés`);
+  writeMovieCache(results);
+  console.log(`✅ ${allMovies.length} films chargés depuis TMDB (mis en cache 12h)`);
 
   $('loadText').textContent = `${allMovies.length} films chargés !`;
   $('loadBar').style.width = '100%';
@@ -448,9 +495,14 @@ function generateChoices() {
 }
 
 // ============================================================
-// AUTOCOMPLETE
+// AUTOCOMPLETE (avec debounce)
 // ============================================================
 function onInputChange() {
+  clearTimeout(autocompleteDebounceTimer);
+  autocompleteDebounceTimer = setTimeout(runAutocomplete, AUTOCOMPLETE_DEBOUNCE_MS);
+}
+
+function runAutocomplete() {
   const val = movieInput.value.trim().toLowerCase();
   acIndex = -1;
 
@@ -516,13 +568,13 @@ function updateLivesDisplay() {
     if (!container) return;
 
     // On récupère le nombre de vies total selon la difficulté choisie
-    const totalMaxLives = DIFFICULTIES[diff].lives; 
+    const totalMaxLives = DIFFICULTIES[diff].lives;
     let heartHTML = '';
 
     for (let i = 0; i < totalMaxLives; i++) {
         // Si l'index i est inférieur aux vies restantes (ex: 1 < 2), le cœur est plein
         // Sinon, on lui donne la classe .lost
-        const isLost = i >= lives; 
+        const isLost = i >= lives;
         heartHTML += `<span class="life ${isLost ? 'lost' : ''}"><i class="fas fa-heart"></i></span>`;
     }
 
