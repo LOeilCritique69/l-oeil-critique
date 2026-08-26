@@ -32756,3 +32756,40 @@ Call log:
 2026-08-26 08:48:15,607 [INFO] Scraping TMDb terminé (0 items)
 2026-08-26 08:48:15,607 [INFO] 0 articles retenus pour ce run
 2026-08-26 08:48:15,608 [INFO] Aucun article à écrire, arrêt
+2026-08-26 09:45:11,798 [INFO] ==== Début du script bandes-annonces ====
+2026-08-26 09:45:11,814 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-26 09:45:11,814 [INFO] 1022 identifiants chargés depuis le log
+2026-08-26 09:45:11,814 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-26 09:45:12,410 [INFO] Démarrage scraping CineHorizons...
+2026-08-26 09:45:14,220 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-26 09:45:14,258 [INFO] 10 blocs détectés sur la page 1
+2026-08-26 09:45:14,260 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-26 09:45:14,260 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-26 09:45:14,261 [INFO] Démarrage scraping Allociné (films)...
+2026-08-26 09:45:14,712 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-26 09:45:14,783 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-26 09:45:14,784 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-26 09:45:14,784 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-26 09:45:15,988 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-26 09:45:18,207 [INFO] Article ajouté Allociné (serie): City Of Blood (saison 1)
+2026-08-26 09:45:19,787 [INFO] Article ajouté Allociné (serie): City Of Blood (saison 1)
+2026-08-26 09:45:21,511 [INFO] Article ajouté Allociné (serie): The Gilded Age (saison 4)
+2026-08-26 09:45:21,967 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-08-26 09:45:22,084 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-26 09:45:22,084 [INFO] Scraping Allociné (séries) terminé (3 items)
+2026-08-26 09:45:22,160 [INFO] Démarrage scraping TMDb...
+2026-08-26 09:45:22,386 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-26 09:45:22,396 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-26 09:45:22,520 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-08-26 09:45:22,807 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-26 09:45:22,876 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-26 09:45:22,885 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-26 09:45:23,013 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-26 09:45:23,211 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-26 09:45:23,510 [INFO] Scraping TMDb terminé (0 items)
+2026-08-26 09:45:23,511 [INFO] 3 articles retenus pour ce run
+2026-08-26 09:45:23,576 [INFO] 2121 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-26 09:45:23,576 [INFO] Sauvegarde du log avec 1025 identifiants
+2026-08-26 09:45:23,577 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-26 09:45:23,648 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-26 09:45:23,649 [INFO] ==== Fin du script bandes-annonces ====
