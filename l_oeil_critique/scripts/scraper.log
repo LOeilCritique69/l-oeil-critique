@@ -32575,3 +32575,57 @@ Call log:
 2026-08-26 03:08:51,251 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-08-26 03:08:51,316 [INFO] Rien à commiter, le répertoire est propre.
 2026-08-26 03:08:51,317 [INFO] ==== Fin du script bandes-annonces ====
+2026-08-26 04:42:44,897 [INFO] ==== Début du script bandes-annonces ====
+2026-08-26 04:42:44,912 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-26 04:42:44,913 [INFO] 1003 identifiants chargés depuis le log
+2026-08-26 04:42:44,913 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-26 04:42:45,544 [INFO] Démarrage scraping CineHorizons...
+2026-08-26 04:42:48,642 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-26 04:42:48,685 [INFO] 10 blocs détectés sur la page 1
+2026-08-26 04:42:48,686 [INFO] Extraction détails CineHorizons pour Garance
+2026-08-26 04:42:50,101 [INFO] Article ajouté CineHorizons: Garance
+2026-08-26 04:42:50,101 [INFO] Extraction détails CineHorizons pour Histoires De La Nuit
+2026-08-26 04:42:51,365 [INFO] Article ajouté CineHorizons: Histoires De La Nuit
+2026-08-26 04:42:52,456 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-08-26 04:42:52,508 [INFO] 10 blocs détectés sur la page 2
+2026-08-26 04:42:52,511 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-26 04:42:52,511 [INFO] Scraping CineHorizons terminé (2 items)
+2026-08-26 04:42:52,511 [INFO] Démarrage scraping Allociné (films)...
+2026-08-26 04:42:53,024 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-26 04:42:54,444 [INFO] Article ajouté Allociné (film): Gods of Mexico
+2026-08-26 04:42:55,511 [INFO] Article ajouté Allociné (film): New Group
+2026-08-26 04:42:56,124 [INFO] Article ajouté Allociné (film): Face à la mer
+2026-08-26 04:42:56,734 [INFO] Article ajouté Allociné (film): Memory Of Princess Mumbi
+2026-08-26 04:42:57,382 [INFO] Article ajouté Allociné (film): Dégel
+2026-08-26 04:42:58,066 [INFO] Article ajouté Allociné (film): L'Inconnue
+2026-08-26 04:42:58,532 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-08-26 04:42:59,267 [INFO] Article ajouté Allociné (film): Bombonera
+2026-08-26 04:42:59,876 [INFO] Article ajouté Allociné (film): Tad l'explorateur et la lampe magique
+2026-08-26 04:43:00,537 [INFO] Article ajouté Allociné (film): Decorado
+2026-08-26 04:43:00,994 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-08-26 04:43:01,745 [INFO] Article ajouté Allociné (film): Mutiny
+2026-08-26 04:43:02,197 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-08-26 04:43:02,305 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-26 04:43:02,305 [INFO] Scraping Allociné (films) terminé (10 items)
+2026-08-26 04:43:02,305 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-26 04:43:02,746 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-26 04:43:02,867 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-26 04:43:02,867 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-08-26 04:43:02,941 [INFO] Démarrage scraping TMDb...
+2026-08-26 04:43:03,029 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/3)
+2026-08-26 04:43:03,043 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-08-26 04:43:03,229 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-08-26 04:43:03,246 [INFO] Article ajouté TMDb (upcoming): FINI DE RIRE ! L'humour politique au garde-à-vous ?
+2026-08-26 04:43:03,260 [INFO] Article ajouté TMDb (upcoming): Justin le Juste
+2026-08-26 04:43:04,504 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-26 04:43:04,895 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-26 04:43:05,714 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-26 04:43:05,884 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-26 04:43:06,107 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-26 04:43:07,465 [INFO] Scraping TMDb terminé (2 items)
+2026-08-26 04:43:07,465 [INFO] 12 articles retenus pour ce run
+2026-08-26 04:43:07,532 [INFO] 2111 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-26 04:43:07,532 [INFO] Sauvegarde du log avec 1015 identifiants
+2026-08-26 04:43:07,533 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-26 04:43:07,599 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-26 04:43:07,599 [INFO] ==== Fin du script bandes-annonces ====
