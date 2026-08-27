@@ -576,32 +576,10 @@ body {
 }
 #victory-close:hover { background: var(--red); border-color: var(--red); color: #fff; }
 
-/* ═══════════════════════════════════════════════════════════════
-   CRÉDITS SPIDEYTRACK (le <footer> du site est injecté par header.js
-   — ce bloc n'est pas un <footer> pour éviter la duplication sémantique)
-═══════════════════════════════════════════════════════════════ */
 .spidey-credits { margin-top: 80px; border-top: 1px solid var(--border); padding-top: 32px; }
 .spidey-credits-container {
   display: flex; justify-content: space-between; align-items: flex-start;
   gap: 32px; flex-wrap: wrap;
-}
-.footer-brand { max-width: 260px; }
-.footer-title {
-  font-family: var(--f-display); font-size: 2.2rem;
-  letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; color: var(--ink);
-}
-.footer-title span { color: var(--red); }
-.footer-desc { font-family: var(--f-mono); font-size: 0.6rem; color: var(--ink-ghost); line-height: 1.7; }
-.footer-links { display: flex; flex-direction: column; gap: 8px; }
-.footer-links a {
-  font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.08em;
-  text-decoration: none; color: var(--ink-dim); text-transform: uppercase; transition: color 0.12s;
-}
-.footer-links a:hover { color: var(--red); }
-.spidey-credits-bottom {
-  margin-top: 24px; padding-top: 14px; border-top: 1px solid var(--border);
-  font-family: var(--f-mono); font-size: 0.5rem;
-  color: var(--ink-ghost); text-align: center; letter-spacing: 0.06em;
 }
 
 /* ═══════════════════════════════════════════════════════════════
