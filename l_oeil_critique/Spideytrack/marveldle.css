@@ -381,7 +381,7 @@ body {
 #lightbox-close:hover { color: var(--tom); border-color: var(--tom); }
 
 /* ═══════════════════════════════════════════════════════════════
-   DISCLAIMER
+   DISCLAIMER (POP-UP)
 ═══════════════════════════════════════════════════════════════ */
 #disclaimer-overlay { display: none; position: fixed; inset: 0; background: rgba(10,12,17,.88); z-index: 700; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
 #disclaimer-overlay.open { display: flex; }
@@ -399,6 +399,24 @@ body {
 .disclaimer-text a:hover { text-decoration: underline; }
 #disclaimer-ok { background: var(--tom); color: #fff; border: none; padding: 10px 24px; font-family: var(--f-ui); font-weight: 500; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: background .14s; }
 #disclaimer-ok:hover { background: #ff2d42; }
+
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER PERMANENT (DISCLAIMER)
+═══════════════════════════════════════════════════════════════ */
+.dossier-footer {
+  text-align: center;
+  padding: 40px 20px 20px;
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.dossier-footer p { margin: 0 0 8px 0; }
+.dossier-footer strong { color: var(--text); font-weight: normal; }
+.dossier-footer a { color: var(--tom); text-decoration: none; border-bottom: 1px dashed var(--tom); padding-bottom: 1px; transition: var(--ease); }
+.dossier-footer a:hover { opacity: 0.8; border-bottom-style: solid; }
 
 /* ═══════════════════════════════════════════════════════════════
    VICTOIRE

@@ -20,9 +20,25 @@
 <link href="marveldle.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483" crossorigin="anonymous"></script>
+
+<style>
+  .dossier-footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(136, 145, 166, 0.5);
+    line-height: 1.6;
+  }
+  .dossier-footer p { margin: 0 0 8px 0; }
+  .dossier-footer strong { color: rgba(255, 255, 255, 0.7); font-weight: normal; }
+  .dossier-footer a { color: #e8192c; text-decoration: none; border-bottom: 1px dashed #e8192c; padding-bottom: 1px; transition: opacity 0.2s; }
+  .dossier-footer a:hover { opacity: 0.8; }
+</style>
 </head>
 <body>
-<!-- ════ LOADING SCREEN ════ -->
 <div id="loading-screen">
   <div class="loader-logo">
     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +61,6 @@
   <div class="loader-status" id="loader-status">Ouverture du dossier…</div>
 </div>
 
-<!-- ════ APP ════ -->
 <div id="app-wrapper">
 
   <div class="dossier-masthead">
@@ -54,19 +69,17 @@
     <p class="dossier-tagline">Qui se cachait sous le masque aujourd'hui sur Marveldle ?</p>
   </div>
 
-  <!-- ════ AUJOURD'HUI ════ -->
-  <section class="today-hero" id="today-hero">
+    <section class="today-hero" id="today-hero">
     <div class="today-hero-label">
       <span class="today-hero-dot"></span>
       Rapport du jour — <span id="today-day-label">Jour —</span>
     </div>
-    <div class="today-cards-row" id="today-cards-row"><!-- rempli dynamiquement --></div>
+    <div class="today-cards-row" id="today-cards-row"></div>
   </section>
 
   <div class="thread" style="width:60%;margin-bottom:44px"></div>
 
-  <!-- ════ DASHBOARD ════ -->
-  <section class="dashboard" id="dashboard">
+    <section class="dashboard" id="dashboard">
     <div class="dash-global">
       <div class="dash-stat">
         <div class="dash-val" id="dash-total">—</div>
@@ -81,12 +94,11 @@
         <div class="dash-lbl">Meilleure série en cours</div>
       </div>
     </div>
-    <div class="dash-persos" id="dash-persos"><!-- une ligne compacte par personnage --></div>
+    <div class="dash-persos" id="dash-persos"></div>
   </section>
 
   <main>
-    <!-- TOP 5 -->
-    <div class="top5-wrap">
+        <div class="top5-wrap">
       <div class="section-header">
         <span class="section-index">01</span>
         <span class="section-label">Meilleures prises</span>
@@ -95,8 +107,7 @@
       <div class="top5-board" id="top5-container"></div>
     </div>
 
-    <!-- GRAPHIQUES -->
-    <div class="charts-wrap">
+        <div class="charts-wrap">
       <div class="section-header">
         <span class="section-index">02</span>
         <span class="section-label">Filature dans le temps</span>
@@ -111,8 +122,7 @@
       <div class="chart-container"><canvas id="main-chart"></canvas></div>
     </div>
 
-    <!-- DOSSIER COMPLET -->
-    <div class="db-wrap">
+        <div class="db-wrap">
       <div class="section-header">
         <span class="section-index">03</span>
         <span class="section-label">Dossier complet</span>
@@ -146,13 +156,18 @@
     </div>
   </main>
 
+  <footer class="dossier-footer">
+    <p><strong>SpideyTrack</strong> est un projet indépendant et strictly non officiel.</p>
+    <p>Il n'est en aucun cas affilié, associé, autorisé, sponsorisé ou approuvé par <strong>Marvel Entertainment</strong>, <strong>Disney</strong> ou Sony Pictures.<br>Tous les droits relatifs aux personnages, noms et images appartiennent à leurs propriétaires respectifs.</p>
+    <p>Ce site est créé uniquement à des fins de statistiques et de divertissement pour analyser et suivre l'apparition des trois Spider-Man sur le jeu en ligne <a href="https://marveldle.com/menu" target="_blank" rel="noopener">Marveldle</a>.</p>
+  </footer>
+
   <div id="lightbox">
     <button id="lightbox-close">Fermer ✕</button>
     <img id="lightbox-img" src="" alt="Screenshot">
   </div>
 </div>
 
-<!-- DISCLAIMER -->
 <div id="disclaimer-overlay">
   <div id="disclaimer-box">
     <button id="disclaimer-close">✕</button>
@@ -169,7 +184,6 @@
   </div>
 </div>
 
-<!-- VICTOIRE -->
 <canvas id="victory-canvas"></canvas>
 <div id="victory-overlay">
   <div id="victory-box">
@@ -221,7 +235,7 @@ function hideLoader() {
 }
 
 // ============================================================
-// CHARGEMENT — une seule source : database.json (écrit par l'automatisation)
+// CHARGEMENT
 // ============================================================
 function todayISO() {
   const d = new Date();
@@ -234,14 +248,14 @@ async function loadDatabase() {
   try {
     const r = await fetch(DB_URL, { cache: 'no-store' });
     if (r.ok) raw = await r.json();
-  } catch (_) { /* base absente ou injoignable : on affiche un état vide, jamais une erreur bloquante */ }
+  } catch (_) { }
   setProgress(60, 'Classement des pièces…');
 
   const days = raw.days || {};
   const rows = Object.entries(days)
     .map(([day, entry]) => ({ day: parseInt(day, 10), date: entry.date, chars: entry.chars || {} }))
     .filter(r => Number.isFinite(r.day))
-    .sort((a, b) => b.day - a.day); // le plus récent en premier
+    .sort((a, b) => b.day - a.day);
 
   setProgress(85, 'Mise en page…');
   return rows;
@@ -314,7 +328,6 @@ function renderDashboard(rows) {
       played++;
       if (c.result === true) wins++;
     });
-    // streak courant, calculé depuis le jour le plus récent (rows est déjà trié desc)
     let streak = 0;
     for (const r of rows) {
       const c = r.chars[key];
@@ -338,7 +351,7 @@ function renderDashboard(rows) {
 }
 
 // ============================================================
-// TOP 5 — logique refaite.
+// TOP 5 (MIS À JOUR : PRIORITÉ ABSOLUE AUX SPIDER-MAN TROUVÉS)
 // ============================================================
 function buildTop5(rows) {
   const items = [];
@@ -347,12 +360,28 @@ function buildTop5(rows) {
       const c = r.chars[key];
       if (!c || !c.screenshot) return;
       items.push({
-        screenshot: c.screenshot, day: r.day, key,
-        exact: c.exact || 0, partial: c.partial || 0, w: c.weighted || 0,
+        screenshot: c.screenshot,
+        day: r.day,
+        key,
+        result: c.result === true, // true si le Spider-Man a été trouvé
+        exact: c.exact || 0,
+        partial: c.partial || 0,
+        w: c.weighted || 0,
       });
     });
   });
-  return items.sort((a,b) => b.w - a.w || b.exact - a.exact || a.day - b.day).slice(0, 5);
+  
+  // Tri : 
+  // 1. Les Spider-Man trouvés (result === true) en premier
+  // 2. Meilleur score pondéré (w)
+  // 3. Nombre de critères exacts
+  // 4. Jour le plus récent
+  return items.sort((a,b) => 
+    (b.result - a.result) || 
+    (b.w - a.w) || 
+    (b.exact - a.exact) || 
+    (b.day - a.day)
+  ).slice(0, 5);
 }
 
 function renderTop5(items) {
@@ -366,13 +395,17 @@ function renderTop5(items) {
     const cfg = CHAR_CONFIG[item.key];
     let caption = `${cfg.label} · ${item.exact}/${MAX_EXACT} exacts`;
     if (item.partial > 0) caption += `, ${item.partial}/${MAX_EXACT} partiels`;
+    
+    // Petit badge vert pour indiquer visuellement si le personnage a été trouvé ce jour-là
+    const winBadge = item.result ? `<span style="color:var(--yes);font-weight:bold;margin-left:6px;">✓ Identifié</span>` : '';
+    
     const card = document.createElement('div');
     card.className = 'top5-card';
     card.innerHTML = `
       <div class="top5-rank">${i+1}</div>
       <div class="top5-img"><img src="${item.screenshot}" loading="lazy" alt="${cfg.label} — jour ${item.day}"></div>
       <div class="top5-body">
-        <div class="top5-day" style="color:${cfg.color}">Jour ${item.day}</div>
+        <div class="top5-day" style="color:${cfg.color}">Jour ${item.day} ${winBadge}</div>
         <div class="top5-note">${caption}</div>
       </div>`;
     card.querySelector('.top5-img').addEventListener('click', () => openLightbox(item.screenshot));
@@ -462,7 +495,7 @@ function chartOpts(textColor, gridColor, scatter) {
 }
 
 // ============================================================
-// DOSSIER COMPLET — table triable / filtrable / paginée
+// DOSSIER COMPLET
 // ============================================================
 let dbFilterResult = 'all';
 let dbSearch = '';
