@@ -33082,3 +33082,58 @@ Call log:
 2026-08-27 04:24:58,114 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-08-27 04:24:58,180 [INFO] Rien à commiter, le répertoire est propre.
 2026-08-27 04:24:58,180 [INFO] ==== Fin du script bandes-annonces ====
+2026-08-28 11:12:32,967 [INFO] ==== Début du script bandes-annonces ====
+2026-08-28 11:12:32,983 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-08-28 11:12:32,993 [INFO] 1031 identifiants chargés depuis le log
+2026-08-28 11:12:32,994 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-28 11:12:34,633 [INFO] Démarrage scraping CineHorizons...
+2026-08-28 11:12:38,347 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-28 11:12:38,378 [INFO] 10 blocs détectés sur la page 1
+2026-08-28 11:12:38,379 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-28 11:12:38,379 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-28 11:12:38,379 [INFO] Démarrage scraping Allociné (films)...
+2026-08-28 11:12:39,200 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-28 11:12:39,258 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 11:12:39,258 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-28 11:12:39,258 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-28 11:12:40,192 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-28 11:12:40,963 [INFO] Article ajouté Allociné (serie): Outlander : Blood Of My Blood (saison 2)
+2026-08-28 11:12:42,194 [INFO] Article ajouté Allociné (serie): Marvel's VisionQuest (saison 1)
+2026-08-28 11:12:42,832 [INFO] Article ajouté Allociné (serie): Marvel's VisionQuest (saison 1)
+2026-08-28 11:12:43,505 [INFO] Article ajouté Allociné (serie): Star Wars : Ahsoka (saison 2)
+2026-08-28 11:12:44,196 [INFO] Article ajouté Allociné (serie): Star Wars : Ahsoka (saison 2)
+2026-08-28 11:12:44,857 [INFO] Article ajouté Allociné (serie): La Diplomate (saison 4)
+2026-08-28 11:12:46,078 [INFO] Article ajouté Allociné (serie): A Different World (saison 1)
+2026-08-28 11:12:47,267 [INFO] Article ajouté Allociné (serie): La Fosse (saison 3)
+2026-08-28 11:12:48,465 [INFO] Article ajouté Allociné (serie): Sorcières Academy (saison 1)
+2026-08-28 11:12:49,282 [INFO] Article ajouté Allociné (serie): Sorcières Academy (saison 1)
+2026-08-28 11:12:50,152 [INFO] Article ajouté Allociné (serie): Monstre : L'histoire de Lizzie Borden (saison 1)
+2026-08-28 11:12:50,763 [INFO] Article ajouté Allociné (serie): Monstre : L'histoire de Lizzie Borden (saison 1)
+2026-08-28 11:12:51,409 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 11:12:52,275 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 11:12:54,289 [INFO] Article ajouté Allociné (serie): Blue Eye Samurai (saison 2)
+2026-08-28 11:12:55,805 [INFO] Article ajouté Allociné (serie): Cyberpunk: Edgerunners (saison 2)
+2026-08-28 11:12:56,955 [INFO] Article ajouté Allociné (serie): The Ramparts of Ice (saison 2)
+2026-08-28 11:12:58,319 [INFO] Article ajouté Allociné (serie): Bass X Machina (saison 1)
+2026-08-28 11:12:58,947 [INFO] Article ajouté Allociné (serie): 12 12 12 (saison 1)
+2026-08-28 11:12:59,591 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-08-28 11:12:59,625 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 11:12:59,625 [INFO] Scraping Allociné (séries) terminé (19 items)
+2026-08-28 11:12:59,742 [INFO] Démarrage scraping TMDb...
+2026-08-28 11:13:00,098 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-28 11:13:00,222 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-28 11:13:01,579 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-28 11:13:01,864 [INFO] Article ajouté TMDb (upcoming): NCT 127 5TH TOUR ‘NEO CITY  SEOUL - THE REDLINE’ in CINEMAS
+2026-08-28 11:13:04,474 [INFO] 3 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-28 11:13:05,383 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-28 11:13:05,990 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-28 11:13:06,644 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-28 11:13:07,513 [INFO] Article ajouté TMDb (now_playing): The Way We Move - Chansigne : quand le corps devient musique
+2026-08-28 11:13:07,636 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-28 11:13:08,571 [INFO] Article ajouté TMDb (now_playing): Elle entend pas la moto
+2026-08-28 11:13:09,508 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-28 11:13:11,667 [INFO] Scraping TMDb terminé (3 items)
+2026-08-28 11:13:11,667 [INFO] 11 articles retenus pour ce run
+2026-08-28 11:13:11,727 [INFO] 2138 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
+2026-08-28 11:13:11,727 [INFO] Sauvegarde du log avec 1042 identifiants
+2026-08-28 11:13:11,728 [INFO] Poussée automatique FORCÉE vers GitHub...
