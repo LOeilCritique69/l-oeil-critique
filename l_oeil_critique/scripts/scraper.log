@@ -33187,3 +33187,46 @@ Call log:
 2026-08-28 14:08:42,071 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-08-28 14:08:42,135 [INFO] Rien à commiter, le répertoire est propre.
 2026-08-28 14:08:42,135 [INFO] ==== Fin du script bandes-annonces ====
+2026-08-28 23:55:20,278 [INFO] ==== Début du script bandes-annonces ====
+2026-08-28 23:55:20,293 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-28 23:55:20,294 [INFO] 1050 identifiants chargés depuis le log
+2026-08-28 23:55:20,294 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-28 23:55:20,897 [INFO] Démarrage scraping CineHorizons...
+2026-08-28 23:55:22,776 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-28 23:55:22,820 [INFO] 10 blocs détectés sur la page 1
+2026-08-28 23:55:22,822 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-28 23:55:22,822 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-28 23:55:22,822 [INFO] Démarrage scraping Allociné (films)...
+2026-08-28 23:55:23,331 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-28 23:55:23,413 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 23:55:23,413 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-28 23:55:23,413 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-28 23:55:24,458 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-28 23:55:27,099 [INFO] Article ajouté Allociné (serie): Le Rouge et le Noir (saison 1)
+2026-08-28 23:55:28,872 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 23:55:30,636 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 23:55:32,264 [INFO] Article ajouté Allociné (serie): Blue Eye Samurai (saison 2)
+2026-08-28 23:55:33,923 [INFO] Article ajouté Allociné (serie): Cyberpunk: Edgerunners (saison 2)
+2026-08-28 23:55:35,549 [INFO] Article ajouté Allociné (serie): The Ramparts of Ice (saison 2)
+2026-08-28 23:55:37,159 [INFO] Article ajouté Allociné (serie): Bass X Machina (saison 1)
+2026-08-28 23:55:38,733 [INFO] Article ajouté Allociné (serie): 12 12 12 (saison 1)
+2026-08-28 23:55:39,172 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-08-28 23:55:39,282 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 23:55:39,282 [INFO] Scraping Allociné (séries) terminé (8 items)
+2026-08-28 23:55:39,377 [INFO] Démarrage scraping TMDb...
+2026-08-28 23:55:39,584 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-28 23:55:39,596 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-28 23:55:39,780 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-28 23:55:40,495 [INFO] 4 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-28 23:55:40,952 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-28 23:55:41,689 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-28 23:55:41,731 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-28 23:55:41,891 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-28 23:55:42,181 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-28 23:55:42,928 [INFO] Scraping TMDb terminé (0 items)
+2026-08-28 23:55:42,928 [INFO] 8 articles retenus pour ce run
+2026-08-28 23:55:42,994 [INFO] 2154 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-28 23:55:42,994 [INFO] Sauvegarde du log avec 1058 identifiants
+2026-08-28 23:55:42,995 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-28 23:55:43,050 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-28 23:55:43,050 [INFO] ==== Fin du script bandes-annonces ====

@@ -11431,5 +11431,28 @@
     "video": true,
     "vote_average": 8.969,
     "vote_count": 179
+  },
+  "Lady and the Tramp_1955": {
+    "adult": false,
+    "backdrop_path": "/yGgEg4yimYQJLZrZg3Qhogp2raQ.jpg",
+    "genre_ids": [
+      16,
+      10751,
+      10749,
+      12,
+      35
+    ],
+    "id": 10340,
+    "title": "La Belle et le Clochard",
+    "original_language": "en",
+    "original_title": "Lady and the Tramp",
+    "overview": "Laissez-vous charmer par ce film classique de Walt Disney racontant les aventures palpitantes de Lady, une jolie chienne cocker spaniel, et de Clochard, un chien de la rue au grand cœur. Petits et grands s'enthousiasmeront pour la qualité de l'animation, les inoubliables chansons et une des plus belles histoires d'amour qui soit.",
+    "popularity": 12.6721,
+    "poster_path": "/2NSswcmFR0SAZInJnniq1elmUdm.jpg",
+    "release_date": "1955-06-22",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.129,
+    "vote_count": 5725
   }
 }
