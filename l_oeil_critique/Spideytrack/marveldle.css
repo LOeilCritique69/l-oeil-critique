@@ -80,6 +80,23 @@ body {
 
 ::selection { background: var(--tom); color: #fff; }
 
+/* focus visible — anneau "surligneur d'indice", cohérent avec le dossier,
+   plutôt que le rond bleu par défaut du navigateur */
+:focus-visible {
+  outline: 2px dashed var(--gold-hi);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* fil d'indice réutilisable : trait pointillé + petit nœud, pour relier
    deux blocs (masthead → hero, stat → stat). Signature visuelle du site. */
 .thread {
@@ -133,8 +150,14 @@ body {
 #app-wrapper {
   max-width: 1180px; margin: 0 auto; padding: calc(var(--header-h, 84px) + 28px) 24px 90px;
   opacity: 0; transition: opacity .4s ease;
+  position: relative;
 }
 #app-wrapper.visible { opacity: 1; }
+#app-wrapper::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  background-image: repeating-linear-gradient(0deg, rgba(230,220,192,.012) 0 1px, transparent 1px 3px);
+  opacity: .6;
+}
 
 /* masthead du dossier */
 .dossier-masthead { text-align: center; margin-bottom: 28px; }
@@ -143,49 +166,81 @@ body {
   text-transform: uppercase; color: var(--gold-hi); margin-bottom: 6px;
 }
 .dossier-title {
-  font-family: var(--f-display); font-size: 3.2rem; letter-spacing: .04em;
+  font-family: var(--f-display); font-size: clamp(2rem, 3vw + 1.4rem, 3.2rem); letter-spacing: .04em;
   text-transform: uppercase; color: var(--paper); line-height: 1;
 }
 .dossier-title span { color: var(--tom); }
 .dossier-tagline {
-  font-family: var(--f-mono); font-size: .64rem; color: var(--text-dim);
-  margin-top: 8px; letter-spacing: .04em;
+  font-family: 'Caveat', var(--f-mono); font-weight: 600; font-size: 1.3rem;
+  color: var(--gold-hi); margin-top: 2px; transform: rotate(-1deg);
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   AUJOURD'HUI — trois fiches "polaroid"
+   AUJOURD'HUI — corkboard, trois polaroids scotchés (signature)
 ═══════════════════════════════════════════════════════════════ */
-.today-hero { margin: 32px 0 44px; }
-.today-hero-label {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  font-family: var(--f-mono); font-size: .56rem; text-transform: uppercase;
-  letter-spacing: .22em; color: var(--tom); margin-bottom: 22px;
+.today-hero {
+  margin: 32px 0 44px; padding: 30px 20px 26px; position: relative;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(0,0,0,.35), transparent 6%),
+    radial-gradient(circle at 78% 62%, rgba(0,0,0,.3), transparent 6%),
+    radial-gradient(circle at 45% 85%, rgba(0,0,0,.28), transparent 5%),
+    var(--ink-2);
+  border: 1px solid var(--line);
 }
-.today-hero-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--tom);
+
+/* fil de laine reliant les épingles — calculé en JS (drawCaseThread),
+   cette couche ne fait que l'afficher. Masqué sous 860px : un fil sur
+   un board qui a déjà basculé en 1 colonne ne veut plus rien dire. */
+.case-thread { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.thread-path { fill: none; stroke: var(--tom); stroke-width: 1.3; stroke-dasharray: 1 5; stroke-linecap: round; opacity: .55; }
+.thread-pin  { fill: var(--tom); opacity: .75; }
+@media (max-width: 860px) { .case-thread { display: none; } }
+
+.case-stamp {
+  display: inline-flex; align-items: center; gap: 9px; margin: 0 auto 26px; width: fit-content;
+  font-family: var(--f-mono); font-size: .56rem; text-transform: uppercase;
+  letter-spacing: .18em; color: var(--tom);
+  border: 1.5px solid var(--tom); border-radius: 3px; padding: 7px 16px 6px;
+  transform: rotate(-1.6deg);
+  box-shadow: 0 0 0 1px rgba(232,25,44,.25) inset;
+  position: relative; left: 50%; translate: -50%;
+}
+.case-stamp-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--tom); flex: none;
   box-shadow: 0 0 8px var(--tom); animation: pulse-dot 1.4s ease infinite;
 }
+.case-stamp-text { opacity: .85; }
+.case-stamp-day { color: var(--gold-hi); font-weight: 600; }
 @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.6)} }
 
 .today-cards-row {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+  position: relative; z-index: 2;
 }
 
 .case-card {
-  background: var(--ink-2); border: 1px solid var(--line);
-  padding: 10px 10px 16px; position: relative;
+  background: var(--paper); border: 1px solid rgba(0,0,0,.15);
+  padding: 10px 10px 0; position: relative;
   transform: rotate(var(--tilt, 0deg));
   transition: transform .22s ease, box-shadow .22s ease;
-  box-shadow: 0 10px 26px rgba(0,0,0,.4);
+  box-shadow: 0 10px 26px rgba(0,0,0,.45);
 }
-.case-card:nth-child(1) { --tilt: -1.4deg; }
-.case-card:nth-child(2) { --tilt: 0.6deg; }
-.case-card:nth-child(3) { --tilt: -0.5deg; }
-.case-card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,.55); z-index: 2; }
+.case-card:nth-child(1) { --tilt: -2deg; }
+.case-card:nth-child(2) { --tilt: 1.1deg; }
+.case-card:nth-child(3) { --tilt: -1deg; }
+.case-card:hover { transform: rotate(0deg) translateY(-5px); box-shadow: 0 20px 44px rgba(0,0,0,.55); z-index: 2; }
 
+/* scotch déchiré, en haut, légèrement de travers */
+.cc-tape {
+  position: absolute; top: -11px; left: 50%; width: 58px; height: 22px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: linear-gradient(100deg, rgba(232,223,196,.5), rgba(232,223,196,.72) 45%, rgba(232,223,196,.5));
+  clip-path: polygon(3% 15%, 97% 0%, 100% 85%, 2% 100%);
+  box-shadow: 0 3px 6px rgba(0,0,0,.35);
+}
 .cc-pin {
   position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
-  width: 12px; height: 12px; border-radius: 50%;
+  width: 11px; height: 11px; border-radius: 50%; z-index: 1;
   background: radial-gradient(circle at 35% 30%, #fff8, var(--pin-color, var(--gold)) 60%);
   box-shadow: 0 2px 4px rgba(0,0,0,.5);
 }
@@ -193,12 +248,13 @@ body {
 .case-card.tc-andrew .cc-pin { --pin-color: var(--andrew); }
 .case-card.tc-tobey  .cc-pin { --pin-color: var(--tobey); }
 
-.cc-img { width: 100%; height: 128px; overflow: hidden; background: var(--ink); cursor: pointer; position: relative; border: 1px solid var(--line); }
+.cc-img { width: 100%; height: 128px; overflow: hidden; background: var(--ink); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,.2); }
 .cc-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) contrast(1.05) brightness(.9); transition: filter .25s ease, transform .3s ease; }
-.cc-img:hover img { filter: grayscale(0) contrast(1.1) brightness(1); transform: scale(1.05); }
+.cc-img:hover img, .cc-img:focus-visible img { filter: grayscale(0) contrast(1.1) brightness(1); transform: scale(1.05); }
 .cc-img-empty {
   display: flex; align-items: center; justify-content: center; height: 100%;
   font-size: .5rem; color: var(--text-ghost); text-transform: uppercase; letter-spacing: .1em;
+  background: var(--ink-3);
 }
 
 .cc-name {
@@ -209,22 +265,22 @@ body {
 .tc-andrew .cc-name { color: var(--andrew); }
 .tc-tobey  .cc-name { color: var(--tobey); }
 
-.cc-body { padding: 10px 4px 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.cc-body { padding: 10px 4px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 
-/* verdict = tampon d'encre */
+/* verdict = tampon d'encre, imprimé sur le papier (multiply, pas screen) */
 .stamp {
   font-family: var(--f-mono); font-weight: 700; font-size: .72rem;
   text-transform: uppercase; letter-spacing: .12em;
   padding: 6px 16px; border: 2px solid; border-radius: 3px;
-  transform: rotate(-6deg); mix-blend-mode: screen; opacity: .92;
+  transform: rotate(-6deg); mix-blend-mode: multiply; opacity: .85;
 }
-.stamp.win     { color: var(--yes); border-color: var(--yes); box-shadow: 0 0 0 1px var(--yes) inset; }
-.stamp.lose    { color: var(--no);  border-color: var(--no);  box-shadow: 0 0 0 1px var(--no) inset; }
-.stamp.pending { color: var(--text-ghost); border-color: var(--text-ghost); mix-blend-mode: normal; }
+.stamp.win     { color: var(--yes); border-color: var(--yes); }
+.stamp.lose    { color: var(--tom-dim); border-color: var(--tom-dim); }
+.stamp.pending { color: var(--paper-dim); border-color: var(--paper-dim); mix-blend-mode: normal; opacity: 1; }
 
-.cc-score-wrap { width: 100%; height: 3px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; }
+.cc-score-wrap { width: 100%; height: 3px; background: rgba(10,12,17,.14); border-radius: 2px; overflow: hidden; }
 .cc-score-bar { height: 100%; border-radius: 2px; transition: width 1s ease; }
-.cc-score-txt { font-family: var(--f-mono); font-size: .5rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: .06em; }
+.cc-score-txt { font-family: var(--f-mono); font-size: .5rem; color: rgba(10,12,17,.6); text-transform: uppercase; letter-spacing: .06em; }
 
 /* ═══════════════════════════════════════════════════════════════
    SECTION HEADER
@@ -245,7 +301,11 @@ body {
 ═══════════════════════════════════════════════════════════════ */
 .dashboard { margin-bottom: 44px; }
 .dash-global { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 1px; }
-.dash-stat { background: var(--ink-2); padding: 20px 16px; text-align: center; }
+.dash-stat { background: var(--ink-2); padding: 20px 16px; text-align: center; position: relative; overflow: hidden; }
+.dash-stat::after {
+  content: ''; position: absolute; top: 0; right: 0; width: 14px; height: 14px;
+  background: linear-gradient(135deg, transparent 50%, var(--ink-4) 51%);
+}
 .dash-val { font-family: var(--f-display); font-size: 2.1rem; color: var(--paper); line-height: 1; }
 .dash-val.gold { color: var(--gold-hi); }
 .dash-lbl { font-family: var(--f-mono); font-size: .5rem; text-transform: uppercase; letter-spacing: .12em; color: var(--text-ghost); margin-top: 6px; }
@@ -273,6 +333,13 @@ body {
 .top5-card:nth-child(1) { --tilt:-2deg; } .top5-card:nth-child(2) { --tilt:1.3deg; }
 .top5-card:nth-child(3) { --tilt:-1deg; } .top5-card:nth-child(4) { --tilt:1.6deg; } .top5-card:nth-child(5) { --tilt:-1.6deg; }
 .top5-card:hover { transform: rotate(0) translateY(-8px); box-shadow: 0 16px 36px rgba(0,0,0,.55); border-color: var(--line-hi); z-index: 5; }
+
+.top5-tape {
+  position: absolute; top: -8px; right: 14px; width: 34px; height: 15px; z-index: 1;
+  transform: rotate(4deg);
+  background: linear-gradient(100deg, rgba(232,223,196,.4), rgba(232,223,196,.6) 45%, rgba(232,223,196,.4));
+  clip-path: polygon(4% 20%, 96% 0%, 100% 80%, 0% 100%);
+}
 
 .top5-rank {
   position: absolute; top: -10px; left: -10px; z-index: 2;
@@ -314,7 +381,13 @@ body {
 /* ═══════════════════════════════════════════════════════════════
    DOSSIER COMPLET — table
 ═══════════════════════════════════════════════════════════════ */
-.db-wrap { margin-bottom: 60px; }
+.db-wrap { margin-bottom: 60px; position: relative; padding-top: 22px; }
+.db-wrap::before {
+  content: 'Archives'; position: absolute; top: 0; left: 24px;
+  font-family: var(--f-mono); font-size: .5rem; text-transform: uppercase; letter-spacing: .16em;
+  color: var(--ink); background: var(--paper-dim); padding: 4px 14px 3px;
+  clip-path: polygon(6% 0, 94% 0, 100% 100%, 0% 100%);
+}
 .db-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 14px; }
 .db-filters { display: flex; gap: 6px; }
 .hc-btn {
@@ -328,7 +401,7 @@ body {
   font-family: var(--f-mono); font-size: .68rem; color: var(--text);
   background: var(--ink-3); border: 1px solid var(--line); padding: 7px 12px; min-width: 220px; flex: 1;
 }
-.hc-search:focus { outline: none; border-color: var(--line-hi); }
+.hc-search:focus { border-color: var(--line-hi); }
 .hc-search::placeholder { color: var(--text-ghost); }
 
 .db-table-wrap { border: 1px solid var(--line); background: var(--ink-2); overflow-x: auto; }

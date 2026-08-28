@@ -277,13 +277,33 @@ def play_character(char: CharacterConfig, day: int, is_ci: bool) -> GuessResult:
                 )
                 time.sleep(1.5)
 
-                option_selector = f"span.option-name:has-text('{char.option}')"
+                option_selector = f"span.option-name:text-is('{char.option}')"
                 page.wait_for_selector(option_selector, timeout=10000)
                 page.click(option_selector)
                 time.sleep(0.5)
 
                 page.click("button.btn.btn-primary.search-button")
                 page.wait_for_selector("div.guess-row.new")
+
+                # ── Vérification : le bon personnage a bien été deviné ─────
+                # Le tooltip d'accessibilité (aria-describedby) sur l'image
+                # de la ligne devinée contient le nom exact de l'option
+                # cliquée. Ça détecte un mauvais clic dans le dropdown
+                # immédiatement, sans attendre l'animation de 10s pour le
+                # découvrir trop tard.
+                guessed_img = page.query_selector("div.guess-row.new img.square.image")
+                described_by = (
+                    guessed_img.get_attribute("aria-describedby") if guessed_img else None
+                )
+                guessed_label = None
+                if described_by:
+                    tooltip = page.query_selector(f"#{described_by}")
+                    guessed_label = tooltip.inner_text().strip() if tooltip else None
+                if guessed_label and guessed_label != char.option:
+                    raise RuntimeError(
+                        f"Mauvais personnage deviné : attendu '{char.option}', "
+                        f"obtenu '{guessed_label}'"
+                    )
 
                 squares = []
                 start_time = time.time()
@@ -299,6 +319,15 @@ def play_character(char: CharacterConfig, day: int, is_ci: bool) -> GuessResult:
                     raise RuntimeError(f"Seulement {len(squares)}/7 cases trouvées")
 
                 time.sleep(POST_GUESS_ANIMATION_WAIT)
+
+                # Re-requêter après l'attente d'animation : Angular peut avoir
+                # recréé les nœuds DOM entre-temps, ce qui rendrait périmés
+                # les ElementHandle capturés avant l'attente.
+                squares = page.query_selector_all("div.guess-row.new > div.similarity")
+                if len(squares) != 7:
+                    raise RuntimeError(
+                        f"Perte de cases après l'animation : {len(squares)}/7"
+                    )
 
                 square_info = []
                 for sq in squares:

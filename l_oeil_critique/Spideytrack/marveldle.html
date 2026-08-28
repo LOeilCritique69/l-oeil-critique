@@ -15,7 +15,7 @@
 <link href="spidey.png" rel="icon" sizes="32x32" type="image/png">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <link href="/l_oeil_critique/css/chef_d_oeuvre.css" rel="stylesheet">
 <link href="marveldle.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -58,7 +58,7 @@
   </div>
   <div class="loader-sub">Dossier de filature — trois suspects, un costume</div>
   <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
-  <div class="loader-status" id="loader-status">Ouverture du dossier…</div>
+  <div class="loader-status" id="loader-status" role="status" aria-live="polite">Ouverture du dossier…</div>
 </div>
 
 <div id="app-wrapper">
@@ -66,13 +66,13 @@
   <div class="dossier-masthead">
     <div class="dossier-eyebrow">Rapport de filature — mis à jour chaque jour</div>
     <h1 class="dossier-title">SPIDEY<span>TRACK</span></h1>
-    <p class="dossier-tagline">Qui se cachait sous le masque aujourd'hui sur Marveldle ?</p>
   </div>
 
-    <section class="today-hero" id="today-hero">
-    <div class="today-hero-label">
-      <span class="today-hero-dot"></span>
-      Rapport du jour — <span id="today-day-label">Jour —</span>
+    <section class="today-hero" id="today-hero" aria-label="Rapport du jour">
+    <div class="case-stamp">
+      <span class="case-stamp-dot" aria-hidden="true"></span>
+      <span class="case-stamp-text">Rapport du jour</span>
+      <span class="case-stamp-day" id="today-day-label">Jour —</span>
     </div>
     <div class="today-cards-row" id="today-cards-row"></div>
   </section>
@@ -101,7 +101,7 @@
         <div class="top5-wrap">
       <div class="section-header">
         <span class="section-index">01</span>
-        <span class="section-label">Meilleures prises</span>
+        <h2 class="section-label">Meilleures prises</h2>
         <span class="section-sub">Meilleures identifications et indices</span>
       </div>
       <div class="top5-board" id="top5-container"></div>
@@ -110,14 +110,14 @@
         <div class="charts-wrap">
       <div class="section-header">
         <span class="section-index">02</span>
-        <span class="section-label">Filature dans le temps</span>
+        <h2 class="section-label">Filature dans le temps</h2>
         <span class="section-sub">Score par jour</span>
       </div>
       <div class="charts-tabs">
-        <button class="chart-tab active" onclick="switchChart('tom',this)">Tom Holland</button>
-        <button class="chart-tab" onclick="switchChart('andrew',this)">Andrew Garfield</button>
-        <button class="chart-tab" onclick="switchChart('tobey',this)">Tobey Maguire</button>
-        <button class="chart-tab" onclick="switchChart('compare',this)">Comparatif</button>
+        <button class="chart-tab active" aria-pressed="true" onclick="switchChart('tom',this)">Tom Holland</button>
+        <button class="chart-tab" aria-pressed="false" onclick="switchChart('andrew',this)">Andrew Garfield</button>
+        <button class="chart-tab" aria-pressed="false" onclick="switchChart('tobey',this)">Tobey Maguire</button>
+        <button class="chart-tab" aria-pressed="false" onclick="switchChart('compare',this)">Comparatif</button>
       </div>
       <div class="chart-container"><canvas id="main-chart"></canvas></div>
     </div>
@@ -125,14 +125,14 @@
         <div class="db-wrap">
       <div class="section-header">
         <span class="section-index">03</span>
-        <span class="section-label">Dossier complet</span>
+        <h2 class="section-label">Dossier complet</h2>
         <span class="section-sub" id="db-count">— entrées</span>
       </div>
       <div class="db-controls">
         <div class="db-filters">
-          <button class="hc-btn active" data-result="all">Tous</button>
-          <button class="hc-btn" data-result="true" style="--btn-color:var(--yes)">✓ Identifié (au moins un)</button>
-          <button class="hc-btn" data-result="false" style="--btn-color:var(--tom)">✗ Aucun identifié</button>
+          <button class="hc-btn active" data-result="all" aria-pressed="true">Tous</button>
+          <button class="hc-btn" data-result="true" aria-pressed="false" style="--btn-color:var(--yes)">✓ Identifié (au moins un)</button>
+          <button class="hc-btn" data-result="false" aria-pressed="false" style="--btn-color:var(--tom)">✗ Aucun identifié</button>
         </div>
         <input class="hc-search" id="db-search" placeholder="Rechercher un jour ou une date…" type="text">
       </div>
@@ -140,12 +140,12 @@
         <table class="db-table" id="db-table">
           <thead>
             <tr>
-              <th class="sortable" data-sort="day">Jour <span class="sort-arrow"></span></th>
-              <th class="sortable" data-sort="date">Date <span class="sort-arrow"></span></th>
-              <th style="color:var(--tom)">Tom</th>
-              <th style="color:var(--andrew)">Andrew</th>
-              <th style="color:var(--tobey)">Tobey</th>
-              <th class="sortable" data-sort="weighted">Total <span class="sort-arrow"></span></th>
+              <th class="sortable" data-sort="day" tabindex="0" role="button" aria-sort="descending">Jour <span class="sort-arrow"></span></th>
+              <th class="sortable" data-sort="date" tabindex="0" role="button" aria-sort="none">Date <span class="sort-arrow"></span></th>
+              <th style="color:var(--tom)" scope="col">Tom</th>
+              <th style="color:var(--andrew)" scope="col">Andrew</th>
+              <th style="color:var(--tobey)" scope="col">Tobey</th>
+              <th class="sortable" data-sort="weighted" tabindex="0" role="button" aria-sort="none">Total <span class="sort-arrow"></span></th>
             </tr>
           </thead>
           <tbody id="db-tbody"></tbody>
@@ -292,17 +292,64 @@ function renderTodayHero(rows) {
       : '';
 
     const imgHtml = c.screenshot
-      ? `<div class="cc-img" onclick="openLightbox('${c.screenshot}')"><img src="${c.screenshot}" alt="${cfg.label}"></div>`
+      ? `<div class="cc-img" role="button" tabindex="0" aria-label="Agrandir la capture — ${cfg.label}, jour ${entry.day}" onclick="openLightbox('${c.screenshot}','${cfg.label} — jour ${entry.day}')"><img src="${c.screenshot}" alt=""></div>`
       : `<div class="cc-img cc-img-empty"><span>Pas de pièce à conviction</span></div>`;
 
     card.innerHTML = `
-      <div class="cc-pin"></div>
+      <div class="cc-tape" aria-hidden="true"></div>
+      <div class="cc-pin" aria-hidden="true"></div>
       ${imgHtml}
       <div class="cc-name">${cfg.label}</div>
       <div class="cc-body">${stampHtml}${scoreHtml}</div>`;
     row.appendChild(card);
   });
+
+  requestAnimationFrame(drawCaseThread);
 }
+
+// ── Fil rouge du tableau d'enquête ──────────────────────────────────
+// Relie les épingles des 3 polaroids par un fil pointillé, recalculé
+// sur les coordonnées réelles des cartes (donc correct quel que soit
+// le nombre de personnages joués ce jour-là). Masqué en CSS sous
+// 860px, où le board passe en une colonne et un "fil" n'a plus de sens.
+function drawCaseThread() {
+  const hero = document.getElementById('today-hero');
+  if (!hero) return;
+  const cards = hero.querySelectorAll('.case-card');
+  let svg = hero.querySelector('.case-thread');
+  if (!svg) {
+    svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'case-thread');
+    svg.setAttribute('aria-hidden', 'true');
+    hero.insertBefore(svg, hero.querySelector('.today-cards-row'));
+  }
+  if (cards.length < 2) { svg.innerHTML = ''; return; }
+
+  const heroRect = hero.getBoundingClientRect();
+  svg.setAttribute('width', heroRect.width);
+  svg.setAttribute('height', heroRect.height);
+  svg.setAttribute('viewBox', `0 0 ${heroRect.width} ${heroRect.height}`);
+
+  const pins = [...cards].map(c => {
+    const r = c.getBoundingClientRect();
+    return { x: r.left - heroRect.left + r.width / 2, y: r.top - heroRect.top + 3 };
+  });
+
+  let d = `M ${pins[0].x} ${pins[0].y}`;
+  for (let i = 1; i < pins.length; i++) {
+    const prev = pins[i - 1], cur = pins[i];
+    const midY = Math.min(prev.y, cur.y) - 22; // léger affaissement du fil entre 2 épingles
+    d += ` Q ${(prev.x + cur.x) / 2} ${midY} ${cur.x} ${cur.y}`;
+  }
+  svg.innerHTML = `<path d="${d}" class="thread-path"/>`
+    + pins.map(p => `<circle cx="${p.x}" cy="${p.y}" r="2.5" class="thread-pin"/>`).join('');
+}
+
+let threadResizeT = null;
+window.addEventListener('resize', () => {
+  clearTimeout(threadResizeT);
+  threadResizeT = setTimeout(drawCaseThread, 150);
+});
 
 // ============================================================
 // DASHBOARD
@@ -402,13 +449,14 @@ function renderTop5(items) {
     const card = document.createElement('div');
     card.className = 'top5-card';
     card.innerHTML = `
+      <div class="top5-tape" aria-hidden="true"></div>
       <div class="top5-rank">${i+1}</div>
-      <div class="top5-img"><img src="${item.screenshot}" loading="lazy" alt="${cfg.label} — jour ${item.day}"></div>
+      <div class="top5-img" role="button" tabindex="0" aria-label="Agrandir la capture — ${cfg.label}, jour ${item.day}"><img src="${item.screenshot}" loading="lazy" alt=""></div>
       <div class="top5-body">
         <div class="top5-day" style="color:${cfg.color}">Jour ${item.day} ${winBadge}</div>
         <div class="top5-note">${caption}</div>
       </div>`;
-    card.querySelector('.top5-img').addEventListener('click', () => openLightbox(item.screenshot));
+    card.querySelector('.top5-img').addEventListener('click', () => openLightbox(item.screenshot, `${cfg.label} — jour ${item.day}`));
     container.appendChild(card);
   });
 }
@@ -420,8 +468,9 @@ let mainChart = null;
 let allRows = [];
 
 function switchChart(key, btn) {
-  document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.chart-tab').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
   btn.classList.add('active');
+  btn.setAttribute('aria-pressed', 'true');
   try { renderMainChart(key); } catch (e) { console.error('Chart.js indisponible :', e); }
 }
 
@@ -520,7 +569,10 @@ function cellHtml(r, key) {
   const icon = c.result === true ? '✓' : '✗';
   const cls  = c.result === true ? 'db-icon-yes' : 'db-icon-no';
   const score = `${c.exact ?? 0}/${MAX_EXACT}`;
-  const clickable = c.screenshot ? ` onclick="openLightbox('${c.screenshot}')" style="cursor:pointer"` : '';
+  const label = CHAR_CONFIG[key].label;
+  const clickable = c.screenshot
+    ? ` role="button" tabindex="0" aria-label="Agrandir la capture — ${label}, jour ${r.day}" onclick="openLightbox('${c.screenshot}','${label} — jour ${r.day}')" style="cursor:pointer"`
+    : '';
   return `<span class="db-cell ${cls}"${clickable}><span class="db-cell-icon">${icon}</span><span class="db-cell-score">${score}</span></span>`;
 }
 
@@ -595,8 +647,9 @@ function renderPager(totalPages) {
 function initDbControls() {
   document.querySelectorAll('.db-filters [data-result]').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.db-filters [data-result]').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.db-filters [data-result]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       dbFilterResult = btn.dataset.result;
       applyDbFilters();
     });
@@ -607,8 +660,12 @@ function initDbControls() {
       const key = th.dataset.sort;
       if (dbSort.key === key) dbSort.dir = dbSort.dir === 'asc' ? 'desc' : 'asc';
       else dbSort = { key, dir: 'desc' };
-      document.querySelectorAll('.db-table th.sortable').forEach(t => t.classList.remove('sort-asc','sort-desc'));
+      document.querySelectorAll('.db-table th.sortable').forEach(t => {
+        t.classList.remove('sort-asc','sort-desc');
+        t.setAttribute('aria-sort', 'none');
+      });
       th.classList.add(dbSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
+      th.setAttribute('aria-sort', dbSort.dir === 'asc' ? 'ascending' : 'descending');
       renderDbTable();
     });
   });
@@ -617,11 +674,25 @@ function initDbControls() {
 // ============================================================
 // UTILITAIRES
 // ============================================================
-function openLightbox(src) { document.getElementById('lightbox-img').src=src; document.getElementById('lightbox').classList.add('open'); }
+function openLightbox(src, alt) {
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt || 'Capture d\'écran';
+  document.getElementById('lightbox').classList.add('open');
+}
 function closeLightbox()   { document.getElementById('lightbox').classList.remove('open'); document.getElementById('lightbox-img').src=''; }
 document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
 document.getElementById('lightbox').addEventListener('click', e => { if(e.target===document.getElementById('lightbox')) closeLightbox(); });
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+// Rend cliquables au clavier tous les éléments role="button" générés
+// dynamiquement (photos de polaroids, cellules du dossier).
+document.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[role="button"][tabindex]')) {
+    e.preventDefault();
+    e.target.click();
+  }
+});
 
 // ============================================================
 // VICTOIRE
@@ -633,8 +704,9 @@ function triggerVictory(rows) {
   const winners = CHAR_KEYS.filter(k => entry.chars[k]?.result === true).map(k => CHAR_CONFIG[k].label);
   if (!winners.length) return;
   document.getElementById('victory-sub').textContent = winners.join('\n');
-  startParticles();
-  setTimeout(() => document.getElementById('victory-overlay').classList.add('open'), 600);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) startParticles();
+  setTimeout(() => document.getElementById('victory-overlay').classList.add('open'), reduceMotion ? 0 : 600);
   document.getElementById('victory-close').addEventListener('click', () => {
     document.getElementById('victory-overlay').classList.remove('open');
     stopParticles();
