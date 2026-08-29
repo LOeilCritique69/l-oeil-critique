@@ -3110,11 +3110,11 @@
     "tmdb_id": 27022
   },
   {
-    "Date": "2025-05-17",
+    "Date": "2026-08-27",
     "Name": "Warm Bodies",
     "Year": 2013,
-    "Letterboxd URI": "https://boxd.it/2TFm",
-    "Rating": 3,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/warm-bodies/",
+    "Rating": 2.5,
     "poster_path": "/yJw1f2xD1evLDzvVO2jnYdSRzWt.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/yJw1f2xD1evLDzvVO2jnYdSRzWt.jpg",
     "tmdb_id": 82654
@@ -5746,5 +5746,25 @@
     "poster_path": "/qcWTuWPu6x6t2MKt0MTfbResJiV.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/qcWTuWPu6x6t2MKt0MTfbResJiV.jpg",
     "tmdb_id": 120467
+  },
+  {
+    "Name": "Grand Theft Auto VI: An Extended Look",
+    "Year": 2026,
+    "Date": "2026-08-28",
+    "Rating": null,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/grand-theft-auto-vi-an-extended-look/",
+    "poster_path": "/wf0Gi6Mf9Yl00uSM1TD4zEMYkgV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/wf0Gi6Mf9Yl00uSM1TD4zEMYkgV.jpg",
+    "tmdb_id": 1744462
+  },
+  {
+    "Name": "Lady and the Tramp",
+    "Year": 1955,
+    "Date": "2026-08-28",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/lady-and-the-tramp/",
+    "poster_path": "/2NSswcmFR0SAZInJnniq1elmUdm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/2NSswcmFR0SAZInJnniq1elmUdm.jpg",
+    "tmdb_id": 10340
   }
 ]

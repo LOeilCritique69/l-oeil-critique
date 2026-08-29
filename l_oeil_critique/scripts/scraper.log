@@ -33137,5 +33137,161 @@ Call log:
 2026-08-28 11:13:11,727 [INFO] 2138 articles sauvegardés dans D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\bande_annonces_blocs.html
 2026-08-28 11:13:11,727 [INFO] Sauvegarde du log avec 1042 identifiants
 2026-08-28 11:13:11,728 [INFO] Poussée automatique FORCÉE vers GitHub...
+<<<<<<< HEAD
 2026-08-28 11:13:16,076 [INFO] Push GitHub FORCE réussi
 2026-08-28 11:13:16,077 [INFO] ==== Fin du script bandes-annonces ====
+=======
+2026-08-28 14:07:41,364 [INFO] ==== Début du script bandes-annonces ====
+2026-08-28 14:07:41,369 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-28 14:07:41,370 [INFO] 1042 identifiants chargés depuis le log
+2026-08-28 14:07:41,370 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-28 14:07:41,930 [INFO] Démarrage scraping CineHorizons...
+2026-08-28 14:07:45,189 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-28 14:07:45,225 [INFO] 10 blocs détectés sur la page 1
+2026-08-28 14:07:45,227 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-28 14:07:45,227 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-28 14:07:45,227 [INFO] Démarrage scraping Allociné (films)...
+2026-08-28 14:07:46,091 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-28 14:07:46,155 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 14:07:46,155 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-28 14:07:46,155 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-28 14:07:46,953 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-28 14:07:50,195 [INFO] Article ajouté Allociné (serie): Golden Axe (saison 1)
+2026-08-28 14:07:53,907 [INFO] Article ajouté Allociné (serie): Professeur Raoult vs le gang des Cerises (saison 1)
+2026-08-28 14:07:58,038 [INFO] Article ajouté Allociné (serie): Eternally Yours (saison 1)
+2026-08-28 14:08:01,476 [INFO] Article ajouté Allociné (serie): Youth (saison 1)
+2026-08-28 14:08:04,047 [INFO] Article ajouté Allociné (serie): Sorcières Academy (saison 1)
+2026-08-28 14:08:06,453 [INFO] Article ajouté Allociné (serie): Sorcières Academy (saison 1)
+2026-08-28 14:08:09,773 [INFO] Article ajouté Allociné (serie): Monstre : L'histoire de Lizzie Borden (saison 1)
+2026-08-28 14:08:11,767 [INFO] Article ajouté Allociné (serie): Monstre : L'histoire de Lizzie Borden (saison 1)
+2026-08-28 14:08:13,915 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 14:08:16,444 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 14:08:20,106 [INFO] Article ajouté Allociné (serie): Blue Eye Samurai (saison 2)
+2026-08-28 14:08:22,433 [INFO] Article ajouté Allociné (serie): Cyberpunk: Edgerunners (saison 2)
+2026-08-28 14:08:25,406 [INFO] Article ajouté Allociné (serie): The Ramparts of Ice (saison 2)
+2026-08-28 14:08:29,094 [INFO] Article ajouté Allociné (serie): Bass X Machina (saison 1)
+2026-08-28 14:08:32,975 [INFO] Article ajouté Allociné (serie): 12 12 12 (saison 1)
+2026-08-28 14:08:34,202 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-08-28 14:08:34,292 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 14:08:34,292 [INFO] Scraping Allociné (séries) terminé (15 items)
+2026-08-28 14:08:34,380 [INFO] Démarrage scraping TMDb...
+2026-08-28 14:08:34,543 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-28 14:08:34,627 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-28 14:08:35,598 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-28 14:08:37,369 [INFO] 3 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-28 14:08:37,966 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-28 14:08:38,369 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-28 14:08:38,780 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-28 14:08:39,377 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-28 14:08:40,556 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-28 14:08:42,006 [INFO] Scraping TMDb terminé (0 items)
+2026-08-28 14:08:42,006 [INFO] 8 articles retenus pour ce run
+2026-08-28 14:08:42,070 [INFO] 2146 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-28 14:08:42,070 [INFO] Sauvegarde du log avec 1050 identifiants
+2026-08-28 14:08:42,071 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-28 14:08:42,135 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-28 14:08:42,135 [INFO] ==== Fin du script bandes-annonces ====
+2026-08-28 23:55:20,278 [INFO] ==== Début du script bandes-annonces ====
+2026-08-28 23:55:20,293 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-28 23:55:20,294 [INFO] 1050 identifiants chargés depuis le log
+2026-08-28 23:55:20,294 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-28 23:55:20,897 [INFO] Démarrage scraping CineHorizons...
+2026-08-28 23:55:22,776 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-28 23:55:22,820 [INFO] 10 blocs détectés sur la page 1
+2026-08-28 23:55:22,822 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-28 23:55:22,822 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-28 23:55:22,822 [INFO] Démarrage scraping Allociné (films)...
+2026-08-28 23:55:23,331 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-28 23:55:23,413 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 23:55:23,413 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-28 23:55:23,413 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-28 23:55:24,458 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-28 23:55:27,099 [INFO] Article ajouté Allociné (serie): Le Rouge et le Noir (saison 1)
+2026-08-28 23:55:28,872 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 23:55:30,636 [INFO] Article ajouté Allociné (serie): The Terminal List (saison 2)
+2026-08-28 23:55:32,264 [INFO] Article ajouté Allociné (serie): Blue Eye Samurai (saison 2)
+2026-08-28 23:55:33,923 [INFO] Article ajouté Allociné (serie): Cyberpunk: Edgerunners (saison 2)
+2026-08-28 23:55:35,549 [INFO] Article ajouté Allociné (serie): The Ramparts of Ice (saison 2)
+2026-08-28 23:55:37,159 [INFO] Article ajouté Allociné (serie): Bass X Machina (saison 1)
+2026-08-28 23:55:38,733 [INFO] Article ajouté Allociné (serie): 12 12 12 (saison 1)
+2026-08-28 23:55:39,172 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-08-28 23:55:39,282 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-28 23:55:39,282 [INFO] Scraping Allociné (séries) terminé (8 items)
+2026-08-28 23:55:39,377 [INFO] Démarrage scraping TMDb...
+2026-08-28 23:55:39,584 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-28 23:55:39,596 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-28 23:55:39,780 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-28 23:55:40,495 [INFO] 4 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-28 23:55:40,952 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-28 23:55:41,689 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-28 23:55:41,731 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-28 23:55:41,891 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-28 23:55:42,181 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-28 23:55:42,928 [INFO] Scraping TMDb terminé (0 items)
+2026-08-28 23:55:42,928 [INFO] 8 articles retenus pour ce run
+2026-08-28 23:55:42,994 [INFO] 2154 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-28 23:55:42,994 [INFO] Sauvegarde du log avec 1058 identifiants
+2026-08-28 23:55:42,995 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-28 23:55:43,050 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-28 23:55:43,050 [INFO] ==== Fin du script bandes-annonces ====
+2026-08-29 06:18:47,144 [INFO] ==== Début du script bandes-annonces ====
+2026-08-29 06:18:47,161 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-29 06:18:47,162 [INFO] 1058 identifiants chargés depuis le log
+2026-08-29 06:18:47,162 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-29 06:18:47,746 [INFO] Démarrage scraping CineHorizons...
+2026-08-29 06:18:50,723 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-29 06:18:50,764 [INFO] 10 blocs détectés sur la page 1
+2026-08-29 06:18:50,766 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-29 06:18:50,766 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-29 06:18:50,766 [INFO] Démarrage scraping Allociné (films)...
+2026-08-29 06:18:51,539 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-29 06:18:51,618 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-29 06:18:51,618 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-29 06:18:51,618 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-29 06:18:52,284 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-29 06:18:52,400 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-29 06:18:52,400 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-08-29 06:18:52,444 [INFO] Démarrage scraping TMDb...
+2026-08-29 06:18:52,570 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-29 06:18:52,680 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-29 06:18:53,820 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-29 06:18:55,862 [INFO] 4 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-29 06:18:56,742 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-29 06:18:57,241 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-29 06:18:57,534 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-29 06:18:58,552 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-29 06:18:59,912 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-29 06:19:01,410 [INFO] Scraping TMDb terminé (0 items)
+2026-08-29 06:19:01,411 [INFO] 0 articles retenus pour ce run
+2026-08-29 06:19:01,411 [INFO] Aucun article à écrire, arrêt
+>>>>>>> ca6982d838fbc8c5ed1b6451a51b2bb1353328d7
+2026-08-29 10:19:42,872 [INFO] ==== Début du script bandes-annonces ====
+2026-08-29 10:19:42,887 [INFO] Chargement du log depuis D:\projet_webs\CHEF D'OEUVRE\l_oeil_critique\scripts\bande_annonces_log.json
+2026-08-29 10:19:42,897 [INFO] 1058 identifiants chargés depuis le log
+2026-08-29 10:19:42,897 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-29 10:19:48,991 [INFO] Démarrage scraping CineHorizons...
+2026-08-29 10:19:52,559 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-29 10:19:52,585 [INFO] 10 blocs détectés sur la page 1
+2026-08-29 10:19:52,586 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-29 10:19:52,587 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-29 10:19:52,587 [INFO] Démarrage scraping Allociné (films)...
+2026-08-29 10:19:53,350 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-29 10:19:53,381 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-29 10:19:53,381 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-29 10:19:53,382 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-29 10:19:53,756 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-29 10:19:53,798 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-29 10:19:53,799 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-08-29 10:19:53,871 [INFO] Démarrage scraping TMDb...
+2026-08-29 10:19:54,199 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-29 10:19:54,319 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-29 10:19:55,698 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-29 10:19:58,429 [INFO] 4 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-29 10:19:59,571 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-29 10:20:00,191 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-29 10:20:00,667 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-29 10:20:02,079 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-29 10:20:03,880 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-29 10:20:06,056 [INFO] Scraping TMDb terminé (0 items)
+2026-08-29 10:20:06,056 [INFO] 0 articles retenus pour ce run
+2026-08-29 10:20:06,057 [INFO] Aucun article à écrire, arrêt
