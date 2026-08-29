@@ -2,7 +2,7 @@ name: 🕷️ SpideyTrack — Daily Guess
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '17 3 * * *'
   workflow_dispatch:
     inputs:
       force:

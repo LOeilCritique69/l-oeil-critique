@@ -35,7 +35,43 @@
    20. Responsive (tous les media queries, sans doublon)
    21. Impression
 
-   CHANGELOG
+   CHANGELOG — v2 (refonte / améliorations)
+   - Correctif : .modal-title était en `color: white` sur un fond
+     `--paper` (clair) → titre quasi invisible. Recoloré en --ink.
+   - Correctif : les media queries de .hero-duo (900px) et .hub-nav
+     (900px, 600px) existaient en DEUX versions différentes (une
+     co-localisée avec le composant, une deuxième — légèrement plus
+     complète — dans la section 20). Les deux versions avaient dérivé
+     l'une de l'autre (ex: .hero-duo__panel avait un padding dans une
+     version et pas dans l'autre) : risque réel de régression si l'une
+     des deux copies est modifiée sans l'autre. Fusionnées en un seul
+     bloc canonique, co-localisé avec chaque composant — même logique
+     que celle déjà appliquée au header (section 7) et au footer
+     (section 15) lors de la refonte précédente.
+   - Ajout : tokens pour les couleurs qui n'appartenaient pas à la
+     palette Iris (badges film/série, eyebrows hub-nav, statuts de
+     notification, blanc pur du hero-duo). Elles restent visuellement
+     identiques mais sont maintenant nommées et documentées comme
+     exceptions volontaires plutôt que des couleurs "orphelines" au
+     milieu du fichier.
+   - Factorisation : le motif diaphragme (dégradé conique + cercle) était
+     dupliqué à l'identique à 4 endroits (.aperture-mark, .logo-aperture,
+     .hero-section::before, .footer-aperture) avec seulement la taille,
+     la position et l'opacité qui changeaient. La forme commune
+     (background + border-radius) est désormais déclarée une seule fois ;
+     chaque déclinaison ne garde que ce qui lui est propre.
+   - Factorisation : le tronquage multi-lignes à 3 lignes (news-item p,
+     card-bande .synopsis, review-card__summary) était répété à
+     l'identique (5 propriétés) à 3 endroits. Regroupé en un seul jeu de
+     règles ; les propriétés spécifiques à chaque élément restent dans
+     leur section d'origine.
+   - Non modifié volontairement : `.section-title::before { content: "00 — "; }`
+     préfixe TOUS les titres de section avec "00", pas de numérotation
+     réelle par section. Je ne sais pas si c'est un oubli (numérotation
+     dynamique prévue) ou un choix esthétique assumé — à trancher avant
+     d'y toucher, donc laissé tel quel ici.
+
+   CHANGELOG — v1 (historique, conservé)
    - Correctif : 4 variables utilisées mais jamais déclarées dans :root
      (--secondary-color, --text-color-light, --text-color-dark,
      --font-family-title, restes de l'ancien système de tokens avant la
@@ -129,6 +165,30 @@
   --shadow-sm: 0 2px 8px rgba(18, 20, 26, 0.08);
   --shadow-md: 0 8px 20px rgba(18, 20, 26, 0.12);
   --shadow-lg: 0 16px 40px rgba(18, 20, 26, 0.18);
+
+  /* --------------------------------------------------------------------
+     Tokens hors palette Iris (ink/paper/velvet/brass) — usages
+     sémantiques volontaires : distinguer "film" de "série", ou un
+     statut de notification (succès/alerte/erreur). Nommés et
+     documentés ici plutôt que laissés en couleurs hex "orphelines"
+     dispersées dans le fichier.
+     -------------------------------------------------------------------- */
+  --badge-film: #7fb3ff;      /* hero-duo : badge du panneau "film" */
+  --badge-serie: #ff9f7f;     /* hero-duo : badge du panneau "série" */
+  --eyebrow-film: #2f6fd1;    /* hub-nav : eyebrow de la carte "films" */
+  --eyebrow-serie: #d1622f;   /* hub-nav : eyebrow de la carte "séries" */
+  --notif-success: #4a7a5c;   /* notification de succès — bordure */
+  --notif-success-text: #2f5a40; /* notification de succès — titre */
+  --notif-warning-text: #8a5a1a; /* notification d'alerte — titre */
+  --white: #fff;              /* hero-duo__title : blanc pur sur fond image */
+
+  /* Rayons du masque radial du motif diaphragme (section 3). Deux jeux
+     de valeurs suffisent : l'anneau "standard" (aperture-mark, hero
+     section, footer) et l'anneau plus épais du logo. */
+  --aperture-inner: 32%;
+  --aperture-inner-solid: 33%;
+  --aperture-outer-solid: 68%;
+  --aperture-outer: 69%;
 }
 
 /* ============================================================================
@@ -213,20 +273,35 @@ em { font-style: italic; }
    Un diaphragme d'objectif construit en CSS pur : un anneau de "lames"
    (repeating-conic-gradient) découpé en couronne par un masque radial.
    Déclinable à n'importe quelle taille via width/height.
+
+   La forme commune (dégradé conique + cercle) est factorisée dans le
+   sélecteur groupé ci-dessous : les 4 déclinaisons du motif ne
+   diffèrent en réalité que par la taille, la position, l'opacité et
+   l'épaisseur de l'anneau (masque) — jamais par la forme des lames.
    ============================================================================ */
+.aperture-mark,
+.logo-aperture,
+.hero-section::before,
+.footer-aperture {
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+}
+
 .aperture-mark {
-  --blade: var(--brass);
   width: 96px;
   height: 96px;
-  border-radius: 50%;
-  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--blade) 21deg 24deg);
-  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
-          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+  -webkit-mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
+          mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
   opacity: 0.5;
   animation: iris-spin 40s linear infinite;
 }
 
 .aperture-mark.static { animation: none; }
+
+/* Taille utilisée pour les 3 diaphragmes-séparateurs de la page d'accueil
+   (auparavant en style="width:44px;height:44px;" inline, répété 3 fois
+   dans le HTML — remplacé par cette classe modificatrice). */
+.aperture-mark--divider { width: 44px; height: 44px; }
 
 @keyframes iris-spin { to { transform: rotate(360deg); } }
 
@@ -387,6 +462,8 @@ em { font-style: italic; }
   margin: var(--space-16) auto var(--space-4);
 }
 
+/* NB : préfixe "00 — " fixe pour tous les titres, pas de numérotation
+   dynamique par section — voir CHANGELOG v2, non modifié volontairement. */
 .section-title::before { content: "00 — "; color: var(--brass); }
 
 .section-title.gold {
@@ -534,8 +611,6 @@ header.scrolled .header-main { height: var(--header-h-scrolled); }
   width: 46px;
   height: 46px;
   transform: translate(-50%, -50%) rotate(0deg);
-  border-radius: 50%;
-  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
   -webkit-mask: radial-gradient(circle, transparent 55%, #000 56%, #000 78%, transparent 79%);
           mask: radial-gradient(circle, transparent 55%, #000 56%, #000 78%, transparent 79%);
   opacity: 0.32;
@@ -1143,8 +1218,8 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   height: 34px;
   border-radius: 50%;
   background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
-  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
-          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+  -webkit-mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
+          mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
   transition: transform 0.6s ease;
 }
 
@@ -1221,18 +1296,26 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   line-clamp: 2;         /* Standard CSS */
 }
 
+/* --- Tronquage à 3 lignes, factorisé : news-item p, card-bande
+   .synopsis et review-card__summary partagent exactement les mêmes 5
+   propriétés de clamp ; seules les propriétés visuelles (couleur,
+   marges, taille) restent propres à chaque composant, dans sa
+   section d'origine. --- */
+.news-item p,
+.card-bande .synopsis,
+.review-card__summary {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
 .news-item p {
   flex-grow: 1;
   margin: 0 1.4rem 1rem;
   color: var(--paper-soft);
   font-size: 0.92rem;
-
-  /* --- Tronquage à 3 lignes --- */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Compatibilité actuelle */
-  line-clamp: 3;         /* Norme standard */
 }
 
 .news-item .publication-date { margin: 0 1.4rem 0.8rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--paper-soft); }
@@ -1382,13 +1465,6 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   margin-bottom: 1.4rem;
   color: var(--paper-soft);
   font-size: 0.92rem;
-
-  /* --- Tronquage à 3 lignes --- */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Support navigateur actuel */
-  line-clamp: 3;         /* Norme standard CSS */
 }
 
 #voir-plus-btn {
@@ -1482,13 +1558,6 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   flex-grow: 1;
   color: var(--paper-soft);
   font-size: 0.92rem;
-
-  /* --- Tronquage à 3 lignes --- */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Support navigateur actuel */
-  line-clamp: 3;         /* Norme standard CSS */
 }
 
 .review-card__read-more {
@@ -1565,9 +1634,8 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   right: -30px;
   width: 260px;
   height: 260px;
-  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
-  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
-          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+  -webkit-mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
+          mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
   opacity: 0.18;
   animation: iris-spin 60s linear infinite;
 }
@@ -1653,8 +1721,8 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   border-radius: 20px;
 }
 
-.hero-duo__panel--film .hero-duo__badge { background: #7fb3ff; }
-.hero-duo__panel--series .hero-duo__badge { background: #ff9f7f; }
+.hero-duo__panel--film .hero-duo__badge { background: var(--badge-film); }
+.hero-duo__panel--series .hero-duo__badge { background: var(--badge-serie); }
 
 .hero-duo__title {
   margin-bottom: 0.75rem;
@@ -1663,7 +1731,7 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   line-height: 1.1;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--white);
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
 }
 
@@ -1679,13 +1747,18 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
   font-size: 0.9rem;
 }
 
+/* --- Media query propre au hero-duo (bloc unique — voir CHANGELOG v2 :
+   ce breakpoint existait aussi, en version divergente, dans la section
+   20 ; fusionné ici). --- */
 @media (max-width: 900px) {
   .hero-duo { flex-direction: column; min-height: auto; }
-  .hero-duo__panel { min-height: 22rem; }
+  .hero-duo__panel { min-height: 22rem; padding: 2rem; }
   .hero-duo__panel + .hero-duo__panel {
     border-top: 1px solid rgba(201, 162, 74, 0.3);
     border-left: none;
   }
+  .hero-duo__content { max-width: 100%; }
+  .hero-duo__title { font-size: clamp(1.9rem, 5vw, 2.4rem); }
 }
 
 /* ========================================================================
@@ -1790,16 +1863,21 @@ a.search-link:hover .search-item { background: rgba(201, 162, 74, 0.08); }
 .hub-nav__cta .arrow { transition: transform 0.25s ease; }
 .hub-nav__card:hover .arrow { transform: translateX(4px); }
 
-.hub-nav__card--films .hub-nav__eyebrow { color: #2f6fd1; }
-.hub-nav__card--series .hub-nav__eyebrow { color: #d1622f; }
+.hub-nav__card--films .hub-nav__eyebrow { color: var(--eyebrow-film); }
+.hub-nav__card--series .hub-nav__eyebrow { color: var(--eyebrow-serie); }
 .hub-nav__card--tierlist .hub-nav__eyebrow { color: var(--velvet); }
 
+/* --- Media queries propres au hub-nav (bloc unique — voir CHANGELOG v2 :
+   ces breakpoints existaient aussi, en version divergente, dans la
+   section 20 ; fusionnés ici). --- */
 @media (max-width: 900px) {
   .hub-nav__grid { grid-template-columns: 1fr; }
+  .hub-nav__card { min-height: 190px; }
 }
 
 @media (max-width: 600px) {
   .hub-nav { padding: 2.5rem 1.5rem; }
+  .hub-nav__title { font-size: 1.7rem; }
 }
 
 /* ============================================================================
@@ -1987,10 +2065,8 @@ footer {
   width: 420px;
   height: 420px;
   transform: translateY(-50%);
-  border-radius: 50%;
-  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
-  -webkit-mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
-          mask: radial-gradient(circle, transparent 32%, #000 33%, #000 68%, transparent 69%);
+  -webkit-mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
+          mask: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
   opacity: 0.05;
   pointer-events: none;
 }
@@ -2187,7 +2263,9 @@ footer {
 
 .modal-dialog { width: min(600px, 92vw); background: var(--paper); overflow: hidden; box-shadow: var(--shadow-lg); }
 .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.2rem; border-bottom: 1px solid var(--line-on-paper); }
-.modal-title { font-family: var(--font-display); color: white; }
+/* Correctif v2 : était en `color: white` — quasi invisible sur le fond
+   --paper (clair) de .modal-dialog. Recoloré en --ink pour rester lisible. */
+.modal-title { font-family: var(--font-display); color: var(--ink); }
 .modal-close { background: none; border: none; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
 .modal-body { padding: 1.2rem; color: var(--paper-soft); }
 .modal-footer { display: flex; justify-content: flex-end; gap: 0.7rem; padding: 1rem 1.2rem; border-top: 1px solid var(--line-on-paper); }
@@ -2282,11 +2360,11 @@ footer {
 .notification-info { border-left-color: var(--brass); }
 .notification-info .notification-title { color: var(--ink); }
 
-.notification-success { border-left-color: #4a7a5c; }
-.notification-success .notification-title { color: #2f5a40; }
+.notification-success { border-left-color: var(--notif-success); }
+.notification-success .notification-title { color: var(--notif-success-text); }
 
 .notification-warning { background: #fbf3e4; border-left-color: var(--brass); }
-.notification-warning .notification-title { color: #8a5a1a; }
+.notification-warning .notification-title { color: var(--notif-warning-text); }
 
 .notification-error { border-left-color: var(--velvet-dark); }
 .notification-error .notification-title { color: var(--velvet-dark); }
@@ -2380,27 +2458,28 @@ footer {
 /* ============================================================================
    20) RESPONSIVE — VERSION MOBILE COMPLÈTE ET DÉTAILLÉE
    ----------------------------------------------------------------------------
-   Rien n'a été touché au-dessus (hormis la section 7, HEADER, désormais
-   autonome et dont les media queries vivent à la fin de la section 7
-   plutôt qu'ici). Ce qui suit reste la reconstruction des adaptations
-   mobiles pour tout le reste du site, composant par composant, avec
-   plusieurs paliers de largeur (tablette large → tablette → grand mobile
-   → mobile → petit mobile → très petit mobile).
+   Rien n'a été touché au-dessus (hormis les sections 7, 12 et 15, dont
+   les media queries vivent désormais avec leur propre composant plutôt
+   qu'ici — header, hero-duo/hub-nav, footer). Ce qui suit reste la
+   reconstruction des adaptations mobiles pour tout le reste du site,
+   composant par composant, avec plusieurs paliers de largeur (tablette
+   large → tablette → grand mobile → mobile → petit mobile → très petit
+   mobile).
    ============================================================================ */
 
 /* ----------------------------------------------------------------------
    20.0 — PALIERS DE RÉFÉRENCE (documentation, pas de code)
    1350px : début de compression des grilles à 3 colonnes
    1024px : bascule tablette — grilles à 2 colonnes, titres réduits
-   900px  : hero-duo et hub-nav passent en une colonne
+   900px  : featured et catégories passent en deux colonnes
    768px  : bascule mobile générale — la plupart des sections passent à 1 colonne
    650/640px : ajustements fins de grilles (featured, catégories)
-   600px  : footer et hub-nav resserrés
    480px  : petit mobile — titres condensés
    400px  : très petit mobile — dernier filet de sécurité typographique
    360px  : mobile d'entrée de gamme
-   (Les paliers propres au header — 993px, 992px, 768px, 600px, 480px,
-   360px pour la nav/recherche/burger — sont désormais dans la section 7.)
+   (Les paliers propres au header sont dans la section 7 ; ceux du
+   hero-duo et du hub-nav sont dans la section 12 ; ceux du footer sont
+   dans la section 15.)
    ------------------------------------------------------------------- */
 
 /* ============================================================================
@@ -2448,23 +2527,12 @@ footer {
 }
 
 /* ============================================================================
-   20.6 — HERO DUO & HUB NAVIGATION (max-width: 900px)
+   20.6 — FEATURED & CATÉGORIES (max-width: 900px)
+   ----------------------------------------------------------------------------
+   Les media queries hero-duo/hub-nav qui vivaient ici ont été fusionnées
+   avec leur bloc canonique dans la section 12 (voir CHANGELOG v2).
    ============================================================================ */
 @media (max-width: 900px) {
-  /* --- Hero duo : empilement vertical --- */
-  .hero-duo { flex-direction: column; min-height: auto; }
-  .hero-duo__panel { min-height: 22rem; padding: 2rem; }
-  .hero-duo__panel + .hero-duo__panel {
-    border-top: 1px solid rgba(201, 162, 74, 0.3);
-    border-left: none;
-  }
-  .hero-duo__content { max-width: 100%; }
-  .hero-duo__title { font-size: clamp(1.9rem, 5vw, 2.4rem); }
-
-  /* --- Hub navigation : une seule colonne --- */
-  .hub-nav__grid { grid-template-columns: 1fr; }
-  .hub-nav__card { min-height: 190px; }
-
   /* --- Featured : deux colonnes, hero étalé sur toute la largeur --- */
   .featured-grid { grid-template-columns: repeat(2, 1fr); }
   .featured-card.hero { grid-column: span 2; grid-row: span 1; }
@@ -2569,17 +2637,6 @@ footer {
 
 @media (max-width: 640px) {
   .category-link { flex: 1 1 calc(50% - 1rem); }
-}
-
-/* ============================================================================
-   20.9 — HUB-NAV RESSERRÉ (max-width: 600px)
-   ----------------------------------------------------------------------------
-   (Le resserrement du footer vit désormais dans la section 15, avec le
-   reste de ses media queries.)
-   ============================================================================ */
-@media (max-width: 600px) {
-  .hub-nav { padding: 2.5rem 1.5rem; }
-  .hub-nav__title { font-size: 1.7rem; }
 }
 
 /* ============================================================================
