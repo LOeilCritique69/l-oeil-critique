@@ -2,7 +2,7 @@ name: 🕷️ SpideyTrack — Daily Guess
 
 on:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       force:
@@ -91,16 +91,20 @@ jobs:
       # =========================
       # COMMIT
       # ------------------------------------------------------------------
-      # IMPORTANT : `git add -A` scopé au dossier Spideytrack (pas un
-      # `git add .` global sur tout le repo). Contrairement à l'ancienne
-      # liste explicite, ceci capture aussi bien un dossier images_*
-      # pas encore créé (ex. premier run, run --only) qu'un futur fichier
-      # écrit par tweet.py sans devoir mettre ce step à jour à chaque fois.
+      # IMPORTANT : liste explicite (pas de wildcard `git add .`), scopée
+      # au dossier Spideytrack. Le bug de l'ancien SpideyTrack venait de
+      # fichiers de données jamais ajoutés ici (donc jamais commit, donc
+      # figés) — chaque fichier que tweet.py peut modifier doit apparaître
+      # explicitement ci-dessous.
       # =========================
       - name: 🔁 Commit & push
         if: steps.changes.outputs.changes == 'true'
         run: |
-          git add -A -- l_oeil_critique/Spideytrack/marveldle/
+          git add l_oeil_critique/Spideytrack/marveldle/state.json
+          git add l_oeil_critique/Spideytrack/marveldle/database.json
+          git add l_oeil_critique/Spideytrack/marveldle/images/
+          git add l_oeil_critique/Spideytrack/marveldle/images_andrew/
+          git add l_oeil_critique/Spideytrack/marveldle/images_tobey/
           DAY=$(python3 -c "import json;print(json.load(open('l_oeil_critique/Spideytrack/marveldle/state.json'))['current_day']-1)")
           git commit -m "🕷️ SpideyTrack — Day $DAY (#${{ github.run_number }})"
           git pull --rebase origin main
