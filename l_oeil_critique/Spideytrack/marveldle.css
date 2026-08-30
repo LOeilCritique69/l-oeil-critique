@@ -2,7 +2,7 @@
    site), pas via @import ici. */
 
 /* ═══════════════════════════════════════════════════════════════
-   SPIDEYTRACK — refonte "Dossier de filature"
+   SPIDEYTRACK — "Dossier de filature"
    Concept : un tableau d'enquête nocturne. Chaque jour est une fiche
    retrouvée sur le terrain (screenshot façon polaroid), tamponnée
    d'un verdict à l'encre, reliée aux autres par un fil d'indice.
@@ -97,6 +97,21 @@ body {
   }
 }
 
+/* utilitaires d'accessibilité */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; top: -48px; left: 12px; z-index: 1000;
+  background: var(--tom); color: #fff; padding: 10px 18px;
+  font-family: var(--f-ui); font-weight: 500; font-size: .75rem;
+  text-transform: uppercase; letter-spacing: .08em; text-decoration: none;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 12px; }
+
 /* fil d'indice réutilisable : trait pointillé + petit nœud, pour relier
    deux blocs (masthead → hero, stat → stat). Signature visuelle du site. */
 .thread {
@@ -174,6 +189,32 @@ body {
   font-family: 'Caveat', var(--f-mono); font-weight: 600; font-size: 1.3rem;
   color: var(--gold-hi); margin-top: 2px; transform: rotate(-1deg);
 }
+.dossier-intro {
+  max-width: 560px; margin: 14px auto 0; font-family: var(--f-mono);
+  font-size: .7rem; line-height: 1.8; color: var(--text-dim);
+}
+.dossier-intro a { color: var(--tom); text-decoration: none; border-bottom: 1px dashed var(--tom); }
+.dossier-intro a:hover { opacity: .8; }
+
+/* bannière d'erreur de chargement — état de secours si database.json
+   n'a pas pu être récupéré (panne CDN, hébergeur, etc.) */
+.load-error {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  max-width: 640px; margin: 18px auto 0; padding: 12px 18px;
+  background: var(--no-bg); border: 1px solid var(--tom);
+  font-family: var(--f-mono); font-size: .68rem; color: var(--text);
+}
+.load-error strong { color: var(--tom); }
+.load-error button {
+  font-family: var(--f-mono); font-size: .64rem; text-transform: uppercase; letter-spacing: .06em;
+  background: transparent; color: var(--tom); border: 1px solid var(--tom);
+  padding: 4px 10px; cursor: pointer; transition: var(--ease);
+}
+.load-error button:hover { background: var(--tom); color: #fff; }
+/* [hidden] a la même spécificité que .load-error : sans cette règle,
+   le display:flex ci-dessus gagne le conflit et la bannière reste
+   visible en permanence, y compris hors erreur. */
+.load-error[hidden] { display: none; }
 
 /* ═══════════════════════════════════════════════════════════════
    AUJOURD'HUI — corkboard, trois polaroids scotchés (signature)
@@ -357,7 +398,8 @@ body {
 .top5-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.3) brightness(.9); transition: transform .3s ease, filter .25s ease; }
 .top5-card:hover .top5-img img { transform: scale(1.08); filter: grayscale(0) brightness(1); }
 .top5-body { padding: 9px 10px 11px; }
-.top5-day { font-family: var(--f-display); font-size: 1.2rem; letter-spacing: .03em; text-transform: uppercase; line-height: 1; }
+.top5-day { font-family: var(--f-display); font-size: 1.2rem; letter-spacing: .03em; text-transform: uppercase; line-height: 1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.top5-badge { font-family: var(--f-mono); font-size: .48rem; color: var(--yes); font-weight: 700; letter-spacing: .04em; }
 .top5-note { font-family: var(--f-mono); font-size: .48rem; color: var(--text-ghost); line-height: 1.5; text-transform: uppercase; letter-spacing: .04em; margin-top: 4px; }
 .top5-empty {
   grid-column: 1 / -1; padding: 40px; text-align: center; font-family: var(--f-mono);
@@ -403,6 +445,10 @@ body {
 }
 .hc-search:focus { border-color: var(--line-hi); }
 .hc-search::placeholder { color: var(--text-ghost); }
+/* neutralise le style natif du type=search sur WebKit (loupe/croix par défaut
+   qui ne matchent pas l'esthétique "archive") */
+.hc-search::-webkit-search-decoration,
+.hc-search::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 .db-table-wrap { border: 1px solid var(--line); background: var(--ink-2); overflow-x: auto; }
 .db-table { width: 100%; border-collapse: collapse; font-family: var(--f-mono); font-size: .72rem; }
@@ -425,6 +471,7 @@ body {
 .db-total { color: var(--gold-hi); text-align: right; }
 .db-cell-empty { color: var(--text-ghost); }
 .db-cell { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: 2px; border: 1px solid transparent; }
+.db-cell-clickable { cursor: pointer; }
 .db-cell-icon { font-size: .75rem; }
 .db-icon-yes { color: var(--yes); background: var(--yes-bg); border-color: rgba(63,174,106,.25); }
 .db-icon-no  { color: var(--text-ghost); }

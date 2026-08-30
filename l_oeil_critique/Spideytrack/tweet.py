@@ -7,17 +7,9 @@ Joue automatiquement le Marveldle du jour pour les 3 variantes de Spider-Man
 suivies (Tom Holland, Andrew Garfield, Tobey Maguire), et persiste le résultat
 dans une base de données JSON unique.
 
-ARCHITECTURE (v2)
+ARCHITECTURE (v2.1)
 ------------------
-Avant, chaque personnage avait son propre fichier de "jour" (day.txt,
-day-andrew.txt, day_tobey.txt), son propre results_*.json, plus un
-history.csv et un last_run.txt séparés. Résultat : ces fichiers pouvaient
-diverger silencieusement (ce qui est arrivé : le workflow GitHub Actions
-ne commitait jamais history.csv ni last_run.txt, qui sont restés bloqués
-pendant que results.json continuait d'avancer).
-
-Ce script repose maintenant sur exactement DEUX fichiers, tous les deux
-sous marveldle/ :
+Le script repose sur exactement DEUX fichiers, tous les deux sous marveldle/ :
 
   - state.json      → { "current_day": int, "last_run_date": "YYYY-MM-DD" }
                        LE compteur de jour, partagé par les 3 personnages
@@ -32,20 +24,31 @@ Un vrai système de vérification protège contre la dérive :
   1. Avant de jouer : le jour "attendu" est recalculé depuis database.json
      (max des jours déjà enregistrés + 1). Si state.json ne correspond
      pas, on se corrige automatiquement et on log un WARNING.
-  2. Après écriture : on relit database.json depuis le disque et on
+  2. database.json est validé (structure minimale) à chaque lecture — un
+     fichier corrompu ou tronqué ne doit jamais être écrasé silencieusement.
+  3. Après écriture : on relit database.json depuis le disque et on
      vérifie que le jour joué est bien présent avec les bonnes clés.
      Si ce n'est pas le cas, on n'avance PAS state.json et on sort en
      erreur (code 1) — le run GitHub Actions passe au rouge au lieu de
      dériver en silence.
 
+CONFIGURATION (variables d'environnement, toutes optionnelles)
+----------------------------------------------------------------
+  SPIDEYTRACK_MAX_RETRIES        (défaut: 2)
+  SPIDEYTRACK_SQUARE_TIMEOUT     (défaut: 10, secondes)
+  SPIDEYTRACK_ANIM_WAIT          (défaut: 10, secondes)
+  SPIDEYTRACK_NAV_TIMEOUT_MS     (défaut: 30000, millisecondes)
+  SPIDEYTRACK_LOG_LEVEL          (défaut: INFO)
+
 USAGE
 -----
-    python tweet.py                  Run normal (1 jour, les 3 persos)
-    python tweet.py --dry-run        Simule sans rien écrire ni jouer
-    python tweet.py --force          Ignore le garde-fou "déjà joué aujourd'hui"
-    python tweet.py --only tom       Ne joue qu'un seul personnage
-    python tweet.py --day 150        Force un numéro de jour (rattrapage/debug)
+    python tweet.py                        Run normal (1 jour, les 3 persos)
+    python tweet.py --dry-run              Simule sans rien écrire ni jouer
+    python tweet.py --force                Ignore le garde-fou "déjà joué aujourd'hui"
+    python tweet.py --only tom             Ne joue qu'un seul personnage
+    python tweet.py --day 150              Force un numéro de jour (rattrapage/debug)
     python tweet.py --export-csv out.csv   Exporte database.json en CSV
+    python tweet.py --verbose              Logs détaillés (DEBUG)
 """
 
 from __future__ import annotations
@@ -54,11 +57,13 @@ import argparse
 import datetime
 import json
 import logging
+import logging.handlers
 import os
+import random
 import sys
 import time
 import traceback
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
 from playwright.sync_api import sync_playwright, Page
@@ -73,13 +78,28 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_DIR = os.path.join(SCRIPT_DIR, "marveldle")
 STATE_FILE = os.path.join(DB_DIR, "state.json")
 DATABASE_FILE = os.path.join(DB_DIR, "database.json")
-HTML_FILE = os.path.join(DB_DIR, "marveldle.html")
+LOG_DIR = os.path.join(SCRIPT_DIR, "logs")
 
-MAX_RETRIES = 2
-RETRY_BACKOFF_SECONDS = (3, 8)  # backoff croissant entre tentatives
-SQUARE_WAIT_TIMEOUT = 10        # secondes d'attente des 7 cases de similarité
-POST_GUESS_ANIMATION_WAIT = 10  # secondes d'attente de l'animation du site
-MIN_SCREENSHOT_BYTES = 2048     # en dessous de ça, le screenshot est suspect
+MAX_EXACT = 7  # nombre de catégories notées par jour — doit matcher le frontend
+
+def _env_int(name: str, default: int) -> int:
+    raw = os.environ.get(name)
+    if not raw:
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        return default
+
+
+MAX_RETRIES = _env_int("SPIDEYTRACK_MAX_RETRIES", 2)
+SQUARE_WAIT_TIMEOUT = _env_int("SPIDEYTRACK_SQUARE_TIMEOUT", 10)
+POST_GUESS_ANIMATION_WAIT = _env_int("SPIDEYTRACK_ANIM_WAIT", 10)
+NAV_TIMEOUT_MS = _env_int("SPIDEYTRACK_NAV_TIMEOUT_MS", 30000)
+RETRY_BACKOFF_SECONDS = (3, 8)   # base du backoff croissant entre tentatives
+RETRY_JITTER_SECONDS = 2         # jitter aléatoire ajouté, pour ne pas retaper
+                                  # le site à un rythme parfaitement régulier
+MIN_SCREENSHOT_BYTES = 2048      # en dessous de ça, le screenshot est suspect
 
 
 @dataclass(frozen=True)
@@ -113,12 +133,40 @@ CHARACTERS_BY_KEY = {c.key: c for c in CHARACTERS}
 # ════════════════════════════════════════════════════════════════════════
 # LOGGING
 # ════════════════════════════════════════════════════════════════════════
+# Console (toujours) + fichier journalier tournant (7 jours conservés), pour
+# qu'une panne détectée a posteriori (ex. via l'alerte GitHub Actions) puisse
+# être investiguée sans dépendre uniquement des logs éphémères du CI runner.
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s  %(levelname)-7s  %(message)s",
-    datefmt="%H:%M:%S",
-)
+def setup_logging(verbose: bool) -> logging.Logger:
+    level = logging.DEBUG if verbose else getattr(
+        logging, os.environ.get("SPIDEYTRACK_LOG_LEVEL", "INFO").upper(), logging.INFO
+    )
+    fmt = logging.Formatter(
+        "%(asctime)s  %(levelname)-7s  %(message)s", datefmt="%H:%M:%S"
+    )
+    logger = logging.getLogger("spideytrack")
+    logger.setLevel(level)
+    logger.handlers.clear()
+
+    console = logging.StreamHandler()
+    console.setFormatter(fmt)
+    logger.addHandler(console)
+
+    try:
+        os.makedirs(LOG_DIR, exist_ok=True)
+        file_handler = logging.handlers.TimedRotatingFileHandler(
+            os.path.join(LOG_DIR, "spideytrack.log"),
+            when="midnight", backupCount=7, encoding="utf-8",
+        )
+        file_handler.setFormatter(fmt)
+        logger.addHandler(file_handler)
+    except OSError as e:
+        # Un environnement en lecture seule ne doit pas empêcher le run.
+        logger.warning("Impossible d'écrire les logs sur disque (%s) — console uniquement.", e)
+
+    return logger
+
+
 log = logging.getLogger("spideytrack")
 
 
@@ -150,6 +198,25 @@ def save_state(state: dict) -> None:
 # BASE DE DONNÉES (database.json)
 # ════════════════════════════════════════════════════════════════════════
 
+def validate_database(db: dict) -> None:
+    """Contrôle de structure minimal, exécuté à chaque lecture.
+
+    N'importe pas grand-chose à un `dict` Python, mais protège contre un
+    fichier partiellement écrit (par ex. un run interrompu au mauvais
+    moment sur un filesystem sans écriture atomique) qui serait valide
+    JSON mais sémantiquement cassé — on préfère planter tôt et bruyamment
+    plutôt que de laisser le frontend recevoir des données à moitié
+    cohérentes.
+    """
+    if not isinstance(db, dict) or "days" not in db or not isinstance(db["days"], dict):
+        raise ValueError("database.json : structure racine invalide (clé 'days' manquante).")
+    for day_key, entry in db["days"].items():
+        if not day_key.isdigit():
+            raise ValueError(f"database.json : clé de jour non numérique '{day_key}'.")
+        if not isinstance(entry, dict) or "chars" not in entry:
+            raise ValueError(f"database.json : entrée du jour {day_key} malformée.")
+
+
 def load_database() -> dict:
     if not os.path.exists(DATABASE_FILE):
         return {"meta": {"version": 2}, "days": {}}
@@ -158,13 +225,16 @@ def load_database() -> dict:
         if not raw:
             return {"meta": {"version": 2}, "days": {}}
         try:
-            return json.loads(raw)
+            db = json.loads(raw)
         except json.JSONDecodeError:
             log.error("database.json corrompu — abandon (ne rien écraser).")
             raise
+    validate_database(db)
+    return db
 
 
 def save_database(db: dict) -> None:
+    validate_database(db)
     os.makedirs(DB_DIR, exist_ok=True)
     tmp_path = DATABASE_FILE + ".tmp"
     with open(tmp_path, "w", encoding="utf-8") as f:
@@ -230,6 +300,11 @@ def detect_false_positive(page: Page) -> bool:
     )
 
 
+def _retry_wait(attempt: int) -> float:
+    base = RETRY_BACKOFF_SECONDS[min(attempt - 1, len(RETRY_BACKOFF_SECONDS) - 1)]
+    return base + random.uniform(0, RETRY_JITTER_SECONDS)
+
+
 def play_character(char: CharacterConfig, day: int, is_ci: bool) -> GuessResult:
     """Joue le Marveldle du jour pour un personnage donné, avec retries."""
     images_dir = os.path.join(DB_DIR, char.images_dir)
@@ -242,8 +317,8 @@ def play_character(char: CharacterConfig, day: int, is_ci: bool) -> GuessResult:
     last_error = None
     for attempt in range(MAX_RETRIES + 1):
         if attempt > 0:
-            wait = RETRY_BACKOFF_SECONDS[min(attempt - 1, len(RETRY_BACKOFF_SECONDS) - 1)]
-            log.info("  🔄 Retry #%s dans %ss…", attempt, wait)
+            wait = _retry_wait(attempt)
+            log.info("  🔄 Retry #%s dans %.1fs…", attempt, wait)
             time.sleep(wait)
         try:
             with sync_playwright() as p:
@@ -263,7 +338,7 @@ def play_character(char: CharacterConfig, day: int, is_ci: bool) -> GuessResult:
                     viewport={"width": 1280, "height": 800},
                 )
                 page = context.new_page()
-                page.goto(URL, wait_until="networkidle", timeout=30000)
+                page.goto(URL, wait_until="networkidle", timeout=NAV_TIMEOUT_MS)
 
                 page.wait_for_selector(
                     "input[placeholder=\"Guess today's character\"]", timeout=15000
@@ -334,7 +409,7 @@ def play_character(char: CharacterConfig, day: int, is_ci: bool) -> GuessResult:
                     cls = sq.get_attribute("class") or ""
                     title = sq.get_attribute("title") or ""
                     square_info.append((title, cls))
-                    log.info("    · %s → %s", title, cls)
+                    log.debug("    · %s → %s", title, cls)
 
                 all_exact = all("exact" in cls for _, cls in square_info)
                 is_wrong_char = detect_false_positive(page)
@@ -437,15 +512,19 @@ def parse_args() -> argparse.Namespace:
                     help="Ignore le garde-fou 'déjà joué aujourd'hui'.")
     p.add_argument("--only", choices=[c.key for c in CHARACTERS],
                     help="Ne joue qu'un seul personnage.")
-    p.add_argument("--day", type=int,
+    p.add_argument("--day", type=int, default=None,
                     help="Force un numéro de jour précis (rattrapage / debug).")
     p.add_argument("--export-csv", metavar="PATH",
                     help="N'exécute rien : exporte database.json en CSV vers PATH.")
+    p.add_argument("--verbose", action="store_true",
+                    help="Logs détaillés (DEBUG), y compris le détail des 7 cases.")
     return p.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    global log
+    log = setup_logging(args.verbose)
     os.chdir(SCRIPT_DIR)
 
     if args.export_csv:
@@ -458,7 +537,11 @@ def main() -> int:
     is_ci = os.environ.get("CI") == "true"
 
     state = load_state()
-    db = load_database()
+    try:
+        db = load_database()
+    except (ValueError, json.JSONDecodeError):
+        log.error("🚫 database.json invalide — abandon sans rien écraser.")
+        return 1
 
     # ── 1. Garde-fou "déjà joué aujourd'hui" ────────────────────────────
     if not args.force and state.get("last_run_date") == today_iso:
@@ -466,10 +549,11 @@ def main() -> int:
         return 0
 
     # ── 2. Vérification / auto-correction du jour ───────────────────────
-    day = args.day if args.day is not None else reconcile_day(state, db)
+    day_forced = args.day is not None
+    day = args.day if day_forced else reconcile_day(state, db)
     log.info("🎯 Jour à jouer : %s", day)
 
-    if str(day) in db.get("days", {}) and not args.day:
+    if str(day) in db.get("days", {}) and not day_forced:
         log.warning("⚠️  Le jour %s est déjà dans database.json — on avance sans rejouer.", day)
         if not args.dry_run:
             state["current_day"] = day + 1
@@ -522,7 +606,11 @@ def main() -> int:
 
     # ── 4. Écriture database.json ────────────────────────────────────────
     db.setdefault("days", {})[str(day)] = {"date": today_iso, "chars": chars_result}
-    save_database(db)
+    try:
+        save_database(db)
+    except ValueError as e:
+        log.error("🚫 Écriture refusée, database.json serait invalide : %s", e)
+        return 1
 
     # ── 5. Vérification post-écriture (relecture disque) ─────────────────
     reloaded = load_database()
