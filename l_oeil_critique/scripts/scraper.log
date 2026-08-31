@@ -33639,3 +33639,56 @@ Call log:
 2026-08-31 16:52:19,612 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-08-31 16:52:19,677 [INFO] Rien à commiter, le répertoire est propre.
 2026-08-31 16:52:19,677 [INFO] ==== Fin du script bandes-annonces ====
+2026-08-31 21:48:08,348 [INFO] ==== Début du script bandes-annonces ====
+2026-08-31 21:48:08,354 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-31 21:48:08,354 [INFO] 1060 identifiants chargés depuis le log
+2026-08-31 21:48:08,355 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-31 21:48:08,937 [INFO] Démarrage scraping CineHorizons...
+2026-08-31 21:48:11,870 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-31 21:48:11,906 [INFO] 10 blocs détectés sur la page 1
+2026-08-31 21:48:11,908 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-31 21:48:11,908 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-31 21:48:11,908 [INFO] Démarrage scraping Allociné (films)...
+2026-08-31 21:48:13,817 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-31 21:48:15,084 [INFO] Article ajouté Allociné (film): Trois adieux
+2026-08-31 21:48:16,190 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-08-31 21:48:17,118 [INFO] Article ajouté Allociné (film): Decorado
+2026-08-31 21:48:17,814 [INFO] Article ajouté Allociné (film): Trois adieux
+2026-08-31 21:48:18,839 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-08-31 21:48:19,687 [INFO] Article ajouté Allociné (film): Mutiny
+2026-08-31 21:48:20,278 [INFO] Article ajouté Allociné (film): Trois adieux
+2026-08-31 21:48:21,265 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-08-31 21:48:21,951 [INFO] Article ajouté Allociné (film): Trois adieux
+2026-08-31 21:48:22,670 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-08-31 21:48:23,375 [INFO] Article ajouté Allociné (film): Trois adieux
+2026-08-31 21:48:24,133 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-08-31 21:48:24,791 [INFO] Article ajouté Allociné (film): Les Silences de Riyad
+2026-08-31 21:48:25,415 [INFO] Article ajouté Allociné (film): Trois adieux
+2026-08-31 21:48:26,145 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-08-31 21:48:27,035 [INFO] Article ajouté Allociné (film): Insidious : l'invasion du lointain
+2026-08-31 21:48:27,996 [INFO] Article ajouté Allociné (film): Signes de vie
+2026-08-31 21:48:28,634 [INFO] Article ajouté Allociné (film): Trois adieux
+2026-08-31 21:48:29,169 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-08-31 21:48:29,257 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-31 21:48:29,257 [INFO] Scraping Allociné (films) terminé (12 items)
+2026-08-31 21:48:29,257 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-31 21:48:29,884 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-31 21:48:29,981 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-31 21:48:29,981 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-08-31 21:48:30,082 [INFO] Démarrage scraping TMDb...
+2026-08-31 21:48:30,368 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-31 21:48:30,415 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-31 21:48:30,865 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-31 21:48:32,333 [INFO] 4 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-31 21:48:32,819 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-31 21:48:33,305 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-31 21:48:33,614 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-31 21:48:34,159 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-31 21:48:34,665 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-31 21:48:36,061 [INFO] Scraping TMDb terminé (0 items)
+2026-08-31 21:48:36,061 [INFO] 8 articles retenus pour ce run
+2026-08-31 21:48:36,128 [INFO] 2164 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-31 21:48:36,129 [INFO] Sauvegarde du log avec 1064 identifiants
+2026-08-31 21:48:36,129 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-31 21:48:36,201 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-31 21:48:36,201 [INFO] ==== Fin du script bandes-annonces ====
