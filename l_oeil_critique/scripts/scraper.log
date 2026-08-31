@@ -33603,3 +33603,39 @@ Call log:
 2026-08-31 08:20:50,653 [INFO] Scraping TMDb terminé (0 items)
 2026-08-31 08:20:50,653 [INFO] 0 articles retenus pour ce run
 2026-08-31 08:20:50,653 [INFO] Aucun article à écrire, arrêt
+2026-08-31 16:52:06,692 [INFO] ==== Début du script bandes-annonces ====
+2026-08-31 16:52:06,709 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-08-31 16:52:06,709 [INFO] 1059 identifiants chargés depuis le log
+2026-08-31 16:52:06,709 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-08-31 16:52:07,306 [INFO] Démarrage scraping CineHorizons...
+2026-08-31 16:52:09,505 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-08-31 16:52:09,549 [INFO] 10 blocs détectés sur la page 1
+2026-08-31 16:52:09,551 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-08-31 16:52:09,551 [INFO] Scraping CineHorizons terminé (0 items)
+2026-08-31 16:52:09,551 [INFO] Démarrage scraping Allociné (films)...
+2026-08-31 16:52:10,564 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-08-31 16:52:10,699 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-31 16:52:10,699 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-08-31 16:52:10,699 [INFO] Démarrage scraping Allociné (séries)...
+2026-08-31 16:52:11,457 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-08-31 16:52:13,548 [INFO] Article ajouté Allociné (serie): Surveillant ! (saison 1)
+2026-08-31 16:52:13,993 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-08-31 16:52:14,103 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-08-31 16:52:14,103 [INFO] Scraping Allociné (séries) terminé (1 items)
+2026-08-31 16:52:14,166 [INFO] Démarrage scraping TMDb...
+2026-08-31 16:52:14,441 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-08-31 16:52:14,479 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-08-31 16:52:14,708 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-08-31 16:52:15,520 [INFO] 4 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-08-31 16:52:16,356 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-08-31 16:52:16,529 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-08-31 16:52:16,717 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-08-31 16:52:17,554 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-08-31 16:52:18,353 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-08-31 16:52:19,543 [INFO] Scraping TMDb terminé (0 items)
+2026-08-31 16:52:19,543 [INFO] 1 articles retenus pour ce run
+2026-08-31 16:52:19,611 [INFO] 2156 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-08-31 16:52:19,611 [INFO] Sauvegarde du log avec 1060 identifiants
+2026-08-31 16:52:19,612 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-08-31 16:52:19,677 [INFO] Rien à commiter, le répertoire est propre.
+2026-08-31 16:52:19,677 [INFO] ==== Fin du script bandes-annonces ====
