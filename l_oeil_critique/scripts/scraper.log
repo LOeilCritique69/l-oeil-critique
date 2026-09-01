@@ -33722,3 +33722,67 @@ Call log:
 2026-09-01 01:05:16,356 [INFO] Scraping TMDb terminé (0 items)
 2026-09-01 01:05:16,356 [INFO] 0 articles retenus pour ce run
 2026-09-01 01:05:16,357 [INFO] Aucun article à écrire, arrêt
+2026-09-01 07:29:19,877 [INFO] ==== Début du script bandes-annonces ====
+2026-09-01 07:29:19,893 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-01 07:29:19,893 [INFO] 1064 identifiants chargés depuis le log
+2026-09-01 07:29:19,893 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-01 07:29:21,469 [INFO] Démarrage scraping CineHorizons...
+2026-09-01 07:29:23,523 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-01 07:29:23,558 [INFO] 10 blocs détectés sur la page 1
+2026-09-01 07:29:23,560 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-01 07:29:23,560 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-01 07:29:23,560 [INFO] Démarrage scraping Allociné (films)...
+2026-09-01 07:29:24,001 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-01 07:29:25,422 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:26,720 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-09-01 07:29:27,526 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:28,167 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-09-01 07:29:28,902 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:29,786 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-09-01 07:29:30,421 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:31,116 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-09-01 07:29:31,763 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:32,730 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-09-01 07:29:33,337 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:34,279 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-09-01 07:29:35,052 [INFO] Article ajouté Allociné (film): Insidious : l'invasion du lointain
+2026-09-01 07:29:35,516 [INFO] Article ajouté Allociné (film): Signes de vie
+2026-09-01 07:29:36,164 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:37,197 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-09-01 07:29:37,827 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:38,704 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-09-01 07:29:39,306 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:40,268 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-09-01 07:29:40,903 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:41,683 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-09-01 07:29:42,306 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:43,278 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-09-01 07:29:43,893 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:44,708 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-09-01 07:29:45,323 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:46,486 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-09-01 07:29:47,143 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:48,006 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-09-01 07:29:48,629 [INFO] Article ajouté Allociné (film): Raison et sentiments
+2026-09-01 07:29:48,629 [INFO] Scraping Allociné (films) terminé (17 items)
+2026-09-01 07:29:48,629 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-01 07:29:49,066 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-01 07:29:49,165 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-01 07:29:49,165 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-01 07:29:49,238 [INFO] Démarrage scraping TMDb...
+2026-09-01 07:29:49,502 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-01 07:29:49,537 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-01 07:29:49,755 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-01 07:29:51,802 [INFO] 4 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-01 07:29:52,120 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-09-01 07:29:52,382 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-09-01 07:29:53,060 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-09-01 07:29:53,332 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-09-01 07:29:53,581 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-09-01 07:29:55,065 [INFO] Scraping TMDb terminé (0 items)
+2026-09-01 07:29:55,065 [INFO] 8 articles retenus pour ce run
+2026-09-01 07:29:55,132 [INFO] 2172 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-01 07:29:55,132 [INFO] Sauvegarde du log avec 1067 identifiants
+2026-09-01 07:29:55,133 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-01 07:29:55,200 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-01 07:29:55,200 [INFO] ==== Fin du script bandes-annonces ====
