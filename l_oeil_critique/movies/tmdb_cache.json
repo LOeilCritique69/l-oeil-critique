@@ -11454,5 +11454,27 @@
     "video": false,
     "vote_average": 7.129,
     "vote_count": 5725
+  },
+  "Sleeping Beauty_1959": {
+    "adult": false,
+    "backdrop_path": "/me67dwJnUBt3O9NqZaBdEQ6i4vM.jpg",
+    "genre_ids": [
+      14,
+      16,
+      10749,
+      10751
+    ],
+    "id": 10882,
+    "title": "La Belle au bois dormant",
+    "original_language": "en",
+    "original_title": "Sleeping Beauty",
+    "overview": "La sorcière Maléfique jette un sort à la princesse Aurore. Selon la prophétie, Aurore se piquera le doigt au fuseau d’un rouet le jour de ses 16 ans et tombera dans un profond sommeil. Seul un baiser d’amour pourra la réveiller. Aurore vit donc dans les bois avec ses trois marraines, mais quand elle découvre sa véritable identité, elle se rend au château et la prophétie s'accomplit.",
+    "popularity": 14.6697,
+    "poster_path": "/5GaczvmuUCxhwPNx896lo2OCIFh.jpg",
+    "release_date": "1959-02-17",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.947,
+    "vote_count": 5560
   }
 }

@@ -5766,5 +5766,15 @@
     "poster_path": "/2NSswcmFR0SAZInJnniq1elmUdm.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/2NSswcmFR0SAZInJnniq1elmUdm.jpg",
     "tmdb_id": 10340
+  },
+  {
+    "Name": "Sleeping Beauty",
+    "Year": 1959,
+    "Date": "2026-09-02",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/sleeping-beauty/",
+    "poster_path": "/5GaczvmuUCxhwPNx896lo2OCIFh.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/5GaczvmuUCxhwPNx896lo2OCIFh.jpg",
+    "tmdb_id": 10882
   }
 ]
