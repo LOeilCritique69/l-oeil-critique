@@ -34271,3 +34271,41 @@ Call log:
 2026-09-03 13:23:25,438 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-09-03 13:23:25,506 [INFO] Rien à commiter, le répertoire est propre.
 2026-09-03 13:23:25,507 [INFO] ==== Fin du script bandes-annonces ====
+2026-09-03 17:39:13,057 [INFO] ==== Début du script bandes-annonces ====
+2026-09-03 17:39:13,071 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-03 17:39:13,071 [INFO] 1108 identifiants chargés depuis le log
+2026-09-03 17:39:13,071 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-03 17:39:13,673 [INFO] Démarrage scraping CineHorizons...
+2026-09-03 17:39:16,527 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-03 17:39:16,567 [INFO] 10 blocs détectés sur la page 1
+2026-09-03 17:39:16,570 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-03 17:39:16,570 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-03 17:39:16,570 [INFO] Démarrage scraping Allociné (films)...
+2026-09-03 17:39:17,201 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-03 17:39:17,277 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-03 17:39:17,277 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-09-03 17:39:17,277 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-03 17:39:18,962 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-03 17:39:22,313 [INFO] Article ajouté Allociné (serie): Maxton Hall - Le monde qui nous sépare (saison 3)
+2026-09-03 17:39:24,453 [INFO] Article ajouté Allociné (serie): Maxton Hall - Le monde qui nous sépare (saison 3)
+2026-09-03 17:39:27,621 [INFO] Article ajouté Allociné (serie): Le Problème final (saison 1)
+2026-09-03 17:39:28,636 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-09-03 17:39:28,755 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-03 17:39:28,755 [INFO] Scraping Allociné (séries) terminé (3 items)
+2026-09-03 17:39:28,823 [INFO] Démarrage scraping TMDb...
+2026-09-03 17:39:29,022 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-03 17:39:29,163 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-03 17:39:30,056 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-03 17:39:33,180 [INFO] 3 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-03 17:39:34,262 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-09-03 17:39:34,395 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-09-03 17:39:35,062 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-09-03 17:39:36,137 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-09-03 17:39:37,543 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-09-03 17:39:41,380 [INFO] Scraping TMDb terminé (0 items)
+2026-09-03 17:39:41,380 [INFO] 3 articles retenus pour ce run
+2026-09-03 17:39:41,450 [INFO] 2216 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-03 17:39:41,451 [INFO] Sauvegarde du log avec 1111 identifiants
+2026-09-03 17:39:41,451 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-03 17:39:41,519 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-03 17:39:41,519 [INFO] ==== Fin du script bandes-annonces ====
