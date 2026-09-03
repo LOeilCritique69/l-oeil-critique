@@ -34194,3 +34194,41 @@ Call log:
 2026-09-03 03:36:59,614 [INFO] Scraping TMDb terminé (0 items)
 2026-09-03 03:36:59,614 [INFO] 0 articles retenus pour ce run
 2026-09-03 03:36:59,614 [INFO] Aucun article à écrire, arrêt
+2026-09-03 08:43:11,209 [INFO] ==== Début du script bandes-annonces ====
+2026-09-03 08:43:11,216 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-03 08:43:11,216 [INFO] 1101 identifiants chargés depuis le log
+2026-09-03 08:43:11,217 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-03 08:43:11,801 [INFO] Démarrage scraping CineHorizons...
+2026-09-03 08:43:13,914 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-03 08:43:13,955 [INFO] 10 blocs détectés sur la page 1
+2026-09-03 08:43:13,957 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-03 08:43:13,957 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-03 08:43:13,957 [INFO] Démarrage scraping Allociné (films)...
+2026-09-03 08:43:14,896 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-03 08:43:16,212 [INFO] Article ajouté Allociné (film): I'm Game
+2026-09-03 08:43:16,803 [INFO] Article ajouté Allociné (film): Katy Perry: The Lifetimes Tour - Live from Paris
+2026-09-03 08:43:17,228 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-09-03 08:43:17,320 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-03 08:43:17,320 [INFO] Scraping Allociné (films) terminé (2 items)
+2026-09-03 08:43:17,320 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-03 08:43:17,743 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-03 08:43:17,852 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-03 08:43:17,852 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-03 08:43:17,903 [INFO] Démarrage scraping TMDb...
+2026-09-03 08:43:18,135 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-03 08:43:18,149 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-03 08:43:18,309 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-03 08:43:19,808 [INFO] 3 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-03 08:43:20,206 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-09-03 08:43:20,229 [INFO] Article ajouté TMDb (now_playing): Buddy
+2026-09-03 08:43:20,277 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-09-03 08:43:20,382 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-09-03 08:43:20,501 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-09-03 08:43:21,651 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-09-03 08:43:22,508 [INFO] Scraping TMDb terminé (1 items)
+2026-09-03 08:43:22,508 [INFO] 3 articles retenus pour ce run
+2026-09-03 08:43:22,577 [INFO] 2209 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-03 08:43:22,577 [INFO] Sauvegarde du log avec 1104 identifiants
+2026-09-03 08:43:22,578 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-03 08:43:22,646 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-03 08:43:22,646 [INFO] ==== Fin du script bandes-annonces ====
