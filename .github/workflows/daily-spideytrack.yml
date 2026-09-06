@@ -100,12 +100,10 @@ jobs:
       - name: 🔁 Commit & push
         if: steps.changes.outputs.changes == 'true'
         run: |
-          git add l_oeil_critique/Spideytrack/marveldle/state.json
-          git add l_oeil_critique/Spideytrack/marveldle/database.json
-          git add l_oeil_critique/Spideytrack/marveldle/images/
-          git add l_oeil_critique/Spideytrack/marveldle/images_andrew/
-          git add l_oeil_critique/Spideytrack/marveldle/images_tobey/
-          DAY=$(python3 -c "import json;print(json.load(open('l_oeil_critique/Spideytrack/marveldle/state.json'))['current_day']-1)")
+          # Staging the folder directly avoids pathspec errors if individual files are missing
+          git add l_oeil_critique/Spideytrack/marveldle/
+
+          DAY=$(python3 -c "import json; print(json.load(open('l_oeil_critique/Spideytrack/marveldle/state.json'))['current_day']-1)")
           git commit -m "🕷️ SpideyTrack — Day $DAY (#${{ github.run_number }})"
           git pull --rebase origin main
           git push origin main
