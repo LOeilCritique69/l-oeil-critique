@@ -34862,3 +34862,67 @@ Call log:
 2026-09-06 00:43:34,941 [INFO] Scraping TMDb terminé (0 items)
 2026-09-06 00:43:34,941 [INFO] 0 articles retenus pour ce run
 2026-09-06 00:43:34,941 [INFO] Aucun article à écrire, arrêt
+2026-09-06 05:40:04,060 [INFO] ==== Début du script bandes-annonces ====
+2026-09-06 05:40:04,065 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-06 05:40:04,065 [INFO] 1121 identifiants chargés depuis le log
+2026-09-06 05:40:04,065 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-06 05:40:04,547 [INFO] Démarrage scraping CineHorizons...
+2026-09-06 05:40:07,399 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-06 05:40:07,430 [INFO] 10 blocs détectés sur la page 1
+2026-09-06 05:40:07,431 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-06 05:40:07,431 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-06 05:40:07,431 [INFO] Démarrage scraping Allociné (films)...
+2026-09-06 05:40:08,191 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-06 05:40:08,909 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:10,058 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-09-06 05:40:10,820 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:11,355 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-09-06 05:40:12,345 [INFO] Article ajouté Allociné (film): The Holy Boy
+2026-09-06 05:40:13,215 [INFO] Article ajouté Allociné (film): Amour(s)
+2026-09-06 05:40:13,787 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:14,286 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-09-06 05:40:14,931 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:15,430 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-09-06 05:40:16,089 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:16,558 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-09-06 05:40:17,172 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:17,658 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-09-06 05:40:18,399 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:18,875 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-09-06 05:40:19,494 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:20,678 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-09-06 05:40:21,299 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:22,222 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-09-06 05:40:22,849 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:23,725 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-09-06 05:40:24,357 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:25,298 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-09-06 05:40:25,753 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:26,697 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-09-06 05:40:27,328 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:28,291 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-09-06 05:40:28,952 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:29,819 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-09-06 05:40:30,459 [INFO] Article ajouté Allociné (film): Si tu penses bien
+2026-09-06 05:40:30,460 [INFO] Scraping Allociné (films) terminé (17 items)
+2026-09-06 05:40:30,460 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-06 05:40:31,110 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-06 05:40:31,192 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-06 05:40:31,192 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-06 05:40:31,251 [INFO] Démarrage scraping TMDb...
+2026-09-06 05:40:31,600 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-06 05:40:32,062 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-06 05:40:32,506 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-06 05:40:34,689 [INFO] 5 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-06 05:40:35,762 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/6)
+2026-09-06 05:40:35,851 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/6)
+2026-09-06 05:40:36,366 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/6)
+2026-09-06 05:40:37,083 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/6)
+2026-09-06 05:40:37,917 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/6)
+2026-09-06 05:40:40,116 [INFO] Scraping TMDb terminé (0 items)
+2026-09-06 05:40:40,116 [INFO] 8 articles retenus pour ce run
+2026-09-06 05:40:40,174 [INFO] 2234 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-06 05:40:40,174 [INFO] Sauvegarde du log avec 1124 identifiants
+2026-09-06 05:40:40,174 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-06 05:40:40,231 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-06 05:40:40,232 [INFO] ==== Fin du script bandes-annonces ====
