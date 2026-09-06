@@ -1122,5 +1122,7 @@
   "cinehorizons::15/18::https://www.cinehorizons.net/film/1518",
   "allocine::1000043221::20640417",
   "allocine::1000024164::20639585",
-  "allocine::1000047486::20639349"
+  "allocine::1000047486::20639349",
+  "tmdb::id::53653",
+  "tmdb::id::112929"
 ]
