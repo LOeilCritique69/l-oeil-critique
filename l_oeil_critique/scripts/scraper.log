@@ -35534,3 +35534,45 @@ Call log:
 2026-09-09 03:54:45,280 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-09-09 03:54:45,350 [INFO] Rien à commiter, le répertoire est propre.
 2026-09-09 03:54:45,350 [INFO] ==== Fin du script bandes-annonces ====
+2026-09-09 08:49:49,253 [INFO] ==== Début du script bandes-annonces ====
+2026-09-09 08:49:49,277 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-09 08:49:49,277 [INFO] 1147 identifiants chargés depuis le log
+2026-09-09 08:49:49,278 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-09 08:49:49,899 [INFO] Démarrage scraping CineHorizons...
+2026-09-09 08:49:53,165 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-09 08:49:53,207 [INFO] 10 blocs détectés sur la page 1
+2026-09-09 08:49:53,207 [INFO] Extraction détails CineHorizons pour Mémoire de fille
+2026-09-09 08:49:54,217 [INFO] Article ajouté CineHorizons: Mémoire de fille
+2026-09-09 08:49:55,211 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-09-09 08:49:55,262 [INFO] 10 blocs détectés sur la page 2
+2026-09-09 08:49:55,268 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-09 08:49:55,269 [INFO] Scraping CineHorizons terminé (1 items)
+2026-09-09 08:49:55,269 [INFO] Démarrage scraping Allociné (films)...
+2026-09-09 08:49:56,083 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-09 08:49:56,170 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-09 08:49:56,170 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-09-09 08:49:56,170 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-09 08:49:57,533 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-09 08:49:57,656 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-09 08:49:57,656 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-09 08:49:57,706 [INFO] Démarrage scraping TMDb...
+2026-09-09 08:49:58,010 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-09 08:49:58,104 [INFO] Article ajouté TMDb (upcoming): Leviticus
+2026-09-09 08:49:58,381 [INFO] Article ajouté TMDb (upcoming): The Social Reckoning
+2026-09-09 08:49:58,477 [INFO] Article ajouté TMDb (upcoming): La Maison de nos rêves
+2026-09-09 08:49:58,573 [INFO] Article ajouté TMDb (upcoming): Joyeuse Jungle !
+2026-09-09 08:49:58,669 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-09 08:49:59,640 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-09 08:50:02,323 [INFO] 6 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-09 08:50:03,447 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/7)
+2026-09-09 08:50:03,549 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/7)
+2026-09-09 08:50:04,052 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/7)
+2026-09-09 08:50:04,951 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/7)
+2026-09-09 08:50:05,449 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/7)
+2026-09-09 08:50:07,576 [INFO] Scraping TMDb terminé (4 items)
+2026-09-09 08:50:07,576 [INFO] 5 articles retenus pour ce run
+2026-09-09 08:50:07,650 [INFO] 2262 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-09 08:50:07,650 [INFO] Sauvegarde du log avec 1152 identifiants
+2026-09-09 08:50:07,651 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-09 08:50:07,721 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-09 08:50:07,721 [INFO] ==== Fin du script bandes-annonces ====
