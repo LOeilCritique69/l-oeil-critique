@@ -35712,3 +35712,43 @@ Call log:
 2026-09-10 03:48:15,989 [INFO] Scraping TMDb terminé (0 items)
 2026-09-10 03:48:15,989 [INFO] 0 articles retenus pour ce run
 2026-09-10 03:48:15,989 [INFO] Aucun article à écrire, arrêt
+2026-09-10 08:47:36,884 [INFO] ==== Début du script bandes-annonces ====
+2026-09-10 08:47:36,900 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-10 08:47:36,900 [INFO] 1158 identifiants chargés depuis le log
+2026-09-10 08:47:36,900 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-10 08:47:37,599 [INFO] Démarrage scraping CineHorizons...
+2026-09-10 08:47:40,676 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-10 08:47:40,707 [INFO] 10 blocs détectés sur la page 1
+2026-09-10 08:47:40,708 [INFO] Extraction détails CineHorizons pour UN BON PETIT SOLDAT
+2026-09-10 08:47:41,867 [INFO] Article ajouté CineHorizons: UN BON PETIT SOLDAT
+2026-09-10 08:47:41,867 [INFO] Extraction détails CineHorizons pour L'Espèce explosive
+2026-09-10 08:47:42,822 [INFO] Article ajouté CineHorizons: L'Espèce explosive
+2026-09-10 08:47:44,166 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-09-10 08:47:44,210 [INFO] 10 blocs détectés sur la page 2
+2026-09-10 08:47:44,212 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-10 08:47:44,213 [INFO] Scraping CineHorizons terminé (2 items)
+2026-09-10 08:47:44,213 [INFO] Démarrage scraping Allociné (films)...
+2026-09-10 08:47:45,667 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-10 08:47:45,749 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-10 08:47:45,750 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-09-10 08:47:45,750 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-10 08:47:47,132 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-10 08:47:47,226 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-10 08:47:47,226 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-10 08:47:47,268 [INFO] Démarrage scraping TMDb...
+2026-09-10 08:47:47,407 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-10 08:47:47,670 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-10 08:47:48,470 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-10 08:47:50,960 [INFO] 5 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-10 08:47:51,806 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/7)
+2026-09-10 08:47:51,898 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/7)
+2026-09-10 08:47:52,517 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/7)
+2026-09-10 08:47:53,151 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/7)
+2026-09-10 08:47:53,705 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/7)
+2026-09-10 08:47:55,464 [INFO] Scraping TMDb terminé (0 items)
+2026-09-10 08:47:55,464 [INFO] 2 articles retenus pour ce run
+2026-09-10 08:47:55,588 [INFO] 2270 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-10 08:47:55,588 [INFO] Sauvegarde du log avec 1160 identifiants
+2026-09-10 08:47:55,589 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-10 08:47:55,673 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-10 08:47:55,673 [INFO] ==== Fin du script bandes-annonces ====
