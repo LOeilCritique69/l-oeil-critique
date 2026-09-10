@@ -7229,6 +7229,35 @@
           "screenshot": "marveldle/images_tobey/day_249.png"
         }
       }
+    },
+    "250": {
+      "date": "2026-09-10",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_250.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_250.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_250.png"
+        }
+      }
     }
   }
 }
