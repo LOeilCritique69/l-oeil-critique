@@ -389,6 +389,7 @@ function applyDbFilters() { dbPage = 1; renderDbTable(); }
 
 function renderDbTable() {
   const tbody = document.getElementById('db-tbody');
+  if (!tbody) return;
   const empty = document.getElementById('db-empty');
   const search = dbSearch.toLowerCase().trim();
 
@@ -465,25 +466,52 @@ function debounce(fn, wait) {
 function initDbControls() {
   document.querySelectorAll('.db-filters [data-result]').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.db-filters [data-result]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+      document.querySelectorAll('.db-filters [data-result]').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
       btn.setAttribute('aria-pressed', 'true');
       dbFilterResult = btn.dataset.result;
       applyDbFilters();
     });
   });
-  document.getElementById('db-search').addEventListener('input', debounce(e => { dbSearch = e.target.value; applyDbFilters(); }, 150));
+
+  const dbSearchEl = document.getElementById('db-search');
+  if (dbSearchEl) {
+    dbSearchEl.addEventListener(
+      'input',
+      debounce(e => {
+        dbSearch = e.target.value;
+        applyDbFilters();
+      }, 150)
+    );
+  }
+
   document.querySelectorAll('.db-table th.sortable').forEach(th => {
     th.addEventListener('click', () => {
       const key = th.dataset.sort;
-      if (dbSort.key === key) dbSort.dir = dbSort.dir === 'asc' ? 'desc' : 'asc';
-      else dbSort = { key, dir: 'desc' };
+
+      if (dbSort.key === key) {
+        dbSort.dir = dbSort.dir === 'asc' ? 'desc' : 'asc';
+      } else {
+        dbSort = { key, dir: 'desc' };
+      }
+
       document.querySelectorAll('.db-table th.sortable').forEach(t => {
-        t.classList.remove('sort-asc','sort-desc');
+        t.classList.remove('sort-asc', 'sort-desc');
         t.setAttribute('aria-sort', 'none');
       });
-      th.classList.add(dbSort.dir === 'asc' ? 'sort-asc' : 'sort-desc');
-      th.setAttribute('aria-sort', dbSort.dir === 'asc' ? 'ascending' : 'descending');
+
+      th.classList.add(
+        dbSort.dir === 'asc' ? 'sort-asc' : 'sort-desc'
+      );
+
+      th.setAttribute(
+        'aria-sort',
+        dbSort.dir === 'asc' ? 'ascending' : 'descending'
+      );
+
       renderDbTable();
     });
   });
@@ -580,6 +608,10 @@ async function init() {
   renderDashboard(rows);
   renderTop5(buildTop5(rows));
   renderDbTable();
+  // Calendrier — module autonome (calendar.js), greffé ici une fois
+  // les données prêtes. Sûr à rappeler à chaque clic sur "Réessayer" :
+  // init() reconstruit son propre skeleton DOM à chaque appel.
+  if (window.SpideyCalendar) SpideyCalendar.init(rows);
   setProgress(96, 'Graphiques…');
   try { renderMainChart('tom'); } catch (e) { console.error('Chart.js indisponible :', e); }
   setProgress(100, 'Dossier prêt.');
