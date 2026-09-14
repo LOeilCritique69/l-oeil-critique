@@ -100,9 +100,12 @@ jobs:
       - name: 🔁 Commit & push
         if: steps.changes.outputs.changes == 'true'
         run: |
-          # Staging the folder directly avoids pathspec errors if individual files are missing
+          # Stage the specific folder
           git add l_oeil_critique/Spideytrack/marveldle/
-
+          
+          # Stage any other changes to avoid "unstaged changes" error during pull
+          git add -A
+          
           DAY=$(python3 -c "import json; print(json.load(open('l_oeil_critique/Spideytrack/marveldle/state.json'))['current_day']-1)")
           git commit -m "🕷️ SpideyTrack — Day $DAY (#${{ github.run_number }})"
           git pull --rebase origin main
