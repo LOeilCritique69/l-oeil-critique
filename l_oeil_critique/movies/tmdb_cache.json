@@ -11476,5 +11476,25 @@
     "video": false,
     "vote_average": 6.947,
     "vote_count": 5560
+  },
+  "99 Francs_2007": {
+    "adult": false,
+    "backdrop_path": "/wHwpdFBkvHRKS1zXptaskCFJ8BK.jpg",
+    "genre_ids": [
+      18,
+      35
+    ],
+    "id": 8827,
+    "title": "99 Francs",
+    "original_language": "fr",
+    "original_title": "99 Francs",
+    "overview": "Octave est le maître du monde : il exerce la profession de rédacteur publicitaire. Il décide aujourd'hui ce que vous allez vouloir demain. Pour lui, \"l'homme est un produit comme les autres\". Octave travaille pour la plus grosse agence de pub du monde : Ross & Witchcraft, surnommée \"La Ross\". Il est couvert d'argent, de filles et de cocaïne. Pourtant, il doute. Deux événements vont bouleverser le cours de la vie d'Octave. Son histoire d'amour avec Sophie, la plus belle employée de l'agence, et une réunion chez Madone pour vendre un film de pub à ce géant du produit laitier. Le doué Octave déjante alors et décide de se rebeller contre le système qui l'a créé, en sabotant sa plus grande campagne. De Paris, où négocient les patrons d'agences, à Miami, où l'on tourne un spot sous antidépresseurs, de Saint-Germain-des-Prés à une île perdue d'Amérique Centrale, Octave parviendra-t-il à échapper à sa prison dorée ?",
+    "popularity": 1.724,
+    "poster_path": "/d67iCuJxENCeJ6GZU5typgaNAkb.jpg",
+    "release_date": "2007-09-26",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.681,
+    "vote_count": 830
   }
 }

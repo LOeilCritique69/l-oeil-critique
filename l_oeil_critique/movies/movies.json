@@ -5776,5 +5776,15 @@
     "poster_path": "/5GaczvmuUCxhwPNx896lo2OCIFh.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/5GaczvmuUCxhwPNx896lo2OCIFh.jpg",
     "tmdb_id": 10882
+  },
+  {
+    "Name": "99 Francs",
+    "Year": 2007,
+    "Date": "2026-09-14",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/99-francs/",
+    "poster_path": "/d67iCuJxENCeJ6GZU5typgaNAkb.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/d67iCuJxENCeJ6GZU5typgaNAkb.jpg",
+    "tmdb_id": 8827
   }
 ]
