@@ -11496,5 +11496,26 @@
     "video": false,
     "vote_average": 6.681,
     "vote_count": 830
+  },
+  "Resident Evil_2026": {
+    "adult": false,
+    "backdrop_path": "/1CIaRYKf3zg2Xyce1CSfCMg2Vfw.jpg",
+    "genre_ids": [
+      27,
+      878,
+      12
+    ],
+    "id": 1423191,
+    "title": "Resident Evil",
+    "original_language": "en",
+    "original_title": "Resident Evil",
+    "overview": "Bryan, un coursier médical, est en train d'effectuer une livraison lorsqu'une épidémie soudaine se déclare, le forçant à lutter pour sa survie.",
+    "popularity": 243.9374,
+    "poster_path": "/pICoWjcKSet6sA3yzxOkP8ChwYI.jpg",
+    "release_date": "2026-09-16",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.648,
+    "vote_count": 64
   }
 }

@@ -5786,5 +5786,15 @@
     "poster_path": "/d67iCuJxENCeJ6GZU5typgaNAkb.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/d67iCuJxENCeJ6GZU5typgaNAkb.jpg",
     "tmdb_id": 8827
+  },
+  {
+    "Name": "Resident Evil",
+    "Year": 2026,
+    "Date": "2026-09-18",
+    "Rating": 3.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/resident-evil-2026/",
+    "poster_path": "/pICoWjcKSet6sA3yzxOkP8ChwYI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/pICoWjcKSet6sA3yzxOkP8ChwYI.jpg",
+    "tmdb_id": 1423191
   }
 ]
