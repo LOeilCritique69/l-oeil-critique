@@ -11517,5 +11517,25 @@
     "video": false,
     "vote_average": 7.648,
     "vote_count": 64
+  },
+  "A Woman's Life_2026": {
+    "adult": false,
+    "backdrop_path": "/rFST4zAaG20VSIxSvYO57nhkkV4.jpg",
+    "genre_ids": [
+      18,
+      35
+    ],
+    "id": 1258181,
+    "title": "La vie d'une femme",
+    "original_language": "fr",
+    "original_title": "La vie d'une femme",
+    "overview": "Gabrielle, 55 ans, se consacre corps et âme à son métier. Chirurgienne et cheffe de service dans un hôpital public, elle court et se démultiplie, assaillie de responsabilités. Il lui reste peu de temps pour sa vie privée — un mari qui l’aime et une mère dont elle doit s’occuper. Lorsqu'une romancière vient passer quelques semaines dans son service pour les besoins d’un livre, son équilibre vacille. Dans le quotidien que Gabrielle s’est construit, y a-t-il de la place pour l’inattendu ?",
+    "popularity": 3.3978,
+    "poster_path": "/9xAYLvWZGASDKJZjt5XgvD7ugsn.jpg",
+    "release_date": "2026-09-09",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.37,
+    "vote_count": 23
   }
 }
