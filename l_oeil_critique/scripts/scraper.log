@@ -38101,3 +38101,87 @@ Call log:
 2026-09-22 21:53:46,405 [INFO] Scraping TMDb terminé (0 items)
 2026-09-22 21:53:46,405 [INFO] 0 articles retenus pour ce run
 2026-09-22 21:53:46,405 [INFO] Aucun article à écrire, arrêt
+2026-09-23 00:09:06,293 [INFO] ==== Début du script bandes-annonces ====
+2026-09-23 00:09:06,300 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-23 00:09:06,300 [INFO] 1205 identifiants chargés depuis le log
+2026-09-23 00:09:06,301 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-23 00:09:06,926 [INFO] Démarrage scraping CineHorizons...
+2026-09-23 00:09:10,177 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-23 00:09:10,215 [INFO] 10 blocs détectés sur la page 1
+2026-09-23 00:09:10,217 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-23 00:09:10,217 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-23 00:09:10,217 [INFO] Démarrage scraping Allociné (films)...
+2026-09-23 00:09:10,975 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-23 00:09:11,993 [INFO] Article ajouté Allociné (film): Haute solitude, Jean Zay prisonnier politique
+2026-09-23 00:09:13,851 [INFO] Article ajouté Allociné (film): Détective Conan : L'Ange déchu de l'asphalte
+2026-09-23 00:09:14,675 [INFO] Article ajouté Allociné (film): Garance
+2026-09-23 00:09:15,509 [INFO] Article ajouté Allociné (film): Les Éléphants dans la brume
+2026-09-23 00:09:16,335 [INFO] Article ajouté Allociné (film): Heart Of The Beast
+2026-09-23 00:09:17,169 [INFO] Article ajouté Allociné (film): Primetime
+2026-09-23 00:09:17,997 [INFO] Article ajouté Allociné (film): Justin le Juste
+2026-09-23 00:09:18,790 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:19,905 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-09-23 00:09:20,784 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:21,791 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-09-23 00:09:22,811 [INFO] Article ajouté Allociné (film): Fini de rire ! L'humour politique au garde-à-vous ?
+2026-09-23 00:09:23,740 [INFO] Article ajouté Allociné (film): Her Private Hell
+2026-09-23 00:09:24,409 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:25,427 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-09-23 00:09:26,263 [INFO] Article ajouté Allociné (film): Un amour d’épouvantail
+2026-09-23 00:09:26,902 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:28,171 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-09-23 00:09:28,934 [INFO] Article ajouté Allociné (film): Écrire la vie : Annie Ernaux racontée par des lycéennes et des lycéens
+2026-09-23 00:09:29,867 [INFO] Article ajouté Allociné (film): Le Cygne et l'enfant
+2026-09-23 00:09:30,536 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:31,153 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-09-23 00:09:32,411 [INFO] Article ajouté Allociné (film): Histoires De La Nuit
+2026-09-23 00:09:33,860 [INFO] Article ajouté Allociné (film): Festin boréal
+2026-09-23 00:09:34,602 [INFO] Article ajouté Allociné (film): Les Roches Rouges
+2026-09-23 00:09:35,911 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-09-23 00:09:36,647 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:37,631 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-09-23 00:09:38,477 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:39,146 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:40,409 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-09-23 00:09:41,232 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:41,895 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:42,852 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-09-23 00:09:43,633 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:44,298 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:45,251 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-09-23 00:09:46,108 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:46,772 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:47,728 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-09-23 00:09:48,523 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:49,196 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:50,137 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-09-23 00:09:50,938 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:51,611 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:52,708 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-09-23 00:09:53,508 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:54,180 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:55,235 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-09-23 00:09:56,113 [INFO] Article ajouté Allociné (film): Sham
+2026-09-23 00:09:56,782 [INFO] Article ajouté Allociné (film): Kraken
+2026-09-23 00:09:56,782 [INFO] Scraping Allociné (films) terminé (37 items)
+2026-09-23 00:09:56,782 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-23 00:09:57,499 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-23 00:09:57,597 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-23 00:09:57,597 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-23 00:09:57,727 [INFO] Démarrage scraping TMDb...
+2026-09-23 00:09:57,842 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-23 00:09:58,206 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-23 00:09:58,762 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-23 00:10:00,366 [INFO] 11 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-23 00:10:02,054 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-09-23 00:10:02,129 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-09-23 00:10:02,203 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-09-23 00:10:02,851 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-09-23 00:10:03,577 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-09-23 00:10:04,754 [INFO] Scraping TMDb terminé (0 items)
+2026-09-23 00:10:04,754 [INFO] 8 articles retenus pour ce run
+2026-09-23 00:10:04,826 [INFO] 2329 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-23 00:10:04,826 [INFO] Sauvegarde du log avec 1213 identifiants
+2026-09-23 00:10:04,827 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-23 00:10:04,905 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-23 00:10:04,905 [INFO] ==== Fin du script bandes-annonces ====
