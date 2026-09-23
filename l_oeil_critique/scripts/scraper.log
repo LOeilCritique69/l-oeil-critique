@@ -38185,3 +38185,45 @@ Call log:
 2026-09-23 00:10:04,827 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-09-23 00:10:04,905 [INFO] Rien à commiter, le répertoire est propre.
 2026-09-23 00:10:04,905 [INFO] ==== Fin du script bandes-annonces ====
+2026-09-23 05:39:04,713 [INFO] ==== Début du script bandes-annonces ====
+2026-09-23 05:39:04,720 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-23 05:39:04,721 [INFO] 1213 identifiants chargés depuis le log
+2026-09-23 05:39:04,721 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-23 05:39:05,296 [INFO] Démarrage scraping CineHorizons...
+2026-09-23 05:39:07,496 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-23 05:39:07,535 [INFO] 10 blocs détectés sur la page 1
+2026-09-23 05:39:07,537 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-23 05:39:07,537 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-23 05:39:07,537 [INFO] Démarrage scraping Allociné (films)...
+2026-09-23 05:39:08,217 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-23 05:39:08,282 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-23 05:39:08,282 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-09-23 05:39:08,282 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-23 05:39:08,882 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-23 05:39:09,022 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-23 05:39:09,022 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-23 05:39:09,074 [INFO] Démarrage scraping TMDb...
+2026-09-23 05:39:09,304 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-23 05:39:09,336 [INFO] Article ajouté TMDb (upcoming): L'Île des Souvenirs
+2026-09-23 05:39:09,398 [INFO] Article ajouté TMDb (upcoming): The Good Boy
+2026-09-23 05:39:09,431 [INFO] Article ajouté TMDb (upcoming): Shaun le Mouton : La Bêêête d'Halloween
+2026-09-23 05:39:09,461 [INFO] Article ajouté TMDb (upcoming): Clayface
+2026-09-23 05:39:09,586 [INFO] Article ajouté TMDb (upcoming): Wicker
+2026-09-23 05:39:09,641 [INFO] Article ajouté TMDb (upcoming): Klara et le Soleil
+2026-09-23 05:39:09,699 [INFO] Article ajouté TMDb (upcoming): Your Mother Your Mother Your Mother
+2026-09-23 05:39:09,732 [INFO] Article ajouté TMDb (upcoming): La Gradiva
+2026-09-23 05:39:09,761 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-23 05:39:10,410 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-23 05:39:11,069 [INFO] 11 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-23 05:39:12,289 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-09-23 05:39:12,322 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-09-23 05:39:12,352 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-09-23 05:39:12,578 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-09-23 05:39:12,897 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-09-23 05:39:13,803 [INFO] Scraping TMDb terminé (8 items)
+2026-09-23 05:39:13,803 [INFO] 8 articles retenus pour ce run
+2026-09-23 05:39:13,878 [INFO] 2337 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-23 05:39:13,878 [INFO] Sauvegarde du log avec 1221 identifiants
+2026-09-23 05:39:13,879 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-23 05:39:13,957 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-23 05:39:13,958 [INFO] ==== Fin du script bandes-annonces ====
