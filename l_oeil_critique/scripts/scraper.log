@@ -38625,3 +38625,42 @@ Call log:
 2026-09-25 13:25:11,551 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-09-25 13:25:11,630 [INFO] Rien à commiter, le répertoire est propre.
 2026-09-25 13:25:11,630 [INFO] ==== Fin du script bandes-annonces ====
+2026-09-25 18:20:21,987 [INFO] ==== Début du script bandes-annonces ====
+2026-09-25 18:20:21,993 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-25 18:20:21,994 [INFO] 1234 identifiants chargés depuis le log
+2026-09-25 18:20:21,994 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-25 18:20:22,562 [INFO] Démarrage scraping CineHorizons...
+2026-09-25 18:20:25,872 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-25 18:20:25,908 [INFO] 10 blocs détectés sur la page 1
+2026-09-25 18:20:25,910 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-25 18:20:25,910 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-25 18:20:25,910 [INFO] Démarrage scraping Allociné (films)...
+2026-09-25 18:20:26,525 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-25 18:20:26,583 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-25 18:20:26,583 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-09-25 18:20:26,583 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-25 18:20:28,078 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-25 18:20:31,002 [INFO] Article ajouté Allociné (serie): A Returner's Magic Should Be Special (saison 2)
+2026-09-25 18:20:33,041 [INFO] Article ajouté Allociné (serie): Yaga (saison 1)
+2026-09-25 18:20:35,212 [INFO] Article ajouté Allociné (serie): Black Doves (saison 2)
+2026-09-25 18:20:36,147 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-09-25 18:20:36,232 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-25 18:20:36,232 [INFO] Scraping Allociné (séries) terminé (3 items)
+2026-09-25 18:20:36,295 [INFO] Démarrage scraping TMDb...
+2026-09-25 18:20:36,415 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-25 18:20:36,538 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-25 18:20:36,974 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-25 18:20:38,313 [INFO] 11 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-25 18:20:39,199 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-09-25 18:20:39,241 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-09-25 18:20:39,282 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-09-25 18:20:39,569 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-09-25 18:20:40,502 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-09-25 18:20:40,871 [INFO] Article ajouté TMDb (now_playing): Dreamland
+2026-09-25 18:20:40,872 [INFO] Scraping TMDb terminé (1 items)
+2026-09-25 18:20:40,873 [INFO] 4 articles retenus pour ce run
+2026-09-25 18:20:40,941 [INFO] 2354 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-25 18:20:40,942 [INFO] Sauvegarde du log avec 1238 identifiants
+2026-09-25 18:20:40,943 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-25 18:20:41,012 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-25 18:20:41,012 [INFO] ==== Fin du script bandes-annonces ====
