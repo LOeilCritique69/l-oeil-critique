@@ -38794,3 +38794,82 @@ Call log:
 2026-09-26 12:48:35,515 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-09-26 12:48:35,600 [INFO] Rien à commiter, le répertoire est propre.
 2026-09-26 12:48:35,600 [INFO] ==== Fin du script bandes-annonces ====
+2026-09-26 16:57:02,984 [INFO] ==== Début du script bandes-annonces ====
+2026-09-26 16:57:02,998 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-26 16:57:02,998 [INFO] 1240 identifiants chargés depuis le log
+2026-09-26 16:57:02,999 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-26 16:57:03,572 [INFO] Démarrage scraping CineHorizons...
+2026-09-26 16:57:05,618 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-26 16:57:05,655 [INFO] 10 blocs détectés sur la page 1
+2026-09-26 16:57:05,656 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-26 16:57:05,656 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-26 16:57:05,656 [INFO] Démarrage scraping Allociné (films)...
+2026-09-26 16:57:06,509 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-26 16:57:07,677 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:08,100 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-09-26 16:57:08,770 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:09,200 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-09-26 16:57:09,836 [INFO] Article ajouté Allociné (film): Fini de rire ! L'humour politique au garde-à-vous ?
+2026-09-26 16:57:10,432 [INFO] Article ajouté Allociné (film): Her Private Hell
+2026-09-26 16:57:10,948 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:11,360 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-09-26 16:57:11,965 [INFO] Article ajouté Allociné (film): Un amour d’épouvantail
+2026-09-26 16:57:12,484 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:13,861 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-09-26 16:57:14,531 [INFO] Article ajouté Allociné (film): Écrire la vie : Annie Ernaux racontée par des lycéennes et des lycéens
+2026-09-26 16:57:15,146 [INFO] Article ajouté Allociné (film): Le Cygne et l'enfant
+2026-09-26 16:57:15,698 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:16,144 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-09-26 16:57:16,867 [INFO] Article ajouté Allociné (film): Histoires De La Nuit
+2026-09-26 16:57:17,537 [INFO] Article ajouté Allociné (film): Festin boréal
+2026-09-26 16:57:18,064 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:19,912 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-09-26 16:57:20,568 [INFO] Article ajouté Allociné (film): Les Roches Rouges
+2026-09-26 16:57:21,074 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:21,493 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-09-26 16:57:22,189 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:22,697 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:23,722 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-09-26 16:57:24,433 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:24,947 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:25,759 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-09-26 16:57:26,402 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:26,937 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:28,048 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-09-26 16:57:28,682 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:29,308 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:30,030 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-09-26 16:57:30,695 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:31,234 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:32,068 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-09-26 16:57:32,957 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:33,464 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:34,272 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-09-26 16:57:34,906 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:35,421 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:36,239 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-09-26 16:57:36,887 [INFO] Article ajouté Allociné (film): Sham
+2026-09-26 16:57:37,416 [INFO] Article ajouté Allociné (film): Digger
+2026-09-26 16:57:37,417 [INFO] Scraping Allociné (films) terminé (31 items)
+2026-09-26 16:57:37,417 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-26 16:57:37,826 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-26 16:57:37,918 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-26 16:57:37,918 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-09-26 16:57:38,028 [INFO] Démarrage scraping TMDb...
+2026-09-26 16:57:38,103 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-26 16:57:38,148 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-26 16:57:38,225 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-26 16:57:40,215 [INFO] 12 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-26 16:57:41,103 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-09-26 16:57:41,183 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-09-26 16:57:41,199 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-09-26 16:57:41,312 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-09-26 16:57:42,502 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-09-26 16:57:42,637 [INFO] Article ajouté TMDb (now_playing): Chien bleu et autres belles histoires de l'école des loisirs
+2026-09-26 16:57:42,768 [INFO] Scraping TMDb terminé (1 items)
+2026-09-26 16:57:42,768 [INFO] 9 articles retenus pour ce run
+2026-09-26 16:57:42,844 [INFO] 2365 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-26 16:57:42,844 [INFO] Sauvegarde du log avec 1246 identifiants
+2026-09-26 16:57:42,845 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-26 16:57:42,923 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-26 16:57:42,923 [INFO] ==== Fin du script bandes-annonces ====
