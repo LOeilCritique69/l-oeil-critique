@@ -5816,5 +5816,15 @@
     "poster_path": "/rhF8JALH8wrxKtXSCAB7a09tWsc.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/rhF8JALH8wrxKtXSCAB7a09tWsc.jpg",
     "tmdb_id": 1375441
+  },
+  {
+    "Name": "The King and the Mockingbird",
+    "Year": 1980,
+    "Date": "2026-09-27",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-king-and-the-mockingbird/",
+    "poster_path": "/8LlM0gtrwmzmf9z9RvhWvOOl2WE.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8LlM0gtrwmzmf9z9RvhWvOOl2WE.jpg",
+    "tmdb_id": 22504
   }
 ]

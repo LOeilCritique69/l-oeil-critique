@@ -11557,5 +11557,26 @@
     "video": false,
     "vote_average": 7.2,
     "vote_count": 27
+  },
+  "The King and the Mockingbird_1980": {
+    "adult": false,
+    "backdrop_path": "/pSL75Sg1APD4OHpQs4VyFb8pIFv.jpg",
+    "genre_ids": [
+      16,
+      10751,
+      14
+    ],
+    "id": 22504,
+    "title": "Le Roi et l'Oiseau",
+    "original_language": "fr",
+    "original_title": "Le Roi et l'Oiseau",
+    "overview": "Le roi Charles V et Trois font Huit et Huit font Seize règne en tyran sur le royaume de Takicardie. Seul un oiseau, enjoué et bavard, qui a construit son nid en haut du gigantesque palais, tout près des appartements secrets de Sa Majesté, ose le narguer. Le roi aime les arts, tout particulièrement une jolie bergère qui figure auprès d’un jeune ramoneur sur un tableau qui orne sa chambre royale. Ils sont épris l’un de l’autre et ils doivent s’enfuir pour échapper au roi, qui les poursuit accompagné de ses sbires moustachus. Après une folle poursuite, avec l’aide de l’oiseau, la bergère et le ramoneur se réfugient dans la ville basse où ils sont finalement capturés.",
+    "popularity": 2.9107,
+    "poster_path": "/8LlM0gtrwmzmf9z9RvhWvOOl2WE.jpg",
+    "release_date": "1980-03-19",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.758,
+    "vote_count": 425
   }
 }
