@@ -39343,3 +39343,43 @@ Call log:
 2026-09-29 08:05:15,453 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-09-29 08:05:15,532 [INFO] Rien à commiter, le répertoire est propre.
 2026-09-29 08:05:15,532 [INFO] ==== Fin du script bandes-annonces ====
+2026-09-29 15:30:52,509 [INFO] ==== Début du script bandes-annonces ====
+2026-09-29 15:30:52,525 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-09-29 15:30:52,526 [INFO] 1259 identifiants chargés depuis le log
+2026-09-29 15:30:52,526 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-09-29 15:30:53,025 [INFO] Démarrage scraping CineHorizons...
+2026-09-29 15:30:56,146 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-09-29 15:30:56,173 [INFO] 10 blocs détectés sur la page 1
+2026-09-29 15:30:56,174 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-09-29 15:30:56,174 [INFO] Scraping CineHorizons terminé (0 items)
+2026-09-29 15:30:56,174 [INFO] Démarrage scraping Allociné (films)...
+2026-09-29 15:30:56,749 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-09-29 15:30:56,793 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-29 15:30:56,793 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-09-29 15:30:56,793 [INFO] Démarrage scraping Allociné (séries)...
+2026-09-29 15:30:57,065 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-09-29 15:31:00,373 [INFO] Article ajouté Allociné (serie): Un jour on fera l’amour (saison 1)
+2026-09-29 15:31:03,990 [INFO] Article ajouté Allociné (serie): Sorcières Academy (saison 1)
+2026-09-29 15:31:05,794 [INFO] Article ajouté Allociné (serie): Sorcières Academy (saison 1)
+2026-09-29 15:31:08,334 [INFO] Article ajouté Allociné (serie): 100 jours en espionne (saison 1)
+2026-09-29 15:31:10,719 [INFO] Article ajouté Allociné (serie): Tulsa King (saison 4)
+2026-09-29 15:31:11,850 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-09-29 15:31:11,913 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-09-29 15:31:11,913 [INFO] Scraping Allociné (séries) terminé (5 items)
+2026-09-29 15:31:11,977 [INFO] Démarrage scraping TMDb...
+2026-09-29 15:31:12,146 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-09-29 15:31:12,453 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-09-29 15:31:12,773 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-09-29 15:31:15,118 [INFO] 19 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-09-29 15:31:18,849 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-09-29 15:31:19,115 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-09-29 15:31:19,205 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-09-29 15:31:19,581 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-09-29 15:31:20,485 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-09-29 15:31:22,119 [INFO] Scraping TMDb terminé (0 items)
+2026-09-29 15:31:22,120 [INFO] 5 articles retenus pour ce run
+2026-09-29 15:31:22,209 [INFO] 2387 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-09-29 15:31:22,209 [INFO] Sauvegarde du log avec 1264 identifiants
+2026-09-29 15:31:22,210 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-09-29 15:31:22,474 [INFO] Rien à commiter, le répertoire est propre.
+2026-09-29 15:31:22,475 [INFO] ==== Fin du script bandes-annonces ====
