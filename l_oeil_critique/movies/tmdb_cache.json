@@ -11578,5 +11578,26 @@
     "video": false,
     "vote_average": 7.758,
     "vote_count": 425
+  },
+  "Big Fish_2003": {
+    "adult": false,
+    "backdrop_path": "/bLqUd0tBvKezDr9MEla7k34i3rp.jpg",
+    "genre_ids": [
+      12,
+      14,
+      18
+    ],
+    "id": 587,
+    "title": "Big Fish",
+    "original_language": "en",
+    "original_title": "Big Fish",
+    "overview": "L’histoire à la fois drôle et poignante d’Edward Bloom, un père débordant d’imagination, et de son fils William. Ce dernier retourne au domicile familial après l’avoir quitté longtemps auparavant, pour être au chevet de son père, atteint d’un cancer. Il souhaite mieux le connaître et découvrir ses secrets avant qu’il ne soit trop tard. L’aventure débutera lorsque William tentera de discerner le vrai du faux dans les propos de son père mourant.",
+    "popularity": 11.105,
+    "poster_path": "/SF6pWtcdu1GEQxzeeYBEP1yEcK.jpg",
+    "release_date": "2003-12-10",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.745,
+    "vote_count": 7963
   }
 }
