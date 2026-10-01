@@ -39647,3 +39647,45 @@ Call log:
 2026-10-01 01:53:57,726 [INFO] Scraping TMDb terminé (0 items)
 2026-10-01 01:53:57,727 [INFO] 0 articles retenus pour ce run
 2026-10-01 01:53:57,727 [INFO] Aucun article à écrire, arrêt
+2026-10-01 08:34:18,525 [INFO] ==== Début du script bandes-annonces ====
+2026-10-01 08:34:18,532 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-01 08:34:18,533 [INFO] 1288 identifiants chargés depuis le log
+2026-10-01 08:34:18,533 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-01 08:34:19,124 [INFO] Démarrage scraping CineHorizons...
+2026-10-01 08:34:21,087 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-01 08:34:21,128 [INFO] 10 blocs détectés sur la page 1
+2026-10-01 08:34:21,130 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-01 08:34:21,130 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-01 08:34:21,130 [INFO] Démarrage scraping Allociné (films)...
+2026-10-01 08:34:21,617 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-01 08:34:22,974 [INFO] Article ajouté Allociné (film): Linkin Park: Unshatter
+2026-10-01 08:34:23,685 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-01 08:34:24,410 [INFO] Article ajouté Allociné (film): Melpomène
+2026-10-01 08:34:24,977 [INFO] Article ajouté Allociné (film): James McNeill Whistler
+2026-10-01 08:34:25,846 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-10-01 08:34:26,562 [INFO] Article ajouté Allociné (film): Mémoire de fille
+2026-10-01 08:34:27,197 [INFO] Article ajouté Allociné (film): Le Chant des oliviers
+2026-10-01 08:34:27,632 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-10-01 08:34:27,708 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-01 08:34:27,708 [INFO] Scraping Allociné (films) terminé (5 items)
+2026-10-01 08:34:27,708 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-01 08:34:28,268 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-01 08:34:28,358 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-01 08:34:28,359 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-10-01 08:34:28,419 [INFO] Démarrage scraping TMDb...
+2026-10-01 08:34:28,539 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-01 08:34:28,592 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-01 08:34:28,742 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-01 08:34:29,701 [INFO] 1 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-01 08:34:29,760 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/8)
+2026-10-01 08:34:30,241 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/8)
+2026-10-01 08:34:30,277 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/8)
+2026-10-01 08:34:30,369 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/8)
+2026-10-01 08:34:30,978 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/8)
+2026-10-01 08:34:31,822 [INFO] Scraping TMDb terminé (0 items)
+2026-10-01 08:34:31,823 [INFO] 5 articles retenus pour ce run
+2026-10-01 08:34:31,898 [INFO] 2416 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-01 08:34:31,898 [INFO] Sauvegarde du log avec 1293 identifiants
+2026-10-01 08:34:31,899 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-01 08:34:31,979 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-01 08:34:31,980 [INFO] ==== Fin du script bandes-annonces ====
