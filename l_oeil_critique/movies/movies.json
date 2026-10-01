@@ -5836,5 +5836,15 @@
     "poster_path": "/SF6pWtcdu1GEQxzeeYBEP1yEcK.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/SF6pWtcdu1GEQxzeeYBEP1yEcK.jpg",
     "tmdb_id": 587
+  },
+  {
+    "Name": "Kraken",
+    "Year": 2026,
+    "Date": "2026-10-01",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/kraken-2026-1/",
+    "poster_path": "/uUCVGVWnBgIf6NV3AqHpJcCBC8T.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/uUCVGVWnBgIf6NV3AqHpJcCBC8T.jpg",
+    "tmdb_id": 1110034
   }
 ]

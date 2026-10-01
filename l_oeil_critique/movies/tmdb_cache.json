@@ -11599,5 +11599,26 @@
     "video": false,
     "vote_average": 7.745,
     "vote_count": 7963
+  },
+  "Kraken_2026": {
+    "adult": false,
+    "backdrop_path": "/oV472EbPedkc5QzqolGc7sCgCnn.jpg",
+    "genre_ids": [
+      27,
+      28,
+      53
+    ],
+    "id": 1110034,
+    "title": "Kraken",
+    "original_language": "no",
+    "original_title": "Kraken",
+    "overview": "Johanne, biologiste marine, mène des recherches dans une ferme piscicole à Vangsnes, un petit village situé au bord de l'un des fjords les plus profonds de Norvège, suite à une série de morts mystérieuses.",
+    "popularity": 36.8762,
+    "poster_path": "/uUCVGVWnBgIf6NV3AqHpJcCBC8T.jpg",
+    "release_date": "2026-02-06",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.237,
+    "vote_count": 339
   }
 }
