@@ -39792,3 +39792,41 @@ Call log:
 2026-10-02 01:25:14,368 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-10-02 01:25:14,442 [INFO] Rien à commiter, le répertoire est propre.
 2026-10-02 01:25:14,442 [INFO] ==== Fin du script bandes-annonces ====
+2026-10-02 08:08:35,037 [INFO] ==== Début du script bandes-annonces ====
+2026-10-02 08:08:35,044 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-02 08:08:35,044 [INFO] 1296 identifiants chargés depuis le log
+2026-10-02 08:08:35,044 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-02 08:08:35,647 [INFO] Démarrage scraping CineHorizons...
+2026-10-02 08:08:38,193 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-02 08:08:38,232 [INFO] 10 blocs détectés sur la page 1
+2026-10-02 08:08:38,234 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-02 08:08:38,235 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-02 08:08:38,235 [INFO] Démarrage scraping Allociné (films)...
+2026-10-02 08:08:38,802 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-02 08:08:40,370 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-10-02 08:08:41,217 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-02 08:08:41,294 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-02 08:08:41,294 [INFO] Scraping Allociné (films) terminé (1 items)
+2026-10-02 08:08:41,294 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-02 08:08:41,754 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-02 08:08:43,573 [INFO] Article ajouté Allociné (serie): Dragon Ball Super: Beerus (saison 1)
+2026-10-02 08:08:43,993 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-10-02 08:08:44,096 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-02 08:08:44,096 [INFO] Scraping Allociné (séries) terminé (1 items)
+2026-10-02 08:08:44,157 [INFO] Démarrage scraping TMDb...
+2026-10-02 08:08:44,275 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-02 08:08:44,416 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-02 08:08:44,779 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-02 08:08:46,615 [INFO] 2 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-02 08:08:47,137 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-02 08:08:47,277 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-02 08:08:47,489 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-02 08:08:47,826 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-02 08:08:48,250 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-02 08:08:49,171 [INFO] Scraping TMDb terminé (0 items)
+2026-10-02 08:08:49,172 [INFO] 2 articles retenus pour ce run
+2026-10-02 08:08:49,248 [INFO] 2421 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-02 08:08:49,248 [INFO] Sauvegarde du log avec 1298 identifiants
+2026-10-02 08:08:49,249 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-02 08:08:49,329 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-02 08:08:49,329 [INFO] ==== Fin du script bandes-annonces ====
