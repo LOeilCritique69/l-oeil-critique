@@ -11620,5 +11620,25 @@
     "video": false,
     "vote_average": 6.237,
     "vote_count": 339
+  },
+  "Verity_2026": {
+    "adult": false,
+    "backdrop_path": "/3BoHXmGAfC2qO4wnCpMYV0BzpHD.jpg",
+    "genre_ids": [
+      9648,
+      53
+    ],
+    "id": 1283515,
+    "title": "Verity",
+    "original_language": "en",
+    "original_title": "Verity",
+    "overview": "Lorsqu’un accident affecte les capacités de l’autrice de bestsellers, Verity Crawford, à achever son œuvre, une écrivaine solitaire, Lowen Ashleigh, qui peine à joindre les deux bouts est engagée pour lui prêter sa plume. En résidence dans la propriété reculée de la romancière, elle fait la découverte d’un manuscrit autobiographique glaçant et peine à démêler ce qui relève de la fiction ou de la réalité…",
+    "popularity": 93.5831,
+    "poster_path": "/zLCjFOyjvKqYdkQYYAyTtfJ5mpk.jpg",
+    "release_date": "2026-09-30",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.786,
+    "vote_count": 35
   }
 }
