@@ -5856,5 +5856,15 @@
     "poster_path": "/zLCjFOyjvKqYdkQYYAyTtfJ5mpk.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/zLCjFOyjvKqYdkQYYAyTtfJ5mpk.jpg",
     "tmdb_id": 1283515
+  },
+  {
+    "Name": "Ted",
+    "Year": 2012,
+    "Date": "2026-10-03",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/ted/",
+    "poster_path": "/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg",
+    "tmdb_id": 72105
   }
 ]

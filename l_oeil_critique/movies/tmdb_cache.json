@@ -11640,5 +11640,25 @@
     "video": false,
     "vote_average": 6.786,
     "vote_count": 35
+  },
+  "Ted_2012": {
+    "adult": false,
+    "backdrop_path": "/hkAVgWvAMmM8tj9CDEvGqMdNQBE.jpg",
+    "genre_ids": [
+      35,
+      14
+    ],
+    "id": 72105,
+    "title": "Ted",
+    "original_language": "en",
+    "original_title": "Ted",
+    "overview": "À 8 ans, le petit John Bennett fit le voeu que son ours en peluche de Noël s’anime et devienne son meilleur ami pour la vie, et il vit son voeu exaucé. Presque 30 ans plus tard, l’histoire n’a plus vraiment les allures d’un conte de Noël. L’omniprésence de Ted aux côtés de John pèse lourdement sur sa relation amoureuse avec Lori. Bien que patiente, Lori voit en cette amitié exclusive, consistant principalement à boire des bières et fumer de l’herbe devant des programmes télé plus ringards les uns que les autres, un handicap pour John qui le confine à l’enfance, l’empêche de réussir professionnellement et de réellement s’investir dans leur couple. Déchiré entre son amour pour Lori et sa loyauté envers Ted, John lutte pour devenir enfin un homme, un vrai !",
+    "popularity": 19.6125,
+    "poster_path": "/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg",
+    "release_date": "2012-06-29",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.455,
+    "vote_count": 13512
   }
 }
