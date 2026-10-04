@@ -5866,5 +5866,15 @@
     "poster_path": "/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg",
     "tmdb_id": 72105
+  },
+  {
+    "Name": "Ted 2",
+    "Year": 2015,
+    "Date": "2026-10-04",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/ted-2/",
+    "poster_path": "/9P2Lpeg1HIfCKjMJT485c9MKTGj.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/9P2Lpeg1HIfCKjMJT485c9MKTGj.jpg",
+    "tmdb_id": 214756
   }
 ]

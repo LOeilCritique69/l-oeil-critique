@@ -11660,5 +11660,25 @@
     "video": false,
     "vote_average": 6.455,
     "vote_count": 13512
+  },
+  "Ted 2_2015": {
+    "adult": false,
+    "backdrop_path": "/xtHonIIIQXverDQM08TMQXjn9Fe.jpg",
+    "genre_ids": [
+      35,
+      14
+    ],
+    "id": 214756,
+    "title": "Ted 2",
+    "original_language": "en",
+    "original_title": "Ted 2",
+    "overview": "Nouveaux mariés, Ted et Tami‐Lynn essayent d’avoir un bébé et demandent à John d’être le donneur en vue d’une insémination artificielle. Cependant, s’il veut avoir la garde de l’enfant, Ted va devoir prouver devant un tribunal qu’il est véritablement humain.",
+    "popularity": 27.8999,
+    "poster_path": "/9P2Lpeg1HIfCKjMJT485c9MKTGj.jpg",
+    "release_date": "2015-06-25",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.328,
+    "vote_count": 8196
   }
 }
