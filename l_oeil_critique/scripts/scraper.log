@@ -40584,3 +40584,65 @@ Call log:
 2026-10-07 00:29:22,901 [INFO] Scraping TMDb terminé (0 items)
 2026-10-07 00:29:22,902 [INFO] 0 articles retenus pour ce run
 2026-10-07 00:29:22,902 [INFO] Aucun article à écrire, arrêt
+2026-10-07 06:59:46,033 [INFO] ==== Début du script bandes-annonces ====
+2026-10-07 06:59:46,043 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-07 06:59:46,044 [INFO] 1330 identifiants chargés depuis le log
+2026-10-07 06:59:46,044 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-07 06:59:46,726 [INFO] Démarrage scraping CineHorizons...
+2026-10-07 06:59:49,326 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-07 06:59:49,368 [INFO] 10 blocs détectés sur la page 1
+2026-10-07 06:59:49,370 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-07 06:59:49,370 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-07 06:59:49,370 [INFO] Démarrage scraping Allociné (films)...
+2026-10-07 06:59:49,792 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-07 06:59:50,675 [INFO] Article ajouté Allociné (film): Le goût du vin de palme
+2026-10-07 06:59:51,840 [INFO] Article ajouté Allociné (film): Ni vue, ni connue
+2026-10-07 06:59:52,468 [INFO] Article ajouté Allociné (film): Leviticus
+2026-10-07 06:59:53,090 [INFO] Article ajouté Allociné (film): Volcans : Plongez au cœur du cratère
+2026-10-07 06:59:53,792 [INFO] Article ajouté Allociné (film): Butterfly Jam
+2026-10-07 06:59:54,517 [INFO] Article ajouté Allociné (film): L'Espèce explosive
+2026-10-07 06:59:55,114 [INFO] Article ajouté Allociné (film): Ducobu et le fantôme de Saint-Potache
+2026-10-07 06:59:55,840 [INFO] Article ajouté Allociné (film): The Social Reckoning
+2026-10-07 06:59:56,292 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-07 06:59:56,988 [INFO] Article ajouté Allociné (film): Fausse note
+2026-10-07 06:59:57,453 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-10-07 06:59:58,276 [INFO] Article ajouté Allociné (film): Joyeuse Jungle !
+2026-10-07 06:59:58,974 [INFO] Article ajouté Allociné (film): Doraemon et le Château sous-marin
+2026-10-07 06:59:59,956 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-10-07 07:00:00,661 [INFO] Article ajouté Allociné (film): No Wifi
+2026-10-07 07:00:01,373 [INFO] Article ajouté Allociné (film): Le Jardin de Madame Hu
+2026-10-07 07:00:01,861 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-10-07 07:00:01,951 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-07 07:00:01,951 [INFO] Scraping Allociné (films) terminé (13 items)
+2026-10-07 07:00:01,951 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-07 07:00:02,469 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-07 07:00:02,566 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-07 07:00:02,566 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-10-07 07:00:02,664 [INFO] Démarrage scraping TMDb...
+2026-10-07 07:00:02,730 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-07 07:00:02,767 [INFO] Article ajouté TMDb (upcoming): Ghost in the Cell
+2026-10-07 07:00:02,781 [INFO] Article ajouté TMDb (upcoming): Godzilla Minus Zero
+2026-10-07 07:00:02,811 [INFO] Article ajouté TMDb (upcoming): Si tu tends l'oreille
+2026-10-07 07:00:02,835 [INFO] Article ajouté TMDb (upcoming): Soldat fantôme
+2026-10-07 07:00:02,849 [INFO] Article ajouté TMDb (upcoming): Club Kid
+2026-10-07 07:00:02,865 [INFO] Article ajouté TMDb (upcoming): Wild Horse Nine
+2026-10-07 07:00:02,876 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-07 07:00:02,927 [INFO] Article ajouté TMDb (upcoming): Always Yours, Never Mine
+2026-10-07 07:00:02,939 [INFO] Article ajouté TMDb (upcoming): L’Affaire Marie-Claire
+2026-10-07 07:00:03,554 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-07 07:00:03,577 [INFO] Article ajouté TMDb (upcoming): Folichonneries
+2026-10-07 07:00:04,121 [INFO] Article ajouté TMDb (upcoming): How to Be Normal and the Oddness of the Other World
+2026-10-07 07:00:04,263 [INFO] Article ajouté TMDb (upcoming): Kwibuka, se souvenir
+2026-10-07 07:00:04,417 [INFO] 5 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-07 07:00:05,650 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-07 07:00:05,695 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-07 07:00:05,764 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-07 07:00:05,786 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-07 07:00:06,423 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-07 07:00:06,807 [INFO] Scraping TMDb terminé (11 items)
+2026-10-07 07:00:06,807 [INFO] 16 articles retenus pour ce run
+2026-10-07 07:00:06,888 [INFO] 2474 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-07 07:00:06,889 [INFO] Sauvegarde du log avec 1346 identifiants
+2026-10-07 07:00:06,890 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-07 07:00:06,973 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-07 07:00:06,973 [INFO] ==== Fin du script bandes-annonces ====
