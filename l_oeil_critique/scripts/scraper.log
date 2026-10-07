@@ -40683,3 +40683,48 @@ Call log:
 2026-10-07 14:26:07,010 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-10-07 14:26:07,097 [INFO] Rien à commiter, le répertoire est propre.
 2026-10-07 14:26:07,098 [INFO] ==== Fin du script bandes-annonces ====
+2026-10-07 20:34:22,332 [INFO] ==== Début du script bandes-annonces ====
+2026-10-07 20:34:22,347 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-07 20:34:22,348 [INFO] 1349 identifiants chargés depuis le log
+2026-10-07 20:34:22,348 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-07 20:34:23,033 [INFO] Démarrage scraping CineHorizons...
+2026-10-07 20:34:26,131 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-07 20:34:26,158 [INFO] 10 blocs détectés sur la page 1
+2026-10-07 20:34:26,159 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-07 20:34:26,159 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-07 20:34:26,159 [INFO] Démarrage scraping Allociné (films)...
+2026-10-07 20:34:27,438 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-07 20:34:27,496 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-07 20:34:27,496 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-10-07 20:34:27,497 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-07 20:34:28,657 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-07 20:34:32,191 [INFO] Article ajouté Allociné (serie): L'Impératrice (saison 3)
+2026-10-07 20:34:34,183 [INFO] Article ajouté Allociné (serie): L'Impératrice (saison 3)
+2026-10-07 20:34:36,213 [INFO] Article ajouté Allociné (serie): Les Carnets de l'Apothicaire (saison 3)
+2026-10-07 20:34:38,917 [INFO] Article ajouté Allociné (serie): Phony (saison 1)
+2026-10-07 20:34:42,664 [INFO] Article ajouté Allociné (serie): Ao Ashi (saison 2)
+2026-10-07 20:34:47,013 [INFO] Article ajouté Allociné (serie): Ted: The Animated Series (saison 1)
+2026-10-07 20:34:50,607 [INFO] Article ajouté Allociné (serie): Anatomía de un instante (saison 1)
+2026-10-07 20:34:52,574 [INFO] Article ajouté Allociné (serie): War (saison 1)
+2026-10-07 20:34:56,408 [INFO] Article ajouté Allociné (serie): Happy's Place (saison 3)
+2026-10-07 20:34:58,986 [INFO] Article ajouté Allociné (serie): The Good Daughter (saison 1)
+2026-10-07 20:34:59,955 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-10-07 20:35:00,020 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-07 20:35:00,020 [INFO] Scraping Allociné (séries) terminé (10 items)
+2026-10-07 20:35:00,101 [INFO] Démarrage scraping TMDb...
+2026-10-07 20:35:00,369 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-07 20:35:00,374 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-07 20:35:01,065 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-07 20:35:02,829 [INFO] 10 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-07 20:35:04,466 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-07 20:35:04,722 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-07 20:35:05,011 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-07 20:35:05,281 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-07 20:35:06,331 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-07 20:35:07,632 [INFO] Scraping TMDb terminé (0 items)
+2026-10-07 20:35:07,632 [INFO] 8 articles retenus pour ce run
+2026-10-07 20:35:07,692 [INFO] 2485 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-07 20:35:07,692 [INFO] Sauvegarde du log avec 1357 identifiants
+2026-10-07 20:35:07,693 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-07 20:35:07,763 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-07 20:35:07,763 [INFO] ==== Fin du script bandes-annonces ====
