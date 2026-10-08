@@ -40767,3 +40767,51 @@ Call log:
 2026-10-08 00:49:57,590 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-10-08 00:49:57,748 [INFO] Rien à commiter, le répertoire est propre.
 2026-10-08 00:49:57,748 [INFO] ==== Fin du script bandes-annonces ====
+2026-10-08 07:07:33,022 [INFO] ==== Début du script bandes-annonces ====
+2026-10-08 07:07:33,037 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-08 07:07:33,037 [INFO] 1361 identifiants chargés depuis le log
+2026-10-08 07:07:33,037 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-08 07:07:34,324 [INFO] Démarrage scraping CineHorizons...
+2026-10-08 07:07:36,249 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-08 07:07:36,275 [INFO] 10 blocs détectés sur la page 1
+2026-10-08 07:07:36,277 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-08 07:07:36,277 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-08 07:07:36,277 [INFO] Démarrage scraping Allociné (films)...
+2026-10-08 07:07:36,610 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-08 07:07:36,927 [INFO] Article ajouté Allociné (film): La meilleure façon, c'est par accident
+2026-10-08 07:07:37,400 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-08 07:07:38,410 [INFO] Article ajouté Allociné (film): Fausse note
+2026-10-08 07:07:38,799 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-10-08 07:07:39,339 [INFO] Article ajouté Allociné (film): Joyeuse Jungle !
+2026-10-08 07:07:39,905 [INFO] Article ajouté Allociné (film): Doraemon et le Château sous-marin
+2026-10-08 07:07:40,539 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-10-08 07:07:41,107 [INFO] Article ajouté Allociné (film): No Wifi
+2026-10-08 07:07:41,688 [INFO] Article ajouté Allociné (film): Le Jardin de Madame Hu
+2026-10-08 07:07:42,100 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-10-08 07:07:42,791 [INFO] Article ajouté Allociné (film): Ton animal maternel
+2026-10-08 07:07:43,286 [INFO] Article ajouté Allociné (film): Le Monde à l'envers
+2026-10-08 07:07:43,790 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-10-08 07:07:43,851 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-08 07:07:43,851 [INFO] Scraping Allociné (films) terminé (8 items)
+2026-10-08 07:07:43,851 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-08 07:07:44,247 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-08 07:07:44,350 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-08 07:07:44,350 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-10-08 07:07:44,442 [INFO] Démarrage scraping TMDb...
+2026-10-08 07:07:44,509 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-08 07:07:44,521 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-08 07:07:44,664 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-08 07:07:45,128 [INFO] Article ajouté TMDb (upcoming): Carlo Acutis : Un Saint Pour Notre Temps
+2026-10-08 07:07:45,290 [INFO] 11 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-08 07:07:46,728 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-08 07:07:47,028 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-08 07:07:47,102 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-08 07:07:47,152 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-08 07:07:48,385 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-08 07:07:48,629 [INFO] Scraping TMDb terminé (1 items)
+2026-10-08 07:07:48,629 [INFO] 9 articles retenus pour ce run
+2026-10-08 07:07:48,689 [INFO] 2498 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-08 07:07:48,690 [INFO] Sauvegarde du log avec 1370 identifiants
+2026-10-08 07:07:48,690 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-08 07:07:48,758 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-08 07:07:48,759 [INFO] ==== Fin du script bandes-annonces ====
