@@ -11680,5 +11680,25 @@
     "video": false,
     "vote_average": 6.328,
     "vote_count": 8196
+  },
+  "Memento_2000": {
+    "adult": false,
+    "backdrop_path": "/7Wev9JMo6R5XAfz2KDvXb7oPMmy.jpg",
+    "genre_ids": [
+      9648,
+      53
+    ],
+    "id": 77,
+    "title": "Memento",
+    "original_language": "en",
+    "original_title": "Memento",
+    "overview": "Leonard Shelby ne porte que des costumes de grands couturiers et ne se déplace qu’au volant de sa Jaguar. En revanche, il habite dans des motels miteux et règle ses notes avec d’épaisses liasses de billets. Leonard n’a qu’une idée en tête: traquer l’homme qui a violé et assassiné sa femme afin de se venger. Sa recherche du meurtrier est rendue plus difficile par le fait qu’il souffre d’une forme rare et incurable d’amnésie. Bien qu’il puisse se souvenir de détails de son passé, il est incapable de savoir ce qu’il a fait dans le quart d’heure précédent, où il se trouve, où il va et pourquoi. Pour ne jamais perdre son objectif de vue, il a structuré sa vie à l’aide de fiches, de notes, de photos, de tatouages sur le corps. C’est ce qui l’aide à garder contact avec sa mission, à retenir les informations et à garder une trace, une notion de l’espace et du temps.",
+    "popularity": 20.827,
+    "poster_path": "/nK3cJaUWx1iaQ9Cs08JPtZqVzQ6.jpg",
+    "release_date": "2000-10-11",
+    "softcore": false,
+    "video": false,
+    "vote_average": 8.173,
+    "vote_count": 16857
   }
 }
