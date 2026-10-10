@@ -11700,5 +11700,24 @@
     "video": false,
     "vote_average": 8.173,
     "vote_count": 16857
+  },
+  "Other Mommy_2026": {
+    "adult": false,
+    "backdrop_path": "/gy1RZonkd5CYWl64qCdIBcS4HjI.jpg",
+    "genre_ids": [
+      27
+    ],
+    "id": 1400837,
+    "title": "Malfaisante",
+    "original_language": "en",
+    "original_title": "Other Mommy",
+    "overview": "Une famille est la cible d'une entité qu'elle appelle « l'autre maman ».",
+    "popularity": 88.5693,
+    "poster_path": "/wAofwsldMDNAIzGSEfMJMoUn1KB.jpg",
+    "release_date": "2026-10-07",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.448,
+    "vote_count": 29
   }
 }
