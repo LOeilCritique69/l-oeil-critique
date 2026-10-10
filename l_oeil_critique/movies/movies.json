@@ -5896,5 +5896,15 @@
     "poster_path": "/wAofwsldMDNAIzGSEfMJMoUn1KB.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/wAofwsldMDNAIzGSEfMJMoUn1KB.jpg",
     "tmdb_id": 1400837
+  },
+  {
+    "Name": "A Monster in Paris",
+    "Year": 2011,
+    "Date": "2026-10-10",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/a-monster-in-paris/",
+    "poster_path": "/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg",
+    "tmdb_id": 77459
   }
 ]

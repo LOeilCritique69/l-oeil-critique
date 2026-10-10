@@ -11719,5 +11719,27 @@
     "video": false,
     "vote_average": 6.448,
     "vote_count": 29
+  },
+  "A Monster in Paris_2011": {
+    "adult": false,
+    "backdrop_path": "/uLg9t6c34soxT4UAebbL3Cnlbl5.jpg",
+    "genre_ids": [
+      12,
+      16,
+      10751,
+      14
+    ],
+    "id": 77459,
+    "title": "Un monstre à Paris",
+    "original_language": "fr",
+    "original_title": "Un monstre à Paris",
+    "overview": "Dans le Paris inondé de 1910, un monstre sème la panique. Traqué sans relâche par le redoutable préfet Maynott, il demeure introuvable… Et si la meilleure cachette était sous les feux de « L’Oiseau Rare », un cabaret où chante Lucille, la star de Montmartre au caractère bien trempé ?",
+    "popularity": 7.4548,
+    "poster_path": "/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg",
+    "release_date": "2011-10-12",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.9,
+    "vote_count": 1410
   }
 }
