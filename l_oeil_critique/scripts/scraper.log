@@ -41374,3 +41374,46 @@ Call log:
 2026-10-12 07:04:57,535 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-10-12 07:04:57,586 [INFO] Rien à commiter, le répertoire est propre.
 2026-10-12 07:04:57,587 [INFO] ==== Fin du script bandes-annonces ====
+2026-10-12 17:33:01,378 [INFO] ==== Début du script bandes-annonces ====
+2026-10-12 17:33:01,391 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-12 17:33:01,392 [INFO] 1386 identifiants chargés depuis le log
+2026-10-12 17:33:01,392 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-12 17:33:01,941 [INFO] Démarrage scraping CineHorizons...
+2026-10-12 17:33:20,353 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-12 17:33:20,388 [INFO] 10 blocs détectés sur la page 1
+2026-10-12 17:33:20,390 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-12 17:33:20,390 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-12 17:33:20,390 [INFO] Démarrage scraping Allociné (films)...
+2026-10-12 17:33:23,001 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-12 17:33:23,068 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-12 17:33:23,068 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-10-12 17:33:23,068 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-12 17:33:24,291 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-12 17:33:27,958 [INFO] Article ajouté Allociné (serie): The Body (saison 1)
+2026-10-12 17:33:29,996 [INFO] Article ajouté Allociné (serie): The Body (saison 1)
+2026-10-12 17:33:33,017 [INFO] Article ajouté Allociné (serie): The Rookie: North (saison 1)
+2026-10-12 17:33:35,165 [INFO] Article ajouté Allociné (serie): Bloodaxe (saison 1)
+2026-10-12 17:33:37,636 [INFO] Article ajouté Allociné (serie): Blade Runner 2099 (saison 1)
+2026-10-12 17:33:39,674 [INFO] Article ajouté Allociné (serie): Blade Runner 2099 (saison 1)
+2026-10-12 17:33:40,373 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-10-12 17:33:40,464 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-12 17:33:40,464 [INFO] Scraping Allociné (séries) terminé (6 items)
+2026-10-12 17:33:40,565 [INFO] Démarrage scraping TMDb...
+2026-10-12 17:33:40,725 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-12 17:33:40,866 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-12 17:33:41,550 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-12 17:33:42,920 [INFO] Article ajouté TMDb (upcoming): Un Bon Patron
+2026-10-12 17:33:43,600 [INFO] 10 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-12 17:33:45,035 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-10-12 17:33:45,299 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-10-12 17:33:45,765 [INFO] Article ajouté TMDb (now_playing): Nature Cruelle
+2026-10-12 17:33:45,854 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-10-12 17:33:46,535 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-10-12 17:33:47,398 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-10-12 17:33:48,908 [INFO] Scraping TMDb terminé (2 items)
+2026-10-12 17:33:48,908 [INFO] 8 articles retenus pour ce run
+2026-10-12 17:33:48,984 [INFO] 2522 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-12 17:33:48,984 [INFO] Sauvegarde du log avec 1394 identifiants
+2026-10-12 17:33:48,985 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-12 17:33:49,060 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-12 17:33:49,060 [INFO] ==== Fin du script bandes-annonces ====
