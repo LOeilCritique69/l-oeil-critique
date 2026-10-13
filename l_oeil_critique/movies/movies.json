@@ -5906,5 +5906,15 @@
     "poster_path": "/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg",
     "tmdb_id": 77459
+  },
+  {
+    "Name": "Dragon Ball Z: Battle of Gods",
+    "Year": 2013,
+    "Date": "2026-10-13",
+    "Rating": 4.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/dragon-ball-z-battle-of-gods/",
+    "poster_path": "/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg",
+    "tmdb_id": 126963
   }
 ]

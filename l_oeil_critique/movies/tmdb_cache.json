@@ -11741,5 +11741,26 @@
     "video": false,
     "vote_average": 6.9,
     "vote_count": 1410
+  },
+  "Dragon Ball Z: Battle of Gods_2013": {
+    "adult": false,
+    "backdrop_path": "/felXFRjJXF40NPzK1IPib8ojF2X.jpg",
+    "genre_ids": [
+      16,
+      28,
+      878
+    ],
+    "id": 126963,
+    "title": "Dragon Ball Z - Battle of Gods",
+    "original_language": "ja",
+    "original_title": "ドラゴンボールZ 神と神",
+    "overview": "Quelques années après la disparition de Boo, Beerus, le dieu de la destruction, se réveille après 39 ans d'hibernation. Quelques années auparavant, le Poisson Oracle lui avait prédit qu'un puissant guerrier se dresserait contre lui dans exactement 39 ans. Ayant eu echo de la mort de Freezer, Beerus décide alors de partir à la recherche de son bourreau, Son Goku, dans l'espoir de tomber sur le fameux guerrier de la prophétie du Poisson Oracle.",
+    "popularity": 11.6713,
+    "poster_path": "/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg",
+    "release_date": "2013-03-30",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.856,
+    "vote_count": 1699
   }
 }
