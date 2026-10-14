@@ -41550,3 +41550,47 @@ Call log:
 2026-10-13 21:04:06,137 [INFO] Scraping TMDb terminé (0 items)
 2026-10-13 21:04:06,137 [INFO] 0 articles retenus pour ce run
 2026-10-13 21:04:06,137 [INFO] Aucun article à écrire, arrêt
+2026-10-14 00:58:38,454 [INFO] ==== Début du script bandes-annonces ====
+2026-10-14 00:58:38,469 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-14 00:58:38,470 [INFO] 1397 identifiants chargés depuis le log
+2026-10-14 00:58:38,470 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-14 00:58:39,959 [INFO] Démarrage scraping CineHorizons...
+2026-10-14 00:58:42,913 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-14 00:58:42,958 [INFO] 10 blocs détectés sur la page 1
+2026-10-14 00:58:42,960 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-14 00:58:42,960 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-14 00:58:42,960 [INFO] Démarrage scraping Allociné (films)...
+2026-10-14 00:58:44,165 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-14 00:58:44,263 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-14 00:58:44,263 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-10-14 00:58:44,263 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-14 00:58:45,559 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-14 00:58:48,841 [INFO] Article ajouté Allociné (serie): The Land (saison 1)
+2026-10-14 00:58:51,503 [INFO] Article ajouté Allociné (serie): Baywatch (saison 1)
+2026-10-14 00:58:54,299 [INFO] Article ajouté Allociné (serie): Minimum Wage (saison 1)
+2026-10-14 00:58:56,776 [INFO] Article ajouté Allociné (serie): The Land (saison 1)
+2026-10-14 00:58:59,208 [INFO] Article ajouté Allociné (serie): Campus Drivers (saison 1)
+2026-10-14 00:58:59,893 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-10-14 00:58:59,960 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-14 00:58:59,961 [INFO] Scraping Allociné (séries) terminé (5 items)
+2026-10-14 00:59:00,013 [INFO] Démarrage scraping TMDb...
+2026-10-14 00:59:00,371 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-14 00:59:00,550 [INFO] Article ajouté TMDb (upcoming): Infirmary
+2026-10-14 00:59:00,637 [INFO] Article ajouté TMDb (upcoming): Scrooge
+2026-10-14 00:59:00,833 [INFO] Article ajouté TMDb (upcoming): Ramayana
+2026-10-14 00:59:00,960 [INFO] Article ajouté TMDb (upcoming): Comment braquer une banque
+2026-10-14 00:59:00,966 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-14 00:59:01,433 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-14 00:59:03,104 [INFO] 10 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-14 00:59:03,899 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-10-14 00:59:04,157 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-10-14 00:59:04,699 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-14 00:59:05,160 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-10-14 00:59:06,172 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-10-14 00:59:07,447 [INFO] Scraping TMDb terminé (4 items)
+2026-10-14 00:59:07,447 [INFO] 9 articles retenus pour ce run
+2026-10-14 00:59:07,518 [INFO] 2534 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-14 00:59:07,518 [INFO] Sauvegarde du log avec 1406 identifiants
+2026-10-14 00:59:07,519 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-14 00:59:07,601 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-14 00:59:07,602 [INFO] ==== Fin du script bandes-annonces ====
