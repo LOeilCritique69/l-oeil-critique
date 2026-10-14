@@ -41594,3 +41594,94 @@ Call log:
 2026-10-14 00:59:07,519 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-10-14 00:59:07,601 [INFO] Rien à commiter, le répertoire est propre.
 2026-10-14 00:59:07,602 [INFO] ==== Fin du script bandes-annonces ====
+2026-10-14 06:00:55,089 [INFO] ==== Début du script bandes-annonces ====
+2026-10-14 06:00:55,106 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-14 06:00:55,106 [INFO] 1406 identifiants chargés depuis le log
+2026-10-14 06:00:55,106 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-14 06:00:55,672 [INFO] Démarrage scraping CineHorizons...
+2026-10-14 06:00:58,134 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-14 06:00:58,179 [INFO] 10 blocs détectés sur la page 1
+2026-10-14 06:00:58,181 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-14 06:00:58,181 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-14 06:00:58,181 [INFO] Démarrage scraping Allociné (films)...
+2026-10-14 06:00:59,024 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-14 06:01:00,505 [INFO] Article ajouté Allociné (film): Qui vit encore
+2026-10-14 06:01:01,731 [INFO] Article ajouté Allociné (film): Le Jour de son retour
+2026-10-14 06:01:02,372 [INFO] Article ajouté Allociné (film): Je veux bien
+2026-10-14 06:01:02,863 [INFO] Article ajouté Allociné (film): Malfaisante
+2026-10-14 06:01:03,457 [INFO] Article ajouté Allociné (film): Mais qui a tué Marcel ? Un été 76
+2026-10-14 06:01:04,162 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:05,272 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-14 06:01:05,952 [INFO] Article ajouté Allociné (film): Low Expectations
+2026-10-14 06:01:06,681 [INFO] Article ajouté Allociné (film): Petite Casbah
+2026-10-14 06:01:07,413 [INFO] Article ajouté Allociné (film): Englouti
+2026-10-14 06:01:08,111 [INFO] Article ajouté Allociné (film): La Porte des dieux
+2026-10-14 06:01:08,637 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:09,603 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-10-14 06:01:10,363 [INFO] Article ajouté Allociné (film): Mochy
+2026-10-14 06:01:10,878 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:12,134 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-10-14 06:01:12,895 [INFO] Article ajouté Allociné (film): Le Corset
+2026-10-14 06:01:13,538 [INFO] Article ajouté Allociné (film): Minotaure
+2026-10-14 06:01:14,046 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:15,076 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-10-14 06:01:15,725 [INFO] Article ajouté Allociné (film): Où vont les âmes
+2026-10-14 06:01:16,245 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:17,233 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-10-14 06:01:17,817 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:19,472 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-10-14 06:01:20,057 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:21,176 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-10-14 06:01:22,680 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:23,207 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:24,252 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-10-14 06:01:24,838 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:25,357 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:26,347 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-10-14 06:01:26,928 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:27,447 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:28,396 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-10-14 06:01:28,962 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:29,488 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:30,413 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-10-14 06:01:30,966 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:31,489 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:32,391 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-10-14 06:01:32,996 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:33,498 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:34,456 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-10-14 06:01:35,039 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:35,566 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:36,455 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-10-14 06:01:37,044 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-14 06:01:37,557 [INFO] Article ajouté Allociné (film): Il faut brûler Maman
+2026-10-14 06:01:37,557 [INFO] Scraping Allociné (films) terminé (36 items)
+2026-10-14 06:01:37,557 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-14 06:01:38,171 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-14 06:01:38,238 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-14 06:01:38,238 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-10-14 06:01:38,324 [INFO] Démarrage scraping TMDb...
+2026-10-14 06:01:38,460 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-14 06:01:38,503 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-14 06:01:38,737 [INFO] Article ajouté TMDb (upcoming): Everytime
+2026-10-14 06:01:38,777 [INFO] Article ajouté TMDb (upcoming): Il faut brûler Maman
+2026-10-14 06:01:38,819 [INFO] Article ajouté TMDb (upcoming): Lorie Party 2026 au cinéma
+2026-10-14 06:01:38,862 [INFO] Article ajouté TMDb (upcoming): The Irregular at Magic High School le film - La Succession des Yotsuba
+2026-10-14 06:01:39,154 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-14 06:01:39,363 [INFO] Article ajouté TMDb (upcoming): L'Âge d'Or
+2026-10-14 06:01:39,408 [INFO] Article ajouté TMDb (upcoming): Le Merveilleux hiver de Tom le chat
+2026-10-14 06:01:40,241 [INFO] 6 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-14 06:01:40,284 [INFO] Article ajouté TMDb (upcoming): La Montagne d’or
+2026-10-14 06:01:40,598 [INFO] Article ajouté TMDb (upcoming): face à face
+2026-10-14 06:01:40,639 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-14 06:01:40,761 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-14 06:01:41,439 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-14 06:01:41,940 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-14 06:01:42,501 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-14 06:01:43,518 [INFO] Scraping TMDb terminé (8 items)
+2026-10-14 06:01:43,519 [INFO] 16 articles retenus pour ce run
+2026-10-14 06:01:43,592 [INFO] 2550 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-14 06:01:43,592 [INFO] Sauvegarde du log avec 1422 identifiants
+2026-10-14 06:01:43,594 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-14 06:01:43,676 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-14 06:01:43,676 [INFO] ==== Fin du script bandes-annonces ====
