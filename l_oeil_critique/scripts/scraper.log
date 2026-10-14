@@ -41791,3 +41791,42 @@ Call log:
 2026-10-14 20:31:29,810 [INFO] Scraping TMDb terminé (0 items)
 2026-10-14 20:31:29,811 [INFO] 0 articles retenus pour ce run
 2026-10-14 20:31:29,811 [INFO] Aucun article à écrire, arrêt
+2026-10-14 23:46:55,333 [INFO] ==== Début du script bandes-annonces ====
+2026-10-14 23:46:55,349 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-14 23:46:55,349 [INFO] 1426 identifiants chargés depuis le log
+2026-10-14 23:46:55,349 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-14 23:46:56,305 [INFO] Démarrage scraping CineHorizons...
+2026-10-14 23:46:59,133 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-14 23:46:59,188 [INFO] 10 blocs détectés sur la page 1
+2026-10-14 23:46:59,190 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-14 23:46:59,190 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-14 23:46:59,190 [INFO] Démarrage scraping Allociné (films)...
+2026-10-14 23:47:01,747 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-14 23:47:01,838 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-14 23:47:01,838 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-10-14 23:47:01,839 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-14 23:47:03,332 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-14 23:47:05,800 [INFO] Article ajouté Allociné (serie): Yellowjackets (saison 4)
+2026-10-14 23:47:07,959 [INFO] Article ajouté Allociné (serie): Yellowjackets (saison 4)
+2026-10-14 23:47:12,070 [INFO] Article ajouté Allociné (serie): The Greatest (saison 1)
+2026-10-14 23:47:14,452 [INFO] Article ajouté Allociné (serie): The Greatest (saison 1)
+2026-10-14 23:47:15,726 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-10-14 23:47:15,806 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-14 23:47:15,806 [INFO] Scraping Allociné (séries) terminé (4 items)
+2026-10-14 23:47:15,862 [INFO] Démarrage scraping TMDb...
+2026-10-14 23:47:16,014 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-14 23:47:16,094 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-14 23:47:17,226 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-14 23:47:18,495 [INFO] 7 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-14 23:47:19,280 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-14 23:47:19,522 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-14 23:47:19,950 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-14 23:47:20,739 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-14 23:47:21,646 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-14 23:47:23,143 [INFO] Scraping TMDb terminé (0 items)
+2026-10-14 23:47:23,143 [INFO] 4 articles retenus pour ce run
+2026-10-14 23:47:23,223 [INFO] 2558 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-14 23:47:23,224 [INFO] Sauvegarde du log avec 1430 identifiants
+2026-10-14 23:47:23,225 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-14 23:47:23,308 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-14 23:47:23,308 [INFO] ==== Fin du script bandes-annonces ====
