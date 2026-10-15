@@ -41830,3 +41830,49 @@ Call log:
 2026-10-14 23:47:23,225 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-10-14 23:47:23,308 [INFO] Rien à commiter, le répertoire est propre.
 2026-10-14 23:47:23,308 [INFO] ==== Fin du script bandes-annonces ====
+2026-10-15 03:51:13,611 [INFO] ==== Début du script bandes-annonces ====
+2026-10-15 03:51:13,625 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-15 03:51:13,626 [INFO] 1430 identifiants chargés depuis le log
+2026-10-15 03:51:13,626 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-15 03:51:16,113 [INFO] Démarrage scraping CineHorizons...
+2026-10-15 03:51:19,799 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-15 03:51:19,838 [INFO] 10 blocs détectés sur la page 1
+2026-10-15 03:51:19,840 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-15 03:51:19,840 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-15 03:51:19,840 [INFO] Démarrage scraping Allociné (films)...
+2026-10-15 03:51:20,994 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-15 03:51:21,805 [INFO] Article ajouté Allociné (film): Obsession
+2026-10-15 03:51:23,620 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-15 03:51:24,411 [INFO] Article ajouté Allociné (film): Englouti
+2026-10-15 03:51:25,019 [INFO] Article ajouté Allociné (film): La Porte des dieux
+2026-10-15 03:51:26,155 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-10-15 03:51:26,943 [INFO] Article ajouté Allociné (film): Mochy
+2026-10-15 03:51:28,423 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-10-15 03:51:29,226 [INFO] Article ajouté Allociné (film): Le Corset
+2026-10-15 03:51:30,189 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-10-15 03:51:30,922 [INFO] Article ajouté Allociné (film): Minotaure
+2026-10-15 03:51:31,573 [INFO] Article ajouté Allociné (film): Où vont les âmes
+2026-10-15 03:51:32,791 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-10-15 03:51:32,839 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-15 03:51:32,840 [INFO] Scraping Allociné (films) terminé (7 items)
+2026-10-15 03:51:32,840 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-15 03:51:33,578 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-15 03:51:33,637 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-15 03:51:33,637 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-10-15 03:51:33,692 [INFO] Démarrage scraping TMDb...
+2026-10-15 03:51:33,817 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-15 03:51:33,906 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-15 03:51:35,138 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-15 03:51:36,543 [INFO] 7 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-15 03:51:37,433 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-15 03:51:37,701 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-15 03:51:38,148 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-15 03:51:38,967 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-15 03:51:39,997 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-15 03:51:41,646 [INFO] Scraping TMDb terminé (0 items)
+2026-10-15 03:51:41,646 [INFO] 7 articles retenus pour ce run
+2026-10-15 03:51:41,707 [INFO] 2565 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-15 03:51:41,707 [INFO] Sauvegarde du log avec 1437 identifiants
+2026-10-15 03:51:41,708 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-15 03:51:41,779 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-15 03:51:41,779 [INFO] ==== Fin du script bandes-annonces ====
