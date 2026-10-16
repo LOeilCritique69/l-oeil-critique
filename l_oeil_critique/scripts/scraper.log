@@ -42084,3 +42084,82 @@ Call log:
 2026-10-16 06:52:28,535 [INFO] Scraping TMDb terminé (0 items)
 2026-10-16 06:52:28,535 [INFO] 0 articles retenus pour ce run
 2026-10-16 06:52:28,535 [INFO] Aucun article à écrire, arrêt
+2026-10-16 12:10:53,494 [INFO] ==== Début du script bandes-annonces ====
+2026-10-16 12:10:53,501 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-16 12:10:53,501 [INFO] 1446 identifiants chargés depuis le log
+2026-10-16 12:10:53,502 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-16 12:10:54,049 [INFO] Démarrage scraping CineHorizons...
+2026-10-16 12:10:56,442 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-16 12:10:56,488 [INFO] 10 blocs détectés sur la page 1
+2026-10-16 12:10:56,488 [INFO] Extraction détails CineHorizons pour Un bon patron
+2026-10-16 12:10:57,459 [INFO] Article ajouté CineHorizons: Un bon patron
+2026-10-16 12:10:58,609 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-10-16 12:10:58,675 [INFO] 10 blocs détectés sur la page 2
+2026-10-16 12:10:58,677 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-16 12:10:58,678 [INFO] Scraping CineHorizons terminé (1 items)
+2026-10-16 12:10:58,678 [INFO] Démarrage scraping Allociné (films)...
+2026-10-16 12:10:59,575 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-16 12:11:00,402 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:02,279 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-16 12:11:03,014 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:04,314 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-10-16 12:11:04,890 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:06,119 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-10-16 12:11:06,802 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:07,899 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-10-16 12:11:08,486 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:09,504 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-10-16 12:11:10,118 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:11,242 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-10-16 12:11:11,932 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:13,040 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-10-16 12:11:13,817 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:14,499 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:15,558 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-10-16 12:11:16,178 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:16,704 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:17,851 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-10-16 12:11:18,436 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:18,981 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:20,100 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-10-16 12:11:20,692 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:21,285 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:22,364 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-10-16 12:11:22,982 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:23,540 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:24,515 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-10-16 12:11:25,089 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:25,614 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:26,516 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-10-16 12:11:27,074 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:27,604 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:28,532 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-10-16 12:11:29,119 [INFO] Article ajouté Allociné (film): R. Roussil, Le Cul par Terre
+2026-10-16 12:11:29,655 [INFO] Article ajouté Allociné (film): Karma
+2026-10-16 12:11:29,655 [INFO] Scraping Allociné (films) terminé (23 items)
+2026-10-16 12:11:29,655 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-16 12:11:30,253 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-16 12:11:33,854 [INFO] Article ajouté Allociné (serie): Frisco King (saison 1)
+2026-10-16 12:11:35,132 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-10-16 12:11:35,200 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-16 12:11:35,200 [INFO] Scraping Allociné (séries) terminé (1 items)
+2026-10-16 12:11:35,266 [INFO] Démarrage scraping TMDb...
+2026-10-16 12:11:35,399 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-16 12:11:35,438 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-16 12:11:36,513 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-16 12:11:36,589 [INFO] Article ajouté TMDb (upcoming): 투모로우바이투게더 월드 투어 ‘액트 : 투모로우'
+2026-10-16 12:11:36,970 [INFO] 12 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-16 12:11:37,571 [INFO] Article ajouté TMDb (upcoming): 하이브 치어링 파티
+2026-10-16 12:11:37,645 [INFO] Article ajouté TMDb (upcoming): 세븐틴 월드 투어 '뉴_'
+2026-10-16 12:11:37,803 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-10-16 12:11:37,920 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-10-16 12:11:38,602 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-10-16 12:11:38,969 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-10-16 12:11:39,429 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-10-16 12:11:40,330 [INFO] Scraping TMDb terminé (3 items)
+2026-10-16 12:11:40,331 [INFO] 13 articles retenus pour ce run
+2026-10-16 12:11:40,407 [INFO] 2587 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-16 12:11:40,407 [INFO] Sauvegarde du log avec 1453 identifiants
+2026-10-16 12:11:40,410 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-16 12:11:40,495 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-16 12:11:40,495 [INFO] ==== Fin du script bandes-annonces ====
