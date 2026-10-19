@@ -42730,3 +42730,44 @@ Call log:
 2026-10-19 05:55:07,666 [INFO] Scraping TMDb terminé (0 items)
 2026-10-19 05:55:07,666 [INFO] 0 articles retenus pour ce run
 2026-10-19 05:55:07,666 [INFO] Aucun article à écrire, arrêt
+2026-10-19 12:34:28,492 [INFO] ==== Début du script bandes-annonces ====
+2026-10-19 12:34:28,515 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-19 12:34:28,516 [INFO] 1459 identifiants chargés depuis le log
+2026-10-19 12:34:28,516 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-19 12:34:30,581 [INFO] Démarrage scraping CineHorizons...
+2026-10-19 12:34:33,338 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-19 12:34:33,385 [INFO] 10 blocs détectés sur la page 1
+2026-10-19 12:34:33,385 [INFO] Extraction détails CineHorizons pour Du fioul dans les artères
+2026-10-19 12:34:34,491 [INFO] Article ajouté CineHorizons: Du fioul dans les artères
+2026-10-19 12:34:35,740 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-10-19 12:34:35,799 [INFO] 10 blocs détectés sur la page 2
+2026-10-19 12:34:35,802 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-19 12:34:35,802 [INFO] Scraping CineHorizons terminé (1 items)
+2026-10-19 12:34:35,802 [INFO] Démarrage scraping Allociné (films)...
+2026-10-19 12:34:37,275 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-19 12:34:37,380 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-19 12:34:37,380 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-10-19 12:34:37,380 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-19 12:34:38,612 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-19 12:34:40,800 [INFO] Article ajouté Allociné (serie): The Chosen (saison 6)
+2026-10-19 12:34:42,687 [INFO] Article ajouté Allociné (serie): La Comtesse de Monte-Cristo (saison 1)
+2026-10-19 12:34:43,905 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-10-19 12:34:43,971 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-19 12:34:43,971 [INFO] Scraping Allociné (séries) terminé (2 items)
+2026-10-19 12:34:44,022 [INFO] Démarrage scraping TMDb...
+2026-10-19 12:34:44,686 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-19 12:34:44,748 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-19 12:34:45,199 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-19 12:34:45,891 [INFO] 15 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-19 12:34:47,144 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-10-19 12:34:47,330 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-10-19 12:34:47,802 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-10-19 12:34:48,569 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-10-19 12:34:49,307 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-10-19 12:34:49,845 [INFO] Scraping TMDb terminé (0 items)
+2026-10-19 12:34:49,845 [INFO] 3 articles retenus pour ce run
+2026-10-19 12:34:49,921 [INFO] 2596 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-19 12:34:49,921 [INFO] Sauvegarde du log avec 1462 identifiants
+2026-10-19 12:34:49,929 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-19 12:34:50,023 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-19 12:34:50,023 [INFO] ==== Fin du script bandes-annonces ====
