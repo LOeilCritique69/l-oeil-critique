@@ -5916,5 +5916,15 @@
     "poster_path": "/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg",
     "tmdb_id": 126963
+  },
+  {
+    "Name": "The Fish and I",
+    "Year": 2014,
+    "Date": "2026-10-21",
+    "Rating": null,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-fish-and-i/",
+    "poster_path": "/AlkgBR4iMNsybDakeavNvIHY0jn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/AlkgBR4iMNsybDakeavNvIHY0jn.jpg",
+    "tmdb_id": 598927
   }
 ]
