@@ -11781,5 +11781,46 @@
     "video": false,
     "vote_average": 7.0,
     "vote_count": 3
+  },
+  "Species_2026": {
+    "adult": false,
+    "backdrop_path": "/tEHmWaIzM0nuFi1CKQL8mJdJZsT.jpg",
+    "genre_ids": [
+      878,
+      27,
+      28
+    ],
+    "id": 9348,
+    "title": "La Mutante",
+    "original_language": "en",
+    "original_title": "Species",
+    "overview": "Après avoir lancé un message à travers l'espace sur l'existence de notre espèce, une équipe scientifique reçoit la réponse vingt ans plus tard sous la forme d'un échantillon d'ADN extraterrestre. Sous la direction du docteur Xavier Fitch, les Américains tentent en secret une expérience de fécondation.",
+    "popularity": 9.2954,
+    "poster_path": "/j7FvAOinJzeVE7dAi2S7Hv3S41G.jpg",
+    "release_date": "1995-07-07",
+    "softcore": false,
+    "video": false,
+    "vote_average": 6.003,
+    "vote_count": 1959
+  },
+  "Digger_2026": {
+    "adult": false,
+    "backdrop_path": "/b7t3r39Oll5qPxBKzLZ8eHMBD7l.jpg",
+    "genre_ids": [
+      35,
+      18
+    ],
+    "id": 1248832,
+    "title": "Digger",
+    "original_language": "en",
+    "original_title": "Digger",
+    "overview": "L’homme le plus puissant du monde se lance dans une mission frénétique pour prouver qu’il est le sauveur de l’humanité avant que le désastre qu’il a déclenché ne détruise tout.",
+    "popularity": 150.4584,
+    "poster_path": "/gPCCGMQCrrMNM3mR3vqIdbdJxJ5.jpg",
+    "release_date": "2026-09-28",
+    "softcore": false,
+    "video": false,
+    "vote_average": 7.5,
+    "vote_count": 443
   }
 }

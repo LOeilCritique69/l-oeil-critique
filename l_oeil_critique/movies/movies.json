@@ -5926,5 +5926,25 @@
     "poster_path": "/AlkgBR4iMNsybDakeavNvIHY0jn.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/AlkgBR4iMNsybDakeavNvIHY0jn.jpg",
     "tmdb_id": 598927
+  },
+  {
+    "Name": "Species",
+    "Year": 2026,
+    "Date": "2026-10-22",
+    "Rating": 2.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/species-2026/",
+    "poster_path": "/j7FvAOinJzeVE7dAi2S7Hv3S41G.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/j7FvAOinJzeVE7dAi2S7Hv3S41G.jpg",
+    "tmdb_id": 9348
+  },
+  {
+    "Name": "Digger",
+    "Year": 2026,
+    "Date": "2026-10-22",
+    "Rating": 4.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/digger-2026/",
+    "poster_path": "/gPCCGMQCrrMNM3mR3vqIdbdJxJ5.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/gPCCGMQCrrMNM3mR3vqIdbdJxJ5.jpg",
+    "tmdb_id": 1248832
   }
 ]
