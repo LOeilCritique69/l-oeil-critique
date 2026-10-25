@@ -57,7 +57,7 @@
   position: relative;
   flex: 3;
   min-width: 0;
-  background-color: var(--paper);
+  background-color: var(--surface);
   padding: var(--space-8) var(--space-8) var(--space-10);
   border: 1px solid var(--line-on-paper);
   transition: border-color var(--transition-speed) ease;
@@ -130,7 +130,7 @@
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: var(--line-height-tight);
   text-align: center;
-  color: var(--ink);
+  color: var(--text);
   margin-bottom: var(--space-4);
 }
 
@@ -153,20 +153,20 @@
   font-family: var(--font-body);
   font-size: 1.1rem;
   line-height: var(--line-height-base);
-  color: var(--ink);
+  color: var(--text);
   margin-bottom: var(--space-6);
 }
 
 .article-content strong {
-  color: var(--velvet);
+  color: var(--velvet-light);
 }
 
 .article-content em {
-  color: var(--ink);
+  color: var(--text);
 }
 
 .article-content a {
-  color: var(--velvet);
+  color: var(--velvet-light);
   text-decoration: none;
   border-bottom: 1px solid var(--brass);
   transition: color var(--transition-speed) ease;
@@ -187,7 +187,7 @@
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 2rem;
-  color: var(--ink);
+  color: var(--text);
   margin: var(--space-12) 0 var(--space-4);
 }
 
@@ -211,7 +211,7 @@
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.6rem;
-  color: var(--ink);
+  color: var(--text);
   margin: 2.2rem 0 0.6rem;
 }
 
@@ -235,7 +235,7 @@
 /* Le sommaire devient une feuille de plan de tournage : chaque entrée porte
    un repère "PL.01" (plan 1) en mono, comme une liste de plans à monter. */
 .article-toc {
-  background-color: var(--paper-2);
+  background-color: var(--ink-3);
   border: 1px solid var(--line-on-paper);
   border-left: 4px solid var(--velvet);
   padding: var(--space-5) var(--space-6);
@@ -247,7 +247,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--velvet);
+  color: var(--velvet-light);
   margin: 0 0 var(--space-4);
 }
 
@@ -268,7 +268,7 @@
   padding-left: 3.4rem;
   margin-bottom: var(--space-3);
   font-family: var(--font-body);
-  color: var(--ink);
+  color: var(--text);
 }
 
 .article-toc ul li::before {
@@ -285,14 +285,14 @@
 .article-toc ul li a {
   text-decoration: none;
   border-bottom: none;
-  color: var(--ink);
+  color: var(--text);
   font-weight: 500;
   transition: color 0.25s ease, transform 0.25s ease;
   display: inline-block;
 }
 
 .article-toc ul li a:hover {
-  color: var(--velvet);
+  color: var(--velvet-light);
   transform: translateX(4px);
 }
 
@@ -300,7 +300,7 @@
    6) MÉDIAS
    ============================================================================ */
 .article-image {
-  background: var(--paper-2);
+  background: var(--ink-3);
   padding: var(--space-2);
   border: 1px solid var(--line-on-paper);
 }
@@ -328,7 +328,7 @@
   margin: var(--space-2) 0;
   border: 1px solid var(--line-on-paper);
   padding: var(--space-2);
-  background: var(--paper-2);
+  background: var(--ink-3);
   box-sizing: border-box;
   transition: filter 0.4s ease;
 }
@@ -374,11 +374,11 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.25rem;
-  background-color: var(--paper-2);
+  background-color: var(--ink-3);
   padding: var(--space-6) var(--space-6) var(--space-6) var(--space-8);
   border-left: 3px solid var(--velvet);
   margin: var(--space-8) var(--space-2);
-  color: var(--ink);
+  color: var(--text);
   transform: rotate(-0.35deg);
 }
 
@@ -389,15 +389,15 @@
   left: 24px;
   width: 26px;
   height: 12px;
-  background: rgba(201, 162, 74, 0.55); /* --brass en transparence */
+  background: rgba(212, 169, 73, 0.55); /* --brass en transparence */
   transform: rotate(-4deg);
 }
 
 .spoiler-warning {
-  background: rgba(201, 162, 74, 0.08);
+  background: rgba(212, 169, 73, 0.08);
   border: 1px dashed var(--line-on-paper-strong);
   border-left: 3px solid var(--brass);
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--font-mono);
   font-size: 0.85rem;
   letter-spacing: 0.03em;
@@ -408,16 +408,16 @@
 }
 
 .note-importante {
-  background: rgba(184, 50, 58, 0.06);
+  background: rgba(194, 58, 67, 0.06);
   border-left: 3px solid var(--velvet);
-  color: var(--ink);
+  color: var(--text);
   padding: var(--space-4) var(--space-5);
   margin: var(--space-6) 0;
   font-weight: 600;
 }
 
 .qa .qa-block {
-  background-color: var(--paper-2);
+  background-color: var(--ink-3);
   border-left: 3px solid var(--brass);
   padding: var(--space-5);
   margin-bottom: var(--space-5);
@@ -428,7 +428,7 @@
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--velvet);
+  color: var(--velvet-light);
   margin-bottom: 0.6rem;
 }
 
@@ -452,7 +452,7 @@
   font-family: var(--font-body);
   font-size: 1.1rem;
   line-height: var(--line-height-base);
-  color: var(--ink);
+  color: var(--text);
 }
 
 .article-content ul:not(.article-toc ul) li::before {
@@ -468,7 +468,7 @@
 
 .article-content .highlight-block {
   position: relative;
-  background-color: var(--paper-2);
+  background-color: var(--ink-3);
   border: 2px solid var(--brass);
   padding: var(--space-6);
   margin: var(--space-10) var(--space-2) var(--space-6);
@@ -479,12 +479,12 @@
   position: absolute;
   top: -0.7em;
   left: var(--space-5);
-  background: var(--paper);
+  background: var(--surface);
   padding: 0 var(--space-2);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
-  color: var(--velvet);
+  color: var(--velvet-light);
 }
 
 .article-content .highlight-block p:last-child {
@@ -492,7 +492,7 @@
 }
 
 .article-content .highlight-block a {
-  color: var(--velvet);
+  color: var(--velvet-light);
   font-weight: 600;
   border-bottom: 1px solid var(--brass);
 }
@@ -538,7 +538,7 @@
 }
 
 #tendances-list li:hover {
-  background-color: rgba(201, 162, 74, 0.08);
+  background-color: rgba(212, 169, 73, 0.08);
 }
 
 /* Le lien porte la miniature + le titre côte à côte. La miniature est
@@ -583,7 +583,7 @@
    ============================================================================ */
 .conclusion {
   position: relative;
-  background-color: var(--paper-2);
+  background-color: var(--ink-3);
   border: 1px solid var(--line-on-paper);
   padding: var(--space-8) var(--space-6) var(--space-6);
   margin-top: var(--space-10);
@@ -596,7 +596,7 @@
   left: 32px;
   width: 54px;
   height: 22px;
-  background: rgba(201, 162, 74, 0.5);
+  background: rgba(212, 169, 73, 0.5);
   transform: rotate(-3deg);
 }
 

@@ -1,294 +1,115 @@
-/* =========================
-   SÉLECTEURS DOM
-========================= */
-const container     = document.getElementById("film-list");
-const searchInput   = document.getElementById("search");
-const counter       = document.getElementById("film-count");
-const sortSelect    = document.getElementById("sort");
-const ratingFilter  = document.getElementById("rating-filter");
-const ratingVal     = document.getElementById("rating-val");
-const sentinel      = document.getElementById("scroll-sentinel");
-const loadIndicator = document.getElementById("load-more-indicator");
+/* Mes Films — lecture de movies.json (généré par lb.py) */
+(() => {
+  const $ = id => document.getElementById(id);
+  const list = $("film-list"), search = $("search"), sortSel = $("sort"), minRating = $("rating-filter"),
+        ratingVal = $("rating-val"), counter = $("film-count"), sentinel = $("scroll-sentinel"), more = $("load-more-indicator");
+  const PAGE = 40;
+  let all = [], shown = [], page = 0;
 
-const statTotal = document.getElementById("stat-total");
-const statAvg   = document.getElementById("stat-avg");
-const statTop   = document.getElementById("stat-top");
-const statYear  = document.getElementById("stat-year");
+  const norm = s => String(s ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = n => String(n).replace(".", ",");
 
-/* =========================
-   ÉTAT
-========================= */
-let allFilms      = [];
-let filteredFilms = [];
+  /* ---------- données ---------- */
+  function clean(raw) {
+    return raw.filter(f => f && String(f.Name ?? "").trim()).map(f => {
+      let r = Number(f.Rating); if (!isFinite(r)) r = 0; if (r > 5) r /= 2;
+      r = Math.round(Math.max(0, Math.min(5, r)) * 2) / 2;
+      const d = f.Date ? Date.parse(f.Date) : 0;
+      // On ne montre un poster que s'il est vérifié (pas de tmdb_source "review")
+      const poster = f.tmdb_source === "review" ? null : (f.poster_url || (f.poster_path ? "https://image.tmdb.org/t/p/w500" + f.poster_path : null));
+      return { name: String(f.Name).trim(), year: Number(f.Year) || 0, date: isFinite(d) ? d : 0, rating: r, poster,
+               link: /^https?:\/\//.test(f["Letterboxd URI"] || "") ? f["Letterboxd URI"] : null, tmdb: f.tmdb_id || null };
+    });
+  }
+  // Un même FILM = même identifiant TMDB, sinon même titre + même année (deux films homonymes restent distincts)
+  function dedupe(films) {
+    const map = new Map();
+    for (const f of films) {
+      const k = f.tmdb ? "t" + f.tmdb : "n" + norm(f.name) + "|" + f.year;
+      const cur = map.get(k);
+      if (!cur || f.date > cur.date) map.set(k, f);
+    }
+    return [...map.values()];
+  }
+  const sorters = {
+    recent: (a, b) => b.date - a.date || a.name.localeCompare(b.name),
+    rating: (a, b) => b.rating - a.rating || b.date - a.date,
+    year: (a, b) => b.year - a.year || a.name.localeCompare(b.name),
+    "year-asc": (a, b) => a.year - b.year || a.name.localeCompare(b.name),
+    title: (a, b) => a.name.localeCompare(b.name, "fr"),
+  };
 
-const PAGE_SIZE = 40;
-let currentPage = 0;
-let isLoading   = false;
+  /* ---------- rendu ---------- */
+  function card(f) {
+    const a = document.createElement(f.link ? "a" : "article");
+    a.className = "film-card";
+    if (f.link) { a.href = f.link; a.target = "_blank"; a.rel = "noopener noreferrer"; }
+    const poster = f.poster
+      ? `<img class="film-poster" loading="lazy" decoding="async" width="500" height="750" src="${esc(f.poster)}"
+              srcset="${esc(f.poster.replace("/w500/", "/w342/"))} 342w, ${esc(f.poster)} 500w" sizes="(max-width:640px) 45vw, 200px" alt="Affiche de ${esc(f.name)}">`
+      : `<div class="film-poster film-poster--none">${esc(f.name)}</div>`;
+    a.innerHTML = `
+      <div class="film-poster-wrap">${poster}${f.rating ? `<span class="poster-rating">${fmt(f.rating)}</span>` : ""}</div>
+      <div class="film-card-inner">
+        <div class="film-title" title="${esc(f.name)}">${esc(f.name)}</div>
+        ${f.rating ? `<span class="stars" style="--r:${f.rating}" role="img" aria-label="Note : ${fmt(f.rating)} sur 5">★★★★★</span>` : ""}
+        <div class="film-meta"><span>${f.year || "—"}</span>${f.link ? '<span class="film-lb">Letterboxd ↗</span>' : ""}</div>
+      </div>`;
+    const img = a.querySelector("img");   // affiche cassée -> repli propre (pas d'handler inline)
+    if (img) img.addEventListener("error", () => img.replaceWith(Object.assign(document.createElement("div"), { className: "film-poster film-poster--none", textContent: f.name })), { once: true });
+    return a;
+  }
+  function renderPage() {
+    const slice = shown.slice(page * PAGE, (page + 1) * PAGE);
+    if (!slice.length) return;
+    const frag = document.createDocumentFragment(); slice.forEach(f => frag.appendChild(card(f)));
+    list.appendChild(frag); page++;
+    counter.textContent = Math.min(page * PAGE, shown.length) < shown.length
+      ? `${Math.min(page * PAGE, shown.length)} / ${shown.length} films` : `${shown.length} film${shown.length > 1 ? "s" : ""}`;
+  }
+  function renderAll() {
+    list.innerHTML = ""; page = 0;
+    if (!shown.length) { list.innerHTML = '<div class="empty-state"><p>Aucun résultat.</p></div>'; counter.textContent = "0 film"; return; }
+    renderPage(); rearm();
+  }
+  function rearm() { observer.unobserve(sentinel); observer.observe(sentinel); }   // relance le test si la sentinelle reste visible
+  const observer = new IntersectionObserver(([e]) => {
+    if (!e.isIntersecting || page * PAGE >= shown.length) return;
+    more.hidden = false;
+    requestAnimationFrame(() => { renderPage(); more.hidden = true; rearm(); });
+  }, { rootMargin: "500px" });
 
-/* =========================
-   LOAD
-========================= */
-async function loadFilms() {
-    container.innerHTML = `<div class="loader"><div class="loader-spinner"></div><span>Chargement des films…</span></div>`;
+  /* ---------- filtres / stats ---------- */
+  function apply() {
+    const q = norm(search.value.trim()), min = parseFloat(minRating.value) || 0;
+    shown = all.filter(f => (!q || norm(f.name).includes(q)) && f.rating >= min).sort(sorters[sortSel.value] || sorters.recent);
+    renderAll();
+  }
+  function stats() {
+    const rated = all.filter(f => f.rating > 0), y = new Date().getFullYear();
+    const top = [...rated].sort((a, b) => b.rating - a.rating || b.date - a.date)[0];
+    $("stat-total").textContent = all.length;
+    $("stat-avg").textContent = rated.length ? fmt((rated.reduce((s, f) => s + f.rating, 0) / rated.length).toFixed(1)) + " / 5" : "—";
+    $("stat-top").textContent = top ? top.name : "—";
+    $("stat-year").textContent = all.filter(f => f.date && new Date(f.date).getFullYear() === y).length;
+  }
+  let t; search.addEventListener("input", () => { clearTimeout(t); t = setTimeout(apply, 120); });
+  sortSel.addEventListener("change", apply);
+  minRating.addEventListener("input", () => { ratingVal.textContent = fmt(minRating.value); apply(); });
 
+  /* ---------- init ---------- */
+  (async () => {
+    list.innerHTML = '<div class="loader"><div class="loader-spinner"></div>Chargement des films…</div>';
     try {
-        const res  = await fetch("movies.json");
-        const data = await res.json();
-
-        let films = cleanFilms(data);
-        films     = removeDuplicates(films);
-        allFilms  = sortFilms(films, "recent");
-
-        updateStats(allFilms);
-        applyFilters();
-
-    } catch (err) {
-        container.innerHTML = `<div class="empty-state"><p>Erreur de chargement des films.</p></div>`;
-        console.error("[loadFilms]", err);
+      const res = await fetch("movies.json", { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      all = dedupe(clean(await res.json()));
+      stats(); apply();
+    } catch (e) {
+      console.error("[movies]", e);
+      list.innerHTML = '<div class="empty-state"><p>Erreur de chargement des films.</p></div>';
+      counter.textContent = "";
     }
-}
-
-/* =========================
-   NORMALISATION
-========================= */
-function cleanFilms(films) {
-    return films
-        .map(film => {
-            let rating = Number(film.Rating);
-            if (isNaN(rating)) rating = 0;
-            if (rating > 5) rating = rating / 2;
-            rating = Math.round(Math.max(0, Math.min(5, rating)) * 2) / 2; // arrondi au .5
-
-            const date = film.Date ? Date.parse(film.Date) : 0;
-
-            // Le lien Letterboxd doit pointer vers la critique perso.
-            // Format attendu depuis le RSS : https://letterboxd.com/oni_le_chan/film/titre/
-            // Les anciens films ont un lien court boxd.it — on le conserve comme fallback.
-            const link = film["Letterboxd URI"] || "#";
-
-            return {
-                name:   String(film.Name ?? "Sans titre").trim(),
-                year:   film.Year ? Number(film.Year) : 0,
-                date:   isNaN(date) ? 0 : date,
-                rating,
-                link,
-                poster: film.poster_url || null,
-            };
-        })
-        .filter(f => f.name && f.name !== "undefined");
-}
-
-/* =========================
-   DÉDOUBLONNAGE
-========================= */
-function removeDuplicates(films) {
-    const seen = new Set();
-    return films.filter(f => {
-        const k = f.name.toLowerCase();
-        if (seen.has(k)) return false;
-        seen.add(k);
-        return true;
-    });
-}
-
-/* =========================
-   TRI
-========================= */
-function sortFilms(films, mode) {
-    return [...films].sort((a, b) => {
-        switch (mode) {
-            case "recent":   return b.date   - a.date;
-            case "year":     return b.year   - a.year;
-            case "year-asc": return a.year   - b.year;
-            case "rating":
-            default:
-                return b.rating !== a.rating ? b.rating - a.rating : b.year - a.year;
-        }
-    });
-}
-
-/* =========================
-   STATS
-========================= */
-function updateStats(films) {
-    if (!films.length) return;
-
-    const rated    = films.filter(f => f.rating > 0);
-    const avg      = rated.length ? rated.reduce((s, f) => s + f.rating, 0) / rated.length : 0;
-    const top      = [...rated].sort((a, b) => b.rating - a.rating)[0];
-    const curYear  = new Date().getFullYear();
-    const thisYear = films.filter(f => f.date && new Date(f.date).getFullYear() === curYear).length;
-
-    if (statTotal) statTotal.textContent = films.length;
-    if (statAvg)   statAvg.textContent   = avg.toFixed(1) + " / 5";
-    if (statTop)   statTop.textContent   = top ? top.name : "—";
-    if (statYear)  statYear.textContent  = thisYear;
-}
-
-/* =========================
-   COMPTEUR
-========================= */
-function updateCounter(shown, total) {
-    if (!counter) return;
-    counter.textContent = shown < total
-        ? `${shown} / ${total} films`
-        : `${total} film${total > 1 ? "s" : ""}`;
-}
-
-/* =========================
-   ÉTOILES — demi-étoiles Unicode propres
-========================= */
-function buildStars(rating) {
-    const MAX    = 5;
-    const filled = Math.floor(rating);
-    const half   = (rating - filled) >= 0.5;
-    const empty  = MAX - filled - (half ? 1 : 0);
-
-    let html = '<div class="stars" aria-label="Note : ' + rating + ' sur 5">';
-    for (let i = 0; i < filled; i++) html += '<span class="star star--full">★</span>';
-    if (half)                         html += '<span class="star star--half">½</span>';
-    for (let i = 0; i < empty;  i++) html += '<span class="star star--empty">★</span>';
-    html += '</div>';
-    return html;
-}
-
-/* =========================
-   CARD
-========================= */
-function createCard(film) {
-    const card = document.createElement("article");
-    card.className = "film-card";
-
-    // Clic sur la carte entière → ouvre le lien Letterboxd
-    if (film.link && film.link !== "#") {
-        card.style.cursor = "pointer";
-        card.addEventListener("click", () => {
-            window.open(film.link, "_blank", "noopener,noreferrer");
-        });
-    }
-
-    const posterHTML = film.poster
-        ? `<img class="film-poster" loading="lazy" decoding="async"
-               src="${film.poster}"
-               alt="${escapeAttr(film.name)}"
-               onerror="this.parentElement.innerHTML='<div class=\\'film-poster placeholder\\'>🎬</div>'">`
-        : `<div class="film-poster placeholder">🎬</div>`;
-
-    const ratingBadge = film.rating > 0
-        ? `<div class="poster-rating">${film.rating % 1 === 0 ? film.rating.toFixed(1) : film.rating}</div>`
-        : "";
-
-    const yearStr = film.year || "—";
-
-    card.innerHTML = `
-        <div class="film-poster-wrap">
-            ${posterHTML}
-            ${ratingBadge}
-        </div>
-        <div class="film-card-inner">
-            <div class="film-title" title="${escapeAttr(film.name)}">${escapeHTML(film.name)}</div>
-            ${buildStars(film.rating)}
-            <div class="film-meta">
-                <span class="film-year">${yearStr}</span>
-                ${film.link && film.link !== "#"
-                    ? `<span class="film-lb-badge">Letterboxd ↗</span>`
-                    : ""}
-            </div>
-        </div>`;
-
-    return card;
-}
-
-function escapeHTML(str) {
-    return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-}
-function escapeAttr(str) {
-    return str.replace(/"/g,"&quot;").replace(/'/g,"&#39;");
-}
-
-/* =========================
-   RENDER — pagination
-========================= */
-function renderPage(films, page) {
-    const slice = films.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
-    if (!slice.length) return false;
-
-    const frag = document.createDocumentFragment();
-    slice.forEach(f => frag.appendChild(createCard(f)));
-    container.appendChild(frag);
-    return slice.length === PAGE_SIZE;
-}
-
-function renderFilms(films) {
-    container.innerHTML = "";
-    currentPage = 0;
-    updateCounter(Math.min(PAGE_SIZE, films.length), films.length);
-
-    if (!films.length) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-            </svg>
-            <p>Aucun résultat.</p>
-          </div>`;
-        return;
-    }
-
-    renderPage(films, 0);
-    currentPage = 1;
-}
-
-/* =========================
-   INFINITE SCROLL
-========================= */
-const observer = new IntersectionObserver(entries => {
-    if (!entries[0].isIntersecting || isLoading) return;
-    if (currentPage * PAGE_SIZE >= filteredFilms.length) return;
-
-    isLoading = true;
-    if (loadIndicator) loadIndicator.style.display = "flex";
-
-    requestAnimationFrame(() => {
-        renderPage(filteredFilms, currentPage);
-        currentPage++;
-        updateCounter(Math.min(currentPage * PAGE_SIZE, filteredFilms.length), filteredFilms.length);
-        if (loadIndicator) loadIndicator.style.display = "none";
-        isLoading = false;
-    });
-}, { rootMargin: "400px" });
-
-if (sentinel) observer.observe(sentinel);
-
-/* =========================
-   FILTRES
-========================= */
-function applyFilters() {
-    const query     = searchInput?.value.toLowerCase().trim() ?? "";
-    const sortMode  = sortSelect?.value ?? "recent";
-    const minRating = parseFloat(ratingFilter?.value ?? 0);
-
-    let result = allFilms;
-
-    if (query)       result = result.filter(f => f.name.toLowerCase().includes(query));
-    if (minRating > 0) result = result.filter(f => f.rating >= minRating);
-
-    result        = sortFilms(result, sortMode);
-    filteredFilms = result;
-    renderFilms(filteredFilms);
-}
-
-/* =========================
-   EVENTS
-========================= */
-searchInput?.addEventListener("input", applyFilters);
-sortSelect?.addEventListener("change", applyFilters);
-ratingFilter?.addEventListener("input", () => {
-    if (ratingVal) ratingVal.textContent = ratingFilter.value;
-    applyFilters();
-});
-
-/* =========================
-   INIT
-========================= */
-loadFilms();
+  })();
+})();

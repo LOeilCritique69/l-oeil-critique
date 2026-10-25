@@ -3,13 +3,9 @@
    (hub Critiques, Critiques Films/Séries, Tier Lists index, pages tier-list)
 
    IMPORTANT — inchangé depuis la version précédente :
-   Toutes les couleurs ci-dessous restent des valeurs FIXES, propres à ce
-   fichier (préfixe --lp-). Elles ne dépendent d'AUCUNE variable définie
-   dans chef_d_oeuvre.css : même si le thème global du site change, ces
-   pages garderont toujours exactement ce rendu. Cette indépendance est
-   volontaire (documentée dans la version d'origine) et a été conservée
-   telle quelle — seules les VALEURS des tokens --lp-* ont été retravaillées,
-   pas l'architecture.
+   Les tokens --lp-* sont désormais des ALIAS des tokens globaux de
+   chef_d_oeuvre.css (avec valeur de repli si ce fichier n'est pas chargé) :
+   le thème est unifié sur tout le site.
 
    CE QUI CHANGE DANS CETTE REFONTE
    - Palette de rangs (S/A/B/C/D/F) : l'ancien dégradé "arc-en-ciel" façon
@@ -25,24 +21,24 @@
    ============================================================================ */
 
 :root {
-  --lp-gold: #c9a24a;                 /* accent doré (laiton) */
-  --lp-gold-light: #e8c878;           /* laiton clair — rang S, accents forts */
-  --lp-gold-deep: #9c7b34;            /* laiton profond — rang B, états pressés */
-  --lp-gold-soft: rgba(201, 162, 74, 0.18);
-  --lp-gold-border: rgba(201, 162, 74, 0.4);
-  --lp-velvet: #b8323a;               /* rouge velours — rang F, alertes */
-  --lp-velvet-deep: #8c2530;
+  --lp-gold: var(--brass, #d4a949);                 /* accent doré (laiton) */
+  --lp-gold-light: var(--brass-light, #ecc875);           /* laiton clair — rang S, accents forts */
+  --lp-gold-deep: #a8873a;            /* laiton profond — rang B, états pressés */
+  --lp-gold-soft: rgba(212, 169, 73, 0.18);
+  --lp-gold-border: var(--line-on-ink-strong, rgba(212, 169, 73, 0.4));
+  --lp-velvet: var(--velvet, #c23a43);               /* rouge velours — rang F, alertes */
+  --lp-velvet-deep: var(--velvet-dark, #9b2c34);
   --lp-steel: #4a4e63;                /* bleu-acier sourd — rang D */
   --lp-bronze: #6b6355;               /* bronze mat — rang C */
-  --lp-bg: #0b0c12;                   /* fond très sombre des pages */
-  --lp-bg-card: #14151e;              /* fond des cartes */
-  --lp-bg-card-hover: #1b1c28;        /* fond des cartes au survol */
-  --lp-text: #ece7db;                 /* texte clair (ivoire chaud) */
-  --lp-text-dim: rgba(236, 231, 219, 0.65);
-  --lp-font-title: 'Bebas Neue', 'Roboto', sans-serif;
-  --lp-font-body: 'Roboto', sans-serif;
-  --lp-radius: 10px;
-  --lp-radius-lg: 14px;
+  --lp-bg: var(--ink, #0d0e12);                   /* fond très sombre des pages */
+  --lp-bg-card: var(--ink-2, #16181f);              /* fond des cartes */
+  --lp-bg-card-hover: var(--ink-3, #1f222b);        /* fond des cartes au survol */
+  --lp-text: var(--paper, #f2ede2);                 /* texte clair (ivoire chaud) */
+  --lp-text-dim: rgba(242, 237, 226, 0.65);
+  --lp-font-title: var(--font-display, 'Fraunces', Georgia, serif);
+  --lp-font-body: var(--font-body, 'Inter', system-ui, sans-serif);
+  --lp-radius: var(--radius-lg, 8px);
+  --lp-radius-lg: 12px;
 }
 
 /* ============================================================================
@@ -52,7 +48,7 @@
 body.lp-page {
   background-color: var(--lp-bg);
   background-image:
-    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201, 162, 74, 0.08), transparent 65%),
+    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(212, 169, 73, 0.08), transparent 65%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   background-attachment: fixed, fixed;
 }
@@ -210,7 +206,7 @@ body.lp-page {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--lp-gold);
-  text-shadow: 0 0 24px rgba(201, 162, 74, 0.25);
+  text-shadow: 0 0 24px rgba(212, 169, 73, 0.25);
 }
 
 .list-page-header__subtitle {
@@ -593,7 +589,7 @@ body.lp-page {
 
 .changelog-tag--ajout { color: #4FAE7C; background: rgba(79, 174, 124, 0.14); }
 .changelog-tag--refonte { color: var(--lp-gold); background: var(--lp-gold-soft); }
-.changelog-tag--fix { color: var(--lp-velvet); background: rgba(184, 50, 58, 0.14); }
+.changelog-tag--fix { color: var(--lp-velvet); background: rgba(194, 58, 67, 0.14); }
 
 /* ============================================================================
    NOTIFICATIONS — notifications.html

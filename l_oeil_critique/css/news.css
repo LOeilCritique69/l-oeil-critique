@@ -1,0 +1,26 @@
+/* ============================================================================
+   L'ŒIL CRITIQUE — Page Actualités (complément de chef_d_oeuvre.css)
+   À charger EN DERNIER. Même thème "Salle noire" que le reste du site :
+   uniquement des tokens globaux, avec valeur de repli.
+   ============================================================================ */
+html,
+body {
+  background-color: var(--ink, #0d0e12) !important; /* !important : garde-fou si un autre CSS impose un fond clair */
+  color: var(--paper, #f2ede2);
+}
+
+main { background-color: transparent; }
+
+.news-item,
+.featured-card,
+.card-bande {
+  background-color: var(--ink-2, #16181f);
+  border-color: var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  color: var(--paper, #f2ede2);
+}
+
+.news-item h3,
+.featured-card h3 { color: var(--paper, #f2ede2); }
+.news-item p,
+.featured-card p { color: var(--ink-soft, #8d93a0); }
+.news-item .publication-date { color: var(--brass, #d4a949); }

@@ -1,313 +1,209 @@
 """
-lb.py — Sync Letterboxd RSS → movies.json
-- Récupère les nouveaux films via RSS
-- Stocke le lien vers la critique perso (tag <link> RSS)
-- Enrichit via TMDB (poster, tmdb_id)
-- Met à jour les ratings/dates/liens existants
-- Ré-enrichit les films sans poster
-- Retry automatique en cas d'erreur réseau
-"""
+lb.py — Letterboxd → movies.json, avec posters TMDB FIABLES
 
-import requests
-import json
-import time
-import os
-import sys
+Pourquoi l'ancienne version se trompait de poster :
+  elle cherchait par titre et, si l'année ne collait pas, prenait « le plus populaire ».
+Ici :
+  1. Le flux RSS Letterboxd donne l'identifiant TMDB exact (tmdb:movieId) -> aucune recherche.
+  2. Pour les anciens films (export CSV), recherche STRICTE : année à ±1 ET titre quasi identique.
+     Sinon le film est mis « à vérifier » (pas de poster plutôt qu'un mauvais) -> a_verifier.json.
+  3. overrides.json permet de forcer un identifiant TMDB à la main.
+
+Usage :
+  python lb.py                 sync RSS + résout les films sans poster
+  python lb.py --rematch-all   re-vérifie TOUS les films hérités de l'export CSV (à faire une fois)
+  python lb.py --report        liste les films à vérifier (aucun appel réseau)
+
+Clé API : variable d'environnement TMDB_API_KEY, ou fichier tmdb_key.txt à côté du script.
+"""
+import argparse, difflib, json, os, re, sys, time, unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime
+import requests
 
-# ============================================================
-# CONFIG
-# ============================================================
-RSS_URL    = "https://letterboxd.com/oni_le_chan/rss/"
-BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE = os.path.join(BASE_DIR, "movies.json")
-CACHE_FILE = os.path.join(BASE_DIR, "tmdb_cache.json")
+RSS_URL = "https://letterboxd.com/oni_le_chan/rss/"
+BASE = os.path.dirname(os.path.abspath(__file__))
+MOVIES_FILE    = os.path.join(BASE, "movies.json")
+CACHE_FILE     = os.path.join(BASE, "tmdb_cache_v2.json")   # nouveau cache (l'ancien est pollué)
+OVERRIDES_FILE = os.path.join(BASE, "overrides.json")
+REVIEW_FILE    = os.path.join(BASE, "a_verifier.json")
+KEY_FILE       = os.path.join(BASE, "tmdb_key.txt")
 
-_TMDB_KEY_ENV      = os.environ.get("TMDB_API_KEY", "").strip()
-_TMDB_KEY_FALLBACK = "2cf75db44f938aeaf1e7d873a38fdcaa"
-TMDB_API_KEY       = _TMDB_KEY_ENV if _TMDB_KEY_ENV else _TMDB_KEY_FALLBACK
-TMDB_BASE_URL = "https://api.themoviedb.org/3"
-IMAGE_BASE    = "https://image.tmdb.org/t/p/w500"
+NS_LB, NS_TMDB = "https://letterboxd.com", "https://themoviedb.org"
+API, IMG = "https://api.themoviedb.org/3", "https://image.tmdb.org/t/p/w500"
+DELAY, RETRIES = 0.2, 3
+TRUSTED = {"rss", "override"}            # sources qu'on ne remet jamais en question
 
-TMDB_DELAY  = 0.20
-MAX_RETRIES = 3
-RETRY_DELAY = 2.0
+def log(p, m): print(f"[{datetime.now():%H:%M:%S}] {p:5s} {m}")
 
-# ============================================================
-# LOG HELPERS
-# ============================================================
-def log(prefix: str, msg: str) -> None:
-    ts = datetime.now().strftime("%H:%M:%S")
-    print(f"[{ts}] {prefix:4s} {msg}")
+# ---------- utilitaires purs (testables) ----------
+def norm(s):
+    s = unicodedata.normalize("NFKD", str(s or "")).encode("ascii", "ignore").decode().lower().strip()
+    s = re.sub(r"^(the|a|an|le|la|les|l)\s+", "", s)
+    return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
-def info(msg):  log("INFO", msg)
-def ok(msg):    log("OK  ", msg)
-def warn(msg):  log("WARN", msg)
-def err(msg):   log("ERR ", msg)
+def sim(a, b): return difflib.SequenceMatcher(None, norm(a), norm(b)).ratio()
+def movie_key(m): return f"{norm(m.get('Name'))}|{m.get('Year') or ''}"
 
-# ============================================================
-# CACHE TMDB
-# ============================================================
-def load_cache() -> dict:
-    if os.path.exists(CACHE_FILE):
-        try:
-            with open(CACHE_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except json.JSONDecodeError:
-            warn("Cache TMDB corrompu, réinitialisation.")
-    return {}
+def choose_match(name, year, candidates):
+    """Retourne (candidat | None, top3). Accepte seulement année ±1 ET titre >= 0.85."""
+    scored = []
+    for c in candidates:
+        ry = (c.get("release_date") or "")[:4]
+        dy = abs(int(ry) - int(year)) if ry.isdigit() and year else 99
+        s = max(sim(name, c.get("title")), sim(name, c.get("original_title")))
+        scored.append((dy, s, c))
+    ok = [t for t in scored if t[0] <= 1 and t[1] >= 0.85]
+    if ok:
+        dy, s, c = min(ok, key=lambda t: (t[0], -t[1], -(t[2].get("popularity") or 0)))
+        return c, []
+    top = sorted(scored, key=lambda t: (-t[1], t[0]))[:3]
+    return None, [{"tmdb_id": c["id"], "title": c.get("title"), "year": (c.get("release_date") or "")[:4],
+                   "similarite": round(s, 2)} for _, s, c in top]
 
-def save_cache(cache: dict) -> None:
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(cache, f, indent=2, ensure_ascii=False)
+# ---------- clé / cache / réseau ----------
+def get_key():
+    k = os.environ.get("TMDB_API_KEY", "").strip()
+    if not k and os.path.exists(KEY_FILE):
+        k = open(KEY_FILE, encoding="utf-8").read().strip()
+    if not k:
+        sys.exit("Clé TMDB manquante : définis TMDB_API_KEY ou crée tmdb_key.txt à côté de lb.py.")
+    return k
 
-cache = load_cache()
-
-# ============================================================
-# SAFE HELPERS
-# ============================================================
-def safe_str(v) -> str:
-    return str(v).strip() if v is not None else ""
-
-def movie_key(movie: dict) -> str:
-    name = safe_str(movie.get("Name")).lower()
-    year = movie.get("Year")
-    return f"{name}|{year}" if year is not None else name
-
-def is_valid_movie(m: dict) -> bool:
-    return bool(m and safe_str(m.get("Name")))
-
-# ============================================================
-# LOAD / SAVE LOCAL DB
-# ============================================================
-def load_movies() -> list:
-    if not os.path.exists(INPUT_FILE):
-        info("Aucun fichier movies.json trouvé — démarrage à zéro.")
-        return []
+def read_json(path, default):
     try:
-        with open(INPUT_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        info(f"{len(data)} films chargés depuis movies.json")
-        return data
-    except (json.JSONDecodeError, IOError) as e:
-        err(f"Lecture movies.json impossible : {e}")
-        sys.exit(1)
+        with open(path, encoding="utf-8") as f: return json.load(f)
+    except FileNotFoundError: return default
+    except json.JSONDecodeError: log("WARN", f"{os.path.basename(path)} illisible, ignoré."); return default
 
-def save_movies(movies: list) -> None:
-    with open(INPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(movies, f, indent=2, ensure_ascii=False)
+def write_json(path, data):
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f: json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, path)
 
-# ============================================================
-# HTTP AVEC RETRY
-# ============================================================
-def http_get(url: str, params: dict = None, retries: int = MAX_RETRIES) -> requests.Response | None:
-    for attempt in range(1, retries + 1):
-        try:
-            r = requests.get(url, params=params, timeout=10)
-            r.raise_for_status()
-            return r
-        except requests.RequestException as e:
-            if attempt < retries:
-                warn(f"Tentative {attempt}/{retries} échouée ({e}), retry dans {RETRY_DELAY}s…")
-                time.sleep(RETRY_DELAY)
-            else:
-                err(f"Échec définitif après {retries} tentatives : {e}")
-                return None
+class Tmdb:
+    def __init__(self, key):
+        self.key, self.cache, self.calls = key, read_json(CACHE_FILE, {}), 0
+    def save(self): write_json(CACHE_FILE, self.cache)
+    def _get(self, path, **params):
+        params["api_key"] = self.key
+        for i in range(1, RETRIES + 1):
+            try:
+                r = requests.get(f"{API}{path}", params=params, timeout=10)
+                if r.status_code == 401: sys.exit("Clé TMDB refusée (401). Vérifie ta clé.")
+                if r.status_code == 429: time.sleep(int(r.headers.get("Retry-After", 2))); continue
+                r.raise_for_status(); time.sleep(DELAY)
+                self.calls += 1
+                if self.calls % 25 == 0: self.save()
+                return r.json()
+            except requests.RequestException as e:
+                log("WARN", f"{path} tentative {i}/{RETRIES} : {e}"); time.sleep(2)
+        return None
+    def movie(self, tid):
+        k = f"movie:{tid}"
+        if k not in self.cache:
+            d = self._get(f"/movie/{tid}", language="fr-FR")
+            if d and not d.get("poster_path"):                     # pas d'affiche FR -> affiche d'origine
+                d2 = self._get(f"/movie/{tid}")
+                if d2: d["poster_path"] = d2.get("poster_path")
+            if d: self.cache[k] = {x: d.get(x) for x in ("id", "title", "original_title", "release_date", "poster_path")}
+        return self.cache.get(k)
+    def search(self, name, year):
+        k = f"search:{norm(name)}|{year or ''}"
+        if k not in self.cache:
+            d = self._get("/search/movie", query=name, language="en-US", include_adult="false")
+            if d is None: return None
+            self.cache[k] = [{x: c.get(x) for x in ("id", "title", "original_title", "release_date", "popularity")}
+                             for c in d.get("results", [])[:10]]
+        return self.cache[k]
 
-# ============================================================
-# RSS FETCH + PARSE
-# ============================================================
-def fetch_rss() -> list[dict]:
-    info(f"Récupération du flux RSS : {RSS_URL}")
-    r = http_get(RSS_URL)
-    if not r:
-        err("Impossible de récupérer le flux RSS.")
-        sys.exit(1)
+# ---------- résolution d'un film ----------
+def apply_tmdb(m, tid, source, tmdb):
+    d = tmdb.movie(tid)
+    if not d: return False
+    m.update(tmdb_id=tid, tmdb_source=source, tmdb_title=d.get("title"),
+             tmdb_year=(d.get("release_date") or "")[:4] or None,
+             poster_path=d.get("poster_path"),
+             poster_url=(IMG + d["poster_path"]) if d.get("poster_path") else None)
+    return True
 
-    root  = ET.fromstring(r.content)
-    items = root.findall(".//item")
-    info(f"{len(items)} entrées trouvées dans le RSS.")
+def resolve(m, tmdb, overrides, review, force=False):
+    key = f"{m.get('Name')}|{m.get('Year')}"
+    old = m.get("tmdb_id")
+    if key in overrides:
+        apply_tmdb(m, int(overrides[key]), "override", tmdb)
+    elif m.get("tmdb_source") in TRUSTED and m.get("poster_url") and not force:
+        return
+    elif m.get("tmdb_source") == "rss" and m.get("tmdb_id"):
+        apply_tmdb(m, m["tmdb_id"], "rss", tmdb)
+    else:
+        cands = tmdb.search(m["Name"], m.get("Year"))
+        if cands is None: return
+        best, top = choose_match(m["Name"], m.get("Year"), cands)
+        if best: apply_tmdb(m, best["id"], "search", tmdb)
+        else:
+            m.update(tmdb_id=None, tmdb_source="review", poster_path=None, poster_url=None)
+            review.append({"cle": key, "Name": m["Name"], "Year": m.get("Year"), "candidats": top})
+            log("CHECK", f"{m['Name']} ({m.get('Year')}) : aucun candidat sûr")
+            return
+    if old and old != m.get("tmdb_id"):
+        log("FIX", f"{m['Name']} ({m.get('Year')}) : {old} -> {m.get('tmdb_id')}  ({m.get('tmdb_title')})")
 
-    ns    = "https://letterboxd.com"
-    films = []
+# ---------- RSS ----------
+def fetch_rss():
+    log("INFO", f"RSS : {RSS_URL}")
+    try:
+        r = requests.get(RSS_URL, timeout=15); r.raise_for_status()
+    except requests.RequestException as e:
+        sys.exit(f"RSS inaccessible : {e}")
+    out = []
+    for item in ET.fromstring(r.content).findall(".//item"):
+        g = lambda ns, t: (item.findtext(f"{{{ns}}}{t}") or "").strip() or None
+        name = g(NS_LB, "filmTitle")
+        if not name: continue
+        yr, rt, tid = g(NS_LB, "filmYear"), g(NS_LB, "memberRating"), g(NS_TMDB, "movieId")
+        out.append({"Name": name, "Year": int(yr) if yr and yr.isdigit() else None,
+                    "Date": g(NS_LB, "watchedDate"), "Rating": float(rt) if rt else None,
+                    "Letterboxd URI": (item.findtext("link") or "").strip() or None,
+                    "tmdb_id": int(tid) if tid and tid.isdigit() else None})
+    log("INFO", f"{len(out)} entrées RSS")
+    return out
 
-    for item in items:
-        def tag(name):
-            el = item.find(f"{{{ns}}}{name}")
-            return el.text if el is not None else None
+# ---------- commandes ----------
+def report():
+    movies = read_json(MOVIES_FILE, [])
+    bad = [m for m in movies if m.get("tmdb_source") == "review" or not m.get("poster_url")]
+    legacy = [m for m in movies if "tmdb_source" not in m]
+    print(f"{len(movies)} films | {len(legacy)} jamais vérifiés (lance --rematch-all) | {len(bad)} sans poster / à vérifier")
+    for m in bad: print(f"  - {m['Name']} ({m.get('Year')})")
+    if os.path.exists(REVIEW_FILE): print(f"Détails + candidats : {REVIEW_FILE}")
 
-        name = safe_str(tag("filmTitle"))
-        if not name:
+def sync(rematch_all):
+    tmdb, overrides = Tmdb(get_key()), read_json(OVERRIDES_FILE, {})
+    movies, review = read_json(MOVIES_FILE, []), []
+    index = {movie_key(m): m for m in movies if m.get("Name")}
+    new = upd = 0
+    for r in fetch_rss():
+        m = index.get(movie_key(r))
+        if m is None:
+            m = {k: v for k, v in r.items() if k != "tmdb_id"}
+            if r["tmdb_id"]: m["tmdb_id"], m["tmdb_source"] = r["tmdb_id"], "rss"
+            movies.append(m); index[movie_key(m)] = m; new += 1; log("NEW", f"{m['Name']} ({m.get('Year')})")
             continue
+        if r["Rating"] is not None and r["Rating"] != m.get("Rating"): m["Rating"] = r["Rating"]; upd += 1   # jamais écraser par « sans note »
+        if r["Date"] and (m.get("Date") or "") < r["Date"]: m["Date"] = r["Date"]; upd += 1
+        if r["Letterboxd URI"] and not m.get("Letterboxd URI"): m["Letterboxd URI"] = r["Letterboxd URI"]
+        if r["tmdb_id"] and r["tmdb_id"] != m.get("tmdb_id") or (r["tmdb_id"] and m.get("tmdb_source") != "rss"):
+            m["tmdb_id"], m["tmdb_source"], m["poster_url"] = r["tmdb_id"], "rss", None                    # RSS = vérité
+    todo = [m for m in movies if rematch_all and m.get("tmdb_source") not in TRUSTED
+            or not m.get("poster_url") or m.get("tmdb_source") is None and not m.get("tmdb_id")]
+    log("INFO", f"{len(todo)} film(s) à résoudre")
+    for i, m in enumerate(todo, 1):
+        resolve(m, tmdb, overrides, review, force=rematch_all)
+        if i % 25 == 0: write_json(MOVIES_FILE, movies); log("INFO", f"{i}/{len(todo)}")
+    tmdb.save(); write_json(MOVIES_FILE, movies); write_json(REVIEW_FILE, review)
+    log("OK", f"+{new} nouveaux, {upd} mis à jour, {len(review)} à vérifier (voir a_verifier.json)")
 
-        year_str = tag("filmYear")
-        rating   = tag("memberRating")
-        watched  = tag("watchedDate")
-
-        # Le tag <link> RSS pointe vers la critique perso :
-        # ex. https://letterboxd.com/oni_le_chan/film/300/
-        link_el = item.find("link")
-        # ElementTree retourne None pour <link> car c'est un tag vide-style atom ;
-        # on essaie aussi le text suivant le tag
-        review_link = None
-        if link_el is not None and link_el.text:
-            review_link = link_el.text.strip()
-        else:
-            # Fallback : certains parsers mettent le lien dans le tail du tag précédent
-            for child in item:
-                if child.tag == "link" or child.tag.endswith("}link"):
-                    if child.text:
-                        review_link = child.text.strip()
-                        break
-                    if child.tail:
-                        review_link = child.tail.strip()
-                        break
-
-        # Dernier fallback : construire l'URL depuis le filmSlug ou le titre
-        film_url = tag("filmUrl")  # parfois présent dans certaines versions du RSS
-        if not review_link and film_url:
-            review_link = film_url
-
-        films.append({
-            "Name":          name,
-            "Year":          int(year_str) if year_str and year_str.isdigit() else None,
-            "Date":          watched,
-            "Rating":        float(rating) if rating is not None else None,
-            "Letterboxd URI": review_link,  # lien critique perso
-        })
-
-    return films
-
-# ============================================================
-# TMDB SEARCH
-# ============================================================
-def search_tmdb(title: str, year: int | None) -> dict | None:
-    cache_key = f"{title}_{year}"
-    if cache_key in cache:
-        return cache[cache_key]
-
-    r = http_get(
-        f"{TMDB_BASE_URL}/search/movie",
-        params={
-            "api_key":  TMDB_API_KEY,
-            "query":    title,
-            "language": "fr-FR",
-        }
-    )
-
-    if not r:
-        cache[cache_key] = None
-        return None
-
-    results = r.json().get("results", [])
-    if not results:
-        cache[cache_key] = None
-        return None
-
-    if year:
-        for m in results:
-            rd = m.get("release_date", "")
-            if rd[:4] == str(year):
-                cache[cache_key] = m
-                return m
-
-    best = max(results, key=lambda x: x.get("popularity", 0))
-    cache[cache_key] = best
-    return best
-
-# ============================================================
-# ENRICH
-# ============================================================
-def enrich(movie: dict) -> dict:
-    result = search_tmdb(movie["Name"], movie.get("Year"))
-    if result:
-        poster = result.get("poster_path")
-        movie["poster_path"] = poster
-        movie["poster_url"]  = (IMAGE_BASE + poster) if poster else None
-        movie["tmdb_id"]     = result.get("id")
-    else:
-        movie.setdefault("poster_path", None)
-        movie.setdefault("poster_url",  None)
-        movie.setdefault("tmdb_id",     None)
-    return movie
-
-# ============================================================
-# SYNC
-# ============================================================
-def sync() -> None:
-    if _TMDB_KEY_ENV:
-        info("Clé TMDB chargée depuis la variable d'environnement.")
-    else:
-        warn("Variable TMDB_API_KEY absente — utilisation de la clé hardcodée de secours.")
-
-    existing_movies = load_movies()
-
-    index_by_name: dict[str, int] = {
-        movie_key(m): i
-        for i, m in enumerate(existing_movies)
-        if is_valid_movie(m)
-    }
-
-    rss_movies = fetch_rss()
-
-    new_movies: list[dict]  = []
-    updated_count: int      = 0
-    re_enriched_count: int  = 0
-
-    for i, m in enumerate(rss_movies):
-        m["Name"] = safe_str(m.get("Name"))
-        key = movie_key(m)
-
-        if key in index_by_name:
-            idx      = index_by_name[key]
-            existing = existing_movies[idx]
-
-            changed = (
-                existing.get("Rating")         != m.get("Rating") or
-                existing.get("Date")            != m.get("Date")   or
-                existing.get("Letterboxd URI")  != m.get("Letterboxd URI")
-            )
-            if changed:
-                existing["Rating"]        = m.get("Rating")
-                existing["Date"]          = m.get("Date")
-                # Mise à jour du lien si le RSS fournit un meilleur lien
-                if m.get("Letterboxd URI"):
-                    existing["Letterboxd URI"] = m["Letterboxd URI"]
-                updated_count += 1
-                info(f"UPD [{i+1}/{len(rss_movies)}] {m['Name']}")
-
-            if not existing.get("poster_url"):
-                warn(f"Pas de poster pour « {m['Name']} » → tentative TMDB")
-                enrich(existing)
-                time.sleep(TMDB_DELAY)
-                re_enriched_count += 1
-
-        else:
-            info(f"NEW [{i+1}/{len(rss_movies)}] {m['Name']}")
-            m = enrich(m)
-            new_movies.append(m)
-            index_by_name[key] = len(existing_movies) + len(new_movies) - 1
-            time.sleep(TMDB_DELAY)
-
-    save_cache(cache)
-
-    final    = existing_movies + new_movies
-    modified = len(new_movies) > 0 or updated_count > 0 or re_enriched_count > 0
-
-    if modified:
-        save_movies(final)
-        ok(
-            f"Terminé — "
-            f"+{len(new_movies)} ajoutés, "
-            f"{updated_count} mis à jour, "
-            f"{re_enriched_count} ré-enrichis"
-        )
-    else:
-        ok("Aucune modification nécessaire.")
-
-# ============================================================
-# ENTRY POINT
-# ============================================================
 if __name__ == "__main__":
-    sync()
+    ap = argparse.ArgumentParser(); ap.add_argument("--rematch-all", action="store_true"); ap.add_argument("--report", action="store_true")
+    a = ap.parse_args(); report() if a.report else sync(a.rematch_all)

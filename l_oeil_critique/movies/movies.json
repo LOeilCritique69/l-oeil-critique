@@ -225,9 +225,12 @@
     "Year": 2012,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-hunger-games/",
     "Rating": 3.5,
-    "poster_path": "/wSvsjqyRWk5xku9yEUNZYFwUF87.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wSvsjqyRWk5xku9yEUNZYFwUF87.jpg",
-    "tmdb_id": 70160
+    "poster_path": "/fWG9Jqqintc8jQj4XzWNMPjIxzf.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fWG9Jqqintc8jQj4XzWNMPjIxzf.jpg",
+    "tmdb_id": 70160,
+    "tmdb_source": "rss",
+    "tmdb_title": "Hunger Games",
+    "tmdb_year": "2012"
   },
   {
     "Date": "2024-10-12",
@@ -545,9 +548,12 @@
     "Year": 2019,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/avengers-endgame/",
     "Rating": 4.5,
-    "poster_path": "/wF7jv3x51hXgkl7t5KHePuRjXc8.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/wF7jv3x51hXgkl7t5KHePuRjXc8.jpg",
-    "tmdb_id": 299534
+    "poster_path": "/qXekTarZKRrVfnBwhS6xevt6BGU.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qXekTarZKRrVfnBwhS6xevt6BGU.jpg",
+    "tmdb_id": 299534,
+    "tmdb_source": "rss",
+    "tmdb_title": "Avengers : Endgame",
+    "tmdb_year": "2019"
   },
   {
     "Date": "2024-10-13",
@@ -1367,7 +1373,10 @@
     "Rating": 4.0,
     "poster_path": "/wYQ8LLOGoxqVtRTdKPmi1J59FWo.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/wYQ8LLOGoxqVtRTdKPmi1J59FWo.jpg",
-    "tmdb_id": 50646
+    "tmdb_id": 50646,
+    "tmdb_source": "rss",
+    "tmdb_title": "Crazy, Stupid, Love",
+    "tmdb_year": "2011"
   },
   {
     "Date": "2024-10-15",
@@ -1457,7 +1466,8 @@
     "Rating": 4,
     "poster_path": null,
     "poster_url": null,
-    "tmdb_id": null
+    "tmdb_id": null,
+    "tmdb_source": "review"
   },
   {
     "Date": "2024-11-06",
@@ -2367,7 +2377,10 @@
     "Rating": 3.5,
     "poster_path": "/bLT6DdHf1LWSVIViBufpkSUOnEy.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/bLT6DdHf1LWSVIViBufpkSUOnEy.jpg",
-    "tmdb_id": 10201
+    "tmdb_id": 10201,
+    "tmdb_source": "rss",
+    "tmdb_title": "Yes Man",
+    "tmdb_year": "2008"
   },
   {
     "Date": "2024-11-08",
@@ -2665,9 +2678,12 @@
     "Year": 2013,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-hunger-games-catching-fire/",
     "Rating": 4.0,
-    "poster_path": "/32mRJXEjmpcVYcQFvzvXCLPsUgS.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/32mRJXEjmpcVYcQFvzvXCLPsUgS.jpg",
-    "tmdb_id": 101299
+    "poster_path": "/lHdbNb8GEuMXCwar9wENzVu5eQI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/lHdbNb8GEuMXCwar9wENzVu5eQI.jpg",
+    "tmdb_id": 101299,
+    "tmdb_source": "rss",
+    "tmdb_title": "Hunger Games : L'Embrasement",
+    "tmdb_year": "2013"
   },
   {
     "Date": "2024-11-14",
@@ -3117,7 +3133,10 @@
     "Rating": 2.5,
     "poster_path": "/yJw1f2xD1evLDzvVO2jnYdSRzWt.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/yJw1f2xD1evLDzvVO2jnYdSRzWt.jpg",
-    "tmdb_id": 82654
+    "tmdb_id": 82654,
+    "tmdb_source": "rss",
+    "tmdb_title": "Warm Bodies",
+    "tmdb_year": "2013"
   },
   {
     "Date": "2025-05-17",
@@ -3997,7 +4016,8 @@
     "Rating": 2.5,
     "poster_path": null,
     "poster_url": null,
-    "tmdb_id": null
+    "tmdb_id": null,
+    "tmdb_source": "review"
   },
   {
     "Date": "2026-01-02",
@@ -5365,9 +5385,12 @@
     "Date": "2026-07-23",
     "Rating": 4.0,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/obsession-2025/1/",
-    "poster_path": "/r1gem8WJjUphdplOcrQhzCrYmIE.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/r1gem8WJjUphdplOcrQhzCrYmIE.jpg",
-    "tmdb_id": 1012148
+    "poster_path": "/mDCR1frpUvGfIKksuM440VLb7X9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mDCR1frpUvGfIKksuM440VLb7X9.jpg",
+    "tmdb_id": 1339713,
+    "tmdb_source": "rss",
+    "tmdb_title": "Obsession",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Bambi",
@@ -5455,7 +5478,12 @@
     "Date": "2026-06-29",
     "Rating": 3.0,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/supergirl-2026/",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1QV4GubAlUvGX3FjqWWWfQiYkN4.jpg"
+    "poster_url": "https://image.tmdb.org/t/p/w500/1rtTSqlITti6l6NLouxVO0xFqto.jpg",
+    "tmdb_id": 1081003,
+    "tmdb_source": "search",
+    "tmdb_title": "Supergirl",
+    "tmdb_year": "2026",
+    "poster_path": "/1rtTSqlITti6l6NLouxVO0xFqto.jpg"
   },
   {
     "Name": "Bleach: Thousand-Year Blood War - The Calamity",
@@ -5540,12 +5568,15 @@
   {
     "Name": "The Odyssey",
     "Year": 2026,
-    "Date": "2026-07-15",
+    "Date": "2026-07-21",
     "Rating": 4.5,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-odyssey-2026/",
-    "poster_path": "/xJ97RenWOB8DBBwZryjUQTDdH73.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/xJ97RenWOB8DBBwZryjUQTDdH73.jpg",
-    "tmdb_id": 1368337
+    "poster_path": "/kP8jJIkmX0vWEYiqQ9c5zU0dvcn.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/kP8jJIkmX0vWEYiqQ9c5zU0dvcn.jpg",
+    "tmdb_id": 1368337,
+    "tmdb_source": "rss",
+    "tmdb_title": "L'Odyssée",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Exit 8",
@@ -5555,7 +5586,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/exit-8/",
     "poster_path": "/hJ9qCQ3Dx9vwet09Lbqs8eZTd8e.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/hJ9qCQ3Dx9vwet09Lbqs8eZTd8e.jpg",
-    "tmdb_id": 1408208
+    "tmdb_id": 1408208,
+    "tmdb_source": "rss",
+    "tmdb_title": "Exit 8",
+    "tmdb_year": "2025"
   },
   {
     "Name": "The Hero of Friedrichstrasse Station",
@@ -5575,7 +5609,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/passenger-2026/",
     "poster_path": "/8MNddEYoreFL2S3n257uwsYiKf6.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/8MNddEYoreFL2S3n257uwsYiKf6.jpg",
-    "tmdb_id": 1368314
+    "tmdb_id": 1368314,
+    "tmdb_source": "rss",
+    "tmdb_title": "Passenger",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Comédie-Française",
@@ -5583,9 +5620,12 @@
     "Date": "2026-07-23",
     "Rating": 2.5,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/comedie-francaise/",
-    "poster_path": "/bfjG4eH78KOnpVNlEH8wneMHXLv.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/bfjG4eH78KOnpVNlEH8wneMHXLv.jpg",
-    "tmdb_id": 1496491
+    "poster_path": "/3ykToOKrgIlKBOkxpRscXNAkzET.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/3ykToOKrgIlKBOkxpRscXNAkzET.jpg",
+    "tmdb_id": 1496491,
+    "tmdb_source": "rss",
+    "tmdb_title": "De la Comédie-Française",
+    "tmdb_year": "2026"
   },
   {
     "Name": "The Spider Within: A Spider-Verse Story",
@@ -5595,7 +5635,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-spider-within-a-spider-verse-story/",
     "poster_path": "/2xlk27ZW2WI6Q77SLEmwhUpz190.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/2xlk27ZW2WI6Q77SLEmwhUpz190.jpg",
-    "tmdb_id": 1106299
+    "tmdb_id": 1106299,
+    "tmdb_source": "rss",
+    "tmdb_title": "The Spider Within: A Spider-Verse Story",
+    "tmdb_year": "2023"
   },
   {
     "Name": "Enola Holmes",
@@ -5605,7 +5648,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/enola-holmes/",
     "poster_path": "/zDtraIGPVhmSnPZQ34fmyvWT5tz.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/zDtraIGPVhmSnPZQ34fmyvWT5tz.jpg",
-    "tmdb_id": 497582
+    "tmdb_id": 497582,
+    "tmdb_source": "rss",
+    "tmdb_title": "Enola Holmes",
+    "tmdb_year": "2020"
   },
   {
     "Name": "Enola Holmes 2",
@@ -5615,17 +5661,23 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/enola-holmes-2/",
     "poster_path": "/n4MNnDDVm86AELe1fxbLvxHYeyh.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/n4MNnDDVm86AELe1fxbLvxHYeyh.jpg",
-    "tmdb_id": 829280
+    "tmdb_id": 829280,
+    "tmdb_source": "rss",
+    "tmdb_title": "Enola Holmes 2",
+    "tmdb_year": "2022"
   },
   {
     "Name": "Spider-Man: Brand New Day",
     "Year": 2026,
-    "Date": "2026-07-29",
+    "Date": "2026-08-25",
     "Rating": 4.0,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/spider-man-brand-new-day/",
-    "poster_path": "/yikio8CfJxIA7faZxgvB9FGXy6u.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/yikio8CfJxIA7faZxgvB9FGXy6u.jpg",
-    "tmdb_id": 969681
+    "poster_path": "/6OEtkkzoyusZDm2uMJojlWZSLR9.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/6OEtkkzoyusZDm2uMJojlWZSLR9.jpg",
+    "tmdb_id": 969681,
+    "tmdb_source": "rss",
+    "tmdb_title": "Spider-Man : Brand New Day",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Enola Holmes 3",
@@ -5635,7 +5687,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/enola-holmes-3/",
     "poster_path": "/ncHImt9szlNQaNM2iY3vcgSdDp.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/ncHImt9szlNQaNM2iY3vcgSdDp.jpg",
-    "tmdb_id": 1202033
+    "tmdb_id": 1202033,
+    "tmdb_source": "rss",
+    "tmdb_title": "Enola Holmes 3",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Berlin Hero",
@@ -5643,9 +5698,12 @@
     "Date": "2026-07-18",
     "Rating": 1.5,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/berlin-hero/",
-    "poster_path": "/gmPute26B4JnsQNMZdgyWAfYfYj.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gmPute26B4JnsQNMZdgyWAfYfYj.jpg",
-    "tmdb_id": 1248217
+    "poster_path": "/7IfFzIxDK7uTGwqabcAAj01Z4kI.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7IfFzIxDK7uTGwqabcAAj01Z4kI.jpg",
+    "tmdb_id": 1248217,
+    "tmdb_source": "rss",
+    "tmdb_title": "Le Héros de Berlin",
+    "tmdb_year": "2025"
   },
   {
     "Name": "War Machine",
@@ -5655,7 +5713,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/war-machine-2026/",
     "poster_path": "/tlPgDzwIE7VYYIIAGCTUOnN4wI1.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/tlPgDzwIE7VYYIIAGCTUOnN4wI1.jpg",
-    "tmdb_id": 1265609
+    "tmdb_id": 1265609,
+    "tmdb_source": "rss",
+    "tmdb_title": "War Machine",
+    "tmdb_year": "2026"
   },
   {
     "Name": "The Devil's Mouth",
@@ -5665,7 +5726,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-devils-mouth/",
     "poster_path": "/9IKCSvhoKUM6LwD279FxuIvr8OL.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/9IKCSvhoKUM6LwD279FxuIvr8OL.jpg",
-    "tmdb_id": 1481343
+    "tmdb_id": 1481343,
+    "tmdb_source": "rss",
+    "tmdb_title": "La Bouche du Diable",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Megan Is Missing",
@@ -5675,7 +5739,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/megan-is-missing/",
     "poster_path": "/lDmIqn0HJDjQJZDZaofuyaAnw2X.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/lDmIqn0HJDjQJZDZaofuyaAnw2X.jpg",
-    "tmdb_id": 63197
+    "tmdb_id": 63197,
+    "tmdb_source": "rss",
+    "tmdb_title": "Megan Is Missing",
+    "tmdb_year": "2011"
   },
   {
     "Name": "The End of Oak Street",
@@ -5683,9 +5750,12 @@
     "Date": "2026-08-17",
     "Rating": 2.0,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-end-of-oak-street/",
-    "poster_path": "/1flRy4qysdwjhlqw2BZ1Wm1zcpM.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/1flRy4qysdwjhlqw2BZ1Wm1zcpM.jpg",
-    "tmdb_id": 1101383
+    "poster_path": "/yZINaQysj32K2DS2EW4Iy1bK4Bm.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/yZINaQysj32K2DS2EW4Iy1bK4Bm.jpg",
+    "tmdb_id": 1101383,
+    "tmdb_source": "rss",
+    "tmdb_title": "La Fin d'Oak Street",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Cinderella",
@@ -5695,7 +5765,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/cinderella/",
     "poster_path": "/nqSJwBdvG89uHRpDDdaAy5YhogZ.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/nqSJwBdvG89uHRpDDdaAy5YhogZ.jpg",
-    "tmdb_id": 11224
+    "tmdb_id": 11224,
+    "tmdb_source": "rss",
+    "tmdb_title": "Cendrillon",
+    "tmdb_year": "1950"
   },
   {
     "Name": "Alice in Wonderland",
@@ -5705,7 +5778,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/alice-in-wonderland-1951/",
     "poster_path": "/91DUnlKB6U77lqBZC0KnBHVVz6S.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/91DUnlKB6U77lqBZC0KnBHVVz6S.jpg",
-    "tmdb_id": 12092
+    "tmdb_id": 12092,
+    "tmdb_source": "rss",
+    "tmdb_title": "Alice au pays des merveilles",
+    "tmdb_year": "1951"
   },
   {
     "Name": "Fjord",
@@ -5715,7 +5791,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/fjord-2026/",
     "poster_path": "/3btHoXx6lJtDJEybsCLhkqhNCb9.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/3btHoXx6lJtDJEybsCLhkqhNCb9.jpg",
-    "tmdb_id": 1401459
+    "tmdb_id": 1401459,
+    "tmdb_source": "rss",
+    "tmdb_title": "Fjord",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Vacation",
@@ -5725,7 +5804,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/vacation-2015/",
     "poster_path": "/ybTZa6kNZtuWHwLJzpouHt6ffml.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/ybTZa6kNZtuWHwLJzpouHt6ffml.jpg",
-    "tmdb_id": 296099
+    "tmdb_id": 296099,
+    "tmdb_source": "rss",
+    "tmdb_title": "Vive les Vacances",
+    "tmdb_year": "2015"
   },
   {
     "Name": "Peter Pan",
@@ -5733,9 +5815,12 @@
     "Date": "2026-08-25",
     "Rating": 2.5,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/peter-pan/",
-    "poster_path": "/lsNXA11gQZbRfpYf6AXZzj3nEsY.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/lsNXA11gQZbRfpYf6AXZzj3nEsY.jpg",
-    "tmdb_id": 10693
+    "poster_path": "/xPBT1dwAPOP4k560y3CQ1LeAhHV.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xPBT1dwAPOP4k560y3CQ1LeAhHV.jpg",
+    "tmdb_id": 10693,
+    "tmdb_source": "rss",
+    "tmdb_title": "Peter Pan",
+    "tmdb_year": "1953"
   },
   {
     "Name": "The Grand Budapest Hotel",
@@ -5745,7 +5830,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-grand-budapest-hotel/",
     "poster_path": "/qcWTuWPu6x6t2MKt0MTfbResJiV.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/qcWTuWPu6x6t2MKt0MTfbResJiV.jpg",
-    "tmdb_id": 120467
+    "tmdb_id": 120467,
+    "tmdb_source": "rss",
+    "tmdb_title": "The Grand Budapest Hotel",
+    "tmdb_year": "2014"
   },
   {
     "Name": "Grand Theft Auto VI: An Extended Look",
@@ -5755,7 +5843,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/grand-theft-auto-vi-an-extended-look/",
     "poster_path": "/wf0Gi6Mf9Yl00uSM1TD4zEMYkgV.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/wf0Gi6Mf9Yl00uSM1TD4zEMYkgV.jpg",
-    "tmdb_id": 1744462
+    "tmdb_id": 1744462,
+    "tmdb_source": "rss",
+    "tmdb_title": "Grand Theft Auto VI : un large aperçu",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Lady and the Tramp",
@@ -5763,9 +5854,12 @@
     "Date": "2026-08-28",
     "Rating": 2.5,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/lady-and-the-tramp/",
-    "poster_path": "/2NSswcmFR0SAZInJnniq1elmUdm.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/2NSswcmFR0SAZInJnniq1elmUdm.jpg",
-    "tmdb_id": 10340
+    "poster_path": "/e4Tbz6Mr10FTYLfhwtC1Ilj3b0F.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/e4Tbz6Mr10FTYLfhwtC1Ilj3b0F.jpg",
+    "tmdb_id": 10340,
+    "tmdb_source": "rss",
+    "tmdb_title": "La Belle et le Clochard",
+    "tmdb_year": "1955"
   },
   {
     "Name": "Sleeping Beauty",
@@ -5775,7 +5869,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/sleeping-beauty/",
     "poster_path": "/5GaczvmuUCxhwPNx896lo2OCIFh.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/5GaczvmuUCxhwPNx896lo2OCIFh.jpg",
-    "tmdb_id": 10882
+    "tmdb_id": 10882,
+    "tmdb_source": "rss",
+    "tmdb_title": "La Belle au bois dormant",
+    "tmdb_year": "1959"
   },
   {
     "Name": "99 Francs",
@@ -5785,7 +5882,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/99-francs/",
     "poster_path": "/d67iCuJxENCeJ6GZU5typgaNAkb.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/d67iCuJxENCeJ6GZU5typgaNAkb.jpg",
-    "tmdb_id": 8827
+    "tmdb_id": 8827,
+    "tmdb_source": "rss",
+    "tmdb_title": "99 Francs",
+    "tmdb_year": "2007"
   },
   {
     "Name": "Resident Evil",
@@ -5795,7 +5895,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/resident-evil-2026/",
     "poster_path": "/pICoWjcKSet6sA3yzxOkP8ChwYI.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/pICoWjcKSet6sA3yzxOkP8ChwYI.jpg",
-    "tmdb_id": 1423191
+    "tmdb_id": 1423191,
+    "tmdb_source": "rss",
+    "tmdb_title": "Resident Evil",
+    "tmdb_year": "2026"
   },
   {
     "Name": "A Woman's Life",
@@ -5805,7 +5908,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/a-womans-life-2026/",
     "poster_path": "/9xAYLvWZGASDKJZjt5XgvD7ugsn.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/9xAYLvWZGASDKJZjt5XgvD7ugsn.jpg",
-    "tmdb_id": 1258181
+    "tmdb_id": 1258181,
+    "tmdb_source": "rss",
+    "tmdb_title": "La vie d'une femme",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Primetime",
@@ -5815,7 +5921,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/primetime-2026/",
     "poster_path": "/rhF8JALH8wrxKtXSCAB7a09tWsc.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/rhF8JALH8wrxKtXSCAB7a09tWsc.jpg",
-    "tmdb_id": 1375441
+    "tmdb_id": 1375441,
+    "tmdb_source": "rss",
+    "tmdb_title": "Primetime",
+    "tmdb_year": "2026"
   },
   {
     "Name": "The King and the Mockingbird",
@@ -5825,7 +5934,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-king-and-the-mockingbird/",
     "poster_path": "/8LlM0gtrwmzmf9z9RvhWvOOl2WE.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/8LlM0gtrwmzmf9z9RvhWvOOl2WE.jpg",
-    "tmdb_id": 22504
+    "tmdb_id": 22504,
+    "tmdb_source": "rss",
+    "tmdb_title": "Le Roi et l'Oiseau",
+    "tmdb_year": "1980"
   },
   {
     "Name": "Big Fish",
@@ -5835,7 +5947,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/big-fish/",
     "poster_path": "/SF6pWtcdu1GEQxzeeYBEP1yEcK.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/SF6pWtcdu1GEQxzeeYBEP1yEcK.jpg",
-    "tmdb_id": 587
+    "tmdb_id": 587,
+    "tmdb_source": "rss",
+    "tmdb_title": "Big Fish",
+    "tmdb_year": "2003"
   },
   {
     "Name": "Kraken",
@@ -5843,9 +5958,12 @@
     "Date": "2026-10-01",
     "Rating": 3.0,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/kraken-2026-1/",
-    "poster_path": "/uUCVGVWnBgIf6NV3AqHpJcCBC8T.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/uUCVGVWnBgIf6NV3AqHpJcCBC8T.jpg",
-    "tmdb_id": 1110034
+    "poster_path": "/mQZaeZAiDBredbH19WHZx8sLZbo.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/mQZaeZAiDBredbH19WHZx8sLZbo.jpg",
+    "tmdb_id": 1571766,
+    "tmdb_source": "rss",
+    "tmdb_title": "Kraken",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Verity",
@@ -5855,7 +5973,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/verity-2026/",
     "poster_path": "/zLCjFOyjvKqYdkQYYAyTtfJ5mpk.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/zLCjFOyjvKqYdkQYYAyTtfJ5mpk.jpg",
-    "tmdb_id": 1283515
+    "tmdb_id": 1283515,
+    "tmdb_source": "rss",
+    "tmdb_title": "Verity",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Ted",
@@ -5865,7 +5986,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/ted/",
     "poster_path": "/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg",
-    "tmdb_id": 72105
+    "tmdb_id": 72105,
+    "tmdb_source": "rss",
+    "tmdb_title": "Ted",
+    "tmdb_year": "2012"
   },
   {
     "Name": "Ted 2",
@@ -5875,7 +5999,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/ted-2/",
     "poster_path": "/9P2Lpeg1HIfCKjMJT485c9MKTGj.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/9P2Lpeg1HIfCKjMJT485c9MKTGj.jpg",
-    "tmdb_id": 214756
+    "tmdb_id": 214756,
+    "tmdb_source": "rss",
+    "tmdb_title": "Ted 2",
+    "tmdb_year": "2015"
   },
   {
     "Name": "Memento",
@@ -5885,7 +6012,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/memento/",
     "poster_path": "/nK3cJaUWx1iaQ9Cs08JPtZqVzQ6.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/nK3cJaUWx1iaQ9Cs08JPtZqVzQ6.jpg",
-    "tmdb_id": 77
+    "tmdb_id": 77,
+    "tmdb_source": "rss",
+    "tmdb_title": "Memento",
+    "tmdb_year": "2000"
   },
   {
     "Name": "Other Mommy",
@@ -5895,7 +6025,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/other-mommy/",
     "poster_path": "/wAofwsldMDNAIzGSEfMJMoUn1KB.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/wAofwsldMDNAIzGSEfMJMoUn1KB.jpg",
-    "tmdb_id": 1400837
+    "tmdb_id": 1400837,
+    "tmdb_source": "rss",
+    "tmdb_title": "Malfaisante",
+    "tmdb_year": "2026"
   },
   {
     "Name": "A Monster in Paris",
@@ -5905,7 +6038,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/a-monster-in-paris/",
     "poster_path": "/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg",
-    "tmdb_id": 77459
+    "tmdb_id": 77459,
+    "tmdb_source": "rss",
+    "tmdb_title": "Un monstre à Paris",
+    "tmdb_year": "2011"
   },
   {
     "Name": "Dragon Ball Z: Battle of Gods",
@@ -5915,7 +6051,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/dragon-ball-z-battle-of-gods/",
     "poster_path": "/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg",
-    "tmdb_id": 126963
+    "tmdb_id": 126963,
+    "tmdb_source": "rss",
+    "tmdb_title": "Dragon Ball Z - Battle of Gods",
+    "tmdb_year": "2013"
   },
   {
     "Name": "The Fish and I",
@@ -5925,7 +6064,10 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/the-fish-and-i/",
     "poster_path": "/AlkgBR4iMNsybDakeavNvIHY0jn.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/AlkgBR4iMNsybDakeavNvIHY0jn.jpg",
-    "tmdb_id": 598927
+    "tmdb_id": 598927,
+    "tmdb_source": "rss",
+    "tmdb_title": "ماهی و من",
+    "tmdb_year": "2014"
   },
   {
     "Name": "Species",
@@ -5933,9 +6075,12 @@
     "Date": "2026-10-22",
     "Rating": 2.5,
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/species-2026/",
-    "poster_path": "/j7FvAOinJzeVE7dAi2S7Hv3S41G.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/j7FvAOinJzeVE7dAi2S7Hv3S41G.jpg",
-    "tmdb_id": 9348
+    "poster_path": "/fDvZvNmLIwUcKKQ4Cfb6TmQJM7M.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/fDvZvNmLIwUcKKQ4Cfb6TmQJM7M.jpg",
+    "tmdb_id": 1468846,
+    "tmdb_source": "rss",
+    "tmdb_title": "Sanguine",
+    "tmdb_year": "2026"
   },
   {
     "Name": "Digger",
@@ -5945,6 +6090,9 @@
     "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/digger-2026/",
     "poster_path": "/gPCCGMQCrrMNM3mR3vqIdbdJxJ5.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/gPCCGMQCrrMNM3mR3vqIdbdJxJ5.jpg",
-    "tmdb_id": 1248832
+    "tmdb_id": 1248832,
+    "tmdb_source": "rss",
+    "tmdb_title": "Digger",
+    "tmdb_year": "2026"
   }
 ]

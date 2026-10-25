@@ -1,23 +1,25 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root {
-  --bg: var(--ink, #12141A);
-  --surface: var(--ink-2, #1B1E26);
-  --surface2: var(--ink-3, #23273E);
-  --surface3: #2A2E48;
-  --border: var(--line-on-ink, rgba(201, 162, 74, 0.18));
-  --border2: var(--line-on-ink-strong, rgba(201, 162, 74, 0.4));
-  --gold: var(--brass, #C9A24A);
-  --gold2: var(--brass-light, #E8C878);
-  --red: var(--velvet, #B8323A);
-  --green: #4FAE7C;
-  --blue: #6B8CBE;
-  --text: var(--paper, #F3EEE3);
-  --text2: var(--ink-soft, #9199A6);
-  --text3: var(--paper-soft, #6B6355);
+  /* Tokens globaux (chef_d_oeuvre.css) — valeurs de repli = thème "Salle noire" */
+  --bg: var(--ink, #0d0e12);
+  --surface: var(--ink-2, #16181f);
+  --surface2: var(--ink-3, #1f222b);
+  --border: var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  --border2: var(--line-on-ink-strong, rgba(212, 169, 73, 0.4));
+  --gold: var(--brass, #d4a949);
+  --gold2: var(--brass-light, #ecc875);
+  --red: var(--velvet, #c23a43);
+  --text: var(--paper, #f2ede2);
+  --text2: var(--ink-soft, #8d93a0);
+  --text3: var(--paper-soft, #8d93a0);
   --font-title: var(--font-display, 'Fraunces', Georgia, serif);
-  --r: 10px;
-  --r2: 18px;
+  /* Tokens propres au jeu */
+  --surface3: #2a2e3a;
+  --green: #4fae7c;
+  --blue: #6b8cbe;
+  --r: var(--radius-lg, 8px);
+  --r2: 12px;
 }
 
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.5;overflow-x:hidden}
@@ -44,7 +46,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .game-right{display:flex;flex-direction:column;gap:0}
 .round-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
 .round-badge{font-family:var(--font-mono);font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
-.combo-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,162,74,0.12);border:1px solid rgba(201,162,74,0.3);color:var(--gold);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;font-family:var(--font-mono);opacity:0;transform:scale(0.8);transition:all 0.3s}
+.combo-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(212, 169, 73,0.12);border:1px solid rgba(212, 169, 73,0.3);color:var(--gold);border-radius:100px;padding:4px 12px;font-size:0.75rem;font-weight:600;font-family:var(--font-mono);opacity:0;transform:scale(0.8);transition:all 0.3s}
 .combo-badge.show{opacity:1;transform:scale(1)}
 .combo-badge i{font-size:11px}
 .hint-box{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:16px;min-height:54px;position:relative;overflow:hidden}
@@ -54,12 +56,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .hint-content.revealed{color:var(--text);font-style:normal}
 .hints-row{display:flex;gap:8px;margin-bottom:16px}
 .hint-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--surface2);border:1px solid var(--border);color:var(--text2);border-radius:var(--r);padding:9px 12px;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font-body)}
-.hint-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold);background:rgba(201,162,74,0.06)}
+.hint-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold);background:rgba(212, 169, 73,0.06)}
 .hint-btn:disabled{opacity:0.4;cursor:not-allowed}
 .hint-btn i{font-size:11px}
 .input-section{position:relative;margin-bottom:14px}
 .movie-input{width:100%;background:var(--surface2);border:1.5px solid var(--border2);color:var(--text);border-radius:var(--r);padding:13px 16px 13px 42px;font-size:0.95rem;font-family:var(--font-body);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
-.movie-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,74,0.12)}
+.movie-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212, 169, 73,0.12)}
 .movie-input::placeholder{color:var(--text3)}
 .input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none}
 .submit-btn{width:100%;background:var(--gold);color:var(--bg);border:none;border-radius:var(--r);padding:13px;font-weight:700;font-size:0.95rem;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;letter-spacing:0.3px}
@@ -77,7 +79,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .sug-btn:hover:not(:disabled){border-color:var(--blue);color:var(--blue);background:rgba(107,140,190,0.06)}
 .sug-btn:disabled{cursor:not-allowed}
 .sug-btn.correct{border-color:var(--green)!important;background:rgba(79,174,124,0.12)!important;color:var(--green)!important;animation:pulse-green 0.6s ease}
-.sug-btn.wrong{border-color:var(--red)!important;background:rgba(184,50,58,0.12)!important;color:var(--red)!important;animation:shake 0.4s ease}
+.sug-btn.wrong{border-color:var(--red)!important;background:rgba(194, 58, 67,0.12)!important;color:var(--red)!important;animation:shake 0.4s ease}
 @keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(79,174,124,0)}50%{box-shadow:0 0 0 8px rgba(79,174,124,0)}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .mode-toggle{display:flex;gap:8px;margin-bottom:16px}
@@ -85,14 +87,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .mode-btn.active{background:var(--surface3);border-color:var(--border2);color:var(--text)}
 .feedback-line{min-height:36px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;border-radius:var(--r);padding:8px 14px;transition:all 0.3s;text-align:center}
 .feedback-line.correct{background:rgba(79,174,124,0.12);color:var(--green)}
-.feedback-line.wrong{background:rgba(184,50,58,0.12);color:var(--red)}
-.feedback-line.info{background:rgba(201,162,74,0.1);color:var(--gold)}
+.feedback-line.wrong{background:rgba(194, 58, 67,0.12);color:var(--red)}
+.feedback-line.info{background:rgba(212, 169, 73,0.1);color:var(--gold)}
 .next-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:transparent;border:1.5px solid var(--border2);color:var(--text2);border-radius:var(--r);padding:12px;font-weight:600;font-size:0.88rem;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;margin-top:10px}
 .next-btn:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
 .next-btn:disabled{opacity:0.3;cursor:not-allowed}
 .diff-row{display:flex;gap:8px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:28px}
 .diff-btn{flex:1;padding:8px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text3);font-size:0.75rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:var(--font-mono);text-transform:uppercase}
-.diff-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(201,162,74,0.08)}
+.diff-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(212, 169, 73,0.08)}
 .lives-display { display: flex; gap: 6px; align-items: center; }
 .life { display: inline-block; color: var(--red); font-size: 14px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 .life.lost { opacity: 0.2; transform: scale(0.7) rotate(-15deg); filter: grayscale(1); }
@@ -107,7 +109,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .modal-msg{font-size:1rem;color:var(--text);margin-bottom:28px}
 .diff-options-modal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
 .diff-card{background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r);padding:14px;cursor:pointer;transition:all 0.2s;text-align:left}
-.diff-card:hover,.diff-card.selected{border-color:var(--gold);background:rgba(201,162,74,0.07)}
+.diff-card:hover,.diff-card.selected{border-color:var(--gold);background:rgba(212, 169, 73,0.07)}
 .diff-card.selected .diff-name{color:var(--gold)}
 .diff-name{font-weight:700;font-size:0.9rem;margin-bottom:2px}
 .diff-desc{font-size:0.75rem;color:var(--text3)}
@@ -125,8 +127,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .lb-diff{font-size:0.7rem;padding:3px 8px;border-radius:100px;font-weight:600}
 .lb-diff.facile{background:rgba(79,174,124,0.15);color:var(--green)}
 .lb-diff.normal{background:rgba(107,140,190,0.15);color:var(--blue)}
-.lb-diff.difficile{background:rgba(201,162,74,0.15);color:var(--gold)}
-.lb-diff.expert{background:rgba(184,50,58,0.15);color:var(--red)}
+.lb-diff.difficile{background:rgba(212, 169, 73,0.15);color:var(--gold)}
+.lb-diff.expert{background:rgba(194, 58, 67,0.15);color:var(--red)}
 .confetto{position:fixed;pointer-events:none;width:8px;height:8px;border-radius:2px;z-index:999;animation:confetto-fall linear forwards}
 @keyframes confetto-fall{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(100vh) rotate(720deg)}}
 .streak-banner{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg);padding:10px 24px;border-radius:100px;font-weight:700;font-size:0.9rem;font-family:var(--font-mono);z-index:400;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}
@@ -146,7 +148,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .suggestions-grid{grid-template-columns:1fr}
   .diff-options-modal{grid-template-columns:1fr}
 }
-.stat-pill.gold { background: rgba(201, 162, 74, 0.12); color: var(--gold); border: 1px solid rgba(201, 162, 74, 0.3); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; }
+.stat-pill.gold { background: rgba(212, 169, 73, 0.12); color: var(--gold); border: 1px solid rgba(212, 169, 73, 0.3); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; }
 .stat-pill.gold i { color: var(--gold); font-size: 12px; }
-.stat-pill.lives { background: rgba(184, 50, 58, 0.1); color: var(--red); border: 1px solid rgba(184, 50, 58, 0.25); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; }
+.stat-pill.lives { background: rgba(194, 58, 67, 0.1); color: var(--red); border: 1px solid rgba(194, 58, 67, 0.25); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; }
 .stat-pill.lives i { color: var(--red); font-size: 12px; }

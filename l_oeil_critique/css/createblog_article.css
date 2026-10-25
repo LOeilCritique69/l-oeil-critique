@@ -19,7 +19,7 @@
    - Correctif contraste : .article-highlight utilisait var(--velvet) en
      aplat plein (0% → transparent), faisant tomber le texte --ink hérité
      à ~3.09:1 en début de surlignage. Remplacé par un lavis translucide
-     rgba(184, 50, 58, 0.18) — valeur déjà utilisée ailleurs dans
+     rgba(194, 58, 67, 0.18) — valeur déjà utilisée ailleurs dans
      chef_d_oeuvre.css (.a-propos a, hover .notif-item), donc cohérent
      avec la charte existante plutôt qu'une couleur inventée.
    - Cleanup : suppression d'une déclaration padding en double dans
@@ -57,7 +57,7 @@ body.article-page .container {
 .article-title {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 4vw, 3rem);
-  color: var(--ink);
+  color: var(--text);
   line-height: 1.1;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -161,7 +161,7 @@ body.article-page .container {
 
 .note {
   background: linear-gradient(135deg, var(--brass-light) 0%, var(--brass) 100%);
-  color: var(--ink);
+  color: var(--text);
   border-left: 4px solid var(--velvet);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: var(--space-6) var(--space-8);
@@ -178,7 +178,7 @@ body.article-page .container {
   top: 50%;
   transform: translateY(-50%);
   font-size: 5rem;
-  color: var(--velvet);
+  color: var(--velvet-light);
   opacity: 0.15;
   pointer-events: none;
   line-height: 1;
@@ -189,14 +189,14 @@ body.article-page .container {
   font-size: 1.7rem;
   letter-spacing: 0.04em;
   margin: 0 0 var(--space-2) 0;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .note p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .note strong {
@@ -211,7 +211,7 @@ body.article-page .container {
    ======================================================================== */
 
 .spoiler-warning {
-  background-color: #fbf3e4;
+  background-color: var(--surface);
   border-left: 4px solid var(--brass);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   padding: var(--space-4) var(--space-5);
@@ -236,14 +236,14 @@ body.article-page .container {
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--ink);
+  color: var(--text);
 }
 
 /* h2 de section dans la critique */
 .critique h2 {
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  color: var(--ink);
+  color: var(--text);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: var(--space-10) 0 var(--space-4) 0;
@@ -268,7 +268,7 @@ body.article-page .container {
 }
 
 .critique strong {
-  color: var(--ink);
+  color: var(--text);
   font-weight: 700;
 }
 
@@ -287,7 +287,7 @@ body.article-page .container {
   pour ne pas écraser la règle globale `a { color: inherit; }`
 */
 .critique a {
-  color: var(--ink);
+  color: var(--text);
   text-decoration: underline;
   text-decoration-color: var(--brass);
   text-underline-offset: 3px;
@@ -347,7 +347,7 @@ body.article-page .container {
 .critique blockquote {
   margin: var(--space-8) 0;
   padding: var(--space-5) var(--space-6) var(--space-5) var(--space-8);
-  background: var(--paper-2);
+  background: var(--ink-3);
   border-left: 4px solid var(--brass);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   color: var(--paper-soft);
@@ -458,7 +458,7 @@ body.article-page .container {
 }
 
 .sidebar-block {
-  background: var(--paper);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -492,7 +492,7 @@ body.article-page .container {
 }
 
 .sidebar-item:hover {
-  background: var(--paper-2);
+  background: var(--ink-3);
 }
 
 .sidebar-item img {
@@ -511,7 +511,7 @@ body.article-page .container {
   display: block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -551,7 +551,7 @@ body.article-page .container {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   line-height: 1.4;
-  color: var(--ink);
+  color: var(--text);
   transition: color var(--transition-speed), background var(--transition-speed), padding-left var(--transition-speed);
 }
 
@@ -564,18 +564,18 @@ body.article-page .container {
 }
 
 .toc-list a:hover {
-  color: var(--velvet);
-  background: var(--paper-2);
+  color: var(--velvet-light);
+  background: var(--ink-3);
   padding-left: calc(var(--space-5) + 4px);
 }
 
 .toc-list a.active {
-  color: var(--velvet);
+  color: var(--velvet-light);
   font-weight: 700;
 }
 
 .toc-list a.active::before {
-  color: var(--velvet);
+  color: var(--velvet-light);
   opacity: 1;
 }
 
@@ -655,7 +655,7 @@ body.article-page .container {
 
 .badge-article--gold {
   background: var(--brass);
-  color: var(--ink);
+  color: var(--text);
 }
 
 .badge-article--dark {
@@ -666,7 +666,7 @@ body.article-page .container {
 /* Mise en exergue inline — lavis translucide plutôt qu'aplat plein,
    pour garantir la lisibilité du texte --ink hérité (voir changelog) */
 .article-highlight {
-  background: linear-gradient(120deg, rgba(184, 50, 58, 0.18) 0%, transparent 100%);
+  background: linear-gradient(120deg, rgba(194, 58, 67, 0.18) 0%, transparent 100%);
   padding: 0 var(--space-1);
   border-radius: 3px;
 }
@@ -680,7 +680,7 @@ body.article-page .container {
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--paper-soft);
-  background: var(--paper-2);
+  background: var(--ink-3);
 }
 
 
