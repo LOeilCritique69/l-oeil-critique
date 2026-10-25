@@ -233,14 +233,17 @@
     "tmdb_year": "2012"
   },
   {
-    "Date": "2024-10-12",
+    "Date": "2026-10-25",
     "Name": "The Hunger Games: Mockingjay – Part 1",
     "Year": 2014,
     "Letterboxd URI": "https://boxd.it/4hka",
-    "Rating": 4.5,
-    "poster_path": "/4LzjVMUit99buiiuhqW4pe0OhmA.jpg",
-    "poster_url": "https://image.tmdb.org/t/p/w500/4LzjVMUit99buiiuhqW4pe0OhmA.jpg",
-    "tmdb_id": 131631
+    "Rating": 3.5,
+    "poster_path": "/xWQfZgnjaH2fmjGSCWFYicTPwwv.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/xWQfZgnjaH2fmjGSCWFYicTPwwv.jpg",
+    "tmdb_id": 131631,
+    "tmdb_source": "rss",
+    "tmdb_title": "Hunger Games : La Révolte, partie 1",
+    "tmdb_year": "2014"
   },
   {
     "Date": "2024-10-12",
