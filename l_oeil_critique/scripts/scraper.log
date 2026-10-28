@@ -44232,3 +44232,57 @@ Call log:
 2026-10-27 23:38:38,166 [INFO] Scraping TMDb terminé (0 items)
 2026-10-27 23:38:38,167 [INFO] 0 articles retenus pour ce run
 2026-10-27 23:38:38,167 [INFO] Aucun article à écrire, arrêt
+2026-10-28 04:45:42,179 [INFO] ==== Début du script bandes-annonces ====
+2026-10-28 04:45:42,187 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-28 04:45:42,187 [INFO] 1504 identifiants chargés depuis le log
+2026-10-28 04:45:42,188 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-28 04:45:42,775 [INFO] Démarrage scraping CineHorizons...
+2026-10-28 04:45:45,315 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-28 04:45:45,484 [INFO] 10 blocs détectés sur la page 1
+2026-10-28 04:45:45,486 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-28 04:45:45,486 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-28 04:45:45,486 [INFO] Démarrage scraping Allociné (films)...
+2026-10-28 04:45:46,348 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-28 04:45:47,998 [INFO] Article ajouté Allociné (film): Leaving Amerika
+2026-10-28 04:45:49,210 [INFO] Article ajouté Allociné (film): La Tentazione
+2026-10-28 04:45:50,087 [INFO] Article ajouté Allociné (film): Sanguine
+2026-10-28 04:45:50,847 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-28 04:45:51,736 [INFO] Article ajouté Allociné (film): Papa où t'es ?
+2026-10-28 04:45:53,199 [INFO] Article ajouté Allociné (film): Ma nudité ne sert à rien
+2026-10-28 04:45:53,992 [INFO] Article ajouté Allociné (film): Quelques mots d'amour
+2026-10-28 04:45:54,765 [INFO] Article ajouté Allociné (film): Le Mystère Lucy Lost
+2026-10-28 04:45:55,424 [INFO] Article ajouté Allociné (film): Supplique à nos fantômes
+2026-10-28 04:45:56,693 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-10-28 04:45:57,518 [INFO] Article ajouté Allociné (film): Irish Travellers
+2026-10-28 04:45:59,198 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-10-28 04:46:00,051 [INFO] Article ajouté Allociné (film): Wicker
+2026-10-28 04:46:00,977 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-10-28 04:46:01,812 [INFO] Article ajouté Allociné (film): Clayface
+2026-10-28 04:46:02,811 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-10-28 04:46:02,883 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-28 04:46:02,883 [INFO] Scraping Allociné (films) terminé (11 items)
+2026-10-28 04:46:02,883 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-28 04:46:03,512 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-28 04:46:03,610 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-28 04:46:03,610 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-10-28 04:46:03,678 [INFO] Démarrage scraping TMDb...
+2026-10-28 04:46:03,821 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-28 04:46:03,904 [INFO] Article ajouté TMDb (upcoming): Le Sabre des gardiens
+2026-10-28 04:46:03,947 [INFO] Article ajouté TMDb (upcoming): Mon beau-père, ma belle-fille et moi
+2026-10-28 04:46:04,135 [INFO] Article ajouté TMDb (upcoming): Paper Tiger
+2026-10-28 04:46:04,177 [INFO] Article ajouté TMDb (upcoming): Forty Love
+2026-10-28 04:46:04,203 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-28 04:46:04,516 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-28 04:46:05,832 [INFO] 10 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-28 04:46:06,251 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-10-28 04:46:06,432 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-10-28 04:46:06,583 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-10-28 04:46:06,623 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-10-28 04:46:07,014 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-10-28 04:46:07,506 [INFO] Scraping TMDb terminé (4 items)
+2026-10-28 04:46:07,506 [INFO] 12 articles retenus pour ce run
+2026-10-28 04:46:07,593 [INFO] 2651 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-28 04:46:07,593 [INFO] Sauvegarde du log avec 1516 identifiants
+2026-10-28 04:46:07,594 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-28 04:46:07,681 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-28 04:46:07,681 [INFO] ==== Fin du script bandes-annonces ====
