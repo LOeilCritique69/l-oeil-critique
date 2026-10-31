@@ -6100,5 +6100,18 @@
     "tmdb_source": "rss",
     "tmdb_title": "Digger",
     "tmdb_year": "2026"
+  },
+  {
+    "Name": "Vertiginous",
+    "Year": 2026,
+    "Date": "2026-10-30",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/vertiginous/",
+    "tmdb_id": 1668499,
+    "tmdb_source": "rss",
+    "tmdb_title": "Le Vertige",
+    "tmdb_year": "2026",
+    "poster_path": "/qO8nc3cSjzGduaC0deh8gBRKK9Z.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/qO8nc3cSjzGduaC0deh8gBRKK9Z.jpg"
   }
 ]
