@@ -1,1759 +1,738 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta property="og:title" content="Calendrier des sorties – L'Œil Critique">
-    <meta property="og:description" content="Films, séries, jeux et animés à venir — calendrier des sorties de L'Œil Critique">
-    <meta property="og:image" content="../assets/img/logo_chef_doeuvre_processed_copy.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:url" content="https://www.l-oeil-critique.com/pages/calendrier.html">
-    <link rel="canonical" href="https://www.l-oeil-critique.com/pages/calendrier.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendrier des sorties – L'Œil Critique</title>
+<meta name="description" content="Films, séries, jeux vidéo et animés à venir : le calendrier des sorties de L'Œil Critique, mis à jour en continu.">
+<meta name="keywords" content="calendrier sorties, sorties films, sorties séries, sorties jeux vidéo, sorties animés, L'Œil Critique">
+<meta name="theme-color" content="#09080b">
+<link rel="canonical" href="https://www.l-oeil-critique.com/pages/calendrier.html">
+<link href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="calendrier sorties, sorties films, sorties séries, sorties jeux vidéo, sorties animés, L'Œil Critique">
-    <link href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg">
-    <title>Calendrier des sorties – L'Œil Critique</title>
+<meta property="og:title" content="Calendrier des sorties – L'Œil Critique">
+<meta property="og:description" content="Films, séries, jeux et animés à venir — calendrier des sorties de L'Œil Critique">
+<meta property="og:image" content="https://www.l-oeil-critique.com/assets/img/logo_chef_doeuvre_processed_copy.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://www.l-oeil-critique.com/pages/calendrier.html">
+<meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://script.google.com">
-    <link rel="dns-prefetch" href="https://script.google.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link href="../css/chef_d_oeuvre.css" rel="stylesheet">
-    <link href="../css/list-pages.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://script.google.com">
+<link rel="preconnect" href="https://image.tmdb.org">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="../css/chef_d_oeuvre.css" rel="stylesheet">
+<link href="../css/list-pages.css" rel="stylesheet">
 
 <style>
-  /* ==========================================================================
-     DESIGN SYSTEM & PALETTE CINÉMATOGRAPHIQUE
-     ========================================================================== */
-  :root {
-    --bg-dark: #09080b;
-    --bg-card: #131117;
-    --bg-card-raised: #1b1822;
-    --bg-input: #15131a;
-    
-    --border-subtle: rgba(255, 255, 255, 0.07);
-    --border-medium: rgba(255, 255, 255, 0.14);
-    --border-gold: rgba(212, 175, 55, 0.35);
-    
-    --text-primary: #f6f3ed;
-    --text-muted: #a8a096;
-    --text-faint: #6e6760;
-    
-    --gold: #d4af37;
-    --gold-light: #f3e3a1;
-    --gold-glow: rgba(212, 175, 55, 0.18);
-    --red: #e53935;
-    --red-dim: #7a1c1d;
-    --red-glow: rgba(229, 57, 53, 0.2);
-    
-    /* Catégories de contenu */
-    --cat-films: #5b8ac9;
-    --cat-series: #4fb3ad;
-    --cat-jeux: #7fae5a;
-    --cat-animes: #e0a24f;
-    --cat-evenements: #d4638a;
-    --cat-autre: #9089a3;
-    --cat-music: #b57ad1;
-    
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --radius-pill: 9999px;
-
-    --shadow-subtle: 0 4px 20px rgba(0,0,0,0.35);
-    --shadow-elevated: 0 12px 35px rgba(0,0,0,0.55);
-    --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body.lp-page {
-    margin: 0;
-    background:
-      radial-gradient(ellipse 1100px 700px at 20% -10%, rgba(229, 57, 53, 0.11), transparent 60%),
-      radial-gradient(ellipse 900px 600px at 90% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
-      var(--bg-dark);
-    color: var(--text-primary);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-    line-height: 1.5;
-  }
-
-  ::selection { background: var(--gold); color: #000; }
-  a { color: inherit; text-decoration: none; }
-  button { font-family: inherit; border: none; background: none; }
-
-  button:focus-visible, input:focus-visible, a:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-  }
-
-  /* ---------- EN-TÊTE PAGE CENTRÉ & ÉLÉGANT ---------- */
-  .list-page-header {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 48px 24px 16px;
-    text-align: center;
-  }
-
-  .list-page-header__breadcrumb {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-    margin: 0 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-  .list-page-header__breadcrumb a { transition: color var(--transition); }
-  .list-page-header__breadcrumb a:hover { color: var(--gold); }
-  .list-page-header__breadcrumb .is-current { color: var(--gold); font-weight: 600; }
-
-  .list-page-header__title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2.4rem, 5vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    margin: 0 0 16px;
-    color: var(--text-primary);
-    line-height: 1.1;
-  }
-
-  .list-page-header__description2 {
-    color: var(--text-muted);
-    font-size: 0.98rem;
-    max-width: 68ch;
-    line-height: 1.65;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  /* ---------- BANDEAU PROPOSITION DE SORTIE ---------- */
-  .add-proposal-banner {
-    margin: 24px auto 0;
-    padding: 16px 20px;
-    max-width: 640px;
-    background: linear-gradient(180deg, var(--bg-card-raised) 0%, var(--bg-card) 100%);
-    border: 1px solid var(--border-gold);
-    border-radius: var(--radius-md);
-    box-shadow: 0 0 20px var(--gold-glow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .add-proposal-banner__text {
-    font-size: 0.92rem;
-    color: var(--text-primary);
-    margin: 0;
-  }
-
-  .add-proposal-banner__btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--bg-dark);
-    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-    padding: 10px 22px;
-    border-radius: var(--radius-pill);
-    box-shadow: 0 4px 15px var(--gold-glow);
-    transition: var(--transition);
-  }
-
-  .add-proposal-banner__btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-    background: #fff;
-  }
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px 100px;
-  }
-
-  /* ---------- BARRE DE RECHERCHE & FILTRES ---------- */
-  .toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-top: 32px;
-  }
-
-  .search-wrap {
-    position: relative;
-    flex: 1 1 320px;
-    max-width: 420px;
-  }
-
-  .search-input {
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
-    padding: 12px 18px 12px 42px;
-    border-radius: var(--radius-pill);
-    border: 1px solid var(--border-subtle);
-    background: var(--bg-input);
-    color: var(--text-primary);
-    outline: none;
-    transition: var(--transition);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
-  }
-
-  .search-input::placeholder { color: var(--text-faint); }
-  .search-input:focus {
-    border-color: var(--gold);
-    background: var(--bg-card-raised);
-    box-shadow: 0 0 0 4px var(--gold-glow);
-  }
-
-  .search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-
-  .stat-count {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    color: var(--text-muted);
-    white-space: nowrap;
-    background: var(--bg-card-raised);
-    padding: 7px 14px;
-    border-radius: var(--radius-pill);
-    border: 1px solid var(--border-subtle);
-  }
-
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-  }
-
-  .chip {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.02em;
-    padding: 8px 16px;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-pill);
-    background: var(--bg-card);
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: var(--transition);
-    white-space: nowrap;
-    user-select: none;
-  }
-
-  .chip:hover {
-    border-color: var(--border-medium);
-    color: var(--text-primary);
-    background: var(--bg-card-raised);
-    transform: translateY(-1px);
-  }
-
-  .chip.active {
-    background: var(--text-primary);
-    color: var(--bg-dark);
-    border-color: var(--text-primary);
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(255,255,255,0.15);
-  }
-
-  /* ---------- BANDEAU CETTE SEMAINE ---------- */
-  .week-strip {
-    margin-top: 40px;
-  }
-
-  .week-strip__head {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-  }
-
-  .week-strip__head h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.15rem;
-    color: var(--red);
-    margin: 0;
-  }
-
-  .week-strip__head .line {
-    flex: 1;
-    height: 1px;
-    background: repeating-linear-gradient(90deg, var(--red-glow) 0 6px, transparent 6px 12px);
-  }
-
-  .week-strip__row {
-    display: flex;
-    gap: 14px;
-    overflow-x: auto;
-    padding: 4px 2px 12px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-medium) transparent;
-  }
-
-  .week-card {
-    flex: 0 0 205px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    padding: 14px 16px;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow-subtle);
-  }
-
-  .week-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-gold);
-    background: var(--bg-card-raised);
-    box-shadow: var(--shadow-elevated);
-  }
-
-  .week-card__ech {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-
-  .week-card__ech.today {
-    color: var(--red);
-  }
-
-  .week-card__title {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 0.98rem;
-    margin: 4px 0 10px;
-    line-height: 1.35;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* ---------- MARQUISE (NAVIGATION DU MOIS) ---------- */
-  .marquee {
-    margin-top: 40px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 24px;
-    background: linear-gradient(180deg, var(--bg-card-raised) 0%, var(--bg-card) 100%);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-subtle);
-  }
-
-  .marquee-btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--border-subtle);
-    background: var(--bg-dark);
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .marquee-btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    box-shadow: 0 0 12px var(--gold-glow);
-    transform: scale(1.05);
-  }
-
-  .marquee-label {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 1.6rem;
-    color: var(--text-primary);
-    text-align: center;
-  }
-
-  .marquee-label .yr {
-    color: var(--gold);
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-left: 8px;
-  }
-
-  .today-btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 9px 18px;
-    border-radius: var(--radius-pill);
-    border: 1px dashed var(--border-gold);
-    background: transparent;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .today-btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(212, 175, 55, 0.08);
-  }
-
-  /* ---------- GRILLE CALENDRIER ---------- */
-  .cal-wrap { margin-top: 24px; }
-
-  .weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 8px;
-    padding: 12px 0;
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: 1px solid var(--border-subtle);
-    margin-bottom: 10px;
-  }
-
-  .weekday {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--text-faint);
-  }
-
-  .cal-grid {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .cal-cell {
-    position: relative;
-    min-height: 118px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    cursor: default;
-    transition: var(--transition);
-    min-width: 0;
-  }
-
-  .cal-cell.outside {
-    background: rgba(12, 10, 15, 0.35);
-    border-color: rgba(255, 255, 255, 0.02);
-  }
-
-  .cal-cell.outside .cal-cell__num {
-    color: var(--text-faint);
-    opacity: 0.35;
-  }
-
-  .cal-cell.has-events { cursor: pointer; }
-  .cal-cell.has-events:hover {
-    border-color: rgba(255, 255, 255, 0.22);
-    background: var(--bg-card-raised);
-  }
-
-  .cal-cell.is-today {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 1px var(--gold), 0 0 18px var(--gold-glow);
-  }
-
-  .cal-cell.is-week {
-    border-color: var(--red-dim);
-  }
-
-  .cal-cell__num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-faint);
-    align-self: flex-end;
-    line-height: 1;
-    margin-bottom: 2px;
-  }
-
-  .cal-cell.is-today .cal-cell__num {
-    color: var(--gold);
-    font-weight: 700;
-  }
-
-  .cal-cell__events {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    min-width: 0;
-  }
-
-  .ev-chip {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.35;
-    padding: 3px 6px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0;
-  }
-
-  .ev-chip .txt {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    min-width: 0;
-  }
-
-  .ev-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .ev-more {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9.5px;
-    color: var(--text-faint);
-    padding: 2px 4px;
-  }
-
-  .cat-films .ev-dot, .dot-films { background: var(--cat-films); }
-  .cat-series .ev-dot, .dot-series { background: var(--cat-series); }
-  .cat-jeux .ev-dot, .dot-jeux { background: var(--cat-jeux); }
-  .cat-animes .ev-dot, .dot-animes { background: var(--cat-animes); }
-  .cat-evenements .ev-dot, .dot-evenements { background: var(--cat-evenements); }
-  .cat-autre .ev-dot, .dot-autre { background: var(--cat-autre); }
-  .cat-music .ev-dot, .dot-music { background: var(--cat-music); }
-
-  .cat-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.03em;
-    padding: 3px 9px;
-    border-radius: var(--radius-pill);
-    background: rgba(255, 255, 255, 0.06);
-  }
-
-  .cat-tag.cat-films { background: rgba(91,138,201,0.18); color: var(--cat-films); }
-  .cat-tag.cat-series { background: rgba(79,179,173,0.18); color: var(--cat-series); }
-  .cat-tag.cat-jeux { background: rgba(127,174,90,0.18); color: var(--cat-jeux); }
-  .cat-tag.cat-animes { background: rgba(224,162,79,0.18); color: var(--cat-animes); }
-  .cat-tag.cat-evenements { background: rgba(212,99,138,0.18); color: var(--cat-evenements); }
-  .cat-tag.cat-autre { background: rgba(144,137,163,0.18); color: var(--cat-autre); }
-  .cat-tag.cat-music { background: rgba(181,122,209,0.18); color: var(--cat-music); }
-  .cat-tag .dot { width: 6px; height: 6px; border-radius: 50%; }
-
-  /* ---------- SECTIONS FLOUES ---------- */
-  .fuzzy-sections {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 36px;
-  }
-
-  .fuzzy-block h3 {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    margin: 0 0 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .fuzzy-block h3 .count {
-    font-family: 'JetBrains Mono', monospace;
-    font-style: normal;
-    font-size: 10px;
-    color: var(--text-faint);
-  }
-
-  .fuzzy-row { display: flex; flex-wrap: wrap; gap: 10px; }
-
-  .fuzzy-pill {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--bg-card);
-    border: 1px dashed var(--border-subtle);
-    border-radius: var(--radius-pill);
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: var(--transition);
-  }
-
-  .fuzzy-pill:hover {
-    border-color: var(--gold);
-    background: var(--bg-card-raised);
-    transform: translateY(-1px);
-  }
-
-  .fuzzy-pill span.title { font-size: 12.5px; }
-
-  details.fuzzy-collapse summary {
-    cursor: pointer;
-    list-style: none;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: var(--text-faint);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  details.fuzzy-collapse summary::-webkit-details-marker { display: none; }
-  details.fuzzy-collapse summary::after {
-    content: "▸";
-    margin-left: auto;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    transition: transform var(--transition);
-  }
-
-  details.fuzzy-collapse[open] summary::after { transform: rotate(90deg); }
-  details.fuzzy-collapse .fuzzy-row { margin-top: 14px; }
-
-  /* ---------- AGENDA (MODE RECHERCHE) ---------- */
-  .agenda {
-    margin-top: 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .agenda-group h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--gold);
-    margin: 0 0 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-
-  .agenda-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-  }
-
-  .agenda-card {
-    display: flex;
-    gap: 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    padding: 16px;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: var(--shadow-subtle);
-  }
-
-  .agenda-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--border-gold);
-    background: var(--bg-card-raised);
-    box-shadow: var(--shadow-elevated);
-  }
-
-  .agenda-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-faint);
-    margin-bottom: 4px;
-  }
-
-  .agenda-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin: 2px 0 10px;
-    line-height: 1.35;
-  }
-
-  .agenda-tags {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .agenda-plat {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: var(--text-muted);
-    background: var(--bg-dark);
-    padding: 2px 8px;
-    border-radius: var(--radius-pill);
-    border: 1px solid var(--border-subtle);
-  }
-
-  /* ---------- MODALE DÉTAILS D'UN ITEM ---------- */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(5, 4, 7, 0.85);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9998;
-    padding: 20px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-  }
-
-  .modal-overlay.open { opacity: 1; pointer-events: auto; }
-
-  .modal-box {
-    width: 100%;
-    max-width: 560px;
-    max-height: 85vh;
-    overflow-y: auto;
-    background: var(--bg-card-raised);
-    border: 1px solid var(--border-medium);
-    border-radius: var(--radius-lg);
-    padding: 28px;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.7);
-  }
-
-  .modal-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
-  .modal-head h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    margin: 0;
-  }
-
-  .modal-close {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid var(--border-subtle);
-    background: var(--bg-dark);
-    color: var(--text-muted);
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-  }
-
-  .modal-close:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    transform: rotate(90deg);
-  }
-
-  .modal-item {
-    display: flex;
-    gap: 18px;
-    padding: 18px 0;
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .modal-item:first-of-type { border-top: none; }
-
-  .modal-poster {
-    flex: 0 0 92px;
-    height: 132px;
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border-subtle);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-  }
-
-  .modal-poster .ph {
-    font-size: 10px;
-    color: var(--text-faint);
-    font-family: 'JetBrains Mono', monospace;
-    text-align: center;
-    padding: 4px;
-  }
-
-  .modal-body {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .modal-title {
-    color: white;
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.15rem;
-    margin: 0;
-    line-height: 1.25;
-  }
-
-  .modal-meta-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .modal-score {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--gold);
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 2px 7px;
-    border-radius: var(--radius-pill);
-  }
-
-  .modal-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    color: var(--gold);
-    margin-top: 2px;
-  }
-
-  .modal-actions {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
-
-  .modal-btn-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--cat-films);
-    text-decoration: none;
-    border: 1px solid rgba(91,138,201,0.4);
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .modal-btn-link:hover {
-    background: rgba(91,138,201,0.15);
-    border-color: var(--cat-films);
-  }
-
-  .btn-gcal {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--gold);
-    border: 1px solid var(--border-gold);
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: rgba(212, 175, 55, 0.05);
-  }
-
-  .btn-gcal:hover {
-    background: var(--gold);
-    color: var(--bg-dark);
-    font-weight: 600;
-  }
-
-  /* ---------- LOADER & ÉTATS DE CHARGEMENT ---------- */
-  #loadingOverlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(9, 8, 11, 0.9);
-    backdrop-filter: blur(12px);
-    z-index: 99999;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
-  }
-
-  #loadingOverlay.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .loading-box {
-    width: 330px;
-    padding: 40px 32px;
-    border-radius: var(--radius-lg);
-    background: var(--bg-card-raised);
-    border: 1px solid var(--border-medium);
-    text-align: center;
-    box-shadow: var(--shadow-elevated);
-  }
-
-  .loading-box h2 {
-    margin: 20px 0 8px;
-    font-family: 'Fraunces', serif;
-    font-size: 1.65rem;
-    color: var(--text-primary);
-  }
-
-  .loading-box p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 0.92rem;
-  }
-
-  .spinner {
-    width: 42px;
-    height: 42px;
-    margin: 0 auto;
-    border: 3px solid var(--border-subtle);
-    border-top-color: var(--gold);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-
-  .spinner.small {
-    width: 18px;
-    height: 18px;
-    border-width: 2px;
-  }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .state {
-    padding: 70px 24px;
-    text-align: center;
-    color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-  }
-
-  .state .big {
-    font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    font-style: italic;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; }
-  }
-
-  @media (max-width: 720px) {
-    .cal-cell { min-height: 70px; padding: 4px; }
-    .ev-chip span.txt { display: none; }
-    .ev-chip { justify-content: center; padding: 4px; }
-    .cal-cell__events { flex-direction: row; flex-wrap: wrap; gap: 3px; }
-    .weekday { font-size: 9px; }
-    .marquee-label { font-size: 1.25rem; }
-    .week-card { flex: 0 0 170px; }
-  }
+:root{
+  --bg-dark:#09080b; --bg-card:#131117; --bg-card-raised:#1b1822; --bg-input:#15131a;
+  --border-subtle:rgba(255,255,255,.07); --border-medium:rgba(255,255,255,.14); --border-gold:rgba(212,175,55,.35);
+  --text-primary:#f6f3ed; --text-muted:#a8a096; --text-faint:#8a837b; /* contraste relevé (AA) */
+  --gold:#d4af37; --gold-light:#f3e3a1; --gold-glow:rgba(212,175,55,.18);
+  --red:#e53935; --red-dim:#7a1c1d; --red-glow:rgba(229,57,53,.2);
+  --cat-films:#5b8ac9; --cat-series:#4fb3ad; --cat-jeux:#7fae5a; --cat-animes:#e0a24f;
+  --cat-evenements:#d4638a; --cat-autre:#9089a3; --cat-music:#b57ad1;
+  --radius-sm:6px; --radius-md:12px; --radius-lg:20px; --radius-pill:9999px;
+  --shadow-subtle:0 4px 20px rgba(0,0,0,.35); --shadow-elevated:0 12px 35px rgba(0,0,0,.55);
+  --transition:all .22s cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body.lp-page{margin:0;color:var(--text-primary);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.5;
+  background:radial-gradient(ellipse 1100px 700px at 20% -10%,rgba(229,57,53,.11),transparent 60%),radial-gradient(ellipse 900px 600px at 90% 0,rgba(212,175,55,.08),transparent 55%),var(--bg-dark)}
+::selection{background:var(--gold);color:#000}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:12px;top:-60px;background:var(--gold);color:#000;padding:8px 14px;border-radius:var(--radius-sm);z-index:100000;font-weight:600}
+.skip-link:focus{top:12px}
+
+/* En-tête */
+.list-page-header{max-width:900px;margin:0 auto;padding:48px 24px 16px;text-align:center;border-bottom:none}
+.list-page-header__breadcrumb{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin:0 0 16px;display:flex;align-items:center;justify-content:center;gap:8px}
+.list-page-header__breadcrumb a:hover{color:var(--gold);text-decoration:none}
+.list-page-header__breadcrumb .is-current{color:var(--gold);font-weight:600}
+.list-page-header__title{font-family:'Fraunces',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;letter-spacing:-.025em;margin:0 0 16px;color:var(--text-primary);line-height:1.1;text-transform:none;text-shadow:none}
+.list-page-header__description2{color:var(--text-muted);font-size:.98rem;max-width:68ch;line-height:1.65;margin:0 auto}
+.add-proposal-banner{margin:24px auto 0;padding:16px 20px;max-width:640px;background:linear-gradient(180deg,var(--bg-card-raised),var(--bg-card));border:1px solid var(--border-gold);border-radius:var(--radius-md);box-shadow:0 0 20px var(--gold-glow);display:flex;flex-direction:column;align-items:center;gap:12px}
+.add-proposal-banner__text{font-size:.92rem;margin:0}
+.add-proposal-banner__btn{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:600;color:var(--bg-dark);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:10px 22px;border-radius:var(--radius-pill);box-shadow:0 4px 15px var(--gold-glow);transition:var(--transition)}
+.add-proposal-banner__btn:hover{transform:translateY(-2px);background:#fff;box-shadow:0 6px 20px rgba(212,175,55,.4)}
+
+main{max-width:1200px;margin:0 auto;padding:0 24px 100px}
+
+/* Recherche & filtres */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:32px}
+.search-wrap{position:relative;flex:1 1 320px;max-width:420px}
+.search-input{width:100%;font-family:'Inter',sans-serif;font-size:14px;padding:12px 40px 12px 42px;border-radius:var(--radius-pill);border:1px solid var(--border-subtle);background:var(--bg-input);color:var(--text-primary);outline:none;transition:var(--transition);box-shadow:inset 0 2px 4px rgba(0,0,0,.3)}
+.search-input::placeholder{color:var(--text-faint)}
+.search-input:focus{border-color:var(--gold);background:var(--bg-card-raised);box-shadow:0 0 0 4px var(--gold-glow)}
+.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none;opacity:.5}
+.search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;color:var(--text-muted);cursor:pointer;display:none}
+.search-clear.visible{display:block}
+.search-clear:hover{color:var(--gold)}
+.stat-count{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-muted);white-space:nowrap;background:var(--bg-card-raised);padding:7px 14px;border-radius:var(--radius-pill);border:1px solid var(--border-subtle)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.02em;padding:8px 16px;border:1px solid var(--border-subtle);border-radius:var(--radius-pill);background:var(--bg-card);color:var(--text-muted);cursor:pointer;transition:var(--transition);white-space:nowrap;user-select:none}
+.chip:hover{border-color:var(--border-medium);color:var(--text-primary);background:var(--bg-card-raised);transform:translateY(-1px)}
+.chip.active{background:var(--text-primary);color:var(--bg-dark);border-color:var(--text-primary);font-weight:600;box-shadow:0 4px 15px rgba(255,255,255,.15)}
+
+/* Cette semaine */
+.week-strip{margin-top:40px}
+.week-strip__head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.week-strip__head h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;color:var(--red);margin:0}
+.week-strip__head .line{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--red-glow) 0 6px,transparent 6px 12px)}
+.week-strip__row{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin;scrollbar-color:var(--border-medium) transparent;scroll-snap-type:x proximity}
+.week-card{flex:0 0 205px;scroll-snap-align:start;text-align:left;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;cursor:pointer;transition:var(--transition);box-shadow:var(--shadow-subtle)}
+.week-card:hover{transform:translateY(-4px);border-color:var(--border-gold);background:var(--bg-card-raised);box-shadow:var(--shadow-elevated)}
+.week-card__ech{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.week-card__ech.today{color:var(--red)}
+.week-card__title{font-family:'Fraunces',serif;font-weight:600;font-size:.98rem;margin:4px 0 10px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Navigation du mois */
+.marquee{margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 24px;background:linear-gradient(180deg,var(--bg-card-raised),var(--bg-card));border:1px solid var(--border-subtle);border-radius:var(--radius-md);box-shadow:var(--shadow-subtle)}
+.marquee-btn{font-family:'JetBrains Mono',monospace;font-size:18px;width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid var(--border-subtle);background:var(--bg-dark);color:var(--text-muted);cursor:pointer;transition:var(--transition);display:flex;align-items:center;justify-content:center}
+.marquee-btn:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px var(--gold-glow);transform:scale(1.05)}
+.marquee-label{font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:1.6rem;text-align:center;flex:1}
+.marquee-label .yr{color:var(--gold);font-style:normal;font-weight:600;font-size:1.05rem;margin-left:8px}
+.today-btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:9px 18px;border-radius:var(--radius-pill);border:1px dashed var(--border-gold);color:var(--text-muted);cursor:pointer;transition:var(--transition);white-space:nowrap}
+.today-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08)}
+
+/* Grille */
+.cal-wrap{margin-top:24px}
+.weekdays,.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.weekdays{padding:12px 0;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);margin-bottom:10px}
+.weekday{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-align:center;color:var(--text-faint)}
+.cal-cell{position:relative;min-height:118px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:8px;display:flex;flex-direction:column;gap:4px;transition:var(--transition);min-width:0;text-align:left}
+.cal-cell.outside{background:rgba(12,10,15,.35);border-color:rgba(255,255,255,.02)}
+.cal-cell.outside .cal-cell__num{opacity:.35}
+.cal-cell.has-events{cursor:pointer}
+.cal-cell.has-events:hover{border-color:rgba(255,255,255,.22);background:var(--bg-card-raised)}
+.cal-cell.is-today{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 0 18px var(--gold-glow)}
+.cal-cell.is-week{border-color:var(--red-dim)}
+.cal-cell__num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);align-self:flex-end;line-height:1;margin-bottom:2px}
+.cal-cell.is-today .cal-cell__num{color:var(--gold);font-weight:700}
+.cal-cell__events{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ev-chip{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;line-height:1.35;padding:3px 6px;border-radius:4px;background:rgba(255,255,255,.05);min-width:0;overflow:hidden}
+.ev-chip .txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ev-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ev-more{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--text-muted);padding:2px 4px}
+.cat-films .ev-dot,.dot-films{background:var(--cat-films)} .cat-series .ev-dot,.dot-series{background:var(--cat-series)}
+.cat-jeux .ev-dot,.dot-jeux{background:var(--cat-jeux)} .cat-animes .ev-dot,.dot-animes{background:var(--cat-animes)}
+.cat-evenements .ev-dot,.dot-evenements{background:var(--cat-evenements)} .cat-autre .ev-dot,.dot-autre{background:var(--cat-autre)}
+.cat-music .ev-dot,.dot-music{background:var(--cat-music)}
+.cat-tag{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.03em;padding:3px 9px;border-radius:var(--radius-pill);background:rgba(255,255,255,.06)}
+.cat-tag.cat-films{background:rgba(91,138,201,.18);color:var(--cat-films)} .cat-tag.cat-series{background:rgba(79,179,173,.18);color:var(--cat-series)}
+.cat-tag.cat-jeux{background:rgba(127,174,90,.18);color:var(--cat-jeux)} .cat-tag.cat-animes{background:rgba(224,162,79,.18);color:var(--cat-animes)}
+.cat-tag.cat-evenements{background:rgba(212,99,138,.18);color:var(--cat-evenements)} .cat-tag.cat-autre{background:rgba(144,137,163,.18);color:var(--cat-autre)}
+.cat-tag.cat-music{background:rgba(181,122,209,.18);color:var(--cat-music)}
+.cat-tag .dot{width:6px;height:6px;border-radius:50%}
+.badge-rythme{background:#4f46e5;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-left:6px;vertical-align:middle}
+.badge-rythme.q{background:#0ea5e9}
+
+/* Dates floues */
+.fuzzy-sections{display:flex;flex-direction:column;gap:24px;margin-top:36px}
+.fuzzy-block h3{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.05rem;color:var(--text-muted);margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.fuzzy-block h3 .count{font-family:'JetBrains Mono',monospace;font-style:normal;font-size:10px;color:var(--text-faint)}
+.fuzzy-row{display:flex;flex-wrap:wrap;gap:10px}
+.fuzzy-pill{display:flex;align-items:center;gap:8px;background:var(--bg-card);border:1px dashed var(--border-medium);border-radius:var(--radius-pill);padding:8px 16px;cursor:pointer;transition:var(--transition);font-size:12.5px}
+.fuzzy-pill:hover{border-color:var(--gold);background:var(--bg-card-raised);transform:translateY(-1px)}
+.fuzzy-pill .dot{width:6px;height:6px;border-radius:50%}
+details.fuzzy-collapse summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.05rem;color:var(--text-faint);display:flex;align-items:center;gap:8px}
+details.fuzzy-collapse summary::-webkit-details-marker{display:none}
+details.fuzzy-collapse summary::after{content:"▸";margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:12px;transition:transform .22s}
+details.fuzzy-collapse[open] summary::after{transform:rotate(90deg)}
+details.fuzzy-collapse .fuzzy-row{margin-top:14px}
+
+/* Agenda (recherche) */
+.agenda{margin-top:36px;display:flex;flex-direction:column;gap:30px}
+.agenda-group h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--gold);margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border-subtle)}
+.agenda-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.agenda-card{display:flex;text-align:left;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:16px;cursor:pointer;transition:var(--transition);box-shadow:var(--shadow-subtle)}
+.agenda-card:hover{transform:translateY(-3px);border-color:var(--border-gold);background:var(--bg-card-raised);box-shadow:var(--shadow-elevated)}
+.agenda-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);margin-bottom:4px}
+.agenda-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;margin:2px 0 10px;line-height:1.35}
+.agenda-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.agenda-plat{font-size:11px;color:var(--text-muted);background:var(--bg-dark);padding:2px 8px;border-radius:var(--radius-pill);border:1px solid var(--border-subtle)}
+
+/* Modale */
+.modal-overlay{position:fixed;inset:0;background:rgba(5,4,7,.85);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:9998;padding:20px;opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s}
+.modal-overlay.open{opacity:1;visibility:visible}
+.modal-box{width:100%;max-width:560px;max-height:85vh;overflow-y:auto;background:var(--bg-card-raised);border:1px solid var(--border-medium);border-radius:var(--radius-lg);padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.7);overscroll-behavior:contain}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.modal-head h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;margin:0}
+.modal-close{width:34px;height:34px;flex-shrink:0;border-radius:50%;border:1px solid var(--border-subtle);background:var(--bg-dark);color:var(--text-muted);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+.modal-close:hover{border-color:var(--gold);color:var(--gold);transform:rotate(90deg)}
+.modal-item{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--border-subtle)}
+.modal-item:first-child{border-top:none;padding-top:0}
+.modal-poster{flex:0 0 92px;height:132px;border-radius:var(--radius-sm);background:var(--bg-card) center/cover no-repeat;display:flex;align-items:center;justify-content:center;border:1px solid var(--border-subtle);box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.modal-poster .ph{font-size:10px;color:var(--text-faint);font-family:'JetBrains Mono',monospace;text-align:center;padding:4px}
+.modal-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.modal-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;margin:0;line-height:1.25}
+.modal-meta-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.modal-score{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--gold);background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);padding:2px 7px;border-radius:var(--radius-pill)}
+.modal-date{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--gold);margin-top:2px}
+.modal-date.plat{color:var(--text-primary)}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.modal-btn-link,.btn-gcal{font-family:'JetBrains Mono',monospace;font-size:11px;padding:6px 12px;border-radius:var(--radius-sm);transition:var(--transition);display:inline-flex;align-items:center;gap:5px}
+.modal-btn-link{color:var(--cat-films);border:1px solid rgba(91,138,201,.4)}
+.modal-btn-link:hover{background:rgba(91,138,201,.15);border-color:var(--cat-films)}
+.btn-gcal{color:var(--gold);border:1px solid var(--border-gold);background:rgba(212,175,55,.05)}
+.btn-gcal:hover{background:var(--gold);color:var(--bg-dark);font-weight:600}
+
+/* Chargement & états */
+#loadingOverlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;background:rgba(9,8,11,.9);backdrop-filter:blur(12px);z-index:99999;transition:opacity .35s,visibility .35s}
+#loadingOverlay.hidden{opacity:0;visibility:hidden}
+.loading-box{width:330px;max-width:90vw;padding:40px 32px;border-radius:var(--radius-lg);background:var(--bg-card-raised);border:1px solid var(--border-medium);text-align:center;box-shadow:var(--shadow-elevated)}
+.loading-box h2{margin:20px 0 8px;font-family:'Fraunces',serif;font-size:1.65rem}
+.loading-box p{margin:0;color:var(--text-muted);font-size:.92rem}
+.spinner{width:42px;height:42px;margin:0 auto;border:3px solid var(--border-subtle);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
+.spinner.small{width:18px;height:18px;border-width:2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.state{padding:70px 24px;text-align:center;color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-size:13px}
+.state .big{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--text-primary);margin-bottom:12px;font-style:italic}
+.refresh-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-align:center;margin-top:28px}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:720px){
+  main{padding:0 14px 80px}
+  .marquee{padding:12px;flex-wrap:wrap}
+  .marquee-label{order:-1;flex:1 0 100%;font-size:1.3rem}
+  .today-btn{margin:0 auto}
+  .cal-cell{min-height:64px;padding:4px}
+  .ev-chip{justify-content:center;padding:4px}
+  .ev-chip .txt{display:none}
+  .cal-cell__events{flex-direction:row;flex-wrap:wrap;gap:3px}
+  .weekday{font-size:9px;letter-spacing:.05em}
+  .week-card{flex:0 0 170px}
+  .modal-box{padding:20px}
+  .modal-poster{flex-basis:76px;height:110px}
+}
 </style>
 </head>
 <body class="lp-page">
+<a class="skip-link" href="#main">Aller au calendrier</a>
 
-    <div id="loadingOverlay">
-        <div class="loading-box">
-            <div class="spinner"></div>
-            <h2>Chargement des sorties</h2>
-            <p>Récupération du calendrier éditorial...</p>
-        </div>
-    </div>
-
-<div class="list-page-header">
-    <p class="list-page-header__breadcrumb">
-        <a href="../index.html">Accueil</a> /
-        <span class="is-current">Calendrier</span>
-    </p>
-    <h1 class="list-page-header__title">Calendrier des sorties</h1>
-    <p class="list-page-header__description2">
-        Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, événements, animés et autres suivis par L'Œil Critique. Le calendrier est mis à jour en continu.
-    </p>
-
-    <!-- BANDEAU DE PROPOSITION DE SORTIE -->
-    <div class="add-proposal-banner">
-        <p class="add-proposal-banner__text">💡 Une sortie manque à l'appel ? Proposez-la pour qu'elle apparaisse dans le calendrier !</p>
-        <a href="https://script.google.com/macros/s/AKfycbxxxcXZir_Dsl0WU62HRG-83wg5emdEm4NLdwvBUllGCrAP_Remysl_87B-wH8pZpyeIg/exec?vue=ajouter" target="_blank" rel="noopener noreferrer" class="add-proposal-banner__btn">
-            ➕ Proposer une sortie
-        </a>
-    </div>
+<div id="loadingOverlay" role="status" aria-live="polite">
+  <div class="loading-box"><div class="spinner"></div><h2>Chargement des sorties</h2><p>Récupération du calendrier éditorial…</p></div>
 </div>
 
-<main>
+<div class="list-page-header">
+  <p class="list-page-header__breadcrumb"><a href="../index.html">Accueil</a> / <span class="is-current">Calendrier</span></p>
+  <h1 class="list-page-header__title">Calendrier des sorties</h1>
+  <p class="list-page-header__description2">Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, événements, animés et autres suivis par L'Œil Critique. Le calendrier est mis à jour en continu.</p>
+  <div class="add-proposal-banner">
+    <p class="add-proposal-banner__text">💡 Une sortie manque à l'appel ? Proposez-la pour qu'elle apparaisse dans le calendrier !</p>
+    <a id="proposeLink" class="add-proposal-banner__btn" target="_blank" rel="noopener noreferrer">➕ Proposer une sortie</a>
+  </div>
+</div>
 
+<main id="main">
   <div class="toolbar">
-    <div class="search-wrap">
-      <span class="search-icon">🔎</span>
-      <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un titre…">
+    <div class="search-wrap" role="search">
+      <label for="searchInput" class="sr-only">Rechercher un titre</label>
+      <span class="search-icon" aria-hidden="true">🔎</span>
+      <input type="search" id="searchInput" class="search-input" placeholder="Rechercher un titre…" autocomplete="off">
+      <button type="button" class="search-clear" id="searchClear" aria-label="Effacer la recherche">✕</button>
     </div>
-    <span class="stat-count" id="statCount"></span>
+    <span class="stat-count" id="statCount" aria-live="polite"></span>
   </div>
 
-  <div class="controls" id="catFilters"></div>
+  <div class="controls" id="catFilters" role="group" aria-label="Filtrer par catégorie"></div>
 
-  <section class="week-strip" id="weekStrip" style="display:none;">
-    <div class="week-strip__head">
-      <h2>🔔 Cette semaine</h2>
-      <div class="line"></div>
-    </div>
+  <section class="week-strip" id="weekStrip" style="display:none" aria-labelledby="weekTitle">
+    <div class="week-strip__head"><h2 id="weekTitle">🔔 Cette semaine</h2><div class="line"></div></div>
     <div class="week-strip__row" id="weekStripRow"></div>
   </section>
 
   <div id="calendarView">
     <div class="marquee">
       <button class="marquee-btn" id="prevMonth" aria-label="Mois précédent">‹</button>
-      <div class="marquee-label" id="monthLabel"></div>
+      <div class="marquee-label" id="monthLabel" aria-live="polite"></div>
       <button class="marquee-btn" id="nextMonth" aria-label="Mois suivant">›</button>
       <button class="today-btn" id="todayBtn">Aujourd'hui</button>
     </div>
-
     <div class="cal-wrap">
-      <div class="weekdays">
-        <div class="weekday">Lun</div><div class="weekday">Mar</div><div class="weekday">Mer</div>
-        <div class="weekday">Jeu</div><div class="weekday">Ven</div><div class="weekday">Sam</div><div class="weekday">Dim</div>
+      <div class="weekdays" aria-hidden="true">
+        <div class="weekday">Lun</div><div class="weekday">Mar</div><div class="weekday">Mer</div><div class="weekday">Jeu</div><div class="weekday">Ven</div><div class="weekday">Sam</div><div class="weekday">Dim</div>
       </div>
       <div class="cal-grid" id="calGrid"></div>
     </div>
-
     <div class="fuzzy-sections" id="fuzzySections"></div>
   </div>
 
-  <div id="agendaView" class="agenda" style="display:none;"></div>
-
+  <div id="agendaView" class="agenda" style="display:none"></div>
+  <p class="refresh-note" id="refreshNote"></p>
 </main>
 
 <div class="modal-overlay" id="modalOverlay">
-  <div class="modal-box">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-head">
       <h3 id="modalTitle"></h3>
-      <button class="modal-close" id="modalClose">✕</button>
+      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
     </div>
     <div id="modalBody"></div>
   </div>
 </div>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbxxxcXZir_Dsl0WU62HRG-83wg5emdEm4NLdwvBUllGCrAP_Remysl_87B-wH8pZpyeIg/exec?format=json";
+"use strict";
+/* ========================= CONFIGURATION ========================= */
+const GAS_URL = "https://script.google.com/macros/s/AKfycbxxxcXZir_Dsl0WU62HRG-83wg5emdEm4NLdwvBUllGCrAP_Remysl_87B-wH8pZpyeIg/exec";
+const API_URL = GAS_URL + "?format=json";
+document.getElementById("proposeLink").href = GAS_URL + "?vue=ajouter";
 
+/* Clés d'affiches : elles sont visibles par tout visiteur. Reste sur des clés gratuites à quota limité
+   (ou passe par un petit proxy serveur si tu veux les masquer). */
 const OMDB_API_KEY = "23538300";
-const OMDB_BASE_URL = "https://www.omdbapi.com/";
 const TMDB_API_KEY = "2cf75db44f938aeaf1e7d873a38fdcaa";
 const TMDB_SEARCH_URL = "https://api.themoviedb.org/3/search/multi";
+const OMDB_URL = "https://www.omdbapi.com/";
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
-const POSTER_CATEGORIES = new Set(["🎬 Films", "📺 Séries", "🎬 Films/Séries", "🍿 Animés"]);
+const POSTER_CATEGORIES = new Set(["🎬 Films","📺 Séries","🎬 Films/Séries","🍿 Animés"]);
 
-const posterCache = new Map();
-
-async function fetchPosterFromTMDB(title, annee){
-  if(!TMDB_API_KEY) return null;
-  try{
-    const params = new URLSearchParams({ api_key: TMDB_API_KEY, query: title, language: "fr-FR", include_adult: "false" });
-    const res = await fetch(`${TMDB_SEARCH_URL}?${params.toString()}`);
-    if(!res.ok) return null;
-    const data = await res.json();
-    const results = Array.isArray(data.results) ? data.results : [];
-    const withPoster = results.filter(r => (r.media_type === "movie" || r.media_type === "tv") && r.poster_path);
-    let hit = null;
-    if(annee){
-      hit = withPoster.find(r => {
-        const date = r.release_date || r.first_air_date || "";
-        return date.startsWith(String(annee));
-      });
-    }
-    if(!hit) hit = withPoster[0];
-    if(hit) {
-      const score = hit.vote_average ? Math.round(hit.vote_average * 10) / 10 : null;
-      return { poster: `${TMDB_IMAGE_BASE}${hit.poster_path}`, score };
-    }
-    return null;
-  }catch(err){ console.warn("TMDB : affiche introuvable pour", title, err); return null; }
-}
-
-async function fetchPosterFromOMDb(title, annee){
-  if(!OMDB_API_KEY) return null;
-  try{
-    const params = new URLSearchParams({ apikey: OMDB_API_KEY, t: title });
-    if(annee) params.set("y", annee);
-    const res = await fetch(`${OMDB_BASE_URL}?${params.toString()}`);
-    if(!res.ok) return null;
-    const data = await res.json();
-    if(data.Response === "True" && data.Poster && data.Poster !== "N/A") {
-      const score = data.imdbRating && data.imdbRating !== "N/A" ? parseFloat(data.imdbRating) : null;
-      return { poster: data.Poster, score };
-    }
-    return null;
-  }catch(err){ return null; }
-}
-
-async function fetchPoster(title, annee){
-  const fromTMDB = await fetchPosterFromTMDB(title, annee);
-  if(fromTMDB) return fromTMDB;
-  return await fetchPosterFromOMDb(title, annee);
-}
+const CACHE_KEY = "calendrier_sorties_cache_v3";
+const CACHE_TTL_MS = 30 * 60 * 1000;
+const JSONP_TIMEOUT_MS = 12000;
 
 const MOIS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
-function normStr(str) {
-  return (str || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+const CAT_ORDER = ["🎬 Films","📺 Séries","🎮 Jeux","🍿 Animés","🎪 Événements","🎵 Music","📦 Autre"];
+const CAT_CLASS = {"🎬 Films":"cat-films","📺 Séries":"cat-series","🎮 Jeux":"cat-jeux","🍿 Animés":"cat-animes","🎪 Événements":"cat-evenements","📦 Autre":"cat-autre","🎵 Music":"cat-music","🎬 Films/Séries":"cat-films"};
+const SAISON_MAP = {hiver:{name:"Hiver",moisDebut:0},printemps:{name:"Printemps",moisDebut:3},ete:{name:"Été",moisDebut:6},automne:{name:"Automne",moisDebut:9}};
+
+/* ========================= UTILITAIRES ========================= */
+const $ = id => document.getElementById(id);
+const normStr = s => (s||"").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim();
+const MOIS_NORM = MOIS.map(normStr);
+const WEEKDAY_INDEX = d => (d.getDay()+6)%7;
+const pad = n => String(n).padStart(2,"0");
+
+function escapeHTML(s){ return (s ?? "").toString().replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
+function safeUrl(u){ return /^https?:\/\/[^\s"'<>]+$/i.test((u||"").toString().trim()) ? u.trim() : ""; }
+function catClass(c){ return CAT_CLASS[c] || "cat-autre"; }
+function debounce(fn, ms){ let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
+
+/** "Dune - Ep. 3 [Hebdo]" -> { clean:"Dune - Ep. 3", rythme:"Hebdo" } */
+function splitTitre(raw){
+  const m = (raw||"").match(/\[(Hebdo|Quotidien)[^\]]*\]/i);
+  return { clean: (raw||"").replace(/\s*\[[^\]]*\]\s*/g," ").replace(/\s+/g," ").trim(), rythme: m ? m[1].toLowerCase() : "" };
 }
-const MOIS_NORM = MOIS.map(m => normStr(m));
+/** Titre exploitable pour une recherche d'affiche (sans épisode, rythme ni saison). */
+function titreRecherche(raw){
+  return splitTitre(raw).clean
+    .replace(/\s*[-–—:]\s*(ep|ép|episode|épisode|jour|partie|part|pt)\.?\s*\d+.*$/i,"")
+    .replace(/\s+(ep|ép|episode|épisode)\.?\s*\d+.*$/i,"")
+    .replace(/\s*\((finale|final)\)\s*$/i,"").trim();
+}
+function titreHTML(raw){
+  const {clean, rythme} = splitTitre(raw);
+  const badge = rythme ? `<span class="badge-rythme ${rythme==="quotidien"?"q":""}">${rythme==="quotidien"?"Quotidien":"Hebdo"}</span>` : "";
+  return escapeHTML(clean) + badge;
+}
 
-const SAISON_MAP = {
-  "hiver": { name: "Hiver", moisDebut: 0 },
-  "printemps": { name: "Printemps", moisDebut: 3 },
-  "ete": { name: "Été", moisDebut: 6 },
-  "automne": { name: "Automne", moisDebut: 9 }
-};
-
-const WEEKDAY_INDEX = d => (d.getDay() + 6) % 7;
-
-const CAT_CLASS = {
-  "🎬 Films":"cat-films", "📺 Séries":"cat-series", "🎮 Jeux":"cat-jeux",
-  "🍿 Animés":"cat-animes", "🎪 Événements":"cat-evenements", "📦 Autre":"cat-autre", "🎵 Music":"cat-music",
-  "🎬 Films/Séries":"cat-films"
-};
-
+/* ========================= ÉTAT ========================= */
 let ALL_ITEMS = [];
 let activeCat = "TOUS";
 let searchTerm = "";
-let today = new Date(); today.setHours(0,0,0,0);
+const today = new Date(); today.setHours(0,0,0,0);
 let viewYear = today.getFullYear();
 let viewMonth = today.getMonth();
+let lastFocus = null;
 
-function parseItemDate(dateStr) {
-  if (!dateStr) return { kind: "inconnue", sortKey: Infinity };
-  let s = dateStr.toString().trim();
+/* ========================= PARSING DES DATES ========================= */
+function parseItemDate(dateStr){
+  if(!dateStr) return {kind:"inconnue", sortKey:Infinity};
+  let s = dateStr.toString().trim().replace(/(\b\d{4}\b)\s+\1/g,"$1").trim();
+  if(s.startsWith("/")) s = s.slice(1).trim();
+  const mk = (y,m,d) => new Date(y,m,d,12).getTime();
 
-  // Nettoyage des doublons d'année (ex: "Automne 2026 2026")
-  s = s.replace(/(\b\d{4}\b)\s+\1/g, "$1").trim();
-
-  // Nettoyage si la date commence par un slash (ex: "/08/2026" -> "08/2026")
-  if (s.startsWith("/")) s = s.substring(1).trim();
-
-  // 1. Format JJ/MM/AAAA ou ?/MM/AAAA
-  let mFr = s.match(/^(\?|\d{1,2})[-/](\d{1,2})[-/](\d{2,4})$/);
-  if (mFr) {
-    let mois = parseInt(mFr[2], 10) - 1; // 08 devient 7 (Août)
-    let annee = parseInt(mFr[3], 10);
-    if (annee < 100) annee += 2000;
-    if (mois >= 0 && mois <= 11) {
-      if (mFr[1] === "?" || mFr[1] === "") {
-        return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28, 12).getTime() };
-      } else {
-        let jour = parseInt(mFr[1], 10);
-        if (jour >= 1 && jour <= 31) {
-          return { kind: "jour", jour, mois, annee, sortKey: new Date(annee, mois, jour, 12).getTime() };
-        }
-        return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28, 12).getTime() };
-      }
+  let m = s.match(/^(\?|\d{1,2})[-/](\d{1,2})[-/](\d{2,4})$/);
+  if(m){
+    const mois = +m[2]-1; let annee = +m[3]; if(annee<100) annee += 2000;
+    if(mois>=0 && mois<=11){
+      const jour = m[1]==="?" ? 0 : +m[1];
+      if(jour>=1 && jour<=31) return {kind:"jour", jour, mois, annee, sortKey:mk(annee,mois,jour)};
+      return {kind:"mois", mois, annee, sortKey:mk(annee,mois,28)};
     }
   }
-
-  // 2. Format MM/AAAA (ex: 08/2026)
-  let mMois = s.match(/^(\d{1,2})[-/](\d{2,4})$/);
-  if (mMois) {
-    let mois = parseInt(mMois[1], 10) - 1;
-    let annee = parseInt(mMois[2], 10);
-    if (annee < 100) annee += 2000;
-    if (mois >= 0 && mois <= 11) {
-      return { kind: "mois", mois, annee, sortKey: new Date(annee, mois, 28, 12).getTime() };
-    }
+  m = s.match(/^(\d{1,2})[-/](\d{2,4})$/);
+  if(m){
+    const mois = +m[1]-1; let annee = +m[2]; if(annee<100) annee += 2000;
+    if(mois>=0 && mois<=11) return {kind:"mois", mois, annee, sortKey:mk(annee,mois,28)};
   }
-
-  // 3. Format "Mois AAAA" ou "Saison AAAA"
-  let mTxt = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
-  if (mTxt) {
-    let wordNorm = normStr(mTxt[1]);
-    let annee = parseInt(mTxt[2], 10);
-
-    let idxMois = MOIS_NORM.indexOf(wordNorm);
-    if (idxMois !== -1) {
-      return { kind: "mois", mois: idxMois, annee, sortKey: new Date(annee, idxMois, 28, 12).getTime() };
-    }
-
-    if (SAISON_MAP[wordNorm]) {
-      let infoS = SAISON_MAP[wordNorm];
-      return { kind: "saison", saison: infoS.name, moisDebut: infoS.moisDebut, annee, sortKey: new Date(annee, infoS.moisDebut, 15, 12).getTime() };
-    }
+  m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
+  if(m){
+    const w = normStr(m[1]), annee = +m[2], idx = MOIS_NORM.indexOf(w);
+    if(idx !== -1) return {kind:"mois", mois:idx, annee, sortKey:mk(annee,idx,28)};
+    if(SAISON_MAP[w]) return {kind:"saison", saison:SAISON_MAP[w].name, moisDebut:SAISON_MAP[w].moisDebut, annee, sortKey:mk(annee,SAISON_MAP[w].moisDebut,15)};
   }
-
-  // 4. Format "AAAA" seul
-  let mAn = s.match(/^(\d{4})$/);
-  if (mAn) {
-    let annee = parseInt(mAn[1], 10);
-    return { kind: "annee", annee, sortKey: new Date(annee, 11, 31, 12).getTime() };
-  }
-
-  // 5. Fallback Date JS
-  let dParsed = new Date(s);
-  if (!isNaN(dParsed.getTime()) && dParsed.getFullYear() >= 2020 && dParsed.getFullYear() <= 2035) {
-    let jour = dParsed.getDate();
-    let mois = dParsed.getMonth();
-    let annee = dParsed.getFullYear();
-    return { kind: "jour", jour, mois, annee, sortKey: new Date(annee, mois, jour, 12).getTime() };
-  }
-
-  return { kind: "inconnue", sortKey: Infinity };
+  m = s.match(/^(\d{4})$/);
+  if(m) return {kind:"annee", annee:+m[1], sortKey:mk(+m[1],11,31)};
+  const d = new Date(s);
+  if(!isNaN(d) && d.getFullYear()>=2020 && d.getFullYear()<=2035)
+    return {kind:"jour", jour:d.getDate(), mois:d.getMonth(), annee:d.getFullYear(), sortKey:mk(d.getFullYear(),d.getMonth(),d.getDate())};
+  return {kind:"inconnue", sortKey:Infinity};
 }
 
 function hydraterItems(data){
-  ALL_ITEMS = data.map((it, i) => {
-    let cleanedDate = (it.date || "").toString().trim().replace(/(\b\d{4}\b)\s+\1/g, "$1").trim();
-    return {
-      ...it,
-      date: cleanedDate,
-      parsed: parseItemDate(cleanedDate),
-      _id: i
-    };
-  });
-
-  // Tri chronologique strict de toutes les cartes
-  ALL_ITEMS.sort((a, b) => a.parsed.sortKey - b.parsed.sortKey);
+  ALL_ITEMS = data.map((it,i) => {
+    const date = (it.date||"").toString().trim().replace(/(\b\d{4}\b)\s+\1/g,"$1").trim();
+    return {...it, titre:(it.titre||"").toString(), categorie:it.categorie||"📦 Autre", date, lien:safeUrl(it.lien), parsed:parseItemDate(date), _id:i};
+  }).sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
 }
+const byId = id => ALL_ITEMS.find(i => i._id === id);
 
-function daysUntil(sortKey){
-  const target = new Date(sortKey); target.setHours(0,0,0,0);
-  return Math.round((target - today) / 86400000);
-}
-
-function echeanceLabel(diff){
-  if(diff < 0) return null;
-  if(diff === 0) return { txt:"Aujourd'hui", today:true };
-  if(diff === 1) return { txt:"Demain", today:false };
-  return { txt:`Dans ${diff} j.`, today:false };
-}
-
-function escapeHTML(str){
-  const div = document.createElement("div");
-  div.textContent = str ?? "";
-  return div.innerHTML;
-}
-
-function catClass(cat){ return CAT_CLASS[cat] || "cat-autre"; }
+function daysUntil(ts){ const t = new Date(ts); t.setHours(0,0,0,0); return Math.round((t-today)/86400000); }
+function echeanceLabel(d){ if(d<0) return null; if(d===0) return {txt:"Aujourd'hui",today:true}; if(d===1) return {txt:"Demain",today:false}; return {txt:`Dans ${d} j.`,today:false}; }
 
 function matchesFilters(it){
   if(activeCat !== "TOUS" && it.categorie !== activeCat) return false;
-  if(searchTerm && !it.titre.toLowerCase().includes(searchTerm.trim().toLowerCase())) return false;
+  if(searchTerm && !normStr(it.titre).includes(normStr(searchTerm))) return false;
   return true;
 }
+const catTagHTML = c => `<span class="cat-tag ${catClass(c)}"><span class="dot dot-${catClass(c).slice(4)}"></span>${escapeHTML(c)}</span>`;
 
-function catTagHTML(cat){
-  return `<span class="cat-tag ${catClass(cat)}"><span class="dot"></span>${escapeHTML(cat)}</span>`;
-}
-
-// 📅 Helper pour générer un lien d'ajout à Google Calendar
-function buildGoogleCalendarUrl(it) {
+/* ========================= GOOGLE CALENDAR ========================= */
+function buildGoogleCalendarUrl(it){
   const p = it.parsed;
-  let datesStr = "";
-  if (p.kind === "jour") {
-    const mm = String(p.mois + 1).padStart(2, '0');
-    const dd = String(p.jour).padStart(2, '0');
-    const yyyy = p.annee;
-    datesStr = `${yyyy}${mm}${dd}/${yyyy}${mm}${dd}`;
-  } else {
-    // Si pas de jour précis, on met le 1er du mois
-    const mm = String((p.mois || 0) + 1).padStart(2, '0');
-    const yyyy = p.annee || today.getFullYear();
-    datesStr = `${yyyy}${mm}01/${yyyy}${mm}01`;
-  }
-
-  const title = encodeURIComponent(`🍿 Sortie : ${it.titre}`);
-  const details = encodeURIComponent(`Catégorie : ${it.categorie}\nOù voir : ${it.plateforme || 'N/C'}\n${it.lien || ''}`);
-  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${datesStr}&details=${details}`;
+  const y = p.annee || today.getFullYear();
+  const mo = p.mois ?? p.moisDebut ?? 0;
+  const dj = p.kind === "jour" ? p.jour : 1;
+  const start = new Date(y, mo, dj), end = new Date(y, mo, dj+1); // fin exclusive pour un évènement « toute la journée »
+  const fmt = d => `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`;
+  const details = `Catégorie : ${it.categorie}\nOù voir : ${it.plateforme || "N/C"}${it.lien ? "\n"+it.lien : ""}`;
+  const q = new URLSearchParams({action:"TEMPLATE", text:`🍿 Sortie : ${splitTitre(it.titre).clean}`, dates:`${fmt(start)}/${fmt(end)}`, details});
+  return "https://calendar.google.com/calendar/render?" + q.toString();
 }
 
-function renderWeekStrip(){
-  const box = document.getElementById("weekStrip");
-  const row = document.getElementById("weekStripRow");
-  const items = ALL_ITEMS
-    .filter(it => it.parsed.kind === "jour")
-    .filter(it => activeCat === "TOUS" || it.categorie === activeCat)
-    .filter(it => { const d = daysUntil(it.parsed.sortKey); return d >= 0 && d <= 7; })
-    .sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
+/* ========================= AFFICHES ========================= */
+const posterCache = new Map();
 
-  if(searchTerm || items.length === 0){ box.style.display = "none"; return; }
+async function fetchPosterFromTMDB(title, annee){
+  try{
+    const params = new URLSearchParams({api_key:TMDB_API_KEY, query:title, language:"fr-FR", include_adult:"false"});
+    const res = await fetch(`${TMDB_SEARCH_URL}?${params}`);
+    if(!res.ok) return null;
+    const results = ((await res.json()).results || []).filter(r => (r.media_type==="movie"||r.media_type==="tv") && r.poster_path);
+    const hit = (annee && results.find(r => (r.release_date||r.first_air_date||"").startsWith(String(annee)))) || results[0];
+    return hit ? {poster:TMDB_IMAGE_BASE+hit.poster_path, score:hit.vote_average ? Math.round(hit.vote_average*10)/10 : null} : null;
+  }catch(e){ return null; }
+}
+async function fetchPosterFromOMDb(title, annee){
+  try{
+    const params = new URLSearchParams({apikey:OMDB_API_KEY, t:title}); if(annee) params.set("y", annee);
+    const res = await fetch(`${OMDB_URL}?${params}`);
+    if(!res.ok) return null;
+    const d = await res.json();
+    if(d.Response==="True" && d.Poster && d.Poster!=="N/A")
+      return {poster:d.Poster, score:d.imdbRating && d.imdbRating!=="N/A" ? parseFloat(d.imdbRating) : null};
+  }catch(e){}
+  return null;
+}
+function fetchPoster(rawTitle, annee){
+  const title = titreRecherche(rawTitle);
+  const key = `${normStr(title)}|${annee||""}`;
+  if(!posterCache.has(key))
+    posterCache.set(key, (async () => (await fetchPosterFromTMDB(title, annee)) || (await fetchPosterFromOMDb(title, annee)))());
+  return posterCache.get(key);
+}
+
+/* ========================= RENDU ========================= */
+function renderWeekStrip(){
+  const box = $("weekStrip"), row = $("weekStripRow");
+  const items = ALL_ITEMS.filter(it => it.parsed.kind==="jour" && (activeCat==="TOUS" || it.categorie===activeCat))
+    .filter(it => { const d = daysUntil(it.parsed.sortKey); return d>=0 && d<=7; });
+  if(searchTerm || !items.length){ box.style.display = "none"; return; }
   box.style.display = "";
   row.innerHTML = items.map(it => {
-    const ech = echeanceLabel(daysUntil(it.parsed.sortKey));
-    return `
-      <div class="week-card" data-day-id="${it._id}">
-        <div class="week-card__ech ${ech.today ? "today":""}">${ech.today ? "🔥 " : ""}${ech.txt}</div>
-        <div class="week-card__title">${escapeHTML(it.titre)}</div>
-        ${catTagHTML(it.categorie)}
-      </div>`;
+    const e = echeanceLabel(daysUntil(it.parsed.sortKey));
+    return `<button type="button" class="week-card" data-id="${it._id}">
+      <div class="week-card__ech ${e.today?"today":""}">${e.today?"🔥 ":""}${e.txt}</div>
+      <div class="week-card__title">${escapeHTML(splitTitre(it.titre).clean)}</div>${catTagHTML(it.categorie)}</button>`;
   }).join("");
-  row.querySelectorAll(".week-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const it = ALL_ITEMS.find(i => i._id === parseInt(card.dataset.dayId));
-      if(it) openModal([it], it.titre);
-    });
-  });
 }
 
-function renderMonthLabel(){
-  document.getElementById("monthLabel").innerHTML = `${MOIS[viewMonth]}<span class="yr">${viewYear}</span>`;
-}
+function renderMonthLabel(){ $("monthLabel").innerHTML = `${MOIS[viewMonth]}<span class="yr">${viewYear}</span>`; }
 
 function renderCalendarGrid(){
-  const grid = document.getElementById("calGrid");
-  const firstOfMonth = new Date(viewYear, viewMonth, 1);
-  const leading = WEEKDAY_INDEX(firstOfMonth);
-  const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
-  const prevMonthLastDay = new Date(viewYear, viewMonth, 0).getDate();
-  const totalCells = Math.ceil((leading + daysInMonth) / 7) * 7;
+  const leading = WEEKDAY_INDEX(new Date(viewYear, viewMonth, 1));
+  const daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();
+  const prevLast = new Date(viewYear, viewMonth, 0).getDate();
+  const total = Math.ceil((leading+daysInMonth)/7)*7;
 
-  const dayItems = ALL_ITEMS.filter(it =>
-    it.parsed.kind === "jour" && it.parsed.annee === viewYear && it.parsed.mois === viewMonth && matchesFilters(it)
-  );
   const byDay = new Map();
-  dayItems.forEach(it => {
-    if(!byDay.has(it.parsed.jour)) byDay.set(it.parsed.jour, []);
-    byDay.get(it.parsed.jour).push(it);
-  });
+  ALL_ITEMS.filter(it => it.parsed.kind==="jour" && it.parsed.annee===viewYear && it.parsed.mois===viewMonth && matchesFilters(it))
+    .forEach(it => { if(!byDay.has(it.parsed.jour)) byDay.set(it.parsed.jour, []); byDay.get(it.parsed.jour).push(it); });
 
   let html = "";
-  for(let cellIdx = 0; cellIdx < totalCells; cellIdx++){
-    const dayNum = cellIdx - leading + 1;
-    if (cellIdx < leading) {
-      const prevDayNum = prevMonthLastDay - leading + cellIdx + 1;
-      html += `
-        <div class="cal-cell outside">
-          <span class="cal-cell__num">${prevDayNum}</span>
-        </div>`;
-    } else if (cellIdx < leading + daysInMonth) {
-      const cellDate = new Date(viewYear, viewMonth, dayNum);
-      const isToday = cellDate.getTime() === today.getTime();
-      const diff = daysUntil(cellDate.getTime());
-      const isWeek = diff >= 0 && diff <= 7;
-      const events = byDay.get(dayNum) || [];
-      const shown = events.slice(0, 3);
-      const rest = events.length - shown.length;
+  for(let i=0;i<total;i++){
+    const day = i-leading+1;
+    if(i<leading){ html += `<div class="cal-cell outside" aria-hidden="true"><span class="cal-cell__num">${prevLast-leading+i+1}</span></div>`; continue; }
+    if(day>daysInMonth){ html += `<div class="cal-cell outside" aria-hidden="true"><span class="cal-cell__num">${day-daysInMonth}</span></div>`; continue; }
 
-      html += `
-        <div class="cal-cell ${events.length ? "has-events":""} ${isToday ? "is-today":""} ${isWeek && !isToday ? "is-week":""}"
-             ${events.length ? `data-day="${dayNum}"` : ""}>
-          <span class="cal-cell__num">${dayNum}</span>
-          <div class="cal-cell__events">
-            ${shown.map(it => `
-              <div class="ev-chip ${catClass(it.categorie)}">
-                <span class="ev-dot"></span><span class="txt">${escapeHTML(it.titre)}</span>
-              </div>`).join("")}
-            ${rest > 0 ? `<div class="ev-more">+${rest} autre${rest>1?"s":""}</div>` : ""}
-          </div>
-        </div>`;
-    } else {
-      const nextDayNum = cellIdx - (leading + daysInMonth) + 1;
-      html += `
-        <div class="cal-cell outside">
-          <span class="cal-cell__num">${nextDayNum}</span>
-        </div>`;
-    }
+    const date = new Date(viewYear, viewMonth, day);
+    const isToday = date.getTime()===today.getTime();
+    const diff = daysUntil(date.getTime());
+    const ev = byDay.get(day) || [];
+    const shown = ev.slice(0,3), rest = ev.length-shown.length;
+    const inner = `<span class="cal-cell__num">${day}</span><div class="cal-cell__events">
+      ${shown.map(it => `<div class="ev-chip ${catClass(it.categorie)}"><span class="ev-dot"></span><span class="txt">${escapeHTML(splitTitre(it.titre).clean)}</span></div>`).join("")}
+      ${rest>0 ? `<div class="ev-more">+${rest} autre${rest>1?"s":""}</div>` : ""}</div>`;
+    const cls = `cal-cell ${ev.length?"has-events":""} ${isToday?"is-today":""} ${diff>0&&diff<=7?"is-week":""}`;
+    html += ev.length
+      ? `<button type="button" class="${cls}" data-day="${day}" aria-label="${day} ${MOIS[viewMonth]} : ${ev.length} sortie${ev.length>1?"s":""}">${inner}</button>`
+      : `<div class="${cls}">${inner}</div>`;
   }
-  grid.innerHTML = html;
-
-  grid.querySelectorAll(".cal-cell[data-day]").forEach(cell => {
-    cell.addEventListener("click", () => {
-      const d = parseInt(cell.dataset.day);
-      const items = byDay.get(d) || [];
-      const label = `${d} ${MOIS[viewMonth]} ${viewYear}`;
-      openModal(items, label);
-    });
-  });
+  $("calGrid").innerHTML = html;
+  $("calGrid")._byDay = byDay;
 }
 
 function renderFuzzySections(){
-  const box = document.getElementById("fuzzySections");
+  const box = $("fuzzySections");
   if(searchTerm){ box.innerHTML = ""; return; }
-
-  const moisFlous = ALL_ITEMS.filter(it => it.parsed.kind === "mois" && it.parsed.annee === viewYear && it.parsed.mois === viewMonth && matchesFilters(it));
-  const saisonFlous = ALL_ITEMS.filter(it => {
-    if(it.parsed.kind !== "saison" || it.parsed.annee !== viewYear) return false;
-    const start = it.parsed.moisDebut;
-    return viewMonth >= start && viewMonth <= start + 2 && matchesFilters(it);
-  });
-  const anneeFlous = ALL_ITEMS.filter(it => it.parsed.kind === "annee" && it.parsed.annee === viewYear && matchesFilters(it));
-  const inconnues = ALL_ITEMS.filter(it => it.parsed.kind === "inconnue" && matchesFilters(it));
-
-  function pillRow(list){
-    return `<div class="fuzzy-row">${list.map(it => `
-      <div class="fuzzy-pill" data-id="${it._id}">
-        <span class="dot ${catClass(it.categorie)}" style="width:6px;height:6px;border-radius:50%;"></span>
-        <span class="title">${escapeHTML(it.titre)}</span>
-      </div>`).join("")}</div>`;
-  }
+  const f = ALL_ITEMS.filter(matchesFilters);
+  const mois = f.filter(it => it.parsed.kind==="mois" && it.parsed.annee===viewYear && it.parsed.mois===viewMonth);
+  const saison = f.filter(it => it.parsed.kind==="saison" && it.parsed.annee===viewYear && viewMonth>=it.parsed.moisDebut && viewMonth<=it.parsed.moisDebut+2);
+  const annee = f.filter(it => it.parsed.kind==="annee" && it.parsed.annee===viewYear);
+  const inconnues = f.filter(it => it.parsed.kind==="inconnue");
+  const pills = list => `<div class="fuzzy-row">${list.map(it => `<button type="button" class="fuzzy-pill" data-id="${it._id}"><span class="dot dot-${catClass(it.categorie).slice(4)}"></span><span>${escapeHTML(splitTitre(it.titre).clean)}</span></button>`).join("")}</div>`;
 
   let html = "";
-  if(moisFlous.length){
-    html += `<div class="fuzzy-block"><h3>Sorties ce mois-ci <span class="count">jour non précisé — ${moisFlous.length}</span></h3>${pillRow(moisFlous)}</div>`;
-  }
-  if(saisonFlous.length){
-    html += `<div class="fuzzy-block"><h3>Prévues cette saison <span class="count">${saisonFlous.length}</span></h3>${pillRow(saisonFlous)}</div>`;
-  }
-  if(anneeFlous.length){
-    html += `<div class="fuzzy-block"><h3>Prévues en ${viewYear} <span class="count">mois non précisé — ${anneeFlous.length}</span></h3>${pillRow(anneeFlous)}</div>`;
-  }
-  if(inconnues.length){
-    html += `
-      <details class="fuzzy-collapse">
-        <summary>Dates encore à préciser <span class="count">${inconnues.length}</span></summary>
-        ${pillRow(inconnues)}
-      </details>`;
-  }
+  if(mois.length) html += `<div class="fuzzy-block"><h3>Sorties ce mois-ci <span class="count">jour non précisé — ${mois.length}</span></h3>${pills(mois)}</div>`;
+  if(saison.length) html += `<div class="fuzzy-block"><h3>Prévues cette saison <span class="count">${saison.length}</span></h3>${pills(saison)}</div>`;
+  if(annee.length) html += `<div class="fuzzy-block"><h3>Prévues en ${viewYear} <span class="count">mois non précisé — ${annee.length}</span></h3>${pills(annee)}</div>`;
+  if(inconnues.length) html += `<details class="fuzzy-collapse"><summary>Dates encore à préciser <span class="count">${inconnues.length}</span></summary>${pills(inconnues)}</details>`;
   box.innerHTML = html;
-  box.querySelectorAll(".fuzzy-pill").forEach(pill => {
-    pill.addEventListener("click", () => {
-      const it = ALL_ITEMS.find(i => i._id === parseInt(pill.dataset.id));
-      if(it) openModal([it], it.titre);
-    });
-  });
+}
+
+function dateLabel(it){
+  const p = it.parsed;
+  if(p.kind==="jour") return `${pad(p.jour)} ${MOIS[p.mois].slice(0,3)} ${p.annee}`;
+  if(p.kind==="mois") return `${MOIS[p.mois]} ${p.annee}`;
+  if(p.kind==="saison") return `${p.saison} ${p.annee}`;
+  if(p.kind==="annee") return `${p.annee}`;
+  return "À préciser";
 }
 
 function renderAgenda(){
-  const box = document.getElementById("agendaView");
-  const items = ALL_ITEMS.filter(matchesFilters).sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
-
-  if(items.length === 0){
-    box.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre ou une autre recherche.</div>`;
-    return;
-  }
+  const box = $("agendaView");
+  const items = ALL_ITEMS.filter(matchesFilters);
+  if(!items.length){ box.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre ou une autre recherche.</div>`; return; }
 
   const groups = new Map();
   items.forEach(it => {
-    const key = it.parsed.kind === "annee" || it.parsed.kind === "inconnue"
-      ? (it.parsed.kind === "annee" ? `${it.parsed.annee}` : "Date à préciser")
-      : `${MOIS[it.parsed.mois]} ${it.parsed.annee}`;
+    const p = it.parsed;
+    const key = p.kind==="inconnue" ? "Date à préciser" : (p.kind==="annee" ? `${p.annee}` : `${MOIS[p.mois ?? p.moisDebut]} ${p.annee}`);
     if(!groups.has(key)) groups.set(key, []);
     groups.get(key).push(it);
   });
 
-  function dateLabel(it){
-    const p = it.parsed;
-    if(p.kind === "jour") return `${String(p.jour).padStart(2,"0")} ${MOIS[p.mois].slice(0,3)} ${p.annee}`;
-    if(p.kind === "mois") return `${MOIS[p.mois]} ${p.annee}`;
-    if(p.kind === "saison") return `${p.saison || it.date} ${p.annee}`;
-    if(p.kind === "annee") return `${p.annee}`;
-    return "À préciser";
-  }
-
-  box.innerHTML = Array.from(groups.entries()).map(([label, list]) => `
-    <div class="agenda-group">
-      <h3>${escapeHTML(label)}</h3>
-      <div class="agenda-grid">
-        ${list.map(it => `
-          <div class="agenda-card" data-id="${it._id}">
-            <div>
-              <div class="agenda-date">${escapeHTML(dateLabel(it))}</div>
-              <div class="agenda-title">${escapeHTML(it.titre)}</div>
-              <div class="agenda-tags">
-                 ${catTagHTML(it.categorie)}
-                 ${it.plateforme ? `<span class="agenda-plat">${escapeHTML(it.plateforme)}</span>` : ""}
-              </div>
-            </div>
-          </div>`).join("")}
-      </div>
-    </div>`).join("");
-
-  box.querySelectorAll(".agenda-card").forEach(card => {
-    card.addEventListener("click", () => {
-      const it = ALL_ITEMS.find(i => i._id === parseInt(card.dataset.id));
-      if(it) openModal([it], it.titre);
-    });
-  });
+  box.innerHTML = [...groups].map(([label, list]) => `
+    <section class="agenda-group"><h3>${escapeHTML(label)}</h3><div class="agenda-grid">
+      ${list.map(it => `<button type="button" class="agenda-card" data-id="${it._id}"><div>
+        <div class="agenda-date">${escapeHTML(dateLabel(it))}</div>
+        <div class="agenda-title">${titreHTML(it.titre)}</div>
+        <div class="agenda-tags">${catTagHTML(it.categorie)}${it.plateforme?`<span class="agenda-plat">${escapeHTML(it.plateforme)}</span>`:""}</div>
+      </div></button>`).join("")}
+    </div></section>`).join("");
 }
 
+/* ========================= MODALE ========================= */
 function openModal(items, title){
-  document.getElementById("modalTitle").textContent = title;
-  const body = document.getElementById("modalBody");
-  body.innerHTML = items.map((it, i) => `
-    <div class="modal-item" data-idx="${i}">
-      <div class="modal-poster" id="poster-${i}"><span class="ph spinner small"></span></div>
+  lastFocus = document.activeElement;
+  $("modalTitle").textContent = title;
+  $("modalBody").innerHTML = items.map((it,i) => `
+    <div class="modal-item">
+      <div class="modal-poster" id="poster-${i}" role="img" aria-label="Affiche de ${escapeHTML(splitTitre(it.titre).clean)}"><span class="spinner small"></span></div>
       <div class="modal-body">
-        <p class="modal-title">${escapeHTML(it.titre)}</p>
-        <div class="modal-meta-row">
-          ${catTagHTML(it.categorie)}
-          <span class="modal-score" id="score-${i}" style="display:none;"></span>
-        </div>
-        <span class="modal-date">📅 ${escapeHTML(it.date || "")}</span>
-        ${it.plateforme ? `<span class="modal-date" style="color:var(--text-primary);">📺 ${escapeHTML(it.plateforme)}</span>` : ""}
-        
+        <p class="modal-title">${titreHTML(it.titre)}</p>
+        <div class="modal-meta-row">${catTagHTML(it.categorie)}<span class="modal-score" id="score-${i}" style="display:none"></span></div>
+        <span class="modal-date">📅 ${escapeHTML(it.date)}</span>
+        ${it.plateforme ? `<span class="modal-date plat">📺 ${escapeHTML(it.plateforme)}</span>` : ""}
         <div class="modal-actions">
-          <a href="${buildGoogleCalendarUrl(it)}" target="_blank" class="btn-gcal">📆 Google Calendar</a>
-          ${it.lien ? `<a href="${escapeHTML(it.lien)}" target="_blank" class="modal-btn-link">🔗 Fiche / infos</a>` : ""}
+          <a href="${escapeHTML(buildGoogleCalendarUrl(it))}" target="_blank" rel="noopener noreferrer" class="btn-gcal">📆 Google Calendar</a>
+          ${it.lien ? `<a href="${escapeHTML(it.lien)}" target="_blank" rel="noopener noreferrer" class="modal-btn-link">🔗 Fiche / infos</a>` : ""}
         </div>
       </div>
     </div>`).join("");
 
-  items.forEach((it, i) => {
-    const posterBox = document.getElementById(`poster-${i}`);
-    const scoreBox = document.getElementById(`score-${i}`);
-
-    if(!POSTER_CATEGORIES.has(it.categorie)){
-      posterBox.innerHTML = `<span class="ph">Pas d'affiche</span>`;
-      return;
-    }
-
-    if(posterCache.has(it.titre)){
-      const cached = posterCache.get(it.titre);
-      if(cached && cached.poster) {
-        posterBox.style.backgroundImage = `url("${cached.poster.replace(/"/g,'%22')}")`;
-        posterBox.innerHTML = "";
-        if(cached.score) {
-          scoreBox.textContent = `⭐ ${cached.score}/10`;
-          scoreBox.style.display = "inline-block";
-        }
-      } else {
-        posterBox.innerHTML = `<span class="ph">Affiche introuvable</span>`;
-      }
-      return;
-    }
-
+  items.forEach((it,i) => {
+    const posterBox = $(`poster-${i}`), scoreBox = $(`score-${i}`);
+    if(!POSTER_CATEGORIES.has(it.categorie)){ posterBox.innerHTML = `<span class="ph">Pas d'affiche</span>`; return; }
     fetchPoster(it.titre, it.parsed.annee).then(res => {
-      posterCache.set(it.titre, res);
+      if(!posterBox.isConnected) return; // modale refermée / remplacée entre-temps
       if(res && res.poster){
-        posterBox.style.backgroundImage = `url("${res.poster.replace(/"/g,'%22')}")`;
+        posterBox.style.backgroundImage = `url("${res.poster.replace(/"/g,"%22")}")`;
         posterBox.innerHTML = "";
-        if(res.score) {
-          scoreBox.textContent = `⭐ ${res.score}/10`;
-          scoreBox.style.display = "inline-block";
-        }
-      } else {
-        posterBox.innerHTML = `<span class="ph">Affiche introuvable</span>`;
-      }
+        if(res.score){ scoreBox.textContent = `⭐ ${res.score}/10`; scoreBox.style.display = "inline-block"; }
+      } else posterBox.innerHTML = `<span class="ph">Affiche introuvable</span>`;
     });
   });
 
-  document.getElementById("modalOverlay").classList.add("open");
+  $("modalOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+  $("modalClose").focus();
+}
+function closeModal(){
+  if(!$("modalOverlay").classList.contains("open")) return;
+  $("modalOverlay").classList.remove("open");
+  document.body.style.overflow = "";
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+/* Piège le focus clavier dans la modale */
+function trapFocus(e){
+  if(e.key!=="Tab" || !$("modalOverlay").classList.contains("open")) return;
+  const f = [...$("modalOverlay").querySelectorAll("a[href],button")].filter(el => el.offsetParent !== null);
+  if(!f.length) return;
+  const first = f[0], last = f[f.length-1];
+  if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+  else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
 }
 
-function closeModal(){ document.getElementById("modalOverlay").classList.remove("open"); }
-
+/* ========================= RENDU GLOBAL ========================= */
 function render(){
-  const statCount = document.getElementById("statCount");
   const filtered = ALL_ITEMS.filter(matchesFilters);
-  statCount.textContent = (searchTerm || activeCat !== "TOUS")
-    ? `${filtered.length} résultat(s) affiché(s) sur ${ALL_ITEMS.length} sortie(s) au total`
+  $("statCount").textContent = (searchTerm || activeCat!=="TOUS")
+    ? `${filtered.length} résultat(s) sur ${ALL_ITEMS.length} sortie(s)`
     : `${ALL_ITEMS.length} sortie(s) au total`;
-
   renderWeekStrip();
-
-  const calendarView = document.getElementById("calendarView");
-  const agendaView = document.getElementById("agendaView");
-
-  if(searchTerm.trim()){
-    calendarView.style.display = "none";
-    agendaView.style.display = "";
-    renderAgenda();
-  } else {
-    calendarView.style.display = "";
-    agendaView.style.display = "none";
-    renderMonthLabel();
-    renderCalendarGrid();
-    renderFuzzySections();
-  }
+  const searching = !!searchTerm.trim();
+  $("calendarView").style.display = searching ? "none" : "";
+  $("agendaView").style.display = searching ? "" : "none";
+  if(searching) renderAgenda();
+  else { renderMonthLabel(); renderCalendarGrid(); renderFuzzySections(); }
 }
 
-function changeMonth(delta){
-  viewMonth += delta;
-  if(viewMonth < 0){ viewMonth = 11; viewYear--; }
-  if(viewMonth > 11){ viewMonth = 0; viewYear++; }
+function setMonth(y, m, push){
+  viewYear = y; viewMonth = m;
+  if(push !== false) history.replaceState(null, "", `#${y}-${pad(m+1)}`);
   render();
 }
-
-function initControls(){
-  document.getElementById("searchInput").addEventListener("input", (e) => {
-    searchTerm = e.target.value;
-    render();
-  });
-  document.getElementById("prevMonth").addEventListener("click", () => changeMonth(-1));
-  document.getElementById("nextMonth").addEventListener("click", () => changeMonth(1));
-  document.getElementById("todayBtn").addEventListener("click", () => {
-    viewYear = today.getFullYear();
-    viewMonth = today.getMonth();
-    render();
-  });
-  document.getElementById("modalClose").addEventListener("click", closeModal);
-  document.getElementById("modalOverlay").addEventListener("click", (e) => {
-    if(e.target.id === "modalOverlay") closeModal();
-  });
-  document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeModal(); });
+function changeMonth(d){
+  let m = viewMonth+d, y = viewYear;
+  if(m<0){ m = 11; y--; } if(m>11){ m = 0; y++; }
+  setMonth(y, m);
+}
+function lireHash(){
+  const m = location.hash.match(/^#(\d{4})-(\d{2})$/);
+  if(m && +m[2]>=1 && +m[2]<=12){ viewYear = +m[1]; viewMonth = +m[2]-1; }
 }
 
 function buildFilters(){
-  const cats = ["TOUS", ...new Set(ALL_ITEMS.map(it => it.categorie))];
-  const catBox = document.getElementById("catFilters");
-  catBox.innerHTML = cats.map(c =>
-    `<button class="chip ${c === activeCat ? "active":""}" data-cat="${escapeHTML(c)}">${c === "TOUS" ? "Tout" : escapeHTML(c)}</button>`
-  ).join("");
-  catBox.querySelectorAll(".chip").forEach(btn => {
-    btn.addEventListener("click", () => {
-      activeCat = btn.dataset.cat;
-      buildFilters();
-      render();
-    });
-  });
+  const present = new Set(ALL_ITEMS.map(i => i.categorie));
+  const cats = ["TOUS", ...CAT_ORDER.filter(c => present.has(c)), ...[...present].filter(c => !CAT_ORDER.includes(c))];
+  $("catFilters").innerHTML = cats.map(c =>
+    `<button type="button" class="chip ${c===activeCat?"active":""}" data-cat="${escapeHTML(c)}" aria-pressed="${c===activeCat}">${c==="TOUS"?"Tout":escapeHTML(c)}</button>`).join("");
 }
 
-function loadViaJSONP(tentative = 1, maxTentatives = 3) {
+function initControls(){
+  const input = $("searchInput"), clear = $("searchClear");
+  const applySearch = debounce(() => { searchTerm = input.value; render(); }, 150);
+  input.addEventListener("input", () => { clear.classList.toggle("visible", !!input.value); applySearch(); });
+  clear.addEventListener("click", () => { input.value = ""; clear.classList.remove("visible"); searchTerm = ""; render(); input.focus(); });
+
+  $("prevMonth").addEventListener("click", () => changeMonth(-1));
+  $("nextMonth").addEventListener("click", () => changeMonth(1));
+  $("todayBtn").addEventListener("click", () => setMonth(today.getFullYear(), today.getMonth()));
+
+  $("catFilters").addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if(!b) return;
+    activeCat = b.dataset.cat; buildFilters(); render();
+  });
+
+  // Délégation : un seul écouteur par zone, plus de ré-attachement à chaque rendu
+  $("weekStripRow").addEventListener("click", e => { const c = e.target.closest("[data-id]"); if(c){ const it = byId(+c.dataset.id); if(it) openModal([it], splitTitre(it.titre).clean); } });
+  $("fuzzySections").addEventListener("click", e => { const c = e.target.closest("[data-id]"); if(c){ const it = byId(+c.dataset.id); if(it) openModal([it], splitTitre(it.titre).clean); } });
+  $("agendaView").addEventListener("click", e => { const c = e.target.closest("[data-id]"); if(c){ const it = byId(+c.dataset.id); if(it) openModal([it], splitTitre(it.titre).clean); } });
+  $("calGrid").addEventListener("click", e => {
+    const c = e.target.closest("[data-day]"); if(!c) return;
+    const d = +c.dataset.day, list = $("calGrid")._byDay.get(d) || [];
+    openModal(list, `${d} ${MOIS[viewMonth]} ${viewYear}`);
+  });
+
+  $("modalClose").addEventListener("click", closeModal);
+  $("modalOverlay").addEventListener("click", e => { if(e.target.id==="modalOverlay") closeModal(); });
+  document.addEventListener("keydown", e => { if(e.key==="Escape") closeModal(); trapFocus(e); });
+
+  // Navigation clavier / hash / balayage tactile
+  window.addEventListener("hashchange", () => { lireHash(); render(); });
+  document.addEventListener("keydown", e => {
+    if($("modalOverlay").classList.contains("open") || /input|textarea|select/i.test(document.activeElement.tagName)) return;
+    if(e.key==="ArrowLeft") changeMonth(-1); else if(e.key==="ArrowRight") changeMonth(1);
+  });
+  let x0 = null, y0 = null;
+  const grid = $("calendarView");
+  grid.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
+  grid.addEventListener("touchend", e => {
+    if(x0===null) return;
+    const dx = e.changedTouches[0].clientX-x0, dy = e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)*1.5) changeMonth(dx<0 ? 1 : -1);
+    x0 = y0 = null;
+  }, {passive:true});
+}
+
+/* ========================= CHARGEMENT (JSONP + cache) ========================= */
+function loadViaJSONP(tentative = 1, max = 3){
   return new Promise((resolve, reject) => {
-    const callbackName = "handleGASResponse_" + Math.round(Math.random() * 1000000);
-    let script = null;
-
-    const cleanup = () => {
-      delete window[callbackName];
-      if (script && document.head.contains(script)) document.head.removeChild(script);
-    };
-
-    window[callbackName] = function(data) {
+    const cb = "handleGAS_" + Math.round(Math.random()*1e9);
+    let script, timer;
+    const cleanup = () => { clearTimeout(timer); delete window[cb]; if(script && script.parentNode) script.parentNode.removeChild(script); };
+    const retry = err => {
       cleanup();
-      resolve(data);
+      if(tentative < max) setTimeout(() => loadViaJSONP(tentative+1, max).then(resolve, reject), 800*tentative);
+      else reject(err);
     };
-
+    window[cb] = data => { cleanup(); resolve(data); };
     script = document.createElement("script");
-    script.src = API_URL + "&callback=" + callbackName + "&_t=" + Date.now();
-    script.onerror = function() {
-      cleanup();
-      if (tentative < maxTentatives) {
-        console.warn(`JSONP : échec de chargement (tentative ${tentative}/${maxTentatives}), nouvel essai…`);
-        setTimeout(() => {
-          loadViaJSONP(tentative + 1, maxTentatives).then(resolve).catch(reject);
-        }, 800 * tentative);
-      } else {
-        reject(new Error("Erreur de chargement du script JSONP après " + maxTentatives + " tentative(s)"));
-      }
-    };
-
+    script.src = `${API_URL}&callback=${cb}&_t=${Date.now()}`;
+    script.onerror = () => retry(new Error("Échec du chargement JSONP"));
+    timer = setTimeout(() => retry(new Error("Délai dépassé")), JSONP_TIMEOUT_MS); // onerror ne se déclenche pas si le callback n'est jamais appelé
     document.head.appendChild(script);
   });
 }
 
-const CACHE_KEY = "calendrier_sorties_cache_v2";
-const CACHE_TTL_MS = 30 * 60 * 1000;
-
 function lireCache(){
-  try{
-    const raw = localStorage.getItem(CACHE_KEY);
-    if(!raw) return null;
-    const parsed = JSON.parse(raw);
-    if(!Array.isArray(parsed.data)) return null;
-    return parsed;
-  }catch(e){ return null; }
+  try{ const c = JSON.parse(localStorage.getItem(CACHE_KEY)); return c && Array.isArray(c.data) ? c : null; }catch(e){ return null; }
 }
-
-function ecrireCache(data){
-  try{
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
-  }catch(e){ }
+function ecrireCache(data){ try{ localStorage.setItem(CACHE_KEY, JSON.stringify({data, ts:Date.now()})); }catch(e){} }
+function masquerOverlay(){ const o = $("loadingOverlay"); if(!o) return; o.classList.add("hidden"); setTimeout(() => o.remove(), 400); }
+function majNote(ts){
+  const mins = Math.max(0, Math.round((Date.now()-ts)/60000));
+  $("refreshNote").textContent = mins < 1 ? "Données à jour à l'instant" : `Données mises à jour il y a ${mins} min`;
 }
-
-function masquerOverlay(){
-  const overlay = document.getElementById("loadingOverlay");
-  if(!overlay) return;
-  overlay.classList.add("hidden");
-  setTimeout(() => overlay.remove(), 350);
+function afficher(data, ts){
+  hydraterItems(data); buildFilters(); render(); masquerOverlay(); majNote(ts || Date.now());
 }
 
 async function load(){
   const cache = lireCache();
-  
-  // STEP 1 : Affichage INSTANTANÉ (0ms) si données en local
-  if(cache && cache.data.length > 0){
-    hydraterItems(cache.data);
-    buildFilters();
-    render();
-    masquerOverlay();
-  }
+  if(cache && cache.data.length) afficher(cache.data, cache.ts);   // affichage instantané
+  if(cache && Date.now()-cache.ts < CACHE_TTL_MS) return;           // cache encore frais
 
-  const cacheEstFrais = cache && (Date.now() - cache.ts) < CACHE_TTL_MS;
-  if(cacheEstFrais) return;
-
-  // STEP 2 : Mise à jour silencieuse réseau
   try{
     const data = await loadViaJSONP();
     if(!Array.isArray(data)) throw new Error("Format inattendu");
-
     ecrireCache(data);
-    hydraterItems(data);
-    buildFilters();
-    render();
-    masquerOverlay();
+    afficher(data, Date.now());
   }catch(err){
-    console.error("Erreur réseau:", err);
+    console.error("Erreur réseau :", err);
     if(!cache){
       masquerOverlay();
-      document.querySelector("main").innerHTML = `
-        <div class="state">
-          <div class="big">Le calendrier ne répond pas.</div>
-          <button class="today-btn" onclick="location.reload()">🔄 Réessayer</button>
-        </div>`;
+      $("main").innerHTML = `<div class="state"><div class="big">Le calendrier ne répond pas.</div><button class="today-btn" type="button" onclick="location.reload()">🔄 Réessayer</button></div>`;
     }
   }
 }
 
+lireHash();
 initControls();
 load();
 </script>
 
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/header.js"></script>
-
 </body>
 </html>
