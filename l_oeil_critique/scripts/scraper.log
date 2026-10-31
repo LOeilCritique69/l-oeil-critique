@@ -44687,3 +44687,40 @@ Call log:
 2026-10-31 00:33:03,414 [INFO] Scraping TMDb terminé (0 items)
 2026-10-31 00:33:03,415 [INFO] 0 articles retenus pour ce run
 2026-10-31 00:33:03,415 [INFO] Aucun article à écrire, arrêt
+2026-10-31 06:47:03,260 [INFO] ==== Début du script bandes-annonces ====
+2026-10-31 06:47:03,267 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-10-31 06:47:03,267 [INFO] 1528 identifiants chargés depuis le log
+2026-10-31 06:47:03,268 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-10-31 06:47:03,921 [INFO] Démarrage scraping CineHorizons...
+2026-10-31 06:47:05,731 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-10-31 06:47:05,904 [INFO] 10 blocs détectés sur la page 1
+2026-10-31 06:47:05,907 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-10-31 06:47:05,907 [INFO] Scraping CineHorizons terminé (0 items)
+2026-10-31 06:47:05,907 [INFO] Démarrage scraping Allociné (films)...
+2026-10-31 06:47:06,789 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-10-31 06:47:08,122 [INFO] Article ajouté Allociné (film): Arcobaleno
+2026-10-31 06:47:08,558 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-10-31 06:47:08,660 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-31 06:47:08,660 [INFO] Scraping Allociné (films) terminé (1 items)
+2026-10-31 06:47:08,660 [INFO] Démarrage scraping Allociné (séries)...
+2026-10-31 06:47:09,083 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-10-31 06:47:09,167 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-10-31 06:47:09,167 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-10-31 06:47:09,226 [INFO] Démarrage scraping TMDb...
+2026-10-31 06:47:09,342 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-10-31 06:47:09,412 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-10-31 06:47:09,440 [INFO] Article ajouté TMDb (upcoming): La libertad doble
+2026-10-31 06:47:10,626 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-10-31 06:47:11,199 [INFO] 11 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-10-31 06:47:11,765 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-10-31 06:47:12,293 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-10-31 06:47:12,361 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-10-31 06:47:12,426 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-10-31 06:47:12,543 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-10-31 06:47:13,729 [INFO] Scraping TMDb terminé (1 items)
+2026-10-31 06:47:13,730 [INFO] 2 articles retenus pour ce run
+2026-10-31 06:47:13,820 [INFO] 2665 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-10-31 06:47:13,821 [INFO] Sauvegarde du log avec 1530 identifiants
+2026-10-31 06:47:13,822 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-10-31 06:47:13,910 [INFO] Rien à commiter, le répertoire est propre.
+2026-10-31 06:47:13,911 [INFO] ==== Fin du script bandes-annonces ====
