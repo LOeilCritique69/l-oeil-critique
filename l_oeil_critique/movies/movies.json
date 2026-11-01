@@ -259,14 +259,17 @@
     "tmdb_year": "2015"
   },
   {
-    "Date": "2024-10-12",
+    "Date": "2026-11-01",
     "Name": "The Hunger Games: The Ballad of Songbirds & Snakes",
     "Year": 2023,
     "Letterboxd URI": "https://boxd.it/pZCY",
-    "Rating": 4,
+    "Rating": 3.5,
     "poster_path": "/q4EDvPcf956FgakWwcXiWdQEgxU.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/q4EDvPcf956FgakWwcXiWdQEgxU.jpg",
-    "tmdb_id": 695721
+    "tmdb_id": 695721,
+    "tmdb_source": "rss",
+    "tmdb_title": "Hunger Games : La Ballade du serpent et de l'oiseau chanteur",
+    "tmdb_year": "2023"
   },
   {
     "Date": "2024-10-12",
