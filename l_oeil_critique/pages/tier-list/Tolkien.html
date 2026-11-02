@@ -49,29 +49,17 @@
 <div class="tier-row tier-row--s">
 <div class="tier-row__label">S</div>
 <div class="tier-row__items">
-<div class="tier-item">
-<img alt="La Communauté de l'Anneau" src="../../assets/img/tierlists/tolkien/fellowship-of-the-ring.jpg"/>
-</div>
+<div class="tier-item" data-title="The Lord of the Rings: The Fellowship of the Ring" data-year="2001" data-label="La Communauté de l&#x27;Anneau"></div>
 </div>
 </div>
 <div class="tier-row tier-row--a">
 <div class="tier-row__label">A</div>
 <div class="tier-row__items">
-<div class="tier-item">
-<img alt="Un Voyage Inattendu" src="../../assets/img/tierlists/tolkien/an-unexpected-journey.jpg"/>
-</div>
-<div class="tier-item">
-<img alt="Les Deux Tours" src="../../assets/img/tierlists/tolkien/the-two-towers.jpg"/>
-</div>
-<div class="tier-item">
-<img alt="Le Retour du Roi" src="../../assets/img/tierlists/tolkien/the-return-of-the-king.jpg"/>
-</div>
-<div class="tier-item">
-<img alt="La Bataille des Cinq Armées" src="../../assets/img/tierlists/tolkien/the-battle-of-the-five-armies.jpg"/>
-</div>
-<div class="tier-item">
-<img alt="La Désolation de Smaug" src="../../assets/img/tierlists/tolkien/the-desolation-of-smaug.jpg"/>
-</div>
+<div class="tier-item" data-title="The Hobbit: An Unexpected Journey" data-year="2012" data-label="Un Voyage Inattendu"></div>
+<div class="tier-item" data-title="The Lord of the Rings: The Two Towers" data-year="2002" data-label="Les Deux Tours"></div>
+<div class="tier-item" data-title="The Lord of the Rings: The Return of the King" data-year="2003" data-label="Le Retour du Roi"></div>
+<div class="tier-item" data-title="The Hobbit: The Battle of the Five Armies" data-year="2014" data-label="La Bataille des Cinq Armées"></div>
+<div class="tier-item" data-title="The Hobbit: The Desolation of Smaug" data-year="2013" data-label="La Désolation de Smaug"></div>
 </div>
 </div>
 <div class="tier-row tier-row--b">
@@ -100,54 +88,7 @@
 </div>
 </section>
 </main>
-<div aria-hidden="true" aria-label="Agrandissement d'image" class="lp-modal" id="lpImageModal" role="dialog">
-<div class="lp-modal__backdrop" data-close="true"></div>
-<div class="lp-modal__content" role="document">
-<img alt="" class="lp-modal__img" id="lpImageModalImg" src=""/>
-<div class="lp-modal__caption" id="lpImageModalCaption"></div>
-</div>
-</div>
-<script>
-(function () {
-    const modal = document.getElementById('lpImageModal');
-    const modalImg = document.getElementById('lpImageModalImg');
-    const modalCaption = document.getElementById('lpImageModalCaption');
-
-    if (!modal || !modalImg || !modalCaption) return;
-
-    const closeModal = () => {
-        modal.classList.remove('is-active');
-        modal.setAttribute('aria-hidden', 'true');
-        modalImg.src = '';
-        modalImg.alt = '';
-        modalCaption.textContent = '';
-    };
-
-    document.addEventListener('click', (event) => {
-        const trigger = event.target.closest('.tier-item img');
-
-        if (trigger) {
-            event.preventDefault();
-            modalImg.src = trigger.currentSrc || trigger.src;
-            modalImg.alt = trigger.alt || '';
-            modalCaption.textContent = trigger.alt || '';
-            modal.classList.add('is-active');
-            modal.setAttribute('aria-hidden', 'false');
-            return;
-        }
-
-        if (event.target.classList.contains('lp-modal__backdrop') || event.target === modal) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
-    });
-})();
-</script>
+<script src="../../assets/js/tier-posters.js" defer></script>
 <script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/header.js"></script>
 </body>
