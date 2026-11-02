@@ -825,6 +825,17 @@
     "id": 75
   },
   {
+    "title": "Tier List Hunger Games",
+    "type": "Tier List",
+    "url": "/l_oeil_critique/pages/tier-list/Hunger-Games.html",
+    "image": "/l_oeil_critique/assets/img/tierlists/hunger-games-cover.jpg",
+    "date": null,
+    "description": "Les 5 films, du meilleur au pire.",
+    "author": null,
+    "rating": null,
+    "id": 76
+  },
+  {
     "title": "Tier List Jurassic Park",
     "type": "Tier List",
     "url": "/l_oeil_critique/pages/tier-list/Jurassic.html",
@@ -833,7 +844,7 @@
     "description": "Le classement des films de la saga Jurassic Park.",
     "author": null,
     "rating": null,
-    "id": 76
+    "id": 77
   },
   {
     "title": "Tier List Marvel — Tout l'Univers",
@@ -844,7 +855,7 @@
     "description": "Pas seulement le MCU : tout ce qui porte le nom Marvel — Sony (Spider-Man, Venom, Morbius, Kraven), la Fox (X-Men, Les 4 Fantastiques, Deadpool), les séries Disney+/Netflix et le Marvel Cinematic Universe. Classé sur 10 — 10 : Immense, 1 : Atrocité. Une tier list MCU spécifique existe séparément pour le seul canon Kevin Feige.",
     "author": null,
     "rating": null,
-    "id": 77
+    "id": 78
   },
   {
     "title": "Tier List Spider-Man",
@@ -855,7 +866,7 @@
     "description": "Live-action et animation confondus.",
     "author": null,
     "rating": null,
-    "id": 78
+    "id": 79
   },
   {
     "title": "Tier List Saga Tolkien",
@@ -866,7 +877,7 @@
     "description": "Les 6 films, du meilleur au pire.",
     "author": null,
     "rating": null,
-    "id": 79
+    "id": 80
   },
   {
     "title": "Tier List Toy Story",
@@ -877,7 +888,7 @@
     "description": "Les 5 films, du meilleur au pire.",
     "author": null,
     "rating": null,
-    "id": 80
+    "id": 81
   },
   {
     "title": "Tier List Transformers",
@@ -888,6 +899,6 @@
     "description": "Les 8 films, du meilleur au pire.",
     "author": null,
     "rating": null,
-    "id": 81
+    "id": 82
   }
 ]

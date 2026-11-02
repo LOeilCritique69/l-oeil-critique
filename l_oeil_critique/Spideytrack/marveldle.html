@@ -1,837 +1,410 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="SpideyTrack — Suivi quotidien des 3 Spider-Man | L'Œil Critique">
+        <meta property="og:description" content="Le suivi quotidien des trois Spider-Man sur Marveldle.">
+        <meta property="og:image" content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="fr_FR">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:url" content="https://www.l-oeil-critique.com/Spideytrack/marveldle.html">
+        <link rel="canonical" href="https://www.l-oeil-critique.com/Spideytrack/marveldle.html">
+        
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SpideyTrack — Suivi quotidien des 3 Spider-Man | L'Œil Critique</title>
 
-  <title>SpideyTrack — Suivi quotidien des 3 Spider-Man | L'Œil Critique</title>
+<meta content="#080a0f" name="theme-color"/>
+<meta content="index, follow" name="robots"/>
 
-  <meta
-    name="description"
-    content="SpideyTrack suit chaque jour Tom Holland, Andrew Garfield et Tobey Maguire sur Marveldle : scores, séries, historique et captures d'écran."
-  >
 
-  <meta name="theme-color" content="#080a0f">
-  <meta name="robots" content="index, follow">
 
-  <link
-    rel="canonical"
-    href="https://www.l-oeil-critique.com/Spideytrack/marveldle.html"
-  >
 
-  <meta property="og:title" content="SpideyTrack — L'Œil Critique">
-  <meta
-    property="og:description"
-    content="Le suivi quotidien des trois Spider-Man sur Marveldle."
-  >
-  <meta
-    property="og:image"
-    content="../assets/img/logo_chef_doeuvre_processed_copy.jpg"
-  >
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta
-    property="og:url"
-    content="https://www.l-oeil-critique.com/Spideytrack/marveldle.html"
-  >
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SpideyTrack — L'Œil Critique">
-  <meta
-    name="twitter:description"
-    content="Le suivi quotidien des trois Spider-Man sur Marveldle."
-  >
-  <meta
-    name="twitter:image"
-    content="../assets/img/logo_chef_doeuvre_processed_copy.jpg"
-  >
 
-  <link rel="icon" href="spidey.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="spidey.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Caveat:wght@600&display=swap"
-    rel="stylesheet"
-  >
+<meta content="SpideyTrack — L'Œil Critique" name="twitter:title"/>
+<meta content="Le suivi quotidien des trois Spider-Man sur Marveldle." name="twitter:description"/>
+<meta content="../assets/img/logo_chef_doeuvre_processed_copy.jpg" name="twitter:image"/>
+<link href="spidey.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="spidey.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Oswald:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Caveat:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="/l_oeil_critique/css/chef_d_oeuvre.css" rel="stylesheet"/>
+<link href="marveldle.css" rel="stylesheet"/>
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"></script>
 
-  <link
-    rel="stylesheet"
-    href="/l_oeil_critique/css/chef_d_oeuvre.css"
-  >
-
-  <link rel="stylesheet" href="marveldle.css">
-
-  <script
-    defer
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
-  ></script>
-
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"
-    crossorigin="anonymous"
-  ></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "SpideyTrack",
-    "description": "Archive quotidienne des résultats de Tom Holland, Andrew Garfield et Tobey Maguire sur Marveldle.",
-    "url": "https://www.l-oeil-critique.com/Spideytrack/marveldle.html",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "L'Œil Critique",
-      "url": "https://www.l-oeil-critique.com/"
-    },
-    "inLanguage": "fr-FR"
-  }
-  </script>
-</head>
-
+<meta content="SpideyTrack — Suivi quotidien des 3 Spider-Man | L'Œil Critique" property="og:title"/><meta content="Le suivi quotidien des trois Spider-Man sur Marveldle." property="og:description"/><meta content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" property="og:image"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.l-oeil-critique.com/Spideytrack/marveldle.html" property="og:url"/><link href="https://www.l-oeil-critique.com/Spideytrack/marveldle.html" rel="canonical"/></head>
 <body>
-
 <a class="skip-link" href="#main-content">
   Aller au contenu
 </a>
-
 <!-- =========================================================
      ÉCRAN DE CHARGEMENT
 ========================================================= -->
-
 <div id="loading-screen">
-
-  <div class="loader-logo">
-
-    <svg
-      width="46"
-      height="46"
-      viewBox="0 0 44 44"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="Logo SpideyTrack"
-    >
-      <ellipse cx="22" cy="25" rx="7" ry="8.5" fill="#e8192c"/>
-      <ellipse cx="22" cy="16" rx="5" ry="5" fill="#e8192c"/>
-
-      <line x1="15" y1="20" x2="2" y2="14"
-        stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="15" y1="24" x2="1" y2="24"
-        stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="15" y1="28" x2="2" y2="35"
-        stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-
-      <line x1="29" y1="20" x2="42" y2="14"
-        stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="29" y1="24" x2="43" y2="24"
-        stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="29" y1="28" x2="42" y2="35"
-        stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-
-      <line x1="22" y1="11" x2="22" y2="4"
-        stroke="#e8192c" stroke-width="2" stroke-linecap="round"/>
-
-      <circle cx="19.5" cy="15" r="1.5" fill="#e8edf5"/>
-      <circle cx="24.5" cy="15" r="1.5" fill="#e8edf5"/>
-    </svg>
-
-    <div class="loader-title">
+<div class="loader-logo">
+<svg aria-label="Logo SpideyTrack" fill="none" height="46" role="img" viewbox="0 0 44 44" width="46" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="22" cy="25" fill="#e8192c" rx="7" ry="8.5"></ellipse>
+<ellipse cx="22" cy="16" fill="#e8192c" rx="5" ry="5"></ellipse>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="15" x2="2" y1="20" y2="14"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="15" x2="1" y1="24" y2="24"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="15" x2="2" y1="28" y2="35"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="29" x2="42" y1="20" y2="14"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="29" x2="43" y1="24" y2="24"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="29" x2="42" y1="28" y2="35"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2" x1="22" x2="22" y1="11" y2="4"></line>
+<circle cx="19.5" cy="15" fill="#e8edf5" r="1.5"></circle>
+<circle cx="24.5" cy="15" fill="#e8edf5" r="1.5"></circle>
+</svg>
+<div class="loader-title">
       Spidey<span>Track</span>
-    </div>
-
-  </div>
-
-  <div class="loader-sub">
+</div>
+</div>
+<div class="loader-sub">
     Dossier de filature — trois suspects, un costume
   </div>
-
-  <div class="loader-bar-wrap">
-    <div class="loader-bar" id="loader-bar"></div>
-  </div>
-
-  <div
-    class="loader-status"
-    id="loader-status"
-    role="status"
-    aria-live="polite"
-  >
+<div class="loader-bar-wrap">
+<div class="loader-bar" id="loader-bar"></div>
+</div>
+<div aria-live="polite" class="loader-status" id="loader-status" role="status">
     Ouverture du dossier…
   </div>
-
 </div>
-
-
 <div id="app-wrapper">
-
-  <!-- ERREUR DE CHARGEMENT -->
-
-  <div
-    id="load-error"
-    class="load-error"
-    role="alert"
-    hidden
-  >
-    <strong>Le dossier n'a pas pu être chargé.</strong>
-
-    <span>
+<!-- ERREUR DE CHARGEMENT -->
+<div class="load-error" hidden="" id="load-error" role="alert">
+<strong>Le dossier n'a pas pu être chargé.</strong>
+<span>
       Le fichier de données est momentanément inaccessible.
-      <button type="button" id="load-error-retry">
+      <button id="load-error-retry" type="button">
         Réessayer
       </button>
-    </span>
-  </div>
-
-
-  <main id="main-content">
-
-    <!-- =====================================================
+</span>
+</div>
+<main id="main-content">
+<!-- =====================================================
          EN-TÊTE
     ====================================================== -->
-
-    <div class="dossier-masthead">
-
-      <div class="dossier-eyebrow">
+<div class="dossier-masthead">
+<div class="dossier-eyebrow">
         L'Œil Critique présente
       </div>
-
-      <h1 class="dossier-title">
+<h1 class="dossier-title">
         Spidey<span>Track</span>
-      </h1>
-
-      <div class="dossier-tagline">
+</h1>
+<div class="dossier-tagline">
         Trois Spider-Man. Un Marveldle. Chaque jour.
       </div>
-
-      <p class="dossier-intro">
+<p class="dossier-intro">
         Une archive automatique qui rejoue quotidiennement le
-        <a
-          href="https://marveldle.com/menu"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://marveldle.com/menu" rel="noopener noreferrer" target="_blank">
           Marveldle
         </a>
         pour Tom Holland, Andrew Garfield et Tobey Maguire.
       </p>
-
-      <div class="dossier-meta">
-        <span>
-          <i></i>
+<div class="dossier-meta">
+<span>
+<i></i>
           DOSSIER ACTIF
         </span>
-
-        <span>•</span>
-
-        <span>
+<span>•</span>
+<span>
           MISE À JOUR QUOTIDIENNE
         </span>
-      </div>
-
-    </div>
-
-
-    <!-- =====================================================
+</div>
+</div>
+<!-- =====================================================
          RAPPORT DU JOUR
     ====================================================== -->
-
-    <section
-      class="today-hero"
-      id="today-hero"
-      aria-label="Rapport du jour"
-    >
-
-      <div class="today-heading">
-
-        <div class="case-stamp">
-
-          <span
-            class="case-stamp-dot"
-            aria-hidden="true"
-          ></span>
-
-          <span class="case-stamp-text">
+<section aria-label="Rapport du jour" class="today-hero" id="today-hero">
+<div class="today-heading">
+<div class="case-stamp">
+<span aria-hidden="true" class="case-stamp-dot"></span>
+<span class="case-stamp-text">
             Rapport du jour
           </span>
-
-          <span
-            class="case-stamp-day"
-            id="today-day-label"
-          >
+<span class="case-stamp-day" id="today-day-label">
             Jour —
           </span>
-
-        </div>
-
-        <div class="today-heading-line"></div>
-
-      </div>
-
-      <div
-        class="today-cards-row"
-        id="today-cards-row"
-      ></div>
-
-    </section>
-
-
-    <div
-      class="thread"
-      aria-hidden="true"
-    ></div>
-
-
-    <!-- =====================================================
+</div>
+<div class="today-heading-line"></div>
+</div>
+<div class="today-cards-row" id="today-cards-row"></div>
+</section>
+<div aria-hidden="true" class="thread"></div>
+<!-- =====================================================
          STATISTIQUES
     ====================================================== -->
-
-    <section
-      class="dashboard section-block"
-      id="dashboard"
-      aria-label="Statistiques globales"
-    >
-
-      <div class="section-header">
-
-        <div class="section-heading">
-
-          <span
-            class="section-index"
-            aria-hidden="true"
-          >
+<section aria-label="Statistiques globales" class="dashboard section-block" id="dashboard">
+<div class="section-header">
+<div class="section-heading">
+<span aria-hidden="true" class="section-index">
             01
           </span>
-
-          <div>
-            <h2 class="section-label">
+<div>
+<h2 class="section-label">
               Tableau de filature
             </h2>
-
-            <p class="section-description">
+<p class="section-description">
               Vue globale des performances
             </p>
-          </div>
-
-        </div>
-
-        <span class="section-sub">
+</div>
+</div>
+<span class="section-sub">
           Données cumulées
         </span>
-
-      </div>
-
-
-      <div class="dash-global">
-
-        <div class="dash-stat">
-
-          <span class="dash-stat-index">
+</div>
+<div class="dash-global">
+<div class="dash-stat">
+<span class="dash-stat-index">
             01
           </span>
-
-          <div
-            class="dash-val"
-            id="dash-total"
-          >
+<div class="dash-val" id="dash-total">
             —
           </div>
-
-          <div class="dash-lbl">
+<div class="dash-lbl">
             Jours de filature
           </div>
-
-        </div>
-
-
-        <div class="dash-stat">
-
-          <span class="dash-stat-index">
+</div>
+<div class="dash-stat">
+<span class="dash-stat-index">
             02
           </span>
-
-          <div
-            class="dash-val gold"
-            id="dash-winrate"
-          >
+<div class="dash-val gold" id="dash-winrate">
             —
           </div>
-
-          <div class="dash-lbl">
+<div class="dash-lbl">
             Taux d'identification
           </div>
-
-        </div>
-
-
-        <div class="dash-stat">
-
-          <span class="dash-stat-index">
+</div>
+<div class="dash-stat">
+<span class="dash-stat-index">
             03
           </span>
-
-          <div
-            class="dash-val"
-            id="dash-beststreak"
-          >
+<div class="dash-val" id="dash-beststreak">
             —
           </div>
-
-          <div class="dash-lbl">
+<div class="dash-lbl">
             Meilleure série
           </div>
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="dash-persos"
-        id="dash-persos"
-      ></div>
-
-    </section>
-
-
-    <!-- =====================================================
+</div>
+</div>
+<div class="dash-persos" id="dash-persos"></div>
+</section>
+<!-- =====================================================
          TOP 5
     ====================================================== -->
-
-    <section
-      class="top5-wrap section-block"
-      aria-labelledby="top5-title"
-    >
-
-      <div class="section-header">
-
-        <div class="section-heading">
-
-          <span
-            class="section-index"
-            aria-hidden="true"
-          >
+<section aria-labelledby="top5-title" class="top5-wrap section-block">
+<div class="section-header">
+<div class="section-heading">
+<span aria-hidden="true" class="section-index">
             02
           </span>
-
-          <div>
-
-            <h2
-              class="section-label"
-              id="top5-title"
-            >
+<div>
+<h2 class="section-label" id="top5-title">
               Meilleures prises
             </h2>
-
-            <p class="section-description">
+<p class="section-description">
               Les identifications les plus précises
             </p>
-
-          </div>
-
-        </div>
-
-        <span class="section-sub">
+</div>
+</div>
+<span class="section-sub">
           Top 5
         </span>
-
-      </div>
-
-      <div
-        class="top5-board"
-        id="top5-container"
-      ></div>
-
-    </section>
-
-
-    <!-- =====================================================
+</div>
+<div class="top5-board" id="top5-container"></div>
+</section>
+<!-- =====================================================
          GRAPHIQUES
     ====================================================== -->
-
-    <section
-      class="charts-wrap section-block"
-      aria-labelledby="charts-title"
-    >
-
-      <div class="section-header">
-
-        <div class="section-heading">
-
-          <span
-            class="section-index"
-            aria-hidden="true"
-          >
+<section aria-labelledby="charts-title" class="charts-wrap section-block">
+<div class="section-header">
+<div class="section-heading">
+<span aria-hidden="true" class="section-index">
             03
           </span>
-
-          <div>
-
-            <h2
-              class="section-label"
-              id="charts-title"
-            >
+<div>
+<h2 class="section-label" id="charts-title">
               Filature dans le temps
             </h2>
-
-            <p class="section-description">
+<p class="section-description">
               Évolution des scores jour après jour
             </p>
-
-          </div>
-
-        </div>
-
-        <span class="section-sub">
+</div>
+</div>
+<span class="section-sub">
           Analyse
         </span>
-
-      </div>
-
-
-      <div
-        class="charts-tabs"
-        role="tablist"
-        aria-label="Choix du personnage"
-      >
-
-        <button
-          class="chart-tab active"
-          role="tab"
-          aria-selected="true"
-          onclick="switchChart('tom', this)"
-        >
-          <span class="tab-dot tom"></span>
+</div>
+<div aria-label="Choix du personnage" class="charts-tabs" role="tablist">
+<button aria-selected="true" class="chart-tab active" onclick="switchChart('tom', this)" role="tab">
+<span class="tab-dot tom"></span>
           Tom Holland
         </button>
-
-        <button
-          class="chart-tab"
-          role="tab"
-          aria-selected="false"
-          onclick="switchChart('andrew', this)"
-        >
-          <span class="tab-dot andrew"></span>
+<button aria-selected="false" class="chart-tab" onclick="switchChart('andrew', this)" role="tab">
+<span class="tab-dot andrew"></span>
           Andrew Garfield
         </button>
-
-        <button
-          class="chart-tab"
-          role="tab"
-          aria-selected="false"
-          onclick="switchChart('tobey', this)"
-        >
-          <span class="tab-dot tobey"></span>
+<button aria-selected="false" class="chart-tab" onclick="switchChart('tobey', this)" role="tab">
+<span class="tab-dot tobey"></span>
           Tobey Maguire
         </button>
-
-        <button
-          class="chart-tab"
-          role="tab"
-          aria-selected="false"
-          onclick="switchChart('compare', this)"
-        >
-          <span class="tab-dot compare"></span>
+<button aria-selected="false" class="chart-tab" onclick="switchChart('compare', this)" role="tab">
+<span class="tab-dot compare"></span>
           Comparatif
         </button>
-
-      </div>
-
-
-      <div class="chart-container">
-        <canvas
-          id="main-chart"
-          role="img"
-          aria-label="Graphique d'évolution des scores"
-        ></canvas>
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
+</div>
+<div class="chart-container">
+<canvas aria-label="Graphique d'évolution des scores" id="main-chart" role="img"></canvas>
+</div>
+</section>
+<!-- =====================================================
          ARCHIVES
     ====================================================== -->
-
-    <section
-      class="db-wrap calendar-archive section-block"
-      id="db-wrap"
-      aria-labelledby="archives-title"
-    >
-
-      <div class="section-header">
-
-        <div class="section-heading">
-
-          <span
-            class="section-index"
-            aria-hidden="true"
-          >
+<section aria-labelledby="archives-title" class="db-wrap calendar-archive section-block" id="db-wrap">
+<div class="section-header">
+<div class="section-heading">
+<span aria-hidden="true" class="section-index">
             04
           </span>
-
-          <div>
-
-            <h2
-              class="section-label"
-              id="archives-title"
-            >
+<div>
+<h2 class="section-label" id="archives-title">
               Archives
             </h2>
-
-            <p class="section-description">
+<p class="section-description">
               Chaque journée depuis le début de la filature
             </p>
-
-          </div>
-
-        </div>
-
-        <span
-          class="section-sub"
-          id="db-count"
-        >
+</div>
+</div>
+<span class="section-sub" id="db-count">
           — jours archivés
         </span>
-
-      </div>
-
-
-      <div id="calendar-wrap"></div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =======================================================
+</div>
+<div id="calendar-wrap"></div>
+</section>
+</main>
+<!-- =======================================================
        FOOTER
   ======================================================== -->
-
-  <footer class="dossier-footer">
-
-    <div class="footer-brand">
-      <span class="footer-spider">SPIDEY</span>
-      <span>TRACK</span>
-    </div>
-
-    <div class="footer-line"></div>
-
-    <p>
-      <strong>SpideyTrack</strong>
+<footer class="dossier-footer">
+<div class="footer-brand">
+<span class="footer-spider">SPIDEY</span>
+<span>TRACK</span>
+</div>
+<div class="footer-line"></div>
+<p>
+<strong>SpideyTrack</strong>
       est un projet indépendant et strictement non officiel.
     </p>
-
-    <p>
+<p>
       Il n'est en aucun cas affilié, associé, autorisé, sponsorisé
       ou approuvé par Marvel Entertainment, Disney ou Sony Pictures.
       Tous les droits relatifs aux personnages, noms et images
       appartiennent à leurs propriétaires respectifs.
     </p>
-
-    <p>
+<p>
       Créé à des fins statistiques et de divertissement pour analyser
       l'apparition des trois Spider-Man sur
-      <a
-        href="https://marveldle.com/menu"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://marveldle.com/menu" rel="noopener noreferrer" target="_blank">
         Marveldle
       </a>.
     </p>
-
-    <div class="footer-bottom">
+<div class="footer-bottom">
       L'ŒIL CRITIQUE · SPIDEYTRACK · DOSSIER INDÉPENDANT
     </div>
-
-  </footer>
-
-
-  <!-- LIGHTBOX -->
-
-  <div
-    id="lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Capture d'écran agrandie"
-  >
-
-    <button
-      id="lightbox-close"
-      type="button"
-    >
+</footer>
+<!-- LIGHTBOX -->
+<div aria-label="Capture d'écran agrandie" aria-modal="true" id="lightbox" role="dialog">
+<button id="lightbox-close" type="button">
       Fermer ✕
     </button>
-
-    <img
-      id="lightbox-img"
-      src=""
-      alt="Capture d'écran du Marveldle"
-    >
-
-  </div>
-
+<img alt="Capture d'écran du Marveldle" id="lightbox-img" src=""/>
 </div>
-
-
+</div>
 <!-- =========================================================
      DISCLAIMER
 ========================================================= -->
-
 <div id="disclaimer-overlay">
-
-  <div
-    id="disclaimer-box"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="disclaimer-title"
-  >
-
-    <button
-      id="disclaimer-close"
-      aria-label="Fermer"
-      type="button"
-    >
+<div aria-labelledby="disclaimer-title" aria-modal="true" id="disclaimer-box" role="dialog">
+<button aria-label="Fermer" id="disclaimer-close" type="button">
       ✕
     </button>
-
-    <div
-      class="disclaimer-kicker"
-      aria-hidden="true"
-    >
+<div aria-hidden="true" class="disclaimer-kicker">
       NOTE DU DOSSIER
     </div>
-
-    <div
-      class="disclaimer-title"
-      id="disclaimer-title"
-    >
+<div class="disclaimer-title" id="disclaimer-title">
       À propos du dossier
     </div>
-
-    <div class="disclaimer-text">
+<div class="disclaimer-text">
 
       Ce site suit l'apparition des trois Spider-Men sur
-      <a
-        href="https://marveldle.com/menu"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://marveldle.com/menu" rel="noopener noreferrer" target="_blank">
         Marveldle
       </a> :
       Tom Holland, Andrew Garfield et Tobey Maguire.
 
-      <br><br>
+      <br/><br/>
 
       SpideyTrack est un projet indépendant non officiel,
       mis à jour automatiquement chaque jour.
 
-      <br><br>
+      <br/><br/>
 
       Tous les droits relatifs aux personnages appartiennent
       à leurs propriétaires respectifs.
 
-      <br><br>
+      <br/><br/>
 
       Aucune publicité ni monétisation directe.
       Divertissement uniquement.
 
     </div>
-
-    <button
-      id="disclaimer-ok"
-      type="button"
-    >
+<button id="disclaimer-ok" type="button">
       Compris
     </button>
-
-  </div>
-
 </div>
-
-
+</div>
 <!-- =========================================================
      VICTOIRE
 ========================================================= -->
-
-<canvas
-  id="victory-canvas"
-  aria-hidden="true"
-></canvas>
-
+<canvas aria-hidden="true" id="victory-canvas"></canvas>
 <div id="victory-overlay">
-
-  <div
-    id="victory-box"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="victory-title"
-  >
-
-    <div
-      id="victory-spider"
-      aria-hidden="true"
-    >
-      <svg
-        viewBox="0 0 80 80"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse cx="40" cy="44" rx="14" ry="16" fill="#e8192c"/>
-        <ellipse cx="40" cy="28" rx="10" ry="10" fill="#e8192c"/>
-
-        <line x1="26" y1="38" x2="4" y2="28"
-          stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="26" y1="44" x2="2" y2="44"
-          stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="26" y1="50" x2="4" y2="62"
-          stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-
-        <line x1="54" y1="38" x2="76" y2="28"
-          stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="54" y1="44" x2="78" y2="44"
-          stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="54" y1="50" x2="76" y2="62"
-          stroke="#e8192c" stroke-width="3" stroke-linecap="round"/>
-
-        <line x1="40" y1="18" x2="40" y2="6"
-          stroke="#e8192c" stroke-width="2.5" stroke-linecap="round"/>
-
-        <circle cx="35" cy="26" r="3" fill="#e8edf5"/>
-        <circle cx="45" cy="26" r="3" fill="#e8edf5"/>
-      </svg>
-    </div>
-
-    <div id="victory-title">
+<div aria-labelledby="victory-title" aria-modal="true" id="victory-box" role="dialog">
+<div aria-hidden="true" id="victory-spider">
+<svg fill="none" viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="40" cy="44" fill="#e8192c" rx="14" ry="16"></ellipse>
+<ellipse cx="40" cy="28" fill="#e8192c" rx="10" ry="10"></ellipse>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="26" x2="4" y1="38" y2="28"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="26" x2="2" y1="44" y2="44"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="26" x2="4" y1="50" y2="62"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="54" x2="76" y1="38" y2="28"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="54" x2="78" y1="44" y2="44"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="3" x1="54" x2="76" y1="50" y2="62"></line>
+<line stroke="#e8192c" stroke-linecap="round" stroke-width="2.5" x1="40" x2="40" y1="18" y2="6"></line>
+<circle cx="35" cy="26" fill="#e8edf5" r="3"></circle>
+<circle cx="45" cy="26" fill="#e8edf5" r="3"></circle>
+</svg>
+</div>
+<div id="victory-title">
       IDENTIFIÉ !
     </div>
-
-    <div
-      id="victory-sub"
-      style="white-space: pre-line"
-    >
+<div id="victory-sub" style="white-space: pre-line">
       C'est lui aujourd'hui !
     </div>
-
-    <button
-      id="victory-close"
-      type="button"
-    >
+<button id="victory-close" type="button">
       Continuer →
     </button>
-
-  </div>
-
 </div>
-
-
-<script src="marveldle.js" defer></script>
-<script src="calendar.js" defer></script>
-<script src="/l_oeil_critique/assets/js/main.js" defer></script>
-<script src="/l_oeil_critique/assets/js/header.js" defer></script>
-
+</div>
+<script defer="" src="marveldle.js"></script>
+<script defer="" src="calendar.js"></script>
+<script defer="" src="/l_oeil_critique/assets/js/main.js"></script>
+<script defer="" src="/l_oeil_critique/assets/js/header.js"></script>
 </body>
 </html>
