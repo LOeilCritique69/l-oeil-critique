@@ -12,6 +12,14 @@
   'use strict';
 
   var API = '/.netlify/functions/poster'; // adapte si ta fonction est ailleurs
+
+  // Mode local (Live Server) : la fonction Netlify n'existe pas, donc on appelle OMDb directement
+  // avec une clé stockée UNIQUEMENT dans ton navigateur (jamais dans le code, jamais sur le site).
+  // À faire une fois, dans la console du navigateur (F12) sur ta page locale :
+  //   localStorage.setItem('OMDB_DEV_KEY', 'TA_CLE')
+  var IS_LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  var DEV_KEY = null;
+  try { DEV_KEY = IS_LOCAL ? localStorage.getItem('OMDB_DEV_KEY') : null; } catch (e) { /* ignore */ }
   var CACHE_KEY = 'omdbPosterCache_v2';
   var cache = {};
   try { cache = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}'); } catch (e) { cache = {}; }
@@ -38,7 +46,10 @@
 
   // Un appel à la fonction. Retourne { poster } (ou null) ; throw si erreur transitoire.
   async function query(params) {
-    var res = await fetch(API + '?' + params.toString());
+    var url = DEV_KEY
+      ? 'https://www.omdbapi.com/?apikey=' + encodeURIComponent(DEV_KEY) + '&' + params.toString()
+      : API + '?' + params.toString();
+    var res = await fetch(url);
     if (!res.ok) throw new Error('HTTP ' + res.status);
     var data = await res.json();
     if (data.Response === 'True') {
@@ -93,6 +104,13 @@
   async function loadPoster(el) {
     var d = el.dataset;
     var poster = await getPoster(d);
+    if (el.tagName === 'IMG') {            // image de carte (page index) : on remplit le src
+      if (!poster) { el.classList.add('tierlist-card__image--missing'); return; }
+      if (!el.alt) el.alt = labelOf(d);
+      el.decoding = 'async';
+      el.src = resize(poster, 342);
+      return;
+    }
     if (!poster) {
       el.classList.add('tier-item--missing');
       el.textContent = labelOf(d);
@@ -107,6 +125,9 @@
   }
 
   function init() {
+    // Cartes de la page index : peu nombreuses, on les charge directement
+    document.querySelectorAll('img.tierlist-card__image[data-title]').forEach(loadPoster);
+
     var items = document.querySelectorAll('.tier-item[data-title], .tier-item[data-imdb]');
     if (!('IntersectionObserver' in window)) {
       items.forEach(loadPoster);

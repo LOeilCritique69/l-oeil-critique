@@ -716,6 +716,32 @@ a.notif-page__item.is-unread .notif-page__dot {
    qu'une seule ligne compressée.
    ============================================================================ */
 
+.tier-item[data-title],
+.tier-item[data-imdb] {
+  aspect-ratio: 2 / 3;
+  background: rgba(255, 255, 255, 0.06);
+}
+ 
+/* Affiche introuvable : on affiche le titre */
+.tier-item--missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  color: #ccc;
+  background: #2a2a2a;
+  border: 1px dashed #555;
+}
+ 
+/* Page index : affiche pas encore chargée / introuvable */
+.tierlist-card__image[data-title]:not([src]),
+.tierlist-card__image--missing {
+  background: #2a2a2a;
+}
+
 .tierlist-page .tier-row__label {
   flex-direction: column;
   width: 130px;
