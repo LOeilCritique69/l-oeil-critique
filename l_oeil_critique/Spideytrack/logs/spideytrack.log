@@ -5324,3 +5324,34 @@ Call log:
 09:05:55  INFO       Andrew Garfield : 2/671 parties (0.3%) | streak 0 —
 09:05:55  INFO       Tobey Maguire : 2/671 parties (0.3%) | streak 0 —
 09:05:55  INFO     🏁 Terminé.
+09:13:18  INFO     🎯 Jour à jouer : 672
+09:13:18  INFO     ═══════════════════════════════════════════════════════
+09:13:18  INFO       Tom Holland
+09:13:18  INFO     ═══════════════════════════════════════════════════════
+09:13:36  INFO       ❌ Pas lui.
+09:13:36  INFO       📊 Score : 1/7 exacts, 1/7 partiels (pondéré: 1.5)
+09:13:36  INFO     ═══════════════════════════════════════════════════════
+09:13:36  INFO       Andrew Garfield
+09:13:36  INFO     ═══════════════════════════════════════════════════════
+09:13:54  INFO       ❌ Pas lui.
+09:13:54  INFO       📊 Score : 1/7 exacts, 1/7 partiels (pondéré: 1.5)
+09:13:54  INFO     ═══════════════════════════════════════════════════════
+09:13:54  INFO       Tobey Maguire
+09:13:54  INFO     ═══════════════════════════════════════════════════════
+09:14:12  INFO       ❌ Pas lui.
+09:14:12  INFO       📊 Score : 1/7 exacts, 1/7 partiels (pondéré: 1.5)
+09:14:12  INFO     ✅ database.json vérifié : jour 672 bien enregistré.
+09:14:12  INFO     📅 Prochain jour : 673
+09:14:12  INFO     ═══════════════════════════════════════════════════════
+09:14:12  INFO       📋 RAPPORT DU 2026-11-03
+09:14:12  INFO     ═══════════════════════════════════════════════════════
+09:14:12  INFO       ❌ Tom Holland — Pas lui | 1/7 exacts, 1/7 partiels (pondéré: 1.5)
+09:14:12  INFO       ❌ Andrew Garfield — Pas lui | 1/7 exacts, 1/7 partiels (pondéré: 1.5)
+09:14:12  INFO       ❌ Tobey Maguire — Pas lui | 1/7 exacts, 1/7 partiels (pondéré: 1.5)
+09:14:12  INFO     ───────────────────────────────────────────────────────
+09:14:12  INFO       📊 STATS GLOBALES
+09:14:12  INFO     ───────────────────────────────────────────────────────
+09:14:12  INFO       Tom Holland : 3/672 parties (0.4%) | streak 0 —
+09:14:12  INFO       Andrew Garfield : 2/672 parties (0.3%) | streak 0 —
+09:14:12  INFO       Tobey Maguire : 2/672 parties (0.3%) | streak 0 —
+09:14:12  INFO     🏁 Terminé.
