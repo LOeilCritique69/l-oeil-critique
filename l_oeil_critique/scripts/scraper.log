@@ -45202,3 +45202,61 @@ Call log:
 2026-11-03 21:45:40,350 [INFO] Scraping TMDb terminé (0 items)
 2026-11-03 21:45:40,350 [INFO] 0 articles retenus pour ce run
 2026-11-03 21:45:40,350 [INFO] Aucun article à écrire, arrêt
+2026-11-04 02:00:48,135 [INFO] ==== Début du script bandes-annonces ====
+2026-11-04 02:00:48,161 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-04 02:00:48,162 [INFO] 1541 identifiants chargés depuis le log
+2026-11-04 02:00:48,162 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-04 02:00:50,140 [INFO] Démarrage scraping CineHorizons...
+2026-11-04 02:00:53,119 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-04 02:00:53,293 [INFO] 10 blocs détectés sur la page 1
+2026-11-04 02:00:53,295 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-04 02:00:53,295 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-04 02:00:53,295 [INFO] Démarrage scraping Allociné (films)...
+2026-11-04 02:00:54,371 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-04 02:00:54,948 [INFO] Article ajouté Allociné (film): Godzilla Minus Zero
+2026-11-04 02:00:56,417 [INFO] Article ajouté Allociné (film): Ma toute petite école
+2026-11-04 02:00:57,445 [INFO] Article ajouté Allociné (film): Wild Horse Nine
+2026-11-04 02:00:58,355 [INFO] Article ajouté Allociné (film): 30 ans après... Mémoire d'une féria
+2026-11-04 02:00:59,232 [INFO] Article ajouté Allociné (film): Un bon patron
+2026-11-04 02:01:00,165 [INFO] Article ajouté Allociné (film): L’Arabe
+2026-11-04 02:01:01,031 [INFO] Article ajouté Allociné (film): Zones Troubles
+2026-11-04 02:01:01,898 [INFO] Article ajouté Allociné (film): Carlo Acutis, un saint pour notre temps
+2026-11-04 02:01:02,704 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-04 02:01:03,476 [INFO] Article ajouté Allociné (film): Louve, une vie dans les Alpes
+2026-11-04 02:01:04,355 [INFO] Article ajouté Allociné (film): Nos âmes libres
+2026-11-04 02:01:05,889 [INFO] Article ajouté Allociné (film): Kwibuka, se souvenir
+2026-11-04 02:01:06,975 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-11-04 02:01:07,827 [INFO] Article ajouté Allociné (film): Club Kid
+2026-11-04 02:01:08,491 [INFO] Article ajouté Allociné (film): Silences
+2026-11-04 02:01:09,346 [INFO] Article ajouté Allociné (film): L’Himalaya Sans Filtre : Sur Les Routes De Lo
+2026-11-04 02:01:10,380 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-11-04 02:01:10,456 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-04 02:01:10,456 [INFO] Scraping Allociné (films) terminé (14 items)
+2026-11-04 02:01:10,456 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-04 02:01:11,144 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-04 02:01:14,273 [INFO] Article ajouté Allociné (serie): Orgueil et Préjugés (saison 1)
+2026-11-04 02:01:17,583 [INFO] Article ajouté Allociné (serie): L'Enlèvement de Toos van der Valk (saison 1)
+2026-11-04 02:01:19,805 [INFO] Article ajouté Allociné (serie): It Gets Worse (saison 1)
+2026-11-04 02:01:20,958 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-04 02:01:21,037 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-04 02:01:21,037 [INFO] Scraping Allociné (séries) terminé (3 items)
+2026-11-04 02:01:21,116 [INFO] Démarrage scraping TMDb...
+2026-11-04 02:01:21,443 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-04 02:01:21,534 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-04 02:01:22,676 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-04 02:01:23,539 [INFO] Article ajouté TMDb (upcoming): Mon fils président
+2026-11-04 02:01:24,165 [INFO] Article ajouté TMDb (upcoming): Opération Tramway
+2026-11-04 02:01:24,721 [INFO] Article ajouté TMDb (upcoming): The Catcher
+2026-11-04 02:01:25,154 [INFO] 6 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-04 02:01:26,278 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-04 02:01:26,363 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-04 02:01:26,796 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-04 02:01:26,878 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-04 02:01:28,008 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-04 02:01:28,941 [INFO] Scraping TMDb terminé (3 items)
+2026-11-04 02:01:28,941 [INFO] 14 articles retenus pour ce run
+2026-11-04 02:01:29,028 [INFO] 2694 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-04 02:01:29,029 [INFO] Sauvegarde du log avec 1555 identifiants
+2026-11-04 02:01:29,030 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-04 02:01:29,117 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-04 02:01:29,117 [INFO] ==== Fin du script bandes-annonces ====
