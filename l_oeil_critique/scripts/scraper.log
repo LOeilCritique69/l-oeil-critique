@@ -45302,3 +45302,54 @@ Call log:
 2026-11-04 08:59:54,452 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-04 08:59:54,539 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-04 08:59:54,539 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-04 17:06:15,535 [INFO] ==== Début du script bandes-annonces ====
+2026-11-04 17:06:15,574 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-04 17:06:15,575 [INFO] 1563 identifiants chargés depuis le log
+2026-11-04 17:06:15,575 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-04 17:06:16,261 [INFO] Démarrage scraping CineHorizons...
+2026-11-04 17:06:18,191 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-04 17:06:18,360 [INFO] 10 blocs détectés sur la page 1
+2026-11-04 17:06:18,361 [INFO] Extraction détails CineHorizons pour Le Noël d'Ernest et Célestine
+2026-11-04 17:06:19,269 [INFO] Article ajouté CineHorizons: Le Noël d'Ernest et Célestine
+2026-11-04 17:06:19,269 [INFO] Extraction détails CineHorizons pour River
+2026-11-04 17:06:20,181 [INFO] Article ajouté CineHorizons: River
+2026-11-04 17:06:20,667 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-11-04 17:06:20,753 [INFO] 10 blocs détectés sur la page 2
+2026-11-04 17:06:20,755 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-04 17:06:20,756 [INFO] Scraping CineHorizons terminé (2 items)
+2026-11-04 17:06:20,756 [INFO] Démarrage scraping Allociné (films)...
+2026-11-04 17:06:21,948 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-04 17:06:22,052 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-04 17:06:22,052 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-04 17:06:22,052 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-04 17:06:23,034 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-04 17:06:24,701 [INFO] Article ajouté Allociné (serie): Trinity (saison 1)
+2026-11-04 17:06:26,225 [INFO] Article ajouté Allociné (serie): Alice (saison 1)
+2026-11-04 17:06:27,983 [INFO] Article ajouté Allociné (serie): La Diplomate (saison 4)
+2026-11-04 17:06:29,747 [INFO] Article ajouté Allociné (serie): The Lowdown (saison 2)
+2026-11-04 17:06:31,481 [INFO] Article ajouté Allociné (serie): Gordon (saison 1)
+2026-11-04 17:06:33,158 [INFO] Article ajouté Allociné (serie): Dig (saison 1)
+2026-11-04 17:06:34,844 [INFO] Article ajouté Allociné (serie): Blue Eye Samurai (saison 2)
+2026-11-04 17:06:36,531 [INFO] Article ajouté Allociné (serie): Orgueil et Préjugés (saison 1)
+2026-11-04 17:06:36,794 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-04 17:06:36,893 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-04 17:06:36,893 [INFO] Scraping Allociné (séries) terminé (8 items)
+2026-11-04 17:06:36,994 [INFO] Démarrage scraping TMDb...
+2026-11-04 17:06:37,202 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-04 17:06:37,261 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-04 17:06:38,499 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-04 17:06:39,392 [INFO] 9 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-04 17:06:39,511 [INFO] Article ajouté TMDb (upcoming): Terre à l'horizon
+2026-11-04 17:06:39,636 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-04 17:06:40,153 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-04 17:06:40,256 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-04 17:06:40,312 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-04 17:06:40,866 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-04 17:06:41,644 [INFO] Article ajouté TMDb (now_playing): Irish Travellers
+2026-11-04 17:06:41,645 [INFO] Scraping TMDb terminé (2 items)
+2026-11-04 17:06:41,645 [INFO] 12 articles retenus pour ce run
+2026-11-04 17:06:41,733 [INFO] 2714 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-04 17:06:41,733 [INFO] Sauvegarde du log avec 1575 identifiants
+2026-11-04 17:06:41,734 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-04 17:06:41,822 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-04 17:06:41,822 [INFO] ==== Fin du script bandes-annonces ====

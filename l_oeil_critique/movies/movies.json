@@ -6116,5 +6116,18 @@
     "tmdb_year": "2026",
     "poster_path": "/qO8nc3cSjzGduaC0deh8gBRKK9Z.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/qO8nc3cSjzGduaC0deh8gBRKK9Z.jpg"
+  },
+  {
+    "Name": "Cronos",
+    "Year": 1992,
+    "Date": "2026-11-04",
+    "Rating": 2.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/cronos/",
+    "tmdb_id": 11655,
+    "tmdb_source": "rss",
+    "tmdb_title": "Cronos",
+    "tmdb_year": "1993",
+    "poster_path": "/m9IO7OnHjY9ULtS5g0xAlvcm40s.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/m9IO7OnHjY9ULtS5g0xAlvcm40s.jpg"
   }
 ]
