@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
         <meta property="og:title" content="Calendrier des sorties – L'Œil Critique">
-        <meta property="og:description" content="Récupération du calendrier éditorial…">
+        <meta property="og:description" content="Calendrier des sorties culturelles de L’Œil Critique : cinéma, séries, jeux vidéo, animés et événements.">
         <meta property="og:image" content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg">
         <meta property="og:type" content="website">
         <meta property="og:locale" content="fr_FR">
@@ -219,8 +219,50 @@ details.fuzzy-collapse .fuzzy-row{margin-top:14px}
   .modal-box{padding:20px}
   .modal-poster{flex-basis:76px;height:110px}
 }
+
+
+/* Présentation pédagogique et filtres personnalisés */
+.calendar-intro{max-width:1000px;margin:28px auto 0;padding:0 24px}
+.calendar-intro details{background:linear-gradient(180deg,var(--bg-card-raised),var(--bg-card));border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:16px 18px}
+.calendar-intro summary{cursor:pointer;list-style:none;font-family:'Fraunces',serif;font-size:1.08rem;font-weight:600;color:var(--gold-light);display:flex;align-items:center;gap:10px}
+.calendar-intro summary::-webkit-details-marker{display:none}
+.calendar-intro summary:after{content:'+';margin-left:auto;font-family:'JetBrains Mono',monospace;color:var(--gold)}
+.calendar-intro details[open] summary:after{content:'−'}
+.calendar-intro__content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:16px;color:var(--text-muted);font-size:.88rem;line-height:1.7}
+.calendar-intro__content strong{color:var(--text-primary)}
+.calendar-intro__content p{margin:0}
+.calendar-intro__note{grid-column:1/-1;padding:12px 14px;border-left:2px solid var(--gold);background:rgba(212,175,55,.06);border-radius:0 8px 8px 0}
+.filter-panel{margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md)}
+.filter-panel__head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.filter-panel__title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin:0}
+.filter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.filter-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.filter-field label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint)}
+.filter-select{width:100%;min-height:42px;padding:9px 12px;border:1px solid var(--border-subtle);border-radius:9px;background:var(--bg-input);color:var(--text-primary);font:500 13px 'Inter',sans-serif}
+.filter-select:focus{outline:2px solid var(--gold);outline-offset:2px}
+.filter-options{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px;padding-top:13px;border-top:1px solid var(--border-subtle)}
+.filter-check{display:inline-flex;align-items:center;gap:8px;color:var(--text-muted);font-size:12px;cursor:pointer}
+.filter-check input{accent-color:var(--gold);width:16px;height:16px}
+.filter-help{margin:10px 0 0;color:var(--text-faint);font-size:11px;line-height:1.5}
+.filter-reset,.refresh-btn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--border-gold);border-radius:var(--radius-pill);padding:9px 13px;color:var(--gold-light);cursor:pointer;transition:var(--transition)}
+.filter-reset:hover,.refresh-btn:hover{background:rgba(212,175,55,.1);border-color:var(--gold)}
+.toolbar-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.refresh-btn[disabled]{opacity:.55;cursor:wait}
+.cookie-note{color:var(--text-faint);font-size:10px;margin:9px 0 0}
+.fr-date-mark{display:inline-flex;align-items:center;margin-left:5px;padding:1px 5px;border-radius:4px;background:rgba(79,179,173,.15);color:var(--cat-series);font:700 8px 'JetBrains Mono',monospace;letter-spacing:.04em;vertical-align:middle}
+.date-source-note{font-size:10px;color:var(--text-faint);margin-top:2px}
+.refresh-note{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+@media(max-width:720px){
+  .calendar-intro{padding:0 14px}
+  .calendar-intro__content{grid-template-columns:1fr}
+  .filter-grid{grid-template-columns:1fr}
+  .filter-panel__head{align-items:flex-start}
+  .toolbar-actions{width:100%;justify-content:space-between}
+  .refresh-btn{flex:1}
+}
+
 </style>
-<meta content="Calendrier des sorties – L'Œil Critique" property="og:title"/><meta content="Récupération du calendrier éditorial…" property="og:description"/><meta content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" property="og:image"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.l-oeil-critique.com/pages/calendrier.html" property="og:url"/><link href="https://www.l-oeil-critique.com/pages/calendrier.html" rel="canonical"/></head>
+<meta content="Calendrier des sorties – L'Œil Critique" property="og:title"/><meta content="Calendrier des sorties culturelles de L’Œil Critique : cinéma, séries, jeux vidéo, animés et événements." property="og:description"/><meta content="/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg" property="og:image"/><meta content="website" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.l-oeil-critique.com/pages/calendrier.html" property="og:url"/><link href="https://www.l-oeil-critique.com/pages/calendrier.html" rel="canonical"/></head>
 <body class="lp-page">
 <a class="skip-link" href="#main">Aller au calendrier</a>
 <div aria-live="polite" id="loadingOverlay" role="status">
@@ -229,23 +271,65 @@ details.fuzzy-collapse .fuzzy-row{margin-top:14px}
 <div class="list-page-header">
 <p class="list-page-header__breadcrumb"><a href="../index.html">Accueil</a> / <span class="is-current">Calendrier</span></p>
 <h1 class="list-page-header__title">Calendrier des sorties</h1>
-<p class="list-page-header__description2">Retrouvez les prochaines sorties cinéma, séries, jeux vidéo, événements, animés et autres suivis par L'Œil Critique. Le calendrier est mis à jour en continu.</p>
+<p class="list-page-header__description2">Toutes les sorties suivies par L’Œil Critique, réunies dans un calendrier chronologique : films, séries, jeux vidéo, animés, musique et événements. Les données sont actualisées automatiquement depuis le calendrier éditorial.</p>
 <div class="add-proposal-banner">
 <p class="add-proposal-banner__text">💡 Une sortie manque à l'appel ? Proposez-la pour qu'elle apparaisse dans le calendrier !</p>
 <a class="add-proposal-banner__btn" id="proposeLink" rel="noopener noreferrer" target="_blank">➕ Proposer une sortie</a>
 </div>
 </div>
+
+<section class="calendar-intro" aria-label="Comprendre le calendrier">
+  <details>
+    <summary>Comment fonctionne ce calendrier et à quoi sert-il ?</summary>
+    <div class="calendar-intro__content">
+      <p><strong>Un agenda éditorial centralisé.</strong> Cette page rassemble les dates suivies par L’Œil Critique. Les sorties sont enregistrées dans le tableur de gestion, puis transmises à cette page par une API Google Apps Script. Le HTML ne contient pas la liste des sorties en dur.</p>
+      <p><strong>Comment l’utiliser ?</strong> Parcourez les mois avec les flèches, sélectionnez une catégorie, recherchez un titre ou ouvrez une journée pour consulter les détails. La fenêtre d’une sortie peut proposer une affiche, un lien d’information et un ajout à Google Calendar.</p>
+      <p><strong>Votre calendrier, vos règles.</strong> Les filtres par catégorie, plateforme et période permettent de réduire la liste. Les préférences sont conservées dans un cookie fonctionnel sur cet appareil ; elles ne nécessitent pas de compte.</p>
+      <p><strong>Dates françaises.</strong> Pour les films, la page tente de récupérer une date française explicitement enregistrée dans TMDB. Si aucune date française fiable n’est disponible, la date du tableur est conservée. Les séries, jeux, animés et événements utilisent la date fournie par le calendrier éditorial.</p>
+      <p class="calendar-intro__note"><strong>Important pour la saisie :</strong> le tableur attend des dates au format français <strong>JJ/MM/AAAA</strong> (ex. 16/12/2026), ou MM/AAAA lorsque le jour est inconnu. Une date américaine ambiguë déjà enregistrée dans le tableur ne peut pas être devinée avec certitude par le navigateur : elle doit être corrigée dans la source. Ce produit utilise l’API TMDB sans être approuvé ni certifié par TMDB.</p>
+    </div>
+  </details>
+</section>
 <main id="main">
 <div class="toolbar">
-<div class="search-wrap" role="search">
-<label class="sr-only" for="searchInput">Rechercher un titre</label>
-<span aria-hidden="true" class="search-icon">🔎</span>
-<input autocomplete="off" class="search-input" id="searchInput" placeholder="Rechercher un titre…" type="search"/>
-<button aria-label="Effacer la recherche" class="search-clear" id="searchClear" type="button">✕</button>
-</div>
-<span aria-live="polite" class="stat-count" id="statCount"></span>
+  <div class="search-wrap" role="search">
+    <label class="sr-only" for="searchInput">Rechercher un titre</label>
+    <span aria-hidden="true" class="search-icon">🔎</span>
+    <input autocomplete="off" class="search-input" id="searchInput" placeholder="Rechercher un titre…" type="search"/>
+    <button aria-label="Effacer la recherche" class="search-clear" id="searchClear" type="button">✕</button>
+  </div>
+  <div class="toolbar-actions">
+    <span aria-live="polite" class="stat-count" id="statCount"></span>
+    <button class="refresh-btn" id="refreshBtn" type="button">↻ Actualiser</button>
+  </div>
 </div>
 <div aria-label="Filtrer par catégorie" class="controls" id="catFilters" role="group"></div>
+<section class="filter-panel" aria-label="Filtres personnalisés">
+  <div class="filter-panel__head">
+    <h2 class="filter-panel__title">Affiner les sorties</h2>
+    <button class="filter-reset" id="resetFilters" type="button">Réinitialiser</button>
+  </div>
+  <div class="filter-grid">
+    <div class="filter-field">
+      <label for="platformFilter">Plateforme / support</label>
+      <select class="filter-select" id="platformFilter"><option value="TOUS">Toutes les plateformes</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="periodFilter">Période</label>
+      <select class="filter-select" id="periodFilter">
+        <option value="TOUS">Toutes les périodes</option>
+        <option value="avenir">À venir</option>
+        <option value="passees">Déjà sorties</option>
+        <option value="imprecises">Dates à préciser</option>
+      </select>
+    </div>
+  </div>
+  <div class="filter-options">
+    <label class="filter-check"><input id="frDateToggle" type="checkbox" checked/> Utiliser les dates françaises TMDB pour les films</label>
+  </div>
+  <p class="filter-help">Les catégories sont multi-sélectionnables. Les filtres actifs sont mémorisés dans un cookie fonctionnel pendant 180 jours sur cet appareil.</p>
+  <p class="cookie-note">Aucun compte n’est nécessaire. Effacer les cookies du navigateur réinitialisera ces préférences.</p>
+</section>
 <section aria-labelledby="weekTitle" class="week-strip" id="weekStrip" style="display:none">
 <div class="week-strip__head"><h2 id="weekTitle">🔔 Cette semaine</h2><div class="line"></div></div>
 <div class="week-strip__row" id="weekStripRow"></div>
@@ -280,7 +364,7 @@ details.fuzzy-collapse .fuzzy-row{margin-top:14px}
 <script>
 "use strict";
 /* ========================= CONFIGURATION ========================= */
-const GAS_URL = "https://script.google.com/macros/s/AKfycbxxxcXZir_Dsl0WU62HRG-83wg5emdEm4NLdwvBUllGCrAP_Remysl_87B-wH8pZpyeIg/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwQe6wGGkeOKyNqnrSPbn4ybjaP9ktf-LkMqTTQYNDPGfGAUx6j0wAH4ELj5eH8AHVoyA/exec";
 const API_URL = GAS_URL + "?format=json";
 document.getElementById("proposeLink").href = GAS_URL + "?vue=ajouter";
 
@@ -293,8 +377,7 @@ const OMDB_URL = "https://www.omdbapi.com/";
 const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 const POSTER_CATEGORIES = new Set(["🎬 Films","📺 Séries","🎬 Films/Séries","🍿 Animés"]);
 
-const CACHE_KEY = "calendrier_sorties_cache_v3";
-const CACHE_TTL_MS = 30 * 60 * 1000;
+const CACHE_KEY = "calendrier_sorties_cache_v4";
 const JSONP_TIMEOUT_MS = 12000;
 
 const MOIS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
@@ -332,63 +415,122 @@ function titreHTML(raw){
   return escapeHTML(clean) + badge;
 }
 
-/* ========================= ÉTAT ========================= */
+/* ========================= ÉTAT & PRÉFÉRENCES ========================= */
+const PREF_COOKIE = "loeil_calendrier_prefs_v1";
+const PREF_MAX_AGE = 60 * 60 * 24 * 180;
+const DEFAULT_PREFS = { categories: [], platform: "TOUS", watch: "TOUS", period: "TOUS", frenchDates: true };
+function readPrefsCookie(){
+  try{
+    const part = document.cookie.split(";").map(s => s.trim()).find(s => s.startsWith(PREF_COOKIE + "="));
+    if(!part) return {...DEFAULT_PREFS};
+    const parsed = JSON.parse(decodeURIComponent(part.slice(PREF_COOKIE.length + 1)));
+    return {
+      categories: Array.isArray(parsed.categories) ? parsed.categories.filter(x => typeof x === "string") : [],
+      platform: typeof parsed.platform === "string" ? parsed.platform : "TOUS",
+      watch: ["TOUS","a-voir","vu"].includes(parsed.watch) ? parsed.watch : "TOUS",
+      period: ["TOUS","avenir","passees","imprecises"].includes(parsed.period) ? parsed.period : "TOUS",
+      frenchDates: parsed.frenchDates !== false
+    };
+  }catch(e){ return {...DEFAULT_PREFS}; }
+}
+function writePrefsCookie(){
+  const value = encodeURIComponent(JSON.stringify({categories:[...selectedCats],platform:selectedPlatform,period:periodFilter,frenchDates:useFrenchDates}));
+  document.cookie = `${PREF_COOKIE}=${value}; Max-Age=${PREF_MAX_AGE}; Path=/; SameSite=Lax${location.protocol === "https:" ? "; Secure" : ""}`;
+}
+const savedPrefs = readPrefsCookie();
 let ALL_ITEMS = [];
-let activeCat = "TOUS";
+let selectedCats = new Set(savedPrefs.categories);
+let selectedPlatform = savedPrefs.platform;
+let watchFilter = savedPrefs.watch;
+let periodFilter = savedPrefs.period;
+let useFrenchDates = savedPrefs.frenchDates;
 let searchTerm = "";
-const today = new Date(); today.setHours(0,0,0,0);
+const PARIS_TIME_ZONE = "Europe/Paris";
+function parisDateParts(){
+  const parts = new Intl.DateTimeFormat("en-CA",{timeZone:PARIS_TIME_ZONE,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+  const v = Object.fromEntries(parts.map(p => [p.type,p.value]));
+  return {year:+v.year,month:+v.month-1,day:+v.day};
+}
+const parisToday = parisDateParts();
+const today = new Date(parisToday.year,parisToday.month,parisToday.day,12);
 let viewYear = today.getFullYear();
 let viewMonth = today.getMonth();
 let lastFocus = null;
+let lastSuccessfulFetch = 0;
+let refreshInProgress = false;
+let currentLoadPromise = null;
 
 /* ========================= PARSING DES DATES ========================= */
+function validDateParts(y,m,d){
+  const date = new Date(y,m-1,d,12);
+  return date.getFullYear()===y && date.getMonth()===m-1 && date.getDate()===d;
+}
 function parseItemDate(dateStr){
-  if(!dateStr) return {kind:"inconnue", sortKey:Infinity};
+  if(!dateStr) return {kind:"inconnue",sortKey:Infinity};
   let s = dateStr.toString().trim().replace(/(\b\d{4}\b)\s+\1/g,"$1").trim();
   if(s.startsWith("/")) s = s.slice(1).trim();
   const mk = (y,m,d) => new Date(y,m,d,12).getTime();
 
-  let m = s.match(/^(\?|\d{1,2})[-/](\d{1,2})[-/](\d{2,4})$/);
+  // ISO API (YYYY-MM-DD) : ordre explicite, indépendant de la langue du navigateur.
+  let m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:T.*)?$/);
   if(m){
-    const mois = +m[2]-1; let annee = +m[3]; if(annee<100) annee += 2000;
-    if(mois>=0 && mois<=11){
-      const jour = m[1]==="?" ? 0 : +m[1];
-      if(jour>=1 && jour<=31) return {kind:"jour", jour, mois, annee, sortKey:mk(annee,mois,jour)};
-      return {kind:"mois", mois, annee, sortKey:mk(annee,mois,28)};
+    const annee=+m[1], mois=+m[2]-1, jour=+m[3];
+    if(mois>=0 && mois<=11 && validDateParts(annee,mois+1,jour)) return {kind:"jour",jour,mois,annee,sortKey:mk(annee,mois,jour)};
+    return {kind:"inconnue",sortKey:Infinity};
+  }
+
+  // Formats français : JJ/MM/AAAA ou JJ-MM-AAAA.
+  // Si le deuxième nombre dépasse 12, la chaîne est clairement au format US MM/JJ/AAAA.
+  m = s.match(/^(\?|\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{2,4})$/);
+  if(m){
+    let a=+m[1], b=+m[2], annee=+m[3]; if(annee<100) annee+=2000;
+    let jour=a, mois=b;
+    if(a!==0 && a<=12 && b>12){ mois=a; jour=b; } // US non ambigu : MM/DD/YYYY
+    if(mois>=1 && mois<=12){
+      if(m[1]==="?") return {kind:"mois",mois:mois-1,annee,sortKey:mk(annee,mois-1,28)};
+      if(validDateParts(annee,mois,jour)) return {kind:"jour",jour,mois:mois-1,annee,sortKey:mk(annee,mois-1,jour)};
     }
+    return {kind:"inconnue",sortKey:Infinity};
   }
-  m = s.match(/^(\d{1,2})[-/](\d{2,4})$/);
-  if(m){
-    const mois = +m[1]-1; let annee = +m[2]; if(annee<100) annee += 2000;
-    if(mois>=0 && mois<=11) return {kind:"mois", mois, annee, sortKey:mk(annee,mois,28)};
-  }
+  m = s.match(/^(\d{1,2})[/.\-](\d{2,4})$/);
+  if(m){ const mois=+m[1]-1; let annee=+m[2]; if(annee<100) annee+=2000; if(mois>=0&&mois<=11) return {kind:"mois",mois,annee,sortKey:mk(annee,mois,28)}; }
   m = s.match(/^([A-Za-zÀ-ÿ]+)\s+(\d{4})$/);
   if(m){
-    const w = normStr(m[1]), annee = +m[2], idx = MOIS_NORM.indexOf(w);
-    if(idx !== -1) return {kind:"mois", mois:idx, annee, sortKey:mk(annee,idx,28)};
-    if(SAISON_MAP[w]) return {kind:"saison", saison:SAISON_MAP[w].name, moisDebut:SAISON_MAP[w].moisDebut, annee, sortKey:mk(annee,SAISON_MAP[w].moisDebut,15)};
+    const w=normStr(m[1]), annee=+m[2], idx=MOIS_NORM.indexOf(w);
+    if(idx!==-1) return {kind:"mois",mois:idx,annee,sortKey:mk(annee,idx,28)};
+    if(SAISON_MAP[w]) return {kind:"saison",saison:SAISON_MAP[w].name,moisDebut:SAISON_MAP[w].moisDebut,annee,sortKey:mk(annee,SAISON_MAP[w].moisDebut,15)};
   }
-  m = s.match(/^(\d{4})$/);
-  if(m) return {kind:"annee", annee:+m[1], sortKey:mk(+m[1],11,31)};
-  const d = new Date(s);
-  if(!isNaN(d) && d.getFullYear()>=2020 && d.getFullYear()<=2035)
-    return {kind:"jour", jour:d.getDate(), mois:d.getMonth(), annee:d.getFullYear(), sortKey:mk(d.getFullYear(),d.getMonth(),d.getDate())};
-  return {kind:"inconnue", sortKey:Infinity};
+  m=s.match(/^(\d{4})$/);
+  if(m) return {kind:"annee",annee:+m[1],sortKey:mk(+m[1],11,31)};
+  return {kind:"inconnue",sortKey:Infinity};
 }
 
 function hydraterItems(data){
   ALL_ITEMS = data.map((it,i) => {
-    const date = (it.date||"").toString().trim().replace(/(\b\d{4}\b)\s+\1/g,"$1").trim();
-    return {...it, titre:(it.titre||"").toString(), categorie:it.categorie||"📦 Autre", date, lien:safeUrl(it.lien), parsed:parseItemDate(date), _id:i};
-  }).sort((a,b) => a.parsed.sortKey - b.parsed.sortKey);
+    const date = (it.date||"").toString().trim();
+    const parsed = it.isoDate ? parseItemDate(it.isoDate) : parseItemDate(date);
+    return {...it,titre:(it.titre||"").toString(),categorie:it.categorie||"📦 Autre",date,lien:safeUrl(it.lien),parsed,vu:it.vu===true || it.statut==="✔️",frDateParsed:null,_id:i};
+  }).sort((a,b) => a.parsed.sortKey-b.parsed.sortKey);
 }
-const byId = id => ALL_ITEMS.find(i => i._id === id);
-
-function daysUntil(ts){ const t = new Date(ts); t.setHours(0,0,0,0); return Math.round((t-today)/86400000); }
-function echeanceLabel(d){ if(d<0) return null; if(d===0) return {txt:"Aujourd'hui",today:true}; if(d===1) return {txt:"Demain",today:false}; return {txt:`Dans ${d} j.`,today:false}; }
-
+const byId = id => ALL_ITEMS.find(i => i._id===id);
+function effectiveDate(it){ return useFrenchDates && it.frDateParsed ? it.frDateParsed : it.parsed; }
+function daysUntil(ts){ const t=new Date(ts); t.setHours(12,0,0,0); return Math.round((t-today)/86400000); }
+function echeanceLabel(d){ if(d<0)return null; if(d===0)return {txt:"Aujourd'hui",today:true}; if(d===1)return {txt:"Demain",today:false}; return {txt:`Dans ${d} j.`,today:false}; }
+function datePeriod(it){
+  const p=effectiveDate(it);
+  if(p.kind==="inconnue") return "imprecises";
+  let ref=p.sortKey;
+  // Pour une période sans jour précis, elle reste « à venir » jusqu'à sa fin.
+  if(p.kind==="mois") ref=new Date(p.annee,p.mois+1,0,12).getTime();
+  if(p.kind==="saison") ref=new Date(p.annee,p.moisDebut+3,0,12).getTime();
+  if(p.kind==="annee") ref=new Date(p.annee,11,31,12).getTime();
+  const delta=daysUntil(ref);
+  return delta>=0 ? "avenir" : "passees";
+}
 function matchesFilters(it){
-  if(activeCat !== "TOUS" && it.categorie !== activeCat) return false;
+  if(selectedCats.size && !selectedCats.has(it.categorie)) return false;
+  if(selectedPlatform!=="TOUS" && normStr(it.plateforme)!==normStr(selectedPlatform)) return false;
+  if(periodFilter!=="TOUS" && datePeriod(it)!==periodFilter) return false;
   if(searchTerm && !normStr(it.titre).includes(normStr(searchTerm))) return false;
   return true;
 }
@@ -396,15 +538,15 @@ const catTagHTML = c => `<span class="cat-tag ${catClass(c)}"><span class="dot d
 
 /* ========================= GOOGLE CALENDAR ========================= */
 function buildGoogleCalendarUrl(it){
-  const p = it.parsed;
-  const y = p.annee || today.getFullYear();
-  const mo = p.mois ?? p.moisDebut ?? 0;
-  const dj = p.kind === "jour" ? p.jour : 1;
-  const start = new Date(y, mo, dj), end = new Date(y, mo, dj+1); // fin exclusive pour un évènement « toute la journée »
-  const fmt = d => `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`;
-  const details = `Catégorie : ${it.categorie}\nOù voir : ${it.plateforme || "N/C"}${it.lien ? "\n"+it.lien : ""}`;
-  const q = new URLSearchParams({action:"TEMPLATE", text:`🍿 Sortie : ${splitTitre(it.titre).clean}`, dates:`${fmt(start)}/${fmt(end)}`, details});
-  return "https://calendar.google.com/calendar/render?" + q.toString();
+  const p=effectiveDate(it);
+  const y=p.annee || today.getFullYear();
+  const mo=p.mois ?? p.moisDebut ?? 0;
+  const dj=p.kind==="jour" ? p.jour : 1;
+  const start=new Date(y,mo,dj,12), end=new Date(y,mo,dj+1,12);
+  const fmt=d=>`${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`;
+  const details=`Catégorie : ${it.categorie}\nOù voir : ${it.plateforme || "N/C"}${useFrenchDates&&it.frDateParsed ? "\nDate française vérifiée via TMDB" : ""}${it.lien ? "\n"+it.lien : ""}`;
+  const q=new URLSearchParams({action:"TEMPLATE",text:`🍿 Sortie : ${splitTitre(it.titre).clean}`,dates:`${fmt(start)}/${fmt(end)}`,details});
+  return "https://calendar.google.com/calendar/render?"+q.toString();
 }
 
 /* ========================= AFFICHES ========================= */
@@ -439,104 +581,163 @@ function fetchPoster(rawTitle, annee){
   return posterCache.get(key);
 }
 
+/* ========================= DATES DE SORTIE FRANÇAISES (TMDB) ========================= */
+const TMDB_MOVIE_SEARCH_URL = "https://api.themoviedb.org/3/search/movie";
+const TMDB_MOVIE_RELEASES_URL = "https://api.themoviedb.org/3/movie/";
+const frenchDateCache = new Map();
+function normaliserTitreComparaison(s){
+  return normStr(titreRecherche(s)).replace(/[^a-z0-9]/g,"").replace(/^(the|le|la|les|un|une)/,"");
+}
+function dateISOversObjet(s){
+  const m=(s||"").match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? parseItemDate(`${m[1]}-${m[2]}-${m[3]}`) : null;
+}
+async function chercherDateFrancaiseFilm(it){
+  const title=titreRecherche(it.titre);
+  const year=it.parsed.annee;
+  const key=`${normaliserTitreComparaison(title)}|${year||""}`;
+  if(frenchDateCache.has(key)) return frenchDateCache.get(key);
+  const promise=(async()=>{
+    try{
+      const params=new URLSearchParams({api_key:TMDB_API_KEY,query:title,language:"fr-FR",region:"FR",include_adult:"false"});
+      const search=await fetch(`${TMDB_MOVIE_SEARCH_URL}?${params}`);
+      if(!search.ok) return null;
+      const results=(await search.json()).results||[];
+      const target=normaliserTitreComparaison(title);
+      const candidates=results.map(r=>{
+        const names=[normaliserTitreComparaison(r.title),normaliserTitreComparaison(r.original_title)];
+        const exact=names.includes(target);
+        const similar=names.some(n=>n && target && (n.includes(target)||target.includes(n)) && Math.min(n.length,target.length)/Math.max(n.length,target.length)>.82);
+        const resultYear=+(r.release_date||"").slice(0,4) || 0;
+        return {...r,_match:exact?2:(similar?1:0),_yearDistance:year&&resultYear?Math.abs(year-resultYear):9};
+      }).filter(r=>r._match>0 && r.id).sort((a,b)=>b._match-a._match || a._yearDistance-b._yearDistance || (b.popularity||0)-(a.popularity||0));
+      const hit=candidates[0];
+      if(!hit) return null;
+      const response=await fetch(`${TMDB_MOVIE_RELEASES_URL}${hit.id}/release_dates?api_key=${encodeURIComponent(TMDB_API_KEY)}`);
+      if(!response.ok) return null;
+      const payload=await response.json();
+      const france=(payload.results||[]).find(r=>r.iso_3166_1==="FR");
+      if(!france || !Array.isArray(france.release_dates)) return null;
+      const platform=(it.plateforme||"").toLowerCase();
+      const digitalPlatform=/netflix|prime video|disney|canal\+|apple tv|max|molotov|pluto tv|ocs|paramount|youtube/.test(platform);
+      // Sans plateforme de streaming explicitement indiquée, privilégier la sortie cinéma française.
+      const priorities=digitalPlatform ? [4,6,3,2,1,5] : [3,2,1,4,6,5];
+      for(const type of priorities){
+        const dates=france.release_dates.filter(r=>r.release_type===type && r.release_date).map(r=>r.release_date.slice(0,10)).sort();
+        if(dates.length){
+          const parsed=dateISOversObjet(dates[0]);
+          if(parsed && parsed.kind==="jour") return {date:dates[0],parsed};
+        }
+      }
+      return null;
+    }catch(e){ return null; }
+  })();
+  frenchDateCache.set(key,promise);
+  return promise;
+}
+let frenchLookupRunning=false;
+async function verifierDatesFrancaisesPourVue(){
+  if(!useFrenchDates || frenchLookupRunning || !ALL_ITEMS.length) return;
+  const matches=searchTerm ? ALL_ITEMS.filter(matchesFilters) : ALL_ITEMS.filter(it=>{
+    const p=it.parsed;
+    if(!["jour","mois","saison","annee"].includes(p.kind) || p.annee<viewYear-1 || p.annee>viewYear+1) return false;
+    if(p.kind==="annee") return p.annee===viewYear;
+    const month=p.mois ?? p.moisDebut;
+    const monthDistance=(p.annee-viewYear)*12+(month-viewMonth);
+    return Math.abs(monthDistance)<=1;
+  });
+  const candidates=matches.filter(it=>it.categorie==="🎬 Films" && ["jour","mois","saison","annee"].includes(it.parsed.kind) && !it.frDateParsed).slice(0,16);
+  if(!candidates.length) return;
+  frenchLookupRunning=true;
+  let updated=false;
+  try{
+    for(let i=0;i<candidates.length;i+=3){
+      const batch=candidates.slice(i,i+3);
+      const results=await Promise.all(batch.map(chercherDateFrancaiseFilm));
+      results.forEach((result,index)=>{
+        if(result){ batch[index].frDateParsed=result.parsed; batch[index].frDateISO=result.date; updated=true; }
+      });
+    }
+  }finally{
+    frenchLookupRunning=false;
+    if(updated) render();
+    // Un rechargement de l'API peut avoir remplacé les objets pendant la recherche.
+    if(useFrenchDates) setTimeout(verifierDatesFrancaisesPourVue,0);
+  }
+}
+
 /* ========================= RENDU ========================= */
 function renderWeekStrip(){
-  const box = $("weekStrip"), row = $("weekStripRow");
-  const items = ALL_ITEMS.filter(it => it.parsed.kind==="jour" && (activeCat==="TOUS" || it.categorie===activeCat))
-    .filter(it => { const d = daysUntil(it.parsed.sortKey); return d>=0 && d<=7; });
-  if(searchTerm || !items.length){ box.style.display = "none"; return; }
-  box.style.display = "";
-  row.innerHTML = items.map(it => {
-    const e = echeanceLabel(daysUntil(it.parsed.sortKey));
-    return `<button type="button" class="week-card" data-id="${it._id}">
-      <div class="week-card__ech ${e.today?"today":""}">${e.today?"🔥 ":""}${e.txt}</div>
-      <div class="week-card__title">${escapeHTML(splitTitre(it.titre).clean)}</div>${catTagHTML(it.categorie)}</button>`;
+  const box=$("weekStrip"),row=$("weekStripRow");
+  const items=ALL_ITEMS.filter(it=>effectiveDate(it).kind==="jour" && matchesFilters(it))
+    .filter(it=>{const d=daysUntil(effectiveDate(it).sortKey);return d>=0&&d<=7;})
+    .sort((a,b)=>effectiveDate(a).sortKey-effectiveDate(b).sortKey);
+  if(searchTerm || !items.length){box.style.display="none";return;}
+  box.style.display="";
+  row.innerHTML=items.map(it=>{
+    const p=effectiveDate(it),e=echeanceLabel(daysUntil(p.sortKey));
+    return `<button type="button" class="week-card" data-id="${it._id}"><div class="week-card__ech ${e.today?"today":""}">${e.today?"🔥 ":""}${e.txt}</div><div class="week-card__title">${escapeHTML(splitTitre(it.titre).clean)}${useFrenchDates&&it.frDateParsed?'<span class="fr-date-mark">FR</span>':""}</div>${catTagHTML(it.categorie)}</button>`;
   }).join("");
 }
-
-function renderMonthLabel(){ $("monthLabel").innerHTML = `${MOIS[viewMonth]}<span class="yr">${viewYear}</span>`; }
-
+function renderMonthLabel(){ $("monthLabel").innerHTML=`${MOIS[viewMonth]}<span class="yr">${viewYear}</span>`; }
 function renderCalendarGrid(){
-  const leading = WEEKDAY_INDEX(new Date(viewYear, viewMonth, 1));
-  const daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();
-  const prevLast = new Date(viewYear, viewMonth, 0).getDate();
-  const total = Math.ceil((leading+daysInMonth)/7)*7;
-
-  const byDay = new Map();
-  ALL_ITEMS.filter(it => it.parsed.kind==="jour" && it.parsed.annee===viewYear && it.parsed.mois===viewMonth && matchesFilters(it))
-    .forEach(it => { if(!byDay.has(it.parsed.jour)) byDay.set(it.parsed.jour, []); byDay.get(it.parsed.jour).push(it); });
-
-  let html = "";
+  const leading=WEEKDAY_INDEX(new Date(viewYear,viewMonth,1));
+  const daysInMonth=new Date(viewYear,viewMonth+1,0).getDate();
+  const prevLast=new Date(viewYear,viewMonth,0).getDate();
+  const total=Math.ceil((leading+daysInMonth)/7)*7;
+  const byDay=new Map();
+  ALL_ITEMS.filter(it=>{const p=effectiveDate(it);return p.kind==="jour"&&p.annee===viewYear&&p.mois===viewMonth&&matchesFilters(it);})
+    .forEach(it=>{const day=effectiveDate(it).jour;if(!byDay.has(day))byDay.set(day,[]);byDay.get(day).push(it);});
+  let html="";
   for(let i=0;i<total;i++){
-    const day = i-leading+1;
-    if(i<leading){ html += `<div class="cal-cell outside" aria-hidden="true"><span class="cal-cell__num">${prevLast-leading+i+1}</span></div>`; continue; }
-    if(day>daysInMonth){ html += `<div class="cal-cell outside" aria-hidden="true"><span class="cal-cell__num">${day-daysInMonth}</span></div>`; continue; }
-
-    const date = new Date(viewYear, viewMonth, day);
-    const isToday = date.getTime()===today.getTime();
-    const diff = daysUntil(date.getTime());
-    const ev = byDay.get(day) || [];
-    const shown = ev.slice(0,3), rest = ev.length-shown.length;
-    const inner = `<span class="cal-cell__num">${day}</span><div class="cal-cell__events">
-      ${shown.map(it => `<div class="ev-chip ${catClass(it.categorie)}"><span class="ev-dot"></span><span class="txt">${escapeHTML(splitTitre(it.titre).clean)}</span></div>`).join("")}
-      ${rest>0 ? `<div class="ev-more">+${rest} autre${rest>1?"s":""}</div>` : ""}</div>`;
-    const cls = `cal-cell ${ev.length?"has-events":""} ${isToday?"is-today":""} ${diff>0&&diff<=7?"is-week":""}`;
-    html += ev.length
-      ? `<button type="button" class="${cls}" data-day="${day}" aria-label="${day} ${MOIS[viewMonth]} : ${ev.length} sortie${ev.length>1?"s":""}">${inner}</button>`
-      : `<div class="${cls}">${inner}</div>`;
+    const day=i-leading+1;
+    if(i<leading){html+=`<div class="cal-cell outside" aria-hidden="true"><span class="cal-cell__num">${prevLast-leading+i+1}</span></div>`;continue;}
+    if(day>daysInMonth){html+=`<div class="cal-cell outside" aria-hidden="true"><span class="cal-cell__num">${day-daysInMonth}</span></div>`;continue;}
+    const date=new Date(viewYear,viewMonth,day,12),isToday=date.getFullYear()===today.getFullYear()&&date.getMonth()===today.getMonth()&&date.getDate()===today.getDate();
+    const diff=daysUntil(date.getTime()),ev=byDay.get(day)||[],shown=ev.slice(0,3),rest=ev.length-shown.length;
+    const inner=`<span class="cal-cell__num">${day}</span><div class="cal-cell__events">${shown.map(it=>`<div class="ev-chip ${catClass(it.categorie)}"><span class="ev-dot"></span><span class="txt">${escapeHTML(splitTitre(it.titre).clean)}${useFrenchDates&&it.frDateParsed?" · FR":""}</span></div>`).join("")}${rest>0?`<div class="ev-more">+${rest} autre${rest>1?"s":""}</div>`:""}</div>`;
+    const cls=`cal-cell ${ev.length?"has-events":""} ${isToday?"is-today":""} ${diff>0&&diff<=7?"is-week":""}`;
+    html+=ev.length?`<button type="button" class="${cls}" data-day="${day}" aria-label="${day} ${MOIS[viewMonth]} : ${ev.length} sortie${ev.length>1?"s":""}">${inner}</button>`:`<div class="${cls}">${inner}</div>`;
   }
-  $("calGrid").innerHTML = html;
-  $("calGrid")._byDay = byDay;
+  $("calGrid").innerHTML=html;
+  $("calGrid")._byDay=byDay;
 }
-
 function renderFuzzySections(){
-  const box = $("fuzzySections");
-  if(searchTerm){ box.innerHTML = ""; return; }
-  const f = ALL_ITEMS.filter(matchesFilters);
-  const mois = f.filter(it => it.parsed.kind==="mois" && it.parsed.annee===viewYear && it.parsed.mois===viewMonth);
-  const saison = f.filter(it => it.parsed.kind==="saison" && it.parsed.annee===viewYear && viewMonth>=it.parsed.moisDebut && viewMonth<=it.parsed.moisDebut+2);
-  const annee = f.filter(it => it.parsed.kind==="annee" && it.parsed.annee===viewYear);
-  const inconnues = f.filter(it => it.parsed.kind==="inconnue");
-  const pills = list => `<div class="fuzzy-row">${list.map(it => `<button type="button" class="fuzzy-pill" data-id="${it._id}"><span class="dot dot-${catClass(it.categorie).slice(4)}"></span><span>${escapeHTML(splitTitre(it.titre).clean)}</span></button>`).join("")}</div>`;
-
-  let html = "";
-  if(mois.length) html += `<div class="fuzzy-block"><h3>Sorties ce mois-ci <span class="count">jour non précisé — ${mois.length}</span></h3>${pills(mois)}</div>`;
-  if(saison.length) html += `<div class="fuzzy-block"><h3>Prévues cette saison <span class="count">${saison.length}</span></h3>${pills(saison)}</div>`;
-  if(annee.length) html += `<div class="fuzzy-block"><h3>Prévues en ${viewYear} <span class="count">mois non précisé — ${annee.length}</span></h3>${pills(annee)}</div>`;
-  if(inconnues.length) html += `<details class="fuzzy-collapse"><summary>Dates encore à préciser <span class="count">${inconnues.length}</span></summary>${pills(inconnues)}</details>`;
-  box.innerHTML = html;
+  const box=$("fuzzySections");
+  if(searchTerm){box.innerHTML="";return;}
+  const f=ALL_ITEMS.filter(matchesFilters),mois=f.filter(it=>{const p=effectiveDate(it);return p.kind==="mois"&&p.annee===viewYear&&p.mois===viewMonth;}),
+    saison=f.filter(it=>{const p=effectiveDate(it);return p.kind==="saison"&&p.annee===viewYear&&viewMonth>=p.moisDebut&&viewMonth<=p.moisDebut+2;}),
+    annee=f.filter(it=>{const p=effectiveDate(it);return p.kind==="annee"&&p.annee===viewYear;}),
+    inconnues=f.filter(it=>effectiveDate(it).kind==="inconnue");
+  const pills=list=>`<div class="fuzzy-row">${list.map(it=>`<button type="button" class="fuzzy-pill" data-id="${it._id}"><span class="dot dot-${catClass(it.categorie).slice(4)}"></span><span>${escapeHTML(splitTitre(it.titre).clean)}</span></button>`).join("")}</div>`;
+  let html="";
+  if(mois.length)html+=`<div class="fuzzy-block"><h3>Sorties ce mois-ci <span class="count">jour non précisé — ${mois.length}</span></h3>${pills(mois)}</div>`;
+  if(saison.length)html+=`<div class="fuzzy-block"><h3>Prévues cette saison <span class="count">${saison.length}</span></h3>${pills(saison)}</div>`;
+  if(annee.length)html+=`<div class="fuzzy-block"><h3>Prévues en ${viewYear} <span class="count">mois non précisé — ${annee.length}</span></h3>${pills(annee)}</div>`;
+  if(inconnues.length)html+=`<details class="fuzzy-collapse"><summary>Dates encore à préciser <span class="count">${inconnues.length}</span></summary>${pills(inconnues)}</details>`;
+  box.innerHTML=html;
 }
-
 function dateLabel(it){
-  const p = it.parsed;
-  if(p.kind==="jour") return `${pad(p.jour)} ${MOIS[p.mois].slice(0,3)} ${p.annee}`;
-  if(p.kind==="mois") return `${MOIS[p.mois]} ${p.annee}`;
-  if(p.kind==="saison") return `${p.saison} ${p.annee}`;
-  if(p.kind==="annee") return `${p.annee}`;
+  const p=effectiveDate(it);
+  if(p.kind==="jour"){
+    const date=new Date(Date.UTC(p.annee,p.mois,p.jour,12));
+    return new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",day:"2-digit",month:"long",year:"numeric"}).format(date);
+  }
+  if(p.kind==="mois")return `${MOIS[p.mois]} ${p.annee}`;
+  if(p.kind==="saison")return `${p.saison} ${p.annee}`;
+  if(p.kind==="annee")return `${p.annee}`;
   return "À préciser";
 }
-
 function renderAgenda(){
-  const box = $("agendaView");
-  const items = ALL_ITEMS.filter(matchesFilters);
-  if(!items.length){ box.innerHTML = `<div class="state"><div class="big">Rien ici pour le moment.</div>Essaie un autre filtre ou une autre recherche.</div>`; return; }
-
-  const groups = new Map();
-  items.forEach(it => {
-    const p = it.parsed;
-    const key = p.kind==="inconnue" ? "Date à préciser" : (p.kind==="annee" ? `${p.annee}` : `${MOIS[p.mois ?? p.moisDebut]} ${p.annee}`);
-    if(!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(it);
+  const box=$("agendaView"),items=ALL_ITEMS.filter(matchesFilters).sort((a,b)=>effectiveDate(a).sortKey-effectiveDate(b).sortKey);
+  if(!items.length){box.innerHTML=`<div class="state"><div class="big">Aucun résultat.</div>Modifie la recherche ou les filtres pour retrouver une sortie.</div>`;return;}
+  const groups=new Map();
+  items.forEach(it=>{
+    const p=effectiveDate(it);
+    const key=p.kind==="inconnue"?"Date à préciser":(p.kind==="annee"?`${p.annee}`:`${MOIS[p.mois??p.moisDebut]} ${p.annee}`);
+    if(!groups.has(key))groups.set(key,[]);groups.get(key).push(it);
   });
-
-  box.innerHTML = [...groups].map(([label, list]) => `
-    <section class="agenda-group"><h3>${escapeHTML(label)}</h3><div class="agenda-grid">
-      ${list.map(it => `<button type="button" class="agenda-card" data-id="${it._id}"><div>
-        <div class="agenda-date">${escapeHTML(dateLabel(it))}</div>
-        <div class="agenda-title">${titreHTML(it.titre)}</div>
-        <div class="agenda-tags">${catTagHTML(it.categorie)}${it.plateforme?`<span class="agenda-plat">${escapeHTML(it.plateforme)}</span>`:""}</div>
-      </div></button>`).join("")}
-    </div></section>`).join("");
+  box.innerHTML=[...groups].map(([label,list])=>`<section class="agenda-group"><h3>${escapeHTML(label)}</h3><div class="agenda-grid">${list.map(it=>`<button type="button" class="agenda-card" data-id="${it._id}"><div><div class="agenda-date">${escapeHTML(dateLabel(it))}${useFrenchDates&&it.frDateParsed?'<span class="fr-date-mark">DATE FR TMDB</span>':""}</div><div class="agenda-title">${titreHTML(it.titre)}</div><div class="agenda-tags">${catTagHTML(it.categorie)}${it.plateforme?`<span class="agenda-plat">${escapeHTML(it.plateforme)}</span>`:""}</div></div></button>`).join("")}</div></section>`).join("");
 }
 
 /* ========================= MODALE ========================= */
@@ -549,7 +750,8 @@ function openModal(items, title){
       <div class="modal-body">
         <p class="modal-title">${titreHTML(it.titre)}</p>
         <div class="modal-meta-row">${catTagHTML(it.categorie)}<span class="modal-score" id="score-${i}" style="display:none"></span></div>
-        <span class="modal-date">📅 ${escapeHTML(it.date)}</span>
+        <span class="modal-date">📅 ${escapeHTML(dateLabel(it))}</span>
+        <span class="date-source-note">${useFrenchDates&&it.frDateParsed ? "Date française trouvée dans TMDB" : "Date issue du calendrier éditorial"}</span>
         ${it.plateforme ? `<span class="modal-date plat">📺 ${escapeHTML(it.plateforme)}</span>` : ""}
         <div class="modal-actions">
           <a href="${escapeHTML(buildGoogleCalendarUrl(it))}" target="_blank" rel="noopener noreferrer" class="btn-gcal">📆 Google Calendar</a>
@@ -561,7 +763,7 @@ function openModal(items, title){
   items.forEach((it,i) => {
     const posterBox = $(`poster-${i}`), scoreBox = $(`score-${i}`);
     if(!POSTER_CATEGORIES.has(it.categorie)){ posterBox.innerHTML = `<span class="ph">Pas d'affiche</span>`; return; }
-    fetchPoster(it.titre, it.parsed.annee).then(res => {
+    fetchPoster(it.titre, effectiveDate(it).annee).then(res => {
       if(!posterBox.isConnected) return; // modale refermée / remplacée entre-temps
       if(res && res.poster){
         posterBox.style.backgroundImage = `url("${res.poster.replace(/"/g,"%22")}")`;
@@ -591,143 +793,168 @@ function trapFocus(e){
   else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
 }
 
-/* ========================= RENDU GLOBAL ========================= */
+/* ========================= RENDU GLOBAL & NAVIGATION ========================= */
 function render(){
-  const filtered = ALL_ITEMS.filter(matchesFilters);
-  $("statCount").textContent = (searchTerm || activeCat!=="TOUS")
-    ? `${filtered.length} résultat(s) sur ${ALL_ITEMS.length} sortie(s)`
-    : `${ALL_ITEMS.length} sortie(s) au total`;
+  const filtered=ALL_ITEMS.filter(matchesFilters);
+  const hasFilters=selectedCats.size>0 || selectedPlatform!=="TOUS" || periodFilter!=="TOUS" || !!searchTerm;
+  $("statCount").textContent=hasFilters?`${filtered.length} résultat(s) sur ${ALL_ITEMS.length} sortie(s)`:`${ALL_ITEMS.length} sortie(s) au total`;
   renderWeekStrip();
-  const searching = !!searchTerm.trim();
-  $("calendarView").style.display = searching ? "none" : "";
-  $("agendaView").style.display = searching ? "" : "none";
-  if(searching) renderAgenda();
-  else { renderMonthLabel(); renderCalendarGrid(); renderFuzzySections(); }
+  const searching=!!searchTerm.trim();
+  $("calendarView").style.display=searching?"none":"";
+  $("agendaView").style.display=searching?"":"none";
+  if(searching)renderAgenda();else{renderMonthLabel();renderCalendarGrid();renderFuzzySections();}
 }
-
-function setMonth(y, m, push){
-  viewYear = y; viewMonth = m;
-  if(push !== false) history.replaceState(null, "", `#${y}-${pad(m+1)}`);
+function setMonth(y,m,push){
+  viewYear=y;viewMonth=m;
+  if(push!==false)history.replaceState(null,"",`#${y}-${pad(m+1)}`);
   render();
+  verifierDatesFrancaisesPourVue();
 }
-function changeMonth(d){
-  let m = viewMonth+d, y = viewYear;
-  if(m<0){ m = 11; y--; } if(m>11){ m = 0; y++; }
-  setMonth(y, m);
-}
-function lireHash(){
-  const m = location.hash.match(/^#(\d{4})-(\d{2})$/);
-  if(m && +m[2]>=1 && +m[2]<=12){ viewYear = +m[1]; viewMonth = +m[2]-1; }
-}
+function changeMonth(d){let m=viewMonth+d,y=viewYear;if(m<0){m=11;y--;}if(m>11){m=0;y++;}setMonth(y,m);}
+function lireHash(){const m=location.hash.match(/^#(\d{4})-(\d{2})$/);if(m&&+m[2]>=1&&+m[2]<=12){viewYear=+m[1];viewMonth=+m[2]-1;}}
 
 function buildFilters(){
   const present = new Set(ALL_ITEMS.map(i => i.categorie));
-  const cats = ["TOUS", ...CAT_ORDER.filter(c => present.has(c)), ...[...present].filter(c => !CAT_ORDER.includes(c))];
-  $("catFilters").innerHTML = cats.map(c =>
-    `<button type="button" class="chip ${c===activeCat?"active":""}" data-cat="${escapeHTML(c)}" aria-pressed="${c===activeCat}">${c==="TOUS"?"Tout":escapeHTML(c)}</button>`).join("");
+
+  selectedCats = new Set([...selectedCats].filter(c => present.has(c)));
+
+  const cats = [
+    ...CAT_ORDER.filter(c => present.has(c)),
+    ...[...present].filter(c => !CAT_ORDER.includes(c))
+  ];
+
+  $("catFilters").innerHTML = [
+    `<button type="button" class="chip ${selectedCats.size===0?"active":""}" data-cat="__ALL__" aria-pressed="${selectedCats.size===0}">Toutes</button>`,
+    ...cats.map(c => `<button type="button" class="chip ${selectedCats.has(c)?"active":""}" data-cat="${escapeHTML(c)}" aria-pressed="${selectedCats.has(c)}">${escapeHTML(c)}</button>`)
+  ].join("");
+
+  const platforms = [...new Set(ALL_ITEMS.map(i => i.plateforme).filter(Boolean))]
+    .sort((a,b) => a.localeCompare(b,"fr"));
+
+  const select = $("platformFilter");
+  const previous = selectedPlatform;
+
+  select.innerHTML = `<option value="TOUS">Toutes les plateformes</option>` +
+    platforms.map(p => `<option value="${escapeHTML(p)}">${escapeHTML(p)}</option>`).join("");
+
+  if(previous !== "TOUS" && platforms.includes(previous)){
+    select.value = previous;
+  } else {
+    selectedPlatform = "TOUS";
+    select.value = "TOUS";
+  }
+
+  $("periodFilter").value = periodFilter;
+  $("frDateToggle").checked = useFrenchDates;
 }
 
+function saveAndRender(){writePrefsCookie();buildFilters();render();}
+function resetFilters(){
+  selectedCats.clear();selectedPlatform="TOUS";periodFilter="TOUS";useFrenchDates=true;searchTerm="";
+  $("searchInput").value="";$("searchClear").classList.remove("visible");
+  writePrefsCookie();buildFilters();render();verifierDatesFrancaisesPourVue();
+}
 function initControls(){
-  const input = $("searchInput"), clear = $("searchClear");
-  const applySearch = debounce(() => { searchTerm = input.value; render(); }, 150);
-  input.addEventListener("input", () => { clear.classList.toggle("visible", !!input.value); applySearch(); });
-  clear.addEventListener("click", () => { input.value = ""; clear.classList.remove("visible"); searchTerm = ""; render(); input.focus(); });
-
-  $("prevMonth").addEventListener("click", () => changeMonth(-1));
-  $("nextMonth").addEventListener("click", () => changeMonth(1));
-  $("todayBtn").addEventListener("click", () => setMonth(today.getFullYear(), today.getMonth()));
-
-  $("catFilters").addEventListener("click", e => {
-    const b = e.target.closest(".chip"); if(!b) return;
-    activeCat = b.dataset.cat; buildFilters(); render();
+  const input=$("searchInput"),clear=$("searchClear");
+  const applySearch=debounce(()=>{searchTerm=input.value;render();if(searchTerm)verifierDatesFrancaisesPourVue();},180);
+  input.addEventListener("input",()=>{clear.classList.toggle("visible",!!input.value);applySearch();});
+  clear.addEventListener("click",()=>{input.value="";clear.classList.remove("visible");searchTerm="";render();input.focus();});
+  $("prevMonth").addEventListener("click",()=>changeMonth(-1));
+  $("nextMonth").addEventListener("click",()=>changeMonth(1));
+  $("todayBtn").addEventListener("click",()=>setMonth(today.getFullYear(),today.getMonth()));
+  $("catFilters").addEventListener("click",e=>{
+    const b=e.target.closest(".chip");if(!b)return;
+    const cat=b.dataset.cat;
+    if(cat==="__ALL__")selectedCats.clear();else{selectedCats.has(cat)?selectedCats.delete(cat):selectedCats.add(cat);}
+    saveAndRender();
   });
+  $("platformFilter").addEventListener("change",e=>{selectedPlatform=e.target.value;saveAndRender();});
+  $("periodFilter").addEventListener("change",e=>{periodFilter=e.target.value;saveAndRender();});
+  $("frDateToggle").addEventListener("change",e=>{useFrenchDates=e.target.checked;writePrefsCookie();render();if(useFrenchDates)verifierDatesFrancaisesPourVue();});
+  $("resetFilters").addEventListener("click",resetFilters);
+  $("refreshBtn").addEventListener("click",()=>load(true));
 
-  // Délégation : un seul écouteur par zone, plus de ré-attachement à chaque rendu
-  $("weekStripRow").addEventListener("click", e => { const c = e.target.closest("[data-id]"); if(c){ const it = byId(+c.dataset.id); if(it) openModal([it], splitTitre(it.titre).clean); } });
-  $("fuzzySections").addEventListener("click", e => { const c = e.target.closest("[data-id]"); if(c){ const it = byId(+c.dataset.id); if(it) openModal([it], splitTitre(it.titre).clean); } });
-  $("agendaView").addEventListener("click", e => { const c = e.target.closest("[data-id]"); if(c){ const it = byId(+c.dataset.id); if(it) openModal([it], splitTitre(it.titre).clean); } });
-  $("calGrid").addEventListener("click", e => {
-    const c = e.target.closest("[data-day]"); if(!c) return;
-    const d = +c.dataset.day, list = $("calGrid")._byDay.get(d) || [];
-    openModal(list, `${d} ${MOIS[viewMonth]} ${viewYear}`);
-  });
-
-  $("modalClose").addEventListener("click", closeModal);
-  $("modalOverlay").addEventListener("click", e => { if(e.target.id==="modalOverlay") closeModal(); });
-  document.addEventListener("keydown", e => { if(e.key==="Escape") closeModal(); trapFocus(e); });
-
-  // Navigation clavier / hash / balayage tactile
-  window.addEventListener("hashchange", () => { lireHash(); render(); });
-  document.addEventListener("keydown", e => {
-    if($("modalOverlay").classList.contains("open") || /input|textarea|select/i.test(document.activeElement.tagName)) return;
-    if(e.key==="ArrowLeft") changeMonth(-1); else if(e.key==="ArrowRight") changeMonth(1);
-  });
-  let x0 = null, y0 = null;
-  const grid = $("calendarView");
-  grid.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
-  grid.addEventListener("touchend", e => {
-    if(x0===null) return;
-    const dx = e.changedTouches[0].clientX-x0, dy = e.changedTouches[0].clientY-y0;
-    if(Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)*1.5) changeMonth(dx<0 ? 1 : -1);
-    x0 = y0 = null;
-  }, {passive:true});
+  // Délégation : un seul écouteur par zone.
+  $("weekStripRow").addEventListener("click",e=>{const c=e.target.closest("[data-id]");if(c){const it=byId(+c.dataset.id);if(it)openModal([it],splitTitre(it.titre).clean);}});
+  $("fuzzySections").addEventListener("click",e=>{const c=e.target.closest("[data-id]");if(c){const it=byId(+c.dataset.id);if(it)openModal([it],splitTitre(it.titre).clean);}});
+  $("agendaView").addEventListener("click",e=>{const c=e.target.closest("[data-id]");if(c){const it=byId(+c.dataset.id);if(it)openModal([it],splitTitre(it.titre).clean);}});
+  $("calGrid").addEventListener("click",e=>{const c=e.target.closest("[data-day]");if(!c)return;const d=+c.dataset.day,list=$("calGrid")._byDay.get(d)||[];openModal(list,`${d} ${MOIS[viewMonth]} ${viewYear}`);});
+  $("modalClose").addEventListener("click",closeModal);
+  $("modalOverlay").addEventListener("click",e=>{if(e.target.id==="modalOverlay")closeModal();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();trapFocus(e);});
+  window.addEventListener("hashchange",()=>{lireHash();render();verifierDatesFrancaisesPourVue();});
+  document.addEventListener("keydown",e=>{if($("modalOverlay").classList.contains("open")||/input|textarea|select/i.test(document.activeElement.tagName))return;if(e.key==="ArrowLeft")changeMonth(-1);else if(e.key==="ArrowRight")changeMonth(1);});
+  let x0=null,y0=null;const grid=$("calendarView");
+  grid.addEventListener("touchstart",e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+  grid.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5)changeMonth(dx<0?1:-1);x0=y0=null;},{passive:true});
 }
 
-/* ========================= CHARGEMENT (JSONP + cache) ========================= */
-function loadViaJSONP(tentative = 1, max = 3){
-  return new Promise((resolve, reject) => {
-    const cb = "handleGAS_" + Math.round(Math.random()*1e9);
-    let script, timer;
-    const cleanup = () => { clearTimeout(timer); delete window[cb]; if(script && script.parentNode) script.parentNode.removeChild(script); };
-    const retry = err => {
-      cleanup();
-      if(tentative < max) setTimeout(() => loadViaJSONP(tentative+1, max).then(resolve, reject), 800*tentative);
-      else reject(err);
-    };
-    window[cb] = data => { cleanup(); resolve(data); };
-    script = document.createElement("script");
-    script.src = `${API_URL}&callback=${cb}&_t=${Date.now()}`;
-    script.onerror = () => retry(new Error("Échec du chargement JSONP"));
-    timer = setTimeout(() => retry(new Error("Délai dépassé")), JSONP_TIMEOUT_MS); // onerror ne se déclenche pas si le callback n'est jamais appelé
+/* ========================= CHARGEMENT API, CACHE DE SECOURS & ACTUALISATION ========================= */
+function adapterReponseAPI(raw){
+  if(Array.isArray(raw)) return raw;
+  if(!raw||raw.error)throw new Error((raw&&raw.error)||"Réponse vide");
+  if(!Array.isArray(raw.items))throw new Error("Format inattendu : le champ items est absent.");
+  return raw.items.map(s=>{
+    const isoDate=(s.isoDate||"").toString();
+    let date;
+    if(s.periode)date=s.periode;
+    else if(s.jour)date=isoDate||`${pad(s.jour)}/${pad(s.mois)}/${s.annee}`;
+    else date=s.mois?`${pad(s.mois)}/${s.annee}`:String(s.annee||"");
+    return {titre:s.titre,date,isoDate,categorie:s.categorie,plateforme:s.plateforme,vu:s.vu===true,statut:s.vu?"✔️":"❌",lien:s.lien};
+  });
+}
+function loadViaJSONP(tentative=1,max=3){
+  return new Promise((resolve,reject)=>{
+    const cb="handleGAS_"+Math.round(Math.random()*1e9);let script,timer;
+    const cleanup=()=>{clearTimeout(timer);delete window[cb];if(script&&script.parentNode)script.parentNode.removeChild(script);};
+    const retry=err=>{cleanup();if(tentative<max)setTimeout(()=>loadViaJSONP(tentative+1,max).then(resolve,reject),800*tentative);else reject(err);};
+    window[cb]=data=>{cleanup();resolve(data);};
+    script=document.createElement("script");script.src=`${API_URL}&callback=${cb}&_t=${Date.now()}`;
+    script.onerror=()=>retry(new Error("Échec du chargement JSONP"));
+    timer=setTimeout(()=>retry(new Error("Délai dépassé")),JSONP_TIMEOUT_MS);
     document.head.appendChild(script);
   });
 }
-
-function lireCache(){
-  try{ const c = JSON.parse(localStorage.getItem(CACHE_KEY)); return c && Array.isArray(c.data) ? c : null; }catch(e){ return null; }
-}
-function ecrireCache(data){ try{ localStorage.setItem(CACHE_KEY, JSON.stringify({data, ts:Date.now()})); }catch(e){} }
-function masquerOverlay(){ const o = $("loadingOverlay"); if(!o) return; o.classList.add("hidden"); setTimeout(() => o.remove(), 400); }
+function lireCache(){try{const c=JSON.parse(localStorage.getItem(CACHE_KEY));return c&&Array.isArray(c.data)?c:null;}catch(e){return null;}}
+function ecrireCache(data){try{localStorage.setItem(CACHE_KEY,JSON.stringify({data,ts:Date.now()}));}catch(e){}}
+function masquerOverlay(){const o=$("loadingOverlay");if(!o)return;o.classList.add("hidden");setTimeout(()=>o.remove(),400);}
 function majNote(ts){
-  const mins = Math.max(0, Math.round((Date.now()-ts)/60000));
-  $("refreshNote").textContent = mins < 1 ? "Données à jour à l'instant" : `Données mises à jour il y a ${mins} min`;
+  const mins=Math.max(0,Math.round((Date.now()-ts)/60000));
+  $("refreshNote").textContent=mins<1?"Données actualisées à l’instant · vérification automatique toutes les 3 minutes":`Dernière actualisation réussie : il y a ${mins} min · vérification automatique toutes les 3 minutes`;
 }
-function afficher(data, ts){
-  hydraterItems(data); buildFilters(); render(); masquerOverlay(); majNote(ts || Date.now());
-}
-
-async function load(){
-  const cache = lireCache();
-  if(cache && cache.data.length) afficher(cache.data, cache.ts);   // affichage instantané
-  if(cache && Date.now()-cache.ts < CACHE_TTL_MS) return;           // cache encore frais
-
-  try{
-    const data = await loadViaJSONP();
-    if(!Array.isArray(data)) throw new Error("Format inattendu");
-    ecrireCache(data);
-    afficher(data, Date.now());
-  }catch(err){
-    console.error("Erreur réseau :", err);
-    if(!cache){
-      masquerOverlay();
-      $("main").innerHTML = `<div class="state"><div class="big">Le calendrier ne répond pas.</div><button class="today-btn" type="button" onclick="location.reload()">🔄 Réessayer</button></div>`;
+function afficher(data,ts){hydraterItems(data);buildFilters();render();masquerOverlay();if(ts)majNote(ts);}
+async function load(manual=false){
+  if(currentLoadPromise)return currentLoadPromise;
+  const cache=lireCache();
+  if(!ALL_ITEMS.length&&cache&&cache.data.length)afficher(cache.data,cache.ts); // affichage de secours immédiat
+  refreshInProgress=true;$("refreshBtn").disabled=true;$("refreshBtn").textContent="Actualisation…";
+  currentLoadPromise=(async()=>{
+    try{
+      // Toujours contacter l'API : le cache local ne doit jamais masquer une nouvelle sortie.
+      const data=adapterReponseAPI(await loadViaJSONP());
+      $("loadError")?.remove();
+      ecrireCache(data);afficher(data,Date.now());lastSuccessfulFetch=Date.now();
+      if(useFrenchDates)verifierDatesFrancaisesPourVue();
+      return true;
+    }catch(err){
+      console.error("Erreur réseau calendrier :",err);
+      if(!ALL_ITEMS.length&&!cache){masquerOverlay();$("main").insertAdjacentHTML("afterbegin",`<div class="state" id="loadError"><div class="big">Le calendrier ne répond pas.</div><p>Vérifie la connexion au service de données, puis réessaie.</p><button class="today-btn" id="retryLoad" type="button">Réessayer</button></div>`);$("retryLoad")?.addEventListener("click",()=>load(true));}
+      $("refreshNote").textContent=ALL_ITEMS.length?"Actualisation impossible : les dernières données affichées sont conservées.":"Impossible de récupérer les sorties.";
+      return false;
+    }finally{
+      refreshInProgress=false;$("refreshBtn").disabled=false;$("refreshBtn").textContent="↻ Actualiser";currentLoadPromise=null;
     }
-  }
+  })();
+  return currentLoadPromise;
 }
 
 lireHash();
 initControls();
+// Le cookie ne mémorise que les filtres, jamais le contenu du calendrier.
 load();
+// L'API est interrogée périodiquement ; le cache du navigateur n'empêche plus les mises à jour.
+setInterval(()=>{if(document.visibilityState==="visible")load(false);},3*60*1000);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&Date.now()-lastSuccessfulFetch>3*60*1000)load(false);});
 </script>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/header.js"></script>
