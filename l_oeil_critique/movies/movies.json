@@ -6129,5 +6129,18 @@
     "tmdb_year": "1993",
     "poster_path": "/m9IO7OnHjY9ULtS5g0xAlvcm40s.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/m9IO7OnHjY9ULtS5g0xAlvcm40s.jpg"
+  },
+  {
+    "Name": "Guillermo del Toro's Pinocchio",
+    "Year": 2022,
+    "Date": "2026-11-06",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/guillermo-del-toros-pinocchio/",
+    "tmdb_id": 555604,
+    "tmdb_source": "rss",
+    "tmdb_title": "Pinocchio par Guillermo del Toro",
+    "tmdb_year": "2022",
+    "poster_path": "/ftnEmnoHI5Znlzg0TwGcSMoXJt1.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ftnEmnoHI5Znlzg0TwGcSMoXJt1.jpg"
   }
 ]

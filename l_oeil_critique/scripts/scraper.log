@@ -45495,3 +45495,90 @@ Call log:
 2026-11-06 10:34:06,376 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-06 10:34:06,448 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-06 10:34:06,448 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-06 17:51:43,565 [INFO] ==== Début du script bandes-annonces ====
+2026-11-06 17:51:43,573 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-06 17:51:43,574 [INFO] 1584 identifiants chargés depuis le log
+2026-11-06 17:51:43,574 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-06 17:51:44,182 [INFO] Démarrage scraping CineHorizons...
+2026-11-06 17:51:46,751 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-06 17:51:46,922 [INFO] 10 blocs détectés sur la page 1
+2026-11-06 17:51:46,924 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-06 17:51:46,924 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-06 17:51:46,924 [INFO] Démarrage scraping Allociné (films)...
+2026-11-06 17:51:48,406 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-06 17:51:49,984 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:51:50,593 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-06 17:51:51,432 [INFO] Article ajouté Allociné (film): Louve, une vie dans les Alpes
+2026-11-06 17:51:52,216 [INFO] Article ajouté Allociné (film): Nos âmes libres
+2026-11-06 17:51:53,081 [INFO] Article ajouté Allociné (film): Kwibuka, se souvenir
+2026-11-06 17:51:53,822 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:51:54,341 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-11-06 17:51:55,136 [INFO] Article ajouté Allociné (film): Club Kid
+2026-11-06 17:51:55,810 [INFO] Article ajouté Allociné (film): Silences
+2026-11-06 17:51:56,443 [INFO] Article ajouté Allociné (film): L’Himalaya Sans Filtre : Sur Les Routes De Lo
+2026-11-06 17:51:57,015 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:51:57,573 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-11-06 17:51:58,252 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:51:59,286 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-11-06 17:52:00,070 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:00,605 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-11-06 17:52:01,295 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:01,885 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-11-06 17:52:02,660 [INFO] Article ajouté Allociné (film): En apparence
+2026-11-06 17:52:03,264 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:04,355 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-11-06 17:52:05,266 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:05,995 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:06,639 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:07,614 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-11-06 17:52:08,503 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:09,240 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:09,826 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:10,844 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-11-06 17:52:11,521 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:12,113 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:12,696 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:13,648 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-11-06 17:52:14,370 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:14,999 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:15,587 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:16,662 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-11-06 17:52:17,394 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:17,990 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:18,597 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:19,572 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-11-06 17:52:20,261 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:20,858 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:21,430 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:22,400 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-11-06 17:52:23,081 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:23,671 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:24,316 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:25,305 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-11-06 17:52:25,992 [INFO] Article ajouté Allociné (film): L'île des souvenirs
+2026-11-06 17:52:26,608 [INFO] Article ajouté Allociné (film): Klara et le soleil
+2026-11-06 17:52:27,194 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-06 17:52:27,194 [INFO] Scraping Allociné (films) terminé (38 items)
+2026-11-06 17:52:27,194 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-06 17:52:27,741 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-06 17:52:30,091 [INFO] Article ajouté Allociné (serie): Carl Hiaasen's Bad Monkey (saison 2)
+2026-11-06 17:52:31,247 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-06 17:52:31,328 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-06 17:52:31,329 [INFO] Scraping Allociné (séries) terminé (1 items)
+2026-11-06 17:52:31,430 [INFO] Démarrage scraping TMDb...
+2026-11-06 17:52:31,583 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-06 17:52:31,643 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-06 17:52:32,856 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-06 17:52:34,349 [INFO] 9 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-06 17:52:35,684 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-06 17:52:35,755 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-06 17:52:36,231 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-06 17:52:36,545 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-06 17:52:37,221 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-06 17:52:38,112 [INFO] Scraping TMDb terminé (0 items)
+2026-11-06 17:52:38,112 [INFO] 9 articles retenus pour ce run
+2026-11-06 17:52:38,198 [INFO] 2732 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-06 17:52:38,198 [INFO] Sauvegarde du log avec 1592 identifiants
+2026-11-06 17:52:38,199 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-06 17:52:38,288 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-06 17:52:38,289 [INFO] ==== Fin du script bandes-annonces ====
