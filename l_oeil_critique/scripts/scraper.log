@@ -45413,3 +45413,45 @@ Call log:
 2026-11-05 05:47:50,533 [INFO] Scraping TMDb terminé (0 items)
 2026-11-05 05:47:50,533 [INFO] 0 articles retenus pour ce run
 2026-11-05 05:47:50,533 [INFO] Aucun article à écrire, arrêt
+2026-11-06 02:04:34,584 [INFO] ==== Début du script bandes-annonces ====
+2026-11-06 02:04:34,600 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-06 02:04:34,601 [INFO] 1575 identifiants chargés depuis le log
+2026-11-06 02:04:34,601 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-06 02:04:35,143 [INFO] Démarrage scraping CineHorizons...
+2026-11-06 02:04:37,467 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-06 02:04:37,594 [INFO] 10 blocs détectés sur la page 1
+2026-11-06 02:04:37,595 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-06 02:04:37,595 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-06 02:04:37,595 [INFO] Démarrage scraping Allociné (films)...
+2026-11-06 02:04:38,274 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-06 02:04:38,314 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-06 02:04:38,315 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-06 02:04:38,315 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-06 02:04:40,475 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-06 02:04:44,298 [INFO] Article ajouté Allociné (serie): Unaccustomed Earth (saison 1)
+2026-11-06 02:04:46,585 [INFO] Article ajouté Allociné (serie): Yellowjackets (saison 4)
+2026-11-06 02:04:48,169 [INFO] Article ajouté Allociné (serie): Yellowjackets (saison 4)
+2026-11-06 02:04:50,549 [INFO] Article ajouté Allociné (serie): Criminal (saison 1)
+2026-11-06 02:04:52,409 [INFO] Article ajouté Allociné (serie): Criminal (saison 1)
+2026-11-06 02:04:55,174 [INFO] Article ajouté Allociné (serie): Fool Night (saison 1)
+2026-11-06 02:04:57,781 [INFO] Article ajouté Allociné (serie): Toujours sur la brèche (saison 1)
+2026-11-06 02:04:58,898 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-06 02:04:58,953 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-06 02:04:58,953 [INFO] Scraping Allociné (séries) terminé (7 items)
+2026-11-06 02:04:59,021 [INFO] Démarrage scraping TMDb...
+2026-11-06 02:04:59,163 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-06 02:04:59,209 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-06 02:04:59,938 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-06 02:05:01,256 [INFO] 9 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-06 02:05:01,876 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-06 02:05:01,922 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-06 02:05:02,620 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-06 02:05:02,858 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-06 02:05:03,381 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-06 02:05:03,889 [INFO] Scraping TMDb terminé (0 items)
+2026-11-06 02:05:03,889 [INFO] 7 articles retenus pour ce run
+2026-11-06 02:05:04,037 [INFO] 2721 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-06 02:05:04,038 [INFO] Sauvegarde du log avec 1582 identifiants
+2026-11-06 02:05:04,152 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-06 02:05:04,229 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-06 02:05:04,229 [INFO] ==== Fin du script bandes-annonces ====
