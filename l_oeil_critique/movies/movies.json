@@ -6142,5 +6142,18 @@
     "tmdb_year": "2022",
     "poster_path": "/ftnEmnoHI5Znlzg0TwGcSMoXJt1.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/ftnEmnoHI5Znlzg0TwGcSMoXJt1.jpg"
+  },
+  {
+    "Name": "Godzilla Minus Zero",
+    "Year": 2026,
+    "Date": "2026-11-07",
+    "Rating": 3.0,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/godzilla-minus-zero/",
+    "tmdb_id": 1381071,
+    "tmdb_source": "rss",
+    "tmdb_title": "Godzilla Minus Zero",
+    "tmdb_year": "2026",
+    "poster_path": "/zpcoFlZwyLnBt7bb5wmvGDCdg06.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/zpcoFlZwyLnBt7bb5wmvGDCdg06.jpg"
   }
 ]
