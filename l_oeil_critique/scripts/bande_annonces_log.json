@@ -1595,5 +1595,10 @@
   "cinehorizons::Infirmary::https://www.cinehorizons.net/film/infirmary",
   "cinehorizons::Maudits Français::https://www.cinehorizons.net/film/maudits-francais",
   "tmdb::id::1380469",
-  "allocine_serie::33650::20646788"
+  "allocine_serie::33650::20646788",
+  "tmdb::id::791523",
+  "tmdb::id::813418",
+  "tmdb::id::1527449",
+  "tmdb::id::1490241",
+  "tmdb::id::1474628"
 ]
