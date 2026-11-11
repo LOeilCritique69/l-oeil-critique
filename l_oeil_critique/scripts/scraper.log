@@ -46129,3 +46129,56 @@ Call log:
 2026-11-11 02:37:26,052 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-11 02:37:26,108 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-11 02:37:26,108 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-11 10:30:26,145 [INFO] ==== Début du script bandes-annonces ====
+2026-11-11 10:30:26,150 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-11 10:30:26,151 [INFO] 1602 identifiants chargés depuis le log
+2026-11-11 10:30:26,151 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-11 10:30:26,620 [INFO] Démarrage scraping CineHorizons...
+2026-11-11 10:30:28,945 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-11 10:30:29,084 [INFO] 10 blocs détectés sur la page 1
+2026-11-11 10:30:29,085 [INFO] Extraction détails CineHorizons pour Wildwood: La Prophétie de la forêt
+2026-11-11 10:30:29,876 [INFO] Article ajouté CineHorizons: Wildwood: La Prophétie de la forêt
+2026-11-11 10:30:29,877 [INFO] Extraction détails CineHorizons pour En haut de la pile
+2026-11-11 10:30:30,607 [INFO] Article ajouté CineHorizons: En haut de la pile
+2026-11-11 10:30:32,180 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-11-11 10:30:32,242 [INFO] 10 blocs détectés sur la page 2
+2026-11-11 10:30:32,244 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-11 10:30:32,244 [INFO] Scraping CineHorizons terminé (2 items)
+2026-11-11 10:30:32,244 [INFO] Démarrage scraping Allociné (films)...
+2026-11-11 10:30:32,626 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-11 10:30:32,951 [INFO] Article ajouté Allociné (film): Infirmary
+2026-11-11 10:30:34,072 [INFO] Article ajouté Allociné (film): Les Yeux Verts
+2026-11-11 10:30:35,069 [INFO] Article ajouté Allociné (film): Centenaires
+2026-11-11 10:30:35,706 [INFO] Article ajouté Allociné (film): L'Âge d'Or
+2026-11-11 10:30:36,239 [INFO] Article ajouté Allociné (film): Ce qui nous mène à toi
+2026-11-11 10:30:36,730 [INFO] Article ajouté Allociné (film): Everytime
+2026-11-11 10:30:37,110 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-11 10:30:37,803 [INFO] Article ajouté Allociné (film): Scrooge
+2026-11-11 10:30:38,201 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-11-11 10:30:38,254 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-11 10:30:38,254 [INFO] Scraping Allociné (films) terminé (7 items)
+2026-11-11 10:30:38,255 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-11 10:30:38,657 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-11 10:30:38,714 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-11 10:30:38,714 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-11-11 10:30:38,773 [INFO] Démarrage scraping TMDb...
+2026-11-11 10:30:38,818 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-11 10:30:38,890 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-11 10:30:38,914 [INFO] Article ajouté TMDb (upcoming): Changer l'Eau des Fleurs
+2026-11-11 10:30:38,997 [INFO] Article ajouté TMDb (upcoming): Viendra la révolution
+2026-11-11 10:30:39,011 [INFO] Article ajouté TMDb (upcoming): Le Procès
+2026-11-11 10:30:39,164 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-11 10:30:40,433 [INFO] Article ajouté TMDb (upcoming): Tanger blues
+2026-11-11 10:30:40,660 [INFO] 6 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-11 10:30:41,135 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-11-11 10:30:41,192 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-11-11 10:30:41,234 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-11-11 10:30:41,332 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-11-11 10:30:42,632 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-11-11 10:30:43,365 [INFO] Scraping TMDb terminé (4 items)
+2026-11-11 10:30:43,365 [INFO] 13 articles retenus pour ce run
+2026-11-11 10:30:43,438 [INFO] 2756 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-11 10:30:43,438 [INFO] Sauvegarde du log avec 1615 identifiants
+2026-11-11 10:30:43,439 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-11 10:30:43,512 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-11 10:30:43,512 [INFO] ==== Fin du script bandes-annonces ====
