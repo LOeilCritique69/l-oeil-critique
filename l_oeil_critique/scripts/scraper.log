@@ -46242,3 +46242,40 @@ Call log:
 2026-11-12 01:23:38,543 [INFO] Scraping TMDb terminé (0 items)
 2026-11-12 01:23:38,543 [INFO] 0 articles retenus pour ce run
 2026-11-12 01:23:38,544 [INFO] Aucun article à écrire, arrêt
+2026-11-12 09:30:04,730 [INFO] ==== Début du script bandes-annonces ====
+2026-11-12 09:30:04,749 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-12 09:30:04,749 [INFO] 1615 identifiants chargés depuis le log
+2026-11-12 09:30:04,749 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-12 09:30:06,102 [INFO] Démarrage scraping CineHorizons...
+2026-11-12 09:30:08,993 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-12 09:30:09,178 [INFO] 10 blocs détectés sur la page 1
+2026-11-12 09:30:09,181 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-12 09:30:09,181 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-12 09:30:09,181 [INFO] Démarrage scraping Allociné (films)...
+2026-11-12 09:30:09,867 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-12 09:30:10,294 [INFO] Article ajouté Allociné (film): Faire Santé Commune
+2026-11-12 09:30:11,639 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-12 09:30:11,706 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-12 09:30:11,706 [INFO] Scraping Allociné (films) terminé (1 items)
+2026-11-12 09:30:11,706 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-12 09:30:13,001 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-12 09:30:13,081 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-12 09:30:13,082 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-11-12 09:30:13,141 [INFO] Démarrage scraping TMDb...
+2026-11-12 09:30:13,234 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-12 09:30:13,611 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-12 09:30:14,488 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-12 09:30:16,579 [INFO] 6 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-12 09:30:17,410 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/9)
+2026-11-12 09:30:17,708 [INFO] Article ajouté TMDb (now_playing): ஜெயிலர் 2
+2026-11-12 09:30:17,778 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/9)
+2026-11-12 09:30:18,002 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/9)
+2026-11-12 09:30:18,546 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/9)
+2026-11-12 09:30:19,080 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/9)
+2026-11-12 09:30:20,315 [INFO] Scraping TMDb terminé (1 items)
+2026-11-12 09:30:20,316 [INFO] 2 articles retenus pour ce run
+2026-11-12 09:30:20,407 [INFO] 2758 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-12 09:30:20,407 [INFO] Sauvegarde du log avec 1617 identifiants
+2026-11-12 09:30:20,408 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-12 09:30:20,498 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-12 09:30:20,498 [INFO] ==== Fin du script bandes-annonces ====
