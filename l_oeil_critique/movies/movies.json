@@ -180,14 +180,17 @@
     "tmdb_id": 7445
   },
   {
-    "Date": "2024-10-12",
+    "Date": "2026-11-11",
     "Name": "Dune",
     "Year": 2021,
     "Letterboxd URI": "https://boxd.it/fA7G",
     "Rating": 4,
     "poster_path": "/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/qpyaW4xUPeIiYA5ckg5zAZFHvsb.jpg",
-    "tmdb_id": 438631
+    "tmdb_id": 438631,
+    "tmdb_source": "rss",
+    "tmdb_title": "Dune",
+    "tmdb_year": "2021"
   },
   {
     "Date": "2024-10-12",
