@@ -1892,14 +1892,17 @@
     "tmdb_id": 49444
   },
   {
-    "Date": "2024-11-06",
+    "Date": "2026-11-12",
     "Name": "Dune: Part Two",
     "Year": 2024,
     "Letterboxd URI": "https://boxd.it/pUfA",
-    "Rating": 4,
+    "Rating": 4.5,
     "poster_path": "/iRNbRAIGQQr5diGnjpwJFm0dgt4.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/iRNbRAIGQQr5diGnjpwJFm0dgt4.jpg",
-    "tmdb_id": 693134
+    "tmdb_id": 693134,
+    "tmdb_source": "rss",
+    "tmdb_title": "Dune : Deuxième partie",
+    "tmdb_year": "2024"
   },
   {
     "Date": "2024-11-07",
