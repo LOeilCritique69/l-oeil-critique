@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calendrier des sorties – L'Œil Critique</title>
 <meta name="description" content="Le programme des sorties films, séries, animés, jeux vidéo, musiques et événements suivis par L’Œil Critique.">
-<meta name="theme-color" content="#0a0a0c">
+<meta name="theme-color" content="#0d0e12">
 <meta property="og:title" content="Calendrier des sorties – L'Œil Critique">
 <meta property="og:description" content="Le programme des prochaines sorties culturelles.">
 <meta property="og:image" content="https://www.l-oeil-critique.com/assets/img/logo_chef_doeuvre_processed_copy.jpg">
@@ -14,224 +14,590 @@
 <meta property="og:url" content="https://www.l-oeil-critique.com/pages/calendrier.html">
 <link rel="canonical" href="https://www.l-oeil-critique.com/pages/calendrier.html">
 <link rel="icon" href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" type="image/jpeg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://script.google.com">
 <link rel="preconnect" href="https://image.tmdb.org">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600;0,9..144,700;0,9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/chef_d_oeuvre.css">
 <style>
-:root{color-scheme:dark;--bg:#0a0a0c;--s1:#141417;--s2:#1c1c21;--line:rgba(255,255,255,.1);--ink:#f4efe4;--mut:#8f8b82;--paper:#efe6d2;--hot:#ff4a2b;--brass:#e2b66f;--r:16px;--ease:cubic-bezier(.2,.75,.25,1)}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;min-width:320px}
-body.cal{margin:0;min-height:100vh;background:var(--bg);color:var(--ink)}
-.cal :where(main,.hero,.ov){font:14px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-.cal :where(main,.hero,.ov) button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}.cal :where(main,.hero,.ov) a{color:inherit;text-decoration:none}
-.cal :where(main,.hero,.ov) :focus-visible{outline:2px solid var(--hot);outline-offset:3px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-.mono{font-family:"JetBrains Mono",monospace}
-.k-films{--k:#7fb0ee}.k-series{--k:#6fd0c4}.k-jeux{--k:#b0d588}.k-animes{--k:#f0b66d}.k-evenements{--k:#ea91b0}.k-music{--k:#c9a0e7}.k-autre{--k:#aaa3b8}
-
-/* HERO */
-.hero{position:relative;z-index:0;padding:clamp(40px,7vw,90px) 20px 36px;border-bottom:1px solid var(--line);background:radial-gradient(900px 400px at 85% 0,rgba(255,74,43,.22),transparent 70%),radial-gradient(700px 400px at 0 100%,rgba(226,182,111,.1),transparent 70%)}
-.hero-in{max-width:1100px;margin:0 auto}
-.crumb{font:700 10px "JetBrains Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin:0 0 20px}.crumb b{color:var(--hot)}
-.hero h1{margin:0;font:900 clamp(3.4rem,13vw,10rem)/.82 Fraunces,Georgia,serif;letter-spacing:-.06em;text-transform:uppercase}
-.hero h1 span{display:block;font-style:italic;font-weight:600;color:transparent;-webkit-text-stroke:1.5px var(--ink);letter-spacing:-.04em}
-.hero-row{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between;margin-top:30px}
-.hero p{max-width:480px;margin:0;color:#c9c3b6}
-.live{display:flex;align-items:baseline;gap:12px}.live b{font:900 3.4rem/1 Fraunces,serif;color:var(--hot)}.live span{font:700 10px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);max-width:130px}
-.cta{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:99px;background:var(--ink);color:#111!important;font-weight:700;font-size:.8rem;transition:transform .2s var(--ease),background .2s}.cta:hover{transform:translateY(-2px);background:var(--hot);color:#fff!important}
-
-main{position:relative;z-index:0;width:min(100% - 32px,1100px);margin:0 auto;padding-bottom:90px}
-
-/* AFFICHE DE LA SEMAINE */
-.feat{margin-top:34px}
-.sh{display:flex;align-items:center;gap:12px;margin:0 0 14px;font:700 10px "JetBrains Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--hot)}.sh::after{content:"";flex:1;height:1px;background:var(--line)}
-.fr-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(170px,200px);gap:12px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x proximity;scrollbar-width:thin}
-.fc{position:relative;aspect-ratio:2/3;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:#222 center/cover;text-align:left;display:flex;align-items:flex-end;transition:transform .25s var(--ease)}
-.fc:hover{transform:translateY(-5px) rotate(-.6deg)}
-.fc::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,.05) 62%)}
-.fc .tx{position:relative;z-index:1;padding:14px}.fc .d{display:inline-block;margin-bottom:6px;padding:3px 8px;border-radius:4px;background:var(--hot);font:700 9px "JetBrains Mono",monospace;text-transform:uppercase}
-.fc .t{font:700 1.05rem/1.2 Fraunces,serif}
-.fc .em{position:absolute;inset:0;display:grid;place-items:center;font-size:2.4rem;opacity:.4}.fc.ok .em,.tk .po.ok span{display:none}
-
-.cal .lz{background-position:center;background-size:cover;background-repeat:no-repeat}
-
-/* BARRE */
-.bar{position:sticky;top:var(--hh,0px);z-index:5;margin:30px -16px 0;padding:12px 16px 10px;background:rgba(10,10,12,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.br{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.search{position:relative;flex:1 1 240px}.search input{width:100%;height:44px;padding:0 40px 0 44px;color:var(--ink);background:var(--s1);border:1px solid var(--line);border-radius:12px;font:inherit}
-.search input:focus{outline:0;border-color:var(--hot)}.search i{position:absolute;left:15px;top:11px;font-style:normal;opacity:.6}
-.search .x{position:absolute;right:8px;top:8px;width:28px;height:28px;border-radius:8px;background:var(--s2);color:var(--mut);display:none}.search .x.on{display:block}
-.seg{display:flex;padding:3px;background:var(--s1);border:1px solid var(--line);border-radius:12px}
-.seg button{height:36px;padding:0 14px;border-radius:9px;font:700 10px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);transition:all .18s}
-.seg button[aria-pressed=true]{background:var(--ink);color:#111}
-.gear{height:44px;padding:0 14px;border:1px solid var(--line);border-radius:12px;font:700 10px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}.gear[aria-expanded=true]{color:var(--hot);border-color:var(--hot)}
-.chips{display:flex;gap:7px;margin-top:10px;overflow-x:auto;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
-.chip{--k:var(--brass);flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 13px;border:1px solid var(--line);border-radius:8px;font-size:.76rem;font-weight:600;color:#cfc9bc;transition:all .15s}
-.chip::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--k)}
-.chip[aria-pressed=true]{background:var(--k);border-color:var(--k);color:#111}.chip[aria-pressed=true]::before{background:#111}
-.chip[data-cat="🎬 Films"]{--k:#7fb0ee}.chip[data-cat="📺 Séries"]{--k:#6fd0c4}.chip[data-cat="🎮 Jeux"]{--k:#b0d588}.chip[data-cat="🍿 Animés"]{--k:#f0b66d}.chip[data-cat="🎪 Événements"]{--k:#ea91b0}.chip[data-cat="🎵 Music"]{--k:#c9a0e7}.chip[data-cat="📦 Autre"]{--k:#aaa3b8}.chip[data-cat=__ALL__]{--k:var(--ink)}.chip[data-cat=__FAV__]{--k:var(--hot)}
-.set{display:none;gap:14px 20px;flex-wrap:wrap;align-items:center;margin-top:10px;padding:12px 14px;background:var(--s1);border:1px solid var(--line);border-radius:12px;font-size:.78rem;color:#cfc9bc}.set.open{display:flex}
-.set select{height:36px;padding:0 10px;color:var(--ink);background:#0d0d10;border:1px solid var(--line);border-radius:8px;font:inherit}.set input{accent-color:var(--hot);margin-right:8px}
-.set .rs{margin-left:auto;color:var(--hot);font:700 10px "JetBrains Mono",monospace;text-transform:uppercase}
-.info{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font:500 10px "JetBrains Mono",monospace;color:var(--mut)}
-
-/* PROGRAMME */
-.mo{position:sticky;top:calc(var(--hh,0px) + 98px);z-index:4;margin:40px 0 6px;padding:6px 0;font:900 clamp(2rem,6vw,3.6rem)/1 Fraunces,serif;letter-spacing:-.04em;text-transform:uppercase;background:linear-gradient(var(--bg) 60%,transparent)}
-.mo small{margin-left:10px;font:italic 600 .5em Fraunces,serif;color:var(--hot);letter-spacing:0}
-.day{display:grid;grid-template-columns:86px 1fr;gap:6px 18px;padding:18px 0;border-top:1px solid var(--line)}
-.dn{position:sticky;top:calc(var(--hh,0px) + 190px);align-self:start}
-.dn b{display:block;font:900 3.2rem/.9 Fraunces,serif;letter-spacing:-.05em}.dn span{font:700 10px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
-.day.now .dn b{color:var(--hot)}.day.now .dn span{color:var(--hot)}
-.tks{display:flex;flex-direction:column;gap:12px;min-width:0}
-
-/* TICKET */
-.tk{position:relative;display:grid;grid-template-columns:78px 1fr auto;background:var(--paper);color:#17140f;border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;transition:transform .22s var(--ease),box-shadow .22s;box-shadow:0 1px 0 rgba(255,255,255,.4) inset}
-.tk:hover{transform:translateY(-3px) rotate(-.3deg);box-shadow:0 14px 30px rgba(0,0,0,.5)}
-.tk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--k,#999);z-index:1}
-.tk .po{display:grid;place-items:center;min-height:112px;background:#cfc4a9 center/cover;font-size:1.6rem}
-.tk .bd{padding:14px 16px;display:flex;flex-direction:column;gap:7px;min-width:0}
-.tk .tg{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.tag{padding:2px 8px;border-radius:5px;background:rgba(23,20,15,.09);font:700 9px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.03em}
-.plat{font:500 10px "JetBrains Mono",monospace;color:#6a6252}
-.tk h3{margin:0;font:700 1.2rem/1.2 Fraunces,serif;letter-spacing:-.02em}
-.rt{margin-left:6px;padding:1px 6px;border-radius:4px;background:#17140f;color:var(--paper);font:700 8px "JetBrains Mono",monospace;text-transform:uppercase;vertical-align:.15em}
-.fr{margin-left:6px;padding:1px 5px;border-radius:4px;background:#1c7d6f;color:#fff;font:700 8px "JetBrains Mono",monospace;vertical-align:.15em}
-.st{position:relative;width:96px;display:grid;place-items:center;padding:10px;text-align:center;border-left:2px dashed rgba(23,20,15,.3)}
-.st::before,.st::after{content:"";position:absolute;left:-9px;width:16px;height:16px;border-radius:50%;background:var(--bg)}.st::before{top:-9px}.st::after{bottom:-9px}
-.st b{display:block;font:900 1.6rem/1 Fraunces,serif;color:var(--hot)}.st span{font:700 8px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#6a6252}
-.st.past b{color:#8a8372}
-.fz{margin-top:4px;padding:12px 0 0;border-top:1px dashed var(--line)}.fz>p{margin:0 0 10px;font:700 10px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
-.more{display:block;margin:34px auto 0;padding:13px 26px;border:1px solid var(--ink);border-radius:99px;font:700 11px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;transition:all .2s}.more:hover{background:var(--ink);color:#111}
-
-.tk .hf{position:absolute;top:8px;right:108px;z-index:2;width:32px;height:32px;border-radius:50%;font-size:16px;color:#9a917c;background:rgba(23,20,15,.07);transition:all .15s}.tk .hf:hover{color:var(--hot);transform:scale(1.12)}.tk .hf.on{color:var(--hot);background:rgba(255,74,43,.15)}
-.tk h3{padding-right:34px}
-.sy{margin:2px 0 0;font-size:.85rem;line-height:1.55;color:#3a3529;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}.sy:empty{display:none}
-/* MOIS */
-.nav{display:grid;grid-template-columns:46px 1fr 46px auto;gap:10px;align-items:center;margin-top:30px}
-.nav .lbl{font:900 clamp(1.8rem,5vw,3.2rem)/1 Fraunces,serif;letter-spacing:-.04em;text-transform:uppercase}.nav .lbl small{font:italic 600 .5em Fraunces,serif;color:var(--hot);margin-left:8px}
-.mstat{margin-top:6px;font:700 10px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
-.nb{width:46px;height:46px;border:1px solid var(--line);border-radius:14px;font-size:20px;transition:all .15s}.nb:hover{background:var(--ink);color:#111}
-.nt{height:46px;padding:0 18px;border-radius:14px;background:var(--hot);color:#fff;font:700 10px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;transition:transform .2s var(--ease)}.nt:hover{transform:translateY(-2px)}
-.gw{margin-top:18px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
-.wd{padding:2px 0 6px;text-align:center;font:700 10px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}.wd.we{color:#b7654f}
-.gw .cell{position:relative;min-height:132px;padding:10px;display:flex;flex-direction:column;gap:7px;text-align:left;background:var(--s1);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .2s var(--ease),border-color .2s,box-shadow .2s}
-.gw .cell.we{background:#101013}
-.gw .cell.out{background:transparent;border-color:transparent;opacity:.28}
-.gw .cell.past{opacity:.55}
-.gw .cell.ev{cursor:pointer}.gw .cell.ev:hover{transform:translateY(-4px);border-color:var(--hot);box-shadow:0 14px 28px rgba(0,0,0,.5);opacity:1;z-index:2}
-.gw .cell.now{border-color:var(--hot);box-shadow:0 0 0 1px var(--hot),0 0 34px rgba(255,74,43,.22);opacity:1}
-.cell .bg{position:absolute;inset:0;opacity:0;transition:opacity .5s}.cell .bg.ok{opacity:.34}
-.cell .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,12,.35),rgba(10,10,12,.93) 70%)}
-.cell>.n,.cell>.evs{position:relative;z-index:1}
-.cell .n{display:flex;justify-content:space-between;align-items:center;font:900 1.45rem/1 Fraunces,serif;letter-spacing:-.04em;color:#d8d2c5}
-.cell.now .n{color:var(--hot)}
-.cell .n em{font:700 8px "JetBrains Mono",monospace;font-style:normal;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:99px;background:var(--hot);color:#fff}
-.cell .n b{min-width:20px;height:20px;padding:0 6px;display:grid;place-items:center;border-radius:99px;background:rgba(255,255,255,.12);font:700 10px "JetBrains Mono",monospace;letter-spacing:0;color:var(--ink)}
-.evs{display:flex;flex-direction:column;gap:4px;min-width:0}
-.ec{display:flex;align-items:center;min-width:0;padding:4px 7px;border-left:3px solid var(--k,#999);border-radius:5px;background:color-mix(in srgb,var(--k,#999) 20%,rgba(10,10,12,.55));font-size:10px;font-weight:600;color:var(--ink)}
-.ec span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.cmore{padding-left:4px;font:700 9px "JetBrains Mono",monospace;color:var(--hot)}
-.mz{margin-top:26px}.mz>p{margin:0 0 10px;font:700 10px "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
-.mz div{display:flex;flex-wrap:wrap;gap:8px}
-.zp{display:inline-flex;align-items:center;gap:9px;min-height:36px;padding:0 14px;border:1px dashed rgba(255,255,255,.25);border-radius:99px;background:var(--s1);font-size:.78rem;transition:all .15s}.zp i{width:8px;height:8px;border-radius:2px;background:var(--k,#999)}.zp:hover{border-color:var(--hot);background:var(--s2)}
-
-/* MODALE */
-.ov{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}.ov.open{opacity:1;visibility:visible}
-.box{width:min(100%,620px);max-height:86vh;overflow:auto;padding:22px;background:var(--paper);color:#17140f;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.6);transform:translateY(12px);transition:transform .25s var(--ease)}.ov.open .box{transform:none}
-.mh{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.mh h2{margin:0;font:900 1.5rem Fraunces,serif;letter-spacing:-.03em}
-.mx{width:34px;height:34px;border-radius:50%;background:#17140f;color:var(--paper);font-size:12px}
-.mi{display:flex;gap:18px;padding:16px 0;border-top:2px dashed rgba(23,20,15,.25)}.mi:first-of-type{border-top:0;padding-top:0}
-.mp{display:grid;place-items:center;width:110px;height:165px;flex:0 0 110px;border-radius:8px;background:#cfc4a9 center/cover;box-shadow:0 10px 24px rgba(0,0,0,.3);font-size:2rem}.mp.ok span{display:none}
-.mb{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0}.mb h3{margin:0;font:700 1.4rem/1.2 Fraunces,serif}
-.mm{font:500 11px "JetBrains Mono",monospace;color:#4d4638}.sc{padding:2px 8px;border-radius:5px;background:#17140f;color:var(--brass);font:700 10px "JetBrains Mono",monospace}
-.ac{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.ab{padding:8px 13px;border-radius:99px;border:1.5px solid #17140f;font:700 10px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.04em}.ab:hover{background:#17140f;color:var(--paper)}
-
-#load{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:var(--bg);transition:opacity .35s,visibility .35s}#load.hide{opacity:0;visibility:hidden}
-#load div{text-align:center;font:900 2rem Fraunces,serif;text-transform:uppercase}#load p{margin:8px 0 0;font:500 11px "JetBrains Mono",monospace;color:var(--mut);text-transform:none}
-.sp{width:36px;height:36px;margin:0 auto 16px;border:3px solid var(--line);border-top-color:var(--hot);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-.state{padding:70px 20px;text-align:center;color:var(--mut)}.state b{display:block;margin-bottom:8px;font:900 2rem Fraunces,serif;color:var(--ink)}
-.note{margin-top:26px;text-align:center;font:500 9px "JetBrains Mono",monospace;color:var(--mut)}
-
-@media(max-width:700px){
-.mo{top:calc(var(--hh,0px) + 92px)}.day{grid-template-columns:54px 1fr;gap:6px 12px}.dn{top:calc(var(--hh,0px) + 170px)}.dn b{font-size:2.1rem}
-.tk{grid-template-columns:64px 1fr}.st{grid-column:1/-1;width:auto;flex-direction:row;display:flex;gap:10px;justify-content:center;border-left:0;border-top:2px dashed rgba(23,20,15,.3);padding:8px}.st::before,.st::after{display:none}.st b{font-size:1.1rem}
-.tk h3{font-size:1.05rem}.tk .hf{right:8px}.nav{grid-template-columns:40px 1fr 40px}.nt{grid-column:1/-1}.nb{width:40px;height:40px}.gw{gap:3px}.wd{font-size:8px;letter-spacing:.02em}.gw .cell{min-height:64px;padding:5px 2px;gap:4px;border-radius:8px}.cell .n{justify-content:center;font-size:.95rem}.cell .n b,.cell .n em{display:none}.evs{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:3px}.ec{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:var(--k,#999)}.ec span{display:none}.cmore{width:100%;text-align:center;padding:0;font-size:8px}.mi{flex-direction:column}.mp{width:90px;height:135px}
-.ov{align-items:flex-end;padding:8px}.box{border-radius:20px 20px 12px 12px}.seg button{padding:0 10px}
+/* ==========================================================================
+   L'ŒIL CRITIQUE — Calendrier / déclinaison locale de la charte « Salle noire »
+   La feuille globale fournit les tokens et les composants du site. Ce fichier
+   ne redéfinit que les composants propres au calendrier.
+   ========================================================================== */
+.cal {
+  --cal-bg: var(--ink, #0d0e12);
+  --cal-panel: var(--ink-2, #16181f);
+  --cal-panel-2: var(--ink-3, #1f222b);
+  --cal-text: var(--text, #f2ede2);
+  --cal-muted: var(--ink-soft, #8d93a0);
+  --cal-line: var(--line-on-ink, rgba(242,237,226,.12));
+  --cal-line-strong: var(--line-on-ink-strong, rgba(212,169,73,.4));
+  --cal-brass: var(--brass, #d4a949);
+  --cal-brass-light: var(--brass-light, #ecc875);
+  --cal-velvet: var(--velvet, #c23a43);
+  --cal-display: var(--font-display, Fraunces, Georgia, serif);
+  --cal-body: var(--font-body, Inter, sans-serif);
+  --cal-mono: var(--font-mono, 'IBM Plex Mono', monospace);
+  color: var(--cal-text);
+  font-family: var(--cal-body);
+  -webkit-font-smoothing: antialiased;
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+.cal *, .cal *::before, .cal *::after { box-sizing: border-box; }
+.cal :where(button, input, select) { font: inherit; }
+.cal :where(button) { color: inherit; cursor: pointer; }
+.cal :where(a) { color: inherit; text-decoration: none; }
+.cal :where(button, a, input, select):focus-visible { outline: 2px solid var(--cal-brass); outline-offset: 3px; }
+.cal [hidden] { display: none !important; }
+.cal .sr { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+.cal .mono { font-family: var(--cal-mono); }
+
+/* Repère d'ouverture : iris discret, clin d'œil à l'identité du site. */
+.cal-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 0;
+  padding: clamp(2.6rem, 5vw, 5rem) 0 clamp(2.4rem, 4vw, 4rem);
+  background:
+    radial-gradient(ellipse at 82% 8%, rgba(212,169,73,.075), transparent 42%),
+    linear-gradient(180deg, rgba(255,255,255,.018), transparent 65%),
+    var(--cal-bg);
+  border-bottom: 1px solid var(--cal-line);
+}
+.cal-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: clamp(280px, 42vw, 620px);
+  aspect-ratio: 1;
+  right: -7%;
+  top: -52%;
+  border-radius: 50%;
+  opacity: .18;
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--cal-brass) 21deg 22deg);
+  -webkit-mask: radial-gradient(circle, transparent 31%, #000 32%, #000 34%, transparent 35%, transparent 63%, #000 64%, #000 66%, transparent 67%);
+  mask: radial-gradient(circle, transparent 31%, #000 32%, #000 34%, transparent 35%, transparent 63%, #000 64%, #000 66%, transparent 67%);
+  pointer-events: none;
+}
+.cal-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .16;
+  pointer-events: none;
+  background: repeating-linear-gradient(90deg, transparent 0 11px, rgba(242,237,226,.035) 11px 12px);
+  mask-image: linear-gradient(90deg, transparent, #000 70%, transparent);
+}
+.cal-hero__inner {
+  width: min(1320px, calc(100% - 3rem));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: end;
+}
+.cal-hero__copy { min-width: 0; }
+.cal-kicker, .cal-crumb, .cal-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--cal-muted);
+  font: 500 .68rem/1.4 var(--cal-mono);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.cal-kicker { margin-bottom: 2rem; color: var(--cal-brass-light); }
+.cal-kicker__iris {
+  width: 19px; height: 19px; flex: 0 0 19px; border-radius: 50%;
+  background: repeating-conic-gradient(transparent 0 21deg, var(--cal-brass) 21deg 25deg);
+  -webkit-mask: radial-gradient(circle, transparent 29%, #000 31%, #000 69%, transparent 71%);
+  mask: radial-gradient(circle, transparent 29%, #000 31%, #000 69%, transparent 71%);
+}
+.cal-crumb { margin-bottom: 1.2rem; font-size: .62rem; letter-spacing: .12em; }
+.cal-crumb a { color: var(--cal-muted); transition: color .2s ease; }
+.cal-crumb a:hover { color: var(--cal-brass-light); }
+.cal-crumb__slash { color: var(--cal-brass); }
+.cal-hero h1 {
+  margin: 0;
+  max-width: 760px;
+  color: var(--cal-text);
+  font: 500 clamp(3.4rem, 7.8vw, 7.3rem)/.88 var(--cal-display);
+  letter-spacing: -.055em;
+}
+.cal-hero h1 em {
+  display: block;
+  margin-top: .12em;
+  color: var(--cal-brass-light);
+  font-weight: 400;
+}
+.cal-hero__lead {
+  max-width: 520px;
+  margin: 1.45rem 0 0;
+  color: rgba(242,237,226,.7);
+  font-size: clamp(.9rem, 1.2vw, 1.02rem);
+  line-height: 1.8;
+}
+.cal-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 2rem;
+  border-top: 1px solid var(--cal-line-strong);
+  border-bottom: 1px solid var(--cal-line);
+}
+.cal-kpis > div { min-width: 105px; padding: .85rem 1.2rem .8rem 0; margin-right: 1.2rem; }
+.cal-kpis > div + div { padding-left: 1.2rem; border-left: 1px solid var(--cal-line); }
+.cal-kpis b { display:block; color: var(--cal-text); font: 500 1.8rem/1 var(--cal-display); }
+.cal-kpis .h b { color: var(--cal-brass-light); }
+.cal-kpis .g b { color: var(--cal-brass); }
+.cal-kpis span { display:block; margin-top:.4rem; color:var(--cal-muted); font:500 .58rem/1.3 var(--cal-mono); letter-spacing:.1em; text-transform:uppercase; }
+.cal-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  margin-top: 1.7rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--cal-brass);
+  color: var(--cal-brass-light) !important;
+  font: 500 .68rem/1 var(--cal-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.cal-cta:hover { background: var(--cal-brass); border-color: var(--cal-brass); color: var(--cal-bg) !important; }
+.cal-cta__plus { font-size: 1.1rem; line-height: .7; }
+.cal-cta__arrow { opacity: .75; }
+.cal-hero__feature { min-width: 0; }
+.cal-hero__feature-label {
+  display:flex; justify-content:space-between; align-items:center; gap:1rem;
+  margin:0 0 .75rem; color:var(--cal-muted);
+  font:500 .62rem/1.4 var(--cal-mono); letter-spacing:.16em; text-transform:uppercase;
+}
+.cal-hero__feature-label span:last-child { color:var(--cal-brass); }
+.spot {
+  position:relative; isolation:isolate; display:grid; grid-template-columns: minmax(105px, 35%) minmax(0,1fr);
+  width:100%; min-height:250px; padding:1rem; gap:1.1rem; overflow:hidden; text-align:left;
+  border:1px solid var(--cal-line-strong); background:var(--cal-panel);
+  transition:border-color .25s ease, transform .25s ease;
+}
+.spot:hover { border-color:var(--cal-brass); transform:translateY(-3px); }
+.spot .sbg { position:absolute; inset:-20px; z-index:-2; background:center/cover; filter:blur(25px); opacity:0; }
+.spot .sbg.ok { opacity:.16; }
+.spot::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, rgba(13,14,18,.12), rgba(13,14,18,.75) 48%, rgba(13,14,18,.93)); }
+.spot > * { position:relative; z-index:1; }
+.spot .spo { min-height:220px; aspect-ratio:2/3; align-self:stretch; display:grid; place-items:center; overflow:hidden; background:linear-gradient(145deg,var(--cal-panel-2),var(--cal-bg)); border:1px solid var(--cal-line); color:var(--cal-brass); font-size:2rem; }
+.spot .spo.ok { background-position:center; background-size:cover; }
+.spot .spo.ok span { display:none; }
+.spot .sx { min-width:0; display:flex; flex-direction:column; justify-content:space-between; gap:1.1rem; padding:.35rem 0; }
+.spot .sl { color:var(--cal-brass); font:500 .6rem/1.4 var(--cal-mono); letter-spacing:.17em; text-transform:uppercase; }
+.spot h2 { margin:.55rem 0 .55rem; color:var(--cal-text); font:500 clamp(1.25rem,2vw,1.8rem)/1.1 var(--cal-display); letter-spacing:-.02em; }
+.spot .sm { color:var(--cal-muted); font:400 .62rem/1.7 var(--cal-mono); }
+.spot .sc { display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem; margin-top:auto; }
+.spot .sc b { color:var(--cal-brass-light); font:500 clamp(2.1rem,4vw,3.1rem)/.9 var(--cal-display); letter-spacing:-.05em; }
+.spot .sc span { color:var(--cal-muted); font:500 .62rem/1.5 var(--cal-mono); text-transform:uppercase; }
+
+/* Zone de travail */
+.cal-shell {
+  width:min(1320px, calc(100% - 3rem));
+  margin:0 auto;
+  padding:2.1rem 0 6rem;
+  display:grid;
+  grid-template-columns:245px minmax(0,1fr);
+  gap:clamp(1.5rem,3.4vw,3.3rem);
+  align-items:start;
+}
+.cal-side {
+  position:sticky; top:calc(var(--hh, var(--header-total-h, 114px)) + 1rem);
+  max-height:calc(100vh - var(--hh, var(--header-total-h, 114px)) - 2rem);
+  overflow:auto; padding:1.1rem 1rem 1rem;
+  background:rgba(22,24,31,.68); border:1px solid var(--cal-line);
+  scrollbar-width:thin;
+}
+.cal-side__head { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1.15rem; padding-bottom:.85rem; border-bottom:1px solid var(--cal-line); }
+.cal-side__head strong { color:var(--cal-text); font:500 1.25rem var(--cal-display); }
+.cal-side__head small { color:var(--cal-brass); font:500 .58rem var(--cal-mono); letter-spacing:.12em; }
+.cal-side .sh { display:none; }
+.fg { margin:0 0 1.25rem; }
+.fg > h3 { margin:0 0 .55rem; color:var(--cal-muted); font:500 .6rem/1.4 var(--cal-mono); letter-spacing:.16em; text-transform:uppercase; }
+.ct {
+  display:flex; align-items:center; gap:.65rem; width:100%; min-height:34px; padding:.35rem .45rem;
+  color:rgba(242,237,226,.72); text-align:left; border:1px solid transparent;
+  font-size:.78rem; transition:background .18s ease, color .18s ease, border-color .18s ease;
+}
+.ct i { width:5px; height:17px; flex:0 0 5px; background:var(--k,var(--cal-brass)); opacity:.7; }
+.ct span { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ct em { color:var(--cal-muted); font:400 .62rem var(--cal-mono); font-style:normal; }
+.ct:hover { background:rgba(242,237,226,.045); color:var(--cal-text); }
+.ct[aria-pressed="true"] { background:rgba(212,169,73,.09); border-color:rgba(212,169,73,.27); color:var(--cal-brass-light); }
+/* Les catégories se distinguent par une nuance, jamais par une palette criarde. */
+.ct[data-cat="🎬 Films"], .k-films { --k:#d4a949; }
+.ct[data-cat="📺 Séries"], .k-series { --k:#b7aa91; }
+.ct[data-cat="🎮 Jeux"], .k-jeux { --k:#8d9da3; }
+.ct[data-cat="🍿 Animés"], .k-animes { --k:#bd7775; }
+.ct[data-cat="🎪 Événements"], .k-evenements { --k:#b89a79; }
+.ct[data-cat="🎵 Music"], .k-music { --k:#a797b0; }
+.ct[data-cat="📦 Autre"], .k-autre { --k:#8d93a0; }
+.ct[data-cat="__ALL__"] { --k:var(--cal-brass); }
+.ct[data-cat="__FAV__"] { --k:var(--cal-velvet); }
+.sg { display:grid; grid-auto-flow:column; grid-auto-columns:1fr; gap:2px; padding:3px; background:var(--cal-bg); border:1px solid var(--cal-line); }
+.sg button { min-width:0; min-height:29px; padding:0 .25rem; color:var(--cal-muted); font:500 .56rem var(--cal-mono); letter-spacing:.035em; text-transform:uppercase; transition:background .18s ease,color .18s ease; }
+.sg button[aria-pressed="true"] { background:var(--cal-panel-2); color:var(--cal-brass-light); }
+.cal-side select { width:100%; height:38px; padding:0 .65rem; background:var(--cal-bg); border:1px solid var(--cal-line-strong); border-radius:0; color:var(--cal-text); font-size:.76rem; }
+.chk { display:flex; gap:.6rem; align-items:flex-start; color:rgba(242,237,226,.72); font-size:.73rem; line-height:1.5; cursor:pointer; }
+.chk input { margin-top:.18rem; accent-color:var(--cal-brass); }
+.chk small { color:var(--cal-muted)!important; }
+.sa { display:flex; flex-wrap:wrap; gap:.65rem 1rem; padding-top:.9rem; border-top:1px solid var(--cal-line); }
+.sa button { padding:0; color:var(--cal-muted); font:500 .59rem var(--cal-mono); letter-spacing:.04em; text-transform:uppercase; transition:color .18s ease; }
+.sa button:hover, .sa .hot { color:var(--cal-brass-light); }
+
+/* Barre d'outils et navigation des vues */
+.cal-content { min-width:0; }
+.top {
+  position:sticky; top:var(--hh, var(--header-total-h, 114px)); z-index:10;
+  display:flex; flex-wrap:wrap; align-items:center; gap:.65rem;
+  padding:.7rem 0 .9rem; margin:0 0 .7rem;
+  background:linear-gradient(var(--cal-bg) 76%,rgba(13,14,18,0));
+}
+.search { position:relative; flex:1 1 250px; min-width:180px; }
+.search > i { position:absolute; left:.85rem; top:50%; transform:translateY(-50%); color:var(--cal-brass); font:normal .9rem var(--cal-mono); }
+.search input { width:100%; height:43px; padding:0 2.6rem 0 2.5rem; border:1px solid var(--cal-line); border-radius:0; background:var(--cal-panel); color:var(--cal-text); font-size:.78rem; }
+.search input::placeholder { color:var(--cal-muted); }
+.search input:focus { outline:0; border-color:var(--cal-brass); }
+.search .x { position:absolute; right:.4rem; top:50%; transform:translateY(-50%); width:29px; height:29px; display:none; color:var(--cal-muted); border:1px solid var(--cal-line); }
+.search .x.on { display:block; }
+.search .x:hover { color:var(--cal-text); border-color:var(--cal-brass); }
+.vw { display:flex; gap:2px; padding:3px; border:1px solid var(--cal-line); background:var(--cal-panel); }
+.vw button { height:35px; padding:0 .85rem; color:var(--cal-muted); font:500 .59rem var(--cal-mono); letter-spacing:.08em; text-transform:uppercase; transition:all .18s ease; }
+.vw button[aria-pressed="true"] { background:var(--cal-brass); color:var(--cal-bg); }
+.fbtn { display:none; min-height:43px; padding:0 .9rem; border:1px solid var(--cal-line); color:var(--cal-text); background:var(--cal-panel); font:500 .62rem var(--cal-mono); letter-spacing:.06em; text-transform:uppercase; }
+.fbtn.act { border-color:var(--cal-brass); color:var(--cal-brass-light); }
+.info { margin:.1rem 0 .75rem; color:var(--cal-muted); font:400 .64rem var(--cal-mono); letter-spacing:.045em; }
+
+/* Titres de mois et agenda */
+.mg { margin-top:2.5rem; }
+.mh2 {
+  position:sticky; top:calc(var(--hh, var(--header-total-h,114px)) + 58px); z-index:6;
+  display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
+  margin:0 0 .35rem; padding:.65rem 0 .8rem;
+  border-bottom:1px solid var(--cal-line-strong);
+  background:linear-gradient(var(--cal-bg) 78%,rgba(13,14,18,0));
+  color:var(--cal-text); font:500 clamp(1.75rem,3vw,2.6rem)/1 var(--cal-display);
+  letter-spacing:-.035em; text-transform:capitalize;
+}
+.mh2 small { margin-left:.6rem; color:var(--cal-brass); font:400 .62em var(--cal-mono); letter-spacing:0; }
+.mh2 em { color:var(--cal-muted); font:400 .58rem var(--cal-mono); font-style:normal; letter-spacing:.09em; text-transform:uppercase; white-space:nowrap; }
+.rw {
+  position:relative; display:grid; grid-template-columns:52px 48px minmax(0,1fr) auto;
+  gap:.75rem; align-items:center; min-height:88px; padding:.65rem .35rem .65rem 0;
+  border-bottom:1px solid var(--cal-line); background:transparent; cursor:pointer;
+  transition:background .18s ease;
+}
+.rw:hover { background:rgba(242,237,226,.035); }
+.rw .dy { align-self:center; text-align:center; }
+.rw .dy b { display:block; color:var(--cal-text); font:500 1.8rem/.95 var(--cal-display); }
+.rw .dy span { display:block; margin-top:.25rem; color:var(--cal-muted); font:500 .55rem var(--cal-mono); letter-spacing:.1em; text-transform:uppercase; }
+.rw .dy.now b, .rw .dy.now span { color:var(--cal-brass-light); }
+.rw .dy .q { color:var(--cal-muted); }
+.rw .th { position:relative; width:48px; height:70px; display:grid; place-items:center; overflow:hidden; background:var(--cal-panel-2) center/cover; border:1px solid var(--cal-line); color:var(--cal-brass); font-size:1.1rem; }
+.rw .th::after { content:""; position:absolute; inset:0; border-left:2px solid var(--k,var(--cal-brass)); pointer-events:none; }
+.rw .th.ok span { display:none; }
+.rw .rb { min-width:0; }
+.rw h3 { overflow:hidden; margin:0; color:var(--cal-text); font:500 1.13rem/1.18 var(--cal-display); letter-spacing:-.01em; text-overflow:ellipsis; white-space:nowrap; }
+.rw p { overflow:hidden; margin:.32rem 0 0; color:var(--cal-muted); font:400 .62rem/1.4 var(--cal-mono); text-overflow:ellipsis; white-space:nowrap; }
+.rw p b { color:var(--k,var(--cal-brass)); font-weight:500; }
+.rw .rr { display:flex; align-items:center; justify-content:flex-end; gap:.65rem; }
+.rw.seen .th, .rw.seen h3 { opacity:.56; }
+.bdg { display:inline-block; margin-left:.35rem; padding:.15rem .35rem; border:1px solid var(--cal-line); color:var(--cal-muted); font:500 .48rem var(--cal-mono); letter-spacing:.08em; text-transform:uppercase; vertical-align:middle; }
+.bdg.fr { border-color:rgba(212,169,73,.45); color:var(--cal-brass-light); }
+.bdg.vu { border-color:rgba(212,169,73,.3); background:rgba(212,169,73,.1); color:var(--cal-brass-light); }
+.cd { display:inline-block; min-width:64px; padding:.35rem .45rem; border:1px solid var(--cal-line-strong); color:var(--cal-brass-light); text-align:center; font:500 .58rem var(--cal-mono); letter-spacing:.035em; white-space:nowrap; }
+.cd.soon { border-color:var(--cal-velvet); color:#e49a9d; }
+.cd.now { border-color:var(--cal-velvet); background:var(--cal-velvet); color:#fff; }
+.cd.past { border-style:dashed; color:var(--cal-muted); }
+.cd.fz { max-width:120px; overflow:hidden; border-style:dashed; color:var(--cal-muted); text-overflow:ellipsis; }
+.hf { width:30px; height:30px; border:1px solid transparent; border-radius:50%; color:rgba(242,237,226,.35); font-size:.9rem; transition:all .18s ease; }
+.hf:hover, .hf.on { border-color:rgba(194,58,67,.4); background:rgba(194,58,67,.1); color:#d97980; }
+.fzl { margin:1rem 0 .2rem; color:var(--cal-muted); font:500 .58rem var(--cal-mono); letter-spacing:.14em; text-transform:uppercase; }
+.more { display:block; margin:2rem auto 0; padding:.85rem 1.4rem; border:1px solid var(--cal-brass); color:var(--cal-brass-light); background:transparent; font:500 .62rem var(--cal-mono); letter-spacing:.1em; text-transform:uppercase; transition:all .2s ease; }
+.more:hover { background:var(--cal-brass); color:var(--cal-bg); }
+
+/* Mur d'affiches : le poster reste l'élément principal, sans effet tape-à-l'œil. */
+.pw { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:1.15rem; padding-top:1.1rem; }
+.pc {
+  position:relative; display:flex; align-items:flex-end; overflow:hidden; aspect-ratio:2/3;
+  padding:0; border:1px solid var(--cal-line); background:var(--cal-panel-2) center/cover;
+  text-align:left; transition:transform .25s ease,border-color .25s ease,filter .25s ease;
+}
+.pc:hover { transform:translateY(-4px); border-color:var(--cal-brass); }
+.pc::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(13,14,18,.04) 25%,rgba(13,14,18,.2) 48%,rgba(13,14,18,.96) 100%); }
+.pc .em { position:absolute; inset:0; display:grid; place-items:center; color:var(--cal-brass); font-size:2.1rem; opacity:.45; }
+.pc.ok .em { display:none; }
+.pc .bt { position:absolute; z-index:2; left:0; right:0; bottom:0; height:2px; background:var(--k,var(--cal-brass)); }
+.pc .dt { position:absolute; z-index:2; top:.55rem; left:.55rem; padding:.3rem .42rem; background:rgba(13,14,18,.86); color:var(--cal-text); font:500 .55rem var(--cal-mono); text-transform:uppercase; }
+.pc .cd { position:absolute; z-index:2; top:.55rem; right:.55rem; min-width:0; max-width:calc(100% - 1rem); padding:.3rem .4rem; background:rgba(13,14,18,.86); font-size:.5rem; }
+.pc .tx { position:relative; z-index:2; display:block; width:100%; padding:.85rem .75rem; color:var(--cal-text); font:500 1rem/1.15 var(--cal-display); }
+.pc .tx small { display:block; margin-top:.4rem; color:rgba(242,237,226,.66); font:400 .52rem/1.45 var(--cal-mono); }
+.pc.seen { filter:saturate(.58) brightness(.78); }
+.pc.seen .dt::after { content:"  •  VU"; color:var(--cal-brass-light); }
+
+/* Vue mensuelle */
+.nav { display:grid; grid-template-columns:42px minmax(0,1fr) 42px auto; gap:.7rem; align-items:center; margin:1rem 0 1.15rem; }
+.nav .lbl { color:var(--cal-text); font:500 clamp(2rem,4vw,3.1rem)/1 var(--cal-display); letter-spacing:-.04em; text-transform:capitalize; }
+.nav .lbl small { margin-left:.65rem; color:var(--cal-brass); font:400 .48em var(--cal-mono); }
+.mstat { margin-top:.45rem; color:var(--cal-muted); font:400 .6rem var(--cal-mono); letter-spacing:.08em; text-transform:uppercase; }
+.nb { width:42px; height:42px; border:1px solid var(--cal-line-strong); color:var(--cal-brass-light); font:400 1.4rem var(--cal-display); transition:background .18s ease,color .18s ease; }
+.nb:hover { background:var(--cal-brass); color:var(--cal-bg); }
+.nt { min-height:42px; padding:0 .9rem; border:1px solid var(--cal-brass); color:var(--cal-brass-light); font:500 .58rem var(--cal-mono); letter-spacing:.08em; text-transform:uppercase; }
+.nt:hover { background:var(--cal-brass); color:var(--cal-bg); }
+.gw { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:5px; margin-top:1rem; }
+.wd { padding:.35rem 0 .55rem; color:var(--cal-muted); text-align:center; font:500 .57rem var(--cal-mono); letter-spacing:.12em; text-transform:uppercase; }
+.wd.we { color:var(--cal-brass); }
+.gw .cell {
+  position:relative; min-width:0; min-height:118px; display:flex; flex-direction:column; gap:.4rem;
+  overflow:hidden; padding:.55rem; border:1px solid var(--cal-line); background:var(--cal-panel);
+  text-align:left; transition:border-color .18s ease,background .18s ease;
+}
+.gw .cell.we { background:#12141a; }
+.gw .cell.out { min-height:0; background:transparent; border-color:transparent; opacity:.2; }
+.gw .cell.past:not(.now) { opacity:.54; }
+.gw .cell.ev { cursor:pointer; }
+.gw .cell.ev:hover { border-color:var(--cal-brass); background:var(--cal-panel-2); opacity:1; }
+.gw .cell.now { border-color:var(--cal-brass); box-shadow:inset 0 0 0 1px rgba(212,169,73,.2); opacity:1; }
+.cell .bg { position:absolute; inset:0; opacity:0; background-position:center; background-size:cover; }
+.cell .bg.ok { opacity:.14; }
+.cell .bg::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(13,14,18,.4),rgba(13,14,18,.96)); }
+.cell > .n, .cell > .evs { position:relative; z-index:1; }
+.cell .n { display:flex; align-items:center; justify-content:space-between; color:var(--cal-text); font:500 1.1rem var(--cal-display); }
+.cell.now .n { color:var(--cal-brass-light); }
+.cell .n em { padding:.15rem .35rem; background:var(--cal-velvet); color:#fff; font:500 .48rem var(--cal-mono); font-style:normal; text-transform:uppercase; }
+.cell .n b { min-width:19px; height:19px; display:grid; place-items:center; border:1px solid var(--cal-line-strong); color:var(--cal-brass-light); font:500 .53rem var(--cal-mono); }
+.evs { display:flex; flex-direction:column; gap:3px; min-width:0; }
+.ec { display:flex; align-items:center; gap:4px; min-width:0; padding:.22rem .3rem; border-left:2px solid var(--k,var(--cal-brass)); background:rgba(13,14,18,.72); color:rgba(242,237,226,.84); font-size:.58rem; font-weight:500; }
+.ec span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ec.seen { opacity:.5; }
+.ec.seen::after { content:"✓"; margin-left:auto; color:var(--cal-brass); }
+.cmore { padding-left:.25rem; color:var(--cal-brass-light); font:500 .52rem var(--cal-mono); }
+.mz { margin-top:1.8rem; }
+.mz > p { margin:0 0 .6rem; color:var(--cal-muted); font:500 .6rem var(--cal-mono); letter-spacing:.12em; text-transform:uppercase; }
+.mz div { display:flex; flex-wrap:wrap; gap:.45rem; }
+.zp { display:inline-flex; align-items:center; gap:.5rem; min-height:33px; padding:0 .75rem; border:1px solid var(--cal-line); color:var(--cal-text); background:var(--cal-panel); font-size:.72rem; }
+.zp i { width:6px; height:14px; background:var(--k,var(--cal-brass)); }
+.zp:hover { border-color:var(--cal-brass); }
+
+/* Etats, dernière mise à jour */
+.state { padding:4rem 1rem; text-align:center; color:var(--cal-muted); font-size:.82rem; }
+.state b { display:block; margin-bottom:.55rem; color:var(--cal-text); font:500 2rem var(--cal-display); }
+.state .cta { margin-top:1rem; }
+.note { margin-top:2rem; padding-top:.8rem; border-top:1px solid var(--cal-line); color:var(--cal-muted); font:400 .55rem/1.6 var(--cal-mono); letter-spacing:.035em; text-align:right; }
+
+/* Détail : panneau latéral comme une fiche de salle de montage. */
+.bd { position:fixed; inset:0; z-index:9996; background:rgba(0,0,0,.72); backdrop-filter:blur(5px); opacity:0; visibility:hidden; transition:opacity .22s ease,visibility .22s ease; }
+.bd.open { opacity:1; visibility:visible; }
+.dr { position:fixed; z-index:9998; top:0; right:0; bottom:0; width:min(490px,100%); overflow:auto; visibility:hidden; transform:translateX(102%); background:var(--cal-panel); border-left:1px solid var(--cal-line-strong); box-shadow:-30px 0 80px rgba(0,0,0,.45); transition:transform .3s cubic-bezier(.22,1,.36,1),visibility .3s ease; }
+.dr.open { visibility:visible; transform:translateX(0); }
+.dh { position:sticky; z-index:3; top:0; display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 1.2rem; border-bottom:1px solid var(--cal-line); background:rgba(22,24,31,.94); backdrop-filter:blur(12px); }
+.dh h2 { margin:0; color:var(--cal-text); font:500 1.25rem var(--cal-display); }
+.dx { width:34px; height:34px; flex:0 0 34px; border:1px solid var(--cal-line-strong); color:var(--cal-brass-light); background:transparent; font-size:.8rem; }
+.dx:hover { background:var(--cal-brass); color:var(--cal-bg); }
+.di { position:relative; isolation:isolate; overflow:hidden; padding:1.35rem 1.2rem 1.5rem; border-bottom:1px solid var(--cal-line); }
+.di .dbg { position:absolute; z-index:-1; inset:-30px; background:center/cover; filter:blur(32px); opacity:0; }
+.di .dbg.ok { opacity:.14; }
+.dtop { display:flex; align-items:flex-start; gap:1rem; }
+.dpo { width:120px; flex:0 0 120px; aspect-ratio:2/3; display:grid; place-items:center; overflow:hidden; border:1px solid var(--cal-line-strong); background:var(--cal-panel-2) center/cover; color:var(--cal-brass); font-size:2rem; }
+.dpo.ok span { display:none; }
+.dmb { display:flex; flex-direction:column; align-items:flex-start; gap:.55rem; min-width:0; }
+.dmb h3 { margin:0; color:var(--cal-text); font:500 1.65rem/1.06 var(--cal-display); }
+.dtag { padding:.2rem .4rem; border:1px solid var(--cal-line-strong); color:var(--cal-brass-light); font:500 .52rem var(--cal-mono); letter-spacing:.08em; text-transform:uppercase; }
+.dm { color:var(--cal-muted); font:400 .61rem/1.5 var(--cal-mono); }
+.dsc { padding:.2rem .4rem; background:var(--cal-brass); color:var(--cal-bg); font:500 .6rem var(--cal-mono); }
+.dsy { margin:1.2rem 0 0; color:rgba(242,237,226,.78); font-size:.82rem; line-height:1.75; }
+.dsy:empty { display:none; }
+.dac { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.1rem; }
+.ab { display:inline-flex; align-items:center; min-height:34px; padding:.45rem .65rem; border:1px solid var(--cal-line-strong); color:var(--cal-text); font:500 .55rem var(--cal-mono); letter-spacing:.04em; text-transform:uppercase; transition:all .18s ease; }
+.ab:hover { border-color:var(--cal-brass); background:var(--cal-brass); color:var(--cal-bg); }
+.ab.p { border-color:var(--cal-velvet); color:#e49a9d; }
+.ab.p:hover { background:var(--cal-velvet); color:#fff; }
+
+/* Ecran d'attente */
+#load { position:fixed; inset:0; z-index:99999; display:grid; place-items:center; background:var(--cal-bg); transition:opacity .35s ease,visibility .35s ease; }
+#load.hide { opacity:0; visibility:hidden; }
+#load > div { text-align:center; color:var(--cal-text); font:500 1.65rem var(--cal-display); }
+#load p { margin:.55rem 0 0; color:var(--cal-muted); font:400 .6rem var(--cal-mono); letter-spacing:.12em; }
+.sp { width:38px; height:38px; margin:0 auto 1rem; border:1px solid var(--cal-line-strong); border-top-color:var(--cal-brass); border-radius:50%; animation:cal-spin .9s linear infinite; }
+@keyframes cal-spin { to { transform:rotate(360deg); } }
+
+/* Responsive : le programme reste lisible, sans transformer le calendrier en app générique. */
+@media (max-width:1050px) {
+  .cal-hero__inner { grid-template-columns:1fr; gap:2rem; }
+  .cal-hero__feature { max-width:640px; }
+  .cal-shell { grid-template-columns:1fr; }
+  .cal-side { position:fixed; z-index:9997; top:0; bottom:0; left:0; width:min(340px,88vw); max-height:none; border-top:0; border-bottom:0; border-left:0; transform:translateX(-102%); visibility:hidden; transition:transform .28s ease,visibility .28s ease; }
+  .cal-side.open { transform:translateX(0); visibility:visible; }
+  .cal-side .sh { display:flex; }
+  .cal-side__head { display:none; }
+  .fbtn { display:block; }
+  .mh2 { top:calc(var(--hh, var(--header-total-h,114px)) + 65px); }
+}
+@media (max-width:700px) {
+  .cal-hero__inner, .cal-shell { width:min(100% - 2rem,1320px); }
+  .cal-hero { padding-top:2rem; }
+  .cal-kicker { margin-bottom:1.4rem; }
+  .cal-hero h1 { font-size:clamp(3.15rem,14vw,5.2rem); }
+  .cal-hero__lead { font-size:.88rem; }
+  .cal-kpis > div { min-width:0; margin-right:.8rem; padding-right:.8rem; }
+  .cal-kpis > div + div { padding-left:.8rem; }
+  .cal-kpis b { font-size:1.5rem; }
+  .cal-kpis span { font-size:.5rem; }
+  .spot { grid-template-columns:105px minmax(0,1fr); min-height:190px; padding:.7rem; gap:.8rem; }
+  .spot .spo { min-height:170px; }
+  .spot h2 { font-size:1.25rem; }
+  .spot .sc b { font-size:2.3rem; }
+  .cal-shell { padding-top:1.2rem; }
+  .top { top:var(--hh, var(--header-total-h,114px)); gap:.5rem; }
+  .search { flex-basis:100%; }
+  .vw { flex:1; }
+  .vw button { flex:1; padding:0 .4rem; }
+  .rw { grid-template-columns:39px 40px minmax(0,1fr) auto; gap:.55rem; min-height:76px; }
+  .rw .dy b { font-size:1.45rem; }
+  .rw .th { width:40px; height:59px; }
+  .rw h3 { font-size:1rem; }
+  .rw p { font-size:.55rem; }
+  .rw .rr { gap:.25rem; }
+  .rw .hf { display:none; }
+  .cd { min-width:0; padding:.3rem .35rem; font-size:.52rem; }
+  .pw { grid-template-columns:repeat(auto-fill,minmax(125px,1fr)); gap:.65rem; }
+  .nav { grid-template-columns:36px minmax(0,1fr) 36px; gap:.45rem; }
+  .nb { width:36px; height:38px; }
+  .nt { grid-column:1/-1; }
+  .gw { gap:3px; }
+  .wd { font-size:.48rem; letter-spacing:.03em; }
+  .gw .cell { min-height:58px; padding:.28rem .12rem; gap:.25rem; }
+  .cell .n { justify-content:center; font-size:.88rem; }
+  .cell .n b, .cell .n em { display:none; }
+  .evs { flex-direction:row; flex-wrap:wrap; justify-content:center; gap:3px; }
+  .ec { width:6px; height:6px; padding:0; border:0; border-radius:50%; background:var(--k,var(--cal-brass)); }
+  .ec span, .ec.seen::after { display:none; }
+  .cmore { width:100%; padding:0; text-align:center; font-size:.45rem; }
+  .dtop { align-items:flex-start; }
+  .dpo { width:100px; flex-basis:100px; }
+}
+@media (max-width:420px) {
+  .spot { grid-template-columns:88px minmax(0,1fr); }
+  .spot .spo { min-height:145px; }
+  .spot .sm { font-size:.53rem; }
+  .cal-kpis > div { margin-right:.45rem; padding-right:.45rem; }
+  .cal-kpis > div + div { padding-left:.45rem; }
+  .cal-kpis span { letter-spacing:.03em; }
+  .rw { grid-template-columns:34px 34px minmax(0,1fr); }
+  .rw .th { width:34px; height:51px; }
+  .rw .rr { grid-column:3; justify-content:flex-start; margin-top:.35rem; }
+  .rw .dy b { font-size:1.25rem; }
+  .rw h3 { font-size:.94rem; }
+  .pw { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .note { text-align:left; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .cal *, .cal *::before, .cal *::after { animation-duration:.001ms!important; transition-duration:.001ms!important; scroll-behavior:auto!important; }
+}
+@media print {
+  .cal-hero, .cal-side, .top, .bd, .dr, .cal-cta, #load { display:none!important; }
+  body.cal, .cal { background:#fff!important; color:#000!important; }
+  .cal-shell { display:block; width:100%; padding:0; }
+  .rw, .mh2 { color:#000!important; border-color:#ccc!important; }
+}
 </style>
 </head>
 <body class="cal">
-<div id="load" role="status" aria-live="polite"><div><div class="sp"></div>Chargement<p>Récupération du programme…</p></div></div>
+<div id="load" role="status" aria-live="polite"><div><div class="sp"></div>L’Œil Critique<p>OUVERTURE DU PROGRAMME…</p></div></div>
 
-<header class="hero"><div class="hero-in">
-  <p class="crumb"><a href="../index.html">Accueil</a> / <b>Calendrier</b></p>
-  <h1>Les sorties<span>à ne pas manquer</span></h1>
-  <div class="hero-row">
-    <p>Films, séries, animés, jeux, musique et événements suivis par L’Œil Critique, dans l’ordre où ils sortent.</p>
-    <div class="live"><b id="wk">–</b><span>sorties dans les 7 prochains jours</span></div>
-    <a class="cta" id="propose" target="_blank" rel="noopener noreferrer">➕ Proposer une sortie</a>
-  </div>
-</div></header>
-
-<main id="main">
-  <section class="feat" id="feat" hidden><h2 class="sh">À l’affiche cette semaine</h2><div class="fr-row" id="featRow"></div></section>
-
-  <div class="bar">
-    <div class="br">
-      <div class="search" role="search"><label class="sr" for="q">Rechercher un titre</label><i aria-hidden="true">🔎</i><input id="q" type="search" placeholder="Rechercher un titre…" autocomplete="off"><button class="x" id="qx" type="button" aria-label="Effacer">✕</button></div>
-      <div class="seg" role="group" aria-label="Affichage">
-        <button type="button" data-view="liste" aria-pressed="true">Programme</button><button type="button" data-view="mois" aria-pressed="false">Mois</button>
+<section class="cal-hero" aria-labelledby="calendar-title">
+  <div class="cal-hero__inner">
+    <div class="cal-hero__copy">
+      <p class="cal-crumb"><a href="../index.html">Accueil</a><span class="cal-crumb__slash">/</span><b>Calendrier</b></p>
+      <h1 id="calendar-title">Le programme<em>des sorties.</em></h1>
+      <p class="cal-hero__lead">Films, séries, animés, jeux, musique et événements. Une sélection à suivre, date après date, comme un programme de cinéma.</p>
+      <div class="cal-kpis" id="kpis" hidden>
+        <div><b id="kA">–</b><span>À venir</span></div>
+        <div class="h"><b id="kW">–</b><span>7 jours</span></div>
+        <div class="h"><b id="kN">–</b><span>Aujourd’hui</span></div>
+        <div class="g"><b id="kV">–</b><span id="kVl">Vus</span></div>
       </div>
-      <button class="gear" id="gear" type="button" aria-expanded="false" aria-controls="set">Réglages</button>
+      <a class="cal-cta" id="propose" target="_blank" rel="noopener noreferrer"><span class="cal-cta__plus">+</span> Proposer une sortie <span class="cal-cta__arrow">↗</span></a>
     </div>
-    <div class="chips" id="cats" role="group" aria-label="Catégories"></div>
-    <div class="set" id="set">
-      <label>Plateforme <select id="plat"><option value="TOUS">Toutes</option></select></label>
-      <label><input id="fr" type="checkbox" checked>Dates françaises TMDB (films)</label>
-      <button class="rs" id="reset" type="button">Réinitialiser</button>
+    <div class="cal-hero__feature">
+      <p class="cal-hero__feature-label"><span>À suivre prochainement</span><span>01 / PROGRAMME</span></p>
+      <button type="button" class="spot" id="spot" hidden aria-label="Voir la prochaine sortie"></button>
     </div>
-    <div class="info"><span id="count" aria-live="polite"></span><span><button type="button" id="ics" class="mono" style="color:var(--hot)">📅 Exporter .ics</button> · <button type="button" id="refresh" class="mono" style="color:var(--mut)">↻ Actualiser</button></span></div>
   </div>
+</section>
 
-  <div id="list"></div>
-  <div id="monthView" hidden>
-    <div class="nav"><button class="nb" id="prev" aria-label="Mois précédent">‹</button><div><div class="lbl" id="mlbl" aria-live="polite"></div><div class="mstat" id="mstat"></div></div><button class="nb" id="next" aria-label="Mois suivant">›</button><button class="nt" id="mtoday" type="button">Aujourd’hui</button></div>
-    <div class="gw" id="grid"></div>
-    <div class="mz" id="mfz"></div>
-  </div>
-  <p class="note" id="note"></p>
+<main id="main" class="cal-shell">
+  <aside class="cal-side" id="side" aria-label="Filtres du calendrier">
+    <div class="sh"><span>Affiner la sélection</span><button type="button" class="dx" id="sx" aria-label="Fermer les filtres">✕</button></div>
+    <div class="cal-side__head"><strong>Explorer</strong><small>FILTRES / 04</small></div>
+    <div class="fg"><h3>01 — Catégories</h3><div id="cats" role="group" aria-label="Catégories"></div></div>
+    <div class="fg"><h3>02 — Période</h3><div class="sg" id="per" role="group" aria-label="Période"><button type="button" data-per="avenir">À venir</button><button type="button" data-per="passees">Passées</button><button type="button" data-per="TOUS">Tout</button></div></div>
+    <div class="fg"><h3>03 — Suivi</h3><div class="sg" id="vuf" role="group" aria-label="Suivi"><button type="button" data-vu="TOUS">Tout</button><button type="button" data-vu="non">À voir</button><button type="button" data-vu="oui">Vus</button></div></div>
+    <div class="fg"><h3>04 — Rythme</h3><div class="sg" id="ryt" role="group" aria-label="Rythme"><button type="button" data-ryt="TOUS">Tous</button><button type="button" data-ryt="unique">Unique</button><button type="button" data-ryt="hebdo">Hebdo</button><button type="button" data-ryt="quotidien">Quoti.</button></div></div>
+    <div class="fg"><h3>Plateforme</h3><label class="sr" for="plat">Plateforme</label><select id="plat"><option value="TOUS">Toutes les plateformes</option></select></div>
+    <div class="fg"><label class="chk"><input id="fr" type="checkbox" checked><span>Privilégier les dates françaises TMDB <small>(films)</small></span></label></div>
+    <div class="sa"><button type="button" id="ics" class="hot">Exporter .ics ↗</button><button type="button" id="refresh">Actualiser ↻</button><button type="button" id="reset">Réinitialiser</button></div>
+  </aside>
+
+  <section class="cal-content" aria-label="Programme des sorties">
+    <div class="top">
+      <div class="search" role="search"><label class="sr" for="q">Rechercher un titre</label><i aria-hidden="true">⌕</i><input id="q" type="search" placeholder="Rechercher un film, une série…" autocomplete="off"><button class="x" id="qx" type="button" aria-label="Effacer la recherche">✕</button></div>
+      <div class="vw" role="group" aria-label="Mode d’affichage"><button type="button" data-view="agenda">Agenda</button><button type="button" data-view="affiches">Affiches</button><button type="button" data-view="mois">Mois</button></div>
+      <button type="button" class="fbtn" id="fbtn">Filtres</button>
+    </div>
+    <p class="info" id="count" aria-live="polite"></p>
+    <div id="list"></div>
+    <div id="wall" hidden></div>
+    <div id="monthView" hidden>
+      <div class="nav"><button class="nb" id="prev" aria-label="Mois précédent">‹</button><div><div class="lbl" id="mlbl" aria-live="polite"></div><div class="mstat" id="mstat"></div></div><button class="nb" id="next" aria-label="Mois suivant">›</button><button class="nt" id="mtoday" type="button">Aujourd’hui</button></div>
+      <div class="gw" id="grid"></div>
+      <div class="mz" id="mfz"></div>
+    </div>
+    <p class="note" id="note"></p>
+  </section>
 </main>
 
-<div class="ov" id="ov"><div class="box" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="mh"><h2 id="mt"></h2><button class="mx" id="mx" aria-label="Fermer">✕</button></div><div id="mbody"></div></div></div>
+<div class="bd" id="bd"></div>
+<aside class="dr" id="dr" role="dialog" aria-modal="true" aria-labelledby="dt"><div class="dh"><h2 id="dt"></h2><button class="dx" id="dx" aria-label="Fermer">✕</button></div><div id="db"></div></aside>
 
 <script>
 "use strict";
+/* ═══ Config ═══ */
 const GAS_URL="https://script.google.com/macros/s/AKfycbwQe6wGGkeOKyNqnrSPbn4ybjaP9ktf-LkMqTTQYNDPGfGAUx6j0wAH4ELj5eH8AHVoyA/exec";
-const API_URL=GAS_URL+"?format=json",TMDB_KEY="2cf75db44f938aeaf1e7d873a38fdcaa",OMDB_KEY="23538300",IMG="https://image.tmdb.org/t/p/w500";
-const CACHE_KEY="calendrier_sorties_cache_v4",PREF="loeil_calendrier_prefs_v2",POLL=18e4,PAGE=40;
+const TOKEN="";   // à renseigner si un token est défini dans « Configuration & API »
+const TMDB_KEY="2cf75db44f938aeaf1e7d873a38fdcaa",OMDB_KEY="23538300",IMG="https://image.tmdb.org/t/p/w500";
+/* IGDB (jeux) — appel direct depuis le navigateur. Les identifiants Twitch sont visibles dans la page. */
+const IGDB_CLIENT_ID="";                                   // ← Client ID de l'app Twitch (dev.twitch.tv/console)
+const IGDB_CLIENT_SECRET="k9iuaj8mxe4oljb1e8b13m6pu41evb"; // ← Client Secret (si cette valeur est en fait le Client ID, inverse les deux)
+const IGDB_PROXY="";                                       // optionnel : URL d'une fonction serveur si le navigateur bloque IGDB (CORS)
+const CACHE_KEY="calendrier_sorties_cache_v5",PREF="loeil_calendrier_prefs_v4",FAVK="loeil_calendrier_favs_v1",POLL=18e4,PAGE=60;
 const MOIS=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+const MCOURT=["janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","déc"];
 const JOURS=["dim","lun","mar","mer","jeu","ven","sam"];
 const CAT_ORDER=["🎬 Films","📺 Séries","🎮 Jeux","🍿 Animés","🎪 Événements","🎵 Music","📦 Autre"];
 const KC={"🎬 Films":"k-films","📺 Séries":"k-series","🎮 Jeux":"k-jeux","🍿 Animés":"k-animes","🎪 Événements":"k-evenements","🎵 Music":"k-music","📦 Autre":"k-autre","🎬 Films/Séries":"k-films"};
 const SAISONS={hiver:["Hiver",0],printemps:["Printemps",3],ete:["Été",6],automne:["Automne",9]};
-const POSTERS=new Set(["🎬 Films","📺 Séries","🎬 Films/Séries","🍿 Animés"]);
-$("propose").href=GAS_URL+"?vue=ajouter";
+const POSTERS=new Set(["🎬 Films","📺 Séries","🎬 Films/Séries","🍿 Animés","🎮 Jeux"]);
+const RYT={hebdo:"Hebdo",quotidien:"Quotidien"};
+
+/* ═══ Utilitaires ═══ */
 function $(id){return document.getElementById(id)}
 const norm=s=>(s||"").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim(),MN=MOIS.map(norm),pad=n=>String(n).padStart(2,"0");
 const esc=s=>(s??"").toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl=u=>/^https?:\/\/[^\s"'<>]+$/i.test((u||"").trim())?u.trim():"";
-const kc=c=>KC[c]||"k-autre",emoji=c=>[...(c||"📦")][0];
+const kc=c=>KC[c]||"k-autre",emoji=c=>[...(c||"📦")][0],catName=c=>(c||"").replace(/^\S+\s*/,"")||c;
 const debounce=(f,ms)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>f(...a),ms)}};
-function split(raw){const m=(raw||"").match(/\[(Hebdo|Quotidien)[^\]]*\]/i);return{c:(raw||"").replace(/\s*\[[^\]]*\]\s*/g," ").replace(/\s+/g," ").trim(),r:m?m[1].toLowerCase():""}}
-const clean=r=>split(r).c;
-const search_t=r=>clean(r).replace(/\s*[-–—:]\s*(ep|ép|episode|épisode|jour|partie|part|pt)\.?\s*\d+.*$/i,"").replace(/\s+(ep|ép|episode|épisode)\.?\s*\d+.*$/i,"").replace(/\s*\((finale|final)\)\s*$/i,"").trim();
-const titreHTML=r=>{const s=split(r);return esc(s.c)+(s.r?`<span class="rt">${s.r==="quotidien"?"Quotidien":"Hebdo"}</span>`:"")};
+const clean=r=>(r||"").replace(/\s*\[[^\]]*\]\s*/g," ").replace(/\s+/g," ").trim();
+const search_t=r=>clean(r).replace(/\s*[-–—:]\s*(ep|ép|episode|épisode|jour|partie|part|pt)\.?\s*\d+.*$/i,"").replace(/\s+(ep|ép|episode|épisode)\.?\s*\d+.*$/i,"").replace(/\s*\((finale|final)\)\s*$/i,"").replace(/\s+(S|saison\s*)\d+$/i,"").trim();
+$("propose").href=GAS_URL+"?vue=ajouter";
 
-/* Dates */
+/* ═══ Dates ═══ */
 const today=(()=>{const p=Object.fromEntries(new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Paris",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date()).map(x=>[x.type,x.value]));return new Date(+p.year,+p.month-1,+p.day,12)})();
 const mk=(y,m,d)=>new Date(y,m,d,12).getTime(),valid=(y,m,d)=>{const t=new Date(y,m-1,d,12);return t.getFullYear()===y&&t.getMonth()===m-1&&t.getDate()===d};
 function parseDate(str){
@@ -246,55 +612,162 @@ function parseDate(str){
   if(m){const w=norm(m[1]),a=+m[2],i=MN.indexOf(w);if(i>-1)return{kind:"mois",mois:i,annee:a,sortKey:mk(a,i,28)};if(SAISONS[w])return{kind:"saison",saison:SAISONS[w][0],moisDebut:SAISONS[w][1],annee:a,sortKey:mk(a,SAISONS[w][1],15)}}
   m=s.match(/^(\d{4})$/);if(m)return{kind:"annee",annee:+m[1],sortKey:mk(+m[1],11,31)};
   return U}
-
-/* État */
-const DEF={categories:[],platform:"TOUS",period:"avenir",view:"liste",frenchDates:true};
-function readPrefs(){try{const p=document.cookie.split(";").map(s=>s.trim()).find(s=>s.startsWith(PREF+"="));if(!p)return{...DEF};const o=JSON.parse(decodeURIComponent(p.slice(PREF.length+1)));return{categories:Array.isArray(o.categories)?o.categories.filter(x=>typeof x==="string"):[],platform:typeof o.platform==="string"?o.platform:"TOUS",period:["TOUS","avenir","passees"].includes(o.period)?o.period:"avenir",view:o.view==="mois"?"mois":"liste",frenchDates:o.frenchDates!==false}}catch(e){return{...DEF}}}
-const sp=readPrefs();let onlyFav=false;const FAVK="loeil_calendrier_favs_v1";let favs=new Set();try{favs=new Set(JSON.parse(localStorage.getItem(FAVK)||"[]"))}catch(e){}
-const favKey=it=>norm(clean(it.titre)),isFav=it=>favs.has(favKey(it)),saveFavs=()=>{try{localStorage.setItem(FAVK,JSON.stringify([...favs]))}catch(e){}};
-function toggleFav(it){const k=favKey(it);favs.has(k)?favs.delete(k):favs.add(k);saveFavs();buildFilters();render()}
-let ITEMS=[],cats=new Set(sp.categories),platform=sp.platform,period="avenir",view=sp.view,useFR=sp.frenchDates,term="",limit=PAGE,vy=today.getFullYear(),vm=today.getMonth(),lastFocus=null,lastOK=0,loading=null;
-const savePrefs=()=>{document.cookie=`${PREF}=${encodeURIComponent(JSON.stringify({categories:[...cats],platform,period,view,frenchDates:useFR}))}; Max-Age=${15552000}; Path=/; SameSite=Lax${location.protocol==="https:"?"; Secure":""}`};
-function hydrate(d){ITEMS=d.map((it,i)=>{const date=(it.date||"").toString().trim();return{...it,titre:(it.titre||"").toString(),categorie:it.categorie||"📦 Autre",date,lien:safeUrl(it.lien),parsed:parseDate(it.isoDate||date),fr:null,_id:i}}).sort((a,b)=>a.parsed.sortKey-b.parsed.sortKey)}
-const byId=id=>ITEMS.find(i=>i._id===id),eff=it=>useFR&&it.fr?it.fr:it.parsed;
+function parseApi(s){
+  if(s.isoDate){const p=parseDate(s.isoDate);if(p.kind==="jour")return p}
+  if(s.annee&&s.mois&&s.jour&&valid(+s.annee,+s.mois,+s.jour))return{kind:"jour",jour:+s.jour,mois:+s.mois-1,annee:+s.annee,sortKey:mk(+s.annee,+s.mois-1,+s.jour)};
+  if(s.periode){const p=parseDate(s.periode);if(p.kind!=="inconnue")return p}
+  if(s.annee&&s.mois>=1&&s.mois<=12)return{kind:"mois",mois:+s.mois-1,annee:+s.annee,sortKey:mk(+s.annee,+s.mois-1,28)};
+  if(s.annee)return{kind:"annee",annee:+s.annee,sortKey:mk(+s.annee,11,31)};
+  return{kind:"inconnue",sortKey:Infinity}}
 const daysUntil=ts=>{const t=new Date(ts);t.setHours(12,0,0,0);return Math.round((t-today)/864e5)};
 function endOf(p){if(p.kind==="mois")return new Date(p.annee,p.mois+1,0,12).getTime();if(p.kind==="saison")return new Date(p.annee,p.moisDebut+3,0,12).getTime();if(p.kind==="annee")return new Date(p.annee,11,31,12).getTime();return p.sortKey}
+
+/* ═══ État & préférences ═══ */
+const DEF={categories:[],platform:"TOUS",period:"avenir",view:"agenda",frenchDates:true,rythme:"TOUS",vu:"TOUS"};
+function readPrefs(){try{const p=document.cookie.split(";").map(s=>s.trim()).find(s=>s.startsWith(PREF+"="));if(!p)return{...DEF};const o=JSON.parse(decodeURIComponent(p.slice(PREF.length+1)));
+  return{categories:Array.isArray(o.categories)?o.categories.filter(x=>typeof x==="string"):[],platform:typeof o.platform==="string"?o.platform:"TOUS",period:["TOUS","avenir","passees"].includes(o.period)?o.period:"avenir",view:["agenda","affiches","mois"].includes(o.view)?o.view:"agenda",frenchDates:o.frenchDates!==false,rythme:["unique","hebdo","quotidien"].includes(o.rythme)?o.rythme:"TOUS",vu:["oui","non"].includes(o.vu)?o.vu:"TOUS"}}catch(e){return{...DEF}}}
+const sp=readPrefs();let onlyFav=false,favs=new Set();try{favs=new Set(JSON.parse(localStorage.getItem(FAVK)||"[]"))}catch(e){}
+const favKey=it=>norm(search_t(it.propre)),isFav=it=>favs.has(favKey(it)),saveFavs=()=>{try{localStorage.setItem(FAVK,JSON.stringify([...favs]))}catch(e){}};
+function toggleFav(it){const k=favKey(it);favs.has(k)?favs.delete(k):favs.add(k);saveFavs();buildFilters();render()}
+let ITEMS=[],STATS=null,UPDATED=null,cats=new Set(sp.categories),platform=sp.platform,period=sp.period,view=sp.view,useFR=sp.frenchDates,rythme=sp.rythme,vuF=sp.vu,term="",limit=PAGE,vy=today.getFullYear(),vm=today.getMonth(),lastFocus=null,lastOK=0,loading=null;
+const savePrefs=()=>{document.cookie=`${PREF}=${encodeURIComponent(JSON.stringify({categories:[...cats],platform,period,view,frenchDates:useFR,rythme,vu:vuF}))}; Max-Age=15552000; Path=/; SameSite=Lax${location.protocol==="https:"?"; Secure":""}`};
+
+/* ═══ Données (API v43) ═══ */
+function hydrate(raw){
+  STATS=raw.stats||null;UPDATED=raw.updated?Date.parse(raw.updated):null;
+  ITEMS=raw.items.map((s,i)=>{const titre=(s.titre||"").toString(),propre=(s.titrePropre||clean(titre)).toString();
+    const ryt=RYT[s.rythme]?s.rythme:(/\[quotidien/i.test(titre)?"quotidien":/\[hebdo/i.test(titre)?"hebdo":"unique");
+    return{_id:i,id:s.id||String(i),titre,propre,categorie:s.categorie||"📦 Autre",plateforme:(s.plateforme||"").toString(),rythme:ryt,vu:s.vu===true||s.vu==="true",lien:safeUrl(s.lien),affiche:safeUrl(s.affiche),note:typeof s.note==="number"?s.note:null,resume:(s.resume||"").toString(),trailer:safeUrl(s.trailer),label:s.dateFormatee||"",parsed:parseApi(s),fr:null}
+  }).sort((a,b)=>a.parsed.sortKey-b.parsed.sortKey)}
+const byId=id=>ITEMS.find(i=>i._id===id),eff=it=>useFR&&it.fr?it.fr:it.parsed;
 const isFuture=it=>{const p=eff(it);return p.kind==="inconnue"||daysUntil(endOf(p))>=0};
-function matches(it){
+function matches(it,skipCat){
   if(onlyFav&&!isFav(it))return false;
-  if(cats.size&&!cats.has(it.categorie))return false;
+  if(!skipCat&&cats.size&&!cats.has(it.categorie))return false;
   if(platform!=="TOUS"&&norm(it.plateforme)!==norm(platform))return false;
+  if(rythme!=="TOUS"&&it.rythme!==rythme)return false;
+  if(vuF==="oui"&&!it.vu)return false;if(vuF==="non"&&it.vu)return false;
   if(period==="avenir"&&!isFuture(it))return false;
   if(period==="passees"&&isFuture(it))return false;
-  if(term&&!norm(it.titre).includes(norm(term)))return false;return true}
+  if(term&&!norm(it.propre).includes(norm(term)))return false;return true}
 function dateLabel(it){const p=eff(it);
   if(p.kind==="jour")return new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(new Date(Date.UTC(p.annee,p.mois,p.jour,12)));
-  if(p.kind==="mois")return`${MOIS[p.mois]} ${p.annee}`;if(p.kind==="saison")return`${p.saison} ${p.annee}`;if(p.kind==="annee")return`${p.annee}`;return"Date à préciser"}
+  if(p.kind==="mois")return`${MOIS[p.mois]} ${p.annee}`;if(p.kind==="saison")return`${p.saison} ${p.annee}`;if(p.kind==="annee")return`${p.annee}`;return it.label||"Date à préciser"}
 function gcal(it){const p=eff(it);if(p.kind!=="jour")return"";const f=d=>`${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`;
-  return"https://calendar.google.com/calendar/render?"+new URLSearchParams({action:"TEMPLATE",text:`🍿 Sortie : ${clean(it.titre)}`,dates:`${f(new Date(p.annee,p.mois,p.jour,12))}/${f(new Date(p.annee,p.mois,p.jour+1,12))}`,details:`Catégorie : ${it.categorie}\nOù voir : ${it.plateforme||"N/C"}${it.lien?"\n"+it.lien:""}`})}
+  return"https://calendar.google.com/calendar/render?"+new URLSearchParams({action:"TEMPLATE",text:`🍿 Sortie : ${it.propre}`,dates:`${f(new Date(p.annee,p.mois,p.jour,12))}/${f(new Date(p.annee,p.mois,p.jour+1,12))}`,details:`Catégorie : ${it.categorie}\nOù voir : ${it.plateforme||"N/C"}${it.lien?"\n"+it.lien:""}`})}
+const titreHTML=it=>esc(it.propre)+(it.rythme!=="unique"?`<span class="bdg">${RYT[it.rythme]}</span>`:"");
+/* Compte à rebours : [texte, classe] */
+function cd(it){const p=eff(it);
+  if(p.kind==="jour"){const d=daysUntil(p.sortKey);return d===0?["Aujourd’hui","now"]:d>0?["J-"+d,d<=7?"soon":""]:["J+"+(-d),"past"]}
+  const l=p.kind==="mois"?`${MCOURT[p.mois]}. ${p.annee}`:p.kind==="saison"?`${p.saison} ${p.annee}`:p.kind==="annee"?String(p.annee):"à préciser";return[l,"fz"]}
+const cdHTML=it=>{const[t,c]=cd(it);return`<span class="cd ${c}">${esc(t)}</span>`};
 
-/* TMDB */
-/* Appels directs (clés visibles, comme avant) : "omdb" -> OMDb, sinon TMDB */
+/* ═══ TMDB / OMDb ═══ */
 const tmdb=(path,params)=>path==="omdb"?fetch("https://www.omdbapi.com/?"+new URLSearchParams({apikey:OMDB_KEY,...params})):fetch("https://api.themoviedb.org/3/"+path+"?"+new URLSearchParams({api_key:TMDB_KEY,...params}));
 const dc=new Map();
 function fetchDetails(id,type){const k=type+id;if(!dc.has(k))dc.set(k,(async()=>{try{const r=await tmdb(`${type}/${id}`,{language:"fr-FR",append_to_response:"videos",include_video_language:"fr,en,null"});if(!r.ok)return null;const d=await r.json(),v=((d.videos&&d.videos.results)||[]).filter(x=>x.site==="YouTube"&&x.type==="Trailer").sort((a,b)=>(b.iso_639_1==="fr")-(a.iso_639_1==="fr"))[0];return{overview:d.overview||"",trailer:v?"https://www.youtube.com/watch?v="+v.key:""}}catch(e){return null}})());return dc.get(k)}
-const pc=new Map();
-function fetchPoster(raw,annee){const t=search_t(raw),k=norm(t)+"|"+(annee||"");
-  if(!pc.has(k))pc.set(k,(async()=>{
-    try{const r=await tmdb("search/multi",{query:t,language:"fr-FR",include_adult:"false"});
-      if(r.ok){const res=((await r.json()).results||[]).filter(x=>(x.media_type==="movie"||x.media_type==="tv")&&x.poster_path),h=(annee&&res.find(x=>(x.release_date||x.first_air_date||"").startsWith(String(annee))))||res[0];
-        if(h)return{poster:IMG+h.poster_path,score:h.vote_average?Math.round(h.vote_average*10)/10:null,id:h.id,type:h.media_type}}}catch(e){}
-    try{const r=await tmdb("omdb",{t,...(annee?{y:annee}:{})});
-      if(r.ok){const d=await r.json();if(d.Response==="True"&&d.Poster&&d.Poster!=="N/A")return{poster:d.Poster,score:d.imdbRating&&d.imdbRating!=="N/A"?parseFloat(d.imdbRating):null}}}catch(e){}
-    return null})());
-  return pc.get(k)}
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const it=byId(+e.target.dataset.id);if(!it||!POSTERS.has(it.categorie))return;
-  fetchPoster(it.titre,eff(it).annee).then(r=>{if(r&&r.poster){e.target.style.backgroundImage=`url("${r.poster}")`;e.target.classList.add("ok")}})}),{rootMargin:"300px"});
+/* IGDB : token Twitch (client credentials) mis en cache, puis recherche du jeu */
+let igTok=null,igDead=false;
+async function igdbToken(){
+  if(igTok&&Date.now()<igTok.exp)return igTok.t;
+  try{const c=JSON.parse(localStorage.getItem("igdb_tok")||"null");if(c&&c.id===IGDB_CLIENT_ID&&Date.now()<c.exp){igTok=c;return c.t}}catch(e){}
+  const r=await fetch("https://id.twitch.tv/oauth2/token?"+new URLSearchParams({client_id:IGDB_CLIENT_ID,client_secret:IGDB_CLIENT_SECRET,grant_type:"client_credentials"}),{method:"POST"});
+  if(!r.ok)throw new Error("twitch "+r.status);
+  const d=await r.json();igTok={t:d.access_token,exp:Date.now()+d.expires_in*1000-6e4,id:IGDB_CLIENT_ID};
+  try{localStorage.setItem("igdb_tok",JSON.stringify(igTok))}catch(e){}
+  return igTok.t}
+function pickGame(list,t,annee){
+  const n=x=>norm(x).replace(/[^a-z0-9]/g,""),tg=n(t),yr=g=>g.first_release_date?new Date(g.first_release_date*1000).getUTCFullYear():0;
+  return list.map((g,i)=>({g,s:(n(g.name)===tg?4:(n(g.name).includes(tg)||tg.includes(n(g.name)))?2:0)+(annee&&yr(g)&&Math.abs(yr(g)-annee)<=1?1.5:0)+(g.cover?.5:0)-i*.01})).sort((a,b)=>b.s-a.s)[0].g}
+async function fetchGame(t,annee){
+  if(igDead)return null;
+  try{
+    let g;
+    if(IGDB_PROXY){const r=await fetch(IGDB_PROXY+"?"+new URLSearchParams({q:t,...(annee?{y:annee}:{})}));if(!r.ok)return null;g=await r.json();if(!g||!g.name)return null;
+      return{poster:g.poster||"",score:g.score||null,extra:{summary:g.summary||"",trailer:g.trailer||""}}}
+    if(!IGDB_CLIENT_ID||!IGDB_CLIENT_SECRET)return null;
+    const r=await fetch("https://api.igdb.com/v4/games",{method:"POST",headers:{"Client-ID":IGDB_CLIENT_ID,Authorization:"Bearer "+await igdbToken(),Accept:"application/json"},
+      body:`search "${t.replace(/[\\"]/g," ").slice(0,120)}"; fields name,summary,total_rating,first_release_date,cover.image_id,videos.video_id,videos.name; where version_parent = null; limit 10;`});
+    if(r.status===401){igTok=null;try{localStorage.removeItem("igdb_tok")}catch(e){}return null}
+    if(!r.ok)return null;
+    const list=await r.json();if(!Array.isArray(list)||!list.length)return null;
+    g=pickGame(list,t,annee);const v=(g.videos||[]).find(x=>/trailer/i.test(x.name||""))||(g.videos||[])[0];
+    return{poster:g.cover?`https://images.igdb.com/igdb/image/upload/t_cover_big/${g.cover.image_id}.jpg`:"",score:g.total_rating?Math.round(g.total_rating)/10:null,extra:{summary:g.summary||"",trailer:v?"https://www.youtube.com/watch?v="+v.video_id:""}}
+  }catch(e){
+    if(e instanceof TypeError){igDead=true;console.warn("IGDB inaccessible depuis le navigateur (CORS probable). Renseigne IGDB_PROXY ou récupère les données côté serveur.",e)}
+    return null}}
+/* ═══ Visuels : ID exact via le lien de l'API, puis recherche par titre ═══
+   Ordre : lien TMDB / IMDb / AniList / MyAnimeList → IGDB (jeux) ou AniList (animés) ou TMDB (films, séries)
+           → OMDb → Wikipédia → miniature YouTube si le lien en est un.
+   Files d'attente (TMDB, AniList…) pour éviter les 429, relance automatique, cache persistant
+   (30 j pour un visuel trouvé, 12 h pour un échec définitif) ; une erreur réseau n'est jamais mise en cache. */
+const VKEY="loeil_visuels_v1";let VC={};try{VC=JSON.parse(localStorage.getItem(VKEY)||"{}")}catch(e){}
+const saveVC=debounce(()=>{try{localStorage.setItem(VKEY,JSON.stringify(VC))}catch(e){try{VC={};localStorage.removeItem(VKEY)}catch(_){}}},800);
+function queue(gap,conc){let run=0,last=0;const q=[];
+  const pump=()=>{while(run<conc&&q.length){const j=q.shift();run++;const wait=Math.max(0,last+gap-Date.now());last=Date.now()+wait;setTimeout(()=>{j.f().then(j.res,j.rej).finally(()=>{run--;pump()})},wait)}};
+  return f=>new Promise((res,rej)=>{q.push({f,res,rej});pump()})}
+const qTMDB=queue(30,4),qANI=queue(750,1),qOMDB=queue(120,2),qWIKI=queue(100,3);
+async function jfetch(url,opt,tries=2){for(let i=0;i<=tries;i++){const r=await fetch(url,opt);if(r.status===429&&i<tries){const ra=+r.headers.get("Retry-After")||1.5;await new Promise(z=>setTimeout(z,Math.min(ra,8)*1000));continue}return r}}
+const tq=(path,params)=>qTMDB(()=>jfetch("https://api.themoviedb.org/3/"+path+"?"+new URLSearchParams({api_key:TMDB_KEY,...params})));
+const ytId=u=>{const m=(u||"").match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/))([\w-]{11})/);return m?m[1]:""};
+const hasVisual=it=>!!it.affiche||POSTERS.has(it.categorie)||!!ytId(it.lien);
+const r1=n=>n?Math.round(n*10)/10:null;
+
+async function viaTMDBId(type,id){const r=await tq(`${type}/${id}`,{language:"fr-FR"});if(r.status===404)return null;if(!r.ok)throw new Error("tmdb "+r.status);
+  const d=await r.json();return d.poster_path?{poster:IMG+d.poster_path,score:r1(d.vote_average),id:d.id,type}:null}
+async function viaIMDB(tt){const r=await tq(`find/${tt}`,{external_source:"imdb_id",language:"fr-FR"});if(!r.ok)throw new Error("tmdb find "+r.status);
+  const d=await r.json(),m=(d.movie_results||[]).find(x=>x.poster_path),t=(d.tv_results||[]).find(x=>x.poster_path),h=m||t;
+  return h?{poster:IMG+h.poster_path,score:r1(h.vote_average),id:h.id,type:m?"movie":"tv"}:null}
+const AQ="query($id:Int,$mal:Int,$s:String){Media(id:$id,idMal:$mal,search:$s,type:ANIME){coverImage{extraLarge large}averageScore description(asHtml:false) trailer{id site}}}";
+async function viaAniList(v){const r=await qANI(()=>jfetch("https://graphql.anilist.co",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({query:AQ,variables:v})},3));
+  if(r.status===429||r.status>=500)throw new Error("anilist "+r.status);if(!r.ok)return null;
+  const m=((await r.json()).data||{}).Media;if(!m||!m.coverImage)return null;
+  return{poster:m.coverImage.extraLarge||m.coverImage.large,score:m.averageScore?Math.round(m.averageScore)/10:null,extra:{summary:(m.description||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim().slice(0,600),trailer:m.trailer&&m.trailer.site==="youtube"?"https://www.youtube.com/watch?v="+m.trailer.id:""}}}
+const variants=t=>{const b=search_t(t),o=[b],sub=b.replace(/\s*[:\-–—]\s.*$/,"").trim();if(sub&&sub!==b&&sub.length>2)o.push(sub);return o};
+async function viaTMDBSearch(t,annee,prefer){
+  for(const q of variants(t)){const r=await tq("search/multi",{query:q,language:"fr-FR",include_adult:"false"});if(!r.ok)throw new Error("tmdb "+r.status);
+    const res=((await r.json()).results||[]).filter(x=>(x.media_type==="movie"||x.media_type==="tv")&&x.poster_path),yr=x=>+((x.release_date||x.first_air_date||"").slice(0,4))||0;
+    const h=(annee&&res.find(x=>x.media_type===prefer&&Math.abs(yr(x)-annee)<=1))||(annee&&res.find(x=>Math.abs(yr(x)-annee)<=1))||res.find(x=>x.media_type===prefer)||res[0];
+    if(h)return{poster:IMG+h.poster_path,score:r1(h.vote_average),id:h.id,type:h.media_type}}
+  return null}
+async function viaOMDb(t,annee){const r=await qOMDB(()=>jfetch("https://www.omdbapi.com/?"+new URLSearchParams({apikey:OMDB_KEY,t,...(annee?{y:annee}:{})})));
+  if(!r.ok)return null;const d=await r.json();return d.Response==="True"&&d.Poster&&d.Poster!=="N/A"?{poster:d.Poster,score:d.imdbRating&&d.imdbRating!=="N/A"?parseFloat(d.imdbRating):null}:null}
+async function viaWiki(t,hint){
+  const r=await qWIKI(()=>jfetch("https://en.wikipedia.org/w/api.php?"+new URLSearchParams({action:"query",format:"json",origin:"*",generator:"search",gsrsearch:`${t} ${hint}`,gsrlimit:"5",prop:"pageimages",piprop:"thumbnail",pithumbsize:"500",pilimit:"5"})));
+  if(!r.ok)return null;const pages=Object.values(((await r.json()).query||{}).pages||{}).sort((a,b)=>a.index-b.index),n=x=>norm(x).replace(/[^a-z0-9]/g,""),tg=n(search_t(t));
+  const h=pages.find(pg=>pg.thumbnail&&tg.length>2&&n(pg.title).includes(tg));return h?{poster:h.thumbnail.source,score:null}:null}
+
+async function resolveVisual(it){
+  /* 1) Affiche fournie par l'API (onglet « 🖼️ AFFICHES » du Sheets) : fiable, instantanée, aucun appel externe */
+  if(it.affiche)return{poster:it.affiche,score:it.note,extra:(it.resume||it.trailer)?{summary:it.resume,trailer:it.trailer}:null};
+  const cat=it.categorie,annee=eff(it).annee,t=search_t(it.propre),L=it.lien||"";let m,r=null,extra=null;
+  if((m=L.match(/themoviedb\.org\/(movie|tv)\/(\d+)/)))r=await viaTMDBId(m[1],m[2]);
+  else if((m=L.match(/anilist\.co\/anime\/(\d+)/)))r=await viaAniList({id:+m[1]});
+  else if((m=L.match(/myanimelist\.net\/anime\/(\d+)/)))r=await viaAniList({mal:+m[1]});
+  else if((m=L.match(/imdb\.com\/title\/(tt\d+)/)))r=await viaIMDB(m[1]);
+  if(r&&r.poster)return r;
+  if(cat==="🎮 Jeux"){r=await fetchGame(t,annee);if(r&&r.extra)extra=r.extra;if(!(r&&r.poster))r=await viaWiki(t,"video game")}
+  else if(/Anim/.test(cat)){r=await viaAniList({s:t})||await viaTMDBSearch(t,annee,"tv")}
+  else if(POSTERS.has(cat)){r=await viaTMDBSearch(t,annee,cat==="📺 Séries"?"tv":"movie")||await viaOMDb(t,annee)}
+  if(!(r&&r.poster)&&POSTERS.has(cat)&&cat!=="🎮 Jeux")r=await viaWiki(t,cat==="📺 Séries"?"TV series":cat==="🍿 Animés"?"anime":"film");
+  if(r&&r.poster){if(extra&&!r.extra)r.extra=extra;return r}
+  const y=ytId(L);if(y)return{poster:`https://i.ytimg.com/vi/${y}/hqdefault.jpg`,score:null,thumb:true,extra:{summary:"",trailer:"https://www.youtube.com/watch?v="+y}};
+  return extra?{poster:"",score:null,extra}:null}
+const vp=new Map(),visKey=it=>norm(search_t(it.propre))+"|"+(eff(it).annee||"")+"|"+(it.lien||"");
+function getVisual(it){
+  if(!hasVisual(it))return Promise.resolve(null);
+  if(it.affiche)return resolveVisual(it);
+  const k=visKey(it),c=VC[k];if(c&&Date.now()-c.t<(c.r?2592e6:432e5))return Promise.resolve(c.r);
+  if(!vp.has(k))vp.set(k,resolveVisual(it).then(r=>{VC[k]={r:r||null,t:Date.now()};saveVC();vp.delete(k);return r},err=>{vp.delete(k);console.warn("Visuel indisponible pour « "+it.propre+" » :",err&&err.message);return null}));
+  return vp.get(k)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const it=byId(+e.target.dataset.id);if(!it||!hasVisual(it))return;
+  getVisual(it).then(r=>{if(r&&r.poster){e.target.style.backgroundImage=`url("${r.poster}")`;e.target.classList.add("ok")}})}),{rootMargin:"300px"});
 const lazy=root=>root.querySelectorAll(".lz").forEach(el=>io.observe(el));
 
-const nt=s=>norm(search_t(s)).replace(/[^a-z0-9]/g,"").replace(/^(the|le|la|les|un|une)/,""),frCache=new Map(),frDone=new Set(),frKey=it=>nt(it.titre)+"|"+(it.parsed.annee||"");
+/* Dates de sortie françaises (films) */
+const nt=s=>norm(search_t(s)).replace(/[^a-z0-9]/g,"").replace(/^(the|le|la|les|un|une)/,""),frCache=new Map(),frDone=new Set(),frKey=it=>nt(it.propre)+"|"+(it.parsed.annee||"");
 function frLookup(it){const key=frKey(it);if(frCache.has(key))return frCache.get(key);
-  const p=(async()=>{try{const title=search_t(it.titre),year=it.parsed.annee,target=nt(title);
+  const p=(async()=>{try{const title=search_t(it.propre),year=it.parsed.annee,target=nt(title);
     const s=await tmdb("search/movie",{query:title,language:"fr-FR",region:"FR",include_adult:"false"});if(!s.ok)return null;
     const hit=((await s.json()).results||[]).map(r=>{const n=[nt(r.title),nt(r.original_title)],ex=n.includes(target),sim=n.some(x=>x&&target&&(x.includes(target)||target.includes(x))&&Math.min(x.length,target.length)/Math.max(x.length,target.length)>.82),ry=+(r.release_date||"").slice(0,4)||0;return{...r,_m:ex?2:sim?1:0,_y:year&&ry?Math.abs(year-ry):9}}).filter(r=>r._m>0&&r.id).sort((a,b)=>b._m-a._m||a._y-b._y||(b.popularity||0)-(a.popularity||0))[0];
     if(!hit)return null;const rr=await tmdb(`movie/${hit.id}/release_dates`,{});if(!rr.ok)return null;
@@ -305,122 +778,164 @@ function frLookup(it){const key=frKey(it);if(frCache.has(key))return frCache.get
 const frTodo=it=>it.categorie==="🎬 Films"&&["jour","mois","saison","annee"].includes(it.parsed.kind)&&!it.fr&&!frDone.has(frKey(it));
 let frRun=false;
 async function verifyFR(){if(!useFR||frRun||!ITEMS.length)return;
-  const pool=(view==="mois"?ITEMS.filter(it=>it.parsed.annee===vy):ITEMS.filter(matches).slice(0,limit+20)).filter(frTodo).slice(0,12);if(!pool.length)return;
+  const pool=(view==="mois"?ITEMS.filter(it=>it.parsed.annee===vy):ITEMS.filter(it=>matches(it)).slice(0,limit+20)).filter(frTodo).slice(0,12);if(!pool.length)return;
   frRun=true;let up=false;
   try{for(let i=0;i<pool.length;i+=3){const b=pool.slice(i,i+3),res=await Promise.all(b.map(frLookup));res.forEach((r,j)=>{frDone.add(frKey(b[j]));if(r){b[j].fr=r.parsed;up=true}})}}
   finally{frRun=false;if(up)render();setTimeout(verifyFR,250)}}
 
-/* Rendu : programme */
-function cdHTML(it){const p=eff(it);
-  if(p.kind==="jour"){const d=daysUntil(p.sortKey);return d===0?`<b>Ciné</b><span>aujourd’hui</span>`:d>0?`<b>J-${d}</b><span>${d===1?"demain":"à venir"}</span>`:`<b>J+${-d}</b><span>sorti</span>`}
-  return`<b style="font-size:1rem">?</b><span>${esc(dateLabel(it))}</span>`}
-function ticket(it){const p=eff(it),past=p.kind==="jour"&&daysUntil(p.sortKey)<0;
-  return`<article class="tk ${kc(it.categorie)}" data-id="${it._id}" tabindex="0" role="button" aria-label="${esc(clean(it.titre))}"><div class="po lz" data-id="${it._id}"><span>${emoji(it.categorie)}</span></div><button type="button" class="hf ${isFav(it)?"on":""}" data-fav="${it._id}" aria-pressed="${isFav(it)}" aria-label="Ajouter aux favoris">♥</button><div class="bd"><div class="tg"><span class="tag">${esc(it.categorie)}</span>${it.plateforme?`<span class="plat">${esc(it.plateforme)}</span>`:""}</div><h3>${titreHTML(it.titre)}${useFR&&it.fr?'<span class="fr">FR</span>':""}</h3></div><div class="st ${past?"past":""}">${cdHTML(it)}</div></article>`}
-function renderList(){
-  const items=ITEMS.filter(matches).sort((a,b)=>(period==="passees"?-1:1)*(eff(a).sortKey-eff(b).sortKey));
+/* ═══ Rendu : hero (KPI + prochaine sortie) ═══ */
+function renderHero(){
+  const s=STATS||{},dated=ITEMS.filter(it=>eff(it).kind==="jour"),
+    av=s.aVenir??ITEMS.filter(isFuture).length,
+    wk=dated.filter(it=>{const d=daysUntil(eff(it).sortKey);return d>=0&&d<=7}).length,
+    nw=dated.filter(it=>daysUntil(eff(it).sortKey)===0).length,
+    tot=s.total??ITEMS.length,vus=s.vus??ITEMS.filter(i=>i.vu).length;
+  $("kA").textContent=av;$("kW").textContent=wk;$("kN").textContent=nw;$("kV").textContent=tot?Math.round(vus/tot*100)+" %":"–";$("kVl").textContent=`Vus · ${vus}/${tot}`;$("kpis").hidden=!ITEMS.length;
+  const up=dated.filter(it=>daysUntil(eff(it).sortKey)>=0).sort((a,b)=>eff(a).sortKey-eff(b).sortKey),pick=up.find(i=>i.rythme==="unique")||up[0],sp_=$("spot");
+  if(!pick){sp_.hidden=true;return}
+  const p=eff(pick),d=daysUntil(p.sortKey),same=up.filter(i=>i!==pick&&eff(i).sortKey===p.sortKey).length,key=pick._id+"|"+d+"|"+same;
+  sp_.hidden=false;if(sp_.dataset.key===key)return;sp_.dataset.key=key;sp_.dataset.id=pick._id;
+  sp_.innerHTML=`<div class="sbg" id="sbg"></div><div class="spo" id="spo"><span>${emoji(pick.categorie)}</span></div><div class="sx"><div><div class="sl">${d===0?"Sort aujourd’hui":"Prochaine sortie"}</div><h2>${esc(pick.propre)}</h2><div class="sm">${esc(catName(pick.categorie))}${pick.plateforme?" · "+esc(pick.plateforme):""}${same?` · +${same} le même jour`:""}</div></div><div class="sc"><b>${d===0?"J":"J-"+d}</b><span>${esc(new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"long",day:"numeric",month:"long"}).format(new Date(Date.UTC(p.annee,p.mois,p.jour,12))))}</span></div></div>`;
+  if(hasVisual(pick))getVisual(pick).then(r=>{if(r&&r.poster&&$("spo")){$("spo").style.backgroundImage=`url("${r.poster}")`;$("spo").classList.add("ok");$("sbg").style.backgroundImage=`url("${r.poster}")`;$("sbg").classList.add("ok")}})}
+
+/* ═══ Rendu : regroupement par mois ═══ */
+function group(items){
+  const groups=[],idx=new Map();
+  items.forEach(it=>{const p=eff(it),y=p.annee,m=p.kind==="inconnue"?-1:(p.mois??p.moisDebut??12),key=p.kind==="inconnue"?"x":y+"-"+m;
+    if(!idx.has(key)){const g={label:p.kind==="inconnue"?"À préciser":m===12?String(y):MOIS[m],year:p.kind==="inconnue"?"":y,days:new Map(),fuzzy:[],n:0};idx.set(key,g);groups.push(g)}
+    const g=idx.get(key);g.n++;p.kind==="jour"?(g.days.get(p.jour)||g.days.set(p.jour,[]).get(p.jour)).push(it):g.fuzzy.push(it)});
+  return groups}
+const sorted=()=>ITEMS.filter(it=>matches(it)).sort((a,b)=>(period==="passees"?-1:1)*(eff(a).sortKey-eff(b).sortKey));
+const gHead=g=>`<h2 class="mh2"><span>${esc(g.label)}<small>${g.year}</small></h2><em>${g.n} sortie${g.n>1?"s":""}</em></h2>`.replace("</h2></h2>","</h2>");
+
+/* ═══ Rendu : agenda ═══ */
+function row(it,first,dtEl){const p=eff(it);
+  const dy=p.kind==="jour"?(first?`<div class="dy ${dtEl.now?"now":""}"><b>${pad(p.jour)}</b><span>${dtEl.now?"auj.":JOURS[dtEl.dt.getDay()]}</span></div>`:`<div class="dy"></div>`):(first?`<div class="dy"><b class="q">?</b></div>`:`<div class="dy"></div>`);
+  return`<article class="rw ${kc(it.categorie)} ${it.vu?"seen":""}" data-id="${it._id}" tabindex="0" role="button" aria-label="${esc(it.propre)}">${dy}<div class="th lz" data-id="${it._id}"><span>${emoji(it.categorie)}</span></div><div class="rb"><h3>${titreHTML(it)}${useFR&&it.fr?'<span class="bdg fr">FR</span>':""}${it.vu?'<span class="bdg vu">Vu</span>':""}</h3><p><b>${esc(catName(it.categorie))}</b>${it.plateforme?" · "+esc(it.plateforme):""}</p></div><div class="rr">${cdHTML(it)}<button type="button" class="hf ${isFav(it)?"on":""}" data-fav="${it._id}" aria-pressed="${isFav(it)}" aria-label="Favori">♥</button></div></article>`}
+function renderAgenda(){
+  const items=sorted();
   if(!items.length){$("list").innerHTML=`<div class="state"><b>Aucune sortie.</b>Essayez d’élargir la recherche ou les filtres.</div>`;return}
-  const shown=items.slice(0,limit),groups=[],idx=new Map();
-  shown.forEach(it=>{const p=eff(it),y=p.annee,m=p.kind==="inconnue"?-1:(p.mois??p.moisDebut??12),key=p.kind==="inconnue"?"x":y+"-"+m;
-    if(!idx.has(key)){const g={label:p.kind==="inconnue"?"À préciser":m===12?String(y):MOIS[m],year:p.kind==="inconnue"?"":y,days:new Map(),fuzzy:[]};idx.set(key,g);groups.push(g)}
-    const g=idx.get(key);p.kind==="jour"?(g.days.get(p.jour)||g.days.set(p.jour,[]).get(p.jour)).push(it):g.fuzzy.push(it)});
-  $("list").innerHTML=groups.map(g=>`<section><h2 class="mo">${esc(g.label)}<small>${g.year}</small></h2>${[...g.days].map(([d,l])=>{const dt=new Date(l[0].parsed.annee&&eff(l[0]).annee,eff(l[0]).mois,d,12),now=dt.getTime()===today.getTime();return`<div class="day ${now?"now":""}"><div class="dn"><b>${pad(d)}</b><span>${now?"auj.":JOURS[dt.getDay()]}</span></div><div class="tks">${l.map(ticket).join("")}</div></div>`}).join("")}${g.fuzzy.length?`<div class="fz"><p>Jour non précisé</p><div class="tks">${g.fuzzy.map(ticket).join("")}</div></div>`:""}</section>`).join("")+(items.length>limit?`<button class="more" id="more" type="button">Voir la suite · ${items.length-limit} sorties</button>`:"");
+  const gs=group(items.slice(0,limit));
+  $("list").innerHTML=gs.map(g=>`<section class="mg"><h2 class="mh2"><span>${esc(g.label)}<small>${g.year}</small></span><em>${g.n} sortie${g.n>1?"s":""}</em></h2>${[...g.days].map(([d,l])=>{const p=eff(l[0]),dt=new Date(p.annee,p.mois,d,12),meta={dt,now:dt.getTime()===today.getTime()};return l.map((it,i)=>row(it,i===0,meta)).join("")}).join("")}${g.fuzzy.length?`<p class="fzl">Jour non précisé</p>${g.fuzzy.map((it,i)=>row(it,i===0,{})).join("")}`:""}</section>`).join("")+(items.length>limit?`<button class="more" id="more" type="button">Voir la suite · ${items.length-limit} sorties</button>`:"");
   lazy($("list"))}
-function renderFeat(){
-  const f=ITEMS.filter(it=>eff(it).kind==="jour"&&matches(it)&&(d=>d>=0&&d<=7)(daysUntil(eff(it).sortKey))).sort((a,b)=>eff(a).sortKey-eff(b).sortKey);
-  const all=ITEMS.filter(it=>{const p=eff(it);return p.kind==="jour"&&daysUntil(p.sortKey)>=0&&daysUntil(p.sortKey)<=7});
-  $("wk").textContent=all.length;$("feat").hidden=!!term||!f.length;if($("feat").hidden)return;
-  $("featRow").innerHTML=f.map(it=>{const d=daysUntil(eff(it).sortKey);return`<button type="button" class="fc lz ${kc(it.categorie)}" data-id="${it._id}"><span class="em">${emoji(it.categorie)}</span><span class="tx"><span class="d">${d===0?"Aujourd’hui":d===1?"Demain":"Dans "+d+" j"}</span><div class="t">${esc(clean(it.titre))}</div></span></button>`}).join("");lazy($("featRow"))}
-/* Rendu : mois */
+
+/* ═══ Rendu : mur d'affiches ═══ */
+function card(it){const p=eff(it),[t,c]=cd(it),dt=p.kind==="jour"?`${p.jour} ${MCOURT[p.mois]}`:"";
+  return`<button type="button" class="pc lz ${kc(it.categorie)} ${it.vu?"seen":""}" data-id="${it._id}" aria-label="${esc(it.propre)}"><span class="em">${emoji(it.categorie)}</span>${dt?`<span class="dt">${esc(dt)}</span>`:""}<span class="cd ${c}">${esc(t)}</span><span class="tx">${esc(it.propre)}<small>${esc(catName(it.categorie))}${it.plateforme?" · "+esc(it.plateforme):""}</small></span><span class="bt"></span></button>`}
+function renderWall(){
+  const items=sorted();
+  if(!items.length){$("wall").innerHTML=`<div class="state"><b>Aucune sortie.</b>Essayez d’élargir la recherche ou les filtres.</div>`;return}
+  const gs=group(items.slice(0,limit));
+  $("wall").innerHTML=gs.map(g=>`<section class="mg"><h2 class="mh2"><span>${esc(g.label)}<small>${g.year}</small></span><em>${g.n} sortie${g.n>1?"s":""}</em></h2><div class="pw">${[...g.days.values()].flat().concat(g.fuzzy).map(card).join("")}</div></section>`).join("")+(items.length>limit?`<button class="more" id="more2" type="button">Voir la suite · ${items.length-limit} sorties</button>`:"");
+  lazy($("wall"))}
+
+/* ═══ Rendu : mois ═══ */
 function renderGrid(){
   $("mlbl").innerHTML=`${MOIS[vm]}<small>${vy}</small>`;
-  const lead=(new Date(vy,vm,1).getDay()+6)%7,dim=new Date(vy,vm+1,0).getDate(),prev=new Date(vy,vm,0).getDate(),total=Math.ceil((lead+dim)/7)*7,by=new Map(),f=ITEMS.filter(matches);
+  const lead=(new Date(vy,vm,1).getDay()+6)%7,dim=new Date(vy,vm+1,0).getDate(),prev=new Date(vy,vm,0).getDate(),total=Math.ceil((lead+dim)/7)*7,by=new Map(),f=ITEMS.filter(it=>matches(it));
   let n=0;f.forEach(it=>{const p=eff(it);if(p.kind==="jour"&&p.annee===vy&&p.mois===vm){(by.get(p.jour)||by.set(p.jour,[]).get(p.jour)).push(it);n++}});
   $("mstat").textContent=n?`${n} sortie${n>1?"s":""} ce mois-ci`:"Aucune sortie datée ce mois-ci";
   let h=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"].map((d,i)=>`<div class="wd ${i>4?"we":""}">${d}</div>`).join("");
   for(let i=0;i<total;i++){const day=i-lead+1;
     if(i<lead){h+=`<div class="cell out" aria-hidden="true"><div class="n">${prev-lead+i+1}</div></div>`;continue}
     if(day>dim){h+=`<div class="cell out" aria-hidden="true"><div class="n">${day-dim}</div></div>`;continue}
-    const ev=by.get(day)||[],t=new Date(vy,vm,day,12).getTime(),now=t===today.getTime(),past=t<today.getTime(),sh=ev.slice(0,3),rest=ev.length-sh.length,bgIt=ev.find(it=>POSTERS.has(it.categorie));
+    const ev=by.get(day)||[],t=new Date(vy,vm,day,12).getTime(),now=t===today.getTime(),past=t<today.getTime(),sh=ev.slice(0,3),rest=ev.length-sh.length,bgIt=ev.find(it=>hasVisual(it));
     const cls=`cell ${i%7>4?"we":""} ${ev.length?"ev":""} ${now?"now":""} ${past&&!now?"past":""}`;
-    const inner=`${bgIt?`<div class="bg lz" data-id="${bgIt._id}"></div>`:""}<div class="n">${day}${now?"<em>Auj.</em>":ev.length>1?`<b>${ev.length}</b>`:""}</div><div class="evs">${sh.map(it=>`<div class="ec ${kc(it.categorie)}"><span>${esc(clean(it.titre))}</span></div>`).join("")}${rest>0?`<div class="cmore">+${rest} autre${rest>1?"s":""}</div>`:""}</div>`;
+    const inner=`${bgIt?`<div class="bg lz" data-id="${bgIt._id}"></div>`:""}<div class="n">${day}${now?"<em>Auj.</em>":ev.length>1?`<b>${ev.length}</b>`:""}</div><div class="evs">${sh.map(it=>`<div class="ec ${kc(it.categorie)} ${it.vu?"seen":""}"><span>${esc(it.propre)}</span></div>`).join("")}${rest>0?`<div class="cmore">+${rest} autre${rest>1?"s":""}</div>`:""}</div>`;
     h+=ev.length?`<button type="button" class="${cls}" data-day="${day}" aria-label="${day} ${MOIS[vm]} : ${ev.length} sortie(s)">${inner}</button>`:`<div class="${cls}">${inner}</div>`}
   $("grid").innerHTML=h;$("grid")._by=by;lazy($("grid"));
   const fz=f.filter(it=>{const p=eff(it);return(p.kind==="mois"&&p.annee===vy&&p.mois===vm)||(p.kind==="saison"&&p.annee===vy&&vm>=p.moisDebut&&vm<=p.moisDebut+2)});
-  $("mfz").innerHTML=fz.length?`<p>Ce mois-ci · jour non précisé (${fz.length})</p><div>${fz.map(it=>`<button type="button" class="zp ${kc(it.categorie)}" data-id="${it._id}"><i></i>${esc(clean(it.titre))}</button>`).join("")}</div>`:""}
+  $("mfz").innerHTML=fz.length?`<p>Ce mois-ci · jour non précisé (${fz.length})</p><div>${fz.map(it=>`<button type="button" class="zp ${kc(it.categorie)}" data-id="${it._id}"><i></i>${esc(it.propre)}</button>`).join("")}</div>`:""}
+
+function nbActive(){return(platform!=="TOUS")+(rythme!=="TOUS")+(vuF!=="TOUS")+(period!=="avenir")+cats.size+(onlyFav?1:0)}
 function render(){
-  const f=ITEMS.filter(matches),has=cats.size||platform!=="TOUS"||term||onlyFav;
-  $("count").textContent=`${f.length} sortie${f.length>1?"s":""}${has?" (filtrées)":""}`;
-  renderFeat();$("list").hidden=view!=="liste";$("monthView").hidden=view!=="mois";
-  view==="liste"?renderList():renderGrid();
+  const f=ITEMS.filter(it=>matches(it)),na=nbActive();
+  $("count").textContent=`${f.length} sortie${f.length>1?"s":""}${na||term?" · filtrées":""}`;
+  $("fbtn").textContent=na?`Filtres (${na})`:"Filtres";$("fbtn").classList.toggle("act",na>0);
+  renderHero();
+  $("list").hidden=view!=="agenda";$("wall").hidden=view!=="affiches";$("monthView").hidden=view!=="mois";
+  if(view==="agenda")renderAgenda();else if(view==="affiches")renderWall();else renderGrid();
   document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.view===view));
-  document.querySelectorAll("[data-per]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.per===period))}
+  document.querySelectorAll("[data-per]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.per===period));
+  document.querySelectorAll("[data-vu]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.vu===vuF));
+  document.querySelectorAll("[data-ryt]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.ryt===rythme))}
 
-/* Modale */
-function openModal(items,title){lastFocus=document.activeElement;$("mt").textContent=title;
-  $("mbody").innerHTML=items.map((it,i)=>`<div class="mi"><div class="mp lz" data-id="${it._id}" id="mp${i}"><span>${emoji(it.categorie)}</span></div><div class="mb"><h3>${titreHTML(it.titre)}</h3><span class="tag">${esc(it.categorie)}</span><span class="sc" id="sc${i}" hidden></span><span class="mm">📅 ${esc(dateLabel(it))}</span><span class="mm">${useFR&&it.fr?"Date française vérifiée via TMDB":"Date du calendrier éditorial"}</span>${it.plateforme?`<span class="mm">📺 ${esc(it.plateforme)}</span>`:""}<p class="sy" id="sy${i}"></p><div class="ac"><button type="button" class="ab" data-fav="${it._id}">${isFav(it)?"♥ Dans mes favoris":"♡ Ajouter aux favoris"}</button><a class="ab" id="tr${i}" hidden target="_blank" rel="noopener noreferrer">▶ Bande-annonce</a>${gcal(it)?`<a class="ab" target="_blank" rel="noopener noreferrer" href="${esc(gcal(it))}">📆 Google Calendar</a>`:""}${it.lien?`<a class="ab" target="_blank" rel="noopener noreferrer" href="${esc(it.lien)}">🔗 Infos</a>`:""}</div></div></div>`).join("");
-  items.forEach((it,i)=>{if(!POSTERS.has(it.categorie))return;fetchPoster(it.titre,eff(it).annee).then(r=>{const b=$("mp"+i);if(!b||!b.isConnected)return;if(r&&r.poster){b.style.backgroundImage=`url("${r.poster}")`;b.classList.add("ok");if(r.score){$("sc"+i).textContent=`⭐ ${r.score}/10`;$("sc"+i).hidden=false}}if(r&&r.id)fetchDetails(r.id,r.type).then(d=>{if(!d||!b.isConnected)return;if(d.overview)$("sy"+i).textContent=d.overview;if(d.trailer){const a=$("tr"+i);a.href=d.trailer;a.hidden=false}})})});
-  $("ov").classList.add("open");document.body.style.overflow="hidden";$("mx").focus()}
-function closeModal(){if(!$("ov").classList.contains("open"))return;$("ov").classList.remove("open");document.body.style.overflow="";lastFocus&&lastFocus.focus&&lastFocus.focus()}
-function trap(e){if(e.key!=="Tab"||!$("ov").classList.contains("open"))return;const f=[...$("ov").querySelectorAll("a[href],button")].filter(x=>x.offsetParent);if(!f.length)return;if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus()}}
+/* ═══ Tiroir de détail ═══ */
+function openDrawer(items,title){lastFocus=document.activeElement;$("dt").textContent=title;
+  $("db").innerHTML=items.map((it,i)=>`<div class="di ${kc(it.categorie)}"><div class="dbg" id="dbg${i}"></div><div class="dtop"><div class="dpo" id="dp${i}"><span>${emoji(it.categorie)}</span></div><div class="dmb"><h3>${titreHTML(it)}</h3><span class="dtag">${esc(it.categorie)}</span><span class="dsc" id="ds${i}" hidden></span><span class="dm">📅 ${esc(dateLabel(it))}</span><span class="dm">${useFR&&it.fr?"Date française vérifiée via TMDB":"Date du calendrier éditorial"}</span>${it.plateforme?`<span class="dm">📺 ${esc(it.plateforme)}</span>`:""}${it.vu?`<span class="dm">✔️ Déjà vu</span>`:""}</div></div><p class="dsy" id="dy${i}"></p><div class="dac"><button type="button" class="ab p" data-fav="${it._id}">${isFav(it)?"♥ Dans mes favoris":"♡ Ajouter aux favoris"}</button><a class="ab" id="tr${i}" hidden target="_blank" rel="noopener noreferrer">▶ Bande-annonce</a>${gcal(it)?`<a class="ab" target="_blank" rel="noopener noreferrer" href="${esc(gcal(it))}">📆 Google Calendar</a>`:""}${it.lien?`<a class="ab" target="_blank" rel="noopener noreferrer" href="${esc(it.lien)}">🔗 Infos</a>`:""}</div></div>`).join("");
+  items.forEach((it,i)=>{if(!hasVisual(it))return;getVisual(it).then(r=>{const b=$("dp"+i);if(!b||!b.isConnected)return;if(r&&r.poster){b.style.backgroundImage=`url("${r.poster}")`;b.classList.add("ok");$("dbg"+i).style.backgroundImage=`url("${r.poster}")`;$("dbg"+i).classList.add("ok");if(r.score){$("ds"+i).textContent=`⭐ ${r.score}/10`;$("ds"+i).hidden=false}}if(r&&r.extra){if(r.extra.summary)$("dy"+i).textContent=r.extra.summary;if(r.extra.trailer){const a=$("tr"+i);a.href=r.extra.trailer;a.hidden=false}}if(r&&r.id&&r.type)fetchDetails(r.id,r.type).then(d=>{if(!d||!b.isConnected)return;if(d.overview)$("dy"+i).textContent=d.overview;if(d.trailer){const a=$("tr"+i);a.href=d.trailer;a.hidden=false}})})});
+  $("dr").scrollTop=0;$("dr").classList.add("open");$("bd").classList.add("open");document.body.style.overflow="hidden";$("dx").focus()}
+function closeAll(){const was=$("dr").classList.contains("open");$("dr").classList.remove("open");$("side").classList.remove("open");$("bd").classList.remove("open");document.body.style.overflow="";if(was&&lastFocus&&lastFocus.focus)lastFocus.focus()}
+function trap(e){if(e.key!=="Tab"||!$("dr").classList.contains("open"))return;const f=[...$("dr").querySelectorAll("a[href],button")].filter(x=>x.offsetParent);if(!f.length)return;if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus()}}
 
-/* Export iCal : favoris si présents, sinon sorties filtrées (dates exactes à venir) */
+/* ═══ Export iCal ═══ */
 function exportICS(){
-  const ev=(favs.size?ITEMS.filter(isFav):ITEMS.filter(matches)).filter(it=>eff(it).kind==="jour"&&isFuture(it));
+  const ev=(favs.size?ITEMS.filter(isFav):ITEMS.filter(it=>matches(it))).filter(it=>eff(it).kind==="jour"&&isFuture(it));
   if(!ev.length){alert("Aucune sortie datée à exporter.");return}
   const f=d=>`${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`,e2=t=>t.replace(/[\\;,]/g,m=>"\\"+m).replace(/\n/g,"\\n"),stamp=new Date().toISOString().replace(/[-:]/g,"").slice(0,15)+"Z";
   const L=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//L'Oeil Critique//Calendrier//FR","CALSCALE:GREGORIAN","X-WR-CALNAME:L'Œil Critique – Sorties"];
   ev.forEach(it=>{const p=eff(it),a=new Date(p.annee,p.mois,p.jour,12),b=new Date(p.annee,p.mois,p.jour+1,12);
-    L.push("BEGIN:VEVENT",`UID:${it._id}-${f(a)}@l-oeil-critique.com`,`DTSTAMP:${stamp}`,`DTSTART;VALUE=DATE:${f(a)}`,`DTEND;VALUE=DATE:${f(b)}`,`SUMMARY:${e2("🍿 "+clean(it.titre))}`,`DESCRIPTION:${e2(it.categorie+(it.plateforme?" – "+it.plateforme:"")+(it.lien?"\n"+it.lien:""))}`,"END:VEVENT")});
+    L.push("BEGIN:VEVENT",`UID:${it.id}-${f(a)}@l-oeil-critique.com`,`DTSTAMP:${stamp}`,`DTSTART;VALUE=DATE:${f(a)}`,`DTEND;VALUE=DATE:${f(b)}`,`SUMMARY:${e2("🍿 "+it.propre)}`,`DESCRIPTION:${e2(it.categorie+(it.plateforme?" – "+it.plateforme:"")+(it.lien?"\n"+it.lien:""))}`,"END:VEVENT")});
   L.push("END:VCALENDAR");
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([L.join("\r\n")],{type:"text/calendar;charset=utf-8"}));a.download="sorties-loeil-critique.ics";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 
-/* Filtres & init */
+/* ═══ Filtres & init ═══ */
 function buildFilters(){
   const present=new Set(ITEMS.map(i=>i.categorie));cats=new Set([...cats].filter(c=>present.has(c)));
+  const cnt=c=>ITEMS.filter(it=>it.categorie===c&&matches(it,true)).length,all=ITEMS.filter(it=>matches(it,true)).length;
   const list=[...CAT_ORDER.filter(c=>present.has(c)),...[...present].filter(c=>!CAT_ORDER.includes(c))];
-  $("cats").innerHTML=[`<button type="button" class="chip" data-cat="__ALL__" aria-pressed="${!cats.size&&!onlyFav}">Tout</button>`,`<button type="button" class="chip" data-cat="__FAV__" aria-pressed="${onlyFav}">♥ Favoris${favs.size?` (${favs.size})`:""}</button>`,...list.map(c=>`<button type="button" class="chip" data-cat="${esc(c)}" aria-pressed="${cats.has(c)}">${esc(c)}</button>`)].join("");
+  $("cats").innerHTML=[`<button type="button" class="ct" data-cat="__ALL__" aria-pressed="${!cats.size&&!onlyFav}"><i></i><span>Tout</span><em>${all}</em></button>`,`<button type="button" class="ct" data-cat="__FAV__" aria-pressed="${onlyFav}"><i></i><span>♥ Favoris</span><em>${favs.size}</em></button>`,...list.map(c=>`<button type="button" class="ct ${kc(c)}" data-cat="${esc(c)}" aria-pressed="${cats.has(c)}"><i></i><span>${esc(c)}</span><em>${cnt(c)}</em></button>`)].join("");
   const pl=[...new Set(ITEMS.map(i=>i.plateforme).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"fr"));
   $("plat").innerHTML=`<option value="TOUS">Toutes</option>`+pl.map(p=>`<option value="${esc(p)}">${esc(p)}</option>`).join("");
-  if(platform!=="TOUS"&&pl.includes(platform))$("plat").value=platform;else{platform="TOUS";$("plat").value="TOUS"}$("fr").checked=useFR}
+  if(platform!=="TOUS"&&pl.includes(platform))$("plat").value=platform;else{platform="TOUS";$("plat").value="TOUS"}
+  $("fr").checked=useFR}
 const apply=()=>{limit=PAGE;savePrefs();buildFilters();render();verifyFR()};
 function init(){
-  const inp=$("q"),x=$("qx"),s=debounce(()=>{term=inp.value;limit=PAGE;render();verifyFR()},180);
+  const inp=$("q"),x=$("qx"),s=debounce(()=>{term=inp.value;limit=PAGE;buildFilters();render();verifyFR()},180);
   inp.addEventListener("input",()=>{x.classList.toggle("on",!!inp.value);s()});
-  x.onclick=()=>{inp.value="";x.classList.remove("on");term="";render();inp.focus()};
-  $("cats").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const c=b.dataset.cat;if(c==="__FAV__")onlyFav=!onlyFav;else if(c==="__ALL__"){cats.clear();onlyFav=false}else cats.has(c)?cats.delete(c):cats.add(c);apply()});
+  x.onclick=()=>{inp.value="";x.classList.remove("on");term="";buildFilters();render();inp.focus()};
+  $("cats").addEventListener("click",e=>{const b=e.target.closest(".ct");if(!b)return;const c=b.dataset.cat;if(c==="__FAV__")onlyFav=!onlyFav;else if(c==="__ALL__"){cats.clear();onlyFav=false}else cats.has(c)?cats.delete(c):cats.add(c);apply()});
   document.querySelectorAll("[data-per]").forEach(b=>b.onclick=()=>{period=b.dataset.per;apply()});
+  document.querySelectorAll("[data-vu]").forEach(b=>b.onclick=()=>{vuF=b.dataset.vu;apply()});
+  document.querySelectorAll("[data-ryt]").forEach(b=>b.onclick=()=>{rythme=b.dataset.ryt;apply()});
   document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{view=b.dataset.view;apply()});
-  $("gear").onclick=()=>{const o=$("set").classList.toggle("open");$("gear").setAttribute("aria-expanded",o)};
   $("plat").onchange=e=>{platform=e.target.value;apply()};
   $("fr").onchange=e=>{useFR=e.target.checked;savePrefs();render();verifyFR()};
-  $("reset").onclick=()=>{cats.clear();onlyFav=false;platform="TOUS";period="avenir";view="liste";useFR=true;term="";inp.value="";x.classList.remove("on");apply()};
+  $("reset").onclick=()=>{cats.clear();onlyFav=false;platform="TOUS";rythme="TOUS";vuF="TOUS";period="avenir";view="agenda";useFR=true;term="";inp.value="";x.classList.remove("on");apply()};
   $("refresh").onclick=()=>load();$("ics").onclick=exportICS;
-  $("mbody").addEventListener("click",e=>{const h=e.target.closest("[data-fav]");if(!h)return;const it=byId(+h.dataset.fav);if(it){toggleFav(it);h.textContent=isFav(it)?"♥ Dans mes favoris":"♡ Ajouter aux favoris"}});
-  const step=d=>{vm+=d;if(vm<0){vm=11;vy--}if(vm>11){vm=0;vy++}render();verifyFR()};$("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);$("mtoday").onclick=()=>{vy=today.getFullYear();vm=today.getMonth();render();verifyFR()};$("mfz").addEventListener("click",e=>{const c=e.target.closest("[data-id]");if(c){const it=byId(+c.dataset.id);it&&openModal([it],clean(it.titre))}});
+  $("fbtn").onclick=()=>{$("side").classList.add("open");$("bd").classList.add("open");document.body.style.overflow="hidden"};
+  $("sx").onclick=closeAll;$("dx").onclick=closeAll;$("bd").onclick=closeAll;
+  $("db").addEventListener("click",e=>{const h=e.target.closest("[data-fav]");if(!h)return;const it=byId(+h.dataset.fav);if(it){toggleFav(it);h.textContent=isFav(it)?"♥ Dans mes favoris":"♡ Ajouter aux favoris"}});
+  const step=d=>{vm+=d;if(vm<0){vm=11;vy--}if(vm>11){vm=0;vy++}render();verifyFR()};$("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);$("mtoday").onclick=()=>{vy=today.getFullYear();vm=today.getMonth();render();verifyFR()};
+  $("mfz").addEventListener("click",e=>{const c=e.target.closest("[data-id]");if(c){const it=byId(+c.dataset.id);it&&openDrawer([it],it.propre)}});
   let x0=null,y0=null;const mv=$("monthView");mv.addEventListener("touchstart",e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});mv.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5)step(dx<0?1:-1);x0=null},{passive:true});
-  const open=e=>{const hf=e.target.closest("[data-fav]");if(hf){const f=byId(+hf.dataset.fav);f&&toggleFav(f);return}const c=e.target.closest("[data-id]");if(c&&!c.classList.contains("po")||c&&c.classList.contains("tk")){const it=byId(+c.dataset.id);it&&openModal([it],clean(it.titre))}};
-  ["list","featRow"].forEach(id=>{$(id).addEventListener("click",e=>{if(e.target.id==="more"){limit+=PAGE;renderList();verifyFR();return}open(e)});$(id).addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.classList.contains("tk"))open(e)})});
-  $("grid").addEventListener("click",e=>{const c=e.target.closest("[data-day]");if(c)openModal($("grid")._by.get(+c.dataset.day)||[],`${c.dataset.day} ${MOIS[vm]} ${vy}`)});
-  $("mx").onclick=closeModal;$("ov").addEventListener("click",e=>{if(e.target.id==="ov")closeModal()});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();trap(e);if(view==="mois"&&!$("ov").classList.contains("open")&&!/input|textarea|select/i.test(document.activeElement.tagName)){if(e.key==="ArrowLeft")step(-1);else if(e.key==="ArrowRight")step(1)}})}
+  const open=e=>{const hf=e.target.closest("[data-fav]");if(hf){const f=byId(+hf.dataset.fav);f&&toggleFav(f);return}const c=e.target.closest(".rw,.pc");if(c){const it=byId(+c.dataset.id);it&&openDrawer([it],it.propre)}};
+  ["list","wall"].forEach(id=>{$(id).addEventListener("click",e=>{if(e.target.id==="more"||e.target.id==="more2"){limit+=PAGE;render();verifyFR();return}open(e)});$(id).addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.classList.contains("rw")){const it=byId(+e.target.dataset.id);it&&openDrawer([it],it.propre)}})});
+  $("spot").onclick=()=>{const it=byId(+$("spot").dataset.id);if(!it)return;const p=eff(it),same=ITEMS.filter(i=>eff(i).kind==="jour"&&eff(i).sortKey===p.sortKey);openDrawer(same.length>1?[it,...same.filter(i=>i!==it)]:[it],it.propre)};
+  $("grid").addEventListener("click",e=>{const c=e.target.closest("[data-day]");if(c)openDrawer($("grid")._by.get(+c.dataset.day)||[],`${c.dataset.day} ${MOIS[vm]} ${vy}`)});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll();trap(e);if(view==="mois"&&!$("dr").classList.contains("open")&&!/input|textarea|select/i.test(document.activeElement.tagName)){if(e.key==="ArrowLeft")step(-1);else if(e.key==="ArrowRight")step(1)}})}
 
-/* Données */
-function adapt(raw){if(Array.isArray(raw))return raw;if(!raw||raw.error)throw new Error((raw&&raw.error)||"vide");if(!Array.isArray(raw.items))throw new Error("format");
-  return raw.items.map(s=>{const iso=(s.isoDate||"").toString(),date=s.periode?s.periode:s.jour?(iso||`${pad(s.jour)}/${pad(s.mois)}/${s.annee}`):s.mois?`${pad(s.mois)}/${s.annee}`:String(s.annee||"");return{titre:s.titre,date,isoDate:iso,categorie:s.categorie,plateforme:s.plateforme,lien:s.lien}})}
+/* ═══ API (fetch, repli JSONP) ═══ */
+const apiURL=extra=>{const u=new URL(GAS_URL);u.searchParams.set("format","json");if(TOKEN)u.searchParams.set("token",TOKEN);u.searchParams.set("_t",Date.now());Object.entries(extra||{}).forEach(([k,v])=>u.searchParams.set(k,v));return u};
+function validate(raw){if(!raw||raw.error)throw new Error((raw&&raw.error)||"vide");if(!Array.isArray(raw.items))throw new Error("format");return raw}
+async function viaFetch(){const c=new AbortController(),t=setTimeout(()=>c.abort(),12e3);try{const r=await fetch(apiURL(),{signal:c.signal,redirect:"follow"});if(!r.ok)throw new Error("HTTP "+r.status);return validate(await r.json())}finally{clearTimeout(t)}}
 function jsonp(n=1,max=3){return new Promise((res,rej)=>{const cb="handleGAS_"+Math.round(Math.random()*1e9);let sc,t;
   const end=()=>{clearTimeout(t);delete window[cb];sc&&sc.parentNode&&sc.parentNode.removeChild(sc)},retry=err=>{end();n<max?setTimeout(()=>jsonp(n+1,max).then(res,rej),800*n):rej(err)};
-  window[cb]=d=>{end();res(d)};sc=document.createElement("script");sc.src=`${API_URL}&callback=${cb}&_t=${Date.now()}`;sc.onerror=()=>retry(new Error("JSONP"));t=setTimeout(()=>retry(new Error("Timeout")),12e3);document.head.appendChild(sc)})}
-const readCache=()=>{try{const c=JSON.parse(localStorage.getItem(CACHE_KEY));return c&&Array.isArray(c.data)?c:null}catch(e){return null}},writeCache=d=>{try{localStorage.setItem(CACHE_KEY,JSON.stringify({data:d,ts:Date.now()}))}catch(e){}};
+  window[cb]=d=>{end();try{res(validate(d))}catch(e){rej(e)}};sc=document.createElement("script");sc.src=apiURL({callback:cb}).toString();sc.onerror=()=>retry(new Error("JSONP"));t=setTimeout(()=>retry(new Error("Timeout")),12e3);document.head.appendChild(sc)})}
+const getData=()=>viaFetch().catch(()=>jsonp());
+const readCache=()=>{try{const c=JSON.parse(localStorage.getItem(CACHE_KEY));return c&&c.data&&Array.isArray(c.data.items)?c:null}catch(e){return null}},writeCache=d=>{try{localStorage.setItem(CACHE_KEY,JSON.stringify({data:d,ts:Date.now()}))}catch(e){}};
 const hideLoad=()=>{const o=$("load");if(o){o.classList.add("hide");setTimeout(()=>o.remove(),400)}};
-const setNote=ts=>{const m=Math.max(0,Math.round((Date.now()-ts)/6e4));$("note").textContent=(m<1?"Actualisé à l’instant":`Actualisé il y a ${m} min`)+" · vérification automatique toutes les 3 minutes"};
+const setNote=ts=>{const m=Math.max(0,Math.round((Date.now()-ts)/6e4));$("note").textContent=(m<1?"Actualisé à l’instant":`Actualisé il y a ${m} min`)+" · vérification automatique toutes les 3 minutes"+(UPDATED?` · données du ${new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",dateStyle:"short",timeStyle:"short"}).format(new Date(UPDATED))}`:"")};
 function show(d,ts){hydrate(d);buildFilters();render();hideLoad();ts&&setNote(ts)}
-function load(){if(loading)return loading;const cache=readCache();if(!ITEMS.length&&cache&&cache.data.length)show(cache.data,cache.ts);
+function load(){if(loading)return loading;const cache=readCache();if(!ITEMS.length&&cache&&cache.data.items.length)show(cache.data,cache.ts);
   const b=$("refresh");b.disabled=true;b.textContent="↻ Actualisation…";
-  loading=(async()=>{try{const d=adapt(await jsonp());$("loadError")?.remove();writeCache(d);show(d,Date.now());lastOK=Date.now();verifyFR()}
-    catch(err){console.error(err);if(!ITEMS.length){hideLoad();$("main").insertAdjacentHTML("afterbegin",`<div class="state" id="loadError"><b>Le programme ne répond pas.</b><button class="cta" id="retry" type="button" style="margin-top:12px">Réessayer</button></div>`);$("retry").onclick=()=>load()}$("note").textContent=ITEMS.length?"Actualisation impossible : dernières données conservées.":"Impossible de récupérer les sorties."}
+  loading=(async()=>{try{const d=await getData();$("loadError")?.remove();writeCache(d);show(d,Date.now());lastOK=Date.now();verifyFR()}
+    catch(err){console.error(err);if(!ITEMS.length){hideLoad();$("main").insertAdjacentHTML("afterbegin",`<div class="state" id="loadError" style="grid-column:1/-1"><b>Le programme ne répond pas.</b><button class="cta" id="retry" type="button">Réessayer</button></div>`);$("retry").onclick=()=>load()}$("note").textContent=ITEMS.length?"Actualisation impossible : dernières données conservées.":"Impossible de récupérer les sorties."}
     finally{b.disabled=false;b.textContent="↻ Actualiser";loading=null}})();return loading}
+
+/* ═══ Header du site (offset sticky) ═══ */
 function syncHeader(){let v=0;const cand=[];
-  [...document.body.children].forEach(c=>{if(c.matches(".hero,main,.ov,#load,script,style,link"))return;cand.push(c);[...c.children].forEach(k=>cand.push(k))});
+  [...document.body.children].forEach(c=>{if(c.matches(".hero,main,.dr,.bd,#load,script,style,link"))return;cand.push(c);[...c.children].forEach(k=>cand.push(k))});
   cand.forEach(n=>{const c=getComputedStyle(n),pos=c.position,z=parseInt(c.zIndex,10);
     if(pos==="fixed"||pos==="sticky"){if(!(z>=9990))n.style.zIndex="9990";const r=n.getBoundingClientRect();if(r.top<80)v=Math.max(v,Math.round(r.bottom))}
     else if(pos==="relative"&&n.tagName==="HEADER"&&!(z>=9990))n.style.zIndex="9990"});
