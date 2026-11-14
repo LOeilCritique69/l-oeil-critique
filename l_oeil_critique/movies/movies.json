@@ -6161,5 +6161,18 @@
     "tmdb_year": "2026",
     "poster_path": "/zpcoFlZwyLnBt7bb5wmvGDCdg06.jpg",
     "poster_url": "https://image.tmdb.org/t/p/w500/zpcoFlZwyLnBt7bb5wmvGDCdg06.jpg"
+  },
+  {
+    "Name": "Lesbian Space Princess",
+    "Year": 2025,
+    "Date": "2026-11-13",
+    "Rating": 1.5,
+    "Letterboxd URI": "https://letterboxd.com/oni_le_chan/film/lesbian-space-princess/",
+    "tmdb_id": 1333141,
+    "tmdb_source": "rss",
+    "tmdb_title": "Lesbian Space Princess",
+    "tmdb_year": "2025",
+    "poster_path": "/bmf6spk0WZ10lz4eAK95P1zRB4F.jpg",
+    "poster_url": "https://image.tmdb.org/t/p/w500/bmf6spk0WZ10lz4eAK95P1zRB4F.jpg"
   }
 ]
