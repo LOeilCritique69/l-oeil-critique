@@ -2,334 +2,322 @@
 
 <html lang="fr">
 <head>
-        <meta property="og:title" content="D23 Expo 2026 : Le bilan de nos prédictions face à la réalité – L'Œil Critique">
-        <meta property="og:description" content="Publié le 15 août 2026 par L'oeil critique">
-        <meta property="og:image" content="../../assets/img/theories/d23-2026/cover-bilan.jpg">
-        <meta property="og:type" content="article">
-        <meta property="og:locale" content="fr_FR">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="og:url" content="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html">
-        <link rel="canonical" href="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html">
-        
-
-
-
-
-
-
-
-
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="D23 Expo 2026, Marvel Studios, Nova, X-Men MCU, VisionQuest, Spider-Man, Avengers Doomsday, Percy Jackson saison 3, bilan predictions" name="keywords"/>
-<link href="../../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
 <title>D23 Expo 2026 : Le bilan de nos prédictions face à la réalité – L'Œil Critique</title>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<meta content="D23 Expo 2026, Marvel Studios, Nova, X-Men MCU, VisionQuest, Spider-Man, Avengers Doomsday, Percy Jackson saison 3, bilan predictions" name="keywords"/>
+
+<meta property="og:title" content="D23 Expo 2026 : Le bilan de nos prédictions face à la réalité – L'Œil Critique"/>
+<meta property="og:description" content="Publié le 15 août 2026 par L'oeil critique"/>
+<meta property="og:image" content="https://www.l-oeil-critique.com/assets/img/theories/d23-2026/cover-bilan.jpg"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html"/>
+
+<link href="../../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
 <link href="../../css/chef_d_oeuvre.css" rel="stylesheet"/>
-<link href="../../css/createblog.css" rel="stylesheet">
+<link href="../../css/createblog.css" rel="stylesheet"/>
 <link href="../../css/site-2026.css" rel="stylesheet"/>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"></script>
 <style>
         /*
-          Bilan D23 2026,  habillage "guichet de vérification"
-          Repose sur les tokens Iris existants (--ink, --paper, --velvet, --brass).
-          Le fil conducteur : chaque prédiction est "tamponnée" comme un ticket
-          qu'on valide ou qu'on annule au guichet, avec un ledger de résultats
-          en fin d'article façon souche de carnet.
+          Bilan D23 2026 — habillage "guichet de vérification" (thème Salle noire)
+          Chaque prédiction est "tamponnée" comme un ticket validé ou annulé au
+          guichet ; un ledger de résultats clôt l'article façon souche de carnet.
+
+          Tous les sélecteurs sont préfixés par .article-content : la feuille
+          d'article impose `.article-content h2/p { color: var(--text) }`, qui
+          l'emportait sur de simples classes (.prediction-block__title, etc.).
+          Fond sombre natif : plus aucun fond --paper (désormais crème clair)
+          derrière du texte clair.
         */
 
-        .bilan-intro-note {
-            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+        .article-content .bilan-intro-note {
+            margin: 1.6rem 0 2.2rem;
+            padding: 0.9rem 1.1rem;
+            font-family: var(--font-mono);
             font-size: 0.82rem;
             letter-spacing: 0.02em;
-            color: var(--ink, #2b2420);
-            background: color-mix(in srgb, var(--paper, #f4ede0) 88%, var(--brass, #b08d3f) 12%);
-            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 25%, transparent);
-            border-left: 4px solid var(--brass, #b08d3f);
-            padding: 0.9rem 1.1rem;
-            margin: 1.6rem 0 2.2rem;
+            line-height: 1.6;
+            color: var(--text);
+            background: rgba(212, 169, 73, 0.08);
+            border: 1px solid var(--line-on-ink);
+            border-left: 4px solid var(--brass);
         }
 
         /* --- Bloc de prédiction ------------------------------------------- */
 
-        .prediction-block {
+        .article-content .prediction-block {
             position: relative;
-            padding: 1.4rem 1.5rem 1.6rem;
             margin: 2.4rem 0;
-            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 15%, transparent);
+            padding: 1.4rem 1.5rem 1.6rem;
+            background: var(--ink-3);
+            border: 1px solid var(--line-on-ink);
             border-top: none;
-            background:
-                linear-gradient(color-mix(in srgb, var(--paper, #f4ede0) 100%, transparent),
-                                 color-mix(in srgb, var(--paper, #f4ede0) 100%, transparent));
+            transition: border-color 0.3s ease;
         }
 
-        .prediction-block::before {
-            /* liseré perforé façon souche de billet, en tête de bloc */
+        .article-content .prediction-block:target { border-color: var(--brass); }
+
+        /* liseré perforé façon souche de billet, en tête de bloc */
+        .article-content .prediction-block::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 3px;
-            background-image: radial-gradient(circle, color-mix(in srgb, var(--ink, #2b2420) 35%, transparent) 1px, transparent 1.4px);
+            background-image: radial-gradient(circle, rgba(242, 237, 226, 0.4) 1px, transparent 1.4px);
             background-size: 9px 3px;
             background-repeat: repeat-x;
         }
 
-        .prediction-block__title {
-            font-family: var(--font-display, "Fraunces", serif);
+        .article-content .prediction-block__title {
+            display: block;
+            margin: 0.6rem 0 1rem;
+            font-family: var(--font-display);
             font-size: 1.4rem;
             font-weight: 600;
-            margin: 0.6rem 0 1rem;
-            color: var(--ink, #2b2420);
+            color: var(--text);
         }
 
-        .verdict-row {
+        /* pas de diaphragme sur ces titres : le ticket a son propre langage */
+        .article-content .prediction-block__title::before { content: none; }
+
+        .article-content .verdict-row {
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem 1rem;
             align-items: center;
             margin-bottom: 1rem;
+            color: var(--text);
         }
 
-        .verdict-row__label {
-            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+        .article-content .verdict-row__label {
+            font-family: var(--font-mono);
             font-size: 0.72rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: color-mix(in srgb, var(--ink, #2b2420) 62%, transparent);
+            color: var(--paper-soft);
+        }
+
+        .article-content .prediction-block__body p {
+            margin: 0.6rem 0;
+            color: var(--text);
         }
 
         /* --- Le tampon : élément signature de la page ---------------------- */
 
-        .stamp {
+        .article-content .stamp {
             display: inline-flex;
             align-items: center;
             gap: 0.4em;
-            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            padding: 0.28em 0.7em;
+            font-family: var(--font-mono);
             font-size: 0.78rem;
             font-weight: 500;
             letter-spacing: 0.06em;
+            line-height: 1.3;
             text-transform: uppercase;
-            padding: 0.28em 0.7em;
             border-radius: 2px;
             transform: rotate(-2deg);
-            line-height: 1.3;
         }
 
-        .stamp--confirme {
-            color: color-mix(in srgb, var(--brass, #b08d3f) 55%, #4a3a12 45%);
-            border: 2px solid var(--brass, #b08d3f);
-            background: color-mix(in srgb, var(--brass, #b08d3f) 10%, transparent);
+        .article-content .stamp--confirme {
+            color: var(--brass-light);
+            background: rgba(212, 169, 73, 0.12);
+            border: 2px solid var(--brass);
         }
-        .stamp--confirme::before { content: "✓"; }
+        .article-content .stamp--confirme::before { content: "✓"; }
 
-        .stamp--depasse {
-            color: var(--paper, #f4ede0);
-            background: var(--velvet, #7a1f2b);
-            border: 2px solid var(--velvet, #7a1f2b);
+        .article-content .stamp--depasse {
+            color: var(--paper);
+            background: var(--velvet);
+            border: 2px solid var(--velvet);
             transform: rotate(-3deg) scale(1.03);
         }
-        .stamp--depasse::before { content: "★"; }
+        .article-content .stamp--depasse::before { content: "★"; }
 
-        .stamp--absent {
-            color: color-mix(in srgb, var(--ink, #2b2420) 55%, transparent);
-            border: 2px dashed color-mix(in srgb, var(--ink, #2b2420) 45%, transparent);
+        .article-content .stamp--absent {
+            color: var(--paper-soft);
             background: transparent;
+            border: 2px dashed rgba(242, 237, 226, 0.4);
             transform: rotate(1deg);
         }
-        .stamp--absent::before { content: "✕"; }
+        .article-content .stamp--absent::before { content: "✕"; }
 
-        .stamp--remplace {
-            color: var(--ink, #2b2420);
-            border: 2px solid var(--ink, #2b2420);
-            background: color-mix(in srgb, var(--ink, #2b2420) 6%, transparent);
+        .article-content .stamp--remplace {
+            color: var(--text);
+            background: rgba(242, 237, 226, 0.07);
+            border: 2px solid rgba(242, 237, 226, 0.7);
             transform: rotate(-1.5deg);
         }
-        .stamp--remplace::before { content: "⇄"; }
+        .article-content .stamp--remplace::before { content: "⇄"; }
 
-        .stamp--attente {
-            color: color-mix(in srgb, var(--ink, #2b2420) 50%, transparent);
-            border: 2px dotted color-mix(in srgb, var(--ink, #2b2420) 35%, transparent);
+        .article-content .stamp--attente {
+            color: var(--paper-soft);
             background: transparent;
+            border: 2px dotted rgba(242, 237, 226, 0.3);
             transform: rotate(0.5deg);
         }
-        .stamp--attente::before { content: "…"; }
-
-        .prediction-block__body p {
-            margin: 0.6rem 0;
-        }
+        .article-content .stamp--attente::before { content: "…"; }
 
         /* --- Ledger / souche de résultats ---------------------------------- */
 
-        .ledger {
+        .article-content .ledger {
             margin: 2.4rem 0 1.2rem;
-            border: 1px solid var(--ink, #2b2420);
-            background: var(--paper, #f4ede0);
+            background: var(--ink-2);
+            border: 1px solid var(--line-on-ink-strong);
         }
 
-        .ledger__head {
+        .article-content .ledger__head {
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 0.5rem 1rem;
             padding: 0.7rem 1rem;
-            background: var(--ink, #2b2420);
-            color: var(--paper, #f4ede0);
-            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            background: var(--ink);
+            border-bottom: 2px solid var(--brass);
+            font-family: var(--font-mono);
             font-size: 0.7rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            color: var(--brass-light);
         }
 
-        .ledger__row {
+        .article-content .ledger__row {
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 0.5rem 1rem;
             align-items: center;
             padding: 0.65rem 1rem;
-            border-top: 1px dashed color-mix(in srgb, var(--ink, #2b2420) 25%, transparent);
+            border-top: 1px dashed var(--line-on-ink);
             font-size: 0.95rem;
         }
 
-        .ledger__row:nth-child(even) {
-            background: color-mix(in srgb, var(--brass, #b08d3f) 6%, transparent);
-        }
+        .article-content .ledger__head + .ledger__row { border-top: none; }
+        .article-content .ledger__row:nth-child(even) { background: rgba(212, 169, 73, 0.05); }
 
-        .ledger__title {
-            font-family: var(--font-body, "Inter", sans-serif);
-            color: var(--ink, #2b2420);
-        }
-
-        .ledger__verdict {
-            justify-self: end;
-        }
+        .article-content .ledger__title { font-family: var(--font-body); color: var(--text); }
+        .article-content .ledger__verdict { justify-self: end; }
 
         /* --- Tally : compteur de guichet en clôture ------------------------ */
 
-        .tally {
+        .article-content .tally {
             display: flex;
             flex-wrap: wrap;
             gap: 1.6rem;
             justify-content: center;
             margin: 2rem 0 1rem;
             padding: 1.4rem 1rem;
-            border-top: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
-            border-bottom: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
+            border-top: 1px solid var(--line-on-ink);
+            border-bottom: 1px solid var(--line-on-ink);
         }
 
-        .tally__item {
-            text-align: center;
-            min-width: 6.5rem;
-        }
+        .article-content .tally__item { min-width: 6.5rem; text-align: center; }
 
-        .tally__number {
+        .article-content .tally__number {
             display: block;
-            font-family: var(--font-display, "Fraunces", serif);
+            font-family: var(--font-display);
             font-size: 2.1rem;
             font-weight: 600;
-            color: var(--velvet, #7a1f2b);
             line-height: 1;
+            color: var(--brass-light);
         }
 
-        .tally__label {
+        .article-content .tally__label {
             display: block;
             margin-top: 0.35rem;
-            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+            font-family: var(--font-mono);
             font-size: 0.68rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: color-mix(in srgb, var(--ink, #2b2420) 65%, transparent);
+            color: var(--paper-soft);
         }
 
         /* --- Figures image (stills, logo, cast, concept-art) --------------- */
 
-        .article-figure {
+        .article-content .article-figure {
             margin: 1.4rem 0 0.4rem;
-            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
-            background: var(--paper, #f4ede0);
             padding: 0.4rem;
+            background: var(--ink-2);
+            border: 1px solid var(--line-on-ink);
         }
 
-        .article-figure img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+        .article-content .article-figure img { display: block; width: 100%; height: auto; }
 
-        .article-figure figcaption {
-            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+        .article-content .article-figure figcaption {
+            padding: 0.5rem 0.3rem 0.2rem;
+            font-family: var(--font-mono);
             font-size: 0.68rem;
             letter-spacing: 0.07em;
             text-transform: uppercase;
-            color: color-mix(in srgb, var(--ink, #2b2420) 60%, transparent);
-            padding: 0.5rem 0.3rem 0.2rem;
+            color: var(--paper-soft);
         }
 
-        .figure-pair {
+        .article-content .figure-pair {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
             margin: 1.4rem 0 0.4rem;
         }
 
-        .figure-pair .article-figure { margin: 0; }
+        .article-content .figure-pair .article-figure { margin: 0; }
 
-        .figure-grid {
+        .article-content .figure-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             margin: 1.4rem 0 1.8rem;
         }
 
-        @media (max-width: 640px) {
-            .figure-pair { grid-template-columns: 1fr; }
-            .figure-grid { grid-template-columns: 1fr 1fr; }
-        }
-
         /* --- Embeds vidéo YouTube (bandes-annonces) ------------------------- */
 
-        .video-embed {
+        .article-content .video-embed {
             margin: 1.4rem 0 0.4rem;
-            border: 1px solid color-mix(in srgb, var(--ink, #2b2420) 20%, transparent);
-            background: var(--ink, #2b2420);
             padding: 0.4rem;
+            background: var(--ink);
+            border: 1px solid var(--line-on-ink);
         }
 
-        .video-embed__label {
-            font-family: var(--font-mono, "IBM Plex Mono", monospace);
+        .article-content .video-embed__label {
+            margin: 0 0 0.4rem;
+            padding: 0 0.2rem;
+            font-family: var(--font-mono);
             font-size: 0.68rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: color-mix(in srgb, var(--paper, #f4ede0) 70%, transparent);
-            margin: 0 0 0.4rem;
-            padding: 0 0.2rem;
+            color: var(--paper-soft);
         }
 
-        .video-embed__frame {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* ratio 16:9 */
-        }
+        .article-content .video-embed__frame { position: relative; width: 100%; padding-top: 56.25%; } /* 16:9 */
 
-        .video-embed__frame iframe {
+        .article-content .video-embed__frame iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             border: 0;
         }
 
+        /* --- Responsive ----------------------------------------------------- */
+
         @media (max-width: 640px) {
-            .prediction-block { padding: 1.1rem 1rem 1.3rem; }
-            .stamp { font-size: 0.72rem; }
-            .ledger__head, .ledger__row { grid-template-columns: 1fr; }
-            .ledger__verdict { justify-self: start; }
+            .article-content .figure-pair { grid-template-columns: 1fr; }
+            .article-content .figure-grid { grid-template-columns: 1fr 1fr; }
+            .article-content .prediction-block { padding: 1.1rem 1rem 1.3rem; }
+            .article-content .stamp { font-size: 0.72rem; }
+            .article-content .ledger__head,
+            .article-content .ledger__row { grid-template-columns: 1fr; }
+            .article-content .ledger__verdict { justify-self: start; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .article-content .stamp { transform: none; }
         }
     </style>
-</link></link></link><meta content="D23 Expo 2026 : Le bilan de nos prédictions face à la réalité – L'Œil Critique" property="og:title"/><meta content="Publié le 15 août 2026 par L'oeil critique" property="og:description"/><meta content="../../assets/img/theories/d23-2026/cover-bilan.jpg" property="og:image"/><meta content="article" property="og:type"/><meta content="fr_FR" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html" property="og:url"/><link href="https://www.l-oeil-critique.com/articles/theories/D23-2026-bilan-predictions.html" rel="canonical"/></head>
+</head>
 <body>
 <div class="container">
 <div class="main-content">

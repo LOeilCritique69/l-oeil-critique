@@ -1,0 +1,602 @@
+/* ==========================================================================
+   L'ŒIL CRITIQUE — Accueil éditorial compact · v2 (« Salle noire »)
+   Classes préfixées .hp-* pour éviter toute collision avec style.css.
+   À charger APRÈS style.css : consomme ses tokens (--ink*, --brass*,
+   --velvet*, --line-on-ink*, --paper-soft, --aperture-*, --space-*…).
+
+   SOMMAIRE
+   1. Conteneur   2. Hero   3. Grille & en-têtes   4. À la une
+   5. Bandes-annonces (miniatures cliquables)   6. Sidebar
+   7. États de chargement   8. Responsive & mouvement
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CONTENEUR
+   ========================================================================== */
+.hp-wrap {
+  width: min(1340px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: var(--space-5) 0 var(--space-16);
+}
+
+/* ==========================================================================
+   2. HERO COMPACT
+   L'image est un vrai <img> (priorité de chargement, pas de url() dans une
+   variable CSS) ; le voile dégradé et le diaphragme sont en pseudo-éléments.
+   ========================================================================== */
+.hp-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(320px, 38vw, 440px);
+  background: var(--ink-2);
+  border: 1px solid var(--line-on-ink-strong);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hp-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.hp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(13, 14, 18, 0.94) 0%, rgba(13, 14, 18, 0.72) 55%, rgba(13, 14, 18, 0.35) 100%),
+    linear-gradient(180deg, rgba(13, 14, 18, 0.15) 0%, rgba(13, 14, 18, 0.95) 100%);
+}
+
+/* Diaphragme signature, en filigrane (même motif que .hero-section) */
+.hp-hero::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  z-index: -1;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: var(--aperture-blades);
+  -webkit-mask: var(--aperture-ring);
+          mask: var(--aperture-ring);
+  opacity: 0.16;
+  pointer-events: none;
+  animation: iris-spin 60s linear infinite;
+}
+
+.hp-hero__inner {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.hp-hero__copy { max-width: 720px; }
+
+.hp-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(13, 14, 18, 0.7);
+  border: 1px solid var(--line-on-ink-strong);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass-light);
+}
+
+.hp-hero h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.hp-hero p {
+  max-width: 580px;
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(242, 237, 226, 0.82);
+}
+
+.hp-hero__cta { flex-shrink: 0; white-space: nowrap; }
+
+/* ==========================================================================
+   3. GRILLE 2 COLONNES & EN-TÊTES DE BLOC
+   ========================================================================== */
+.hp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.hp-main { min-width: 0; display: flex; flex-direction: column; gap: 2.5rem; }
+
+.hp-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line-on-ink-strong);
+}
+
+.hp-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--brass-light);
+}
+
+/* petit diaphragme devant chaque titre de bloc */
+.hp-head h2::before {
+  content: "";
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--aperture-blades);
+  -webkit-mask: var(--aperture-ring);
+          mask: var(--aperture-ring);
+}
+
+.hp-head__meta,
+.hp-head__link {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hp-head__link:hover { color: var(--brass-light); }
+
+/* ==========================================================================
+   4. À LA UNE : CARTE VEDETTE + GRILLE COMPACTE
+   Cartes entièrement cliquables : le lien du titre s'étend sur toute la
+   carte (::after), l'image et le "Lire" sont décoratifs (pas de double lien).
+   ========================================================================== */
+.hp-lead {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  margin-bottom: 1.15rem;
+  background: var(--ink-2);
+  border: 1px solid var(--line-on-ink);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.hp-lead:hover,
+.hp-lead:focus-within { border-color: var(--brass); }
+.hp-lead:hover { transform: translateY(-3px); }
+
+.hp-lead__media { display: block; height: 100%; aspect-ratio: 16 / 10; overflow: hidden; }
+
+.hp-lead__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.hp-lead:hover .hp-lead__media img { transform: scale(1.04); filter: none; }
+
+.hp-lead__body { display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; padding: 1.3rem 1.5rem; }
+
+.hp-lead__body h3 { margin: 0; font-size: 1.5rem; font-weight: 500; line-height: 1.15; }
+.hp-lead__body h3 a { color: var(--text); }
+.hp-lead__body h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.hp-lead:hover .hp-lead__body h3 a { color: var(--brass-light); }
+
+.hp-lead__body p { margin: 0; font-size: 0.9rem; line-height: 1.55; color: rgba(242, 237, 226, 0.76); }
+
+.hp-read {
+  margin-top: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass);
+  transition: color 0.2s ease;
+}
+
+.hp-lead:hover .hp-read { color: var(--brass-light); }
+
+/* Badges */
+.hp-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hp-badge--actu { background: rgba(212, 169, 73, 0.14); border: 1px solid var(--line-on-ink-strong); color: var(--brass-light); }
+.hp-badge--review { background: rgba(194, 58, 67, 0.16); border: 1px solid rgba(194, 58, 67, 0.5); color: var(--velvet-light); }
+
+/* Cartes horizontales compactes */
+.hp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+
+/* nombre impair : la dernière carte prend toute la largeur (plus d'orpheline) */
+.hp-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+.hp-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 124px minmax(0, 1fr);
+  background: var(--ink-2);
+  border: 1px solid var(--line-on-ink);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.hp-card:hover,
+.hp-card:focus-within { border-color: var(--brass); background: var(--ink-3); }
+.hp-card:hover { transform: translateY(-3px); }
+
+.hp-card__thumb { display: block; height: 100%; min-height: 116px; overflow: hidden; }
+
+.hp-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.4s ease;
+}
+
+.hp-card:hover .hp-card__thumb img { filter: none; }
+
+.hp-card__body { min-width: 0; display: flex; flex-direction: column; gap: 0.4rem; padding: 0.8rem 0.9rem; }
+
+.hp-card__body h3 { margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.22; }
+.hp-card__body h3 a { color: var(--text); }
+.hp-card__body h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.hp-card:hover .hp-card__body h3 a { color: var(--brass-light); }
+
+.hp-card__body p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.82rem;
+  line-height: 1.42;
+  color: rgba(242, 237, 226, 0.68);
+}
+
+/* ==========================================================================
+   5. BANDES-ANNONCES — miniatures cliquables (l'iframe n'est créée qu'au clic)
+   ========================================================================== */
+.hp-trailers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.9rem; }
+
+.hp-trailer-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.75rem;
+  background: var(--ink-2);
+  border: 1px solid var(--line-on-ink);
+  transition: border-color 0.25s ease;
+}
+
+.hp-trailer-card:hover { border-color: var(--line-on-ink-strong); }
+
+.hp-trailer-card h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.hp-trailer-card iframe,
+.hp-trailer-card video { width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; }
+
+.hp-trailer-card p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.78rem;
+  line-height: 1.42;
+  color: var(--ink-soft);
+}
+
+.hp-yt { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.hp-yt iframe { width: 100%; height: 100%; border: 0; }
+
+.hp-yt__btn { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; cursor: pointer; }
+
+.hp-yt__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.35s ease;
+}
+
+.hp-yt__btn:hover .hp-yt__thumb { filter: none; }
+
+.hp-yt__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(13, 14, 18, 0.72);
+  border: 2px solid var(--brass);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s var(--ease-out), background 0.3s ease;
+  pointer-events: none;
+}
+
+.hp-yt__play::after {
+  content: "";
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 10px 0 10px 17px;
+  border-color: transparent transparent transparent var(--brass-light);
+  transition: border-color 0.3s ease;
+}
+
+.hp-yt__btn:hover .hp-yt__play,
+.hp-yt__btn:focus-visible .hp-yt__play { background: var(--brass); transform: translate(-50%, -50%) scale(1.08); }
+
+.hp-yt__btn:hover .hp-yt__play::after,
+.hp-yt__btn:focus-visible .hp-yt__play::after { border-left-color: var(--ink); }
+
+/* ==========================================================================
+   6. SIDEBAR : PROCHAINES SORTIES + RUBRIQUES
+   Sticky sous le header réduit (la bande utilitaire se rétracte au scroll).
+   ========================================================================== */
+.hp-side {
+  position: sticky;
+  top: calc(var(--header-h-scrolled) + 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.hp-panel { padding: 1rem; background: var(--ink-2); border: 1px solid var(--line-on-ink); }
+
+.hp-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line-on-ink-strong);
+}
+
+.hp-panel__head h2 { margin: 0; font-size: 1.15rem; font-weight: 500; line-height: 1; color: var(--text); }
+
+.hp-panel__head a,
+.hp-panel__head span {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.hp-panel__head a:hover { color: var(--brass-light); }
+
+/* Programme de sorties */
+.hp-upcoming { display: flex; flex-direction: column; }
+
+.hp-up-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.3rem;
+  border-bottom: 1px solid var(--line-on-ink);
+  color: inherit;
+  transition: background 0.18s ease;
+}
+
+.hp-up-row:last-child { border-bottom: 0; }
+.hp-up-row:hover { background: rgba(242, 237, 226, 0.04); color: inherit; }
+
+.hp-up-row__poster {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 64px;
+  background: var(--ink-3) center / cover no-repeat;
+  border: 1px solid var(--line-on-ink);
+  border-left: 2px solid var(--brass);
+  font-size: 1rem;
+  color: var(--brass);
+}
+
+.hp-up-row__poster.has-poster span { display: none; }
+
+.hp-up-row__body { min-width: 0; }
+
+.hp-up-row__body h3 {
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hp-up-row:hover .hp-up-row__body h3 { color: var(--brass-light); }
+
+.hp-up-row__body p {
+  margin: 0.25rem 0 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  line-height: 1.3;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hp-up-row__cd {
+  padding: 0.3rem 0.45rem;
+  border: 1px solid var(--line-on-ink-strong);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--brass-light);
+  white-space: nowrap;
+}
+
+.hp-up-row__cd.is-soon { border-color: var(--velvet); color: var(--velvet-light); }
+.hp-up-row__cd.is-now { background: var(--velvet); border-color: var(--velvet); color: var(--paper); }
+
+.hp-empty { margin: 0.5rem 0; font-size: 0.82rem; color: var(--ink-soft); }
+
+.hp-panel__btn {
+  display: block;
+  margin-top: 0.9rem;
+  padding: 0.65rem;
+  border: 1px solid var(--brass);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--brass-light);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hp-panel__btn:hover { background: var(--brass); color: var(--ink); }
+
+/* Rubriques : numérotation 01–06, comme dans le menu principal */
+.hp-nav { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.hp-nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--ink);
+  border: 1px solid var(--line-on-ink);
+  font-size: 0.86rem;
+  color: var(--text);
+  transition: border-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.hp-nav a::before {
+  content: attr(data-index);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--brass);
+  opacity: 0.85;
+}
+
+.hp-nav a:hover { padding-left: 1rem; border-color: var(--brass); color: var(--brass-light); }
+
+/* ==========================================================================
+   7. ÉTATS DE CHARGEMENT (utilise .skeleton de style.css)
+   ========================================================================== */
+.hp-skel-row { height: 64px; }
+.hp-skel-row + .hp-skel-row { margin-top: 0.55rem; }
+.hp-skel-trailer { aspect-ratio: 4 / 3; }
+
+/* ==========================================================================
+   8. RESPONSIVE & MOUVEMENT
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .hp-grid { grid-template-columns: 1fr; }
+  .hp-side { position: static; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 780px) {
+  .hp-hero__inner { flex-direction: column; align-items: flex-start; gap: 1.1rem; }
+  .hp-lead { grid-template-columns: 1fr; }
+  .hp-lead__media { aspect-ratio: 16 / 9; }
+  .hp-cards,
+  .hp-trailers,
+  .hp-side { grid-template-columns: 1fr; }
+  .hp-card { grid-template-columns: 104px minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-hero::after { animation: none; }
+  .hp-lead:hover,
+  .hp-card:hover { transform: none; }
+  .hp-lead__media img,
+  .hp-yt__play { transition: none; }
+}
+
+.hp-nav__new {
+  margin-left: auto;
+  padding: 0.14rem 0.45rem;
+  background: rgba(212, 169, 73, 0.14);
+  border: 1px solid var(--brass, #d4a949);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--brass-light, #ecc875);
+}
+
+.hp-nav a:hover .hp-nav__new {
+  background: var(--brass, #d4a949);
+  color: #10121a;
+}

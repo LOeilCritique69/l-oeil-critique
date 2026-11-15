@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Jeux vidéo : mes avis et mes notes – L'Œil Critique</title>
+  <meta content="Mes avis et mes notes sur les jeux vidéo auxquels j'ai joué : note sur 10, plateformes, avancement et critiques ajoutées au fur et à mesure." name="description"/>
+  <meta content="jeux vidéo, critiques jeux vidéo, avis jeux vidéo, notes, classement, Loadia, Bicha, L'Œil Critique" name="keywords"/>
+
+  <meta property="og:title" content="Jeux vidéo : mes avis et mes notes – L'Œil Critique"/>
+  <meta property="og:description" content="Mes avis et mes notes sur les jeux vidéo auxquels j'ai joué, mis à jour au fur et à mesure."/>
+  <meta property="og:image" content="https://www.l-oeil-critique.com/l_oeil_critique/assets/img/logo_chef_doeuvre_processed_copy.jpg"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <meta property="og:url" content="https://www.l-oeil-critique.com/l_oeil_critique/pages/jeux-video.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://www.l-oeil-critique.com/l_oeil_critique/pages/jeux-video.html"/>
+
+  <link href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/chef_d_oeuvre.css" rel="stylesheet"/>
+  <link href="../css/list-pages.css" rel="stylesheet"/>
+  <link href="../css/games.css" rel="stylesheet"/>
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"></script>
+</head>
+<body class="lp-page" data-base="../">
+  <main>
+    <div class="list-page-header">
+      <p class="list-page-header__breadcrumb"><a href="../reviews.html">Critiques</a> / <span class="is-current">Jeux vidéo</span></p>
+      <h1 class="list-page-header__title">Jeux vidéo</h1>
+      <p class="list-page-header__subtitle">Mes avis et mes notes sur les jeux auxquels j'ai joué, notés sur 10 comme mes tier lists.</p>
+      <p class="list-page-header__note">Tous ces jeux n'ont pas été complétés à 100 % : certains sont terminés, d'autres simplement essayés ou encore en cours. La sélection et les critiques s'ajoutent progressivement au fur et à mesure.</p>
+    </div>
+
+    <section class="games" aria-label="Liste des jeux notés">
+      <div class="games-demo" id="games-demo" hidden="">Mode démo : ces jeux sont fictifs et servent uniquement à prévisualiser la page. Retire <strong>#demo</strong> de l'adresse pour afficher tes vrais avis.</div>
+
+      <aside class="games-loadia" aria-label="Profil Loadia">
+        <div class="games-loadia__identity">
+          <div class="games-loadia__badge" aria-hidden="true">LOADIA</div>
+          <div class="games-loadia__info">
+            <div class="games-loadia__top">
+              <strong class="games-loadia__name">Bicha</strong>
+              <span class="games-loadia__handle">@bicha</span>
+            </div>
+            <p class="games-loadia__bio">« Chill » · Bibliothèque synchronisée avec <strong>705 jeux</strong> répertoriés sur Loadia.</p>
+          </div>
+        </div>
+        <a class="games-loadia__cta" href="https://loadia.app/app/profile/bicha?lang=fr" target="_blank" rel="noopener noreferrer">
+          Voir mon profil Loadia <span aria-hidden="true">↗</span>
+        </a>
+      </aside>
+
+      <div class="games-stats" id="games-stats" aria-label="Statistiques"></div>
+
+      <form class="games-toolbar" id="games-toolbar" role="search" aria-label="Filtrer les jeux">
+        <div>
+          <label class="visually-hidden" for="games-search">Rechercher un jeu</label>
+          <input id="games-search" type="search" placeholder="Rechercher un jeu, un genre…" autocomplete="off"/>
+        </div>
+        <div>
+          <label class="visually-hidden" for="games-platform">Plateforme</label>
+          <select id="games-platform"><option value="">Toutes les plateformes</option></select>
+        </div>
+        <div>
+          <label class="visually-hidden" for="games-status">Statut</label>
+          <select id="games-status">
+            <option value="">Tous les statuts</option>
+            <option value="termine">Terminé</option>
+            <option value="platine">100 %</option>
+            <option value="en-cours">En cours</option>
+            <option value="backlog">Backlog</option>
+            <option value="abandonne">Abandonné</option>
+          </select>
+        </div>
+        <div>
+          <label class="visually-hidden" for="games-sort">Trier par</label>
+          <select id="games-sort">
+            <option value="note">Meilleure note</option>
+            <option value="recent">Plus récent</option>
+            <option value="titre">Titre (A → Z)</option>
+            <option value="heures">Temps de jeu</option>
+          </select>
+        </div>
+      </form>
+
+      <p class="games-count" id="games-count" aria-live="polite"></p>
+
+      <div class="games-grid" id="games-grid" aria-busy="true">
+        <div class="skeleton games-skel"></div>
+        <div class="skeleton games-skel"></div>
+        <div class="skeleton games-skel"></div>
+        <noscript><p class="games-empty">JavaScript est nécessaire pour afficher la liste des jeux.</p></noscript>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/games.js"></script>
+</body>
+</html>

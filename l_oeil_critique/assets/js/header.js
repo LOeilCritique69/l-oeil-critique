@@ -136,6 +136,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // =========================
+  // UTILITAIRE — images de miniature manquantes
+  // Une image qui renvoie 404 est retirée (ou remplacée par un texte de
+  // repli) au lieu de laisser une icône d'image cassée.
+  // Le listener est attaché juste après l'injection du HTML : l'événement
+  // "error" est asynchrone, il ne peut donc pas être manqué.
+  // =========================
+  function handleBrokenImages(container, fallbackText) {
+    container.querySelectorAll("img").forEach((img) => {
+      img.addEventListener(
+        "error",
+        () => {
+          if (fallbackText && img.parentElement) {
+            img.parentElement.textContent = fallbackText;
+          } else {
+            img.remove();
+          }
+        },
+        { once: true }
+      );
+    });
+  }
+
+
+  // =========================
   // FOOTER — retour en haut de page
   // =========================
   const footerToTop = document.getElementById("footerToTop");
@@ -257,17 +281,23 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("");
 
     notifList.querySelectorAll(".notif-item").forEach((el) => {
+      const notif = notifications.find((n) => n.id === +el.dataset.id);
+
+      // miniature manquante : on retombe sur l'icône de la notification
+      const thumb = el.querySelector(".notif-thumb");
+      if (thumb) handleBrokenImages(thumb, (notif && notif.icon) || "🔔");
+
       el.addEventListener("click", () => {
         const id = +el.dataset.id;
-        const notif = notifications.find((n) => n.id === id);
-        if (notif && notif.unread) {
-          notif.unread = false;
+        const current = notifications.find((n) => n.id === id);
+        if (current && current.unread) {
+          current.unread = false;
           el.classList.remove("unread");
           saveReadId(id);
           renderBadge();
         }
-        if (notif && notif.url) {
-          window.location.href = notif.url;
+        if (current && current.url) {
+          window.location.href = current.url;
         }
       });
     });
@@ -405,6 +435,9 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
       })
       .join("");
+
+    // miniature introuvable (404) : on la retire, la vignette garde son fond
+    handleBrokenImages(resultsContainer);
   }
 
   function openSearch() {
@@ -589,6 +622,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "/pages/critique-films.html",
         "/pages/critique-series.html",
         "/pages/tier-list",
+        "/pages/jeux-video.html",
         "/articles/reviews/"
       ]
     },

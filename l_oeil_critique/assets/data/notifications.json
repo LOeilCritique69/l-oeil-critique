@@ -1,5 +1,12 @@
 [
   {
+    "id": 9,
+    "text": "Nouvelle rubrique : découvrez ma bibliothèque Jeux vidéo synchronisée avec Loadia (@bicha) — plus de 700 jeux répertoriés, notés sur 10 avec filtres par plateforme et statut.",
+    "icon": "🎮",
+    "unread": true,
+    "url": "/l_oeil_critique/pages/jeux-video.html"
+  },
+  {
     "id": 1,
     "text": "Nouveau : découvrez le Calendrier des sorties de L'Œil Critique et suivez les prochaines sorties cinéma, séries, jeux vidéo et animés.",
     "icon": "📅",

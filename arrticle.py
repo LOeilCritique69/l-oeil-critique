@@ -3,12 +3,16 @@ import json
 import re
 import subprocess
 import sys
+import urllib.request
+import urllib.parse
 from datetime import datetime
 from bs4 import BeautifulSoup
 
 BASE_DIR = os.path.join("l_oeil_critique", "articles")
 TIER_LIST_DIR = os.path.join("l_oeil_critique", "pages", "tier-list")
 OUTPUT_FILE = os.path.join("l_oeil_critique", "assets", "data", "articles_index.json")
+
+OMDB_API_KEY = "d0d5b13b"
 
 TYPES = [
     "films",
@@ -28,6 +32,7 @@ DISPLAY_TYPE_OVERRIDES = {
 }
 
 articles_index = []
+
 
 # =========================================================
 # IMAGE
@@ -53,6 +58,9 @@ def normalize_image_path(img_src):
         return None
 
     img_src = img_src.strip()
+
+    if img_src.startswith(("http://", "https://")):
+        return img_src
 
     while img_src.startswith("../"):
         img_src = img_src[3:]
@@ -144,7 +152,7 @@ def extract_rating(soup):
 
 
 # =========================================================
-# TIER LIST — extraction dédiée (structure différente des articles)
+# TIER LIST — extraction dédiée + affiche OMDb
 # =========================================================
 def extract_og_image(soup):
     og_image = soup.find("meta", attrs={"property": "og:image"})
@@ -160,6 +168,72 @@ def extract_tier_list_description(soup):
     return extract_description(soup)
 
 
+def fetch_omdb_poster(title, year=None, media_type=None, imdb_id=None):
+    if not OMDB_API_KEY:
+        return None
+
+    attempts = []
+    if imdb_id:
+        attempts.append({"i": imdb_id})
+    else:
+        base = {"t": title}
+        if media_type:
+            base["type"] = media_type
+        if year:
+            attempts.append({**base, "y": year})
+        attempts.append(base)
+
+        search_base = {"s": title}
+        if media_type:
+            search_base["type"] = media_type
+        if year:
+            attempts.append({**search_base, "y": year})
+        attempts.append(search_base)
+
+    for params in attempts:
+        query = {"apikey": OMDB_API_KEY, **params}
+        url = f"https://www.omdbapi.com/?{urllib.parse.urlencode(query)}"
+        try:
+            with urllib.request.urlopen(url, timeout=5) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                if data.get("Response") == "True":
+                    if "Search" in data:
+                        for item in data["Search"]:
+                            if item.get("Poster") and item["Poster"] != "N/A":
+                                return item["Poster"]
+                    elif data.get("Poster") and data["Poster"] != "N/A":
+                        return data["Poster"]
+        except Exception as e:
+            print(f"⚠️ Erreur OMDb pour {title} : {e}")
+            break
+
+    return None
+
+
+def extract_tier_list_poster(soup):
+    first_item = soup.find(
+        "div",
+        class_="tier-item",
+        attrs={"data-title": True}
+    ) or soup.find(
+        "div",
+        class_="tier-item",
+        attrs={"data-imdb": True}
+    )
+
+    if first_item:
+        poster = fetch_omdb_poster(
+            title=first_item.get("data-title"),
+            year=first_item.get("data-year"),
+            media_type=first_item.get("data-type"),
+            imdb_id=first_item.get("data-imdb")
+        )
+        if poster:
+            return poster
+
+    return extract_og_image(soup)
+
+
 def add_tier_list_file(file_path, url_base):
     with open(file_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
@@ -169,7 +243,7 @@ def add_tier_list_file(file_path, url_base):
         title_tag = soup.find("title")
     title = title_tag.get_text(strip=True) if title_tag else os.path.basename(file_path)
 
-    image = normalize_image_path(extract_og_image(soup))
+    image = normalize_image_path(extract_tier_list_poster(soup))
     description = extract_tier_list_description(soup)
 
     articles_index.append({

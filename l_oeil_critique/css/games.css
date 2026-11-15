@@ -1,0 +1,577 @@
+/* ==========================================================================
+   L'ŒIL CRITIQUE — Page Jeux vidéo · games.css (« Salle noire »)
+   Aligné sur les classes générées par assets/js/games.js et les tokens de
+   chef_d_oeuvre.css + list-pages.css.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CONTENEUR, EN-TÊTE ÉDITORIAL & BANNIÈRE LOADIA
+   ========================================================================== */
+.games {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 2.25rem 2rem 5rem;
+}
+
+.list-page-header__note {
+  max-width: 68ch;
+  margin: 0.85rem auto 0;
+  padding: 0.65rem 1rem;
+  background: rgba(212, 169, 73, 0.06);
+  border: 1px solid var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  border-left: 3px solid var(--brass, #d4a949);
+  border-radius: var(--radius, 4px);
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--paper-soft, #8d93a0);
+  text-align: left;
+}
+
+.games-loadia {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.35rem;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(212, 169, 73, 0.11), transparent 55%),
+    var(--ink-2, #16181f);
+  border: 1px solid var(--line-on-ink-strong, rgba(212, 169, 73, 0.4));
+  border-radius: var(--lp-radius, 8px);
+}
+
+.games-loadia__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  min-width: 0;
+}
+
+.games-loadia__badge {
+  flex-shrink: 0;
+  padding: 0.45rem 0.65rem;
+  background: var(--ink-3, #1f222b);
+  border: 1px solid var(--brass, #d4a949);
+  border-radius: var(--radius, 4px);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--brass-light, #ecc875);
+}
+
+.games-loadia__top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.games-loadia__name {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text, #f2ede2);
+}
+
+.games-loadia__handle {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--paper-soft, #8d93a0);
+}
+
+.games-loadia__bio {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--paper-soft, #8d93a0);
+}
+
+.games-loadia__bio strong {
+  color: var(--brass-light, #ecc875);
+  font-weight: 600;
+}
+
+.games-loadia__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.58rem 1rem;
+  background: var(--brass, #d4a949);
+  border-radius: var(--radius, 4px);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--lp-on-gold, #10121a);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.games-loadia__cta:hover {
+  background: var(--brass-light, #ecc875);
+  transform: translateY(-1px);
+}
+
+.games-demo {
+  margin-bottom: 1.75rem;
+  padding: 0.9rem 1.15rem;
+  background: rgba(212, 169, 73, 0.08);
+  border: 1px dashed var(--line-on-ink-strong, rgba(212, 169, 73, 0.4));
+  border-left: 3px solid var(--brass, #d4a949);
+  border-radius: var(--radius, 4px);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--brass-light, #ecc875);
+}
+
+.games-empty {
+  grid-column: 1 / -1;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  background: var(--ink-2, #16181f);
+  border: 1px dashed var(--line-on-ink-strong, rgba(212, 169, 73, 0.4));
+  border-radius: var(--lp-radius, 8px);
+  color: var(--paper-soft, #8d93a0);
+}
+
+.games-empty p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.games-skel {
+  height: 210px;
+  border-radius: var(--lp-radius, 8px);
+}
+
+/* ==========================================================================
+   2. STATISTIQUES (compteur de guichet)
+   ========================================================================== */
+.games-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.35rem 1.5rem;
+  background: var(--ink-2, #16181f);
+  border: 1px solid var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  border-radius: var(--lp-radius, 8px);
+}
+
+.games-stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+}
+
+.games-stat + .games-stat::before {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  top: 18%;
+  bottom: 18%;
+  width: 1px;
+  background: var(--line-on-ink, rgba(242, 237, 226, 0.12));
+}
+
+.games-stat__value {
+  display: block;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: clamp(1.65rem, 2.6vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--brass-light, #ecc875);
+}
+
+.games-stat__label {
+  display: block;
+  margin-top: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper-soft, #8d93a0);
+}
+
+/* ==========================================================================
+   3. BARRE D'OUTILS (recherche, filtres, tri) & COMPTEUR
+   ========================================================================== */
+.games-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+}
+
+.games-toolbar input,
+.games-toolbar select {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--ink-2, #16181f);
+  border: 1px solid var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  border-radius: var(--radius, 4px);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text, #f2ede2);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.games-toolbar input::placeholder {
+  color: var(--paper-faint, rgba(242, 237, 226, 0.4));
+}
+
+.games-toolbar input:hover,
+.games-toolbar select:hover {
+  border-color: var(--line-on-ink-strong, rgba(212, 169, 73, 0.4));
+  background: var(--ink-3, #1f222b);
+}
+
+.games-toolbar input:focus,
+.games-toolbar select:focus {
+  outline: none;
+  border-color: var(--brass, #d4a949);
+  background: var(--ink-3, #1f222b);
+}
+
+.games-count {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper-soft, #8d93a0);
+}
+
+.games-count::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brass, #d4a949);
+}
+
+/* ==========================================================================
+   4. GRILLE & CARTES (poster, titre, note /10, métadonnées, review)
+   ========================================================================== */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  align-items: start;
+  gap: 1.35rem;
+}
+
+.game-card {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  background: var(--ink-2, #16181f);
+  border: 1px solid var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  border-radius: var(--lp-radius, 8px);
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.game-card:hover {
+  border-color: var(--brass, #d4a949);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Poster / Jaquette --- */
+.game-card__poster {
+  position: relative;
+  width: 100%;
+  height: 192px;
+  background: var(--ink-3, #1f222b);
+  border-right: 1px solid var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  border-bottom: 1px solid var(--line-on-ink, rgba(242, 237, 226, 0.08));
+  overflow: hidden;
+}
+
+.game-card__poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(10%) contrast(1.04);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+}
+
+.game-card:hover .game-card__poster img {
+  transform: scale(1.04);
+  filter: none;
+}
+
+.game-card__poster--missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem;
+  text-align: center;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  color: var(--paper-soft, #8d93a0);
+  background:
+    radial-gradient(circle at 50% 30%, rgba(212, 169, 73, 0.08), transparent 70%),
+    var(--lp-bg-missing, #25272f);
+}
+
+/* --- Corps de la carte --- */
+.game-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-width: 0;
+  padding: 1rem 1.15rem 1.05rem;
+}
+
+.game-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.game-card__title {
+  margin: 0;
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.22;
+  color: var(--text, #f2ede2);
+}
+
+.game-card__note {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.28rem 0.6rem;
+  border-radius: var(--radius, 4px);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  background: var(--ink-3, #1f222b);
+  color: var(--text, #f2ede2);
+  border: 1px solid var(--line-on-ink-strong, rgba(212, 169, 73, 0.4));
+}
+
+.game-card__note.is-chef {
+  background: var(--lp-tier-10, #e6c15c);
+  border-color: transparent;
+  color: var(--lp-on-gold, #10121a);
+  box-shadow: 0 2px 10px rgba(230, 193, 92, 0.25);
+}
+
+.game-card__note.is-great {
+  background: var(--lp-tier-8, #d99a4e);
+  border-color: transparent;
+  color: var(--lp-on-gold, #10121a);
+}
+
+.game-card__note.is-good {
+  background: var(--lp-tier-6, #d1d15c);
+  border-color: transparent;
+  color: var(--lp-on-gold, #10121a);
+}
+
+.game-card__note.is-mid {
+  background: var(--lp-tier-1, #8a3b4e);
+  border-color: rgba(242, 237, 226, 0.15);
+  color: #f2e6e9;
+}
+
+/* --- Métadonnées --- */
+.game-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.game-card__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.52rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line-on-ink, rgba(242, 237, 226, 0.12));
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--paper-soft, #8d93a0);
+}
+
+.game-card__tag:last-child {
+  color: var(--brass-light, #ecc875);
+  border-color: rgba(212, 169, 73, 0.22);
+}
+
+.game-card__status--termine {
+  color: var(--lp-success, #4fae7c);
+  border-color: rgba(79, 174, 124, 0.35);
+  background: rgba(79, 174, 124, 0.08);
+}
+
+.game-card__status--platine {
+  color: var(--lp-on-gold, #10121a);
+  background: var(--lp-tier-10, #e6c15c);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.game-card__status--en-cours {
+  color: var(--brass-light, #ecc875);
+  border-color: rgba(212, 169, 73, 0.45);
+  background: rgba(212, 169, 73, 0.1);
+}
+
+.game-card__status--backlog {
+  color: var(--paper-soft, #8d93a0);
+  border-style: dashed;
+}
+
+.game-card__status--abandonne {
+  color: var(--velvet-light, #e07a80);
+  border-color: rgba(194, 58, 67, 0.45);
+  background: rgba(194, 58, 67, 0.1);
+}
+
+/* --- Critique / Review écrite (tronquée par défaut + bouton Lire la suite) --- */
+.game-card__review-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding: 0.65rem 0.8rem;
+  background: rgba(13, 14, 18, 0.55);
+  border-left: 2px solid var(--brass, #d4a949);
+  border-radius: 0 var(--radius, 4px) var(--radius, 4px) 0;
+}
+
+.game-card__review {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: rgba(242, 237, 226, 0.88);
+  white-space: pre-line;
+}
+
+.game-card__review.is-clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
+}
+
+.game-card__review.is-expanded {
+  display: block;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.game-card__review-toggle {
+  padding: 0.2rem 0;
+  background: none;
+  border: none;
+  border-bottom: 1px dashed rgba(212, 169, 73, 0.5);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--brass-light, #ecc875);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.game-card__review-toggle:hover {
+  color: var(--text, #f2ede2);
+  border-bottom-color: var(--text, #f2ede2);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE & ACCESSIBILITÉ
+   ========================================================================== */
+@media (max-width: 960px) {
+  .games-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem 0.75rem;
+  }
+
+  .games-stat:nth-child(3)::before {
+    display: none;
+  }
+
+  .games-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .games-toolbar > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .games {
+    padding: 1.5rem 1rem 3.5rem;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-card {
+    grid-template-columns: 104px minmax(0, 1fr);
+  }
+
+  .game-card__poster {
+    height: 156px;
+  }
+
+  .game-card__body {
+    padding: 0.85rem 0.95rem;
+  }
+
+  .game-card__title {
+    font-size: 1.05rem;
+  }
+
+  .games-toolbar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-card,
+  .game-card__poster img {
+    transition: none;
+  }
+
+  .game-card:hover {
+    transform: none;
+  }
+}
