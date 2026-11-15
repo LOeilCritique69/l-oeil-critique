@@ -12,7 +12,6 @@ BASE_DIR = os.path.join("l_oeil_critique", "articles")
 TIER_LIST_DIR = os.path.join("l_oeil_critique", "pages", "tier-list")
 OUTPUT_FILE = os.path.join("l_oeil_critique", "assets", "data", "articles_index.json")
 
-OMDB_API_KEY = "d0d5b13b"
 
 TYPES = [
     "films",
