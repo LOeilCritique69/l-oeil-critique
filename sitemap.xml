@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://l-oeil-critique.netlify.app/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/A_propos.html</loc>
@@ -306,7 +306,7 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/articles/theories/D23-2026-bilan-predictions.html</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/articles/theories/D23-2026-nos-predictions.html</loc>
@@ -322,7 +322,7 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/bande_annonces_blocs.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/contact.html</loc>
@@ -369,8 +369,12 @@
     <lastmod>2026-11-05</lastmod>
   </url>
   <url>
+    <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/jeux-video.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/mises-a-jour.html</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/theories.html</loc>
@@ -394,7 +398,7 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/tier-list/Hunger-Games.html</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/pages/tier-list/Jurassic.html</loc>
@@ -430,6 +434,6 @@
   </url>
   <url>
     <loc>https://l-oeil-critique.netlify.app/l_oeil_critique/reviews.html</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
 </urlset>
