@@ -158,6 +158,15 @@
   --line-height-tight: 1.15;
   --reading-width: 700px;
 
+  /* Diaphragmes (utilisés par home.css, createblog.css et createblog_article.css) */
+  --aperture-blades: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+  --aperture-ring: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
+
+  /* Contraste notifications & eyebrows sur fond sombre */
+  --notif-success-text: #4fae7c;
+  --notif-warning-text: #ecc875;
+  --eyebrow-film: #7fb3ff;
+
   /* Espacements */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -222,20 +231,20 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-total-h) + 12px);
+  overflow-x: hidden;
 }
 
-html,
 body {
-  max-width: 100%;
-  overflow-x: hidden;
-  background-color: var(--surface);
+  background-color: var(--ink);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  padding-top: 2.8rem;
-  transition: background-color 0.3s ease, color 0.3s ease, padding-top 0.25s ease;
+  padding-top: var(--header-total-h);
+  transition: padding-top 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-x: hidden;
+}
+
+body.header-scrolled {
+  padding-top: var(--header-h-scrolled);
 }
 
 body.header-scrolled { padding-top: var(--header-h-scrolled); }
@@ -527,13 +536,7 @@ em { font-style: italic; }
 }
 
 /* ============================================================================
-   7) HEADER — "DIAPHRAGME OUVERT" (refonte complète)
-   ----------------------------------------------------------------------------
-   Composant autonome : structure à deux niveaux (bande utilitaire +
-   barre principale), logo à iris, navigation à révélation circulaire,
-   actions en icon-btn cohérents, recherche en overlay plein écran.
-   Toutes les media queries propres au header sont regroupées en fin de
-   section plutôt que dispersées dans la section 20.
+   7) HEADER — "DIAPHRAGME OUVERT"
    ============================================================================ */
 header {
   position: fixed;
@@ -545,8 +548,15 @@ header {
   flex-direction: column;
   background: rgba(13, 14, 18, 0.92);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-on-ink);
-  transition: background 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+header.scrolled {
+  background: rgba(13, 14, 18, 0.97);
+  border-bottom-color: var(--line-on-ink-strong);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 header.menu-open { backdrop-filter: none; }
@@ -619,7 +629,7 @@ header.scrolled .header-main { height: var(--header-h-scrolled); }
   gap: 0.9rem;
   text-decoration: none;
   flex-shrink: 0;
-  padding-left: 14px; /* place pour l'anneau derrière le logo */
+  padding-left: 14px;
 }
 
 .logo-aperture {
@@ -647,6 +657,7 @@ header.scrolled .header-main { height: var(--header-h-scrolled); }
   z-index: 1;
   width: 2.4rem;
   height: auto;
+  border-radius: 50%;
   transition: width 0.25s ease;
 }
 
@@ -665,7 +676,7 @@ header.scrolled .logo { width: 2.1rem; }
 
 /* --- Navigation desktop : révélation circulaire --- */
 .main-nav {
-  display: none; /* réaffichée dès 993px, voir media query en fin de section */
+  display: none;
   flex-wrap: nowrap;
   gap: 0.2rem;
   align-items: center;
@@ -712,11 +723,9 @@ header.scrolled .logo { width: 2.1rem; }
 .main-nav a:hover::after,
 .main-nav a.active::after { clip-path: circle(75% at 50% 50%); }
 
-/* --- Lien calendrier de la nav mobile : caché en desktop, où l'icône
-   #calendarBtn (ci-dessous) fait déjà le travail --- */
 #calendarNavLink { display: none; }
 
-/* --- Actions du header : icônes cohérentes --- */
+/* --- Actions du header --- */
 .header-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: 4px; flex-shrink: 0; }
 
 .icon-btn {
@@ -727,11 +736,15 @@ header.scrolled .logo { width: 2.1rem; }
   padding: 8px 10px;
   border-radius: var(--radius);
   color: var(--paper);
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .icon-btn:hover,
-.icon-btn[aria-expanded="true"] { background: rgba(255, 255, 255, 0.07); }
+.icon-btn.active,
+.icon-btn[aria-expanded="true"] {
+  background: rgba(212, 169, 73, 0.1);
+  color: var(--brass-light);
+}
 
 .icon-btn svg {
   width: 18px;
@@ -765,8 +778,9 @@ header.scrolled .logo { width: 2.1rem; }
 .search-overlay__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(13, 14, 18, 0.75);
+  background: rgba(13, 14, 18, 0.78);
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -814,6 +828,13 @@ header.scrolled .logo { width: 2.1rem; }
 
 .search-overlay__field input::placeholder { color: var(--paper-faint); }
 
+.search-overlay__hint {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
 .search-overlay__close {
   color: var(--ink-soft);
   font-size: 1rem;
@@ -833,7 +854,9 @@ a.search-link { display: block; color: inherit; text-decoration: none; border-bo
 a.search-link:last-child { border-bottom: none; }
 
 .search-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; transition: background 0.15s ease; }
-a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
+
+a.search-link:hover .search-item,
+a.search-link.is-selected .search-item { background: rgba(212, 169, 73, 0.12); }
 
 .search-thumb {
   flex-shrink: 0;
@@ -859,11 +882,13 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
   text-overflow: ellipsis;
 }
 
+a.search-link.is-selected .search-title { color: var(--brass-light); }
+
 .search-meta { margin-top: 2px; color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.72rem; }
 .search-empty { padding: 1.5rem 1rem; text-align: center; color: var(--ink-soft); font-size: 0.82rem; font-style: italic; }
 
-/* --- Notifications (bulle header) --- */
-.notif-btn,
+/* --- Notifications --- */
+.notif-wrapper { position: relative; }
 .notif-wrapper .icon-btn { position: relative; }
 
 .notif-badge {
@@ -894,8 +919,6 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
   100% { transform: scale(1); }
 }
 
-.notif-wrapper { position: relative; }
-
 .notif-panel {
   position: absolute;
   top: calc(100% + 10px);
@@ -904,7 +927,7 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
   z-index: 9999;
   display: none;
   background: var(--surface);
-  border: 1px solid var(--line-on-paper);
+  border: 1px solid var(--line-on-ink-strong);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
@@ -922,7 +945,7 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
 
 .notif-panel-title { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); }
 .notif-mark-all { font-family: var(--font-mono); font-size: 11px; color: var(--paper-soft); transition: color 0.2s; }
-.notif-mark-all:hover { color: var(--text); }
+.notif-mark-all:hover { color: var(--brass-light); }
 .notif-list { max-height: 360px; overflow-y: auto; }
 
 .notif-item {
@@ -936,9 +959,9 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
 }
 
 .notif-item:last-child { border-bottom: none; }
-.notif-item:hover { background: rgba(194, 58, 67, 0.05); }
-.notif-item.unread { background: rgba(212, 169, 73, 0.08); }
-.notif-item.unread:hover { background: rgba(212, 169, 73, 0.14); }
+.notif-item:hover { background: rgba(212, 169, 73, 0.06); }
+.notif-item.unread { background: rgba(212, 169, 73, 0.1); }
+.notif-item.unread:hover { background: rgba(212, 169, 73, 0.16); }
 
 .notif-dot { flex-shrink: 0; width: 6px; height: 6px; margin-top: 6px; border-radius: 50%; background: var(--velvet); transition: opacity 0.2s; }
 .notif-item:not(.unread) .notif-dot { opacity: 0; }
@@ -960,9 +983,7 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
 .notif-text { margin: 0; color: var(--text); font-size: 13px; line-height: 1.4; }
 .notif-empty { padding: 28px 16px; text-align: center; font-size: 13px; color: var(--paper-soft); }
 
-/* =========================
-   BURGER ERGONOMIQUE
-   ========================= */
+/* --- Burger ergonomique --- */
 .burger-menu {
   display: flex;
   align-items: center;
@@ -977,11 +998,7 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
   margin-left: 6px;
 }
 
-.burger-box {
-  position: relative;
-  width: 24px;
-  height: 16px;
-}
+.burger-box { position: relative; width: 24px; height: 16px; }
 
 .burger-line {
   position: absolute;
@@ -1002,14 +1019,12 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
 .burger-menu.active .burger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .burger-menu.active .burger-line:nth-child(3) { transform: translateY(0) rotate(-45deg); }
 
-/* --- Media queries propres au header (regroupées ici, section autonome) --- */
+/* --- Responsive Header --- */
 @media (min-width: 993px) {
   .main-nav { display: flex; }
   .burger-menu { display: none !important; visibility: hidden; }
 }
 
-/* Desktop "à l'étroit" : on resserre la nav et les icônes avant que ça
-   ne déborde ou ne wrap (au lieu d'attendre la bascule burger à 992px). */
 @media (min-width: 993px) and (max-width: 1300px) {
   .main-nav { gap: 0; }
   .main-nav a { padding: 0.5rem 0.55rem; font-size: 0.72rem; }
@@ -1023,10 +1038,6 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
 
 @media (max-width: 992px) {
   .burger-menu { display: flex; }
-
-  /* L'icône calendrier cède la place au lien équivalent dans le menu
-     plein écran (#calendarNavLink) : ça évite de tasser 4 icônes contre
-     le logo sur les largeurs tablette/mobile. */
   #calendarBtn { display: none; }
 
   .main-nav {
@@ -1051,9 +1062,7 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
   }
 
   body.nav-locked { overflow: hidden; }
-
   header.scrolled .main-nav { top: var(--header-h-scrolled); }
-
   .main-nav.mobile-open { opacity: 1; visibility: visible; transform: translateY(0); }
 
   .main-nav a {
@@ -1071,14 +1080,13 @@ a.search-link:hover .search-item { background: rgba(212, 169, 73, 0.08); }
   .main-nav a:hover,
   .main-nav a.active { color: var(--brass-light); }
 
-  /* Dans le menu plein écran, le lien calendrier redevient visible */
   #calendarNavLink { display: flex; }
-
   .notif-panel { width: min(320px, calc(100vw - 2rem)); }
 }
 
 @media (max-width: 768px) {
-  .header-utility__tagline { display: none; }
+  .header-utility__tagline,
+  .search-overlay__hint { display: none; }
   .header-content { padding: 0 1.25rem; }
 }
 

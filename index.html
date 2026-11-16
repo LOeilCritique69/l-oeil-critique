@@ -179,6 +179,19 @@
     </div>
   </main>
 
+  <!-- ÉCRAN DE CHARGEMENT INITIAL -->
+  <div class="site-loader" id="site-loader" role="status" aria-live="polite">
+    <div class="site-loader__inner">
+      <div class="site-loader__ring" aria-hidden="true"></div>
+      <p class="site-loader__brand">L'Œil Critique</p>
+      <p class="site-loader__status" id="site-loader-status">Préparation de la salle…</p>
+      <div class="site-loader__bar">
+        <div class="site-loader__progress" id="site-loader-progress"></div>
+      </div>
+      <span class="site-loader__pct" id="site-loader-pct">0 %</span>
+    </div>
+  </div>
+
   <script src="l_oeil_critique/assets/js/header.js"></script>
   <script src="l_oeil_critique/assets/js/main.js"></script>
   <script>
@@ -245,6 +258,90 @@
         }
         if (s.annee && s.mois && s.jour) return new Date(+s.annee, +s.mois - 1, +s.jour, 12);
         return null;
+      }
+
+      /* ======================================================================
+         ÉCRAN DE CHARGEMENT + PRÉCHARGEMENT INTELLIGENT DU SITE
+         ====================================================================== */
+      function initSiteLoader() {
+        const loader = document.getElementById("site-loader");
+        if (!loader) return;
+
+        // Ne réaffiche pas l'écran si le visiteur navigue déjà dans la même session
+        if (sessionStorage.getItem("loeil_loaded") === "1") {
+          loader.remove();
+          return;
+        }
+
+        const bar = document.getElementById("site-loader-progress");
+        const pctEl = document.getElementById("site-loader-pct");
+        const statusEl = document.getElementById("site-loader-status");
+
+        const CRITICAL_ASSETS = [
+          "l_oeil_critique/assets/img/bigactualités/netflix1.webp",
+          "l_oeil_critique/assets/img/films/avengers_doomsday/doom-poster.jpg",
+          "l_oeil_critique/assets/img/theories/d23-2026/cover-bilan.jpg",
+          "l_oeil_critique/assets/img/reviews/spiderman-brand-new-day-2026.webp",
+          "l_oeil_critique/assets/img/reviews/lodyssee-2026.webp",
+          "l_oeil_critique/assets/img/reviews/evil-dead-burn-2026.webp",
+          "l_oeil_critique/assets/img/bigactualités/Oscars-2026-Winners-List.webp"
+        ];
+
+        const PREFETCH_PAGES = [
+          "l_oeil_critique/news/Accueil.html",
+          "l_oeil_critique/bande-annonces.html",
+          "l_oeil_critique/reviews.html",
+          "l_oeil_critique/pages/jeux-video.html",
+          "l_oeil_critique/pages/calendrier.html",
+          "l_oeil_critique/pages/theories.html",
+          "l_oeil_critique/pages/tier-lists.html",
+          "l_oeil_critique/assets/data/jeux.json"
+        ];
+
+        let loaded = 0;
+        let closed = false;
+        const total = CRITICAL_ASSETS.length;
+
+        function setProgress(percent, label) {
+          const clamped = Math.min(100, Math.round(percent));
+          if (bar) bar.style.width = clamped + "%";
+          if (pctEl) pctEl.textContent = clamped + " %";
+          if (statusEl && label) statusEl.textContent = label;
+        }
+
+        function closeLoader() {
+          if (closed) return;
+          closed = true;
+          setProgress(100, "Bienvenue dans la salle");
+          sessionStorage.setItem("loeil_loaded", "1");
+
+          // Précharge silencieusement les rubriques principales en arrière-plan
+          PREFETCH_PAGES.forEach(href => {
+            const link = document.createElement("link");
+            link.rel = "prefetch";
+            link.href = href;
+            document.head.appendChild(link);
+          });
+
+          setTimeout(() => {
+            loader.classList.add("is-hidden");
+            setTimeout(() => loader.remove(), 500);
+          }, 220);
+        }
+
+        CRITICAL_ASSETS.forEach(src => {
+          const img = new Image();
+          img.onload = img.onerror = () => {
+            loaded++;
+            const ratio = (loaded / total) * 100;
+            setProgress(ratio, ratio < 50 ? "Chargement des visuels…" : "Préparation des rubriques…");
+            if (ratio >= 80) closeLoader();
+          };
+          img.src = src;
+        });
+
+        // Sécurité : libère l'écran au bout de 2,5 s maximum quoi qu'il arrive
+        setTimeout(closeLoader, 2500);
       }
 
       /* ======================================================================
@@ -515,7 +612,7 @@
       /* ======================================================================
          INIT
          ====================================================================== */
-      const start = () => { initUpcoming(); initTrailers(); };
+      const start = () => { initSiteLoader(); initUpcoming(); initTrailers(); };
       if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
       else start();
     })();

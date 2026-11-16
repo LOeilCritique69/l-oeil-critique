@@ -21,7 +21,7 @@
     <div class="films-header__eyebrow">Letterboxd · Journal de visionnage</div>
     <h1>Mes <span class="gold">Films</span></h1>
     <p class="films-subtitle">
-      Tout ce que j'ai vu, noté, oublié ou chéri. Sans critiques — juste l'honnêteté d'une note.
+      Tout ce que j'ai vu, noté, oublié ou chéri. Sans fioritures — juste l'honnêteté d'une note.
     </p>
 
     <!-- STATS BAR -->
@@ -42,8 +42,18 @@
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
+        <span class="stat-value" id="stat-best-month" title="Mois record (hors journées de +5 films importés)">—</span>
+        <span class="stat-label">record / mois</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
         <span class="stat-value" id="stat-year">—</span>
         <span class="stat-label">films cette année</span>
+      </div>
+      <div class="stat-divider" id="stat-hours-div" hidden></div>
+      <div class="stat-item" id="stat-hours-item" hidden>
+        <span class="stat-value" id="stat-hours">—</span>
+        <span class="stat-label">temps devant l'écran</span>
       </div>
     </div>
 
@@ -53,18 +63,43 @@
         <svg class="control-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
           <circle cx="9" cy="9" r="6"/><path d="M15 15l3 3"/>
         </svg>
-        <input type="text" id="search" placeholder="Rechercher un film…" autocomplete="off" spellcheck="false">
+        <input type="search" id="search" placeholder="Film, réalisateur, acteur…" autocomplete="off" spellcheck="false">
       </div>
 
-      <div class="control-group">
+      <div class="control-group" id="sort-group">
         <svg class="control-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M3 5h14M6 10h8M9 15h2"/>
         </svg>
-        <select id="sort">
+        <select id="sort" aria-label="Trier les films">
           <option value="recent">Récemment vus</option>
           <option value="rating">Meilleure note</option>
           <option value="year">Année ↓</option>
           <option value="year-asc">Année ↑</option>
+          <option value="runtime">Durée ↓</option>
+          <option value="title">Ordre alphabétique</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <svg class="control-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 8h14"/>
+        </svg>
+        <select id="decade-filter" aria-label="Filtrer par décennie">
+          <option value="all">Toutes époques</option>
+          <option value="2020">Années 2020</option>
+          <option value="2010">Années 2010</option>
+          <option value="2000">Années 2000</option>
+          <option value="1990">Années 1990</option>
+          <option value="classic">Classiques (&lt; 1990)</option>
+        </select>
+      </div>
+
+      <div class="control-group" id="genre-group" hidden>
+        <svg class="control-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 4h14l-5 6v5l-4 2v-7L3 4z"/>
+        </svg>
+        <select id="genre-filter" aria-label="Filtrer par genre">
+          <option value="all">Tous les genres</option>
         </select>
       </div>
 
@@ -73,25 +108,122 @@
           <path d="M10 1l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 13.4l-4.8 2.5.9-5.4L2.2 6.7l5.4-.8z"/>
         </svg>
         <span class="rating-filter-label">Note min : <strong id="rating-val">0</strong></span>
-        <input type="range" id="rating-filter" min="0" max="5" step="0.5" value="0">
+        <input type="range" id="rating-filter" min="0" max="5" step="0.5" value="0" aria-label="Note minimale">
       </div>
+
+      <!-- SÉLECTEUR DE MODE : LISTE / CALENDRIER / STATS -->
+      <div class="view-switcher" role="group" aria-label="Mode d'affichage">
+        <button type="button" class="view-btn active" data-view="list" id="btn-view-list">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="3" y="3" width="6" height="6" rx="1"/>
+            <rect x="11" y="3" width="6" height="6" rx="1"/>
+            <rect x="3" y="11" width="6" height="6" rx="1"/>
+            <rect x="11" y="11" width="6" height="6" rx="1"/>
+          </svg>
+          <span>Liste</span>
+        </button>
+        <button type="button" class="view-btn" data-view="calendar" id="btn-view-calendar">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="3" y="4" width="14" height="13" rx="2"/>
+            <path d="M3 8h14M7 2v4M13 2v4"/>
+          </svg>
+          <span>Calendrier</span>
+        </button>
+        <button type="button" class="view-btn" data-view="stats" id="btn-view-stats">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M4 16V10M10 16V4M16 16V7"/>
+          </svg>
+          <span>Stats</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- FILTRES RAPIDES & TIRAGE ALÉATOIRE -->
+    <div class="quick-pills-row">
+      <div class="quick-pills" role="group" aria-label="Filtres spéciaux">
+        <button type="button" class="quick-pill" id="filter-masterpieces" title="Afficher les films notés 4,5 ou 5">
+          ★ Coups de cœur <span class="pill-count" id="count-masterpieces">0</span>
+        </button>
+        <button type="button" class="quick-pill" id="filter-firstwatch" title="Uniquement les premières découvertes (hors rewatch)">
+          ✦ 1re fois <span class="pill-count" id="count-firstwatch">0</span>
+        </button>
+        <button type="button" class="quick-pill" id="filter-rewatch" title="Afficher uniquement les films revus">
+          ↻ Rewatch <span class="pill-count" id="count-rewatch">0</span>
+        </button>
+        <button type="button" class="quick-pill" id="filter-reviewed" title="Afficher les entrées avec critique">
+          ✎ Critiques <span class="pill-count" id="count-reviewed">0</span>
+        </button>
+        <button type="button" class="quick-pill" id="filter-unrated" title="Afficher uniquement les films vus sans note">
+          Sans note <span class="pill-count" id="count-unrated">0</span>
+        </button>
+        <button type="button" class="quick-pill quick-pill--random" id="btn-random-film" title="Tirer un film au hasard parmi les résultats filtrés">
+          🎲 Au hasard
+        </button>
+      </div>
+
+      <button type="button" class="reset-filters-btn" id="reset-filters" hidden title="Réinitialiser les filtres">
+        ✕ Réinitialiser
+      </button>
     </div>
 
     <div class="results-count" id="film-count">Chargement…</div>
   </div>
 
-  <!-- GRID -->
-  <div id="film-list" class="films-grid"></div>
+  <!-- MODE 1 : GRID / LISTE -->
+  <section id="list-view" aria-label="Grille des films">
+    <div id="film-list" class="films-grid"></div>
+    <div id="scroll-sentinel"></div>
+    <div id="load-more-indicator" class="load-more-indicator" hidden>
+      <span></span><span></span><span></span>
+    </div>
+  </section>
 
-  <!-- SENTINEL pour infinite scroll -->
-  <div id="scroll-sentinel"></div>
+  <!-- MODE 2 : CALENDRIER -->
+  <section id="calendar-view" class="calendar-section" aria-label="Calendrier de visionnage" hidden>
+    <div class="calendar-toolbar">
+      <div class="calendar-nav">
+        <button type="button" class="cal-nav-btn" id="cal-prev" aria-label="Mois précédent" title="Mois précédent (←)">‹</button>
+        <div class="cal-selects">
+          <select id="cal-month-select" class="cal-select" aria-label="Choisir le mois"></select>
+          <select id="cal-year-select" class="cal-select" aria-label="Choisir l'année"></select>
+        </div>
+        <button type="button" class="cal-nav-btn" id="cal-next" aria-label="Mois suivant" title="Mois suivant (→)">›</button>
+      </div>
+      <div class="calendar-summary">
+        <span class="cal-badge" id="cal-month-count">0 film ce mois-ci</span>
+        <button type="button" class="cal-today-btn" id="cal-today">Dernier visionnage</button>
+      </div>
+    </div>
 
-  <!-- LOADER BOTTOM -->
-  <div id="load-more-indicator" class="load-more-indicator" style="display:none">
-    <span></span><span></span><span></span>
-  </div>
+    <div class="cal-matches-bar" id="cal-matches-bar" hidden>
+      <span class="cal-matches-label" id="cal-matches-label">Mois concernés :</span>
+      <div class="cal-matches-list" id="cal-matches-list"></div>
+    </div>
+
+    <div class="calendar-weekdays">
+      <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+    </div>
+    <div class="calendar-grid" id="calendar-grid"></div>
+  </section>
+
+  <!-- MODE 3 : STATS & PROFIL -->
+  <section id="stats-view" class="stats-section" aria-label="Statistiques cinéma" hidden>
+    <div class="stats-grid" id="stats-dashboard"></div>
+  </section>
 
 </main>
+
+<!-- MODALE DÉTAIL D'UN JOUR / FILM AU HASARD -->
+<div class="cal-modal" id="cal-modal" hidden>
+  <div class="cal-modal-backdrop" id="cal-modal-close-bg"></div>
+  <div class="cal-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cal-modal-title">
+    <div class="cal-modal-header">
+      <h3 id="cal-modal-title">Films vus</h3>
+      <button type="button" class="cal-modal-close" id="cal-modal-close" aria-label="Fermer">✕</button>
+    </div>
+    <div class="cal-modal-body" id="cal-modal-body"></div>
+  </div>
+</div>
 
 <script src="app.js"></script>
 <script src="../assets/js/header.js"></script>

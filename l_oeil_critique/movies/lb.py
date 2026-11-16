@@ -1,209 +1,333 @@
+#!/usr/bin/env python3
 """
-lb.py — Letterboxd → movies.json, avec posters TMDB FIABLES
-
-Pourquoi l'ancienne version se trompait de poster :
-  elle cherchait par titre et, si l'année ne collait pas, prenait « le plus populaire ».
-Ici :
-  1. Le flux RSS Letterboxd donne l'identifiant TMDB exact (tmdb:movieId) -> aucune recherche.
-  2. Pour les anciens films (export CSV), recherche STRICTE : année à ±1 ET titre quasi identique.
-     Sinon le film est mis « à vérifier » (pas de poster plutôt qu'un mauvais) -> a_verifier.json.
-  3. overrides.json permet de forcer un identifiant TMDB à la main.
-
-Usage :
-  python lb.py                 sync RSS + résout les films sans poster
-  python lb.py --rematch-all   re-vérifie TOUS les films hérités de l'export CSV (à faire une fois)
-  python lb.py --report        liste les films à vérifier (aucun appel réseau)
-
-Clé API : variable d'environnement TMDB_API_KEY, ou fichier tmdb_key.txt à côté du script.
+lb.py — Génère movies.json pour L'Œil Critique à partir d'un export Letterboxd (.zip ou dossier).
+Enrichit chaque film via cache local (poster_cache.json) avec :
+  - poster_url, Director, Actors, Genres (liste), Runtime (minutes)
+Sources en cascade : OMDb (OMDB_KEY) -> TMDB (TMDB_API_KEY) -> Scraping og:image Letterboxd.
 """
-import argparse, difflib, json, os, re, sys, time, unicodedata
-import xml.etree.ElementTree as ET
-from datetime import datetime
-import requests
 
-RSS_URL = "https://letterboxd.com/oni_le_chan/rss/"
-BASE = os.path.dirname(os.path.abspath(__file__))
-MOVIES_FILE    = os.path.join(BASE, "movies.json")
-CACHE_FILE     = os.path.join(BASE, "tmdb_cache_v2.json")   # nouveau cache (l'ancien est pollué)
-OVERRIDES_FILE = os.path.join(BASE, "overrides.json")
-REVIEW_FILE    = os.path.join(BASE, "a_verifier.json")
-KEY_FILE       = os.path.join(BASE, "tmdb_key.txt")
+import csv
+import io
+import json
+import os
+import re
+import sys
+import time
+import urllib.parse
+import urllib.request
+import zipfile
+from pathlib import Path
 
-NS_LB, NS_TMDB = "https://letterboxd.com", "https://themoviedb.org"
-API, IMG = "https://api.themoviedb.org/3", "https://image.tmdb.org/t/p/w500"
-DELAY, RETRIES = 0.2, 3
-TRUSTED = {"rss", "override"}            # sources qu'on ne remet jamais en question
+BASE_DIR = Path(__file__).resolve().parent
+CACHE_FILE = BASE_DIR / "poster_cache.json"
+LEGACY_CACHE_FILE = BASE_DIR / "tmdb_cache.json"
+OUTPUT_FILE = BASE_DIR / "movies.json"
 
-def log(p, m): print(f"[{datetime.now():%H:%M:%S}] {p:5s} {m}")
+OMDB_KEY = os.environ.get("OMDB_KEY", "").strip()
+TMDB_API_KEY = os.environ.get("TMDB_API_KEY", "").strip()
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36"
 
-# ---------- utilitaires purs (testables) ----------
-def norm(s):
-    s = unicodedata.normalize("NFKD", str(s or "")).encode("ascii", "ignore").decode().lower().strip()
-    s = re.sub(r"^(the|a|an|le|la|les|l)\s+", "", s)
-    return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
-def sim(a, b): return difflib.SequenceMatcher(None, norm(a), norm(b)).ratio()
-def movie_key(m): return f"{norm(m.get('Name'))}|{m.get('Year') or ''}"
-
-def choose_match(name, year, candidates):
-    """Retourne (candidat | None, top3). Accepte seulement année ±1 ET titre >= 0.85."""
-    scored = []
-    for c in candidates:
-        ry = (c.get("release_date") or "")[:4]
-        dy = abs(int(ry) - int(year)) if ry.isdigit() and year else 99
-        s = max(sim(name, c.get("title")), sim(name, c.get("original_title")))
-        scored.append((dy, s, c))
-    ok = [t for t in scored if t[0] <= 1 and t[1] >= 0.85]
-    if ok:
-        dy, s, c = min(ok, key=lambda t: (t[0], -t[1], -(t[2].get("popularity") or 0)))
-        return c, []
-    top = sorted(scored, key=lambda t: (-t[1], t[0]))[:3]
-    return None, [{"tmdb_id": c["id"], "title": c.get("title"), "year": (c.get("release_date") or "")[:4],
-                   "similarite": round(s, 2)} for _, s, c in top]
-
-# ---------- clé / cache / réseau ----------
-def get_key():
-    k = os.environ.get("TMDB_API_KEY", "").strip()
-    if not k and os.path.exists(KEY_FILE):
-        k = open(KEY_FILE, encoding="utf-8").read().strip()
-    if not k:
-        sys.exit("Clé TMDB manquante : définis TMDB_API_KEY ou crée tmdb_key.txt à côté de lb.py.")
-    return k
-
-def read_json(path, default):
-    try:
-        with open(path, encoding="utf-8") as f: return json.load(f)
-    except FileNotFoundError: return default
-    except json.JSONDecodeError: log("WARN", f"{os.path.basename(path)} illisible, ignoré."); return default
-
-def write_json(path, data):
-    tmp = path + ".tmp"
-    with open(tmp, "w", encoding="utf-8") as f: json.dump(data, f, indent=2, ensure_ascii=False)
-    os.replace(tmp, path)
-
-class Tmdb:
-    def __init__(self, key):
-        self.key, self.cache, self.calls = key, read_json(CACHE_FILE, {}), 0
-    def save(self): write_json(CACHE_FILE, self.cache)
-    def _get(self, path, **params):
-        params["api_key"] = self.key
-        for i in range(1, RETRIES + 1):
+def load_cache():
+    cache = {}
+    for path in (LEGACY_CACHE_FILE, CACHE_FILE):
+        if path.exists():
             try:
-                r = requests.get(f"{API}{path}", params=params, timeout=10)
-                if r.status_code == 401: sys.exit("Clé TMDB refusée (401). Vérifie ta clé.")
-                if r.status_code == 429: time.sleep(int(r.headers.get("Retry-After", 2))); continue
-                r.raise_for_status(); time.sleep(DELAY)
-                self.calls += 1
-                if self.calls % 25 == 0: self.save()
-                return r.json()
-            except requests.RequestException as e:
-                log("WARN", f"{path} tentative {i}/{RETRIES} : {e}"); time.sleep(2)
+                data = json.loads(path.read_text(encoding="utf-8"))
+                for k, v in data.items():
+                    if isinstance(v, dict) and (v.get("poster_url") or v.get("poster_path")):
+                        cache[k] = v
+            except Exception:
+                pass
+    return cache
+
+
+def save_cache(cache):
+    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def norm_key(name, year):
+    clean_name = re.sub(r"\s+", " ", str(name or "").strip().lower())
+    return f"{clean_name}|{year or ''}"
+
+
+def fetch_json(url):
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=10) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def parse_runtime(raw):
+    m = re.search(r"(\d+)", str(raw or ""))
+    return int(m.group(1)) if m else 0
+
+
+def split_csv_field(raw):
+    if not raw or raw == "N/A":
+        return []
+    return [x.strip() for x in str(raw).split(",") if x.strip() and x.strip() != "N/A"]
+
+
+def try_omdb(name, year):
+    if not OMDB_KEY:
         return None
-    def movie(self, tid):
-        k = f"movie:{tid}"
-        if k not in self.cache:
-            d = self._get(f"/movie/{tid}", language="fr-FR")
-            if d and not d.get("poster_path"):                     # pas d'affiche FR -> affiche d'origine
-                d2 = self._get(f"/movie/{tid}")
-                if d2: d["poster_path"] = d2.get("poster_path")
-            if d: self.cache[k] = {x: d.get(x) for x in ("id", "title", "original_title", "release_date", "poster_path")}
-        return self.cache.get(k)
-    def search(self, name, year):
-        k = f"search:{norm(name)}|{year or ''}"
-        if k not in self.cache:
-            d = self._get("/search/movie", query=name, language="en-US", include_adult="false")
-            if d is None: return None
-            self.cache[k] = [{x: c.get(x) for x in ("id", "title", "original_title", "release_date", "popularity")}
-                             for c in d.get("results", [])[:10]]
-        return self.cache[k]
+    for with_year in ([True, False] if year else [False]):
+        params = {"apikey": OMDB_KEY, "t": name}
+        if with_year and year:
+            params["y"] = str(year)
+        url = "https://www.omdbapi.com/?" + urllib.parse.urlencode(params)
+        try:
+            data = fetch_json(url)
+            if data.get("Response") == "True":
+                poster = data.get("Poster")
+                director = data.get("Director")
+                return {
+                    "poster_url": poster if poster and poster != "N/A" else None,
+                    "Director": director if director and director != "N/A" else "",
+                    "Actors": ", ".join(split_csv_field(data.get("Actors"))[:4]),
+                    "Genres": split_csv_field(data.get("Genre")),
+                    "Runtime": parse_runtime(data.get("Runtime")),
+                }
+        except Exception:
+            pass
+    return None
 
-# ---------- résolution d'un film ----------
-def apply_tmdb(m, tid, source, tmdb):
-    d = tmdb.movie(tid)
-    if not d: return False
-    m.update(tmdb_id=tid, tmdb_source=source, tmdb_title=d.get("title"),
-             tmdb_year=(d.get("release_date") or "")[:4] or None,
-             poster_path=d.get("poster_path"),
-             poster_url=(IMG + d["poster_path"]) if d.get("poster_path") else None)
-    return True
 
-def resolve(m, tmdb, overrides, review, force=False):
-    key = f"{m.get('Name')}|{m.get('Year')}"
-    old = m.get("tmdb_id")
-    if key in overrides:
-        apply_tmdb(m, int(overrides[key]), "override", tmdb)
-    elif m.get("tmdb_source") in TRUSTED and m.get("poster_url") and not force:
-        return
-    elif m.get("tmdb_source") == "rss" and m.get("tmdb_id"):
-        apply_tmdb(m, m["tmdb_id"], "rss", tmdb)
-    else:
-        cands = tmdb.search(m["Name"], m.get("Year"))
-        if cands is None: return
-        best, top = choose_match(m["Name"], m.get("Year"), cands)
-        if best: apply_tmdb(m, best["id"], "search", tmdb)
-        else:
-            m.update(tmdb_id=None, tmdb_source="review", poster_path=None, poster_url=None)
-            review.append({"cle": key, "Name": m["Name"], "Year": m.get("Year"), "candidats": top})
-            log("CHECK", f"{m['Name']} ({m.get('Year')}) : aucun candidat sûr")
-            return
-    if old and old != m.get("tmdb_id"):
-        log("FIX", f"{m['Name']} ({m.get('Year')}) : {old} -> {m.get('tmdb_id')}  ({m.get('tmdb_title')})")
-
-# ---------- RSS ----------
-def fetch_rss():
-    log("INFO", f"RSS : {RSS_URL}")
+def try_tmdb(name, year):
+    if not TMDB_API_KEY:
+        return None
+    params = {"api_key": TMDB_API_KEY, "query": name, "language": "fr-FR"}
+    if year:
+        params["year"] = str(year)
+    url = "https://api.themoviedb.org/3/search/movie?" + urllib.parse.urlencode(params)
     try:
-        r = requests.get(RSS_URL, timeout=15); r.raise_for_status()
-    except requests.RequestException as e:
-        sys.exit(f"RSS inaccessible : {e}")
-    out = []
-    for item in ET.fromstring(r.content).findall(".//item"):
-        g = lambda ns, t: (item.findtext(f"{{{ns}}}{t}") or "").strip() or None
-        name = g(NS_LB, "filmTitle")
-        if not name: continue
-        yr, rt, tid = g(NS_LB, "filmYear"), g(NS_LB, "memberRating"), g(NS_TMDB, "movieId")
-        out.append({"Name": name, "Year": int(yr) if yr and yr.isdigit() else None,
-                    "Date": g(NS_LB, "watchedDate"), "Rating": float(rt) if rt else None,
-                    "Letterboxd URI": (item.findtext("link") or "").strip() or None,
-                    "tmdb_id": int(tid) if tid and tid.isdigit() else None})
-    log("INFO", f"{len(out)} entrées RSS")
-    return out
+        data = fetch_json(url)
+        results = data.get("results") or []
+        if not results and year:
+            params.pop("year", None)
+            url = "https://api.themoviedb.org/3/search/movie?" + urllib.parse.urlencode(params)
+            data = fetch_json(url)
+            results = data.get("results") or []
+        if results and results[0].get("poster_path"):
+            top = results[0]
+            movie_id = top.get("id")
+            info = {
+                "tmdb_id": movie_id,
+                "poster_path": top["poster_path"],
+                "poster_url": f"https://image.tmdb.org/t/p/w500{top['poster_path']}",
+            }
+            if movie_id:
+                try:
+                    detail_url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={TMDB_API_KEY}&language=fr-FR&append_to_response=credits"
+                    det = fetch_json(detail_url)
+                    info["Runtime"] = int(det.get("runtime") or 0)
+                    info["Genres"] = [g["name"] for g in (det.get("genres") or []) if g.get("name")]
+                    crew = (det.get("credits") or {}).get("crew") or []
+                    directors = [c["name"] for c in crew if c.get("job") == "Director"]
+                    info["Director"] = ", ".join(directors)
+                    cast = (det.get("credits") or {}).get("cast") or []
+                    info["Actors"] = ", ".join(c["name"] for c in cast[:4] if c.get("name"))
+                except Exception:
+                    pass
+            return info
+    except Exception:
+        pass
+    return None
 
-# ---------- commandes ----------
-def report():
-    movies = read_json(MOVIES_FILE, [])
-    bad = [m for m in movies if m.get("tmdb_source") == "review" or not m.get("poster_url")]
-    legacy = [m for m in movies if "tmdb_source" not in m]
-    print(f"{len(movies)} films | {len(legacy)} jamais vérifiés (lance --rematch-all) | {len(bad)} sans poster / à vérifier")
-    for m in bad: print(f"  - {m['Name']} ({m.get('Year')})")
-    if os.path.exists(REVIEW_FILE): print(f"Détails + candidats : {REVIEW_FILE}")
 
-def sync(rematch_all):
-    tmdb, overrides = Tmdb(get_key()), read_json(OVERRIDES_FILE, {})
-    movies, review = read_json(MOVIES_FILE, []), []
-    index = {movie_key(m): m for m in movies if m.get("Name")}
-    new = upd = 0
-    for r in fetch_rss():
-        m = index.get(movie_key(r))
-        if m is None:
-            m = {k: v for k, v in r.items() if k != "tmdb_id"}
-            if r["tmdb_id"]: m["tmdb_id"], m["tmdb_source"] = r["tmdb_id"], "rss"
-            movies.append(m); index[movie_key(m)] = m; new += 1; log("NEW", f"{m['Name']} ({m.get('Year')})")
+def try_letterboxd_scrape(uri):
+    if not uri or not uri.startswith("http"):
+        return None
+    req = urllib.request.Request(uri, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
+        m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', html)
+        if not m:
+            m = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']', html)
+        dir_m = re.search(r'<meta[^>]+name=["\']twitter:data1["\'][^>]+content=["\']([^"\']+)["\']', html)
+        if m:
+            img_url = m.group(1).strip()
+            if img_url.startswith("http") and "default-share" not in img_url:
+                return {
+                    "poster_url": img_url,
+                    "Director": dir_m.group(1).strip() if dir_m else "",
+                }
+    except Exception:
+        pass
+    return None
+
+
+def fetch_metadata(name, year, uri, cache, stats):
+    key = norm_key(name, year)
+    cached = cache.get(key)
+    # Si déjà en cache avec poster ET métadonnées (Director ou Genres déjà vérifiés), on réutilise
+    if cached and cached.get("poster_url") and ("Director" in cached or not OMDB_KEY):
+        return cached
+
+    info = try_omdb(name, year) or try_tmdb(name, year) or try_letterboxd_scrape(uri)
+    if info and (info.get("poster_url") or cached):
+        merged = {**(cached or {}), **{k: v for k, v in info.items() if v not in (None, "", [])}}
+        if "Director" not in merged:
+            merged["Director"] = ""
+        cache[key] = merged
+        stats["fetched"] += 1
+        print(f"  [+] {name} ({year or '—'})" + (f" · {merged['Director']}" if merged.get("Director") else ""))
+        if stats["fetched"] % 25 == 0:
+            save_cache(cache)
+        time.sleep(0.15)
+        return merged
+
+    stats["missing"] += 1
+    print(f"  [!] Introuvable : {name} ({year or '—'})")
+    time.sleep(0.1)
+    return cached or {}
+
+
+def read_csv_source(source_path, filename):
+    p = Path(source_path)
+    if p.is_file() and p.suffix.lower() == ".zip":
+        with zipfile.ZipFile(p, "r") as zf:
+            for member in zf.namelist():
+                if member.endswith(filename) and "/" not in member.strip("/"):
+                    raw = zf.read(member).decode("utf-8-sig")
+                    return list(csv.DictReader(io.StringIO(raw)))
+        return []
+    target = p / filename
+    if target.exists():
+        with target.open("r", encoding="utf-8-sig", newline="") as f:
+            return list(csv.DictReader(f))
+    return []
+
+
+def parse_rating(val):
+    try:
+        r = float(val)
+        return round(r * 2) / 2 if r > 0 else 0.0
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def find_export_source():
+    if len(sys.argv) > 1:
+        return Path(sys.argv[1])
+    zips = sorted(BASE_DIR.glob("letterboxd-*.zip"), key=lambda x: x.stat().st_mtime, reverse=True)
+    if zips:
+        return zips[0]
+    return BASE_DIR
+
+
+def build_movies_json(source_path):
+    watched = read_csv_source(source_path, "watched.csv")
+    ratings = read_csv_source(source_path, "ratings.csv")
+    diary = read_csv_source(source_path, "diary.csv")
+    reviews = read_csv_source(source_path, "reviews.csv")
+
+    if not watched and not diary:
+        raise FileNotFoundError(f"Aucun export Letterboxd trouvé dans {source_path}")
+
+    cache = load_cache()
+    stats = {"fetched": 0, "missing": 0}
+    print(f"Cache chargé : {len(cache)} entrées déjà connues.")
+
+    ratings_by_uri = {}
+    ratings_by_ny = {}
+    for row in ratings:
+        uri = (row.get("Letterboxd URI") or "").strip()
+        r = parse_rating(row.get("Rating"))
+        if uri:
+            ratings_by_uri[uri] = r
+        ratings_by_ny[norm_key(row.get("Name"), row.get("Year"))] = r
+
+    latest_diary_date = {}
+    rewatch_counts = {}
+    for row in diary:
+        ny = norm_key(row.get("Name"), row.get("Year"))
+        wdate = (row.get("Watched Date") or row.get("Date") or "").strip()
+        if wdate and (ny not in latest_diary_date or wdate > latest_diary_date[ny]):
+            latest_diary_date[ny] = wdate
+        rewatch_counts[ny] = rewatch_counts.get(ny, 0) + 1
+
+    catalog = []
+    seen_keys = set()
+    for row in watched:
+        name = (row.get("Name") or "").strip()
+        if not name:
             continue
-        if r["Rating"] is not None and r["Rating"] != m.get("Rating"): m["Rating"] = r["Rating"]; upd += 1   # jamais écraser par « sans note »
-        if r["Date"] and (m.get("Date") or "") < r["Date"]: m["Date"] = r["Date"]; upd += 1
-        if r["Letterboxd URI"] and not m.get("Letterboxd URI"): m["Letterboxd URI"] = r["Letterboxd URI"]
-        if r["tmdb_id"] and r["tmdb_id"] != m.get("tmdb_id") or (r["tmdb_id"] and m.get("tmdb_source") != "rss"):
-            m["tmdb_id"], m["tmdb_source"], m["poster_url"] = r["tmdb_id"], "rss", None                    # RSS = vérité
-    todo = [m for m in movies if rematch_all and m.get("tmdb_source") not in TRUSTED
-            or not m.get("poster_url") or m.get("tmdb_source") is None and not m.get("tmdb_id")]
-    log("INFO", f"{len(todo)} film(s) à résoudre")
-    for i, m in enumerate(todo, 1):
-        resolve(m, tmdb, overrides, review, force=rematch_all)
-        if i % 25 == 0: write_json(MOVIES_FILE, movies); log("INFO", f"{i}/{len(todo)}")
-    tmdb.save(); write_json(MOVIES_FILE, movies); write_json(REVIEW_FILE, review)
-    log("OK", f"+{new} nouveaux, {upd} mis à jour, {len(review)} à vérifier (voir a_verifier.json)")
+        year = int(row["Year"]) if str(row.get("Year") or "").isdigit() else 0
+        uri = (row.get("Letterboxd URI") or "").strip()
+        ny = norm_key(name, year)
+        if ny in seen_keys:
+            continue
+        seen_keys.add(ny)
+
+        rating = ratings_by_uri.get(uri, ratings_by_ny.get(ny, 0.0))
+        watched_date = latest_diary_date.get(ny) or (row.get("Date") or "").strip()
+        meta = fetch_metadata(name, year, uri, cache, stats)
+
+        catalog.append({
+            "Name": name,
+            "Year": year,
+            "Date": watched_date,
+            "Letterboxd URI": uri,
+            "Rating": rating,
+            "RewatchCount": rewatch_counts.get(ny, 1),
+            **meta,
+        })
+
+    reviews_by_uri = {}
+    reviews_by_ny_date = {}
+    for row in reviews:
+        rev_text = (row.get("Review") or "").strip()
+        if not rev_text:
+            continue
+        uri = (row.get("Letterboxd URI") or "").strip()
+        wdate = (row.get("Watched Date") or row.get("Date") or "").strip()
+        if uri:
+            reviews_by_uri[uri] = rev_text
+        reviews_by_ny_date[(norm_key(row.get("Name"), row.get("Year")), wdate)] = rev_text
+
+    diary_entries = []
+    for row in diary:
+        name = (row.get("Name") or "").strip()
+        if not name:
+            continue
+        year = int(row["Year"]) if str(row.get("Year") or "").isdigit() else 0
+        uri = (row.get("Letterboxd URI") or "").strip()
+        wdate = (row.get("Watched Date") or row.get("Date") or "").strip()
+        ny = norm_key(name, year)
+        rating = parse_rating(row.get("Rating"))
+        rewatch = str(row.get("Rewatch") or "").strip().lower() == "yes"
+        tags = [t.strip() for t in str(row.get("Tags") or "").split(",") if t.strip()]
+        review = reviews_by_uri.get(uri) or reviews_by_ny_date.get((ny, wdate)) or ""
+        meta = fetch_metadata(name, year, uri, cache, stats)
+
+        diary_entries.append({
+            "Name": name,
+            "Year": year,
+            "Date": wdate,
+            "LoggedDate": (row.get("Date") or "").strip(),
+            "Letterboxd URI": uri,
+            "Rating": rating,
+            "Rewatch": rewatch,
+            "Tags": tags,
+            "Review": review,
+            **meta,
+        })
+
+    save_cache(cache)
+
+    payload = {
+        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "catalog": catalog,
+        "diary": diary_entries,
+    }
+    OUTPUT_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(
+        f"\nOK : {len(catalog)} films dans catalog, {len(diary_entries)} entrées dans diary "
+        f"(+{stats['fetched']} enrichis, {stats['missing']} introuvables) -> {OUTPUT_FILE}"
+    )
+
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser(); ap.add_argument("--rematch-all", action="store_true"); ap.add_argument("--report", action="store_true")
-    a = ap.parse_args(); report() if a.report else sync(a.rematch_all)
+    build_movies_json(find_export_source())

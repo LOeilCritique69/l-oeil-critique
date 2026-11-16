@@ -19,10 +19,35 @@
   <link href="../assets/img/logo_chef_doeuvre_processed_copy.jpg" rel="icon" type="image/jpeg"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+  
   <link href="../css/chef_d_oeuvre.css" rel="stylesheet"/>
   <link href="../css/list-pages.css" rel="stylesheet"/>
   <link href="../css/games.css" rel="stylesheet"/>
+
+  <!-- Correctifs globaux : tokens de diaphragme manquants, contraste notifications & calage header -->
+  <style>
+    :root {
+      --aperture-blades: repeating-conic-gradient(from 0deg, transparent 0deg 21deg, var(--brass) 21deg 24deg);
+      --aperture-ring: radial-gradient(circle, transparent var(--aperture-inner), #000 var(--aperture-inner-solid), #000 var(--aperture-outer-solid), transparent var(--aperture-outer));
+      --notif-success-text: #4fae7c;
+      --notif-warning-text: #ecc875;
+      --eyebrow-film: #7fb3ff;
+    }
+
+    html {
+      padding-top: 0 !important;
+    }
+
+    body {
+      padding-top: var(--header-total-h);
+    }
+
+    body.header-scrolled {
+      padding-top: var(--header-h-scrolled);
+    }
+  </style>
+
   <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4853981456641483"></script>
 </head>
 <body class="lp-page" data-base="../">
@@ -97,8 +122,8 @@
     </section>
   </main>
 
-  <script src="../assets/js/header.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/games.js"></script>
+  <script src="../assets/js/header.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/games.js" defer></script>
 </body>
 </html>

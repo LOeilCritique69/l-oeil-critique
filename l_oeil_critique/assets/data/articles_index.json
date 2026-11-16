@@ -1,6 +1,6 @@
 [
   {
-    "title": "D23 Expo 2026 : Le bilan de nos prédictions face à la réalité – L'Œil Critique",
+    "title": "D23 Expo 2026 : Le bilan de nos prédictions face à la réalité",
     "type": "Théories",
     "url": "/l_oeil_critique/articles/theories/D23-2026-bilan-predictions.html",
     "image": "/l_oeil_critique/assets/img/theories/d23-2026/cover-bilan.jpg",
@@ -11,7 +11,7 @@
     "id": 1
   },
   {
-    "title": "D23 Expo 2026 : Nos prédictions pour le Panel Marvel & Disney – L'Œil Critique",
+    "title": "D23 Expo 2026 : Nos prédictions pour le Panel Marvel & Disney",
     "type": "Théories",
     "url": "/l_oeil_critique/articles/theories/D23-2026-nos-predictions.html",
     "image": "/l_oeil_critique/assets/img/theories/d23-2026/cover2.jpg",
@@ -781,124 +781,47 @@
     "id": 71
   },
   {
-    "title": "Tier List Saga 28 (Days, Years)",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/28.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BZGU2M2Y1YTItMWYxNS00NDYxLThhOTYtNjNhOWUzNjA3MTYwXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+    "title": "Calendrier des sorties",
+    "type": "Outil",
+    "url": "/l_oeil_critique/pages/calendrier.html",
+    "image": "/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg",
     "date": null,
-    "description": "Les 4 films, du meilleur au pire.",
+    "description": "Le programme des sorties films, séries, animés, jeux vidéo, musiques et événements suivis par L’Œil Critique.",
     "author": null,
     "rating": null,
     "id": 72
   },
   {
-    "title": "Tier List DCAMU",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/DCAMU.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BMjI0ODY2MDE5Nl5BMl5BanBnXkFtZTgwMTk0NTcyNTE@._V1_SX300.jpg",
+    "title": "Devine Le Film",
+    "type": "Jeu",
+    "url": "/l_oeil_critique/devine-le-film.html",
+    "image": "/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg",
     "date": null,
-    "description": "Le classement des films du DC Animated Movie Universe.",
+    "description": "",
     "author": null,
     "rating": null,
     "id": 73
   },
   {
-    "title": "Tier List Final Destination",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Destination-Finale.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BMjE1MjlmOWYtYzdjMS00OTgwLThjMDctZWU4N2FkZjgyNTJiXkEyXkFqcGc@._V1_QL75_UY562_CR2,0,380,562_.jpg",
+    "title": "Jeux vidéo : mes avis et mes notes",
+    "type": "Critiques",
+    "url": "/l_oeil_critique/pages/jeux-video.html",
+    "image": "/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg",
     "date": null,
-    "description": "Les 6 films, du meilleur au pire.",
+    "description": "Mes avis et mes notes sur les jeux vidéo auxquels j'ai joué : note sur 10, plateformes, avancement et critiques ajoutées au fur et à mesure.",
     "author": null,
     "rating": null,
     "id": 74
   },
   {
-    "title": "Tier List Harry Potter",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Harry-Potter.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BYWJmM2M1YzItMjY1Ni00YzRmLTg5YWYtNDFmNTJjNzQ0ODkyXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+    "title": "SpideyTrack — Suivi quotidien des 3 Spider-Man",
+    "type": "Jeu",
+    "url": "/l_oeil_critique/spideytrack/marveldle.html",
+    "image": "/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg",
     "date": null,
-    "description": "Les 8 films, du meilleur au pire.",
+    "description": "",
     "author": null,
     "rating": null,
     "id": 75
-  },
-  {
-    "title": "Tier List Hunger Games",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Hunger-Games.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BMTAyMjQ3OTAxMzNeQTJeQWpwZ15BbWU4MDU0NzA1MzAx._V1_QL75_UX380_CR0,0,380,562_.jpg",
-    "date": null,
-    "description": "Les 5 films, du meilleur au pire.",
-    "author": null,
-    "rating": null,
-    "id": 76
-  },
-  {
-    "title": "Tier List Jurassic Park",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Jurassic.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_QL75_UX380_CR0,4,380,562_.jpg",
-    "date": null,
-    "description": "Le classement des films de la saga Jurassic Park.",
-    "author": null,
-    "rating": null,
-    "id": 77
-  },
-  {
-    "title": "Tier List Marvel — Tout l'Univers",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/mcu.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
-    "date": null,
-    "description": "Pas seulement le MCU : tout ce qui porte le nom Marvel — Sony (Spider-Man, Venom, Morbius, Kraven), la Fox (X-Men, Les 4 Fantastiques, Deadpool), les séries Disney+/Netflix et le Marvel Cinematic Universe. Classé sur 10 — 10 : Immense, 1 : Atrocité. Une tier list MCU spécifique existe séparément pour le seul canon Kevin Feige.",
-    "author": null,
-    "rating": null,
-    "id": 78
-  },
-  {
-    "title": "Tier List Spider-Man",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Spider-man.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BNGQ0YTQyYTgtNWI2YS00NTE2LWJmNDItNTFlMTUwNmFlZTM0XkEyXkFqcGc@._V1_QL75_UY562_CR15,0,380,562_.jpg",
-    "date": null,
-    "description": "Live-action et animation confondus.",
-    "author": null,
-    "rating": null,
-    "id": 79
-  },
-  {
-    "title": "Tier List Saga Tolkien",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Tolkien.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
-    "date": null,
-    "description": "Les 6 films, du meilleur au pire.",
-    "author": null,
-    "rating": null,
-    "id": 80
-  },
-  {
-    "title": "Tier List Toy Story",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Toy-Story.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_QL75_UY562_CR9,0,380,562_.jpg",
-    "date": null,
-    "description": "Les 5 films, du meilleur au pire.",
-    "author": null,
-    "rating": null,
-    "id": 81
-  },
-  {
-    "title": "Tier List Transformers",
-    "type": "Tier List",
-    "url": "/l_oeil_critique/pages/tier-list/Transformers.html",
-    "image": "https://m.media-amazon.com/images/M/MV5BZWI1ZDY1YTQtMjRkNy00ZDZhLWE3OTItMTIwNzliY2Y1MTZhXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
-    "date": null,
-    "description": "Les 8 films, du meilleur au pire.",
-    "author": null,
-    "rating": null,
-    "id": 82
   }
 ]

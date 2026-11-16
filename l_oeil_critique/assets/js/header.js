@@ -1,11 +1,66 @@
+// =========================
+// BARRE DE CHARGEMENT DISCRÈTE (style cinéma / YouTube)
+// =========================
+(function initTopLoader() {
+  const bar = document.createElement("div");
+  bar.id = "top-page-loader";
+  Object.assign(bar.style, {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    height: "2px",
+    width: "0%",
+    backgroundColor: "var(--brass, #d4a949)",
+    boxShadow: "0 0 8px var(--brass, #d4a949)",
+    zIndex: "99999",
+    pointerEvents: "none",
+    transition: "width 0.3s ease, opacity 0.35s ease",
+    opacity: "1"
+  });
+
+  document.documentElement.appendChild(bar);
+
+  requestAnimationFrame(() => { bar.style.width = "35%"; });
+  document.addEventListener("DOMContentLoaded", () => { bar.style.width = "75%"; });
+
+  window.addEventListener("load", () => {
+    bar.style.width = "100%";
+    setTimeout(() => {
+      bar.style.opacity = "0";
+      setTimeout(() => bar.remove(), 400);
+    }, 150);
+  });
+
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a[href]");
+    if (!link) return;
+    const href = link.getAttribute("href");
+    if (
+      href &&
+      !href.startsWith("#") &&
+      !href.startsWith("mailto:") &&
+      !href.startsWith("tel:") &&
+      link.target !== "_blank" &&
+      !e.ctrlKey && !e.metaKey && !e.shiftKey
+    ) {
+      document.documentElement.appendChild(bar);
+      bar.style.opacity = "1";
+      bar.style.width = "40%";
+    }
+  });
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded fired");
+  // Résolution dynamique de la racine du site via <body data-base="../">
+  const rawBase = document.body.dataset.base;
+  const BASE = rawBase !== undefined ? rawBase : "/l_oeil_critique/";
+  const HOME_URL = "/index.html";
 
   // =========================
   // HEADER — structure "diaphragme ouvert"
   // =========================
   const headerHTML = `
-    <header>
+    <header id="siteHeader">
       <div class="header-utility" id="headerUtility">
         <div class="header-utility__inner">
           <span class="header-utility__time" id="headerClock">—</span>
@@ -15,41 +70,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="header-main">
         <div class="header-content">
-          <a href="/index.html" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+          <a href="${HOME_URL}" class="logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
             <span class="logo-aperture" aria-hidden="true"></span>
             <img src="/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg" alt="Logo L'Œil Critique" class="logo">
             <span class="site-title">L'Œil Critique</span>
           </a>
 
           <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-            <a href="/l_oeil_critique/news/Accueil.html" data-index="01">Actualités</a>
-            <a href="/l_oeil_critique/reviews.html" data-index="02">Critiques</a>
-            <a href="/l_oeil_critique/bande-annonces.html" data-index="03">Bandes-Annonces</a>
-            <a href="/l_oeil_critique/pages/theories.html" data-index="04">Théories</a>
-            <a href="/l_oeil_critique/extras.html" data-index="05">Extras</a>
-            <a href="/l_oeil_critique/A_propos.html" data-index="06">À Propos</a>
-            <a href="/l_oeil_critique/pages/calendrier.html" data-index="07" id="calendarNavLink">Calendrier</a>
+            <a href="${BASE}news/Accueil.html" data-index="01">Actualités</a>
+            <a href="${BASE}reviews.html" data-index="02">Critiques</a>
+            <a href="${BASE}bande-annonces.html" data-index="03">Bandes-Annonces</a>
+            <a href="${BASE}pages/theories.html" data-index="04">Théories</a>
+            <a href="${BASE}extras.html" data-index="05">Extras</a>
+            <a href="${BASE}A_propos.html" data-index="06">À Propos</a>
+            <a href="${BASE}pages/calendrier.html" data-index="07" id="calendarNavLink">Calendrier</a>
           </nav>
 
           <div class="header-actions">
-            <a class="icon-btn" id="calendarBtn" href="/l_oeil_critique/pages/calendrier.html" aria-label="Calendrier des sorties" title="Calendrier des sorties">
-              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <a class="icon-btn" id="calendarBtn" href="${BASE}pages/calendrier.html" aria-label="Calendrier des sorties" title="Calendrier des sorties">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             </a>
 
-            <button class="icon-btn" id="searchOpenBtn" aria-label="Ouvrir la recherche" aria-haspopup="dialog" aria-expanded="false">
-              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              <span class="icon-btn__kbd">/</span>
+            <button type="button" class="icon-btn" id="searchOpenBtn" aria-label="Ouvrir la recherche" aria-haspopup="dialog" aria-expanded="false" title="Rechercher (/ ou Ctrl+K)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span class="icon-btn__kbd" aria-hidden="true">/</span>
             </button>
 
             <div class="notif-wrapper">
-              <button class="icon-btn" id="notifBtn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
-                <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              <button type="button" class="icon-btn" id="notifBtn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false" title="Notifications">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                 <span class="notif-badge hidden" id="notifBadge">0</span>
               </button>
               <div class="notif-panel" id="notifPanel" role="dialog" aria-label="Notifications">
                 <div class="notif-panel-header">
                   <span class="notif-panel-title">Notifications</span>
-                  <button class="notif-mark-all" id="markAllBtn">Tout marquer lu</button>
+                  <button type="button" class="notif-mark-all" id="markAllBtn">Tout marquer lu</button>
                 </div>
                 <div class="notif-list" id="notifList"></div>
               </div>
@@ -63,19 +118,19 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="search-overlay__backdrop" id="searchBackdrop"></div>
       <div class="search-overlay__panel">
         <div class="search-overlay__field">
-          <span class="search-overlay__icon">
+          <span class="search-overlay__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </span>
-          <input type="text" id="search-input" placeholder="Rechercher un film, une série, un article..." autocomplete="off">
-          <button class="search-overlay__close" id="searchCloseBtn" aria-label="Fermer la recherche">✕</button>
+          <input type="text" id="search-input" placeholder="Rechercher un film, une série, un article..." autocomplete="off" aria-autocomplete="list" aria-controls="search-results-container">
+          
+          <button type="button" class="search-overlay__close" id="searchCloseBtn" aria-label="Fermer la recherche">✕</button>
         </div>
-        <div id="search-results-container" class="search-overlay__results"></div>
+        <div id="search-results-container" class="search-overlay__results" role="listbox"></div>
       </div>
     </div>
   `;
 
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
-
 
   // =========================
   // FOOTER — refonte "obturateur final"
@@ -87,36 +142,42 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="footer-top">
         <div class="footer-grid">
           <div class="footer-brand">
-            <a href="/index.html" class="footer-logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
+            <a href="${HOME_URL}" class="footer-logo-link" aria-label="Retour à l'accueil de L'Œil Critique">
               <span class="logo-aperture static" aria-hidden="true"></span>
               <img src="/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg" alt="" class="footer-logo">
               <span class="footer-site-title">L'Œil Critique</span>
             </a>
             <p class="footer-tagline">Chaque image mérite un jugement. Critiques, actualités et théories, sans complaisance.</p>
             <div class="footer-socials">
-              <a href="https://letterboxd.com/oni_le_chan/" class="footer-social" aria-label="Suivre sur Letterboxd" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24"><circle cx="6.5" cy="12" r="3.2"></circle><circle cx="12" cy="12" r="3.2"></circle><circle cx="17.5" cy="12" r="3.2"></circle></svg>
+              <a href="https://letterboxd.com/oni_le_chan/" class="footer-social" aria-label="Suivre sur Letterboxd" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="12" r="3.2"></circle><circle cx="12" cy="12" r="3.2"></circle><circle cx="17.5" cy="12" r="3.2"></circle></svg>
                 Letterboxd
+              </a>
+              <a href="https://loadia.app/app/profile/bicha?lang=fr" class="footer-social" aria-label="Voir le profil Loadia" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="4"></rect><line x1="7" y1="12" x2="11" y2="12"></line><line x1="9" y1="10" x2="9" y2="14"></line><circle cx="15.5" cy="11" r="1"></circle><circle cx="17.5" cy="13" r="1"></circle></svg>
+                Loadia
               </a>
             </div>
           </div>
 
           <nav class="footer-col footer-nav-explorer" aria-label="Explorer">
             <span class="footer-col__title">Explorer</span>
-            <a href="/l_oeil_critique/news/Accueil.html" data-index="01">Actualités</a>
-            <a href="/l_oeil_critique/reviews.html" data-index="02">Critiques</a>
-            <a href="/l_oeil_critique/bande-annonces.html" data-index="03">Bandes-Annonces</a>
-            <a href="/l_oeil_critique/pages/theories.html" data-index="04">Théories</a>
-            <a href="/l_oeil_critique/extras.html" data-index="05">Extras</a>
+            <a href="${BASE}news/Accueil.html" data-index="01">Actualités</a>
+            <a href="${BASE}reviews.html" data-index="02">Critiques</a>
+            <a href="${BASE}pages/jeux-video.html" data-index="03">Jeux vidéo</a>
+            <a href="${BASE}bande-annonces.html" data-index="04">Bandes-Annonces</a>
+            <a href="${BASE}pages/theories.html" data-index="05">Théories</a>
+            <a href="${BASE}extras.html" data-index="06">Extras</a>
+            <a href="${BASE}pages/calendrier.html" data-index="07">Calendrier</a>
           </nav>
 
           <nav class="footer-col" aria-label="Informations">
             <span class="footer-col__title">Informations</span>
-            <a href="/l_oeil_critique/A_propos.html">À propos</a>
-            <a href="/l_oeil_critique/pages/mises-a-jour.html">Mises à jour</a>
-            <a href="/l_oeil_critique/mentions_légales.html">Mentions légales</a>
-            <a href="/l_oeil_critique/politique-de-confidentialité.html">Confidentialité</a>
-            <a href="/l_oeil_critique/contact.html">Contact</a>
+            <a href="${BASE}A_propos.html">À propos</a>
+            <a href="${BASE}pages/mises-a-jour.html">Mises à jour</a>
+            <a href="${BASE}mentions_légales.html">Mentions légales</a>
+            <a href="${BASE}politique-de-confidentialité.html">Confidentialité</a>
+            <a href="${BASE}contact.html">Contact</a>
           </nav>
         </div>
       </div>
@@ -124,8 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="footer-bottom">
         <div class="footer-bottom__inner">
           <p>&copy; 2026 L'Œil Critique. Tous droits réservés.</p>
-          <button class="footer-totop" id="footerToTop" aria-label="Retour en haut de page">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+          <button type="button" class="footer-totop" id="footerToTop" aria-label="Retour en haut de page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
             Haut de page
           </button>
         </div>
@@ -134,13 +195,8 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.insertAdjacentHTML("beforeend", footerHTML);
 
-
   // =========================
-  // UTILITAIRE — images de miniature manquantes
-  // Une image qui renvoie 404 est retirée (ou remplacée par un texte de
-  // repli) au lieu de laisser une icône d'image cassée.
-  // Le listener est attaché juste après l'injection du HTML : l'événement
-  // "error" est asynchrone, il ne peut donc pas être manqué.
+  // UTILITAIRES
   // =========================
   function handleBrokenImages(container, fallbackText) {
     container.querySelectorAll("img").forEach((img) => {
@@ -158,15 +214,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function escapeHTML(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
 
   // =========================
   // FOOTER — retour en haut de page
   // =========================
-  const footerToTop = document.getElementById("footerToTop");
-  footerToTop?.addEventListener("click", () => {
+  document.getElementById("footerToTop")?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
 
   // =========================
   // HORLOGE DE LA BANDE UTILITAIRE
@@ -188,12 +249,10 @@ document.addEventListener("DOMContentLoaded", () => {
   updateClock();
   setInterval(updateClock, 30000);
 
-
   // =========================
-  // NOTIFICATION SYSTEM (logique inchangée)
+  // NOTIFICATION SYSTEM
   // =========================
   const STORAGE_KEY = "notif_read";
-
   let notifications = [];
   let notifPanelOpen = false;
 
@@ -225,14 +284,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function loadNotifications() {
     const readIds = getReadIds();
-    fetch("/l_oeil_critique/assets/data/notifications.json")
+    fetch(`${BASE}assets/data/notifications.json`)
       .then((r) => (r.ok ? r.json() : []))
       .then((data) => {
         notifications = Array.isArray(data) ? data : [];
         notifications.forEach((n) => {
-          if (readIds.includes(n.id)) {
-            n.unread = false;
-          }
+          if (readIds.includes(n.id)) n.unread = false;
         });
         renderBadge();
       })
@@ -268,13 +325,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     notifList.innerHTML = notifications
       .map((n) => `
-        <div class="notif-item ${n.unread ? "unread" : ""}" data-id="${n.id}">
+        <div class="notif-item ${n.unread ? "unread" : ""}" data-id="${n.id}" tabindex="0" role="button">
           <div class="notif-dot"></div>
           <div class="notif-thumb">
-            ${n.image ? `<img src="${n.image}" alt="">` : (n.icon || "🔔")}
+            ${n.image ? `<img src="${escapeHTML(n.image)}" alt="">` : (n.icon || "🔔")}
           </div>
           <div class="notif-body">
-            <p class="notif-text">${n.text}</p>
+            <p class="notif-text">${escapeHTML(n.text)}</p>
           </div>
         </div>
       `)
@@ -282,12 +339,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     notifList.querySelectorAll(".notif-item").forEach((el) => {
       const notif = notifications.find((n) => n.id === +el.dataset.id);
-
-      // miniature manquante : on retombe sur l'icône de la notification
       const thumb = el.querySelector(".notif-thumb");
       if (thumb) handleBrokenImages(thumb, (notif && notif.icon) || "🔔");
 
-      el.addEventListener("click", () => {
+      const handleActivate = () => {
         const id = +el.dataset.id;
         const current = notifications.find((n) => n.id === id);
         if (current && current.unread) {
@@ -299,11 +354,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (current && current.url) {
           window.location.href = current.url;
         }
+      };
+
+      el.addEventListener("click", handleActivate);
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleActivate();
+        }
       });
     });
   }
 
   function openPanel() {
+    if (searchOverlayOpen) closeSearch();
     notifPanelOpen = true;
     notifPanel.classList.add("open");
     notifBtn.setAttribute("aria-expanded", "true");
@@ -328,10 +392,6 @@ document.addEventListener("DOMContentLoaded", () => {
       renderBadge();
       renderList();
     });
-  } else {
-    console.error("[NOTIF] un ou plusieurs éléments notif introuvables — système désactivé", {
-      notifBtn, notifBadge, notifPanel, notifList, markAllBtn
-    });
   }
 
   document.addEventListener("click", (e) => {
@@ -339,9 +399,16 @@ document.addEventListener("DOMContentLoaded", () => {
       notifPanelOpen &&
       notifPanel &&
       !notifPanel.contains(e.target) &&
-      e.target !== notifBtn
+      !notifBtn.contains(e.target)
     ) {
       closePanel();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && notifPanelOpen) {
+      closePanel();
+      notifBtn?.focus();
     }
   });
 
@@ -350,25 +417,20 @@ document.addEventListener("DOMContentLoaded", () => {
       notifications.unshift({ id: Date.now(), unread: true, ...notif });
       renderBadge();
       triggerBadgePop();
-      if (notifPanelOpen) {
-        renderList();
-      }
+      if (notifPanelOpen) renderList();
     },
     markAll() {
       notifications.forEach((n) => (n.unread = false));
       saveAllReadIds();
       renderBadge();
-      if (notifPanelOpen) {
-        renderList();
-      }
+      if (notifPanelOpen) renderList();
     },
   };
 
   loadNotifications();
 
-
   // =========================
-  // RECHERCHE — overlay plein écran (command palette)
+  // RECHERCHE — command palette avec navigation clavier ↑ ↓ ↵
   // =========================
   const searchOpenBtn = document.getElementById("searchOpenBtn");
   const searchOverlay = document.getElementById("searchOverlay");
@@ -378,8 +440,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsContainer = document.querySelector("#search-results-container");
   let articlesIndex = [];
   let searchOverlayOpen = false;
+  let activeSearchIndex = -1;
 
-  fetch("/l_oeil_critique/assets/data/articles_index.json")
+  fetch(`${BASE}assets/data/articles_index.json`)
     .then((r) => (r.ok ? r.json() : []))
     .then((data) => {
       articlesIndex = Array.isArray(data) ? data : [];
@@ -395,22 +458,38 @@ document.addEventListener("DOMContentLoaded", () => {
     return null;
   }
 
+  function updateActiveSearchResult() {
+    if (!resultsContainer) return;
+    const items = resultsContainer.querySelectorAll(".search-link");
+    items.forEach((item, idx) => {
+      const isSelected = idx === activeSearchIndex;
+      item.classList.toggle("is-selected", isSelected);
+      item.setAttribute("aria-selected", String(isSelected));
+      if (isSelected) {
+        item.scrollIntoView({ block: "nearest" });
+      }
+    });
+  }
+
   function renderSearchResults(query) {
     if (!resultsContainer) return;
+    activeSearchIndex = -1;
 
     if (!query) {
-      resultsContainer.innerHTML = '<div class="search-empty">Tapez pour rechercher un film, une série ou un article.</div>';
+      resultsContainer.innerHTML = '<div class="search-empty">Tapez pour rechercher un film, une série, un jeu ou un outil.</div>';
       return;
     }
 
+    const normalizedQuery = normalizeText(query);
+
     const filtered = articlesIndex
-      .filter(
-        (a) =>
-          a &&
-          a.title &&
-          typeof a.title === "string" &&
-          a.title.toLowerCase().includes(query)
-      )
+      .filter((a) => {
+        if (!a || typeof a.title !== "string") return false;
+        const titleMatch = normalizeText(a.title).includes(normalizedQuery);
+        const typeMatch = a.type && normalizeText(a.type).includes(normalizedQuery);
+        const descMatch = a.description && normalizeText(a.description).includes(normalizedQuery);
+        return titleMatch || typeMatch || descMatch;
+      })
       .slice(0, 10);
 
     if (filtered.length === 0) {
@@ -419,16 +498,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     resultsContainer.innerHTML = filtered
-      .map((a) => {
+      .map((a, idx) => {
         const url = typeof a.url === "string" ? a.url : "#";
         const imgSrc = getImageSrc(a.image);
         return `
-          <a href="${url}" class="search-link">
+          <a href="${escapeHTML(url)}" class="search-link" role="option" aria-selected="false" data-idx="${idx}">
             <div class="search-item">
-              <div class="search-thumb">${imgSrc ? `<img src="${imgSrc}" alt="">` : ""}</div>
+              <div class="search-thumb">${imgSrc ? `<img src="${escapeHTML(imgSrc)}" alt="">` : ""}</div>
               <div class="search-text">
-                <div class="search-title">${a.title || "Sans titre"}</div>
-                <div class="search-meta">${a.type || ""}</div>
+                <div class="search-title">${escapeHTML(a.title || "Sans titre")}</div>
+                <div class="search-meta">${escapeHTML(a.type || "")}${a.rating ? ` · ${escapeHTML(a.rating)}` : ""}</div>
               </div>
             </div>
           </a>
@@ -436,16 +515,17 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .join("");
 
-    // miniature introuvable (404) : on la retire, la vignette garde son fond
     handleBrokenImages(resultsContainer);
   }
 
   function openSearch() {
     if (!searchOverlay) return;
+    if (notifPanelOpen) closePanel();
     searchOverlayOpen = true;
     searchOverlay.classList.add("open");
     searchOpenBtn?.setAttribute("aria-expanded", "true");
-    renderSearchResults(searchInput ? searchInput.value.trim().toLowerCase() : "");
+    document.body.classList.add("nav-locked");
+    renderSearchResults(searchInput ? searchInput.value.trim() : "");
     requestAnimationFrame(() => searchInput?.focus());
   }
 
@@ -454,6 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchOverlayOpen = false;
     searchOverlay.classList.remove("open");
     searchOpenBtn?.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-locked");
     searchOpenBtn?.focus();
   }
 
@@ -466,14 +547,32 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBackdrop?.addEventListener("click", closeSearch);
 
     searchInput.addEventListener("input", () => {
-      renderSearchResults(searchInput.value.trim().toLowerCase());
+      renderSearchResults(searchInput.value.trim());
+    });
+
+    searchInput.addEventListener("keydown", (e) => {
+      const items = resultsContainer.querySelectorAll(".search-link");
+      if (!items.length) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        activeSearchIndex = (activeSearchIndex + 1) % items.length;
+        updateActiveSearchResult();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        activeSearchIndex = (activeSearchIndex - 1 + items.length) % items.length;
+        updateActiveSearchResult();
+      } else if (e.key === "Enter" && activeSearchIndex >= 0 && items[activeSearchIndex]) {
+        e.preventDefault();
+        items[activeSearchIndex].click();
+      }
     });
 
     document.addEventListener("keydown", (e) => {
       const tag = document.activeElement?.tagName;
-      const isTyping = tag === "INPUT" || tag === "TEXTAREA";
+      const isTyping = tag === "INPUT" || tag === "TEXTAREA" || document.activeElement?.isContentEditable;
 
-      if (e.key === "/" && !isTyping && !searchOverlayOpen) {
+      if ((e.key === "/" || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k")) && !isTyping && !searchOverlayOpen) {
         e.preventDefault();
         openSearch();
       }
@@ -481,25 +580,21 @@ document.addEventListener("DOMContentLoaded", () => {
         closeSearch();
       }
     });
-  } else {
-    console.error("[SEARCH] élément(s) introuvable(s) — recherche désactivée", {
-      searchOpenBtn, searchOverlay, searchInput, resultsContainer
-    });
   }
-
 
   // =========================
   // HEADER SCROLL STATE
   // =========================
-  const headerEl = document.querySelector("header");
-  if (!headerEl) console.error("[HEADER] <header> introuvable dans le DOM");
+  const headerEl = document.getElementById("siteHeader") || document.querySelector("header");
 
-  window.addEventListener("scroll", () => {
+  function syncScrollState() {
     const isScrolled = window.scrollY > 50;
     if (headerEl) headerEl.classList.toggle("scrolled", isScrolled);
     document.body.classList.toggle("header-scrolled", isScrolled);
-  });
+  }
 
+  syncScrollState();
+  window.addEventListener("scroll", syncScrollState, { passive: true });
 
   // =========================
   // BURGER MENU LOGIC (CENTRAL)
@@ -507,10 +602,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerActions = document.querySelector(".header-actions");
   const nav = document.getElementById("mainNav");
 
-  if (!headerActions || !nav || !headerEl) {
-    console.error("[BURGER] init annulé — élément(s) manquant(s)", { headerActions, nav, headerEl });
-  } else {
+  if (headerActions && nav && headerEl) {
     const burgerBtn = document.createElement("button");
+    burgerBtn.type = "button";
     burgerBtn.className = "burger-menu";
     burgerBtn.setAttribute("aria-label", "Menu");
     burgerBtn.setAttribute("aria-haspopup", "true");
@@ -525,7 +619,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     headerActions.appendChild(burgerBtn);
-    console.log("[BURGER] bouton injecté", burgerBtn);
 
     function getScrollbarWidth() {
       return window.innerWidth - document.documentElement.clientWidth;
@@ -553,7 +646,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     burgerBtn.addEventListener("click", () => {
-      console.log("[BURGER] clic détecté, état actuel:", nav.classList.contains("mobile-open"));
       nav.classList.contains("mobile-open") ? closeMobileNav() : openMobileNav();
     });
 
@@ -566,11 +658,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && nav.classList.contains("mobile-open")) closeMobileNav();
+      if (e.key === "Escape" && nav.classList.contains("mobile-open")) {
+        closeMobileNav();
+        burgerBtn.focus();
+      }
     });
   }
 
-  // Un seul listener de resize (au lieu d'un par lien)
   let resizeTimer;
   window.addEventListener("resize", () => {
     document.body.classList.add("resize-animation-stopper");
@@ -580,30 +674,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 400);
   });
 
-
   // =========================
-  // ACTIVE LINK FIX (ROBUSTE & ISOLÉ — basé sur le chemin complet)
-  // Couvre désormais aussi bien la nav du header que la colonne
-  // "Explorer" du footer, qui reprend les mêmes rubriques.
+  // ACTIVE LINK FIX (ROBUSTE & ISOLÉ)
   // =========================
-
-  console.log("[ACTIVE LINK] init");
+  const normalizeText = (str) =>
+    (str || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
   const normalizePath = (path) => {
     if (!path) return "";
     try {
       const url = new URL(path, window.location.origin + window.location.pathname);
-      return decodeURIComponent(url.pathname)
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
+      return normalizeText(decodeURIComponent(url.pathname));
     } catch (e) {
-      return (path || "").toLowerCase();
+      return normalizeText(path);
     }
   };
 
   const currentPath = normalizePath(window.location.pathname);
-  console.log("[ACTIVE LINK] currentPath :", currentPath);
 
   const NAV_GROUPS = [
     {
@@ -622,9 +712,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "/pages/critique-films.html",
         "/pages/critique-series.html",
         "/pages/tier-list",
-        "/pages/jeux-video.html",
         "/articles/reviews/"
       ]
+    },
+    {
+      keyword: "jeux video",
+      patterns: ["/pages/jeux-video.html"]
     },
     {
       keyword: "bande-annonce",
@@ -634,7 +727,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
     {
-      keyword: "th\u00e9ories",
+      keyword: "theories",
       patterns: [
         "/pages/theories.html",
         "/articles/theories/"
@@ -649,6 +742,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
     {
+      keyword: "calendrier",
+      patterns: ["/pages/calendrier.html"]
+    },
+    {
       keyword: "propos",
       patterns: ["/a_propos.html"]
     }
@@ -659,11 +756,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const links = document.querySelectorAll(".main-nav a, .footer-nav-explorer a");
-  console.log("[ACTIVE LINK] links count :", links.length);
 
   links.forEach((a) => {
     const hrefPath = normalizePath(a.getAttribute("href"));
-    const linkText = a.textContent.toLowerCase();
+    const linkText = normalizeText(a.textContent);
 
     let isActive = hrefPath === currentPath;
 
@@ -674,16 +770,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    a.classList.remove("active");
-    if (isActive) {
-      a.classList.add("active");
-      console.log(`[ACTIVE] ${hrefPath || linkText}`);
-    } else {
-      console.log(`[SKIP] ${hrefPath || linkText}`);
-    }
+    a.classList.toggle("active", isActive);
   });
 
-  // Icône calendrier : mise en avant visuelle si on est déjà sur la page calendrier
   const calendarBtn = document.getElementById("calendarBtn");
   if (calendarBtn && currentPath.includes("/pages/calendrier.html")) {
     calendarBtn.classList.add("active");

@@ -3,38 +3,73 @@ import json
 import re
 import subprocess
 import sys
-import urllib.request
-import urllib.parse
 from datetime import datetime
 from bs4 import BeautifulSoup
 
 BASE_DIR = os.path.join("l_oeil_critique", "articles")
-TIER_LIST_DIR = os.path.join("l_oeil_critique", "pages", "tier-list")
 OUTPUT_FILE = os.path.join("l_oeil_critique", "assets", "data", "articles_index.json")
 
+DEFAULT_LOGO = "/l_oeil_critique/logo_chef_doeuvre_processed_copy.jpg"
 
 TYPES = [
     "films",
     "reviews",
-    "bande-annonces",
     "series",
     "actualités",
     "bigactualités",
     "theories"
 ]
 
-# Libellés d'affichage pour les dossiers dont le nom de dossier ne donne pas
-# directement le bon rendu via .capitalize() (accents, casse particulière...)
 DISPLAY_TYPE_OVERRIDES = {
     "bigactualités": "BigActualités",
     "theories": "Théories",
 }
 
+# Pages spéciales à inclure en plus des articles
+EXTRA_PAGES = [
+    {
+        "paths": [os.path.join("l_oeil_critique", "pages", "calendrier.html")],
+        "url": "/l_oeil_critique/pages/calendrier.html",
+        "type": "Outil",
+        "image": DEFAULT_LOGO
+    },
+    {
+        "paths": [
+            os.path.join("l_oeil_critique", "devine-le-film.html"),
+            os.path.join("l_oeil_critique", "pages", "devine-le-film.html")
+        ],
+        "url": "/l_oeil_critique/devine-le-film.html",
+        "type": "Jeu",
+        "image": DEFAULT_LOGO
+    },
+    {
+        "paths": [
+            os.path.join("l_oeil_critique", "pages", "jeux-video.html"),
+            os.path.join("l_oeil_critique", "pages", "jeux-videos.html")
+        ],
+        "url": "/l_oeil_critique/pages/jeux-video.html",
+        "type": "Critiques",
+        "image": DEFAULT_LOGO
+    },
+    {
+        "paths": [
+            os.path.join("l_oeil_critique", "spideytrack", "marveldle.html"),
+            os.path.join("l_oeil_critique", "spideytrack", "marveldle", "index.html"),
+            os.path.join("l_oeil_critique", "pages", "marveldle.html"),
+            os.path.join("l_oeil_critique", "marveldle.html"),
+            os.path.join("spideytrack", "marveldle.html")
+        ],
+        "url": None,
+        "type": "Jeu",
+        "image": DEFAULT_LOGO
+    }
+]
+
 articles_index = []
 
 
 # =========================================================
-# IMAGE
+# EXTRACTION DES MÉTADONNÉES
 # =========================================================
 def extract_image(soup):
     container = soup.find("div", class_="article-image")
@@ -49,16 +84,30 @@ def extract_image(soup):
         if img and img.get("src"):
             return img["src"]
 
+    og_image = soup.find("meta", attrs={"property": "og:image"})
+    if og_image and og_image.get("content"):
+        return og_image["content"]
+
+    icon = soup.find("link", rel=lambda r: r and "icon" in r)
+    if icon and icon.get("href"):
+        return icon["href"]
+
     return None
 
 
 def normalize_image_path(img_src):
     if not img_src:
-        return None
+        return DEFAULT_LOGO
 
     img_src = img_src.strip()
 
+    # Si c'est le logo du site (peu importe le sous-dossier), on renvoie le vrai chemin
+    if "logo_chef_doeuvre_processed_copy.jpg" in img_src:
+        return DEFAULT_LOGO
+
     if img_src.startswith(("http://", "https://")):
+        if "l-oeil-critique.com/l_oeil_critique/" in img_src:
+            return "/l_oeil_critique/" + img_src.split("l-oeil-critique.com/l_oeil_critique/", 1)[1]
         return img_src
 
     while img_src.startswith("../"):
@@ -67,16 +116,15 @@ def normalize_image_path(img_src):
     if img_src.startswith("/l_oeil_critique/"):
         return img_src
 
+    if img_src.startswith("l_oeil_critique/"):
+        return "/" + img_src
+
     if "assets/img" in img_src:
         parts = img_src.split("assets/img")[-1]
         return "/l_oeil_critique/assets/img" + parts
 
     return "/l_oeil_critique/assets/img/" + img_src
 
-
-# =========================================================
-# DATE
-# =========================================================
 def extract_date(soup):
     meta = soup.find("p", class_="article-meta")
     if not meta:
@@ -106,9 +154,6 @@ def extract_date(soup):
     return f"{year}-{month}-{day.zfill(2)}"
 
 
-# =========================================================
-# DESCRIPTION
-# =========================================================
 def extract_description(soup):
     meta = soup.find("meta", {"name": "description"})
     if meta and meta.get("content"):
@@ -116,9 +161,6 @@ def extract_description(soup):
     return ""
 
 
-# =========================================================
-# AUTHOR
-# =========================================================
 def extract_author(soup):
     meta = soup.find("p", class_="article-meta")
     if not meta:
@@ -133,9 +175,6 @@ def extract_author(soup):
     return None
 
 
-# =========================================================
-# RATING (REVIEWS)
-# =========================================================
 def extract_rating(soup):
     note_block = soup.find("div", class_="note")
     if not note_block:
@@ -150,110 +189,39 @@ def extract_rating(soup):
     return None
 
 
+def clean_title(raw_title):
+    if not raw_title:
+        return ""
+    return re.sub(r"\s*[–—|-]\s*L'Œil Critique\s*$", "", raw_title, flags=re.IGNORECASE).strip()
+
+
 # =========================================================
-# TIER LIST — extraction dédiée + affiche OMDb
+# AJOUT D'UN ARTICLE OU D'UNE PAGE
 # =========================================================
-def extract_og_image(soup):
-    og_image = soup.find("meta", attrs={"property": "og:image"})
-    if og_image and og_image.get("content"):
-        return og_image["content"]
-    return None
-
-
-def extract_tier_list_description(soup):
-    subtitle = soup.find("p", class_="list-page-header__subtitle")
-    if subtitle:
-        return subtitle.get_text(strip=True)
-    return extract_description(soup)
-
-
-def fetch_omdb_poster(title, year=None, media_type=None, imdb_id=None):
-    if not OMDB_API_KEY:
-        return None
-
-    attempts = []
-    if imdb_id:
-        attempts.append({"i": imdb_id})
-    else:
-        base = {"t": title}
-        if media_type:
-            base["type"] = media_type
-        if year:
-            attempts.append({**base, "y": year})
-        attempts.append(base)
-
-        search_base = {"s": title}
-        if media_type:
-            search_base["type"] = media_type
-        if year:
-            attempts.append({**search_base, "y": year})
-        attempts.append(search_base)
-
-    for params in attempts:
-        query = {"apikey": OMDB_API_KEY, **params}
-        url = f"https://www.omdbapi.com/?{urllib.parse.urlencode(query)}"
-        try:
-            with urllib.request.urlopen(url, timeout=5) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
-                if data.get("Response") == "True":
-                    if "Search" in data:
-                        for item in data["Search"]:
-                            if item.get("Poster") and item["Poster"] != "N/A":
-                                return item["Poster"]
-                    elif data.get("Poster") and data["Poster"] != "N/A":
-                        return data["Poster"]
-        except Exception as e:
-            print(f"⚠️ Erreur OMDb pour {title} : {e}")
-            break
-
-    return None
-
-
-def extract_tier_list_poster(soup):
-    first_item = soup.find(
-        "div",
-        class_="tier-item",
-        attrs={"data-title": True}
-    ) or soup.find(
-        "div",
-        class_="tier-item",
-        attrs={"data-imdb": True}
-    )
-
-    if first_item:
-        poster = fetch_omdb_poster(
-            title=first_item.get("data-title"),
-            year=first_item.get("data-year"),
-            media_type=first_item.get("data-type"),
-            imdb_id=first_item.get("data-imdb")
-        )
-        if poster:
-            return poster
-
-    return extract_og_image(soup)
-
-
-def add_tier_list_file(file_path, url_base):
+def parse_html_file(file_path, url_base, item_type, include_rating=False, fallback_image=None):
     with open(file_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
 
-    title_tag = soup.find("h1", class_="list-page-header__title")
-    if not title_tag:
-        title_tag = soup.find("title")
-    title = title_tag.get_text(strip=True) if title_tag else os.path.basename(file_path)
+    title_tag = soup.find("title")
+    raw_title = title_tag.get_text(strip=True) if title_tag else os.path.basename(file_path).replace(".html", "")
+    title = clean_title(raw_title)
 
-    image = normalize_image_path(extract_tier_list_poster(soup))
-    description = extract_tier_list_description(soup)
+    raw_img = extract_image(soup) or fallback_image
+    image = normalize_image_path(raw_img)
+    date = extract_date(soup)
+    description = extract_description(soup)
+    author = extract_author(soup)
+    rating = extract_rating(soup) if include_rating else None
 
     articles_index.append({
         "title": title,
-        "type": "Tier List",
+        "type": item_type,
         "url": url_base,
         "image": image,
-        "date": None,
+        "date": date,
         "description": description,
-        "author": None,
-        "rating": None
+        "author": author,
+        "rating": rating
     })
 
 
@@ -276,88 +244,13 @@ def assign_ids(articles):
 
 
 # =========================================================
-# REVIEW
-# =========================================================
-def add_review_file(file_path, url_base):
-    with open(file_path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f, "html.parser")
-
-    title_tag = soup.find("title")
-    title = title_tag.get_text(strip=True) if title_tag else os.path.basename(file_path)
-
-    image = normalize_image_path(extract_image(soup))
-    date = extract_date(soup)
-    description = extract_description(soup)
-    author = extract_author(soup)
-    rating = extract_rating(soup)
-
-    articles_index.append({
-        "title": title,
-        "type": "Review",
-        "url": url_base,
-        "image": image,
-        "date": date,
-        "description": description,
-        "author": author,
-        "rating": rating
-    })
-
-
-# =========================================================
-# MAIN LOOP
+# BOUCLE PRINCIPALE : ARTICLES UNIQUEMENT
 # =========================================================
 for type_folder in TYPES:
     folder_path = os.path.join(BASE_DIR, type_folder)
     if not os.path.exists(folder_path):
         continue
 
-    # -------------------------
-    # BANDE-ANNONCES
-    # -------------------------
-    if type_folder == "bande-annonces":
-        for file_name in os.listdir(folder_path):
-            if not file_name.endswith(".html") or file_name == "tendances.html":
-                continue
-
-            file_path = os.path.join(folder_path, file_name)
-            url_base = f"/l_oeil_critique/articles/{type_folder}/{file_name}"
-
-            with open(file_path, "r", encoding="utf-8") as f:
-                soup = BeautifulSoup(f, "html.parser")
-
-            for article in soup.find_all("article", class_="card-bande"):
-                h2 = article.find("h2")
-                title = h2.get_text(strip=True) if h2 else "Titre inconnu"
-
-                ajout_tag = article.find("p", class_="ajout-site")
-                date = None
-
-                if ajout_tag:
-                    date_text = ajout_tag.get_text(strip=True)
-                    match = re.search(r"(\d{1,2}/\d{1,2}/\d{4})", date_text)
-                    if match:
-                        d = match.group(1)
-                        day, month, year = d.split("/")
-                        date = f"{year}-{month.zfill(2)}-{day.zfill(2)}"
-
-                img_tag = article.find("img")
-                image = normalize_image_path(img_tag["src"]) if img_tag and img_tag.get("src") else None
-
-                articles_index.append({
-                    "title": title,
-                    "type": "Bande-Annonce",
-                    "url": f"{url_base}#{title.lower().replace(' ', '-')}",
-                    "image": image,
-                    "date": date,
-                    "description": "",
-                    "author": None,
-                    "rating": None
-                })
-        continue
-
-    # -------------------------
-    # REVIEWS
-    # -------------------------
     if type_folder == "reviews":
         for root, dirs, files in os.walk(folder_path):
             for file_name in files:
@@ -365,55 +258,37 @@ for type_folder in TYPES:
                     full_path = os.path.join(root, file_name)
                     relative_path = os.path.relpath(full_path, BASE_DIR)
                     url_base = f"/l_oeil_critique/articles/{relative_path.replace(os.sep, '/')}"
-                    add_review_file(full_path, url_base)
+                    parse_html_file(full_path, url_base, "Review", include_rating=True)
         continue
 
-    # -------------------------
-    # AUTRES (films, series, actualités, bigactualités, theories)
-    # -------------------------
+    display_type = DISPLAY_TYPE_OVERRIDES.get(type_folder, type_folder.capitalize())
+
     for file_name in os.listdir(folder_path):
         if not file_name.endswith(".html") or file_name == "tendances.html":
             continue
 
         file_path = os.path.join(folder_path, file_name)
         url_base = f"/l_oeil_critique/articles/{type_folder}/{file_name}"
-
-        with open(file_path, "r", encoding="utf-8") as f:
-            soup = BeautifulSoup(f, "html.parser")
-
-        title_tag = soup.find("title")
-        title = title_tag.get_text(strip=True) if title_tag else file_name.replace(".html", "")
-
-        display_type = DISPLAY_TYPE_OVERRIDES.get(type_folder, type_folder.capitalize())
-
-        image = normalize_image_path(extract_image(soup))
-        date = extract_date(soup)
-        description = extract_description(soup)
-        author = extract_author(soup)
-
-        articles_index.append({
-            "title": title,
-            "type": display_type,
-            "url": url_base,
-            "image": image,
-            "date": date,
-            "description": description,
-            "author": author,
-            "rating": None
-        })
+        parse_html_file(file_path, url_base, display_type, include_rating=False)
 
 
 # =========================================================
-# TIER LISTS — dossier séparé (l_oeil_critique/pages/tier-list)
+# PAGES SPÉCIALES (calendrier, devine-le-film, jeux-video, marveldle)
 # =========================================================
-if os.path.exists(TIER_LIST_DIR):
-    for file_name in os.listdir(TIER_LIST_DIR):
-        if not file_name.endswith(".html"):
-            continue
+for page in EXTRA_PAGES:
+    found_path = next((p for p in page["paths"] if os.path.exists(p)), None)
+    if not found_path:
+        print(f"⚠️ Page introuvable (ignorée) : {page['paths'][0]}")
+        continue
 
-        file_path = os.path.join(TIER_LIST_DIR, file_name)
-        url_base = f"/l_oeil_critique/pages/tier-list/{file_name}"
-        add_tier_list_file(file_path, url_base)
+    url_base = page["url"] or ("/" + found_path.replace(os.sep, "/"))
+    parse_html_file(
+        found_path,
+        url_base,
+        page["type"],
+        include_rating=False,
+        fallback_image=page.get("image", DEFAULT_LOGO)
+    )
 
 
 # =========================================================
@@ -427,7 +302,7 @@ os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(articles_index, f, ensure_ascii=False, indent=2)
 
-print(f"✅ JSON généré : {len(articles_index)} articles indexés.")
+print(f"✅ JSON généré : {len(articles_index)} entrées indexées.")
 
 seo_script = os.path.join(os.path.dirname(__file__), "..", "seo_injector.py")
 if os.path.exists(seo_script):

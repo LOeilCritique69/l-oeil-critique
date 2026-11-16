@@ -1,0 +1,2138 @@
+{
+  "movie:70160": {
+    "id": 70160,
+    "title": "Hunger Games",
+    "original_title": "The Hunger Games",
+    "release_date": "2012-03-12",
+    "poster_path": "/fWG9Jqqintc8jQj4XzWNMPjIxzf.jpg"
+  },
+  "movie:299534": {
+    "id": 299534,
+    "title": "Avengers : Endgame",
+    "original_title": "Avengers: Endgame",
+    "release_date": "2019-04-24",
+    "poster_path": "/qXekTarZKRrVfnBwhS6xevt6BGU.jpg"
+  },
+  "movie:50646": {
+    "id": 50646,
+    "title": "Crazy, Stupid, Love",
+    "original_title": "Crazy, Stupid, Love.",
+    "release_date": "2011-07-29",
+    "poster_path": "/wYQ8LLOGoxqVtRTdKPmi1J59FWo.jpg"
+  },
+  "movie:10201": {
+    "id": 10201,
+    "title": "Yes Man",
+    "original_title": "Yes Man",
+    "release_date": "2008-12-09",
+    "poster_path": "/bLT6DdHf1LWSVIViBufpkSUOnEy.jpg"
+  },
+  "movie:101299": {
+    "id": 101299,
+    "title": "Hunger Games : L'Embrasement",
+    "original_title": "The Hunger Games: Catching Fire",
+    "release_date": "2013-11-15",
+    "poster_path": "/lHdbNb8GEuMXCwar9wENzVu5eQI.jpg"
+  },
+  "movie:82654": {
+    "id": 82654,
+    "title": "Warm Bodies",
+    "original_title": "Warm Bodies",
+    "release_date": "2013-01-31",
+    "poster_path": "/yJw1f2xD1evLDzvVO2jnYdSRzWt.jpg"
+  },
+  "movie:1339713": {
+    "id": 1339713,
+    "title": "Obsession",
+    "original_title": "Obsession",
+    "release_date": "2026-05-13",
+    "poster_path": "/mDCR1frpUvGfIKksuM440VLb7X9.jpg"
+  },
+  "movie:1081003": {
+    "id": 1081003,
+    "title": "Supergirl",
+    "original_title": "Supergirl",
+    "release_date": "2026-06-24",
+    "poster_path": "/1rtTSqlITti6l6NLouxVO0xFqto.jpg"
+  },
+  "movie:1368337": {
+    "id": 1368337,
+    "title": "L'Odyssée",
+    "original_title": "The Odyssey",
+    "release_date": "2026-07-15",
+    "poster_path": "/kP8jJIkmX0vWEYiqQ9c5zU0dvcn.jpg"
+  },
+  "movie:1408208": {
+    "id": 1408208,
+    "title": "Exit 8",
+    "original_title": "８番出口",
+    "release_date": "2025-08-03",
+    "poster_path": "/hJ9qCQ3Dx9vwet09Lbqs8eZTd8e.jpg"
+  },
+  "movie:1368314": {
+    "id": 1368314,
+    "title": "Passenger",
+    "original_title": "Passenger",
+    "release_date": "2026-05-20",
+    "poster_path": "/8MNddEYoreFL2S3n257uwsYiKf6.jpg"
+  },
+  "movie:1496491": {
+    "id": 1496491,
+    "title": "De la Comédie-Française",
+    "original_title": "De la Comédie-Française",
+    "release_date": "2026-07-22",
+    "poster_path": "/3ykToOKrgIlKBOkxpRscXNAkzET.jpg"
+  },
+  "movie:1106299": {
+    "id": 1106299,
+    "title": "The Spider Within: A Spider-Verse Story",
+    "original_title": "The Spider Within: A Spider-Verse Story",
+    "release_date": "2023-06-12",
+    "poster_path": "/2xlk27ZW2WI6Q77SLEmwhUpz190.jpg"
+  },
+  "movie:497582": {
+    "id": 497582,
+    "title": "Enola Holmes",
+    "original_title": "Enola Holmes",
+    "release_date": "2020-09-22",
+    "poster_path": "/zDtraIGPVhmSnPZQ34fmyvWT5tz.jpg"
+  },
+  "movie:829280": {
+    "id": 829280,
+    "title": "Enola Holmes 2",
+    "original_title": "Enola Holmes 2",
+    "release_date": "2022-11-03",
+    "poster_path": "/n4MNnDDVm86AELe1fxbLvxHYeyh.jpg"
+  },
+  "movie:969681": {
+    "id": 969681,
+    "title": "Spider-Man : Brand New Day",
+    "original_title": "Spider-Man: Brand New Day",
+    "release_date": "2026-07-29",
+    "poster_path": "/6OEtkkzoyusZDm2uMJojlWZSLR9.jpg"
+  },
+  "movie:1202033": {
+    "id": 1202033,
+    "title": "Enola Holmes 3",
+    "original_title": "Enola Holmes 3",
+    "release_date": "2026-06-30",
+    "poster_path": "/ncHImt9szlNQaNM2iY3vcgSdDp.jpg"
+  },
+  "movie:1248217": {
+    "id": 1248217,
+    "title": "Le Héros de Berlin",
+    "original_title": "Der Held vom Bahnhof Friedrichstraße",
+    "release_date": "2025-12-11",
+    "poster_path": "/7IfFzIxDK7uTGwqabcAAj01Z4kI.jpg"
+  },
+  "movie:1265609": {
+    "id": 1265609,
+    "title": "War Machine",
+    "original_title": "War Machine",
+    "release_date": "2026-02-12",
+    "poster_path": "/tlPgDzwIE7VYYIIAGCTUOnN4wI1.jpg"
+  },
+  "movie:1481343": {
+    "id": 1481343,
+    "title": "La Bouche du Diable",
+    "original_title": "The Devil's Mouth",
+    "release_date": "2026-07-29",
+    "poster_path": "/9IKCSvhoKUM6LwD279FxuIvr8OL.jpg"
+  },
+  "movie:63197": {
+    "id": 63197,
+    "title": "Megan Is Missing",
+    "original_title": "Megan Is Missing",
+    "release_date": "2011-05-01",
+    "poster_path": "/lDmIqn0HJDjQJZDZaofuyaAnw2X.jpg"
+  },
+  "movie:1101383": {
+    "id": 1101383,
+    "title": "La Fin d'Oak Street",
+    "original_title": "The End of Oak Street",
+    "release_date": "2026-08-12",
+    "poster_path": "/yZINaQysj32K2DS2EW4Iy1bK4Bm.jpg"
+  },
+  "movie:11224": {
+    "id": 11224,
+    "title": "Cendrillon",
+    "original_title": "Cinderella",
+    "release_date": "1950-02-22",
+    "poster_path": "/nqSJwBdvG89uHRpDDdaAy5YhogZ.jpg"
+  },
+  "movie:12092": {
+    "id": 12092,
+    "title": "Alice au pays des merveilles",
+    "original_title": "Alice in Wonderland",
+    "release_date": "1951-08-09",
+    "poster_path": "/91DUnlKB6U77lqBZC0KnBHVVz6S.jpg"
+  },
+  "movie:1401459": {
+    "id": 1401459,
+    "title": "Fjord",
+    "original_title": "Fjord",
+    "release_date": "2026-06-13",
+    "poster_path": "/3btHoXx6lJtDJEybsCLhkqhNCb9.jpg"
+  },
+  "movie:296099": {
+    "id": 296099,
+    "title": "Vive les Vacances",
+    "original_title": "Vacation",
+    "release_date": "2015-07-28",
+    "poster_path": "/ybTZa6kNZtuWHwLJzpouHt6ffml.jpg"
+  },
+  "movie:10693": {
+    "id": 10693,
+    "title": "Peter Pan",
+    "original_title": "Peter Pan",
+    "release_date": "1953-02-05",
+    "poster_path": "/xPBT1dwAPOP4k560y3CQ1LeAhHV.jpg"
+  },
+  "movie:120467": {
+    "id": 120467,
+    "title": "The Grand Budapest Hotel",
+    "original_title": "The Grand Budapest Hotel",
+    "release_date": "2014-02-08",
+    "poster_path": "/qcWTuWPu6x6t2MKt0MTfbResJiV.jpg"
+  },
+  "movie:1744462": {
+    "id": 1744462,
+    "title": "Grand Theft Auto VI : un large aperçu",
+    "original_title": "Grand Theft Auto VI: An Extended Look",
+    "release_date": "2026-08-27",
+    "poster_path": "/wf0Gi6Mf9Yl00uSM1TD4zEMYkgV.jpg"
+  },
+  "movie:10340": {
+    "id": 10340,
+    "title": "La Belle et le Clochard",
+    "original_title": "Lady and the Tramp",
+    "release_date": "1955-06-22",
+    "poster_path": "/e4Tbz6Mr10FTYLfhwtC1Ilj3b0F.jpg"
+  },
+  "movie:10882": {
+    "id": 10882,
+    "title": "La Belle au bois dormant",
+    "original_title": "Sleeping Beauty",
+    "release_date": "1959-02-17",
+    "poster_path": "/5GaczvmuUCxhwPNx896lo2OCIFh.jpg"
+  },
+  "movie:8827": {
+    "id": 8827,
+    "title": "99 Francs",
+    "original_title": "99 Francs",
+    "release_date": "2007-09-26",
+    "poster_path": "/d67iCuJxENCeJ6GZU5typgaNAkb.jpg"
+  },
+  "movie:1423191": {
+    "id": 1423191,
+    "title": "Resident Evil",
+    "original_title": "Resident Evil",
+    "release_date": "2026-09-16",
+    "poster_path": "/pICoWjcKSet6sA3yzxOkP8ChwYI.jpg"
+  },
+  "movie:1258181": {
+    "id": 1258181,
+    "title": "La vie d'une femme",
+    "original_title": "La vie d'une femme",
+    "release_date": "2026-09-09",
+    "poster_path": "/9xAYLvWZGASDKJZjt5XgvD7ugsn.jpg"
+  },
+  "movie:1375441": {
+    "id": 1375441,
+    "title": "Primetime",
+    "original_title": "Primetime",
+    "release_date": "2026-09-23",
+    "poster_path": "/rhF8JALH8wrxKtXSCAB7a09tWsc.jpg"
+  },
+  "movie:22504": {
+    "id": 22504,
+    "title": "Le Roi et l'Oiseau",
+    "original_title": "Le Roi et l'Oiseau",
+    "release_date": "1980-03-19",
+    "poster_path": "/8LlM0gtrwmzmf9z9RvhWvOOl2WE.jpg"
+  },
+  "movie:587": {
+    "id": 587,
+    "title": "Big Fish",
+    "original_title": "Big Fish",
+    "release_date": "2003-12-10",
+    "poster_path": "/SF6pWtcdu1GEQxzeeYBEP1yEcK.jpg"
+  },
+  "movie:1571766": {
+    "id": 1571766,
+    "title": "Kraken",
+    "original_title": "Kraken",
+    "release_date": "2026-09-25",
+    "poster_path": "/mQZaeZAiDBredbH19WHZx8sLZbo.jpg"
+  },
+  "movie:1283515": {
+    "id": 1283515,
+    "title": "Verity",
+    "original_title": "Verity",
+    "release_date": "2026-09-30",
+    "poster_path": "/zLCjFOyjvKqYdkQYYAyTtfJ5mpk.jpg"
+  },
+  "movie:72105": {
+    "id": 72105,
+    "title": "Ted",
+    "original_title": "Ted",
+    "release_date": "2012-06-29",
+    "poster_path": "/zdZKj5nqe3tEwuzEYbxAgMESFe7.jpg"
+  },
+  "movie:214756": {
+    "id": 214756,
+    "title": "Ted 2",
+    "original_title": "Ted 2",
+    "release_date": "2015-06-25",
+    "poster_path": "/9P2Lpeg1HIfCKjMJT485c9MKTGj.jpg"
+  },
+  "movie:77": {
+    "id": 77,
+    "title": "Memento",
+    "original_title": "Memento",
+    "release_date": "2000-10-11",
+    "poster_path": "/nK3cJaUWx1iaQ9Cs08JPtZqVzQ6.jpg"
+  },
+  "movie:1400837": {
+    "id": 1400837,
+    "title": "Malfaisante",
+    "original_title": "Other Mommy",
+    "release_date": "2026-10-07",
+    "poster_path": "/wAofwsldMDNAIzGSEfMJMoUn1KB.jpg"
+  },
+  "movie:77459": {
+    "id": 77459,
+    "title": "Un monstre à Paris",
+    "original_title": "Un monstre à Paris",
+    "release_date": "2011-10-12",
+    "poster_path": "/iTb2Io2UaZCYVwzxwTYBVveN44l.jpg"
+  },
+  "movie:126963": {
+    "id": 126963,
+    "title": "Dragon Ball Z - Battle of Gods",
+    "original_title": "ドラゴンボールZ 神と神",
+    "release_date": "2013-03-30",
+    "poster_path": "/dlY37gsVWFKsbMQt7LF9vFfsAsC.jpg"
+  },
+  "movie:598927": {
+    "id": 598927,
+    "title": "ماهی و من",
+    "original_title": "ماهی و من",
+    "release_date": "2014-09-01",
+    "poster_path": "/AlkgBR4iMNsybDakeavNvIHY0jn.jpg"
+  },
+  "movie:1468846": {
+    "id": 1468846,
+    "title": "Sanguine",
+    "original_title": "Sanguine",
+    "release_date": "2026-10-28",
+    "poster_path": "/fDvZvNmLIwUcKKQ4Cfb6TmQJM7M.jpg"
+  },
+  "movie:1248832": {
+    "id": 1248832,
+    "title": "Digger",
+    "original_title": "Digger",
+    "release_date": "2026-09-28",
+    "poster_path": "/gPCCGMQCrrMNM3mR3vqIdbdJxJ5.jpg"
+  },
+  "300|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vw/wc/17/85/300-150-1200-1200-675-675-crop-000000.jpg?v=058a4f0217"
+  },
+  "fight club|1999": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/b0/iz/eb/dq/fight-club-1200-1200-675-675-crop-000000.jpg?v=1e6ef6695e"
+  },
+  "get out|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/n1/db/zy/ha/get-out-160-1200-1200-675-675-crop-000000.jpg?v=4686a15e0a"
+  },
+  "john wick|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wp/bs/m0/17/john-wick-1200-1200-675-675-crop-000000.jpg?v=a0df875fb4"
+  },
+  "rise of the planet of the apes|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h9/wk/52/ro/rise-planet-of-the-apes-110-1200-1200-675-675-crop-000000.jpg?v=ba7346832b"
+  },
+  "the shawshank redemption|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1y/23/4e/ir/shawshank-redemption-1200-1200-675-675-crop-000000.jpg?v=a59d283bca"
+  },
+  "prisoners|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j1/lk/so/8x/xJXjSQbQxyYkX2YA1wlllYYpoaP-1200-1200-675-675-crop-000000.jpg?v=4940a86b89"
+  },
+  "bullet train|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t3/af/th/pg/bullet-train-1200-1200-675-675-crop-000000.jpg?v=2969760ad7"
+  },
+  "demolition|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sq/2u/0a/al/demolition-1200-1200-675-675-crop-000000.jpg?v=2ea7d5c814"
+  },
+  "the equalizer|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wb/5b/r2/wg/the-equalizer-1200-1200-675-675-crop-000000.jpg?v=d45291f7c3"
+  },
+  "john wick: chapter 2|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/de/gu/a5/e4/john-wick-2-1200-1200-675-675-crop-000000.jpg?v=033ad850c4"
+  },
+  "john wick: chapter 3 – parabellum|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/o8/57/vf/l3/john-wick-3-parabellum-1200-1200-675-675-crop-000000.jpg?v=0643690c1f"
+  },
+  "john wick: chapter 4|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/o8/dp/yo/aa/john-wick-chapter-4-1200-1200-675-675-crop-000000.jpg?v=2e60eff48c"
+  },
+  "the equalizer 2|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/rt/e6/8v/sz/equalizer-2-1200-1200-675-675-crop-000000.jpg?v=60fe1d25ea"
+  },
+  "the equalizer 3|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/o0/zq/38/fv/IMG_2803-1200-1200-675-675-crop-000000.jpg?v=bc818c8a1c"
+  },
+  "first man|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/i0/8x/zs/v7/jc0krGRV3Lz5yCFYaLPp3QRiG6I-1200-1200-675-675-crop-000000.jpg?v=312d01cd4d"
+  },
+  "reservoir dogs|1992": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h1/5c/b8/1r/reservior-dogs-1200-1200-675-675-crop-000000.jpg?v=d56abbd818"
+  },
+  "the martian|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bq/0a/rc/pk/the-martian-1200-1200-675-675-crop-000000.jpg?v=52f94dc6ea"
+  },
+  "sucker punch|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mq/mp/qm/md/sucker-punch-80-1200-1200-675-675-crop-000000.jpg?v=b138861170"
+  },
+  "groundhog day|1993": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q9/kg/cg/12/groundhog-day-1200-1200-675-675-crop-000000.jpg?v=913debc5e0"
+  },
+  "inside out|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/b5/4z/eo/e7/inside-out-2015-1200-1200-675-675-crop-000000.jpg?v=a6967f7121"
+  },
+  "inside out 2|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0x/nf/kx/7e/inside-1200-1200-675-675-crop-000000.jpg?v=0c03894316"
+  },
+  "brothers|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kl/m0/nq/mb/brothers-2009-1200-1200-675-675-crop-000000.jpg?v=76b1672020"
+  },
+  "deadpool & wolverine|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sx/jl/oa/c4/yDHYTfA3R0jFYba16jBB1ef8oIt-1200-1200-675-675-crop-000000.jpg?v=aaa4c9000d"
+  },
+  "dune|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a6/8b/5j/zk/dune-2021a-1200-1200-675-675-crop-000000.jpg?v=7422445327"
+  },
+  "dune: part two|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qp/uv/i4/8b/l6b9YZEokZl1nt7q0pprrur6btG-1200-1200-675-675-crop-000000.jpg?v=ed21d71137"
+  },
+  "gladiator|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mz/f2/14/6l/gladiator-1200-1200-675-675-crop-000000.jpg?v=8c7e0ad2bc"
+  },
+  "glass|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1r/wq/so/j4/xlk29RzQcxqqSpsuccccUiqnNHh-1200-1200-675-675-crop-000000.jpg?v=f6eaeb04fd"
+  },
+  "hansel & gretel: witch hunters|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/v8/c0/4j/g4/hansel-and-gretel-1200-1200-675-675-crop-000000.jpg?v=4a52f2cdfe"
+  },
+  "the hunger games|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z0/te/xv/y3/the-hunger-games-1200-1200-675-675-crop-000000.jpg?v=32b6960277"
+  },
+  "the hunger games: catching fire|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1k/es/ex/gh/the-hunger-games-catching-fire-1200-1200-675-675-crop-000000.jpg?v=2a382b9b21"
+  },
+  "the hunger games: mockingjay – part 1|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9t/hl/zj/ff/the-hunger-games-mockingjay-part-1-1200-1200-675-675-crop-000000.jpg?v=855c581499"
+  },
+  "the hunger games: mockingjay – part 2|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nt/h0/tn/ff/the-hunger-games-mockingjay-part-2-1200-1200-675-675-crop-000000.jpg?v=2644c829fe"
+  },
+  "the hunger games: the ballad of songbirds & snakes|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/dv/d1/ne/fv/the-hunger-games-the-ballad-of-songbirds-snakes-1200-1200-675-675-crop-000000.jpg?v=93c49acf34"
+  },
+  "now you see me|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1e/fs/rb/zd/now-you-see-me-1200-1200-675-675-crop-000000.jpg?v=01bf194003"
+  },
+  "now you see me 2|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lq/49/qs/eq/now-you-see-me-2-1200-1200-675-675-crop-000000.jpg?v=482a8c8cee"
+  },
+  "lucy|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/c5/h0/t6/3a/lucy-1200-1200-675-675-crop-000000.jpg?v=8f78528643"
+  },
+  "the matrix|1999": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/o3/er/ey/ie/matrix-1200-1200-675-675-crop-000000.jpg?v=eea86a2195"
+  },
+  "plane|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wo/vd/27/si/plane-2023-1200-1200-675-675-crop-000000.jpg?v=55d1663cc8"
+  },
+  "a quiet place|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q3/l5/3i/91/a-quiet-place-1200-1200-675-675-crop-000000.jpg?v=faece69645"
+  },
+  "a quiet place: day one|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2l/mn/p1/9p/quiet%20place-1200-1200-675-675-crop-000000.jpg?v=a215b5c132"
+  },
+  "searching|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/zc/9v/ha/7y/searching-1200-1200-675-675-crop-000000.jpg?v=148a5e0e2a"
+  },
+  "sonic the hedgehog|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/uy/rw/78/5r/sonic-hedgehog-1200-1200-675-675-crop-000000.jpg?v=5337c9bbac"
+  },
+  "toy story|1995": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sf/gx/1q/o3/toy-story-90-1200-1200-675-675-crop-000000.jpg?v=ba6542b063"
+  },
+  "toy story 2|1999": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jn/7h/ol/bx/toy-story-2-1200-1200-675-675-crop-000000.jpg?v=b2895e172e"
+  },
+  "toy story 3|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ou/bu/8l/cf/toy-story-3-40-1200-1200-675-675-crop-000000.jpg?v=fb3bc382b9"
+  },
+  "toy story 4|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/n0/pm/dg/i0/toy-story-4-1200-1200-675-675-crop-000000.jpg?v=3c1d68c215"
+  },
+  "troy|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/e3/gm/qm/wd/troy-1200-1200-675-675-crop-000000.jpg?v=580e6f3adc"
+  },
+  "american psycho|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tr/kl/dj/zi/american-psycho-1200-1200-675-675-crop-000000.jpg?v=59e7d630d5"
+  },
+  "beetlejuice|1988": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ou/84/wb/en/beetlejuice-1200-1200-675-675-crop-000000.jpg?v=34e9ad1e38"
+  },
+  "chronicle|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1h/5f/17/dv/chronicle-60-1200-1200-675-675-crop-000000.jpg?v=3d7e22839f"
+  },
+  "unbreakable|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/16/pd/a9/w7/unbreakable-1200-1200-675-675-crop-000000.jpg?v=6bc6d46295"
+  },
+  "the platform|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/by/sg/e1/i6/the-platform-1200-1200-675-675-crop-000000.jpg?v=20beec5d56"
+  },
+  "the platform 2|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1c/09/l4/fx/the-platform-2-1200-1200-675-675-crop-000000.jpg?v=2b4d895a2b"
+  },
+  "pirates of the caribbean: the curse of the black pearl|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5h/tg/uo/z7/pirates-black-pearl-50-1200-1200-675-675-crop-000000.jpg?v=c4cea61022"
+  },
+  "pirates of the caribbean: dead man's chest|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ux/m8/x2/yr/pirates-dead-mans-chest-80-1200-1200-675-675-crop-000000.jpg?v=f3e5f6d27c"
+  },
+  "pirates of the caribbean: at world's end|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/er/ay/4v/hh/pirates-at-worlds-end-80-1200-1200-675-675-crop-000000.jpg?v=20ddbd6d9f"
+  },
+  "pirates of the caribbean: on stranger tides|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0y/yj/79/0k/pirates-on-stranger-tides-40-1200-1200-675-675-crop-000000.jpg?v=b839f295f0"
+  },
+  "pirates of the caribbean: dead men tell no tales|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lr/58/ki/ib/pirates-caribbean-dead-men-tell-no-tales-1200-1200-675-675-crop-000000.jpg?v=bbcceba2c1"
+  },
+  "pulp fiction|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z6/e0/vw/uy/pulp-fiction-65-1200-1200-675-675-crop-000000.jpg?v=bb1e151d8b"
+  },
+  "madame web|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2r/v9/d2/tg/madame%20web-1200-1200-675-675-crop-000000.jpg?v=8c5f410c79"
+  },
+  "nightcrawler|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mb/nq/gx/cq/nightcrawler-1200-1200-675-675-crop-000000.jpg?v=376281b641"
+  },
+  "28 days later|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/cr/e4/du/gf/28-days-later-1200-1200-675-675-crop-000000.jpg?v=67c70256aa"
+  },
+  "28 weeks later|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w6/8z/3s/9k/28-weeks-later-1200-1200-675-675-crop-000000.jpg?v=e37bde5dea"
+  },
+  "tenet|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5m/00/ad/bl/tenet-1200-1200-675-675-crop-000000.jpg?v=2f1c9ecacd"
+  },
+  "damsel|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6s/z0/ph/pd/damsel-1200-1200-675-675-crop-000000.jpg?v=d969e37275"
+  },
+  "sharknado|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/g4/bs/yg/om/sharknado-1200-1200-675-675-crop-000000.jpg?v=4f6feb05b0"
+  },
+  "spider-man: no way home|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3j/1m/pc/b8/spider-man-1200-1200-675-675-crop-000000.jpg?v=e9571e778c"
+  },
+  "avengers: infinity war|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/22/q6/od/p6/avengers-infinity-war-1200-1200-675-675-crop-000000.jpg?v=1a4e940b9d"
+  },
+  "avengers: endgame|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pv/3f/zz/og/avengers-endgame-1200-1200-675-675-crop-000000.jpg?v=55fc50f8fa"
+  },
+  "guardians of the galaxy|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xl/kd/f5/wk/guardians-of-the-galaxy-1200-1200-675-675-crop-000000.jpg?v=1837002666"
+  },
+  "black panther|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pr/at/45/lo/black-panther-1200-1200-675-675-crop-000000.jpg?v=a267eebe87"
+  },
+  "spider-man: homecoming|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lb/g8/9t/dr/spider-man-homecoming-1200-1200-675-675-crop-000000.jpg?v=a0c830f403"
+  },
+  "guardians of the galaxy vol. 3|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4c/6j/js/74/guardians%203-1200-1200-675-675-crop-000000.jpg?v=ab95c6f636"
+  },
+  "thor: ragnarok|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7c/3q/va/25/thor-ragnarok-1200-1200-675-675-crop-000000.jpg?v=ed507af10e"
+  },
+  "the avengers|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8w/a1/14/qk/the-avengers-2012-1200-1200-675-675-crop-000000.jpg?v=a46491df32"
+  },
+  "spider-man: far from home|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ae/at/re/rc/spider-man-far-from-home_J2gRhk-1200-1200-675-675-crop-000000.jpg?v=58e0234aab"
+  },
+  "doctor strange in the multiverse of madness|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/m0/ks/k8/uw/dr%20strange-1200-1200-675-675-crop-000000.jpg?v=8bbfc10c4e"
+  },
+  "iron man|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/x5/3a/wr/w8/iron-man-1200-1200-675-675-crop-000000.jpg?v=00c10943b3"
+  },
+  "guardians of the galaxy vol. 2|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/k8/71/2p/qo/guardians-galaxy-vol-2-1200-1200-675-675-crop-000000.jpg?v=f85fa0ca95"
+  },
+  "captain america: civil war|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/58/xd/g0/o7/captain-america-civil-war-1200-1200-675-675-crop-000000.jpg?v=9c02043ea9"
+  },
+  "doctor strange|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h8/gd/di/02/doctor-strange-1200-1200-675-675-crop-000000.jpg?v=ee9ee04033"
+  },
+  "captain america: the winter soldier|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/o6/qg/sr/lk/captain-america-winter-soldier-1200-1200-675-675-crop-000000.jpg?v=9670009a37"
+  },
+  "avengers: age of ultron|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/gz/xu/8d/m4/avengers-age-of-ultron-1200-1200-675-675-crop-000000.jpg?v=489fa4b87c"
+  },
+  "thor: love and thunder|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/if/fa/6g/az/thor-1200-1200-675-675-crop-000000.jpg?v=7a8bd83a71"
+  },
+  "black widow|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1i/dt/e0/63/black-widow-2021-1200-1200-675-675-crop-000000.jpg?v=47e1e4eff3"
+  },
+  "captain marvel|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t6/3d/p9/22/captain-marvel-1200-1200-675-675-crop-000000.jpg?v=c93f53fe2c"
+  },
+  "shang-chi and the legend of the ten rings|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/g3/ha/ra/bu/shang-chi-1200-1200-675-675-crop-000000.jpg?v=813ec0e7aa"
+  },
+  "captain america: the first avenger|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fq/ys/wr/mt/captain-america-25-1200-1200-675-675-crop-000000.jpg?v=91843523ae"
+  },
+  "ant-man|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6n/ne/n7/vu/ant-man-1200-1200-675-675-crop-000000.jpg?v=414d604c13"
+  },
+  "black panther: wakanda forever|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3j/c8/w0/ot/black-1200-1200-675-675-crop-000000.jpg?v=56479a660b"
+  },
+  "spider-man 3|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8l/e8/c8/6l/spider-man-3-1200-1200-675-675-crop-000000.jpg?v=8c1980ede4"
+  },
+  "iron man 3|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2r/k1/nj/pv/iron-man-3-1200-1200-675-675-crop-000000.jpg?v=d56c523b1f"
+  },
+  "iron man 2|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tg/cj/3a/jg/iron-man-2-50-1200-1200-675-675-crop-000000.jpg?v=879e105133"
+  },
+  "thor|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/o8/mt/91/41/thor-20-1200-1200-675-675-crop-000000.jpg?v=4d6fafd09b"
+  },
+  "eternals|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ys/if/is/6o/eternals-2021-1200-1200-675-675-crop-000000.jpg?v=620fc5f089"
+  },
+  "ant-man and the wasp|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/rl/86/k0/y9/ant-man-and-wasp-1200-1200-675-675-crop-000000.jpg?v=e4b20f258f"
+  },
+  "thor: the dark world|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qw/k5/lg/pv/thor-the-dark-world-1200-1200-675-675-crop-000000.jpg?v=148c3467ba"
+  },
+  "ant-man and the wasp: quantumania|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4e/v8/5x/1u/ant-man-and-the-wasp-quantumania-1200-1200-675-675-crop-000000.jpg?v=c4b9e3eb13"
+  },
+  "the incredible hulk|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/he/51/l6/zj/the-incredible-hulk-10-1200-1200-675-675-crop-000000.jpg?v=2b79d82504"
+  },
+  "the marvels|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/g6/6a/9u/jz/marvels-1200-1200-675-675-crop-000000.jpg?v=d4e9e286b4"
+  },
+  "the guardians of the galaxy holiday special|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wa/l5/t6/vy/guardians-1200-1200-675-675-crop-000000.jpg?v=7951804c56"
+  },
+  "werewolf by night|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mr/fg/62/3u/rhIMDeJcYIlC0vgWFceh2B4sYuy-1200-1200-675-675-crop-000000.jpg?v=c183023892"
+  },
+  "fantastic four: rise of the silver surfer|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/us/me/rb/3l/fantastic-four-rise-silver-surfer-110-1200-1200-675-675-crop-000000.jpg?v=f216ef38eb"
+  },
+  "ghost rider|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1i/h5/97/w4/ghost-rider-135-1200-1200-675-675-crop-000000.jpg?v=aa442efbd1"
+  },
+  "spider-man 2|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w2/of/wm/ou/jz6NCADCgj4dWU8RM81Xvrokey4-1200-1200-675-675-crop-000000.jpg?v=c9c668bc42"
+  },
+  "spider-man|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/s3/jh/92/at/spider-man-1200-1200-675-675-crop-000000.jpg?v=cdd43f1a66"
+  },
+  "spider-man: across the spider-verse|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/22/gj/k3/ql/spider-verse-1200-1200-675-675-crop-000000.jpg?v=259dfdc695"
+  },
+  "the amazing spider-man 2|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8g/vh/5j/hp/the-amazing-spider-man-2-1200-1200-675-675-crop-000000.jpg?v=365c496a70"
+  },
+  "spider-man: into the spider-verse|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yd/x2/cb/mw/spider-man-into-spider-verse-1200-1200-675-675-crop-000000.jpg?v=218eb0acc3"
+  },
+  "the amazing spider-man|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/or/rc/5w/yi/the-amazing-spider-man-1200-1200-675-675-crop-000000.jpg?v=32e3ff16d6"
+  },
+  "smile|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9l/55/bc/0k/rJUD2cZpQPvpzwTrlt5GlYiilTF-1200-1200-675-675-crop-000000.jpg?v=682deceaf3"
+  },
+  "the conjuring|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/r2/4z/fy/i1/the-conjuring-1200-1200-675-675-crop-000000.jpg?v=054279fa92"
+  },
+  "the conjuring 2|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/10/im/q9/47/the-conjuring-2-1200-1200-675-675-crop-000000.jpg?v=b1f3798fc4"
+  },
+  "the conjuring: the devil made me do it|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/p7/yn/ro/dc/conjuring-devil-made-me-do-it-1200-1200-675-675-crop-000000.jpg?v=7f97dcb846"
+  },
+  "paranormal activity|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2z/12/3s/jc/paranormal-activity-1200-1200-675-675-crop-000000.jpg?v=a3c87b3df3"
+  },
+  "paranormal activity 2|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pp/sj/2d/bc/paranormal-activity-2-1200-1200-675-675-crop-000000.jpg?v=c3970b6429"
+  },
+  "paranormal activity 3|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/70/xs/de/ok/paranormal-activity-3-1200-1200-675-675-crop-000000.jpg?v=0ba200ca40"
+  },
+  "paranormal activity 4|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/oa/yn/93/cw/paranormal-activity-4-1200-1200-675-675-crop-000000.jpg?v=c9d283a584"
+  },
+  "paranormal activity: the ghost dimension|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tx/9z/ev/k1/xpBaLkidUkrPv0F1GJ2NAvWyslO-1200-1200-675-675-crop-000000.jpg?v=0b71352100"
+  },
+  "terrifier|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fe/1j/d8/ah/terrifier-1200-1200-675-675-crop-000000.jpg?v=cf012f1ae9"
+  },
+  "drive|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jh/el/zf/hg/drive-2022-1200-1200-675-675-crop-000000.jpg?v=9d984ce27f"
+  },
+  "interstellar|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/r4/0u/oq/0i/interstellar-1200-1200-675-675-crop-000000.jpg?v=fc649141b5"
+  },
+  "forrest gump|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ly/1s/z6/yx/forrest-gump-1200-1200-675-675-crop-000000.jpg?v=5686afc240"
+  },
+  "barbie|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mm/bt/iu/mk/fRyYKQdsXIjw26MendWxpWmvnBs-1200-1200-675-675-crop-000000.jpg?v=0036da8577"
+  },
+  "oppenheimer|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mn/uu/op/02/oppenheimer-2023-1200-1200-675-675-crop-000000.jpg?v=aa1b3a6d85"
+  },
+  "the batman|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h1/on/1p/hg/the-batman-1200-1200-675-675-crop-000000.jpg?v=1f59052f03"
+  },
+  "the truman show|1998": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z0/rf/dt/5l/truman-show-115-1200-1200-675-675-crop-000000.jpg?v=1047828fc6"
+  },
+  "inception|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vi/ms/z2/gw/inception-1200-1200-675-675-crop-000000.jpg?v=7e41f271da"
+  },
+  "the wolf of wall street|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/cq/zm/xo/3z/wolf-of-wall-street-1200-1200-675-675-crop-000000.jpg?v=bfcb5bcfa9"
+  },
+  "ratatouille|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/do/wf/l1/ff/ratatouille-120-1200-1200-675-675-crop-000000.jpg?v=af61653b74"
+  },
+  "the lord of the rings: the fellowship of the ring|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3x/7b/zs/bg/lotr-fellowship-100-1200-1200-675-675-crop-000000.jpg?v=b5411cc8ac"
+  },
+  "deadpool|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ht/ra/iv/pe/deadpool-1200-1200-675-675-crop-000000.jpg?v=dfdc8de461"
+  },
+  "titanic|1997": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vw/ni/jd/40/titanic-1200-1200-675-675-crop-000000.jpg?v=a98d372868"
+  },
+  "coco|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2f/xh/b2/n8/coco-1200-1200-675-675-crop-000000.jpg?v=43f3e8a142"
+  },
+  "up|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wv/1t/bo/md/up-120-1200-1200-675-675-crop-000000.jpg?v=91ab3381cf"
+  },
+  "coraline|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5k/cr/rn/zb/coraline-1200-1200-675-675-crop-000000.jpg?v=08e59b0e29"
+  },
+  "don't look up|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tr/ym/sr/k9/dont-look-up-1200-1200-675-675-crop-000000.jpg?v=82ee9401b0"
+  },
+  "back to the future|1985": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wg/aa/he/wf/back-to-the-future-1200-1200-675-675-crop-000000.jpg?v=83c21f2ef5"
+  },
+  "harry potter and the prisoner of azkaban|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fz/2e/tt/dt/harry-potter-and-the-prisoner-of-azkaban-1200-1200-675-675-crop-000000.jpg?v=37f03daa65"
+  },
+  "avatar: the way of water|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/rv/ns/3w/jz/679F452B-D31A-4793-838D-F374A7C34D98-1200-1200-675-675-crop-000000.jpg?v=704ba56f3d"
+  },
+  "harry potter and the philosopher's stone|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/db/2x/a6/v6/harrypotter-1200-1200-675-675-crop-000000.jpg?v=7f87bbd1ff"
+  },
+  "avatar|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7s/di/by/2k/avatar-1200-1200-675-675-crop-000000.jpg?v=95bd991ae8"
+  },
+  "puss in boots: the last wish|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2z/0q/fx/mn/puss-in-boots-last-wish-1200-1200-675-675-crop-000000.jpg?v=61b7291ac4"
+  },
+  "catch me if you can|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bt/n3/m1/uc/catch-me-if-you-can-120-1200-1200-675-675-crop-000000.jpg?v=47ffd2b3f9"
+  },
+  "the lord of the rings: the return of the king|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a7/4r/al/mc/lotr-return-of-the-king-1200-1200-675-675-crop-000000.jpg?v=2a233b4d9f"
+  },
+  "the incredibles|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lt/42/qm/26/the-incredibles-1200-1200-675-675-crop-000000.jpg?v=a754df0fdb"
+  },
+  "the lord of the rings: the two towers|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/l5/j6/zw/ib/lotr-the-two-towers-1200-1200-675-675-crop-000000.jpg?v=c3ae1188ea"
+  },
+  "monsters, inc.|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jw/dc/ub/ig/monsters-inc-1200-1200-675-675-crop-000000.jpg?v=dd1a6b4966"
+  },
+  "the super mario bros. movie|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/f3/61/49/x0/super%20mario-1200-1200-675-675-crop-000000.jpg?v=b10a032c0f"
+  },
+  "home alone|1990": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/p9/kb/nu/yr/home-alone-1200-1200-675-675-crop-000000.jpg?v=8d16e0af19"
+  },
+  "harry potter and the goblet of fire|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tq/zt/18/vz/harry-potter-goblet-fire-50-1200-1200-675-675-crop-000000.jpg?v=4e416202ca"
+  },
+  "harry potter and the chamber of secrets|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ru/59/ki/ox/harry-potter-chamber-secrets-200-1200-1200-675-675-crop-000000.jpg?v=46268cd339"
+  },
+  "the lion king|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nu/1q/bf/iz/lion%20king-1200-1200-675-675-crop-000000.jpg?v=e25d884213"
+  },
+  "tangled|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/73/b1/na/x9/tangled-130-1200-1200-675-675-crop-000000.jpg?v=36c0db7843"
+  },
+  "babylon|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/dp/27/f7/je/babylon-1200-1200-675-675-crop-000000.jpg?v=e245c7cfce"
+  },
+  "harry potter and the deathly hallows: part 2|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ym/d6/ci/3v/harry-potter-deathly-hallows-part2-30-1200-1200-675-675-crop-000000.jpg?v=fe841bea7e"
+  },
+  "deadpool 2|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/m5/47/vf/x3/deadpool-2-1200-1200-675-675-crop-000000.jpg?v=f157717712"
+  },
+  "twilight|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/uh/t5/kc/3j/twilight-1200-1200-675-675-crop-000000.jpg?v=9ed28efa09"
+  },
+  "split|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tl/91/wl/ue/split-1200-1200-675-675-crop-000000.jpg?v=65d3b0ebea"
+  },
+  "harry potter and the order of the phoenix|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z2/u4/ow/ba/harry-potter-order-phoenix-80-1200-1200-675-675-crop-000000.jpg?v=a3d0c19bdd"
+  },
+  "logan|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3g/vl/z4/dt/logan-2017-1200-1200-675-675-crop-000000.jpg?v=33cba47db1"
+  },
+  "harry potter and the deathly hallows: part 1|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/22/fx/ws/vg/harry-potter-deathly-hallows-30-1200-1200-675-675-crop-000000.jpg?v=094e2b49eb"
+  },
+  "no hard feelings|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6p/np/ul/1d/no%20hard-1200-1200-675-675-crop-000000.jpg?v=d569a995a0"
+  },
+  "shrek 2|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/b2/i4/ji/hg/shrek-2-1200-1200-675-675-crop-000000.jpg?v=5cbec1e1bc"
+  },
+  "harry potter and the half-blood prince|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sx/kj/x6/ph/harry-potter-half-blood-prince-1200-1200-675-675-crop-000000.jpg?v=ca21989df2"
+  },
+  "the great gatsby|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ke/ik/np/t7/the-great-gatsby-1200-1200-675-675-crop-000000.jpg?v=10d5c4f3e7"
+  },
+  "zootopia|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ci/je/02/ul/zootopia2-1200-1200-675-675-crop-000000.jpg?v=756474498f"
+  },
+  "moana|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2a/dc/ev/uk/moana-1200-1200-675-675-crop-000000.jpg?v=505f3aed6d"
+  },
+  "kingsman: the secret service|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hq/ob/tz/ns/uRHdkM871YJQDl3ux3ulCQw7BfV-1200-1200-675-675-crop-000000.jpg?v=8ab7014b42"
+  },
+  "the hangover|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/d6/w1/tn/jn/the-hangover-1200-1200-675-675-crop-000000.jpg?v=a7a213bf21"
+  },
+  "frozen|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/68/ic/r8/kn/frozen-2013-1200-1200-675-675-crop-000000.jpg?v=a83bdc0e64"
+  },
+  "crazy, stupid, love.|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6o/y9/c3/oy/crazy-stupid-love-1200-1200-675-675-crop-000000.jpg?v=7eb1269411"
+  },
+  "kung fu panda|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q8/hk/5s/lu/kung-fu-panda-110-1200-1200-675-675-crop-000000.jpg?v=8d62e7df56"
+  },
+  "train to busan|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/11/sk/ys/wg/train-to-busan-1200-1200-675-675-crop-000000.jpg?v=e747d81711"
+  },
+  "venom|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/re/nm/sa/19/venom-1200-1200-675-675-crop-000000.jpg?v=43773bc414"
+  },
+  "free guy|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vv/co/4p/ck/free%20guy-1200-1200-675-675-crop-000000.jpg?v=3780d36fa1"
+  },
+  "the lego movie|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/0/5/1/8/8/tmdb/d4zaHEoI1yrpeQxBkulo8H9FEQP-1200-1200-675-675-crop-000000.jpg?v=500c7e755c"
+  },
+  "the green mile|1999": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lz/cm/3o/ar/green%20mile-1200-1200-675-675-crop-000000.jpg?v=4d4d6243de"
+  },
+  "ready player one|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/55/qw/ol/78/ready-player-one-1200-1200-675-675-crop-000000.jpg?v=bb291b3306"
+  },
+  "zombieland|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ue/rg/e3/53/zombieland-1200-1200-675-675-crop-000000.jpg?v=f499bc5286"
+  },
+  "21 jump street|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ok/d4/o0/dt/21-jump-street-1200-1200-675-675-crop-000000.jpg?v=e7921fa224"
+  },
+  "attack on titan the final chapters: special 2|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fp/fw/fv/no/attack-1200-1200-675-675-crop-000000.jpg?v=830129ceb1"
+  },
+  "trap|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bd/4t/jj/zo/trap-1200-1200-675-675-crop-000000.jpg?v=a6363887cb"
+  },
+  "morbius|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mw/lj/bc/81/qbDPVqbxFDNYfFWDxzLJ2UCbfvg-1200-1200-675-675-crop-000000.jpg?v=0a3104ab24"
+  },
+  "venom: the last dance|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/k3/uy/ar/sh/7buU5oZ4aP4hPW88rQCIxFD97yy-1200-1200-675-675-crop-000000.jpg?v=09fc09c345"
+  },
+  "venom: let there be carnage|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/le/x9/ur/yi/877172AA-D7A5-4094-A91F-C30D663D66AC-1200-1200-675-675-crop-000000.jpg?v=06be4f4d58"
+  },
+  "a quiet place part ii|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3f/6v/ze/kq/a-quiet-place-part-ii-1200-1200-675-675-crop-000000.jpg?v=08d71f5971"
+  },
+  "kingdom of the planet of the apes|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/62/f0/gf/so/fypydCipcWDKDTTCoPucBsdGYXW-1200-1200-675-675-crop-000000.jpg?v=af972bf69e"
+  },
+  "dawn of the planet of the apes|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3f/jp/tr/c4/dawn-planet-apes-1200-1200-675-675-crop-000000.jpg?v=49076ef694"
+  },
+  "the 40 year old virgin|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pt/up/sm/e8/40-year-old-virgin-90-1200-1200-675-675-crop-000000.jpg?v=fbaeea4ad1"
+  },
+  "dragonball evolution|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5z/q6/d9/2w/dragonball-evolution-1200-1200-675-675-crop-000000.jpg?v=417dde8b1c"
+  },
+  "fantastic four|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sl/qn/yx/cb/fantastic-four-1200-1200-675-675-crop-000000.jpg?v=ce0a7572aa"
+  },
+  "sister act|1992": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lu/mk/ev/fn/sisteract-1200-1200-675-675-crop-000000.jpg?v=52ac8c39a8"
+  },
+  "sister act 2: back in the habit|1993": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/b0/q6/fm/q7/sister%20act-1200-1200-675-675-crop-000000.jpg?v=390b18b19e"
+  },
+  "the social network|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/dr/ty/49/rl/the-social-network-2010-1200-1200-675-675-crop-000000.jpg?v=cbacd98bfa"
+  },
+  "tick, tick... boom!|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w9/5v/km/6g/tick-1200-1200-675-675-crop-000000.jpg?v=7d39f820bc"
+  },
+  "hacksaw ridge|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/88/65/np/e1/hacksaw-ridge-1200-1200-675-675-crop-000000.jpg?v=e434ba822b"
+  },
+  "the boss baby|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yt/4e/ok/tw/the-boss-baby-1200-1200-675-675-crop-000000.jpg?v=169e5f6c79"
+  },
+  "beautiful creatures|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ri/hi/y6/dv/beautiful-creatures-1200-1200-675-675-crop-000000.jpg?v=1678dfca58"
+  },
+  "the twilight saga: new moon|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8i/t9/tq/5o/new-moon-1200-1200-675-675-crop-000000.jpg?v=f34f9ed7c4"
+  },
+  "the twilight saga: breaking dawn – part 2|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0g/en/rx/ny/twilight-breaking-dawn-part-2-1200-1200-675-675-crop-000000.jpg?v=a0e35df359"
+  },
+  "the twilight saga: eclipse|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/rc/s2/ut/wd/eclipse-1200-1200-675-675-crop-000000.jpg?v=dd5fc74ee6"
+  },
+  "the twilight saga: breaking dawn – part 1|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yq/qg/2f/w5/breaking-dawn-part-1-125-1200-1200-675-675-crop-000000.jpg?v=59835d0665"
+  },
+  "bee movie|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qg/l0/tw/7w/bee-movie-1200-1200-675-675-crop-000000.jpg?v=d1b55ef08f"
+  },
+  "kaizen|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fl/mn/fn/xd/wFP2E4xHIe5SI0TeaFkRggVf4n3-1200-1200-675-675-crop-000000.jpg?v=2a95704503"
+  },
+  "dark phoenix|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/28/td/16/84/dark-phoenix-1200-1200-675-675-crop-000000.jpg?v=6287a2c731"
+  },
+  "x-men: apocalypse|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tp/p7/h6/q5/x-men-apocalypse-1200-1200-675-675-crop-000000.jpg?v=e6e2b0c1c9"
+  },
+  "x-men: days of future past|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ad/gq/k5/g6/x-men-days-of-future-past-1200-1200-675-675-crop-000000.jpg?v=27832434b4"
+  },
+  "the wolverine|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t2/oi/v1/qe/the-wolverine-1200-1200-675-675-crop-000000.jpg?v=e6f6096763"
+  },
+  "x-men: first class|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j2/79/dm/yv/x-men-first-class-35-1200-1200-675-675-crop-000000.jpg?v=78947ccd56"
+  },
+  "x-men origins: wolverine|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z1/6u/zr/n3/xmen-origins-wolverine-1200-1200-675-675-crop-000000.jpg?v=53ca329daa"
+  },
+  "x2|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0n/us/7t/hj/x2-xmen-1200-1200-675-675-crop-000000.jpg?v=7552a86824"
+  },
+  "x-men: the last stand|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nn/1y/io/s8/x-men-last-stand-20-1200-1200-675-675-crop-000000.jpg?v=628eef6e94"
+  },
+  "x-men|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3d/x6/ff/na/x-men-1200-1200-675-675-crop-000000.jpg?v=b6a9d748d7"
+  },
+  "kung fu panda 4|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sh/gd/63/3u/kung%20fu-1200-1200-675-675-crop-000000.jpg?v=bfcec56c23"
+  },
+  "kung fu panda 3|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2f/24/zk/76/kung-fu-panda-3-1200-1200-675-675-crop-000000.jpg?v=dd4af7666e"
+  },
+  "kung fu panda 2|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9a/wr/9r/8f/kung-fu-panda-2-50-1200-1200-675-675-crop-000000.jpg?v=bc1be2dc26"
+  },
+  "the intouchables|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2k/iu/hz/zy/untouchable-1200-1200-675-675-crop-000000.jpg?v=328abce47f"
+  },
+  "kirikou and the sorceress|1998": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w7/2c/nu/9p/kirkou-1200-1200-675-675-crop-000000.jpg?v=0b02f38839"
+  },
+  "the tuche family|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/gv/to/oa/zx/230WWgFSFVZTG6LOFgTQzXMmb7w-1200-1200-675-675-crop-000000.jpg?v=f956ddc737"
+  },
+  "serial teachers|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xp/7q/el/8r/pnceAoM1lZCJC5QgJy48Dq5xuX4-1200-1200-675-675-crop-000000.jpg?v=076fd93424"
+  },
+  "serial teachers 2|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/2/5/3/0/9/9/tmdb/KXreaTxMPKD8cxgliezbhW4YhN-1200-1200-675-675-crop-000000.jpg?v=1def130b2b"
+  },
+  "shrek|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/o9/yg/sp/gt/shrek-1200-1200-675-675-crop-000000.jpg?v=53e83d5bf2"
+  },
+  "jack and the cuckoo-clock heart|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ug/n2/z3/b0/jack-and-cuckoo-clock-heart-1200-1200-675-675-crop-000000.jpg?v=6ffbb7b4c6"
+  },
+  "scary movie|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/re/4n/r1/mt/scary-movie-1200-1200-675-675-crop-000000.jpg?v=cf4853bfd5"
+  },
+  "oss 117: cairo, nest of spies|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7o/la/4b/w7/oss-1200-1200-675-675-crop-000000.jpg?v=4050cb4a40"
+  },
+  "kingsman: the golden circle|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/oh/df/95/6e/kingsman-golden-cirlce-1200-1200-675-675-crop-000000.jpg?v=4224ff7107"
+  },
+  "the king's man|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z4/4q/ru/xx/the-kings-man-1200-1200-675-675-crop-000000.jpg?v=7cbaccfae1"
+  },
+  "double zéro|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/9/6/5/1/29651-double-zero-0-230-0-345-crop.jpg?v=88ff6936d4"
+  },
+  "don't die too hard!|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jq/gq/hx/2y/abMmWUR6ARamzyXq7b5s1S0N1SP-1200-1200-675-675-crop-000000.jpg?v=49bf944316"
+  },
+  "johnny english|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q9/ew/s6/3l/johnny%20english-1200-1200-675-675-crop-000000.jpg?v=a6505df0d7"
+  },
+  "finding nemo|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/n2/q3/9x/ni/finding-nemo-1200-1200-675-675-crop-000000.jpg?v=cef715c7d2"
+  },
+  "madagascar|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5s/9u/c1/pv/madagascar-1200-1200-675-675-crop-000000.jpg?v=ab79d7685c"
+  },
+  "neuilly yo mama!|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/3/5/1/2/0/tmdb/byapwq1hGbSAMRMVIU11ZFFjpb9-1200-1200-675-675-crop-000000.jpg?v=35fd993689"
+  },
+  "despicable me|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/r1/r0/me/zd/despicable-me-30-1200-1200-675-675-crop-000000.jpg?v=d6f414601c"
+  },
+  "case départ|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/7/2/8/tmdb/icLQNgl05EQTnVCkLO7aOGnlt6o-1200-1200-675-675-crop-000000.jpg?v=684927d7e9"
+  },
+  "hollywoo|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bm/ym/52/ty/j3SIbormzBxpnIXOQR6BsK49B0S-1200-1200-675-675-crop-000000.jpg?v=c32c31643f"
+  },
+  "hotel transylvania|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vn/am/hs/wx/hotel-transylvania-1200-1200-675-675-crop-000000.jpg?v=0218344457"
+  },
+  "monsters university|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ud/rm/sk/uo/monsters-university-1200-1200-675-675-crop-000000.jpg?v=bb32a2264e"
+  },
+  "le crocodile du botswanga|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/1/7/3/5/3/5/173535-le-crocodile-du-botswanga-0-230-0-345-crop.jpg?v=6e1f51192d"
+  },
+  "babysitting|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sb/xy/qo/jw/babysitting-1200-1200-675-675-crop-000000.jpg?v=2fd49ce644"
+  },
+  "the new adventures of aladdin|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/7/4/4/7/2/274472-the-new-adventures-of-aladdin-0-230-0-345-crop.jpg?v=1f020a0beb"
+  },
+  "your name.|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/14/gp/oz/mm/6FF977AE-BA7A-4181-9812-73A9A676A652-1200-1200-675-675-crop-000000.jpg?v=5e8ce66f3a"
+  },
+  "the kissing booth|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/21/dh/68/6j/kissing-booth-1200-1200-675-675-crop-000000.jpg?v=d17fa429a6"
+  },
+  "operation portugal|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/6/8/7/5/9/568759-operation-portugal-0-230-0-345-crop.jpg?v=7c86616a1e"
+  },
+  "back to the future part ii|1989": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ia/n4/4q/ix/a4qvbI9x3nqu3hKQyDRVVBpMklx-1200-1200-675-675-crop-000000.jpg?v=9e0fbdeabe"
+  },
+  "the mask|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/22/02/m2/oa/the-mask-1200-1200-675-675-crop-000000.jpg?v=19b69a05f4"
+  },
+  "men in black|1997": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6q/fu/p4/pl/fWN3GgKxSP5v5WP3AQ1fh0Gbe90-1200-1200-675-675-crop-000000.jpg?v=5a923a21d2"
+  },
+  "men in black ii|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ff/w5/52/0g/mib2-1200-1200-675-675-crop-000000.jpg?v=0c77e0a9f4"
+  },
+  "men in black 3|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/p2/8y/3f/jn/mib3-1200-1200-675-675-crop-000000.jpg?v=597a1f2504"
+  },
+  "zombieland: double tap|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nt/k3/fb/1w/zombieland-double-tap-1200-1200-675-675-crop-000000.jpg?v=a4e3abab3a"
+  },
+  "shaun of the dead|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/62/sy/ca/vf/shaun-of-the-dead-1200-1200-675-675-crop-000000.jpg?v=ad4a57c450"
+  },
+  "suicide squad|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yj/4f/rs/pm/suicide-squad-1200-1200-675-675-crop-000000.jpg?v=808c2803ab"
+  },
+  "i am legend|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hp/je/jx/vf/i-am-legend-1200-1200-675-675-crop-000000.jpg?v=299f46fdf3"
+  },
+  "aladdin|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t5/xc/w8/fo/aladdin-2019-1200-1200-675-675-crop-000000.jpg?v=51b3c77490"
+  },
+  "hancock|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/rc/9c/rs/gb/hancock-1200-1200-675-675-crop-000000.jpg?v=2279c9a662"
+  },
+  "focus|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1c/bk/18/n0/focus-1200-1200-675-675-crop-000000.jpg?v=efdd90f974"
+  },
+  "hitch|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fh/dl/88/2m/hitch-1200-1200-675-675-crop-000000.jpg?v=f9e03d9106"
+  },
+  "percy jackson: sea of monsters|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pf/tn/w8/pt/percy-jackson-2013-1200-1200-675-675-crop-000000.jpg?v=41f073b1a4"
+  },
+  "percy jackson & the olympians: the lightning thief|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7z/j4/ai/j2/percy-jackson-1200-1200-675-675-crop-000000.jpg?v=502d1d766c"
+  },
+  "incredibles 2|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/u6/w5/rp/m6/incredibles-2-1200-1200-675-675-crop-000000.jpg?v=9022dfad06"
+  },
+  "dumb and dumber|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ih/i4/y1/qs/dumb-dumber-1200-1200-675-675-crop-000000.jpg?v=9bb1c0ce74"
+  },
+  "ace ventura: pet detective|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0o/gu/38/23/ace-ventura-pet-detective-1200-1200-675-675-crop-000000.jpg?v=6bd0c6a1f4"
+  },
+  "liar liar|1997": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8l/d1/9h/hk/liar-liar-1200-1200-675-675-crop-000000.jpg?v=9cbd81044f"
+  },
+  "yes man|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7w/5r/ju/sn/yes-man-1200-1200-675-675-crop-000000.jpg?v=346712adfe"
+  },
+  "dark shadows|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/38/46/6k/31/dark-shadows-1200-1200-675-675-crop-000000.jpg?v=16ed0bd6a2"
+  },
+  "noah|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1w/6o/g5/v1/noah-1200-1200-675-675-crop-000000.jpg?v=67621cee31"
+  },
+  "cast away|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/35/5b/po/qx/cast-away-1200-1200-675-675-crop-000000.jpg?v=b51474ae6c"
+  },
+  "the simpsons movie|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/gm/o8/y0/vb/the-simpsons-movie-1200-1200-675-675-crop-000000.jpg?v=70807f3182"
+  },
+  "ice age|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7l/o4/09/6a/ice-age-30-1200-1200-675-675-crop-000000.jpg?v=231e192723"
+  },
+  "bolt|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yv/p0/y8/d8/bolt-1200-1200-675-675-crop-000000.jpg?v=29e3351753"
+  },
+  "ralph breaks the internet|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/p1/q1/8k/br/qDQEQbgP3v7B9IYLAUcYexNrVYP-1200-1200-675-675-crop-000000.jpg?v=dbe3d04f14"
+  },
+  "[rec]|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hy/xz/nq/49/rec-1200-1200-675-675-crop-000000.jpg?v=06b0be8237"
+  },
+  "the making of the walking dead|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a1/kq/0z/vc/ngHI3TGz7B4PBrWRGEwVP2TsGy3-1200-1200-675-675-crop-000000.jpg?v=a78a771bfb"
+  },
+  "creed iii|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/57/d5/ab/2r/creed-iii-1200-1200-675-675-crop-000000.jpg?v=f7ca1486ab"
+  },
+  "black adam|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t7/1w/py/cx/black-1200-1200-675-675-crop-000000.jpg?v=c11ccd7fa7"
+  },
+  "army of the dead|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/r1/0p/5w/j5/army-of-the-dead-2021-1200-1200-675-675-crop-000000.jpg?v=b339b886f0"
+  },
+  "creed ii|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pt/fy/2k/9s/EC9B685D-7C69-44BF-9E1F-C76FC3C1F797-1200-1200-675-675-crop-000000.jpg?v=14466fb44d"
+  },
+  "death note|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w5/3t/90/yj/death_note-2017-1200-1200-675-675-crop-000000.jpg?v=0bcdf203f1"
+  },
+  "war for the planet of the apes|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/id/j7/ah/3i/war-for-the-planet-of-the-apes-1200-1200-675-675-crop-000000.jpg?v=b28b9bea27"
+  },
+  "creed|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/r2/gw/by/ht/creed-1200-1200-675-675-crop-000000.jpg?v=166bb598e5"
+  },
+  "the hobbit: the battle of the five armies|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hy/ny/zo/8l/the-hobbit-five-armies-1200-1200-675-675-crop-000000.jpg?v=4b784a6993"
+  },
+  "the hobbit: the desolation of smaug|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sq/n4/nv/0c/the-hobbit-the-desolation-of-smaug-1200-1200-675-675-crop-000000.jpg?v=927d83dec5"
+  },
+  "world war z|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/cy/4n/zn/vb/world-war-z-1200-1200-675-675-crop-000000.jpg?v=0f2cec9873"
+  },
+  "pacific rim|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vb/fi/b8/n7/pacific-rim-1200-1200-675-675-crop-000000.jpg?v=f3259925cb"
+  },
+  "the hobbit: an unexpected journey|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qu/2h/wd/tw/hobbit-unexpected-journey-1200-1200-675-675-crop-000000.jpg?v=ac139573a8"
+  },
+  "2012|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/y4/or/o1/ff/2012-45-1200-1200-675-675-crop-000000.jpg?v=9ae275209a"
+  },
+  "the curious case of benjamin button|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/e3/dz/1d/x6/the-curious-case-of-benjamin-button-1200-1200-675-675-crop-000000.jpg?v=159ec9c4e0"
+  },
+  "fantastic four|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/oh/yr/ue/jz/fantastic-four-2005-140-1200-1200-675-675-crop-000000.jpg?v=0829eb157f"
+  },
+  "miracle in cell no. 7|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6e/02/fy/61/miracle-cell-no-7-2019-1-1200-1200-675-675-crop-000000.jpg?v=8fa1e4a006"
+  },
+  "taken 3|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kz/wb/nr/g4/taken-3-1200-1200-675-675-crop-000000.jpg?v=e0f08accdf"
+  },
+  "taken 2|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2o/vv/tp/hz/taken-2x-1200-1200-675-675-crop-000000.jpg?v=516c3bb927"
+  },
+  "the count of monte cristo|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5g/ta/8j/jr/oMAflNvZXokVuOaSQAqw0HnKI24-1200-1200-675-675-crop-000000.jpg?v=3cb7da732d"
+  },
+  "white chicks|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/i9/kh/7m/nx/white-chicks-1200-1200-675-675-crop-000000.jpg?v=f575a09586"
+  },
+  "sunshine|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j7/rd/3s/r4/sunshine-2007a-1200-1200-675-675-crop-000000.jpg?v=02b4c9dbd2"
+  },
+  "gladiator ii|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/85/h2/uy/p3/gladiator%202-1200-1200-675-675-crop-000000.jpg?v=35462ea2c8"
+  },
+  "the kissing booth 2|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pg/ue/8s/40/the-kissing-booth-2-1200-1200-675-675-crop-000000.jpg?v=5076a13e3a"
+  },
+  "kraven the hunter|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4k/t6/l4/bk/kraven-1200-1200-675-675-crop-000000.jpg?v=66029d63d9"
+  },
+  "ford v ferrari|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j6/rv/uv/sq/ford-v-ferrari-1200-1200-675-675-crop-000000.jpg?v=517b3758d4"
+  },
+  "real steel|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ge/ys/ut/zz/real-steel-1200-1200-675-675-crop-000000.jpg?v=2460d1e85b"
+  },
+  "fury|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/zg/v8/bc/29/fury-2014-1200-1200-675-675-crop-000000.jpg?v=b392265b15"
+  },
+  "sonic the hedgehog 3|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yk/fd/8w/2g/8C5IZmJBKav2XzmdgPD4ECAP6tm-1200-1200-675-675-crop-000000.jpg?v=7c109b91ce"
+  },
+  "the nice guys|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q9/cn/m8/dy/the-nice-guys-1200-1200-675-675-crop-000000.jpg?v=052bf51ad2"
+  },
+  "captain america: brave new world|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/7/3/8/2/9/2/tmdb/qfAfE5auxsuxhxPpnETRAyTP5ff-1200-1200-675-675-crop-000000.jpg?v=5b464360f7"
+  },
+  "saw|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/12/lq/pz/o4/saw-1200-1200-675-675-crop-000000.jpg?v=60c0ce282f"
+  },
+  "final destination|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8h/qd/17/cc/final-destination-1200-1200-675-675-crop-000000.jpg?v=78c2daccf8"
+  },
+  "flow|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xl/29/a9/xh/Flow-1200-1200-675-675-crop-000000.jpg?v=9f04435233"
+  },
+  "mr. & mrs. smith|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/62/bd/bt/nu/mr-and-mrs-smith-1200-1200-675-675-crop-000000.jpg?v=5dcf3291be"
+  },
+  "the wild robot|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lo/yv/o4/a4/tR0RttXyT10l7GxpDSLTalPtLVj-1200-1200-675-675-crop-000000.jpg?v=3bd0088c78"
+  },
+  "babysitting 2|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lg/zs/g9/jb/3c1Ry5mLR1MH2g2j6JwviYSeSAt-1200-1200-675-675-crop-000000.jpg?v=2bb08a85e9"
+  },
+  "taken|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hz/dp/4f/ym/taken-1200-1200-675-675-crop-000000.jpg?v=779f5a16cc"
+  },
+  "the hangover part ii|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fg/wn/ig/i8/the-hangover-part-ii-200-1200-1200-675-675-crop-000000.jpg?v=395d855fa2"
+  },
+  "the hangover part iii|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9j/a2/8p/po/hangover-part-iii-1200-1200-675-675-crop-000000.jpg?v=7f11c0bf9d"
+  },
+  "sinners|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/x1/ne/1h/4u/sinners-1200-1200-675-675-crop-000000.jpg?v=60c0af98f0"
+  },
+  "thunderbolts*|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/38/f6/km/as/thunderbolts-1200-1200-675-675-crop-000000.jpg?v=d1603150dd"
+  },
+  "final destination 2|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j2/h8/y2/ym/final-dest-2-1200-1200-675-675-crop-000000.jpg?v=caa6209a1f"
+  },
+  "final destination 3|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ce/cs/f3/17/final-dest-3-1200-1200-675-675-crop-000000.jpg?v=2d1aee1735"
+  },
+  "the final destination|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ey/np/ks/oo/final-dest-4-1200-1200-675-675-crop-000000.jpg?v=ee1b076f26"
+  },
+  "final destination 5|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6e/hr/0o/47/final-dest-5-1200-1200-675-675-crop-000000.jpg?v=1ee9dbe4f1"
+  },
+  "gold brick|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8a/jd/jf/6k/gold%20brick-1200-1200-675-675-crop-000000.jpg?v=5b90bfa856"
+  },
+  "jumper|2008": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vu/9o/yc/z0/jumper-1200-1200-675-675-crop-000000.jpg?v=4f7de74d23"
+  },
+  "the sorcerer's apprentice|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jz/i9/o0/et/sorcerers-apprentice-1200-1200-675-675-crop-000000.jpg?v=451b3d4461"
+  },
+  "warm bodies|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/aj/e5/e2/ki/warm-bodies-1200-1200-675-675-crop-000000.jpg?v=47daf9f065"
+  },
+  "maleficent|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q0/65/mb/us/maleficent-1200-1200-675-675-crop-000000.jpg?v=882616fab0"
+  },
+  "the tuche family: the american dream|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8h/km/r1/gq/tuche-1200-1200-675-675-crop-000000.jpg?v=15e33eccb1"
+  },
+  "passengers|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ki/g0/gy/nw/passengers-2016-1200-1200-675-675-crop-000000.jpg?v=b2a065e080"
+  },
+  "annabelle|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ot/eh/tg/zb/annabelle-1200-1200-675-675-crop-000000.jpg?v=c924269e59"
+  },
+  "everything everywhere all at once|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qo/9b/xq/hl/everything-1200-1200-675-675-crop-000000.jpg?v=59791ae192"
+  },
+  "my fault|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/cx/hx/fh/ri/my%20fault-1200-1200-675-675-crop-000000.jpg?v=39d746cf68"
+  },
+  "inglourious basterds|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3k/ei/4w/1h/inglourious-basterds-1200-1200-675-675-crop-000000.jpg?v=8d8456f504"
+  },
+  "parasite|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/oi/ha/78/z8/parasite-1200-1200-675-675-crop-000000.jpg?v=03b9da4410"
+  },
+  "la haine|1995": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h5/en/ik/n2/la-haine-1200-1200-675-675-crop-000000.jpg?v=b0b3aed69a"
+  },
+  "jurassic park|1993": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8x/wj/zt/pp/jurassic-park-1200-1200-675-675-crop-000000.jpg?v=ec7c8120cd"
+  },
+  "memories of murder|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5c/ur/ei/1h/memories-of-murder-1200-1200-675-675-crop-000000.jpg?v=fcadf1c12c"
+  },
+  "he's all that|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ov/dy/vi/pc/41mLMVpmp2g5RSHJBbi1HedzsFc-1200-1200-675-675-crop-000000.jpg?v=506f7a7e3c"
+  },
+  "the lost world: jurassic park|1997": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a8/6m/va/pq/the-lost-world-jurassic-park-1200-1200-675-675-crop-000000.jpg?v=77dfd20401"
+  },
+  "jurassic park iii|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xk/yn/en/7a/jurassic-park-iii-1200-1200-675-675-crop-000000.jpg?v=94bae17ab4"
+  },
+  "jurassic world|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7c/u4/4v/r2/jurassic-world-1200-1200-675-675-crop-000000.jpg?v=a5f905ad8a"
+  },
+  "superman|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/9/5/7/0/5/0/tmdb/eGX66zonvc4bXg3rM08RUxdYSDx-1200-1200-675-675-crop-000000.jpg?v=dc1a5219f9"
+  },
+  "the three musketeers: milady|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nd/eu/iw/8n/three%20bm-1200-1200-675-675-crop-000000.jpg?v=232f960145"
+  },
+  "the three musketeers: d'artagnan|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tl/w7/t4/i3/three-1200-1200-675-675-crop-000000.jpg?v=aa545d4474"
+  },
+  "oldboy|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w7/2l/wo/u1/oldboy-1200-1200-675-675-crop-000000.jpg?v=faccbb4b33"
+  },
+  "jurassic world: fallen kingdom|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hr/q4/5n/t1/jurassic-world-fallen-kingdom-1200-1200-675-675-crop-000000.jpg?v=efa115f3aa"
+  },
+  "jurassic world dominion|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hs/6k/hd/z6/jurassic-world-dominion-1200-1200-675-675-crop-000000.jpg?v=8ed9a0c604"
+  },
+  "sharknado 2: the second one|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3k/nt/0q/3w/sharknado-2-1200-1200-675-675-crop-000000.jpg?v=5eafaf560b"
+  },
+  "sharknado 3: oh hell no!|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/s9/17/tm/yk/shark-1200-1200-675-675-crop-000000.jpg?v=a1839914ce"
+  },
+  "sharknado 4: the 4th awakens|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0p/vc/kh/qi/Sharknado4-1-1200-1200-675-675-crop-000000.jpg?v=4c55e51a23"
+  },
+  "sharknado 5: global swarming|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bh/x8/ix/2w/sharkn-1200-1200-675-675-crop-000000.jpg?v=e200f3fa0a"
+  },
+  "the last sharknado: it's about time|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ww/lg/eu/4y/the-last-sharknado-its-about-time-1200-1200-675-675-crop-000000.jpg?v=4038c82d22"
+  },
+  "the fantastic 4: first steps|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/5/4/3/9/6/7/tmdb/unthV1mq9llhEinIMPcCUImFodt-1200-1200-675-675-crop-000000.jpg?v=bb4259d7a8"
+  },
+  "final destination bloodlines|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/d3/mt/jk/i0/2q56lAr8zr43m2soEQe3IXyND9q-1200-1200-675-675-crop-000000.jpg?v=0311a8f340"
+  },
+  "transformers|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/d3/yv/iy/mb/transformers-1200-1200-675-675-crop-000000.jpg?v=e236887929"
+  },
+  "transformers: revenge of the fallen|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h4/xf/a6/7g/transformers-revenge-fallen-10-1200-1200-675-675-crop-000000.jpg?v=446cc04d34"
+  },
+  "transformers: dark of the moon|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5j/5z/sq/vv/dark-of-the-moon-20-1200-1200-675-675-crop-000000.jpg?v=bcd6c47db6"
+  },
+  "transformers: age of extinction|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4a/f6/aj/s0/transformers-age-extinction-1200-1200-675-675-crop-000000.jpg?v=63d4ab7fc4"
+  },
+  "transformers: the last knight|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kr/7x/hs/dq/transformers-last-knight-1200-1200-675-675-crop-000000.jpg?v=be680016d3"
+  },
+  "bumblebee|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/f1/cj/c9/do/bumblebee-1200-1200-675-675-crop-000000.jpg?v=92972a48b6"
+  },
+  "transformers: rise of the beasts|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ko/id/qv/k4/transformers-1200-1200-675-675-crop-000000.jpg?v=2d6b2fb4aa"
+  },
+  "transformers one|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/97/d4/e8/ll/transformers-1200-1200-675-675-crop-000000.jpg?v=ab5a1f0978"
+  },
+  "palmer|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fg/mn/fz/74/E86124F8-BF02-4F2D-B9B2-07AB10AF4906-1200-1200-675-675-crop-000000.jpg?v=0734f45ebd"
+  },
+  "28 years later|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/or/yw/kz/od/Iw9jQe-1200-1200-675-675-crop-000000.jpg?v=d8e760c72c"
+  },
+  "girl in the basement|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8v/gs/mm/cj/girl-1200-1200-675-675-crop-000000.jpg?v=d218335993"
+  },
+  "mcwalter|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/8/3/0/1/6/tmdb/8b6xQFJtVPeS88SCR3FxNIlNylF-1200-1200-675-675-crop-000000.jpg?v=baca408382"
+  },
+  "weapons|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/l7/cx/wv/3u/sQUvdgUcAX3YR5otU1RuCkIPaJX-1200-1200-675-675-crop-000000.jpg?v=0d9de97e26"
+  },
+  "whiplash|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sk/f3/f1/b2/whiplash-1200-1200-675-675-crop-000000.jpg?v=771f1a019d"
+  },
+  "hercules|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pg/hr/5j/p6/hercules-2014-1200-1200-675-675-crop-000000.jpg?v=33e76d51bb"
+  },
+  "the conjuring: last rites|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/9/3/6/0/6/5/tmdb/nEHQOeDgqbBob05fEZba9gSe9FK-1200-1200-675-675-crop-000000.jpg?v=c150d5c5ab"
+  },
+  "chainsaw man – the movie: reze arc|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/0/2/6/7/3/tmdb/r3d74bF46TkiNX8kyOk1AeD9k0n-1200-1200-675-675-crop-000000.jpg?v=c6e65acea8"
+  },
+  "12 years a slave|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fr/f5/gz/6v/12-years-a-slave-1200-1200-675-675-crop-000000.jpg?v=8e8f57e8d0"
+  },
+  "soldier boy|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bi/60/vm/0v/tU0mIvuAc5x8lcoBnnnGZM43SJq-1200-1200-675-675-crop-000000.jpg?v=b67a181420"
+  },
+  "frankenstein|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0x/nu/nk/d4/frankenstein-2025-1200-1200-675-675-crop-000000.jpg?v=dd7366dc77"
+  },
+  "the artist|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2i/go/tz/5k/the-artist-1200-1200-675-675-crop-000000.jpg?v=2dbadc6b32"
+  },
+  "pan's labyrinth|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/f3/va/zu/ph/pans-1200-1200-675-675-crop-000000.jpg?v=4f4be12c24"
+  },
+  "nosferatu|1922": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ph/g3/tr/ws/nosferatu-1200-1200-675-675-crop-000000.jpg?v=62a548948c"
+  },
+  "godzilla minus one|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wt/xq/8w/wb/godzilla-1200-1200-675-675-crop-000000.jpg?v=5defa22bec"
+  },
+  "the departed|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/33/lu/26/83/the-departed-1200-1200-675-675-crop-000000.jpg?v=525d3990b0"
+  },
+  "la la land|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a6/th/cz/kf/la-la-land-1200-1200-675-675-crop-000000.jpg?v=874a46b231"
+  },
+  "rope|1948": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/cc/ch/kq/x4/81LX4wktTXWEXjLNlkHTmJm7tRu-1200-1200-675-675-crop-000000.jpg?v=e59dd41464"
+  },
+  "grave of the fireflies|1988": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9v/zy/xh/u3/grave-of-fireflies-1200-1200-675-675-crop-000000.jpg?v=adde23c8bd"
+  },
+  "ad astra|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7s/uj/g7/83/ad-astra-2019-1200-1200-675-675-crop-000000.jpg?v=cf13a7a61c"
+  },
+  "the nightmare before christmas|1993": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ng/yt/5d/34/nightmare-before-christmas-1200-1200-675-675-crop-000000.jpg?v=50c6eea4ee"
+  },
+  "prospect|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lo/aj/rk/v6/prospect-2018-1200-1200-675-675-crop-000000.jpg?v=2e7cdb45d5"
+  },
+  "master and commander: the far side of the world|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/zu/id/7h/jc/master-commander-220-1200-1200-675-675-crop-000000.jpg?v=bbe3e503c7"
+  },
+  "pompeii|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j5/16/99/xb/pompeii-1200-1200-675-675-crop-000000.jpg?v=73c6702341"
+  },
+  "dungeons & dragons: honor among thieves|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yu/xu/6f/m1/5LVROyoFaTvGoXDYf9gq7NVU8Sj-1200-1200-675-675-crop-000000.jpg?v=8f518c14b6"
+  },
+  "lord of war|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j9/1q/b4/8x/lord-of-war-1200-1200-675-675-crop-000000.jpg?v=06f86854e2"
+  },
+  "van helsing|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2m/m7/pw/l2/val-helsing-1200-1200-675-675-crop-000000.jpg?v=714007686d"
+  },
+  "jojo rabbit|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5w/qn/a3/zq/jojo-rabbit-1200-1200-675-675-crop-000000.jpg?v=22c46fb7f7"
+  },
+  "mother|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/90/yc/pf/yi/mother-2009-1200-1200-675-675-crop-000000.jpg?v=eda23eedd0"
+  },
+  "the fly|1986": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hx/cr/qd/hx/the-fly-1200-1200-675-675-crop-000000.jpg?v=5b599b90db"
+  },
+  "akira|1988": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a3/na/lc/i1/akira-1200-1200-675-675-crop-000000.jpg?v=0f65a387ac"
+  },
+  "zodiac|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/07/2h/dm/69/zodiac-1200-1200-675-675-crop-000000.jpg?v=e2ccb1a88a"
+  },
+  "magazine dreams|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/7/0/3/0/7/7/tmdb/mFcbYGmsekkwGS5iw1YZt789VSo-1200-1200-675-675-crop-000000.jpg?v=db9dac00f6"
+  },
+  "the descent|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0h/wj/af/20/the-descent-1200-1200-675-675-crop-000000.jpg?v=02cd3cb4d1"
+  },
+  "the shining|1980": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tm/ta/x1/yh/shining-1200-1200-675-675-crop-000000.jpg?v=3eeee4ee5a"
+  },
+  "steve jobs|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q2/v3/le/9x/steve-jobs-1200-1200-675-675-crop-000000.jpg?v=d287732270"
+  },
+  "ghost rider: spirit of vengeance|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bh/87/2x/u2/ghost-rider-vengeance-1200-1200-675-675-crop-000000.jpg?v=aedb78b4db"
+  },
+  "the exorcism of emily rose|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2n/5g/kh/8z/exorcism-emily-rose-1200-1200-675-675-crop-000000.jpg?v=304c53f519"
+  },
+  "127 hours|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/af/yu/je/7t/127-hours-1200-1200-675-675-crop-000000.jpg?v=1e81ce312e"
+  },
+  "stranger things 5: the finale|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/4/4/0/3/3/4/tmdb/t4ggITiM4OMgUAOuI1kwATrbeOp-1200-1200-675-675-crop-000000.jpg?v=5f54c180d6"
+  },
+  "hulk|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/x1/hg/hp/p5/gJws6mK1RxPVPeL0MpxUzahLFBf-1200-1200-675-675-crop-000000.jpg?v=fb4535e303"
+  },
+  "challengers|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1v/t5/ny/lk/MV5BYWRmZWM2ZTktMzE1Ny00NmQyLWE3ZDItZTk5MjY5OGQ5NzdhXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_-1200-1200-675-675-crop-000000.jpg?v=bc9f57c5b8"
+  },
+  "kingdom of heaven|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ev/n8/3s/8y/kingdom1-1200-1200-675-675-crop-000000.jpg?v=ee9255ce0b"
+  },
+  "escape from the 21st century|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/2/4/9/9/0/tmdb/rFp936TJIcOEMCbPPfYVGqJQBm7-1200-1200-675-675-crop-000000.jpg?v=a367b99f4b"
+  },
+  "saving private ryan|1998": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3d/c1/78/g4/saving-private-ryan-80-1200-1200-675-675-crop-000000.jpg?v=56e5b7c125"
+  },
+  "come and see|1985": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ok/lw/1k/tl/come-and-see-1200-1200-675-675-crop-000000.jpg?v=e875237128"
+  },
+  "sausage party|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vh/rf/ce/ez/sausage-party-1200-1200-675-675-crop-000000.jpg?v=c5a1c416b7"
+  },
+  "good will hunting|1997": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/30/pr/tv/eg/IMG_5729-1200-1200-675-675-crop-000000.jpg?v=75da5f7335"
+  },
+  "the spongebob squarepants movie|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/dd/3l/hx/s8/a5PRVCHaLgm2D4W2gT0igazQUc2-1200-1200-675-675-crop-000000.jpg?v=9d9daf0679"
+  },
+  "the godfather|1972": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/zp/bn/1x/6r/the-godfather-1200-1200-675-675-crop-000000.jpg?v=397832feef"
+  },
+  "zootopia 2|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/9/7/7/3/4/2/tmdb/4UgPOQ5luKfa5mM2MXCR34Mb71v-1200-1200-675-675-crop-000000.jpg?v=1694916524"
+  },
+  "the chorus|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/00/2w/ym/4y/les-choristes-1200-1200-675-675-crop-000000.jpg?v=895352ca7d"
+  },
+  "carrie|1976": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/oy/wp/1g/b5/carrie-1200-1200-675-675-crop-000000.jpg?v=358988d90c"
+  },
+  "the imitation game|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qs/7f/ft/0u/the-imitation-game-1200-1200-675-675-crop-000000.jpg?v=3cec35914a"
+  },
+  "28 years later: the bone temple|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/5/6/4/0/9/tmdb/dT1p0K1szMAUBuE2bibouDQdNb8-1200-1200-675-675-crop-000000.jpg?v=c93427833e"
+  },
+  "life of pi|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/u7/gh/at/2f/life-of-pi-1200-1200-675-675-crop-000000.jpg?v=5eb47cad5b"
+  },
+  "knives out|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/43/tv/iw/76/knives-out-1200-1200-675-675-crop-000000.jpg?v=355ba0f034"
+  },
+  "cold war|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/rx/72/x5/uy/cold-war-1200-1200-675-675-crop-000000.jpg?v=ec5d39a54f"
+  },
+  "the last of the mohicans|1992": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qh/jp/z3/fe/the-last-of-the-mohicans-1200-1200-675-675-crop-000000.jpg?v=31ac286097"
+  },
+  "the housemaid|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/2/5/5/3/1/9/tmdb/bEcRxVHyCmwTYYlVVLLgGz2GdWW-1200-1200-675-675-crop-000000.jpg?v=7b19305eeb"
+  },
+  "elephant|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8h/cq/zm/gf/elephant-1200-1200-675-675-crop-000000.jpg?v=0683803a96"
+  },
+  "amadeus|1984": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/93/25/ds/ar/amadeus-1200-1200-675-675-crop-000000.jpg?v=6c64f3c798"
+  },
+  "eyes wide shut|1999": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/85/q8/oo/6m/lJwDe047ceb5p3HvCIUcIxTzHVO-1200-1200-675-675-crop-000000.jpg?v=ae10a3061c"
+  },
+  "dikkenek|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/6/3/2/47632-dikkenek-0-230-0-345-crop.jpg?v=128829ae53"
+  },
+  "pelé: birth of a legend|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2j/hy/jz/za/pele-1200-1200-675-675-crop-000000.jpg?v=d78bff3c82"
+  },
+  "malcolm x|1992": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0u/iu/58/2i/malcolm-x-1200-1200-675-675-crop-000000.jpg?v=b3fb44a59b"
+  },
+  "superman|1978": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/tk/8z/fn/pl/superman-1200-1200-675-675-crop-000000.jpg?v=baa1ed8433"
+  },
+  "superman ii|1980": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/10/ee/00/bv/superman-2-1200-1200-675-675-crop-000000.jpg?v=d286830736"
+  },
+  "amélie|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/cs/x3/9k/g2/4tqNNLAUY525N5rKGwNQVcuGNzX-1200-1200-675-675-crop-000000.jpg?v=3637b911af"
+  },
+  "coexist|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jv/1w/q4/t1/kJfFqcP6jb1caPg6VMpAfkHUMLd-1200-1200-675-675-crop-000000.jpg?v=4c7ca7df9b"
+  },
+  "superman iii|1983": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/4/7/0/6/9/tmdb/9zSKhqGKrfXJy0y9g2im1WR4ZZ8-1200-1200-675-675-crop-000000.jpg?v=ea0f1d98b4"
+  },
+  "supergirl|1984": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mn/tc/5u/s3/supergirl-1200-1200-675-675-crop-000000.jpg?v=4c71084573"
+  },
+  "apocalypto|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4y/5p/8x/lp/apocalypto-1200-1200-675-675-crop-000000.jpg?v=122bc823df"
+  },
+  "green lantern|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/89/li/h0/0h/green-lantern-1200-1200-675-675-crop-000000.jpg?v=f311b34f18"
+  },
+  "poor things|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/33/cq/4s/53/gsVC7HMf4VR2XFOyqjTSklY2Tms-1200-1200-675-675-crop-000000.jpg?v=026c0bec1a"
+  },
+  "the life of chuck|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ff/aw/r2/2o/TheLifeOfChuck2-1200-1200-675-675-crop-000000.jpg?v=b0747d4f44"
+  },
+  "superman iv: the quest for peace|1987": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/15/cy/fl/1r/superman-iv-the-quest-for-peace-1200-1200-675-675-crop-000000.jpg?v=ac8807fd41"
+  },
+  "houba! on the trail of the marsupilami|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/8/3/0/7/5/83075-houba-on-the-trail-of-the-marsupilami-0-230-0-345-crop.jpg?v=20da972d97"
+  },
+  "fresh guacamole|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/s3/1e/c6/z4/jOwj5UULxFyXrSEYjnhheUbNH2T-1200-1200-675-675-crop-000000.jpg?v=3d81b71f46"
+  },
+  "superman returns|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/09/nf/p8/lj/superman-returns-40-1200-1200-675-675-crop-000000.jpg?v=a8312776c5"
+  },
+  "black swan|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7i/ax/k3/ql/black-swan-1200-1200-675-675-crop-000000.jpg?v=aaaa4b4feb"
+  },
+  "justice league: the flashpoint paradox|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yv/d5/ni/j8/justice-league-the-flashpoint-paradox-1200-1200-675-675-crop-000000.jpg?v=c099e594e8"
+  },
+  "justice league: war|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2i/n0/9z/k9/1kBFmH1QdduqwyU5nhw8mH6sF7y-1200-1200-675-675-crop-000000.jpg?v=dfbdd626bb"
+  },
+  "downfall|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hi/11/us/ny/downfall-1200-1200-675-675-crop-000000.jpg?v=34f512cfc9"
+  },
+  "son of batman|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vx/7x/0v/hv/jYqOnJDPI7QD9cGbE6CwDTp1tID-1200-1200-675-675-crop-000000.jpg?v=1f9fefae0e"
+  },
+  "justice league: throne of atlantis|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kl/3q/50/oi/ivmuobJJBqjUXbbDdfp8kIpI8yR-1200-1200-675-675-crop-000000.jpg?v=75d3516ee7"
+  },
+  "wuthering heights|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/9/6/9/1/1/tmdb/oGAYQOhfuXMh9Cpp4LNfzI5uDS3-1200-1200-675-675-crop-000000.jpg?v=e3febde0b8"
+  },
+  "nightwing and robin|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/s7/3q/ya/xk/5TU3GGNGLOB7SLGWwO2Mpsytz4Y-1200-1200-675-675-crop-000000.jpg?v=56ed7b2bfc"
+  },
+  "batman vs. robin|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1d/9r/y5/ni/batman%20v%20robin-1200-1200-675-675-crop-000000.jpg?v=2b8b881180"
+  },
+  "batman: bad blood|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wn/3l/rq/8a/jLslJietfQJEgOvQHk4fRYFCnTS-1200-1200-675-675-crop-000000.jpg?v=b1d91bdea7"
+  },
+  "marriage story|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/q9/0n/be/sq/marriage-story-1200-1200-675-675-crop-000000.jpg?v=150e60d1ae"
+  },
+  "justice league vs. teen titans|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/c6/ms/hz/dj/justice-league-vs-teen-titans-1200-1200-675-675-crop-000000.jpg?v=1b7c067cf1"
+  },
+  "justice league dark|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pv/le/wz/j2/2idkeA6HJ9F7IxeP6zbU4xBU35y-1200-1200-675-675-crop-000000.jpg?v=0bbc9bd3a1"
+  },
+  "rrr|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7n/6j/tx/xn/rrr-1200-1200-675-675-crop-000000.jpg?v=65589cd474"
+  },
+  "marty supreme|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9v/j7/mm/yn/marty-sup-1200-1200-675-675-crop-000000.jpg?v=4c4675acde"
+  },
+  "teen titans: the judas contract|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/m6/69/5l/t4/8bUSgDE11dtcQmHLvGGhAQOWMlE-1200-1200-675-675-crop-000000.jpg?v=3d318321c4"
+  },
+  "suicide squad: hell to pay|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/d2/oq/jy/rf/suicide%20squad-1200-1200-675-675-crop-000000.jpg?v=4b48e641b0"
+  },
+  "they live|1988": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/zw/ld/ag/np/they%20live-1200-1200-675-675-crop-000000.jpg?v=abebff44f9"
+  },
+  "django|1966": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ch/qw/39/n2/django-1200-1200-675-675-crop-000000.jpg?v=bb758a45ba"
+  },
+  "infested|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1x/56/89/qb/infested-1200-1200-675-675-crop-000000.jpg?v=61624a312c"
+  },
+  "the death of superman|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ye/ds/sp/4a/fsUF7k9oH9HNJx5LfSg5HNhxb2m-1200-1200-675-675-crop-000000.jpg?v=f1b52cda7e"
+  },
+  "constantine: city of demons - the movie|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j3/fe/tk/ky/constantine-1200-1200-675-675-crop-000000.jpg?v=2a50879fcd"
+  },
+  "the blob|1988": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/24/h0/z0/8p/the-blob-1988-1200-1200-675-675-crop-000000.jpg?v=f49b191075"
+  },
+  "hardcore henry|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/64/89/ka/81/hardcore-2015-1200-1200-675-675-crop-000000.jpg?v=cbd0711834"
+  },
+  "reign of the supermen|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/og/7u/1f/pv/reign-of-supermen-1200-1200-675-675-crop-000000.jpg?v=532668ec76"
+  },
+  "batman: hush|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/y0/oa/wk/hk/batman%20hush-1200-1200-675-675-crop-000000.jpg?v=ba263863c4"
+  },
+  "man of steel|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ca/j6/xk/6f/man-of-steel-1200-1200-675-675-crop-000000.jpg?v=28e9a32f62"
+  },
+  "le trou|1960": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/oo/sp/9k/kb/le-trou-1200-1200-675-675-crop-000000.jpg?v=1e35655d98"
+  },
+  "wonder woman: bloodlines|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/si/hs/92/jo/dBrH0ByRQhro3215t3e3awI0Muj-1200-1200-675-675-crop-000000.jpg?v=6693ff6fd6"
+  },
+  "justice league dark: apokolips war|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/i5/kh/vq/yx/justice-1200-1200-675-675-crop-000000.jpg?v=72ab462c14"
+  },
+  "dc showcase - constantine: the house of mystery|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/n4/wq/d5/kx/ConstantineTheHouse-1200-1200-675-675-crop-000000.jpg?v=96f376d174"
+  },
+  "brokeback mountain|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hv/5n/fq/le/broke-1200-1200-675-675-crop-000000.jpg?v=eb7277d7e7"
+  },
+  "dc showcase: adam strange|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xo/se/oo/36/vKF2SMP1bF1mEmJpAqEAPrzG9DN-1200-1200-675-675-crop-000000.jpg?v=e6187c1475"
+  },
+  "superman: man of tomorrow|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5r/6r/4n/4a/gBpxdg0TrDul9O2MzsN7BmNOLyY-1200-1200-675-675-crop-000000.jpg?v=2235d18750"
+  },
+  "dc showcase: kamandi: the last boy on earth!|2021": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/k3/4b/dg/0s/yvsP2nlp0utA6YeLI2wY4JptrMB-1200-1200-675-675-crop-000000.jpg?v=104b2bfe25"
+  },
+  "lost river|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qv/rt/qo/pq/lost-river-1200-1200-675-675-crop-000000.jpg?v=246f1fd37f"
+  },
+  "dragon ball super: broly|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lh/qu/4b/ay/dragon-ball-super-broly-1200-1200-675-675-crop-000000.jpg?v=bfd805f376"
+  },
+  "dragon ball z: broly - the legendary super saiyan|1993": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4y/ls/ke/wk/2GmSSCZ9WE00ti0TdwFQCYbhXuL-1200-1200-675-675-crop-000000.jpg?v=ed725ba713"
+  },
+  "the substance|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ju/7r/z4/9i/xfSVZf7naMoGuqoHaQhbvfPrfWs-1200-1200-675-675-crop-000000.jpg?v=adde104f43"
+  },
+  "voyage of time: the imax experience|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9n/at/8o/ev/p04OwhvsoxgmdHQqflnDW8h3QBb-1200-1200-675-675-crop-000000.jpg?v=1671387ae3"
+  },
+  "starred up|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z5/lc/bk/0o/starred-up-1200-1200-675-675-crop-000000.jpg?v=3eeb3cc86b"
+  },
+  "it follows|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hk/6q/84/oi/it-follows-1200-1200-675-675-crop-000000.jpg?v=153860ef84"
+  },
+  "project hail mary|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/6/1/1/2/8/8/tmdb/o2xLxY1LdwBMsrGD9hjIaOrIQm6-1200-1200-675-675-crop-000000.jpg?v=70f2fabccc"
+  },
+  "uncut gems|2019": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jr/zc/xo/iw/uncut-gems-1200-1200-675-675-crop-000000.jpg?v=3ae14b9389"
+  },
+  "pervert!|2005": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/5/3/7/3/55373-pervert-0-230-0-345-crop.jpg?v=69d37ec1df"
+  },
+  "eternal sunshine of the spotless mind|2004": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2w/va/23/lr/esotsm-1200-1200-675-675-crop-000000.jpg?v=11483523ca"
+  },
+  "buried|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sf/ez/jp/7f/buried-1200-1200-675-675-crop-000000.jpg?v=a2db5b5aa3"
+  },
+  "punch-drunk love|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bs/fc/tk/4z/punch-drunk-love-1200-1200-675-675-crop-000000.jpg?v=3b0c0e0afd"
+  },
+  "12 angry men|1957": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h5/vs/mz/mj/12-angry-men-1200-1200-675-675-crop-000000.jpg?v=fa78296b3b"
+  },
+  "friday the 13th|1980": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/se/2w/9k/vu/friday-1200-1200-675-675-crop-000000.jpg?v=686885f1f0"
+  },
+  "perfect blue|1997": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jf/e4/gt/jx/mHG7dpLb0ZScSY3LpP443IHRmjy-1200-1200-675-675-crop-000000.jpg?v=363b875554"
+  },
+  "apollo 13|1995": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3a/y4/uy/89/apollo-13-1200-1200-675-675-crop-000000.jpg?v=893bd1d204"
+  },
+  "friday the 13th part 2|1981": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ll/oz/br/ik/80emEEa0svrT0YJDZLgLUu85ttp-1200-1200-675-675-crop-000000.jpg?v=acd4be0e98"
+  },
+  "hush|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a8/j3/9x/79/hush-1200-1200-675-675-crop-000000.jpg?v=0da2a4e6c4"
+  },
+  "spirited away|2001": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/s7/yb/jv/eq/spirited-away-1200-1200-675-675-crop-000000.jpg?v=d89d148596"
+  },
+  "friday the 13th part iii|1982": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3e/nf/n7/o2/friday-the-13th-part-3-1200-1200-675-675-crop-000000.jpg?v=7adb4eaaa2"
+  },
+  "moon|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7x/d5/lo/hi/moon-270-1200-1200-675-675-crop-000000.jpg?v=320cf48f63"
+  },
+  "mickey 17|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ce/wj/ed/wq/7Oh1xRB8QbMduhqXEUHKlnwxMJi-1200-1200-675-675-crop-000000.jpg?v=c4a2895be9"
+  },
+  "rear window|1954": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/me/pm/hq/3d/rear-window-1200-1200-675-675-crop-000000.jpg?v=73be8923d1"
+  },
+  "finding harry: the craft behind the magic|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t3/ww/7z/q8/taaRTuuVASqSSPzveuxiEtOxf0E-1200-1200-675-675-crop-000000.jpg?v=3825e7cffe"
+  },
+  "stronger|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/di/17/5x/5i/stronger-1200-1200-675-675-crop-000000.jpg?v=4347008c28"
+  },
+  "léon: the professional|1994": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ps/gc/mx/3y/leon-the-professional-160-1200-1200-675-675-crop-000000.jpg?v=a67910cd08"
+  },
+  "love & other drugs|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/di/v2/sr/l3/love-other-drugs-1200-1200-675-675-crop-000000.jpg?v=bdf75525c1"
+  },
+  "wicked city|1987": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/b2/9k/8s/xe/pmKFHSlA2Tu3Bn2zoGRV9ur7dp-1200-1200-675-675-crop-000000.jpg?v=afae3049c3"
+  },
+  "alibi.com|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1r/ot/tf/1n/hDxkGxzyKB4U3qd7g5l4kqwA8Tw-1200-1200-675-675-crop-000000.jpg?v=2886a4e3f0"
+  },
+  "alibi.com 2|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kh/1c/3e/wl/isihZ8cM9nr5JGNn8yU9l7yYxN3-1200-1200-675-675-crop-000000.jpg?v=b255933732"
+  },
+  "the eighth day|1996": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/7/4/0/9/27409-the-eighth-day-0-230-0-345-crop.jpg?v=207aa1f66c"
+  },
+  "videodrome|1983": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xa/04/29/l7/videodrome-1200-1200-675-675-crop-000000.jpg?v=0d3584f6b2"
+  },
+  "i, tonya|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w1/7j/rv/gr/i-tonya-1200-1200-675-675-crop-000000.jpg?v=4b81340186"
+  },
+  "michael|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/8/4/1/1/0/3/tmdb/tzBHMerSZQuBF3m0Qjc2Lp2NY0b-1200-1200-675-675-crop-000000.jpg?v=9e079a500a"
+  },
+  "room|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fi/5k/fw/yf/room-1200-1200-675-675-crop-000000.jpg?v=c5f5ca9127"
+  },
+  "thelma & louise|1991": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j9/ki/4g/yj/thelma-louise-1200-1200-675-675-crop-000000.jpg?v=1919d897be"
+  },
+  "fatal|2010": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9g/mw/ou/ys/fatal-1200-1200-675-675-crop-000000.jpg?v=4be14abd4b"
+  },
+  "irreversible|2002": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ju/fw/ci/ge/irreversible-1200-1200-675-675-crop-000000.jpg?v=89c937f06a"
+  },
+  "anatomy of a fall|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wt/mj/4u/pj/anatomy-1200-1200-675-675-crop-000000.jpg?v=b1310de47c"
+  },
+  "existenz|1999": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vn/v6/l0/wp/existenz-1200-1200-675-675-crop-000000.jpg?v=38f516a8be"
+  },
+  "project x|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nr/ty/l5/c4/project-x-100-1200-1200-675-675-crop-000000.jpg?v=fbe450301f"
+  },
+  "slither|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1s/zy/zd/vi/slither-1200-1200-675-675-crop-000000.jpg?v=5b5e4e826c"
+  },
+  "fifty shades of grey|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5i/gv/tw/n9/fifty-shades-grey-1200-1200-675-675-crop-000000.jpg?v=5c49301ad2"
+  },
+  "fifty shades darker|2017": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4t/kh/oq/3t/fifty-shades-darker-1200-1200-675-675-crop-000000.jpg?v=9013dbda07"
+  },
+  "fifty shades freed|2018": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/u0/4n/9i/nx/fifty-shades-freed-1200-1200-675-675-crop-000000.jpg?v=f98aba61c3"
+  },
+  "the devil wears prada|2006": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/14/9e/r7/14/the-devil-wears-prada-1200-1200-675-675-crop-000000.jpg?v=f8cd54f3af"
+  },
+  "the punisher: one last kill|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/3/1/7/4/7/0/tmdb/cQfy64A8u6UYVTeOG2KWPqBRAr9-1200-1200-675-675-crop-000000.jpg?v=24302704b5"
+  },
+  "the bus: a french football mutiny|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nn/we/jr/mx/sDiRU3SZhwctbJBK1OsXiBP21g9-1200-1200-675-675-crop-000000.jpg?v=f87b20d40f"
+  },
+  "the devil wears prada 2|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/9/5/5/8/6/tmdb/2cr7imTLVSSrzgL3bFKAMCMdgKw-1200-1200-675-675-crop-000000.jpg?v=92afd53341"
+  },
+  "a silent voice: the movie|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/y7/yv/ul/u9/silent-voice-1200-1200-675-675-crop-000000.jpg?v=248e08bb95"
+  },
+  "escape from alcatraz|1979": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xj/iq/m3/w6/escape-from-alcatraz-1200-1200-675-675-crop-000000.jpg?v=ab98e8eea7"
+  },
+  "anora|2024": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5d/nm/eu/bz/anora-1200-1200-675-675-crop-000000.jpg?v=220493ca2d"
+  },
+  "the hunt|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yi/7a/tn/sp/the-hunt-2012-1200-1200-675-675-crop-000000.jpg?v=939df2aba9"
+  },
+  "venus in fur|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/aw/xz/eo/gw/venus-in-fur-1200-1200-675-675-crop-000000.jpg?v=b2feabe1c6"
+  },
+  "snow white and the seven dwarfs|1937": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/uc/1z/k1/s2/snow-white-1200-1200-675-675-crop-000000.jpg?v=cd01f7f7ca"
+  },
+  "pinocchio|1940": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/u3/35/1z/7t/pinocchio-1200-1200-675-675-crop-000000.jpg?v=0f3cdaaa15"
+  },
+  "dumbo|1941": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9w/l6/vh/1v/dumbo-1200-1200-675-675-crop-000000.jpg?v=3aa0dc7bdc"
+  },
+  "fantasia|1940": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/5/1/3/9/6/tmdb/2HspgJeppUvFHimFs0lN70yOseN-1200-1200-675-675-crop-000000.jpg?v=3d4743daf3"
+  },
+  "bambi|1942": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/rc/qm/8x/4m/bambi-1200-1200-675-675-crop-000000.jpg?v=697908a056"
+  },
+  "obsession|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/2/3/4/4/7/2/tmdb/diOZbaDnB2CIilwd0527AB1qMvW-1200-1200-675-675-crop-000000.jpg?v=e165ee724d"
+  },
+  "saludos amigos|1942": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jy/yy/6c/n2/saludos-1200-1200-675-675-crop-000000.jpg?v=1733d98ea2"
+  },
+  "backrooms|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/9/7/6/4/1/9/tmdb/nwlTTCHTIBtkvb70762Ug25khlV-1200-1200-675-675-crop-000000.jpg?v=ffeffd44cc"
+  },
+  "my life as a zucchini|2016": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/97/hm/3x/st/my-life-as-a-courgette-1200-1200-675-675-crop-000000.jpg?v=e6b826b28f"
+  },
+  "de gaulle: résistance|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/0/5/1/0/0/0/tmdb/ngxcfLFMefoFl6kzEth2OsMSRxz-1200-1200-675-675-crop-000000.jpg?v=1ef3f55119"
+  },
+  "fantastic mr. fox|2009": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/be/5b/hi/85/fantastic-mr-fox-1200-1200-675-675-crop-000000.jpg?v=da0201b5cf"
+  },
+  "bleach: thousand-year blood war - the calamity|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/5/3/1/7/1/1/tmdb/fwdosqd1BW1tDlvaF9qhMuERQGY-1200-1200-675-675-crop-000000.jpg?v=42a356baa6"
+  },
+  "supergirl|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3o/6q/to/c2/supergirl-1200-1200-675-675-crop-000000.jpg?v=2f313fc514"
+  },
+  "disclosure day|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/5/9/2/5/1/tmdb/dGZaIpX9NIFP0WLhSOfG1Ezfqap-1200-1200-675-675-crop-000000.jpg?v=c4664415f3"
+  },
+  "the death of robin hood|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/l4/mn/ut/z2/pwTMQFylIJ2pFJV0yJpcAoihcNI-1200-1200-675-675-crop-000000.jpg?v=4c0e593a80"
+  },
+  "toy story 5|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/95/lo/so/uy/1WAxiCSwgPAKlOGrqbCdks0A1NI-1200-1200-675-675-crop-000000.jpg?v=6787fc1781"
+  },
+  "minions & monsters|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/9/6/8/0/8/tmdb/pqFnCSJZ3Hq7QOM8uu2WC8k0R3q-1200-1200-675-675-crop-000000.jpg?v=0c3bc65b5a"
+  },
+  "evil dead|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0r/tr/ed/48/evil-dead-1200-1200-675-675-crop-000000.jpg?v=a8a4394d1a"
+  },
+  "evil dead rise|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/uu/ak/qz/jy/evil%20dead%20rise-1200-1200-675-675-crop-000000.jpg?v=f6e3ec9cd4"
+  },
+  "evil dead burn|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mm/pb/9k/lx/79JmgUTxwnhrM9800rHKnUlmI5-1200-1200-675-675-crop-000000.jpg?v=cd721d1abb"
+  },
+  "moana|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ru/g1/69/5x/c6BPbkO5Npt1OdwttAxCFo06wtH-1200-1200-675-675-crop-000000.jpg?v=40983314e4"
+  },
+  "the odyssey|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vn/7k/d6/d7/odyssey-1200-1200-675-675-crop-000000.jpg?v=9f3eb79026"
+  },
+  "exit 8|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/2/9/0/7/1/8/tmdb/ie827c44beNPNnxIOi8EM9mCI4A-1200-1200-675-675-crop-000000.jpg?v=9bedbd5352"
+  },
+  "berlin hero|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/3/1/1/1/0/tmdb/aP2tumjwb8aaSHTWdPNV2MamGv3-1200-1200-675-675-crop-000000.jpg?v=d1ccfa1741"
+  },
+  "passenger|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bx/02/4d/tr/hl7FEzMqgpsD0RfwMzskzQoiD1M-1200-1200-675-675-crop-000000.jpg?v=61e7f24858"
+  },
+  "comédie-française|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/3/7/3/1/1/9/tmdb/x5kOiZe7v5umAF2Cd36mFedxjZZ-1200-1200-675-675-crop-000000.jpg?v=1f8dbdf98a"
+  },
+  "the spider within: a spider-verse story|2023": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5e/j7/td/0o/spider%20within-1200-1200-675-675-crop-000000.jpg?v=61f00bd259"
+  },
+  "enola holmes|2020": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6q/br/9q/6n/enola-holmes-1200-1200-675-675-crop-000000.jpg?v=aca33e37e5"
+  },
+  "enola holmes 2|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lr/wn/3e/m2/enola-1200-1200-675-675-crop-000000.jpg?v=14ad7b12bb"
+  },
+  "spider-man: brand new day|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/8/7/2/8/7/1/tmdb/jenQoCLJ4FEfFGZS13op91jlxjy-1200-1200-675-675-crop-000000.jpg?v=131b9e91eb"
+  },
+  "enola holmes 3|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/0/8/6/8/7/2/tmdb/gjJeZeNvwHRB5nNMTdxQ6NjLpF6-1200-1200-675-675-crop-000000.jpg?v=9a183536b5"
+  },
+  "war machine|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/4/9/6/7/6/tmdb/UaPBEvOJs9b2D2XYVTrHg0ti3F-1200-1200-675-675-crop-000000.jpg?v=344a8fc2b7"
+  },
+  "the mortuary assistant|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/3/4/7/0/1/1/tmdb/nVwfrUSAR1fMerxvlxj1oc4XNtR-1200-1200-675-675-crop-000000.jpg?v=cb8a2c59c8"
+  },
+  "the devil's mouth|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/3/5/8/2/1/2/tmdb/w8z3ThhLehGPJuAShostzeKxJvK-1200-1200-675-675-crop-000000.jpg?v=3a54efebca"
+  },
+  "megan is missing|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yf/05/1d/n6/megan%20is%20missing-1200-1200-675-675-crop-000000.jpg?v=0d15108b2c"
+  },
+  "the end of oak street|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/9/9/2/9/6/2/tmdb/mJDCrEFKHUqoZe4xyI8CE47pw7P-1200-1200-675-675-crop-000000.jpg?v=8ab201f560"
+  },
+  "cinderella|1950": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pc/0x/wa/4z/cinderella-1200-1200-675-675-crop-000000.jpg?v=62f842d23e"
+  },
+  "alice in wonderland|1951": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/d6/uf/mw/39/alice-in-wonderland-1951-1200-1200-675-675-crop-000000.jpg?v=c11fa8c6e8"
+  },
+  "fjord|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xm/jb/0o/nc/1on8a6DEzhBTjHOKyLWGyaG58jF-1200-1200-675-675-crop-000000.jpg?v=114b932ef6"
+  },
+  "vacation|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qi/zg/ge/2y/vacation-2015-1200-1200-675-675-crop-000000.jpg?v=0d12257668"
+  },
+  "peter pan|1953": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/zj/47/4v/5b/peter-pan-1200-1200-675-675-crop-000000.jpg?v=39ca7e0849"
+  },
+  "the grand budapest hotel|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/iz/zi/e3/3y/45AFDE44-4A07-4ADC-92B3-702BABCBBC05-1200-1200-675-675-crop-000000.jpg?v=26cded064b"
+  },
+  "grand theft auto vi: an extended look|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/6/0/9/8/9/0/tmdb/oDp9Yvvi2mRHXxPh6E2wi9ybhtK-1200-1200-675-675-crop-000000.jpg?v=265b55b5d8"
+  },
+  "lady and the tramp|1955": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hd/0g/rz/xa/-1200-1200-675-675-crop-000000.jpg?v=9b88aba340"
+  },
+  "sleeping beauty|1959": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/j6/8h/l5/6y/sleeping-beauty-1200-1200-675-675-crop-000000.jpg?v=1250f409d7"
+  },
+  "99 francs|2007": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nm/3y/ry/mt/99%20francs-1200-1200-675-675-crop-000000.jpg?v=7d77d38622"
+  },
+  "resident evil|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/c7/2d/gq/lu/resi-1200-1200-675-675-crop-000000.jpg?v=8d3221cbed"
+  },
+  "a woman's life|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/4/2/3/0/0/tmdb/5wpgAfHPn5tQyMh9p7WDf62604J-1200-1200-675-675-crop-000000.jpg?v=a6ac8d2400"
+  },
+  "primetime|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/2/6/2/0/1/9/tmdb/mbnopFljGL3UIkSC22uQap4y5ah-1200-1200-675-675-crop-000000.jpg?v=d9a7b9f810"
+  },
+  "the king and the mockingbird|1980": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/62/cb/y5/dp/king%20and%20mockingbird-1200-1200-675-675-crop-000000.jpg?v=e8db2ff043"
+  },
+  "big fish|2003": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/wn/va/4u/ye/big-fish-1200-1200-675-675-crop-000000.jpg?v=a7707eeaa2"
+  },
+  "kraken|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/4/4/4/2/0/3/tmdb/jKlt1kxBAbCpPv8qOBXOdE1UAPy-1200-1200-675-675-crop-000000.jpg?v=dd1dc98354"
+  },
+  "verity|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/1/6/7/1/5/1/tmdb/3BoHXmGAfC2qO4wnCpMYV0BzpHD-1200-1200-675-675-crop-000000.jpg?v=3b09345979"
+  },
+  "ted|2012": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w1/us/v3/0d/ted-1200-1200-675-675-crop-000000.jpg?v=5b074989f6"
+  },
+  "ted 2|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/oc/eg/uv/22/ted-2-1200-1200-675-675-crop-000000.jpg?v=596f36ceba"
+  },
+  "memento|2000": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/za/7s/m0/sh/memento-1200-1200-675-675-crop-000000.jpg?v=d37b27369d"
+  },
+  "other mommy|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/2o/3d/bn/sl/smZ8BT4Vzw4iCEppTLCnN8jNYtn-1200-1200-675-675-crop-000000.jpg?v=3661b62b2c"
+  },
+  "a monster in paris|2011": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xv/my/ks/fy/uLg9t6c34soxT4UAebbL3Cnlbl5-1200-1200-675-675-crop-000000.jpg?v=b95de54b4d"
+  },
+  "dragon ball z: battle of gods|2013": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ob/ow/68/x5/7fVH3iPculxmygNnm1W3FAQFAo7-1200-1200-675-675-crop-000000.jpg?v=551e250848"
+  },
+  "dragon ball super: super hero|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ng/i0/jh/08/dragon%20ball-1200-1200-675-675-crop-000000.jpg?v=e13e40f640"
+  },
+  "dragon ball z: resurrection 'f'|2015": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/gb/yi/qy/ye/yWZCOzib7BipGjYJ39nrplb1Fy-1200-1200-675-675-crop-000000.jpg?v=d156e5e023"
+  },
+  "the fish and i|2014": {
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/2/6/4/9/0/526490-the-fish-and-i-0-230-0-345-crop.jpg?v=5d9f5e2dbc"
+  },
+  "digger|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/9e/bq/fx/ti/digger-1200-1200-675-675-crop-000000.jpg?v=96e129a6f2"
+  },
+  "species|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z9/lk/ao/kd/4TRFG17QZgD0XHtMRk4yttPMiUr-1200-1200-675-675-crop-000000.jpg?v=4e25f91260"
+  },
+  "vertiginous|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/5/3/1/0/1/4/tmdb/kaaurV9I7JfcAKFNM3ppRHEkMvw-1200-1200-675-675-crop-000000.jpg?v=dc1de3ba4f"
+  },
+  "cronos|1992": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/e0/al/mk/kv/chronos-1200-1200-675-675-crop-000000.jpg?v=053787376f"
+  },
+  "guillermo del toro's pinocchio|2022": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/81/rv/l7/1o/gdt-pinnochio-1200-1200-675-675-crop-000000.jpg?v=fbd76d1861"
+  },
+  "godzilla minus zero|2026": {
+    "poster_url": "https://a.ltrbxd.com/resized/alternative-backdrop/1/2/6/6/6/8/4/tmdb/me4VDyWuOVzeEoT4sAFiNwkmmw8-1200-1200-675-675-crop-000000.jpg?v=070fff48e5"
+  },
+  "lesbian space princess|2025": {
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3g/yl/m1/p9/LSP_BountyHunterPromo_Kiki-1200-1200-675-675-crop-000000.jpg?v=8cea3d65a8"
+  }
+}

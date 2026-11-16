@@ -1,0 +1,48 @@
+name: Mise à jour Mes Films (Letterboxd)
+
+on:
+  push:
+    paths:
+      - 'l_oeil_critique/movies/letterboxd-*.zip'
+      - 'l_oeil_critique/movies/watched.csv'
+      - 'l_oeil_critique/movies/diary.csv'
+  workflow_dispatch:
+
+concurrency:
+  group: media-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-movies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN_2 }}
+          fetch-depth: 0
+
+      - name: Configurer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Générer movies.json et enrichir les métadonnées
+        env:
+          OMDB_KEY: ${{ secrets.OMDB_KEY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python l_oeil_critique/movies/lb.py
+
+      - name: Commit & Push movies.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add l_oeil_critique/movies/movies.json l_oeil_critique/movies/poster_cache.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(movies): mise à jour automatique movies.json"
+            git pull --rebase origin main
+            git push origin main
+          fi
