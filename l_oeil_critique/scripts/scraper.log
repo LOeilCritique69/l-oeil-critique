@@ -101,3 +101,36 @@
 2026-11-17 12:53:30,471 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-17 12:53:30,511 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-17 12:53:30,511 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-17 22:28:42,286 [INFO] ==== Début du script bandes-annonces ====
+2026-11-17 22:28:42,301 [INFO] Chargement du log depuis E:\l-oeil-critique\l_oeil_critique\scripts\bande_annonces_log.json
+2026-11-17 22:28:42,319 [INFO] 1639 identifiants chargés depuis le log
+2026-11-17 22:28:42,319 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-17 22:28:43,228 [INFO] Démarrage scraping CineHorizons...
+2026-11-17 22:28:47,003 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-17 22:28:47,035 [INFO] 10 blocs détectés sur la page 1
+2026-11-17 22:28:47,038 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-17 22:28:47,038 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-17 22:28:47,038 [INFO] Démarrage scraping Allociné (films)...
+2026-11-17 22:28:47,837 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-17 22:28:47,899 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-17 22:28:47,899 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-17 22:28:47,899 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-17 22:28:48,258 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-17 22:28:48,324 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-17 22:28:48,324 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-11-17 22:28:48,436 [INFO] Démarrage scraping TMDb...
+2026-11-17 22:28:48,997 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-17 22:28:49,909 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-17 22:28:51,318 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-17 22:28:52,588 [INFO] Article ajouté TMDb (upcoming): Meeting the Buddha
+2026-11-17 22:28:53,999 [INFO] 14 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-17 22:28:57,213 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-17 22:28:57,592 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-17 22:28:57,974 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-17 22:28:58,672 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-17 22:28:59,588 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-17 22:29:00,961 [INFO] Scraping TMDb terminé (1 items)
+2026-11-17 22:29:00,962 [INFO] 1 articles retenus pour ce run
+2026-11-17 22:29:01,069 [INFO] 2783 articles sauvegardés dans E:\l-oeil-critique\l_oeil_critique\bande_annonces_blocs.html
+2026-11-17 22:29:01,070 [INFO] Sauvegarde du log avec 1640 identifiants
+2026-11-17 22:29:01,072 [INFO] Poussée automatique FORCÉE vers GitHub...

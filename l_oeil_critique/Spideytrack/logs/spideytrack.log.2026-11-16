@@ -1,0 +1,62 @@
+22:54:46  INFO     🎯 Jour à jouer : 684
+22:54:46  INFO     ═══════════════════════════════════════════════════════
+22:54:46  INFO       Tom Holland
+22:54:46  INFO     ═══════════════════════════════════════════════════════
+22:55:08  INFO       ❌ Pas lui.
+22:55:08  INFO       📊 Score : 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:55:08  INFO     ═══════════════════════════════════════════════════════
+22:55:08  INFO       Andrew Garfield
+22:55:08  INFO     ═══════════════════════════════════════════════════════
+22:55:24  INFO       ❌ Pas lui.
+22:55:24  INFO       📊 Score : 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:55:24  INFO     ═══════════════════════════════════════════════════════
+22:55:24  INFO       Tobey Maguire
+22:55:24  INFO     ═══════════════════════════════════════════════════════
+22:55:41  INFO       ❌ Pas lui.
+22:55:41  INFO       📊 Score : 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:55:41  INFO     ✅ database.json vérifié : jour 684 bien enregistré.
+22:55:41  INFO     📅 Prochain jour : 685
+22:55:41  INFO     ═══════════════════════════════════════════════════════
+22:55:41  INFO       📋 RAPPORT DU 2026-11-15
+22:55:41  INFO     ═══════════════════════════════════════════════════════
+22:55:41  INFO       ❌ Tom Holland — Pas lui | 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:55:41  INFO       ❌ Andrew Garfield — Pas lui | 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:55:41  INFO       ❌ Tobey Maguire — Pas lui | 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:55:41  INFO     ───────────────────────────────────────────────────────
+22:55:41  INFO       📊 STATS GLOBALES
+22:55:41  INFO     ───────────────────────────────────────────────────────
+22:55:41  INFO       Tom Holland : 3/684 parties (0.4%) | streak 0 —
+22:55:41  INFO       Andrew Garfield : 2/684 parties (0.3%) | streak 0 —
+22:55:41  INFO       Tobey Maguire : 2/684 parties (0.3%) | streak 0 —
+22:55:41  INFO     🏁 Terminé.
+23:07:06  INFO     🎯 Jour à jouer : 685
+23:07:06  INFO     ═══════════════════════════════════════════════════════
+23:07:06  INFO       Tom Holland
+23:07:06  INFO     ═══════════════════════════════════════════════════════
+23:07:22  INFO       ❌ Pas lui.
+23:07:22  INFO       📊 Score : 3/7 exacts, 2/7 partiels (pondéré: 4.0)
+23:07:22  INFO     ═══════════════════════════════════════════════════════
+23:07:22  INFO       Andrew Garfield
+23:07:22  INFO     ═══════════════════════════════════════════════════════
+23:07:39  INFO       ❌ Pas lui.
+23:07:39  INFO       📊 Score : 4/7 exacts, 2/7 partiels (pondéré: 5.0)
+23:07:39  INFO     ═══════════════════════════════════════════════════════
+23:07:39  INFO       Tobey Maguire
+23:07:39  INFO     ═══════════════════════════════════════════════════════
+23:07:55  INFO       ❌ Pas lui.
+23:07:55  INFO       📊 Score : 4/7 exacts, 2/7 partiels (pondéré: 5.0)
+23:07:55  INFO     ✅ database.json vérifié : jour 685 bien enregistré.
+23:07:55  INFO     📅 Prochain jour : 686
+23:07:55  INFO     ═══════════════════════════════════════════════════════
+23:07:55  INFO       📋 RAPPORT DU 2026-11-16
+23:07:55  INFO     ═══════════════════════════════════════════════════════
+23:07:55  INFO       ❌ Tom Holland — Pas lui | 3/7 exacts, 2/7 partiels (pondéré: 4.0)
+23:07:55  INFO       ❌ Andrew Garfield — Pas lui | 4/7 exacts, 2/7 partiels (pondéré: 5.0)
+23:07:55  INFO       ❌ Tobey Maguire — Pas lui | 4/7 exacts, 2/7 partiels (pondéré: 5.0)
+23:07:55  INFO     ───────────────────────────────────────────────────────
+23:07:55  INFO       📊 STATS GLOBALES
+23:07:55  INFO     ───────────────────────────────────────────────────────
+23:07:55  INFO       Tom Holland : 3/685 parties (0.4%) | streak 0 —
+23:07:55  INFO       Andrew Garfield : 2/685 parties (0.3%) | streak 0 —
+23:07:55  INFO       Tobey Maguire : 2/685 parties (0.3%) | streak 0 —
+23:07:55  INFO     🏁 Terminé.

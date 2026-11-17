@@ -29,3 +29,41 @@
 22:06:21  INFO       Andrew Garfield : 2/686 parties (0.3%) | streak 0 —
 22:06:21  INFO       Tobey Maguire : 2/686 parties (0.3%) | streak 0 —
 22:06:21  INFO     🏁 Terminé.
+22:26:12  INFO     ✅ Script déjà lancé aujourd'hui (2026-11-17). Rien à faire.
+22:26:22  WARNING  ⚠️  Incohérence détectée : state.json annonçait le jour 686, mais database.json indique que le prochain jour attendu est 687. Auto-correction sur la base de database.json (source de vérité).
+22:26:22  INFO     🎯 Jour à jouer : 687
+22:26:22  INFO     ═══════════════════════════════════════════════════════
+22:26:22  INFO       Tom Holland
+22:26:22  INFO     ═══════════════════════════════════════════════════════
+22:27:30  WARNING  ⚠️  Incohérence détectée : state.json annonçait le jour 685, mais database.json indique que le prochain jour attendu est 686. Auto-correction sur la base de database.json (source de vérité).
+22:27:30  INFO     🎯 Jour à jouer : 686
+22:27:30  INFO     ═══════════════════════════════════════════════════════
+22:27:30  INFO       Tom Holland
+22:27:30  INFO     ═══════════════════════════════════════════════════════
+22:27:46  INFO       ❌ Pas lui.
+22:27:46  INFO       📊 Score : 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:27:46  INFO     ═══════════════════════════════════════════════════════
+22:27:46  INFO       Andrew Garfield
+22:27:46  INFO     ═══════════════════════════════════════════════════════
+22:28:02  INFO       ❌ Pas lui.
+22:28:02  INFO       📊 Score : 4/7 exacts, 1/7 partiels (pondéré: 4.5)
+22:28:02  INFO     ═══════════════════════════════════════════════════════
+22:28:02  INFO       Tobey Maguire
+22:28:02  INFO     ═══════════════════════════════════════════════════════
+22:28:19  INFO       ❌ Pas lui.
+22:28:19  INFO       📊 Score : 4/7 exacts, 1/7 partiels (pondéré: 4.5)
+22:28:19  INFO     ✅ database.json vérifié : jour 686 bien enregistré.
+22:28:19  INFO     📅 Prochain jour : 687
+22:28:19  INFO     ═══════════════════════════════════════════════════════
+22:28:19  INFO       📋 RAPPORT DU 2026-11-17
+22:28:19  INFO     ═══════════════════════════════════════════════════════
+22:28:19  INFO       ❌ Tom Holland — Pas lui | 3/7 exacts, 1/7 partiels (pondéré: 3.5)
+22:28:19  INFO       ❌ Andrew Garfield — Pas lui | 4/7 exacts, 1/7 partiels (pondéré: 4.5)
+22:28:19  INFO       ❌ Tobey Maguire — Pas lui | 4/7 exacts, 1/7 partiels (pondéré: 4.5)
+22:28:19  INFO     ───────────────────────────────────────────────────────
+22:28:19  INFO       📊 STATS GLOBALES
+22:28:19  INFO     ───────────────────────────────────────────────────────
+22:28:19  INFO       Tom Holland : 3/686 parties (0.4%) | streak 0 —
+22:28:19  INFO       Andrew Garfield : 2/686 parties (0.3%) | streak 0 —
+22:28:19  INFO       Tobey Maguire : 2/686 parties (0.3%) | streak 0 —
+22:28:19  INFO     🏁 Terminé.
