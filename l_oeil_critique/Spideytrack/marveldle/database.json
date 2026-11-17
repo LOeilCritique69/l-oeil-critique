@@ -19840,6 +19840,35 @@
       }
     },
     "685": {
+      "date": "2026-11-16",
+      "chars": {
+        "tom": {
+          "result": false,
+          "exact": 3,
+          "partial": 2,
+          "score": 3,
+          "weighted": 4.0,
+          "screenshot": "marveldle/images/day_685.png"
+        },
+        "andrew": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_andrew/day_685.png"
+        },
+        "tobey": {
+          "result": false,
+          "exact": 4,
+          "partial": 2,
+          "score": 4,
+          "weighted": 5.0,
+          "screenshot": "marveldle/images_tobey/day_685.png"
+        }
+      }
+    },
+    "686": {
       "date": "2026-11-17",
       "chars": {
         "tom": {
@@ -19848,7 +19877,7 @@
           "partial": 1,
           "score": 3,
           "weighted": 3.5,
-          "screenshot": "marveldle/images/day_685.png"
+          "screenshot": "marveldle/images/day_686.png"
         },
         "andrew": {
           "result": false,
@@ -19856,7 +19885,7 @@
           "partial": 1,
           "score": 4,
           "weighted": 4.5,
-          "screenshot": "marveldle/images_andrew/day_685.png"
+          "screenshot": "marveldle/images_andrew/day_686.png"
         },
         "tobey": {
           "result": false,
@@ -19864,7 +19893,7 @@
           "partial": 1,
           "score": 4,
           "weighted": 4.5,
-          "screenshot": "marveldle/images_tobey/day_685.png"
+          "screenshot": "marveldle/images_tobey/day_686.png"
         }
       }
     }
