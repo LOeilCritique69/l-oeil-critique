@@ -241,3 +241,47 @@
 2026-11-18 12:47:29,464 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-18 12:47:29,500 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-18 12:47:29,500 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-18 21:10:42,201 [INFO] ==== Début du script bandes-annonces ====
+2026-11-18 21:10:42,222 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-18 21:10:42,222 [INFO] 1664 identifiants chargés depuis le log
+2026-11-18 21:10:42,222 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-18 21:10:42,813 [INFO] Démarrage scraping CineHorizons...
+2026-11-18 21:10:44,867 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-18 21:10:45,048 [INFO] 10 blocs détectés sur la page 1
+2026-11-18 21:10:45,050 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-18 21:10:45,050 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-18 21:10:45,050 [INFO] Démarrage scraping Allociné (films)...
+2026-11-18 21:10:45,585 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-18 21:10:45,633 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-18 21:10:45,633 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-18 21:10:45,633 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-18 21:10:46,237 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-18 21:10:46,329 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-18 21:10:46,329 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-11-18 21:10:46,374 [INFO] Démarrage scraping TMDb...
+2026-11-18 21:10:46,631 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-18 21:10:46,664 [INFO] Article ajouté TMDb (upcoming): Le Chat Chapeauté
+2026-11-18 21:10:46,692 [INFO] Article ajouté TMDb (upcoming): Billie, à la croisée des mondes
+2026-11-18 21:10:46,759 [INFO] Article ajouté TMDb (upcoming): Aisha ne peut plus s'envoler
+2026-11-18 21:10:46,821 [INFO] Article ajouté TMDb (upcoming): Everybody Digs Bill Evans
+2026-11-18 21:10:46,855 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-11-18 21:10:47,209 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-18 21:10:47,340 [INFO] Article ajouté TMDb (upcoming): 100 litraa sahtia
+2026-11-18 21:10:47,541 [INFO] Article ajouté TMDb (upcoming): Shifting Baselines
+2026-11-18 21:10:48,184 [INFO] Article ajouté TMDb (upcoming): TROP CHAUD – KlimaSeniorinnen vs. Switzerland
+2026-11-18 21:10:48,281 [INFO] 10 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-18 21:10:48,501 [INFO] Article ajouté TMDb (upcoming): Beat the Lotto
+2026-11-18 21:10:49,392 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-18 21:10:49,408 [INFO] Article ajouté TMDb (now_playing): Billie, à la croisée des mondes
+2026-11-18 21:10:49,437 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-18 21:10:49,597 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-18 21:10:49,634 [INFO] Article ajouté TMDb (now_playing): George Michael : The Faith Tour
+2026-11-18 21:10:49,872 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-18 21:10:50,509 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-18 21:10:50,854 [INFO] Scraping TMDb terminé (10 items)
+2026-11-18 21:10:50,854 [INFO] 8 articles retenus pour ce run
+2026-11-18 21:10:50,947 [INFO] 2815 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-18 21:10:50,948 [INFO] Sauvegarde du log avec 1672 identifiants
+2026-11-18 21:10:50,949 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-18 21:10:50,994 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-18 21:10:50,994 [INFO] ==== Fin du script bandes-annonces ====
