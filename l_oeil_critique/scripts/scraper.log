@@ -136,3 +136,108 @@
 2026-11-17 22:29:01,072 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-17 22:29:07,147 [INFO] Push GitHub FORCE réussi
 2026-11-17 22:29:07,147 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-18 12:46:34,938 [INFO] ==== Début du script bandes-annonces ====
+2026-11-18 12:46:34,961 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-18 12:46:34,961 [INFO] 1640 identifiants chargés depuis le log
+2026-11-18 12:46:34,962 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-18 12:46:36,252 [INFO] Démarrage scraping CineHorizons...
+2026-11-18 12:46:38,008 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-18 12:46:38,152 [INFO] 10 blocs détectés sur la page 1
+2026-11-18 12:46:38,153 [INFO] Extraction détails CineHorizons pour Avis de tempête
+2026-11-18 12:46:39,036 [INFO] Article ajouté CineHorizons: Avis de tempête
+2026-11-18 12:46:42,767 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-11-18 12:46:42,835 [INFO] 10 blocs détectés sur la page 2
+2026-11-18 12:46:42,836 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-18 12:46:42,836 [INFO] Scraping CineHorizons terminé (1 items)
+2026-11-18 12:46:42,836 [INFO] Démarrage scraping Allociné (films)...
+2026-11-18 12:46:43,346 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-18 12:46:43,941 [INFO] Article ajouté Allociné (film): Arsa
+2026-11-18 12:46:44,947 [INFO] Article ajouté Allociné (film): Ulya
+2026-11-18 12:46:45,387 [INFO] Article ajouté Allociné (film): Meeting The Buddha
+2026-11-18 12:46:45,969 [INFO] Article ajouté Allociné (film): À la poursuite de l’Affreunard
+2026-11-18 12:46:46,467 [INFO] Article ajouté Allociné (film): Tu ne jugeras point
+2026-11-18 12:46:46,956 [INFO] Article ajouté Allociné (film): Malika
+2026-11-18 12:46:47,459 [INFO] Article ajouté Allociné (film): Fais-moi un signe
+2026-11-18 12:46:47,968 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:46:48,456 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-18 12:46:49,029 [INFO] Article ajouté Allociné (film): Gabin
+2026-11-18 12:46:49,506 [INFO] Article ajouté Allociné (film): Weed Eaters
+2026-11-18 12:46:49,974 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:46:50,401 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-11-18 12:46:50,974 [INFO] Article ajouté Allociné (film): Camembert
+2026-11-18 12:46:51,657 [INFO] Article ajouté Allociné (film): Les Braves (Coward)
+2026-11-18 12:46:52,092 [INFO] Article ajouté Allociné (film): La Montagne d'or
+2026-11-18 12:46:52,541 [INFO] Article ajouté Allociné (film): Changer l'eau des fleurs
+2026-11-18 12:46:52,906 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-11-18 12:46:53,554 [INFO] Article ajouté Allociné (film): Une femme comme Eva
+2026-11-18 12:46:54,023 [INFO] Article ajouté Allociné (film): Changer l'eau des fleurs
+2026-11-18 12:46:54,400 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-11-18 12:46:54,930 [INFO] Article ajouté Allociné (film): The Good Boy
+2026-11-18 12:46:55,378 [INFO] Article ajouté Allociné (film): City Exterminator
+2026-11-18 12:46:55,805 [INFO] Article ajouté Allociné (film): Changer l'eau des fleurs
+2026-11-18 12:46:56,188 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-11-18 12:46:56,663 [INFO] Article ajouté Allociné (film): Changer l'eau des fleurs
+2026-11-18 12:46:57,048 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-11-18 12:46:57,627 [INFO] Article ajouté Allociné (film): Comment braquer une banque
+2026-11-18 12:46:58,061 [INFO] Article ajouté Allociné (film): Changer l'eau des fleurs
+2026-11-18 12:46:58,448 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-11-18 12:46:58,970 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:46:59,450 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:00,226 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-11-18 12:47:00,771 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:47:01,218 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:01,976 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-11-18 12:47:02,492 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:47:02,934 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:03,723 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-11-18 12:47:04,229 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:47:04,667 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:05,424 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-11-18 12:47:05,919 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:47:06,349 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:07,138 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-11-18 12:47:07,696 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:47:08,122 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:08,881 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-11-18 12:47:09,389 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:47:09,846 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:10,892 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-11-18 12:47:11,388 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-18 12:47:11,821 [INFO] Article ajouté Allociné (film): Billie, à la croisée des mondes
+2026-11-18 12:47:11,821 [INFO] Scraping Allociné (films) terminé (39 items)
+2026-11-18 12:47:11,821 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-18 12:47:12,210 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-18 12:47:14,099 [INFO] Article ajouté Allociné (serie): Garfield (saison 1)
+2026-11-18 12:47:16,122 [INFO] Article ajouté Allociné (serie): Ted: The Animated Series (saison 1)
+2026-11-18 12:47:17,524 [INFO] Article ajouté Allociné (serie): Only Murders In The Building (saison 6)
+2026-11-18 12:47:18,905 [INFO] Article ajouté Allociné (serie): Only Murders In The Building (saison 6)
+2026-11-18 12:47:20,259 [INFO] Article ajouté Allociné (serie): Koba LaD : Demain j’arrête (saison 1)
+2026-11-18 12:47:21,805 [INFO] Article ajouté Allociné (serie): Astrid et Raphaëlle (saison 7)
+2026-11-18 12:47:23,458 [INFO] Article ajouté Allociné (serie): Le Problème à 3 corps (saison 2)
+2026-11-18 12:47:24,817 [INFO] Article ajouté Allociné (serie): Le Problème à 3 corps (saison 2)
+2026-11-18 12:47:25,711 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-18 12:47:25,769 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-18 12:47:25,769 [INFO] Scraping Allociné (séries) terminé (8 items)
+2026-11-18 12:47:25,924 [INFO] Démarrage scraping TMDb...
+2026-11-18 12:47:25,992 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/3)
+2026-11-18 12:47:26,013 [INFO] Article ajouté TMDb (upcoming): Avengers : Doomsday
+2026-11-18 12:47:26,031 [INFO] Article ajouté TMDb (upcoming): La bola negra
+2026-11-18 12:47:26,047 [INFO] Article ajouté TMDb (upcoming): Dune : Troisième partie
+2026-11-18 12:47:26,064 [INFO] Article ajouté TMDb (upcoming): Léo, le chant des océans
+2026-11-18 12:47:26,081 [INFO] Article ajouté TMDb (upcoming): Six Mois dans la Maison Rose et Bleue
+2026-11-18 12:47:26,118 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/3)
+2026-11-18 12:47:26,137 [INFO] Article ajouté TMDb (upcoming): Carmen, l’oiseau rebelle
+2026-11-18 12:47:26,195 [INFO] Article ajouté TMDb (upcoming): Mariage au goût d'orange
+2026-11-18 12:47:26,738 [INFO] 17 films récupérés depuis TMDb (upcoming, page 3/3)
+2026-11-18 12:47:28,316 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-18 12:47:28,378 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-18 12:47:28,427 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-18 12:47:28,585 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-18 12:47:29,110 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-18 12:47:29,390 [INFO] Scraping TMDb terminé (7 items)
+2026-11-18 12:47:29,391 [INFO] 24 articles retenus pour ce run
+2026-11-18 12:47:29,462 [INFO] 2807 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-18 12:47:29,463 [INFO] Sauvegarde du log avec 1664 identifiants
+2026-11-18 12:47:29,464 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-18 12:47:29,500 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-18 12:47:29,500 [INFO] ==== Fin du script bandes-annonces ====
