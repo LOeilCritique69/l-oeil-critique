@@ -134,3 +134,5 @@
 2026-11-17 22:29:01,069 [INFO] 2783 articles sauvegardés dans E:\l-oeil-critique\l_oeil_critique\bande_annonces_blocs.html
 2026-11-17 22:29:01,070 [INFO] Sauvegarde du log avec 1640 identifiants
 2026-11-17 22:29:01,072 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-17 22:29:07,147 [INFO] Push GitHub FORCE réussi
+2026-11-17 22:29:07,147 [INFO] ==== Fin du script bandes-annonces ====
