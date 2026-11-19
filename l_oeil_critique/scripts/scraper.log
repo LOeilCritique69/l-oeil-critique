@@ -322,3 +322,85 @@
 2026-11-19 02:59:37,322 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-19 02:59:37,359 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-19 02:59:37,359 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-19 11:28:43,404 [INFO] ==== Début du script bandes-annonces ====
+2026-11-19 11:28:43,419 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-19 11:28:43,420 [INFO] 1675 identifiants chargés depuis le log
+2026-11-19 11:28:43,420 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-19 11:28:44,044 [INFO] Démarrage scraping CineHorizons...
+2026-11-19 11:28:46,019 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-19 11:28:46,177 [INFO] 10 blocs détectés sur la page 1
+2026-11-19 11:28:46,179 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-19 11:28:46,179 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-19 11:28:46,179 [INFO] Démarrage scraping Allociné (films)...
+2026-11-19 11:28:47,080 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-19 11:28:48,344 [INFO] Article ajouté Allociné (film): Un peu, beaucoup, passionnément, à la folie !
+2026-11-19 11:28:48,816 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:28:49,611 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-19 11:28:50,205 [INFO] Article ajouté Allociné (film): Gabin
+2026-11-19 11:28:50,682 [INFO] Article ajouté Allociné (film): Weed Eaters
+2026-11-19 11:28:51,132 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:28:51,517 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=3
+2026-11-19 11:28:52,099 [INFO] Article ajouté Allociné (film): Camembert
+2026-11-19 11:28:52,830 [INFO] Article ajouté Allociné (film): Les Braves (Coward)
+2026-11-19 11:28:53,288 [INFO] Article ajouté Allociné (film): La Montagne d'or
+2026-11-19 11:28:53,667 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=4
+2026-11-19 11:28:54,183 [INFO] Article ajouté Allociné (film): Une femme comme Eva
+2026-11-19 11:28:54,654 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:28:55,095 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=5
+2026-11-19 11:28:55,677 [INFO] Article ajouté Allociné (film): The Good Boy
+2026-11-19 11:28:56,182 [INFO] Article ajouté Allociné (film): City Exterminator
+2026-11-19 11:28:56,647 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:28:57,139 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=6
+2026-11-19 11:28:57,685 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:28:58,104 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=7
+2026-11-19 11:28:58,731 [INFO] Article ajouté Allociné (film): Comment braquer une banque
+2026-11-19 11:28:59,275 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:28:59,671 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=8
+2026-11-19 11:29:00,207 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:00,965 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=9
+2026-11-19 11:29:01,513 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:01,949 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:29:02,726 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=10
+2026-11-19 11:29:03,259 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:03,696 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:29:04,445 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=11
+2026-11-19 11:29:04,975 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:05,432 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:29:06,383 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=12
+2026-11-19 11:29:06,958 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:07,573 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:29:08,373 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=13
+2026-11-19 11:29:08,880 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:09,317 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:29:10,106 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=14
+2026-11-19 11:29:10,646 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:11,096 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:29:11,867 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=15
+2026-11-19 11:29:12,390 [INFO] Article ajouté Allociné (film): À jamais les premières
+2026-11-19 11:29:12,830 [INFO] Article ajouté Allociné (film): Astérix - Le Royaume de Nubie
+2026-11-19 11:29:12,831 [INFO] Scraping Allociné (films) terminé (31 items)
+2026-11-19 11:29:12,831 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-19 11:29:13,246 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-19 11:29:14,870 [INFO] Article ajouté Allociné (serie): Frisco King (saison 1)
+2026-11-19 11:29:16,229 [INFO] Article ajouté Allociné (serie): Frisco King (saison 1)
+2026-11-19 11:29:17,624 [INFO] Article ajouté Allociné (serie): The Day (saison 1)
+2026-11-19 11:29:18,013 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-19 11:29:18,065 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-19 11:29:18,065 [INFO] Scraping Allociné (séries) terminé (3 items)
+2026-11-19 11:29:18,197 [INFO] Démarrage scraping TMDb...
+2026-11-19 11:29:18,306 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-19 11:29:18,322 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-19 11:29:18,479 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-19 11:29:19,374 [INFO] 10 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-19 11:29:20,117 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-19 11:29:20,134 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-19 11:29:20,223 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-19 11:29:20,342 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-19 11:29:21,571 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-19 11:29:21,753 [INFO] Scraping TMDb terminé (0 items)
+2026-11-19 11:29:21,754 [INFO] 11 articles retenus pour ce run
+2026-11-19 11:29:21,827 [INFO] 2829 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-19 11:29:21,828 [INFO] Sauvegarde du log avec 1685 identifiants
+2026-11-19 11:29:21,829 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-19 11:29:21,867 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-19 11:29:21,867 [INFO] ==== Fin du script bandes-annonces ====
