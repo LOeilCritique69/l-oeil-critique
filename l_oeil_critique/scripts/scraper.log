@@ -440,3 +440,47 @@
 2026-11-19 20:12:58,470 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-19 20:12:58,499 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-19 20:12:58,499 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-20 02:06:27,569 [INFO] ==== Début du script bandes-annonces ====
+2026-11-20 02:06:27,577 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-20 02:06:27,577 [INFO] 1686 identifiants chargés depuis le log
+2026-11-20 02:06:27,577 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-20 02:06:28,494 [INFO] Démarrage scraping CineHorizons...
+2026-11-20 02:06:31,606 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-20 02:06:31,747 [INFO] 10 blocs détectés sur la page 1
+2026-11-20 02:06:31,749 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-20 02:06:31,749 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-20 02:06:31,749 [INFO] Démarrage scraping Allociné (films)...
+2026-11-20 02:06:32,314 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-20 02:06:32,955 [INFO] Article ajouté Allociné (film): O.M Operation Mole
+2026-11-20 02:06:34,274 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-20 02:06:34,317 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-20 02:06:34,317 [INFO] Scraping Allociné (films) terminé (1 items)
+2026-11-20 02:06:34,317 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-20 02:06:34,952 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-20 02:06:37,219 [INFO] Article ajouté Allociné (serie): Invincible (saison 5)
+2026-11-20 02:06:39,275 [INFO] Article ajouté Allociné (serie): Invincible (saison 5)
+2026-11-20 02:06:41,953 [INFO] Article ajouté Allociné (serie): The Day of the Jackal (saison 2)
+2026-11-20 02:06:49,847 [INFO] Article ajouté Allociné (serie): La Grande Vie (saison 1)
+2026-11-20 02:06:53,535 [INFO] Article ajouté Allociné (serie): The Sacred Jewel (saison 1)
+2026-11-20 02:06:56,628 [INFO] Article ajouté Allociné (serie): Yaga (saison 1)
+2026-11-20 02:06:57,853 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-20 02:06:57,912 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-20 02:06:57,912 [INFO] Scraping Allociné (séries) terminé (6 items)
+2026-11-20 02:06:57,971 [INFO] Démarrage scraping TMDb...
+2026-11-20 02:06:58,096 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-20 02:06:58,185 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-20 02:06:59,038 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-20 02:07:00,851 [INFO] 11 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-20 02:07:02,703 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-20 02:07:02,791 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-20 02:07:03,280 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-20 02:07:03,616 [INFO] Article ajouté TMDb (now_playing): Camembert
+2026-11-20 02:07:04,104 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-20 02:07:04,780 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-20 02:07:05,997 [INFO] Scraping TMDb terminé (1 items)
+2026-11-20 02:07:05,997 [INFO] 8 articles retenus pour ce run
+2026-11-20 02:07:06,070 [INFO] 2838 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-20 02:07:06,070 [INFO] Sauvegarde du log avec 1694 identifiants
+2026-11-20 02:07:06,114 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-20 02:07:06,189 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-20 02:07:06,189 [INFO] ==== Fin du script bandes-annonces ====
