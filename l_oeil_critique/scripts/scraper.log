@@ -618,3 +618,41 @@
 2026-11-21 09:23:30,532 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-21 09:23:30,578 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-21 09:23:30,578 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-21 17:11:53,106 [INFO] ==== Début du script bandes-annonces ====
+2026-11-21 17:11:53,120 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-21 17:11:53,120 [INFO] 1698 identifiants chargés depuis le log
+2026-11-21 17:11:53,120 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-21 17:11:53,618 [INFO] Démarrage scraping CineHorizons...
+2026-11-21 17:11:55,384 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-21 17:11:55,531 [INFO] 10 blocs détectés sur la page 1
+2026-11-21 17:11:55,531 [INFO] Extraction détails CineHorizons pour L'Homme qui s'envola
+2026-11-21 17:11:56,296 [INFO] Article ajouté CineHorizons: L'Homme qui s'envola
+2026-11-21 17:11:56,776 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-11-21 17:11:56,833 [INFO] 10 blocs détectés sur la page 2
+2026-11-21 17:11:56,835 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-21 17:11:56,835 [INFO] Scraping CineHorizons terminé (1 items)
+2026-11-21 17:11:56,835 [INFO] Démarrage scraping Allociné (films)...
+2026-11-21 17:11:57,403 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-21 17:11:57,445 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-21 17:11:57,445 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-21 17:11:57,445 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-21 17:11:57,877 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-21 17:11:57,978 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-21 17:11:57,978 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-11-21 17:11:58,019 [INFO] Démarrage scraping TMDb...
+2026-11-21 17:11:58,069 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-21 17:11:58,082 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-21 17:11:58,174 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-21 17:11:59,384 [INFO] 13 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-21 17:12:00,823 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-21 17:12:00,878 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-21 17:12:00,926 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-21 17:12:01,001 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-21 17:12:01,109 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-21 17:12:01,324 [INFO] Scraping TMDb terminé (0 items)
+2026-11-21 17:12:01,324 [INFO] 1 articles retenus pour ce run
+2026-11-21 17:12:01,396 [INFO] 2843 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-21 17:12:01,396 [INFO] Sauvegarde du log avec 1699 identifiants
+2026-11-21 17:12:01,397 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-21 17:12:01,435 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-21 17:12:01,435 [INFO] ==== Fin du script bandes-annonces ====
