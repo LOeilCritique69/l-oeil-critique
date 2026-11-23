@@ -836,3 +836,45 @@
 2026-11-23 08:43:27,397 [INFO] Scraping TMDb terminé (0 items)
 2026-11-23 08:43:27,397 [INFO] 0 articles retenus pour ce run
 2026-11-23 08:43:27,397 [INFO] Aucun article à écrire, arrêt
+2026-11-23 20:59:09,007 [INFO] ==== Début du script bandes-annonces ====
+2026-11-23 20:59:09,013 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-23 20:59:09,013 [INFO] 1699 identifiants chargés depuis le log
+2026-11-23 20:59:09,013 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-23 20:59:09,523 [INFO] Démarrage scraping CineHorizons...
+2026-11-23 20:59:11,633 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-23 20:59:11,788 [INFO] 10 blocs détectés sur la page 1
+2026-11-23 20:59:11,788 [INFO] Extraction détails CineHorizons pour Une famille de Singapour
+2026-11-23 20:59:12,857 [INFO] Article ajouté CineHorizons: Une famille de Singapour
+2026-11-23 20:59:13,438 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-11-23 20:59:13,492 [INFO] 10 blocs détectés sur la page 2
+2026-11-23 20:59:13,494 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-23 20:59:13,494 [INFO] Scraping CineHorizons terminé (1 items)
+2026-11-23 20:59:13,494 [INFO] Démarrage scraping Allociné (films)...
+2026-11-23 20:59:14,543 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-23 20:59:14,628 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-23 20:59:14,628 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-23 20:59:14,628 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-23 20:59:15,692 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-23 20:59:18,454 [INFO] Article ajouté Allociné (serie): Scrubs (saison 2)
+2026-11-23 20:59:21,016 [INFO] Article ajouté Allociné (serie): Lil Kev (saison 2)
+2026-11-23 20:59:23,750 [INFO] Article ajouté Allociné (serie): The Pendragon Cycle: Rise of the Merlin (saison 1)
+2026-11-23 20:59:24,348 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-23 20:59:24,406 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-23 20:59:24,407 [INFO] Scraping Allociné (séries) terminé (3 items)
+2026-11-23 20:59:24,474 [INFO] Démarrage scraping TMDb...
+2026-11-23 20:59:24,607 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-23 20:59:24,648 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-23 20:59:25,023 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-23 20:59:25,733 [INFO] 14 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-23 20:59:27,323 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-23 20:59:27,438 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-23 20:59:27,553 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-23 20:59:27,665 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-23 20:59:28,619 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-23 20:59:29,140 [INFO] Scraping TMDb terminé (0 items)
+2026-11-23 20:59:29,140 [INFO] 4 articles retenus pour ce run
+2026-11-23 20:59:29,214 [INFO] 2847 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-23 20:59:29,214 [INFO] Sauvegarde du log avec 1703 identifiants
+2026-11-23 20:59:29,215 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-23 20:59:29,253 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-23 20:59:29,253 [INFO] ==== Fin du script bandes-annonces ====
