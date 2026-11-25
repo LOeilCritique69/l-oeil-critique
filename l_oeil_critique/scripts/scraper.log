@@ -995,3 +995,41 @@
 2026-11-25 02:01:41,645 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-25 02:01:41,691 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-25 02:01:41,691 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-25 12:18:16,670 [INFO] ==== Début du script bandes-annonces ====
+2026-11-25 12:18:16,683 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-25 12:18:16,684 [INFO] 1716 identifiants chargés depuis le log
+2026-11-25 12:18:16,684 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-25 12:18:18,329 [INFO] Démarrage scraping CineHorizons...
+2026-11-25 12:18:21,197 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-25 12:18:21,382 [INFO] 10 blocs détectés sur la page 1
+2026-11-25 12:18:21,384 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-25 12:18:21,384 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-25 12:18:21,384 [INFO] Démarrage scraping Allociné (films)...
+2026-11-25 12:18:21,927 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-25 12:18:21,982 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-25 12:18:21,982 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-25 12:18:21,982 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-25 12:18:23,694 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-25 12:18:27,496 [INFO] Article ajouté Allociné (serie): The Rookie: North (saison 1)
+2026-11-25 12:18:31,268 [INFO] Article ajouté Allociné (serie): The Devil’s Hour (saison 3)
+2026-11-25 12:18:32,426 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-25 12:18:32,506 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-25 12:18:32,506 [INFO] Scraping Allociné (séries) terminé (2 items)
+2026-11-25 12:18:32,568 [INFO] Démarrage scraping TMDb...
+2026-11-25 12:18:32,710 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-25 12:18:32,978 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-25 12:18:33,292 [INFO] Article ajouté TMDb (upcoming): Une famille de Singapour
+2026-11-25 12:18:34,161 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-25 12:18:36,886 [INFO] 1 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-25 12:18:37,159 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-25 12:18:37,433 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-25 12:18:37,706 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-25 12:18:38,214 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-25 12:18:39,198 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-25 12:18:40,731 [INFO] Scraping TMDb terminé (1 items)
+2026-11-25 12:18:40,732 [INFO] 3 articles retenus pour ce run
+2026-11-25 12:18:40,827 [INFO] 2863 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-25 12:18:40,827 [INFO] Sauvegarde du log avec 1719 identifiants
+2026-11-25 12:18:40,828 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-25 12:18:40,874 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-25 12:18:40,874 [INFO] ==== Fin du script bandes-annonces ====
