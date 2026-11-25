@@ -948,3 +948,50 @@
 2026-11-24 17:12:33,711 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-24 17:12:33,751 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-24 17:12:33,751 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-25 02:01:15,098 [INFO] ==== Début du script bandes-annonces ====
+2026-11-25 02:01:15,107 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-25 02:01:15,107 [INFO] 1705 identifiants chargés depuis le log
+2026-11-25 02:01:15,107 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-25 02:01:16,588 [INFO] Démarrage scraping CineHorizons...
+2026-11-25 02:01:19,103 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-25 02:01:19,287 [INFO] 10 blocs détectés sur la page 1
+2026-11-25 02:01:19,290 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-25 02:01:19,290 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-25 02:01:19,290 [INFO] Démarrage scraping Allociné (films)...
+2026-11-25 02:01:21,746 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-25 02:01:23,363 [INFO] Article ajouté Allociné (film): Merci d'être venu
+2026-11-25 02:01:24,145 [INFO] Article ajouté Allociné (film): Paper Tiger
+2026-11-25 02:01:24,896 [INFO] Article ajouté Allociné (film): 3670
+2026-11-25 02:01:25,527 [INFO] Article ajouté Allociné (film): La libertad doble
+2026-11-25 02:01:26,251 [INFO] Article ajouté Allociné (film): Demain je tombe amoureux
+2026-11-25 02:01:26,760 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-25 02:01:26,836 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-25 02:01:26,836 [INFO] Scraping Allociné (films) terminé (5 items)
+2026-11-25 02:01:26,836 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-25 02:01:27,343 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-25 02:01:30,161 [INFO] Article ajouté Allociné (serie): Le Meurtre de JonBenét Ramsey (saison 1)
+2026-11-25 02:01:32,237 [INFO] Article ajouté Allociné (serie): Gift (saison 1)
+2026-11-25 02:01:34,374 [INFO] Article ajouté Allociné (serie): The Equalizer (2021) (saison 1)
+2026-11-25 02:01:35,001 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-25 02:01:35,083 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-25 02:01:35,084 [INFO] Scraping Allociné (séries) terminé (3 items)
+2026-11-25 02:01:35,165 [INFO] Démarrage scraping TMDb...
+2026-11-25 02:01:35,339 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-25 02:01:35,462 [INFO] Article ajouté TMDb (upcoming): I Play Rocky
+2026-11-25 02:01:35,522 [INFO] Article ajouté TMDb (upcoming): Jumanji : Bienvenue dans notre Monde
+2026-11-25 02:01:35,583 [INFO] Article ajouté TMDb (upcoming): Angry Birds : La grande envolée
+2026-11-25 02:01:35,768 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-25 02:01:36,200 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-25 02:01:37,451 [INFO] 14 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-25 02:01:39,134 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-25 02:01:39,323 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-25 02:01:39,504 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-25 02:01:39,689 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-25 02:01:40,362 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-25 02:01:41,548 [INFO] Scraping TMDb terminé (3 items)
+2026-11-25 02:01:41,548 [INFO] 11 articles retenus pour ce run
+2026-11-25 02:01:41,643 [INFO] 2860 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-25 02:01:41,643 [INFO] Sauvegarde du log avec 1716 identifiants
+2026-11-25 02:01:41,645 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-25 02:01:41,691 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-25 02:01:41,691 [INFO] ==== Fin du script bandes-annonces ====
