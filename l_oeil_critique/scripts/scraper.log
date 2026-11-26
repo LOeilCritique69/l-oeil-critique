@@ -1063,3 +1063,33 @@
 2026-11-25 22:12:26,616 [INFO] Scraping TMDb terminé (0 items)
 2026-11-25 22:12:26,616 [INFO] 0 articles retenus pour ce run
 2026-11-25 22:12:26,616 [INFO] Aucun article à écrire, arrêt
+2026-11-26 04:45:29,833 [INFO] ==== Début du script bandes-annonces ====
+2026-11-26 04:45:29,853 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-26 04:45:29,854 [INFO] 1719 identifiants chargés depuis le log
+2026-11-26 04:45:29,854 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-26 04:45:31,144 [INFO] Démarrage scraping CineHorizons...
+2026-11-26 04:45:33,464 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-26 04:45:33,644 [INFO] 10 blocs détectés sur la page 1
+2026-11-26 04:45:33,645 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-26 04:45:33,645 [INFO] Scraping CineHorizons terminé (0 items)
+2026-11-26 04:45:33,645 [INFO] Démarrage scraping Allociné (films)...
+2026-11-26 04:45:35,057 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-26 04:45:35,121 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-26 04:45:35,121 [INFO] Scraping Allociné (films) terminé (0 items)
+2026-11-26 04:45:35,122 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-26 04:45:36,170 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-26 04:45:36,263 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-26 04:45:36,264 [INFO] Scraping Allociné (séries) terminé (0 items)
+2026-11-26 04:45:36,311 [INFO] Démarrage scraping TMDb...
+2026-11-26 04:45:36,592 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-26 04:45:36,649 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-26 04:45:36,831 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-26 04:45:38,478 [INFO] 1 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-26 04:45:38,540 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-26 04:45:38,593 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-26 04:45:38,642 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-26 04:45:39,367 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-26 04:45:39,512 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-26 04:45:40,255 [INFO] Scraping TMDb terminé (0 items)
+2026-11-26 04:45:40,255 [INFO] 0 articles retenus pour ce run
+2026-11-26 04:45:40,255 [INFO] Aucun article à écrire, arrêt
