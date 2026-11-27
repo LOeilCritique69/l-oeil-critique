@@ -1209,3 +1209,49 @@
 2026-11-27 07:27:22,314 [INFO] Poussée automatique FORCÉE vers GitHub...
 2026-11-27 07:27:22,353 [INFO] Rien à commiter, le répertoire est propre.
 2026-11-27 07:27:22,353 [INFO] ==== Fin du script bandes-annonces ====
+2026-11-27 17:56:44,854 [INFO] ==== Début du script bandes-annonces ====
+2026-11-27 17:56:44,860 [INFO] Chargement du log depuis /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/scripts/bande_annonces_log.json
+2026-11-27 17:56:44,860 [INFO] 1728 identifiants chargés depuis le log
+2026-11-27 17:56:44,861 [INFO] Mode quotidien (ÉTAPE 2) — recherche des nouveautés du jour uniquement.
+2026-11-27 17:56:45,314 [INFO] Démarrage scraping CineHorizons...
+2026-11-27 17:56:47,457 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films
+2026-11-27 17:56:47,572 [INFO] 10 blocs détectés sur la page 1
+2026-11-27 17:56:47,573 [INFO] Extraction détails CineHorizons pour Somnambule
+2026-11-27 17:56:48,540 [INFO] Article ajouté CineHorizons: Somnambule
+2026-11-27 17:56:49,312 [INFO] Page CineHorizons chargée: https://www.cinehorizons.net/bandes-annonces-prochains-films?page=1
+2026-11-27 17:56:49,363 [INFO] 10 blocs détectés sur la page 2
+2026-11-27 17:56:49,364 [INFO] Aucune nouveauté sur cette page, on arrête la pagination CineHorizons
+2026-11-27 17:56:49,364 [INFO] Scraping CineHorizons terminé (1 items)
+2026-11-27 17:56:49,364 [INFO] Démarrage scraping Allociné (films)...
+2026-11-27 17:56:50,117 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/
+2026-11-27 17:56:51,467 [INFO] Article ajouté Allociné (film): Deux brins de laine
+2026-11-27 17:56:52,836 [INFO] Page Allociné chargée: https://www.allocine.fr/video/bandes-annonces/plus-recentes/?page=2
+2026-11-27 17:56:52,878 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-27 17:56:52,878 [INFO] Scraping Allociné (films) terminé (1 items)
+2026-11-27 17:56:52,878 [INFO] Démarrage scraping Allociné (séries)...
+2026-11-27 17:56:53,619 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/
+2026-11-27 17:56:57,970 [INFO] Article ajouté Allociné (serie): Sakamoto Days (saison 2)
+2026-11-27 17:56:59,968 [INFO] Article ajouté Allociné (serie): Carl Hiaasen's Bad Monkey (saison 2)
+2026-11-27 17:57:03,090 [INFO] Article ajouté Allociné (serie): Tantara (saison 1)
+2026-11-27 17:57:05,391 [INFO] Article ajouté Allociné (serie): Sonnental (saison 1)
+2026-11-27 17:57:06,473 [INFO] Page Allociné chargée: https://www.allocine.fr/series/video/recentes/?page=2
+2026-11-27 17:57:06,531 [INFO] Aucune nouveauté sur cette page, on arrête la pagination Allociné
+2026-11-27 17:57:06,531 [INFO] Scraping Allociné (séries) terminé (4 items)
+2026-11-27 17:57:06,623 [INFO] Démarrage scraping TMDb...
+2026-11-27 17:57:06,801 [INFO] 20 films récupérés depuis TMDb (upcoming, page 1/4)
+2026-11-27 17:57:06,935 [INFO] 20 films récupérés depuis TMDb (upcoming, page 2/4)
+2026-11-27 17:57:07,414 [INFO] 20 films récupérés depuis TMDb (upcoming, page 3/4)
+2026-11-27 17:57:09,197 [INFO] 3 films récupérés depuis TMDb (upcoming, page 4/4)
+2026-11-27 17:57:09,406 [INFO] Article ajouté TMDb (upcoming): L'inspecteur Jean-Bernard et la mauvaise fréquence
+2026-11-27 17:57:09,444 [INFO] 20 films récupérés depuis TMDb (now_playing, page 1/10)
+2026-11-27 17:57:09,638 [INFO] 20 films récupérés depuis TMDb (now_playing, page 2/10)
+2026-11-27 17:57:09,676 [INFO] 20 films récupérés depuis TMDb (now_playing, page 3/10)
+2026-11-27 17:57:10,488 [INFO] 20 films récupérés depuis TMDb (now_playing, page 4/10)
+2026-11-27 17:57:10,720 [INFO] 20 films récupérés depuis TMDb (now_playing, page 5/10)
+2026-11-27 17:57:11,190 [INFO] Scraping TMDb terminé (1 items)
+2026-11-27 17:57:11,190 [INFO] 7 articles retenus pour ce run
+2026-11-27 17:57:11,248 [INFO] 2879 articles sauvegardés dans /home/runner/work/l-oeil-critique/l-oeil-critique/l_oeil_critique/bande_annonces_blocs.html
+2026-11-27 17:57:11,248 [INFO] Sauvegarde du log avec 1735 identifiants
+2026-11-27 17:57:11,250 [INFO] Poussée automatique FORCÉE vers GitHub...
+2026-11-27 17:57:11,286 [INFO] Rien à commiter, le répertoire est propre.
+2026-11-27 17:57:11,286 [INFO] ==== Fin du script bandes-annonces ====
